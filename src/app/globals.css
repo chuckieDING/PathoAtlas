@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+* { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+
+/* ── Dark theme (default) ─────────────────────────────────── */
+:root {
+  --bg: #0a0a0f;
+  --bg-secondary: #111118;
+  --fg: #e4e4e7;
+  --fg-muted: #71717a;
+  --card: #18181b;
+  --card-hover: #1f1f23;
+  --border: #2e2e35;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --nav-bg: rgba(10, 10, 15, 0.88);
+  color-scheme: dark;
+}
+
+/* ── Light theme ──────────────────────────────────────────── */
+:root:has(#theme-toggle:checked) {
+  --bg: #f8f9fb;
+  --bg-secondary: #f0f1f3;
+  --fg: #18181b;
+  --fg-muted: #71717a;
+  --card: #ffffff;
+  --card-hover: #f4f4f5;
+  --border: #e4e4e7;
+  --accent: #4f46e5;
+  --accent-hover: #6366f1;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --nav-bg: rgba(248, 249, 251, 0.88);
+  color-scheme: light;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+}
+
+/* Smooth theme transition */
+body, nav, main, .card-transition {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── Hidden checkbox for theme ────────────────────────────── */
+#theme-toggle { position: absolute; opacity: 0; width: 0; height: 0; }
+
+/* ── Theme toggle label ───────────────────────────────────── */
+.theme-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border); color: var(--fg-muted);
+  cursor: pointer; transition: all 0.2s ease;
+}
+.theme-btn:hover { border-color: var(--accent); color: var(--fg); background: var(--card-hover); }
+.theme-icon-sun { display: flex !important; }
+.theme-icon-moon { display: none !important; }
+:root:has(#theme-toggle:checked) .theme-icon-sun { display: none !important; }
+:root:has(#theme-toggle:checked) .theme-icon-moon { display: flex !important; }
+
+/* ── Markdown content ─────────────────────────────────────── */
+.prose h1 { @apply text-xl font-bold mb-3 mt-5 first:mt-0; color: var(--fg); }
+.prose h2 { @apply text-lg font-semibold mb-2 mt-4; color: var(--fg); }
+.prose h3 { @apply text-base font-medium mb-2 mt-3; color: var(--fg); }
+.prose p { @apply leading-relaxed mb-3 text-sm; }
+.prose ul { @apply list-disc list-inside mb-3 space-y-1 text-sm; }
+.prose ol { @apply list-decimal list-inside mb-3 space-y-1 text-sm; }
+.prose strong { @apply font-semibold; }
+.prose code { @apply px-1 py-0.5 rounded text-xs font-mono; background: var(--card); color: var(--accent); }
+.prose blockquote { @apply border-l-4 pl-4 italic mb-3 text-sm; border-color: var(--accent); color: var(--fg-muted); }
+.prose table { @apply w-full border-collapse mb-4 text-sm; }
+.prose th { @apply text-left px-3 py-2 text-xs font-semibold border; background: var(--card-hover); border-color: var(--border); }
+.prose td { @apply px-3 py-2 text-sm border; border-color: var(--border); }
+.prose a { color: var(--accent); text-decoration: underline; }
+
+/* ── Category badges ──────────────────────────────────────── */
+.badge { @apply text-xs px-2.5 py-0.5 rounded-full font-medium; }
+.badge-malignant { background: rgba(239,68,68,0.12); color: #ef4444; }
+.badge-benign { background: rgba(34,197,94,0.12); color: #22c55e; }
+.badge-precancerous { background: rgba(245,158,11,0.12); color: #f59e0b; }
+.badge-inflammatory { background: rgba(96,165,250,0.12); color: #60a5fa; }
+.badge-other { background: rgba(113,113,122,0.12); color: #a1a1aa; }
+
+/* ── Touch targets ────────────────────────────────────────── */
+.min-touch { min-height: 44px; min-width: 44px; }
