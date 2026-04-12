@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { getMarkers } from '@/lib/data';
+import { getMarkersWithOrgans } from '@/lib/data';
 
 export async function GET() {
-  return NextResponse.json(getMarkers());
+  return NextResponse.json(getMarkersWithOrgans());
 }

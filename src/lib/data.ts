@@ -132,6 +132,47 @@ export function getMarker(id: string): Marker | undefined {
   return getMarkers().find(m => m.id === id);
 }
 
+/**
+ * Returns every marker augmented with the list of organ systems it is used
+ * in. "Used in" = the marker appears in at least one disease's `ihcProfile`
+ * whose owning organ matches. This is computed at runtime from the existing
+ * disease database so the mapping stays in sync when new diseases/markers
+ * are added — no manual curation required.
+ */
+export function getMarkersWithOrgans(): (Marker & { organs: string[] })[] {
+  const markers = getMarkers();
+  const diseases = getAllDiseases();
+
+  // Normalizes a free-text marker label (e.g. "CK5/6", "Ki-67", "BCL-2")
+  // to the canonical lowercase-dash id used in markers.json so lookups
+  // survive punctuation and case differences.
+  const slug = (s: string) =>
+    s.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+
+  // slug → Set<organId>
+  const organsBySlug = new Map<string, Set<string>>();
+  for (const d of diseases) {
+    for (const item of d.ihcProfile) {
+      const key = slug(item.marker);
+      if (!organsBySlug.has(key)) organsBySlug.set(key, new Set());
+      organsBySlug.get(key)!.add(d.organ);
+    }
+  }
+
+  return markers.map(m => {
+    // A marker can be referenced by its id, abbreviation, or English name.
+    // Try all three lookup keys to maximise matches against disease IHC rows
+    // without requiring authors to use a single canonical form.
+    const candidates = [m.id, slug(m.abbreviation || ''), slug(m.nameEn || '')];
+    const organs = new Set<string>();
+    for (const k of candidates) {
+      const hit = organsBySlug.get(k);
+      if (hit) for (const o of hit) organs.add(o);
+    }
+    return { ...m, organs: Array.from(organs).sort() };
+  });
+}
+
 export function getStagingSystems(): StagingSystem[] {
   return loadJson<StagingSystem[]>(path.join(DATA_DIR, 'staging.json'));
 }
