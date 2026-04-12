@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="CK5/6 mechanism: basal and squamous epithelium">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">CK5/6 · 基底/鳞状上皮标记</text>
+
+  <!-- Stratified squamous epithelium -->
+  <!-- Basement membrane -->
+  <line x1="20" y1="210" x2="400" y2="210" stroke="#92400e" stroke-width="3" stroke-dasharray="4 2"/>
+  <text x="20" y="226" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">基底膜</text>
+
+  <!-- Basal layer (CK5/6 positive) -->
+  <g fill="#fecaca" stroke="#991b1b" stroke-width="1.3">
+    <rect x="30" y="175" width="28" height="34" rx="3"/>
+    <rect x="62" y="175" width="28" height="34" rx="3"/>
+    <rect x="94" y="175" width="28" height="34" rx="3"/>
+    <rect x="126" y="175" width="28" height="34" rx="3"/>
+    <rect x="158" y="175" width="28" height="34" rx="3"/>
+    <rect x="190" y="175" width="28" height="34" rx="3"/>
+    <rect x="222" y="175" width="28" height="34" rx="3"/>
+    <rect x="254" y="175" width="28" height="34" rx="3"/>
+    <rect x="286" y="175" width="28" height="34" rx="3"/>
+    <rect x="318" y="175" width="28" height="34" rx="3"/>
+    <rect x="350" y="175" width="28" height="34" rx="3"/>
+  </g>
+  <!-- Basal nuclei -->
+  <g fill="#7f1d1d">
+    <circle cx="44" cy="193" r="3"/><circle cx="76" cy="193" r="3"/><circle cx="108" cy="193" r="3"/>
+    <circle cx="140" cy="193" r="3"/><circle cx="172" cy="193" r="3"/><circle cx="204" cy="193" r="3"/>
+    <circle cx="236" cy="193" r="3"/><circle cx="268" cy="193" r="3"/><circle cx="300" cy="193" r="3"/>
+    <circle cx="332" cy="193" r="3"/><circle cx="364" cy="193" r="3"/>
+  </g>
+
+  <!-- Parabasal / intermediate layer -->
+  <g fill="#fed7aa" stroke="#c2410c" stroke-width="1.2">
+    <ellipse cx="50" cy="150" rx="18" ry="14"/>
+    <ellipse cx="95" cy="148" rx="20" ry="15"/>
+    <ellipse cx="140" cy="150" rx="18" ry="14"/>
+    <ellipse cx="185" cy="148" rx="20" ry="15"/>
+    <ellipse cx="230" cy="150" rx="18" ry="14"/>
+    <ellipse cx="275" cy="148" rx="20" ry="15"/>
+    <ellipse cx="320" cy="150" rx="18" ry="14"/>
+    <ellipse cx="365" cy="148" rx="18" ry="14"/>
+  </g>
+
+  <!-- Superficial flattened squames -->
+  <g fill="#fde68a" stroke="#b45309" stroke-width="1">
+    <ellipse cx="55" cy="110" rx="22" ry="7"/>
+    <ellipse cx="110" cy="108" rx="24" ry="7"/>
+    <ellipse cx="170" cy="110" rx="22" ry="7"/>
+    <ellipse cx="225" cy="108" rx="24" ry="7"/>
+    <ellipse cx="285" cy="110" rx="22" ry="7"/>
+    <ellipse cx="345" cy="108" rx="24" ry="7"/>
+
+    <ellipse cx="70" cy="88" rx="26" ry="6"/>
+    <ellipse cx="140" cy="86" rx="28" ry="6"/>
+    <ellipse cx="215" cy="88" rx="26" ry="6"/>
+    <ellipse cx="290" cy="86" rx="28" ry="6"/>
+  </g>
+
+  <!-- Arrow highlighting basal layer with CK5/6 label -->
+  <g>
+    <path d="M380 192 L398 192" stroke="#dc2626" stroke-width="2" marker-end="url(#ck56-arr)"/>
+    <defs>
+      <marker id="ck56-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/>
+      </marker>
+    </defs>
+  </g>
+  <g transform="translate(250 58)">
+    <rect width="150" height="22" rx="5" fill="#fff" stroke="#dc2626" stroke-width="1.3"/>
+    <text x="75" y="15" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#7f1d1d" font-weight="700">基底层 CK5/6⁺ (胞浆)</text>
+  </g>
+
+  <text x="16" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    鳞癌 / 基底样乳腺癌 / 肌上皮 / 间皮 阳性  ·  用于区分肺鳞癌 (CK5/6⁺) 与腺癌 (阴性)
+  </text>
+</svg>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getOrgans, getStats, getAllDiseases } from '@/lib/data';
 import { IconMicroscope, IconFlask, IconScale, IconBrain, IconGrid, IconActivity, IconBookOpen } from '@/components/Icon';
+import { OrganIcon } from '@/components/OrganIcon';
 import { HomeDashboard } from '@/components/HomeDashboard';
 
 export default function HomePage() {
@@ -66,10 +67,10 @@ export default function HomePage() {
           const count = diseases.filter(d => d.organ === organ.id).length;
           return (
             <Link key={organ.id} href={`/atlas/${organ.id}`}
-              className="rounded-xl p-4 border transition-all hover:shadow-md text-center"
+              className="rounded-xl p-4 border transition-all hover:shadow-md text-center flex flex-col items-center"
               style={{ background: 'var(--card)', borderColor: 'var(--border)', textDecoration: 'none' }}>
-              <div className="text-3xl mb-2">{organ.icon}</div>
-              <div className="font-medium text-sm" style={{ color: organ.color }}>{organ.nameZh}</div>
+              <OrganIcon organId={organ.id} size={28} color={organ.color} withBackground />
+              <div className="font-medium text-sm mt-3" style={{ color: organ.color }}>{organ.nameZh}</div>
               <div className="text-xs mt-1" style={{ color: 'var(--fg-muted)' }}>{count} 种疾病</div>
             </Link>
           );
@@ -91,7 +92,7 @@ export default function HomePage() {
                   className="rounded-xl p-4 border transition-all hover:shadow-md"
                   style={{ background: 'var(--card)', borderColor: 'var(--border)', textDecoration: 'none' }}>
                   <div className="flex items-center gap-2 mb-2">
-                    <span>{organ?.icon}</span>
+                    <OrganIcon organId={d.organ} size={16} color={organ?.color} />
                     <span className="badge badge-malignant">恶性</span>
                   </div>
                   <div className="font-medium text-sm mb-1" style={{ color: 'var(--fg)' }}>{d.nameZh}</div>
