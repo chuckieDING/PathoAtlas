@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="Ki-67 mechanism: cell cycle proliferation marker">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">Ki-67 · 细胞周期增殖标记</text>
+
+  <!-- Cell cycle wheel -->
+  <g transform="translate(210 150)">
+    <circle r="78" fill="none" stroke="#cbd5e1" stroke-width="20"/>
+    <!-- Active phases (G1/S/G2/M) colored -->
+    <path d="M0 -78 A78 78 0 0 1 67.5 39" stroke="#22c55e" stroke-width="20" fill="none"/>
+    <path d="M67.5 39 A78 78 0 0 1 -67.5 39" stroke="#16a34a" stroke-width="20" fill="none"/>
+    <path d="M-67.5 39 A78 78 0 0 1 0 -78" stroke="#15803d" stroke-width="20" fill="none"/>
+
+    <!-- Phase labels -->
+    <text x="45" y="-40" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#14532d" text-anchor="middle">G1</text>
+    <text x="60" y="15" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#14532d" text-anchor="middle">S</text>
+    <text x="-60" y="15" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#14532d" text-anchor="middle">G2</text>
+    <text x="0" y="-55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#14532d" text-anchor="middle">M</text>
+
+    <!-- G0 wedge - resting / quiescent (Ki-67 negative) -->
+    <circle r="42" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="0" y="-3" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">G0</text>
+    <text x="0" y="12" font-family="system-ui, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Ki-67 ⊖</text>
+  </g>
+
+  <!-- Ki-67 protein label in active phases -->
+  <g>
+    <circle cx="355" cy="85" r="12" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
+    <text x="355" y="89" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#7c2d12">Ki</text>
+    <path d="M340 95 L290 115" stroke="#b45309" stroke-width="1.3" fill="none" stroke-dasharray="3 2"/>
+    <text x="345" y="108" font-family="system-ui, sans-serif" font-size="9" fill="#7c2d12">Ki-67 表达</text>
+    <text x="345" y="120" font-family="system-ui, sans-serif" font-size="8" fill="#92400e">(G1-S-G2-M)</text>
+  </g>
+
+  <!-- Quiescent cell -->
+  <g>
+    <circle cx="65" cy="80" r="18" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="65" cy="80" r="8" fill="#e2e8f0" stroke="#64748b" stroke-width="1"/>
+    <text x="65" y="115" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#475569" font-weight="600">静息细胞</text>
+    <text x="65" y="127" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#64748b">G0 · Ki-67 ⊖</text>
+  </g>
+
+  <!-- Proliferating cell -->
+  <g>
+    <circle cx="65" cy="185" r="18" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+    <circle cx="65" cy="185" r="8" fill="#fde68a" stroke="#92400e" stroke-width="1"/>
+    <!-- Ki-67 dots in nucleoplasm -->
+    <circle cx="62" cy="182" r="1.5" fill="#b45309"/>
+    <circle cx="68" cy="186" r="1.5" fill="#b45309"/>
+    <circle cx="63" cy="188" r="1.5" fill="#b45309"/>
+    <text x="65" y="220" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#7c2d12" font-weight="600">增殖细胞</text>
+    <text x="65" y="232" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#92400e">G1/S/G2/M · Ki-67 ⊕</text>
+  </g>
+
+  <!-- Effect -->
+  <text x="16" y="253" font-family="system-ui, sans-serif" font-size="9.5" fill="#92400e">
+    Ki-67 在 G1–S–G2–M 细胞中核阳性；阳性百分比 = 增殖指数 (PI)，指导乳腺癌分型与预后
+  </text>
+</svg>

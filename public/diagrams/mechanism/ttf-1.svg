@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="TTF-1 mechanism: lineage-specific nuclear transcription factor">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">TTF-1 · 甲状腺/肺组织特异性转录因子</text>
+
+  <!-- Lung cell -->
+  <g>
+    <ellipse cx="110" cy="140" rx="75" ry="75" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <ellipse cx="110" cy="140" rx="30" ry="28" fill="#bae6fd" stroke="#0369a1" stroke-width="1.5"/>
+    <text x="110" y="80" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#075985" font-weight="700">肺泡 Ⅱ 型细胞</text>
+    <!-- TTF-1 dots inside nucleus (nuclear staining) -->
+    <g fill="#9a3412">
+      <circle cx="102" cy="132" r="2"/>
+      <circle cx="112" cy="135" r="2"/>
+      <circle cx="120" cy="140" r="2"/>
+      <circle cx="100" cy="145" r="2"/>
+      <circle cx="115" cy="148" r="2"/>
+      <circle cx="108" cy="138" r="2"/>
+    </g>
+    <!-- SFTP / Napsin target gene marker -->
+    <rect x="95" y="170" width="30" height="6" rx="1" fill="#0369a1"/>
+    <text x="110" y="190" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#075985">靶基因: SP-B/C · Napsin A</text>
+  </g>
+
+  <!-- Thyroid cell -->
+  <g>
+    <ellipse cx="310" cy="140" rx="75" ry="75" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+    <ellipse cx="310" cy="140" rx="30" ry="28" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/>
+    <text x="310" y="80" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#78350f" font-weight="700">甲状腺滤泡细胞</text>
+    <g fill="#9a3412">
+      <circle cx="302" cy="132" r="2"/>
+      <circle cx="312" cy="135" r="2"/>
+      <circle cx="320" cy="140" r="2"/>
+      <circle cx="300" cy="145" r="2"/>
+      <circle cx="315" cy="148" r="2"/>
+      <circle cx="308" cy="138" r="2"/>
+    </g>
+    <rect x="295" y="170" width="30" height="6" rx="1" fill="#b45309"/>
+    <text x="310" y="190" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#78350f">靶基因: TG · TPO · 降钙素</text>
+  </g>
+
+  <!-- TTF-1 badge legend -->
+  <g transform="translate(210 135)">
+    <rect x="-30" y="-14" width="60" height="28" rx="6" fill="#fff" stroke="#9a3412" stroke-width="1.5"/>
+    <text x="0" y="4" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#9a3412" font-weight="700">TTF-1</text>
+    <text x="0" y="30" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#92400e">(NKX2-1)</text>
+  </g>
+
+  <text x="16" y="253" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    谱系转录因子：肺腺癌 ~75% 阳性；小细胞肺癌多阳性；甲状腺滤泡/乳头癌阳性；鉴别原发灶
+  </text>
+</svg>
