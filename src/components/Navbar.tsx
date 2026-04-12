@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { IconHome, IconMicroscope, IconFlask, IconScale, IconBrain, IconTrophy, IconSearch, IconMenu, IconSun, IconMoon, IconDna } from './Icon';
+import { NavbarProgress } from './ProgressWidgets';
 
 const NAV = [
   { href: '/', label: '首页', icon: IconHome },
@@ -58,6 +59,7 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
+            <NavbarProgress />
             <button onClick={() => setSearchOpen(v => !v)} className="theme-btn" title="搜索" aria-label="搜索">
               <IconSearch size={16} />
             </button>
