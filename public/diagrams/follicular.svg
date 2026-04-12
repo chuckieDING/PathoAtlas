@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Thyroid follicular pattern">
+  <rect width="400" height="240" fill="#fdf4ef"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#7c3aed">滤泡结构 · Follicular pattern</text>
+  <g>
+    <!-- Follicles: circles of epithelium surrounding pink colloid -->
+    <g stroke="#6d28d9" stroke-width="2" fill="#fce7f3">
+      <circle cx="90"  cy="100" r="28"/>
+      <circle cx="170" cy="85"  r="22"/>
+      <circle cx="240" cy="110" r="30"/>
+      <circle cx="320" cy="90"  r="24"/>
+      <circle cx="120" cy="175" r="26"/>
+      <circle cx="200" cy="185" r="22"/>
+      <circle cx="280" cy="180" r="28"/>
+      <circle cx="340" cy="160" r="20"/>
+    </g>
+    <!-- Nuclei ring -->
+    <g fill="#581c87">
+      <circle cx="72" cy="96"  r="2"/><circle cx="78" cy="82" r="2"/><circle cx="92" cy="76" r="2"/><circle cx="106" cy="78" r="2"/>
+      <circle cx="116" cy="90" r="2"/><circle cx="116" cy="108" r="2"/><circle cx="108" cy="120" r="2"/><circle cx="92" cy="126" r="2"/>
+      <circle cx="78" cy="120" r="2"/><circle cx="70" cy="108" r="2"/>
+
+      <circle cx="156" cy="82" r="2"/><circle cx="162" cy="72" r="2"/><circle cx="174" cy="68" r="2"/><circle cx="184" cy="72" r="2"/>
+      <circle cx="190" cy="82" r="2"/><circle cx="188" cy="94" r="2"/><circle cx="180" cy="102" r="2"/><circle cx="168" cy="104" r="2"/>
+      <circle cx="158" cy="96" r="2"/>
+
+      <circle cx="220" cy="104" r="2"/><circle cx="224" cy="90" r="2"/><circle cx="238" cy="84" r="2"/><circle cx="252" cy="84" r="2"/>
+      <circle cx="264" cy="92" r="2"/><circle cx="270" cy="106" r="2"/><circle cx="268" cy="122" r="2"/><circle cx="256" cy="132" r="2"/>
+      <circle cx="240" cy="136" r="2"/><circle cx="224" cy="130" r="2"/><circle cx="216" cy="118" r="2"/>
+    </g>
+    <!-- Colloid labels -->
+    <text x="245" y="115" font-family="serif" font-size="10" fill="#ec4899">胶质</text>
+    <text x="90" y="104" font-family="serif" font-size="10" fill="#ec4899">胶质</text>
+  </g>
+  <text x="20" y="225" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">滤泡结构由单层上皮环绕嗜酸性胶质组成，是甲状腺滤泡性肿瘤的基本结构</text>
+</svg>

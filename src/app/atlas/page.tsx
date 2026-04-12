@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getOrgans, getDiseasesByOrgan } from '@/lib/data';
 import { IconMicroscope } from '@/components/Icon';
+import { OrganIcon } from '@/components/OrganIcon';
 
 export default function AtlasPage() {
   const organs = getOrgans();
@@ -24,7 +25,7 @@ export default function AtlasPage() {
               className="rounded-2xl p-6 border transition-all hover:shadow-lg"
               style={{ background: 'var(--card)', borderColor: 'var(--border)', textDecoration: 'none' }}>
               <div className="flex items-start justify-between mb-4">
-                <div className="text-4xl">{organ.icon}</div>
+                <OrganIcon organId={organ.id} size={30} color={organ.color} withBackground />
                 <span className="text-xs px-2 py-1 rounded-full" style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}>
                   {diseases.length} 种疾病
                 </span>

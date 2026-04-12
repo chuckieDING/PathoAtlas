@@ -81,10 +81,19 @@ export interface DifferentialScenario {
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 
+// Tiny in-process cache so each JSON file is parsed at most once per Node worker.
+// The data is fully static, so a permanent cache is safe and significantly reduces
+// repeated fs.readFileSync + JSON.parse overhead across API routes and page renders.
+const jsonCache = new Map<string, unknown>();
+
 function loadJson<T>(filePath: string): T {
+  const cached = jsonCache.get(filePath);
+  if (cached !== undefined) return cached as T;
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(content) as T;
+    const parsed = JSON.parse(content) as T;
+    jsonCache.set(filePath, parsed);
+    return parsed;
   } catch {
     return [] as unknown as T;
   }

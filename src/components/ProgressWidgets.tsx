@@ -127,8 +127,8 @@ export function NavbarProgress() {
         <IconFlame size={14} />
         <span className="text-xs font-bold tabular-nums">{state.currentStreak}</span>
       </div>
-      {/* Level */}
-      <div className="flex items-center gap-1 px-2 py-1 rounded-lg hidden sm:flex"
+      {/* Level (hidden on xs, shown from sm up) */}
+      <div className="hidden sm:flex items-center gap-1 px-2 py-1 rounded-lg"
         style={{ background: 'rgba(99,102,241,0.1)', color: 'var(--accent)' }}>
         <IconZap size={14} />
         <span className="text-xs font-bold tabular-nums">Lv{level}</span>

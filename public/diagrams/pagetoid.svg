@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Pagetoid spread pattern">
+  <rect width="400" height="240" fill="#fdf4ef"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#92400e">Pagetoid 扩散</text>
+  <!-- Epidermis layers -->
+  <g>
+    <rect x="30" y="70" width="340" height="18" fill="#fde68a" stroke="#b45309" stroke-width="1"/>
+    <rect x="30" y="88" width="340" height="22" fill="#fcd34d" stroke="#b45309" stroke-width="1"/>
+    <rect x="30" y="110" width="340" height="25" fill="#fbbf24" stroke="#b45309" stroke-width="1"/>
+    <rect x="30" y="135" width="340" height="28" fill="#f59e0b" stroke="#b45309" stroke-width="1"/>
+    <!-- Basal wavy line -->
+    <path d="M30 163 Q60 175 90 163 Q120 175 150 163 Q180 175 210 163 Q240 175 270 163 Q300 175 330 163 Q360 175 370 167 L370 195 L30 195 Z" fill="#d97706" stroke="#7c2d12" stroke-width="1.5"/>
+  </g>
+  <!-- Labels -->
+  <text x="36" y="82" font-family="system-ui, sans-serif" font-size="8" fill="#7c2d12">角质层</text>
+  <text x="36" y="105" font-family="system-ui, sans-serif" font-size="8" fill="#7c2d12">颗粒层</text>
+  <text x="36" y="128" font-family="system-ui, sans-serif" font-size="8" fill="#7c2d12">棘层</text>
+  <text x="36" y="155" font-family="system-ui, sans-serif" font-size="8" fill="#7c2d12">基底层</text>
+  <text x="36" y="190" font-family="system-ui, sans-serif" font-size="8" fill="#fef3c7">真皮</text>
+  <!-- Atypical tumor cells (dark) scattered upwards through the epidermis -->
+  <g fill="#1e1b4b" stroke="#fde68a" stroke-width="1">
+    <circle cx="120" cy="80" r="4"/>
+    <circle cx="190" cy="95" r="4"/>
+    <circle cx="260" cy="78" r="4"/>
+    <circle cx="150" cy="115" r="5"/>
+    <circle cx="220" cy="125" r="5"/>
+    <circle cx="295" cy="118" r="5"/>
+    <circle cx="100" cy="140" r="5"/>
+    <circle cx="170" cy="150" r="5"/>
+    <circle cx="250" cy="148" r="5"/>
+    <circle cx="320" cy="145" r="5"/>
+    <circle cx="80" cy="158" r="6"/>
+    <circle cx="140" cy="160" r="6"/>
+    <circle cx="210" cy="160" r="6"/>
+    <circle cx="280" cy="160" r="6"/>
+    <circle cx="350" cy="158" r="6"/>
+  </g>
+  <text x="20" y="218" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">单个大的非典型肿瘤细胞从基底层向上穿越整个表皮（见于原位黑色素瘤、Paget 病）</text>
+</svg>

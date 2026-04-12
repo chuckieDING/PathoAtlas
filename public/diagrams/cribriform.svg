@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Cribriform pattern">
+  <rect width="400" height="240" fill="#fdf4ef"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#6d28d9">筛状结构 · Cribriform</text>
+  <g transform="translate(60 50)">
+    <rect x="0" y="0" width="280" height="160" rx="12" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+    <!-- Round sharp-punched holes -->
+    <g fill="#fff" stroke="#7c3aed" stroke-width="1">
+      <circle cx="40" cy="30" r="12"/><circle cx="80" cy="30" r="12"/><circle cx="120" cy="30" r="12"/><circle cx="160" cy="30" r="12"/><circle cx="200" cy="30" r="12"/><circle cx="240" cy="30" r="12"/>
+      <circle cx="40" cy="65" r="12"/><circle cx="80" cy="65" r="12"/><circle cx="120" cy="65" r="12"/><circle cx="160" cy="65" r="12"/><circle cx="200" cy="65" r="12"/><circle cx="240" cy="65" r="12"/>
+      <circle cx="40" cy="100" r="12"/><circle cx="80" cy="100" r="12"/><circle cx="120" cy="100" r="12"/><circle cx="160" cy="100" r="12"/><circle cx="200" cy="100" r="12"/><circle cx="240" cy="100" r="12"/>
+      <circle cx="40" cy="135" r="12"/><circle cx="80" cy="135" r="12"/><circle cx="120" cy="135" r="12"/><circle cx="160" cy="135" r="12"/><circle cx="200" cy="135" r="12"/><circle cx="240" cy="135" r="12"/>
+    </g>
+    <!-- Scattered nuclei in the solid areas -->
+    <g fill="#5b21b6">
+      <circle cx="60" cy="48" r="1.5"/><circle cx="100" cy="48" r="1.5"/><circle cx="140" cy="48" r="1.5"/><circle cx="180" cy="48" r="1.5"/><circle cx="220" cy="48" r="1.5"/>
+      <circle cx="60" cy="82" r="1.5"/><circle cx="100" cy="82" r="1.5"/><circle cx="140" cy="82" r="1.5"/><circle cx="180" cy="82" r="1.5"/><circle cx="220" cy="82" r="1.5"/>
+      <circle cx="60" cy="118" r="1.5"/><circle cx="100" cy="118" r="1.5"/><circle cx="140" cy="118" r="1.5"/><circle cx="180" cy="118" r="1.5"/><circle cx="220" cy="118" r="1.5"/>
+    </g>
+  </g>
+  <text x="20" y="225" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">肿瘤细胞形成多发圆形、边缘光滑的&quot;打洞样&quot;次级腔（Roman bridges）</text>
+</svg>

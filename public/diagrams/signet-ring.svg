@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Signet ring cells">
+  <rect width="400" height="240" fill="#fdf4ef"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626">印戒细胞 · Signet ring cells</text>
+  <g>
+    <!-- Each signet cell: large circle (mucin) with eccentric nucleus -->
+    <g fill="#fde68a" stroke="#dc2626" stroke-width="2">
+      <circle cx="80" cy="110" r="22"/>
+      <circle cx="150" cy="85" r="20"/>
+      <circle cx="210" cy="130" r="24"/>
+      <circle cx="280" cy="95" r="20"/>
+      <circle cx="340" cy="135" r="22"/>
+      <circle cx="110" cy="175" r="20"/>
+      <circle cx="200" cy="195" r="22"/>
+      <circle cx="285" cy="185" r="20"/>
+    </g>
+    <g fill="#7f1d1d">
+      <!-- Crescent-shaped eccentric nuclei -->
+      <path d="M94 102 Q104 100 102 118 Q92 116 94 102 Z"/>
+      <path d="M164 80 Q172 78 170 94 Q160 94 164 80 Z"/>
+      <path d="M228 122 Q236 120 234 140 Q222 140 228 122 Z"/>
+      <path d="M294 90 Q302 88 300 104 Q290 104 294 90 Z"/>
+      <path d="M354 130 Q362 128 360 146 Q350 146 354 130 Z"/>
+      <path d="M124 170 Q132 168 130 184 Q120 184 124 170 Z"/>
+      <path d="M214 190 Q222 188 220 206 Q210 206 214 190 Z"/>
+      <path d="M298 182 Q306 180 304 196 Q294 196 298 182 Z"/>
+    </g>
+  </g>
+  <text x="20" y="225" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">胞浆内充满粘液，将细胞核推向一侧形成印戒样外观</text>
+</svg>

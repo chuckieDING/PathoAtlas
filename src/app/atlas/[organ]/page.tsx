@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getOrgan, getDiseasesByOrgan, getOrgans } from '@/lib/data';
 import { notFound } from 'next/navigation';
+import { OrganIcon } from '@/components/OrganIcon';
 
 export function generateStaticParams() {
   return getOrgans().map(o => ({ organ: o.id }));
@@ -23,13 +24,16 @@ export default async function OrganPage({ params }: { params: Promise<{ organ: s
       <div className="flex items-center gap-2 text-sm mb-6" style={{ color: 'var(--fg-muted)' }}>
         <Link href="/atlas" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>图谱</Link>
         <span>/</span>
-        <span style={{ color: 'var(--fg)' }}>{organ.icon} {organ.nameZh}</span>
+        <span className="flex items-center gap-1.5" style={{ color: 'var(--fg)' }}>
+          <OrganIcon organId={organ.id} size={16} color={organ.color} />
+          {organ.nameZh}
+        </span>
       </div>
 
       {/* Header */}
       <div className="rounded-2xl p-6 mb-8" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
         <div className="flex items-center gap-4 mb-3">
-          <span className="text-5xl">{organ.icon}</span>
+          <OrganIcon organId={organ.id} size={40} color={organ.color} withBackground />
           <div>
             <h1 className="text-2xl font-bold" style={{ color: organ.color }}>{organ.nameZh}</h1>
             <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>{organ.nameEn}</p>

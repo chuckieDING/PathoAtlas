@@ -2,8 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { IconHome, IconMicroscope, IconFlask, IconScale, IconBrain, IconTrophy, IconSearch, IconMenu, IconSun, IconMoon, IconDna } from './Icon';
+import { useEffect, useRef, useState } from 'react';
+import {
+  IconHome, IconMicroscope, IconFlask, IconScale, IconBrain, IconTrophy,
+  IconSearch, IconMenu, IconSun, IconMoon, IconDna, IconInfo, IconHelp,
+  IconGithub, IconX,
+} from './Icon';
 import { NavbarProgress } from './ProgressWidgets';
 
 const NAV = [
@@ -15,12 +19,51 @@ const NAV = [
   { href: '/progress', label: '成就', icon: IconTrophy },
 ];
 
+const MENU_EXTRAS = [
+  { href: '/search', label: '高级搜索', icon: IconSearch },
+  { href: '/progress', label: '学习成就', icon: IconTrophy },
+  { href: '/about', label: '关于项目', icon: IconInfo },
+  { href: '/help', label: '使用帮助', icon: IconHelp },
+  { href: 'https://github.com/chuckieding/pathoatlas', label: 'GitHub 仓库', icon: IconGithub, external: true },
+];
+
 export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Close menu on route change — browser back/forward buttons don't fire our
+  // onClick handlers, so we need to sync menu visibility with the pathname.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMenuOpen(false);
+    setSearchOpen(false);
+  }, [pathname]);
+
+  // Close menu on Escape + click-outside (keeps the button responsive on all screens)
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenuOpen(false); };
+    const handleClick = (e: MouseEvent) => {
+      const t = e.target as Node;
+      if (
+        menuRef.current && !menuRef.current.contains(t) &&
+        menuButtonRef.current && !menuButtonRef.current.contains(t)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    document.addEventListener('mousedown', handleClick);
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.removeEventListener('mousedown', handleClick);
+    };
+  }, [menuOpen]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,11 +89,17 @@ export function Navbar() {
             {NAV.map(({ href, label, icon: Icon }) => {
               const active = href === '/' ? pathname === '/' : pathname.startsWith(href);
               return (
-                <Link key={href} href={href} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-colors" style={{
-                  color: active ? 'var(--fg)' : 'var(--fg-muted)',
-                  background: active ? 'var(--card-hover)' : 'transparent',
-                  textDecoration: 'none',
-                }}>
+                <Link
+                  key={href}
+                  href={href}
+                  aria-current={active ? 'page' : undefined}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-colors"
+                  style={{
+                    color: active ? 'var(--fg)' : 'var(--fg-muted)',
+                    background: active ? 'var(--card-hover)' : 'transparent',
+                    textDecoration: 'none',
+                  }}
+                >
                   <Icon size={16} />
                   <span>{label}</span>
                 </Link>
@@ -60,7 +109,13 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <NavbarProgress />
-            <button onClick={() => setSearchOpen(v => !v)} className="theme-btn" title="搜索" aria-label="搜索">
+            <button
+              onClick={() => setSearchOpen(v => !v)}
+              className="theme-btn"
+              title="搜索"
+              aria-label="搜索"
+              aria-expanded={searchOpen}
+            >
               <IconSearch size={16} />
             </button>
 
@@ -69,8 +124,19 @@ export function Navbar() {
               <span className="theme-icon-moon"><IconMoon size={16} /></span>
             </label>
 
-            <button className="md:hidden theme-btn" onClick={() => setMenuOpen(v => !v)} aria-label="菜单">
-              <IconMenu size={18} />
+            {/* Universal menu button — visible on all breakpoints.
+                Previously marked md:hidden which made it appear unresponsive on desktop. */}
+            <button
+              ref={menuButtonRef}
+              type="button"
+              className="theme-btn"
+              onClick={() => setMenuOpen(v => !v)}
+              aria-label="菜单"
+              aria-haspopup="menu"
+              aria-expanded={menuOpen}
+              aria-controls="primary-menu"
+            >
+              {menuOpen ? <IconX size={18} /> : <IconMenu size={18} />}
             </button>
           </div>
         </div>
@@ -85,26 +151,80 @@ export function Navbar() {
             />
           </form>
         )}
-
-        {menuOpen && (
-          <div className="md:hidden py-2 space-y-0.5" style={{ borderTop: '1px solid var(--border)' }}>
-            {NAV.map(({ href, label, icon: Icon }) => {
-              const active = href === '/' ? pathname === '/' : pathname.startsWith(href);
-              return (
-                <Link key={href} href={href} onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-2.5 px-3 py-3 text-sm rounded-lg" style={{
-                    color: active ? 'var(--fg)' : 'var(--fg-muted)',
-                    background: active ? 'var(--card-hover)' : 'transparent',
-                    textDecoration: 'none',
-                  }}>
-                  <Icon size={18} />
-                  <span>{label}</span>
-                </Link>
-              );
-            })}
-          </div>
-        )}
       </div>
+
+      {/* Dropdown menu panel (outside inner container so it spans full width below nav) */}
+      {menuOpen && (
+        <div
+          ref={menuRef}
+          id="primary-menu"
+          role="menu"
+          className="absolute left-0 right-0 top-14 shadow-xl animate-scale-in"
+          style={{ background: 'var(--card)', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 grid gap-4 md:grid-cols-2">
+            {/* Mobile primary nav — show NAV links on mobile since they're hidden in the top bar */}
+            <div className="md:hidden">
+              <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--fg-muted)' }}>导航</div>
+              <div className="space-y-0.5">
+                {NAV.map(({ href, label, icon: Icon }) => {
+                  const active = href === '/' ? pathname === '/' : pathname.startsWith(href);
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      role="menuitem"
+                      className="flex items-center gap-2.5 px-3 py-3 text-sm rounded-lg"
+                      style={{
+                        color: active ? 'var(--fg)' : 'var(--fg-muted)',
+                        background: active ? 'var(--card-hover)' : 'transparent',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <Icon size={18} />
+                      <span>{label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Extras visible on all screen sizes */}
+            <div>
+              <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--fg-muted)' }}>更多</div>
+              <div className="space-y-0.5">
+                {MENU_EXTRAS.map(({ href, label, icon: Icon, external }) => (
+                  external ? (
+                    <a
+                      key={href}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      role="menuitem"
+                      className="menu-item flex items-center gap-2.5 px-3 py-3 text-sm rounded-lg"
+                      style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}
+                    >
+                      <Icon size={18} />
+                      <span>{label}</span>
+                    </a>
+                  ) : (
+                    <Link
+                      key={href}
+                      href={href}
+                      role="menuitem"
+                      className="menu-item flex items-center gap-2.5 px-3 py-3 text-sm rounded-lg"
+                      style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}
+                    >
+                      <Icon size={18} />
+                      <span>{label}</span>
+                    </Link>
+                  )
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
