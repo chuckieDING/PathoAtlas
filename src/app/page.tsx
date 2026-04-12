@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getOrgans, getStats, getAllDiseases } from '@/lib/data';
-import { IconMicroscope, IconFlask, IconScale, IconBrain, IconTrophy, IconGrid, IconActivity, IconBookOpen } from '@/components/Icon';
+import { IconMicroscope, IconFlask, IconScale, IconBrain, IconGrid, IconActivity, IconBookOpen } from '@/components/Icon';
+import { HomeDashboard } from '@/components/HomeDashboard';
 
 export default function HomePage() {
   const organs = getOrgans();
@@ -18,6 +19,9 @@ export default function HomePage() {
           全面覆盖{stats.organCount}大器官系统、{stats.diseaseCount}+种疾病、{stats.markerCount}+个免疫组化标记物的结构化病理学学习平台
         </p>
       </div>
+
+      {/* User Progress Dashboard */}
+      <HomeDashboard />
 
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
