@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="CD56 mechanism: NCAM adhesion molecule">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">CD56 (NCAM) · 神经细胞黏附分子</text>
+
+  <!-- Two neighboring cells with NCAM on both -->
+  <g>
+    <circle cx="120" cy="150" r="65" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.8"/>
+    <text x="120" y="90" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#3730a3" font-weight="700">NK / NE 细胞 A</text>
+  </g>
+  <g>
+    <circle cx="300" cy="150" r="65" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.8"/>
+    <text x="300" y="90" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#3730a3" font-weight="700">NK / NE 细胞 B</text>
+  </g>
+
+  <!-- NCAM receptors Ig-like domains extending toward each other -->
+  <g>
+    <!-- Cell A receptors (5 Ig + 2 FN3) -->
+    <g transform="translate(180 125)">
+      <!-- Vertical stack of 5 Ig rings + 2 boxes -->
+      <circle r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-10" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-20" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-30" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-40" r="5" fill="#22d3ee" stroke="#0e7490"/>
+    </g>
+    <g transform="translate(180 155)">
+      <circle r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-10" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-20" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-30" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-40" r="5" fill="#22d3ee" stroke="#0e7490"/>
+    </g>
+
+    <!-- Cell B receptors -->
+    <g transform="translate(240 125)">
+      <circle r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-10" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-20" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-30" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-40" r="5" fill="#22d3ee" stroke="#0e7490"/>
+    </g>
+    <g transform="translate(240 155)">
+      <circle r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-10" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-20" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-30" r="5" fill="#22d3ee" stroke="#0e7490"/>
+      <circle cx="0" cy="-40" r="5" fill="#22d3ee" stroke="#0e7490"/>
+    </g>
+  </g>
+
+  <!-- Homophilic binding -->
+  <g stroke="#0e7490" stroke-width="1.5" stroke-dasharray="3 2">
+    <line x1="187" y1="85" x2="235" y2="85"/>
+    <line x1="187" y1="115" x2="235" y2="115"/>
+    <line x1="187" y1="195" x2="235" y2="195"/>
+  </g>
+
+  <!-- Polysialic acid decoration (PSA-NCAM) -->
+  <g fill="#a855f7" opacity="0.7">
+    <circle cx="200" cy="78" r="3"/>
+    <circle cx="210" cy="76" r="3"/>
+    <circle cx="220" cy="78" r="3"/>
+    <circle cx="205" cy="108" r="3"/>
+    <circle cx="215" cy="108" r="3"/>
+  </g>
+  <text x="210" y="65" font-family="system-ui, sans-serif" font-size="7" text-anchor="middle" fill="#6b21a8" font-weight="700">PSA 长链</text>
+
+  <text x="16" y="245" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    同源亲和黏附分子；NK/T 系 · 神经内分泌 (SCLC/NET) · 髓母细胞瘤 · 多发性骨髓瘤可阳性
+  </text>
+</svg>

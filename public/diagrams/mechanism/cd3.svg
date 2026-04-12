@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="CD3 mechanism: T-cell receptor complex">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">CD3 · TCR 信号复合体 (pan-T)</text>
+
+  <!-- Extracellular / membrane / cytoplasm bands -->
+  <rect x="0" y="40" width="420" height="60" fill="#dbeafe" opacity="0.45"/>
+  <text x="405" y="58" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#1d4ed8">细胞外</text>
+  <rect x="0" y="100" width="420" height="22" fill="#fcd34d"/>
+  <rect x="0" y="122" width="420" height="138" fill="#fff7ed" opacity="0.5"/>
+  <text x="405" y="138" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#9a3412">胞内</text>
+
+  <!-- TCR α/β chains -->
+  <g>
+    <path d="M170 60 L170 100" stroke="#7c3aed" stroke-width="8" stroke-linecap="round"/>
+    <path d="M200 60 L200 100" stroke="#7c3aed" stroke-width="8" stroke-linecap="round"/>
+    <text x="185" y="74" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#fff" font-weight="700">TCR</text>
+    <text x="185" y="86" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#fff" font-weight="700">α β</text>
+  </g>
+
+  <!-- CD3 chains ε γ ε δ around TCR -->
+  <g stroke="#0284c7" stroke-width="6" stroke-linecap="round">
+    <path d="M130 70 L130 100"/>
+    <path d="M150 65 L150 100"/>
+    <path d="M220 65 L220 100"/>
+    <path d="M240 70 L240 100"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="7" text-anchor="middle" fill="#075985" font-weight="700">
+    <text x="130" y="96">ε</text><text x="150" y="96">γ</text>
+    <text x="220" y="96">δ</text><text x="240" y="96">ε</text>
+  </g>
+
+  <!-- ζ-ζ homodimer intracellularly extending down -->
+  <g stroke="#1e40af" stroke-width="5" stroke-linecap="round">
+    <path d="M175 122 L175 190"/>
+    <path d="M195 122 L195 190"/>
+  </g>
+  <g fill="#fbbf24" stroke="#d97706">
+    <circle cx="175" cy="155" r="5"/>
+    <circle cx="195" cy="155" r="5"/>
+    <circle cx="175" cy="180" r="5"/>
+    <circle cx="195" cy="180" r="5"/>
+  </g>
+  <text x="250" y="160" font-family="system-ui, sans-serif" font-size="8" fill="#1e40af" font-weight="700">CD3ζ · ITAM 磷酸化</text>
+  <text x="250" y="172" font-family="system-ui, sans-serif" font-size="8" fill="#1e3a8a">→ Lck → Zap70 → LAT</text>
+
+  <!-- CD3 label box -->
+  <g transform="translate(40 215)">
+    <rect width="220" height="22" rx="5" fill="#fff" stroke="#0284c7" stroke-width="1.3"/>
+    <text x="110" y="15" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#075985" font-weight="700">CD3 胞浆+膜染色 · 所有 T 系阳性</text>
+  </g>
+
+  <text x="16" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    CD3εγδ 亚基形成 TCR 协同受体，核心 T 细胞谱系标记；外周 T 细胞淋巴瘤首选
+  </text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="HMB-45 mechanism: premelanosome gp100/PMEL protein">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">HMB-45 · 前黑素体 gp100/PMEL 抗原</text>
+
+  <!-- Melanocyte outline -->
+  <ellipse cx="210" cy="150" rx="160" ry="80" fill="#fef3c7" stroke="#78350f" stroke-width="1.8"/>
+  <ellipse cx="120" cy="150" rx="20" ry="16" fill="#fde68a" stroke="#78350f" stroke-width="1.3"/>
+  <text x="120" y="153" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#78350f" font-weight="700">核</text>
+
+  <!-- Melanosome maturation stages -->
+  <g>
+    <!-- Stage I - amorphous vacuole -->
+    <circle cx="195" cy="110" r="12" fill="#fde68a" stroke="#a16207" stroke-width="1.3"/>
+    <text x="195" y="93" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#78350f" font-weight="700">Ⅰ</text>
+
+    <!-- Stage II - striped fibrils (HMB-45 peak) -->
+    <g transform="translate(245 110)">
+      <ellipse rx="15" ry="11" fill="#fef9c3" stroke="#dc2626" stroke-width="2"/>
+      <line x1="-10" y1="-2" x2="10" y2="-2" stroke="#b91c1c" stroke-width="1"/>
+      <line x1="-10" y1="2" x2="10" y2="2" stroke="#b91c1c" stroke-width="1"/>
+      <line x1="-10" y1="6" x2="10" y2="6" stroke="#b91c1c" stroke-width="1"/>
+      <line x1="-10" y1="-6" x2="10" y2="-6" stroke="#b91c1c" stroke-width="1"/>
+      <text y="-19" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#78350f" font-weight="700">Ⅱ</text>
+    </g>
+    <text x="245" y="140" font-family="system-ui, sans-serif" font-size="7" text-anchor="middle" fill="#dc2626" font-weight="700">HMB-45⁺</text>
+
+    <!-- Stage III - partial melanin deposition -->
+    <g transform="translate(300 110)">
+      <ellipse rx="15" ry="11" fill="#a3a3a3" stroke="#78350f" stroke-width="1.3"/>
+      <ellipse rx="8" ry="6" fill="#451a03"/>
+      <text y="-19" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#78350f" font-weight="700">Ⅲ</text>
+    </g>
+
+    <!-- Stage IV - fully melanized (HMB-45 lost) -->
+    <g transform="translate(355 110)">
+      <ellipse rx="15" ry="11" fill="#1c1917" stroke="#292524" stroke-width="1.3"/>
+      <text y="-19" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#78350f" font-weight="700">Ⅳ</text>
+    </g>
+    <text x="355" y="140" font-family="system-ui, sans-serif" font-size="7" text-anchor="middle" fill="#57534e">成熟黑素体</text>
+  </g>
+
+  <!-- Arrow flow -->
+  <g stroke="#78350f" stroke-width="1.2" fill="none" stroke-dasharray="2 2">
+    <path d="M208 110 L230 110"/>
+    <path d="M260 110 L285 110"/>
+    <path d="M315 110 L340 110"/>
+  </g>
+
+  <!-- Activation pattern box -->
+  <g transform="translate(180 180)">
+    <rect width="160" height="22" rx="5" fill="#fff" stroke="#dc2626" stroke-width="1.3"/>
+    <text x="80" y="15" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#7f1d1d" font-weight="700">胞浆颗粒状 (Ⅱ 期黑素体)</text>
+  </g>
+
+  <text x="16" y="248" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    gp100/PMEL17 前黑素体基质；比 S-100 更特异，梭形细胞黑色素瘤可阴性；PEComa 亦阳性
+  </text>
+</svg>

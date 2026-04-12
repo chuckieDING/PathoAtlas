@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="CK19 mechanism: biliary and papillary thyroid carcinoma">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">CK19 · 胆管/甲状腺乳头癌标记</text>
+
+  <!-- Left: bile duct (small round duct) -->
+  <g>
+    <text x="100" y="48" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#15803d" font-weight="700">胆管</text>
+    <circle cx="100" cy="130" r="70" fill="#fef9c3" stroke="#a16207" stroke-width="1.3"/>
+    <circle cx="100" cy="130" r="32" fill="#fff7ed" stroke="#b45309" stroke-width="1.2"/>
+    <text x="100" y="134" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#78350f">胆汁</text>
+    <!-- cuboidal epithelium with CK19 filaments -->
+    <g fill="#fde68a" stroke="#92400e" stroke-width="1.1">
+      <rect x="60" y="80" width="18" height="18" rx="3"/>
+      <rect x="92" y="68" width="18" height="18" rx="3"/>
+      <rect x="124" y="80" width="18" height="18" rx="3"/>
+      <rect x="148" y="110" width="18" height="18" rx="3"/>
+      <rect x="148" y="145" width="18" height="18" rx="3"/>
+      <rect x="124" y="172" width="18" height="18" rx="3"/>
+      <rect x="92" y="182" width="18" height="18" rx="3"/>
+      <rect x="60" y="172" width="18" height="18" rx="3"/>
+      <rect x="36" y="145" width="18" height="18" rx="3"/>
+      <rect x="36" y="110" width="18" height="18" rx="3"/>
+    </g>
+    <g stroke="#dc2626" stroke-width="1" fill="none">
+      <line x1="69" y1="84" x2="69" y2="95"/>
+      <line x1="101" y1="72" x2="101" y2="83"/>
+      <line x1="133" y1="84" x2="133" y2="95"/>
+      <line x1="157" y1="114" x2="157" y2="125"/>
+      <line x1="69" y1="176" x2="69" y2="187"/>
+      <line x1="101" y1="186" x2="101" y2="197"/>
+    </g>
+  </g>
+
+  <!-- Right: papillary thyroid carcinoma papilla -->
+  <g>
+    <text x="300" y="48" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#be185d" font-weight="700">甲状腺乳头癌</text>
+    <!-- fibrovascular core -->
+    <path d="M300 210 Q260 140 280 90 Q305 70 330 90 Q350 140 300 210 Z" fill="#fbcfe8" stroke="#9f1239" stroke-width="1.3"/>
+    <!-- vessel -->
+    <path d="M305 200 Q295 150 305 110" stroke="#b91c1c" stroke-width="2" fill="none"/>
+    <!-- epithelial lining (nuclei are overlapping grooved — suggested) -->
+    <g fill="#fce7f3" stroke="#be185d" stroke-width="1.1">
+      <ellipse cx="270" cy="110" rx="10" ry="6"/>
+      <ellipse cx="280" cy="128" rx="10" ry="6"/>
+      <ellipse cx="270" cy="145" rx="10" ry="6"/>
+      <ellipse cx="280" cy="162" rx="10" ry="6"/>
+      <ellipse cx="275" cy="180" rx="10" ry="6"/>
+      <ellipse cx="330" cy="110" rx="10" ry="6"/>
+      <ellipse cx="320" cy="128" rx="10" ry="6"/>
+      <ellipse cx="330" cy="145" rx="10" ry="6"/>
+      <ellipse cx="320" cy="162" rx="10" ry="6"/>
+      <ellipse cx="325" cy="180" rx="10" ry="6"/>
+    </g>
+    <!-- overlapping nuclei (Orphan Annie / grooves suggestion) -->
+    <g fill="#4a044e">
+      <circle cx="270" cy="110" r="2.5"/><circle cx="280" cy="128" r="2.5"/>
+      <circle cx="270" cy="145" r="2.5"/><circle cx="280" cy="162" r="2.5"/>
+      <circle cx="275" cy="180" r="2.5"/>
+      <circle cx="330" cy="110" r="2.5"/><circle cx="320" cy="128" r="2.5"/>
+      <circle cx="330" cy="145" r="2.5"/><circle cx="320" cy="162" r="2.5"/>
+      <circle cx="325" cy="180" r="2.5"/>
+    </g>
+  </g>
+
+  <!-- Arrow linking both to CK19 label -->
+  <g transform="translate(180 50)">
+    <rect width="60" height="22" rx="5" fill="#fff" stroke="#dc2626" stroke-width="1.3"/>
+    <text x="30" y="15" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#7f1d1d" font-weight="700">CK19⁺</text>
+  </g>
+
+  <text x="16" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    胆管细胞/肝内胆管癌 · 甲状腺乳头癌 (PTC) 阳性, 良性滤泡病变阴性 → 鉴别要点
+  </text>
+</svg>

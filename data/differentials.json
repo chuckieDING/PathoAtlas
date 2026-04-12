@@ -59,7 +59,7 @@
     "titleEn": "Triple Negative Breast Cancer vs Metastases",
     "description": "ER/PR/HER2均阴性的乳腺癌需与非乳腺来源的转移癌及其他原发性肿瘤鉴别",
     "diseases": ["triple-negative-breast-carcinoma", "high-grade-serous-ovarian-carcinoma", "lung-adenocarcinoma", "urothelial-carcinoma", "squamous-cell-carcinoma", "melanoma"],
-    "keyMarkers": ["GATA3", "Mammaglobin", "GCDFP-15", "SOX10", "CK5/6", "EGFR", "TTF-1", "PAX8", "WT1", "GATA3", "Uroplakin", "P40", "S-100"],
+    "keyMarkers": ["GATA3", "Mammaglobin", "GCDFP-15", "SOX10", "CK5/6", "EGFR", "TTF-1", "PAX8", "WT1", "Uroplakin", "P40", "S-100"],
     "algorithm": "GATA3+（约60-70%三阴性乳腺癌阳性）最为可靠；Mammaglobin+/GCDFP-15+支持乳腺来源但敏感性较低；SOX10+常见于基底样三阴性乳腺癌（需排除黑色素瘤：乳腺癌CK+/S-100通常-）；注意GATA3也可阳性于尿路上皮癌，需结合临床和其他标记物；TTF-1+/Napsin A+排除乳腺来源指向肺；PAX8+/WT1+指向卵巢浆液性癌"
   },
   {

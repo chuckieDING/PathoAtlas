@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="BCL6 mechanism: germinal center transcription factor">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">BCL6 · 生发中心核转录因子</text>
+
+  <!-- Germinal center B cell -->
+  <circle cx="210" cy="150" r="95" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+  <ellipse cx="210" cy="150" rx="60" ry="50" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+  <text x="210" y="65" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#78350f" font-weight="700">GC B 细胞 (DLBCL-GCB)</text>
+
+  <!-- Nuclear BCL6 dots -->
+  <g fill="#7c3aed">
+    <circle cx="180" cy="130" r="2.5"/>
+    <circle cx="195" cy="135" r="2.5"/>
+    <circle cx="210" cy="128" r="2.5"/>
+    <circle cx="225" cy="135" r="2.5"/>
+    <circle cx="240" cy="130" r="2.5"/>
+    <circle cx="185" cy="150" r="2.5"/>
+    <circle cx="200" cy="155" r="2.5"/>
+    <circle cx="215" cy="152" r="2.5"/>
+    <circle cx="230" cy="155" r="2.5"/>
+    <circle cx="245" cy="150" r="2.5"/>
+    <circle cx="180" cy="172" r="2.5"/>
+    <circle cx="195" cy="175" r="2.5"/>
+    <circle cx="210" cy="172" r="2.5"/>
+    <circle cx="225" cy="175" r="2.5"/>
+    <circle cx="240" cy="172" r="2.5"/>
+  </g>
+
+  <!-- BCL6 repressor function - suppresses target genes -->
+  <g>
+    <!-- DNA strands with repressed targets -->
+    <g stroke="#0f766e" stroke-width="1.4" fill="none">
+      <path d="M165 195 Q210 188 255 195"/>
+      <path d="M165 200 Q210 193 255 200"/>
+    </g>
+    <text x="210" y="215" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#0f766e" font-weight="700">靶基因启动子</text>
+  </g>
+
+  <!-- Repression bars -->
+  <g stroke="#dc2626" stroke-width="2.5" fill="none">
+    <line x1="175" y1="186" x2="175" y2="196"/>
+    <line x1="170" y1="192" x2="180" y2="192"/>
+    <line x1="245" y1="186" x2="245" y2="196"/>
+    <line x1="240" y1="192" x2="250" y2="192"/>
+  </g>
+
+  <!-- Labels of suppressed genes -->
+  <g font-family="system-ui, sans-serif" font-size="7" fill="#991b1b">
+    <text x="110" y="105">⊖ p53</text>
+    <text x="110" y="120">⊖ CDKN1A</text>
+    <text x="295" y="105">⊖ PRDM1</text>
+    <text x="295" y="120">⊖ Blimp-1</text>
+  </g>
+
+  <!-- POZ/BTB domain label -->
+  <g transform="translate(148 85)">
+    <rect width="124" height="16" rx="4" fill="#fff" stroke="#7c3aed" stroke-width="1.2"/>
+    <text x="62" y="12" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#5b21b6" font-weight="700">POZ/BTB + 锌指 (ZBTB27)</text>
+  </g>
+
+  <text x="16" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    核着色模式；GCB-DLBCL 分型 (CD10+/BCL6+/MUM1-) 核心；FL/BL 阳性；经典 HL 阴性
+  </text>
+</svg>

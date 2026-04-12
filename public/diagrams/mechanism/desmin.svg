@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="Desmin mechanism: muscle intermediate filaments at Z-discs">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">Desmin · 肌细胞中间丝 (Z 线连接)</text>
+
+  <!-- Striated muscle fiber outline -->
+  <rect x="20" y="70" width="380" height="140" rx="12" fill="#fee2e2" stroke="#991b1b" stroke-width="1.8"/>
+
+  <!-- Sarcomeres with Z-discs -->
+  <g stroke="#7f1d1d" stroke-width="3">
+    <line x1="60" y1="80" x2="60" y2="200"/>
+    <line x1="120" y1="80" x2="120" y2="200"/>
+    <line x1="180" y1="80" x2="180" y2="200"/>
+    <line x1="240" y1="80" x2="240" y2="200"/>
+    <line x1="300" y1="80" x2="300" y2="200"/>
+    <line x1="360" y1="80" x2="360" y2="200"/>
+  </g>
+  <!-- A-bands (darker) within each sarcomere -->
+  <g fill="#fca5a5" stroke="#b91c1c" stroke-width="0.8">
+    <rect x="75" y="95" width="30" height="95" rx="2"/>
+    <rect x="135" y="95" width="30" height="95" rx="2"/>
+    <rect x="195" y="95" width="30" height="95" rx="2"/>
+    <rect x="255" y="95" width="30" height="95" rx="2"/>
+    <rect x="315" y="95" width="30" height="95" rx="2"/>
+  </g>
+
+  <!-- M-line in middle of each A-band -->
+  <g stroke="#7f1d1d" stroke-width="1" stroke-dasharray="2 2">
+    <line x1="90" y1="95" x2="90" y2="190"/>
+    <line x1="150" y1="95" x2="150" y2="190"/>
+    <line x1="210" y1="95" x2="210" y2="190"/>
+    <line x1="270" y1="95" x2="270" y2="190"/>
+    <line x1="330" y1="95" x2="330" y2="190"/>
+  </g>
+
+  <!-- Desmin filaments linking Z-discs horizontally across sarcomeres -->
+  <g stroke="#b45309" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-dasharray="2 3">
+    <path d="M25 115 L395 115"/>
+    <path d="M25 145 L395 145"/>
+    <path d="M25 175 L395 175"/>
+  </g>
+
+  <!-- Z-disc labels -->
+  <g font-family="system-ui, sans-serif" font-size="8" fill="#7f1d1d" text-anchor="middle">
+    <text x="60" y="75">Z</text>
+    <text x="120" y="75">Z</text>
+    <text x="180" y="75">Z</text>
+    <text x="240" y="75">Z</text>
+    <text x="300" y="75">Z</text>
+    <text x="360" y="75">Z</text>
+  </g>
+
+  <!-- Label box -->
+  <g transform="translate(280 218)">
+    <rect width="120" height="20" rx="5" fill="#fff" stroke="#b45309" stroke-width="1.3"/>
+    <text x="60" y="14" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#7c2d12" font-weight="700">Desmin 中间丝</text>
+  </g>
+
+  <text x="16" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    骨骼肌 / 心肌 / 平滑肌阳性；肌上皮常阴性 (区别于 SMA)；横纹肌肉瘤必测标记
+  </text>
+</svg>

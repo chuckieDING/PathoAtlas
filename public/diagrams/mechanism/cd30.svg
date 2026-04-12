@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="CD30 mechanism: TNFR superfamily, Hodgkin and ALCL marker">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">CD30 (TNFRSF8) · cHL / ALCL 活化标记</text>
+
+  <!-- Reed-Sternberg-like cell -->
+  <g>
+    <circle cx="150" cy="145" r="80" fill="#fecaca" stroke="#991b1b" stroke-width="2"/>
+    <!-- Binucleated appearance -->
+    <ellipse cx="120" cy="135" rx="20" ry="17" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1.4"/>
+    <ellipse cx="180" cy="135" rx="20" ry="17" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1.4"/>
+    <circle cx="120" cy="135" r="7" fill="#7f1d1d"/>
+    <circle cx="180" cy="135" r="7" fill="#7f1d1d"/>
+    <text x="150" y="105" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#7f1d1d" font-weight="700">R-S / 变异型</text>
+
+    <!-- CD30 receptors on membrane - Golgi/membrane pattern -->
+    <g fill="#0ea5e9" stroke="#075985" stroke-width="1.1">
+      <rect x="85" y="78" width="7" height="12" rx="1.2"/>
+      <rect x="113" y="70" width="7" height="12" rx="1.2"/>
+      <rect x="148" y="67" width="7" height="12" rx="1.2"/>
+      <rect x="184" y="70" width="7" height="12" rx="1.2"/>
+      <rect x="213" y="78" width="7" height="12" rx="1.2"/>
+      <rect x="60" y="130" width="7" height="12" rx="1.2"/>
+      <rect x="230" y="130" width="7" height="12" rx="1.2"/>
+      <rect x="85" y="197" width="7" height="12" rx="1.2"/>
+      <rect x="113" y="205" width="7" height="12" rx="1.2"/>
+      <rect x="148" y="208" width="7" height="12" rx="1.2"/>
+      <rect x="184" y="205" width="7" height="12" rx="1.2"/>
+      <rect x="213" y="197" width="7" height="12" rx="1.2"/>
+    </g>
+    <!-- Golgi dot -->
+    <circle cx="150" cy="175" r="7" fill="#0ea5e9" stroke="#075985" stroke-width="1.3"/>
+    <text x="150" y="178" font-family="system-ui, sans-serif" font-size="6" text-anchor="middle" fill="#fff" font-weight="700">Golgi</text>
+  </g>
+
+  <!-- Right: brentuximab vedotin (ADC) -->
+  <g>
+    <text x="320" y="58" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#065f46" font-weight="700">Brentuximab-vedotin</text>
+    <g transform="translate(300 70)">
+      <path d="M0 10 L10 30 L20 10" stroke="#047857" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M10 30 L10 55" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+      <!-- MMAE payload -->
+      <circle cx="10" cy="65" r="8" fill="#dc2626" stroke="#7f1d1d" stroke-width="1.3"/>
+      <text x="10" y="68" font-family="system-ui, sans-serif" font-size="7" text-anchor="middle" fill="#fff" font-weight="700">MMAE</text>
+    </g>
+    <path d="M290 85 Q250 85 225 85" stroke="#047857" stroke-width="1.3" fill="none" stroke-dasharray="3 2"/>
+    <text x="320" y="160" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#065f46" font-weight="700">ADC → 内吞</text>
+    <text x="320" y="174" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#14532d">→ 微管毒素释放</text>
+  </g>
+
+  <text x="16" y="248" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    cHL (R-S 细胞) · ALK+/- ALCL · 部分 DLBCL/EATL · 胚胎癌 · Golgi/膜 特征性着色
+  </text>
+</svg>
