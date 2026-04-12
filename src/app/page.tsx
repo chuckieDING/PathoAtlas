@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getOrgans, getStats, getAllDiseases } from '@/lib/data';
+import { IconMicroscope, IconFlask, IconScale, IconBrain, IconTrophy, IconGrid, IconActivity, IconBookOpen } from '@/components/Icon';
 
 export default function HomePage() {
   const organs = getOrgans();
@@ -11,7 +12,7 @@ export default function HomePage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
       {/* Hero */}
       <div className="text-center py-12 sm:py-16">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: 'var(--fg)' }}>🧬 PathoAtlas</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: 'var(--fg)' }}>PathoAtlas</h1>
         <p className="text-lg mb-2" style={{ color: 'var(--fg-muted)' }}>病理知识图谱</p>
         <p className="text-sm max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
           全面覆盖{stats.organCount}大器官系统、{stats.diseaseCount}+种疾病、{stats.markerCount}+个免疫组化标记物的结构化病理学学习平台
@@ -21,14 +22,14 @@ export default function HomePage() {
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
         {[
-          { label: '器官系统', value: stats.organCount, icon: '🏥', color: '#6366f1' },
-          { label: '疾病病种', value: stats.diseaseCount, icon: '📋', color: '#22c55e' },
-          { label: '免疫标记物', value: stats.markerCount, icon: '🧪', color: '#f59e0b' },
-          { label: '鉴别诊断', value: stats.differentialCount, icon: '⚖️', color: '#ec4899' },
+          { label: '器官系统', value: stats.organCount, Icon: IconGrid, color: '#6366f1' },
+          { label: '疾病病种', value: stats.diseaseCount, Icon: IconBookOpen, color: '#22c55e' },
+          { label: '免疫标记物', value: stats.markerCount, Icon: IconFlask, color: '#f59e0b' },
+          { label: '鉴别诊断', value: stats.differentialCount, Icon: IconScale, color: '#ec4899' },
         ].map(s => (
-          <div key={s.label} className="rounded-xl p-4 text-center" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-            <div className="text-2xl mb-1">{s.icon}</div>
-            <div className="text-2xl font-bold" style={{ color: s.color }}>{s.value}</div>
+          <div key={s.label} className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+            <s.Icon size={22} style={{ color: s.color }} />
+            <div className="text-2xl font-bold mt-2" style={{ color: s.color }}>{s.value}</div>
             <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>{s.label}</div>
           </div>
         ))}
@@ -38,14 +39,16 @@ export default function HomePage() {
       <h2 className="text-lg font-bold mb-4" style={{ color: 'var(--fg)' }}>学习模块</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
         {[
-          { href: '/atlas', icon: '🔬', title: '病理图谱', desc: '按器官系统浏览疾病，学习形态学特征', color: '#6366f1' },
-          { href: '/markers', icon: '🧪', title: '标记物数据库', desc: '50+常用免疫组化标记物的判读与应用', color: '#22c55e' },
-          { href: '/differentials', icon: '⚖️', title: '鉴别诊断', desc: '常见鉴别诊断场景与标记物组合策略', color: '#f59e0b' },
-          { href: '/review', icon: '📝', title: '复习测验', desc: '随机抽取知识点进行闪卡式复习', color: '#ec4899' },
+          { href: '/atlas', Icon: IconMicroscope, title: '病理图谱', desc: '按器官系统浏览疾病，学习形态学特征', color: '#6366f1' },
+          { href: '/markers', Icon: IconFlask, title: '标记物数据库', desc: '50+常用免疫组化标记物的判读与应用', color: '#22c55e' },
+          { href: '/differentials', Icon: IconScale, title: '鉴别诊断', desc: '常见鉴别诊断场景与标记物组合策略', color: '#f59e0b' },
+          { href: '/review', Icon: IconBrain, title: '复习测验', desc: '随机抽取知识点进行闪卡式复习', color: '#ec4899' },
         ].map(m => (
           <Link key={m.href} href={m.href} className="rounded-xl p-5 border transition-all hover:shadow-lg"
             style={{ background: 'var(--card)', borderColor: 'var(--border)', textDecoration: 'none' }}>
-            <div className="text-3xl mb-3">{m.icon}</div>
+            <div className="rounded-lg p-2.5 w-fit mb-3" style={{ background: m.color + '18', color: m.color }}>
+              <m.Icon size={22} />
+            </div>
             <div className="font-semibold text-sm mb-1" style={{ color: m.color }}>{m.title}</div>
             <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{m.desc}</p>
           </Link>
@@ -72,7 +75,10 @@ export default function HomePage() {
       {/* Featured Diseases */}
       {featured.length > 0 && (
         <>
-          <h2 className="text-lg font-bold mb-4" style={{ color: 'var(--fg)' }}>常见恶性肿瘤</h2>
+          <h2 className="text-lg font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
+            <IconActivity size={18} />
+            <span>常见恶性肿瘤</span>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {featured.map(d => {
               const organ = organs.find(o => o.id === d.organ);

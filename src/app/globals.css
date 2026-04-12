@@ -73,8 +73,8 @@ body, nav, main, .card-transition {
   cursor: pointer; transition: all 0.2s ease;
 }
 .theme-btn:hover { border-color: var(--accent); color: var(--fg); background: var(--card-hover); }
-.theme-icon-sun { display: flex !important; }
-.theme-icon-moon { display: none !important; }
+.theme-icon-sun { display: flex !important; align-items: center; justify-content: center; }
+.theme-icon-moon { display: none !important; align-items: center; justify-content: center; }
 :root:has(#theme-toggle:checked) .theme-icon-sun { display: none !important; }
 :root:has(#theme-toggle:checked) .theme-icon-moon { display: flex !important; }
 
