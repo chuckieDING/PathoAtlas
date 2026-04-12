@@ -2,6 +2,10 @@
 
 import { useEffect, useState, use } from 'react';
 import Link from 'next/link';
+import { recordDiseaseStudy } from '@/lib/progress';
+import { useProgress } from '@/components/useProgress';
+import { MasteryDots } from '@/components/ProgressWidgets';
+import { IconCheckCircle, IconZap } from '@/components/Icon';
 
 interface IHCItem { marker: string; result: string; note: string }
 interface DiseaseData {
@@ -25,6 +29,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   const [diffDiseases, setDiffDiseases] = useState<DiffDisease[]>([]);
   const [tab, setTab] = useState<Tab>('overview');
   const [loading, setLoading] = useState(true);
+  const [xpToast, setXpToast] = useState<number | null>(null);
+  const progress = useProgress();
+  const mastery = progress?.diseaseMastery[diseaseId];
 
   useEffect(() => {
     Promise.all([
@@ -39,6 +46,16 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           .then(r => r.json()).then(setDiffDiseases).catch(() => {});
       }
       setLoading(false);
+
+      // Record study after successful load (triggers XP + streak)
+      if (diseaseData) {
+        const wasStudiedBefore = typeof window !== 'undefined' &&
+          JSON.parse(localStorage.getItem('pathoatlas-progress') || '{}')?.diseaseMastery?.[diseaseId];
+        recordDiseaseStudy(diseaseId);
+        const gained = wasStudiedBefore ? 5 : 10;
+        setXpToast(gained);
+        setTimeout(() => setXpToast(null), 2500);
+      }
     }).catch(() => setLoading(false));
   }, [organ, diseaseId]);
 
@@ -81,9 +98,28 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
               </div>
             )}
           </div>
-          <span className={`badge badge-${d.category}`}>{categoryBadge}</span>
+          <div className="flex flex-col items-end gap-2">
+            <span className={`badge badge-${d.category}`}>{categoryBadge}</span>
+            {mastery && (
+              <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--fg-muted)' }}>
+                <IconCheckCircle size={14} style={{ color: '#22c55e' }} />
+                <span>掌握度</span>
+                <MasteryDots level={mastery.mastery} />
+                <span className="tabular-nums">学习 {mastery.studyCount} 次</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
+
+      {/* XP Toast */}
+      {xpToast !== null && (
+        <div className="fixed top-20 right-4 z-50 flex items-center gap-2 rounded-xl px-4 py-3 shadow-lg animate-slide-in"
+          style={{ background: 'var(--card)', border: '1px solid var(--accent)', color: 'var(--fg)' }}>
+          <IconZap size={18} style={{ color: 'var(--accent)' }} />
+          <span className="text-sm font-bold">+{xpToast} XP</span>
+        </div>
+      )}
 
       {/* Tabs */}
       <div className="flex gap-1 overflow-x-auto mb-6" style={{ borderBottom: '1px solid var(--border)' }}>
