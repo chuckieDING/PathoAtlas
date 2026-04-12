@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import { getOrgans, getDiseasesByOrgan } from '@/lib/data';
+import { IconMicroscope } from '@/components/Icon';
 
 export default function AtlasPage() {
   const organs = getOrgans();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>🔬 病理图谱</h1>
+      <h1 className="text-2xl font-bold mb-2 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
+        <IconMicroscope size={24} style={{ color: '#6366f1' }} />
+        <span>病理图谱</span>
+      </h1>
       <p className="text-sm mb-8" style={{ color: 'var(--fg-muted)' }}>选择器官系统，浏览相关疾病的病理学特征</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

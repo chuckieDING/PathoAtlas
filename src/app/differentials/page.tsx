@@ -1,12 +1,16 @@
 import { getDifferentials } from '@/lib/data';
 import Link from 'next/link';
+import { IconScale } from '@/components/Icon';
 
 export default function DifferentialsPage() {
   const diffs = getDifferentials();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>⚖️ 鉴别诊断</h1>
+      <h1 className="text-2xl font-bold mb-2 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
+        <IconScale size={24} style={{ color: '#f59e0b' }} />
+        <span>鉴别诊断</span>
+      </h1>
       <p className="text-sm mb-8" style={{ color: 'var(--fg-muted)' }}>
         常见鉴别诊断场景与免疫组化标记物组合策略，{diffs.length} 个临床场景
       </p>

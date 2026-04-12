@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { IconFlask } from '@/components/Icon';
 
 interface Marker {
   id: string; nameZh: string; nameEn: string; abbreviation: string; category: string;
@@ -51,7 +51,10 @@ export default function MarkersPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>🧪 免疫组化标记物数据库</h1>
+      <h1 className="text-2xl font-bold mb-2 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
+        <IconFlask size={24} style={{ color: '#22c55e' }} />
+        <span>免疫组化标记物数据库</span>
+      </h1>
       <p className="text-sm mb-6" style={{ color: 'var(--fg-muted)' }}>
         {markers.length} 个常用标记物的详细判读标准与临床应用
       </p>

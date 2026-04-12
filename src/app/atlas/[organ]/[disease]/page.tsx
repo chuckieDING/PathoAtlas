@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { recordDiseaseStudy } from '@/lib/progress';
 import { useProgress } from '@/components/useProgress';
 import { MasteryDots } from '@/components/ProgressWidgets';
-import { IconCheckCircle, IconZap } from '@/components/Icon';
+import { IconCheckCircle, IconZap, IconSearch } from '@/components/Icon';
 
 interface IHCItem { marker: string; result: string; note: string }
 interface DiseaseData {
@@ -60,7 +60,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   }, [organ, diseaseId]);
 
   if (loading) return <div className="flex items-center justify-center h-96"><div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div></div>;
-  if (!d) return <div className="text-center py-16"><div className="text-4xl mb-4">🔍</div><p style={{ color: 'var(--fg-muted)' }}>疾病未找到</p><Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link></div>;
+  if (!d) return <div className="text-center py-16"><div className="flex justify-center mb-4" style={{ color: 'var(--fg-muted)' }}><IconSearch size={36} /></div><p style={{ color: 'var(--fg-muted)' }}>疾病未找到</p><Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link></div>;
 
   const tabs: { id: Tab; label: string }[] = [
     { id: 'overview', label: '概述' },

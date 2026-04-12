@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { recordCardReview, recordQuizComplete } from '@/lib/progress';
-import { IconZap } from '@/components/Icon';
+import { IconZap, IconBrain } from '@/components/Icon';
 
 interface Disease {
   id: string; nameZh: string; nameEn: string; organ: string; category: string;
@@ -126,7 +126,7 @@ export default function ReviewPage() {
 
       {mode === 'setup' && (
         <div className="rounded-2xl p-8 text-center" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-          <div className="text-5xl mb-4">🎯</div>
+          <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><IconBrain size={48} /></div>
           <h2 className="text-lg font-bold mb-2" style={{ color: 'var(--fg)' }}>开始复习</h2>
           <p className="text-sm mb-6" style={{ color: 'var(--fg-muted)' }}>系统将随机抽取知识点生成闪卡，翻转查看答案后自我评估</p>
 
