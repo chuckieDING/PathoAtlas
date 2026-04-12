@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
+import { recordCardReview, recordQuizComplete } from '@/lib/progress';
+import { IconZap } from '@/components/Icon';
 
 interface Disease {
   id: string; nameZh: string; nameEn: string; organ: string; category: string;
@@ -19,6 +21,7 @@ type Card = {
   question: string;
   answer: string;
   source: string;
+  sourceId: string;  // disease id or marker id (for mastery tracking)
 };
 
 type Mode = 'setup' | 'quiz' | 'result';
@@ -50,26 +53,26 @@ export default function ReviewPage() {
 
     for (const d of diseases) {
       if (d.keyFeatures.length > 0) {
-        pool.push({ type: 'disease-feature', question: `"${d.nameZh}" 的诊断要点是什么？`, answer: d.keyFeatures.join('；'), source: d.nameZh });
+        pool.push({ type: 'disease-feature', question: `"${d.nameZh}" 的诊断要点是什么？`, answer: d.keyFeatures.join('；'), source: d.nameZh, sourceId: d.id });
       }
       if (d.ihcProfile.length > 0) {
         const profile = d.ihcProfile.map(m => `${m.marker}: ${m.result}`).join('、');
-        pool.push({ type: 'disease-ihc', question: `"${d.nameZh}" 的典型免疫组化表型？`, answer: profile, source: d.nameZh });
+        pool.push({ type: 'disease-ihc', question: `"${d.nameZh}" 的典型免疫组化表型？`, answer: profile, source: d.nameZh, sourceId: d.id });
       }
       if (d.microscopy) {
-        pool.push({ type: 'disease-feature', question: `描述 "${d.nameZh}" 的镜下特征`, answer: d.microscopy, source: d.nameZh });
+        pool.push({ type: 'disease-feature', question: `描述 "${d.nameZh}" 的镜下特征`, answer: d.microscopy, source: d.nameZh, sourceId: d.id });
       }
     }
 
     for (const m of markers) {
       if (m.function) {
-        pool.push({ type: 'marker-function', question: `${m.abbreviation || m.nameEn} 的功能和临床意义？`, answer: `${m.function}。${m.clinicalSignificance}`, source: m.nameZh });
+        pool.push({ type: 'marker-function', question: `${m.abbreviation || m.nameEn} 的功能和临床意义？`, answer: `${m.function}。${m.clinicalSignificance}`, source: m.nameZh, sourceId: m.id });
       }
       if (m.cellularLocalization) {
-        pool.push({ type: 'marker-location', question: `${m.abbreviation || m.nameEn} 的阳性定位部位？`, answer: m.cellularLocalization, source: m.nameZh });
+        pool.push({ type: 'marker-location', question: `${m.abbreviation || m.nameEn} 的阳性定位部位？`, answer: m.cellularLocalization, source: m.nameZh, sourceId: m.id });
       }
       if (m.positiveIn.length > 0) {
-        pool.push({ type: 'marker-function', question: `哪些肿瘤/疾病中 ${m.abbreviation || m.nameEn} 呈阳性表达？`, answer: m.positiveIn.join('、'), source: m.nameZh });
+        pool.push({ type: 'marker-function', question: `哪些肿瘤/疾病中 ${m.abbreviation || m.nameEn} 呈阳性表达？`, answer: m.positiveIn.join('、'), source: m.nameZh, sourceId: m.id });
       }
     }
 
@@ -88,8 +91,18 @@ export default function ReviewPage() {
   };
 
   const handleAnswer = (correct: boolean) => {
-    setScore(prev => correct ? { ...prev, correct: prev.correct + 1 } : { ...prev, wrong: prev.wrong + 1 });
+    // Record XP + mastery update
+    const currentCard = cards[currentIdx];
+    if (currentCard) {
+      recordCardReview(currentCard.sourceId, correct);
+    }
+    const newScore = correct
+      ? { correct: score.correct + 1, wrong: score.wrong }
+      : { correct: score.correct, wrong: score.wrong + 1 };
+    setScore(newScore);
     if (currentIdx + 1 >= cards.length) {
+      // Quiz complete
+      recordQuizComplete(newScore.correct, cards.length);
       setMode('result');
     } else {
       setCurrentIdx(prev => prev + 1);
@@ -103,9 +116,12 @@ export default function ReviewPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8">
-      <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>📝 复习测验</h1>
-      <p className="text-sm mb-8" style={{ color: 'var(--fg-muted)' }}>
-        闪卡式复习，覆盖 {diseases.length} 种疾病和 {markers.length} 个标记物的知识点
+      <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>复习测验</h1>
+      <p className="text-sm mb-8 flex items-center gap-2 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
+        <span>闪卡式复习 · 覆盖 {diseases.length} 种疾病和 {markers.length} 个标记物</span>
+        <span className="flex items-center gap-1" style={{ color: 'var(--accent)' }}>
+          <IconZap size={14} /> 答对+8 XP · 答错+2 XP · 完成+15 XP
+        </span>
       </p>
 
       {mode === 'setup' && (
