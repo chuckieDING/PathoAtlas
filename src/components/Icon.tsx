@@ -230,3 +230,139 @@ export const IconGrid = ({ size, ...p }: IconProps) => (
     <rect x="3" y="14" width="7" height="7"/>
   </svg>
 );
+
+export const IconInfo = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="12" y1="16" x2="12" y2="12"/>
+    <line x1="12" y1="8" x2="12.01" y2="8"/>
+  </svg>
+);
+
+export const IconHelp = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+    <line x1="12" y1="17" x2="12.01" y2="17"/>
+  </svg>
+);
+
+export const IconSettings = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z"/>
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+);
+
+export const IconGithub = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  </svg>
+);
+
+// ── Organ icons (anatomical, stylised) ─────────────────────
+// Each is a stroke-based 24×24 SVG representing the organ.
+
+export const IconOrganBreast = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M4 11c0-3.5 2.5-6 5.5-6 1.8 0 2.5 1 2.5 1s.7-1 2.5-1c3 0 5.5 2.5 5.5 6 0 5-4 8-8 8s-8-3-8-8Z"/>
+    <circle cx="12" cy="12" r="1.3"/>
+    <circle cx="12" cy="12" r="3" strokeDasharray="1 2"/>
+  </svg>
+);
+
+export const IconOrganLung = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M12 4v10"/>
+    <path d="M8 6H7a1 1 0 0 0-.95.68l-2 6a1 1 0 0 0 .3 1.09l3 2.5a1 1 0 0 0 1.62-.48l1-3.5a1 1 0 0 0-.05-.68l-1-2.5A1 1 0 0 0 8 8.5V6Z"/>
+    <path d="M16 6h1a1 1 0 0 1 .95.68l2 6a1 1 0 0 1-.3 1.09l-3 2.5a1 1 0 0 1-1.62-.48l-1-3.5a1 1 0 0 1 .05-.68l1-2.5A1 1 0 0 1 16 8.5V6Z"/>
+    <path d="M10 4h4"/>
+    <path d="M12 14v4"/>
+  </svg>
+);
+
+export const IconOrganGi = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M9 3v4a3 3 0 0 1-3 3 3 3 0 0 0-3 3v1a3 3 0 0 0 3 3h2"/>
+    <path d="M15 3v3"/>
+    <path d="M8 17h8a3 3 0 0 0 3-3v-1a3 3 0 0 0-3-3 3 3 0 0 1-3-3"/>
+    <path d="M12 17v4"/>
+    <path d="M9 21h6"/>
+  </svg>
+);
+
+export const IconOrganLiver = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M3 9c0-2 2-4 5-4h9a4 4 0 0 1 4 4v4a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6Z"/>
+    <path d="M14 5v4"/>
+    <path d="M14 9h6"/>
+    <path d="M17 13.5c.5.5 1.5.5 2 0"/>
+    <path d="M8 13.5c.5.5 1.5.5 2 0"/>
+  </svg>
+);
+
+export const IconOrganKidney = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M8 4c-3 0-5 3-5 6.5S5 21 9 21c2 0 3-1 3-3s-1-2-1-3.5S13 12 13 9s-2-5-5-5Z"/>
+    <path d="M16 4c3 0 5 3 5 6.5S19 21 15 21c-2 0-3-1-3-3"/>
+    <path d="M9 10c0 .8.5 1.5 1 2"/>
+    <path d="M17 10c0 .8-.5 1.5-1 2"/>
+  </svg>
+);
+
+export const IconOrganThyroid = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M12 4v4"/>
+    <path d="M12 8c-2 0-4 1-5 3s-1 5 1 6 4 0 4-2v-3"/>
+    <path d="M12 8c2 0 4 1 5 3s1 5-1 6-4 0-4-2v-3"/>
+    <path d="M10 4h4"/>
+  </svg>
+);
+
+export const IconOrganLymph = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <circle cx="6" cy="7" r="2.5"/>
+    <circle cx="17" cy="7" r="2.5"/>
+    <circle cx="12" cy="14" r="3"/>
+    <circle cx="6" cy="19" r="1.8"/>
+    <circle cx="18" cy="19" r="1.8"/>
+    <path d="M7.6 8.5 10 12"/>
+    <path d="M15.5 8.8 14 12"/>
+    <path d="M10 16 7.2 18"/>
+    <path d="M14 16l2.8 2"/>
+  </svg>
+);
+
+export const IconOrganSkin = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M3 6h18"/>
+    <path d="M3 10h18"/>
+    <path d="M3 14h18"/>
+    <path d="M3 18h18"/>
+    <path d="M7 6v-.5a2 2 0 1 1 3 0V6"/>
+    <path d="M15 6v-.5a2 2 0 1 1 3 0V6"/>
+    <circle cx="8" cy="12" r=".6" fill="currentColor"/>
+    <circle cx="14" cy="12" r=".6" fill="currentColor"/>
+    <circle cx="11" cy="16" r=".6" fill="currentColor"/>
+  </svg>
+);
+
+export const IconOrganGyn = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M7 5c-1.5 1.5-2 3-2 5a7 7 0 0 0 7 7 7 7 0 0 0 7-7c0-2-.5-3.5-2-5"/>
+    <circle cx="6" cy="5" r="1.8"/>
+    <circle cx="18" cy="5" r="1.8"/>
+    <path d="M12 17v4"/>
+    <path d="M10 21h4"/>
+  </svg>
+);
+
+export const IconOrganUrology = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M5 10a7 7 0 0 1 14 0c0 4-3 7-7 7s-7-3-7-7Z"/>
+    <path d="M9 6V4"/>
+    <path d="M15 6V4"/>
+    <path d="M12 17v4"/>
+    <path d="M10 21h4"/>
+  </svg>
+);

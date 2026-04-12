@@ -104,6 +104,10 @@ body, nav, main, .card-transition {
 /* ── Touch targets ────────────────────────────────────────── */
 .min-touch { min-height: 44px; min-width: 44px; }
 
+/* ── Menu item hover ──────────────────────────────────────── */
+.menu-item { transition: background-color 0.15s ease, color 0.15s ease; }
+.menu-item:hover { background: var(--card-hover); color: var(--fg); }
+
 /* ── Animations ───────────────────────────────────────────── */
 @keyframes slide-in {
   from { opacity: 0; transform: translateX(100%); }

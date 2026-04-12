@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Psammoma body">
+  <rect width="400" height="240" fill="#fdf4ef"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#6b21a8">砂粒体 · Psammoma bodies</text>
+  <g>
+    <!-- Concentric laminated calcifications -->
+    <g fill="none" stroke="#4c1d95" stroke-width="2">
+      <circle cx="120" cy="120" r="20"/>
+      <circle cx="120" cy="120" r="14"/>
+      <circle cx="120" cy="120" r="8"/>
+      <circle cx="120" cy="120" r="3" fill="#4c1d95"/>
+
+      <circle cx="230" cy="95" r="18"/>
+      <circle cx="230" cy="95" r="12"/>
+      <circle cx="230" cy="95" r="6"/>
+      <circle cx="230" cy="95" r="2" fill="#4c1d95"/>
+
+      <circle cx="290" cy="170" r="22"/>
+      <circle cx="290" cy="170" r="16"/>
+      <circle cx="290" cy="170" r="10"/>
+      <circle cx="290" cy="170" r="4" fill="#4c1d95"/>
+
+      <circle cx="180" cy="180" r="16"/>
+      <circle cx="180" cy="180" r="10"/>
+      <circle cx="180" cy="180" r="5"/>
+    </g>
+    <!-- Tumor cells scattered around -->
+    <g fill="#7e22ce">
+      <circle cx="60" cy="80" r="3"/><circle cx="70" cy="95" r="3"/><circle cx="85" cy="110" r="3"/>
+      <circle cx="65" cy="130" r="3"/><circle cx="80" cy="150" r="3"/><circle cx="100" cy="165" r="3"/>
+      <circle cx="150" cy="75" r="3"/><circle cx="170" cy="85" r="3"/><circle cx="195" cy="100" r="3"/>
+      <circle cx="260" cy="75" r="3"/><circle cx="275" cy="90" r="3"/>
+      <circle cx="330" cy="110" r="3"/><circle cx="345" cy="130" r="3"/><circle cx="340" cy="150" r="3"/>
+      <circle cx="325" cy="170" r="3"/><circle cx="305" cy="195" r="3"/>
+      <circle cx="220" cy="195" r="3"/><circle cx="250" cy="200" r="3"/>
+    </g>
+  </g>
+  <text x="20" y="225" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">同心圆状层状钙化小体，见于乳头状癌、浆液性癌等</text>
+</svg>

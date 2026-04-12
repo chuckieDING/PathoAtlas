@@ -2,10 +2,13 @@
 
 import { useEffect, useState, use } from 'react';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { recordDiseaseStudy } from '@/lib/progress';
 import { useProgress } from '@/components/useProgress';
 import { MasteryDots } from '@/components/ProgressWidgets';
 import { IconCheckCircle, IconZap, IconSearch } from '@/components/Icon';
+import { OrganIcon } from '@/components/OrganIcon';
 
 interface IHCItem { marker: string; result: string; note: string }
 interface DiseaseData {
@@ -79,8 +82,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
       <div className="flex items-center gap-2 text-sm mb-6 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
         <Link href="/atlas" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>图谱</Link>
         <span>/</span>
-        <Link href={`/atlas/${organ}`} style={{ color: organInfo?.color || 'var(--fg-muted)', textDecoration: 'none' }}>
-          {organInfo?.icon} {organInfo?.nameZh}
+        <Link href={`/atlas/${organ}`} className="flex items-center gap-1.5" style={{ color: organInfo?.color || 'var(--fg-muted)', textDecoration: 'none' }}>
+          {organInfo && <OrganIcon organId={organ} size={14} color={organInfo.color} />}
+          <span>{organInfo?.nameZh}</span>
         </Link>
         <span>/</span>
         <span style={{ color: 'var(--fg)' }}>{d.nameZh}</span>
@@ -149,22 +153,14 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           <Section title="流行病学" content={d.epidemiology} />
           <Section title="临床特征" content={d.clinicalFeatures} />
           <Section title="大体观察" content={d.grossPathology} />
+          {d.images.length > 0 && <ImageGallery images={d.images} title="图文示意" />}
         </div>
       )}
 
       {tab === 'microscopy' && (
         <div className="space-y-6">
           <Section title="镜下特征" content={d.microscopy} />
-          {d.images.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {d.images.map((img, i) => (
-                <div key={i} className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
-                  <img src={img.url} alt={img.caption} className="w-full h-48 object-cover" loading="lazy" />
-                  <div className="p-3 text-xs" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>{img.caption}</div>
-                </div>
-              ))}
-            </div>
-          )}
+          {d.images.length > 0 && <ImageGallery images={d.images} title="镜下示意图" />}
         </div>
       )}
 
@@ -258,12 +254,43 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   );
 }
 
+function ImageGallery({ images, title }: { images: { url: string; caption: string }[]; title: string }) {
+  return (
+    <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+      <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--fg)' }}>{title}</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {images.map((img, i) => (
+          <figure key={i} className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={img.url}
+              alt={img.caption}
+              className="w-full aspect-video object-contain"
+              loading="lazy"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
+            />
+            <figcaption className="p-3 text-xs leading-relaxed" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>{img.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Section({ title, content }: { title: string; content: string }) {
   if (!content) return null;
+  // Render with Markdown support (bold, lists, tables via GFM) so content can be rich.
+  const isMarkdown = /[*_`#\[\]|]/.test(content);
   return (
     <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
       <h3 className="font-semibold text-sm mb-3" style={{ color: 'var(--fg)' }}>{title}</h3>
-      <p className="text-sm leading-relaxed" style={{ color: 'var(--fg)', opacity: 0.85 }}>{content}</p>
+      {isMarkdown ? (
+        <div className="prose text-sm leading-relaxed" style={{ color: 'var(--fg)', opacity: 0.9 }}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        </div>
+      ) : (
+        <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--fg)', opacity: 0.85 }}>{content}</p>
+      )}
     </div>
   );
 }

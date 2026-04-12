@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Reed-Sternberg cell">
+  <rect width="400" height="240" fill="#fdf4ef"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#6d28d9">R-S 细胞 · Reed-Sternberg cell</text>
+  <!-- Large RS cell in center -->
+  <g>
+    <ellipse cx="200" cy="130" rx="65" ry="55" fill="#fce7f3" stroke="#9d174d" stroke-width="2.5"/>
+    <!-- Two mirror-image nuclei (owl eye) -->
+    <ellipse cx="175" cy="125" rx="22" ry="28" fill="#fff" stroke="#831843" stroke-width="2"/>
+    <ellipse cx="225" cy="125" rx="22" ry="28" fill="#fff" stroke="#831843" stroke-width="2"/>
+    <!-- Prominent nucleoli -->
+    <circle cx="175" cy="125" r="7" fill="#dc2626"/>
+    <circle cx="225" cy="125" r="7" fill="#dc2626"/>
+  </g>
+  <!-- Surrounding inflammatory background -->
+  <g>
+    <!-- Small lymphocytes -->
+    <g fill="#1e40af">
+      <circle cx="50" cy="60" r="4"/><circle cx="70" cy="70" r="4"/><circle cx="90" cy="55" r="4"/><circle cx="110" cy="65" r="4"/>
+      <circle cx="80" cy="90" r="4"/><circle cx="55" cy="105" r="4"/><circle cx="100" cy="115" r="4"/>
+      <circle cx="60" cy="140" r="4"/><circle cx="85" cy="165" r="4"/><circle cx="55" cy="185" r="4"/><circle cx="95" cy="195" r="4"/>
+      <circle cx="115" cy="175" r="4"/>
+      <circle cx="280" cy="60" r="4"/><circle cx="300" cy="75" r="4"/><circle cx="320" cy="65" r="4"/><circle cx="345" cy="75" r="4"/>
+      <circle cx="290" cy="95" r="4"/><circle cx="330" cy="105" r="4"/><circle cx="355" cy="115" r="4"/>
+      <circle cx="290" cy="150" r="4"/><circle cx="325" cy="165" r="4"/><circle cx="355" cy="185" r="4"/>
+      <circle cx="300" cy="195" r="4"/><circle cx="275" cy="180" r="4"/>
+    </g>
+    <!-- Eosinophils (red) -->
+    <g fill="#f43f5e">
+      <circle cx="140" cy="75" r="4"/><circle cx="260" cy="85" r="4"/>
+      <circle cx="130" cy="195" r="4"/><circle cx="265" cy="190" r="4"/>
+    </g>
+    <!-- Plasma cells (green) -->
+    <g fill="#059669">
+      <circle cx="150" cy="200" r="4"/><circle cx="245" cy="200" r="4"/>
+      <circle cx="155" cy="55" r="4"/><circle cx="250" cy="50" r="4"/>
+    </g>
+  </g>
+  <text x="20" y="225" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">双核镜影&quot;猫头鹰眼&quot;大细胞（粉红）周围散在小淋巴细胞、嗜酸粒细胞和浆细胞</text>
+</svg>

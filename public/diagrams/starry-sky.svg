@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Starry sky pattern">
+  <rect width="400" height="240" fill="#1e1b4b"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#e9d5ff">星空现象 · Starry sky</text>
+  <!-- Background: densely packed lymphoma cells (dark purple) -->
+  <g fill="#6d28d9">
+    <circle cx="50" cy="60" r="5"/><circle cx="65" cy="55" r="5"/><circle cx="82" cy="62" r="5"/><circle cx="100" cy="58" r="5"/>
+    <circle cx="118" cy="65" r="5"/><circle cx="135" cy="58" r="5"/><circle cx="152" cy="66" r="5"/><circle cx="170" cy="60" r="5"/>
+    <circle cx="188" cy="66" r="5"/><circle cx="206" cy="60" r="5"/><circle cx="224" cy="66" r="5"/><circle cx="242" cy="58" r="5"/>
+    <circle cx="260" cy="65" r="5"/><circle cx="278" cy="60" r="5"/><circle cx="296" cy="66" r="5"/><circle cx="314" cy="58" r="5"/>
+    <circle cx="332" cy="66" r="5"/><circle cx="350" cy="60" r="5"/>
+    <circle cx="55" cy="82" r="5"/><circle cx="73" cy="86" r="5"/><circle cx="90" cy="80" r="5"/><circle cx="108" cy="86" r="5"/>
+    <circle cx="126" cy="80" r="5"/><circle cx="144" cy="86" r="5"/><circle cx="162" cy="80" r="5"/><circle cx="180" cy="86" r="5"/>
+    <circle cx="198" cy="80" r="5"/><circle cx="216" cy="86" r="5"/><circle cx="234" cy="80" r="5"/><circle cx="252" cy="86" r="5"/>
+    <circle cx="270" cy="80" r="5"/><circle cx="288" cy="86" r="5"/><circle cx="306" cy="80" r="5"/><circle cx="324" cy="86" r="5"/>
+    <circle cx="342" cy="80" r="5"/>
+    <circle cx="48" cy="104" r="5"/><circle cx="66" cy="108" r="5"/><circle cx="84" cy="102" r="5"/><circle cx="102" cy="108" r="5"/>
+    <circle cx="120" cy="102" r="5"/><circle cx="138" cy="108" r="5"/><circle cx="156" cy="102" r="5"/><circle cx="174" cy="108" r="5"/>
+    <circle cx="192" cy="102" r="5"/><circle cx="210" cy="108" r="5"/><circle cx="228" cy="102" r="5"/><circle cx="246" cy="108" r="5"/>
+    <circle cx="264" cy="102" r="5"/><circle cx="282" cy="108" r="5"/><circle cx="300" cy="102" r="5"/><circle cx="318" cy="108" r="5"/>
+    <circle cx="336" cy="102" r="5"/><circle cx="354" cy="108" r="5"/>
+    <circle cx="52" cy="128" r="5"/><circle cx="70" cy="132" r="5"/><circle cx="88" cy="126" r="5"/><circle cx="106" cy="132" r="5"/>
+    <circle cx="124" cy="126" r="5"/><circle cx="142" cy="132" r="5"/><circle cx="160" cy="126" r="5"/><circle cx="178" cy="132" r="5"/>
+    <circle cx="196" cy="126" r="5"/><circle cx="214" cy="132" r="5"/><circle cx="232" cy="126" r="5"/><circle cx="250" cy="132" r="5"/>
+    <circle cx="268" cy="126" r="5"/><circle cx="286" cy="132" r="5"/><circle cx="304" cy="126" r="5"/><circle cx="322" cy="132" r="5"/>
+    <circle cx="340" cy="126" r="5"/>
+    <circle cx="58" cy="152" r="5"/><circle cx="76" cy="148" r="5"/><circle cx="94" cy="154" r="5"/><circle cx="112" cy="150" r="5"/>
+    <circle cx="130" cy="154" r="5"/><circle cx="148" cy="148" r="5"/><circle cx="166" cy="154" r="5"/><circle cx="184" cy="150" r="5"/>
+    <circle cx="202" cy="154" r="5"/><circle cx="220" cy="148" r="5"/><circle cx="238" cy="154" r="5"/><circle cx="256" cy="150" r="5"/>
+    <circle cx="274" cy="154" r="5"/><circle cx="292" cy="148" r="5"/><circle cx="310" cy="154" r="5"/><circle cx="328" cy="150" r="5"/>
+    <circle cx="346" cy="154" r="5"/>
+    <circle cx="50" cy="176" r="5"/><circle cx="68" cy="180" r="5"/><circle cx="86" cy="174" r="5"/><circle cx="104" cy="180" r="5"/>
+    <circle cx="122" cy="174" r="5"/><circle cx="140" cy="180" r="5"/><circle cx="158" cy="174" r="5"/><circle cx="176" cy="180" r="5"/>
+    <circle cx="194" cy="174" r="5"/><circle cx="212" cy="180" r="5"/><circle cx="230" cy="174" r="5"/><circle cx="248" cy="180" r="5"/>
+    <circle cx="266" cy="174" r="5"/><circle cx="284" cy="180" r="5"/><circle cx="302" cy="174" r="5"/><circle cx="320" cy="180" r="5"/>
+    <circle cx="338" cy="174" r="5"/>
+  </g>
+  <!-- Stars: tingible body macrophages with clear/light cytoplasm -->
+  <g fill="#fef3c7" stroke="#ca8a04" stroke-width="1">
+    <circle cx="120" cy="85" r="9"/>
+    <circle cx="220" cy="110" r="10"/>
+    <circle cx="80" cy="150" r="9"/>
+    <circle cx="300" cy="140" r="10"/>
+    <circle cx="260" cy="175" r="9"/>
+    <circle cx="160" cy="165" r="10"/>
+    <circle cx="340" cy="95" r="9"/>
+  </g>
+  <text x="20" y="222" font-family="system-ui, sans-serif" font-size="11" fill="#e9d5ff">深蓝紫色肿瘤细胞背景上散布的&quot;星&quot;为吞噬凋亡碎片的组织细胞，是 Burkitt 淋巴瘤典型表现</text>
+</svg>

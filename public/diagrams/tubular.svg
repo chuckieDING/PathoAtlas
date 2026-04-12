@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Tubular / glandular pattern">
+  <rect width="400" height="240" fill="#fdf4ef"/>
+  <text x="20" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#be185d">腺管状结构 · Tubular pattern</text>
+  <g fill="none" stroke="#be185d" stroke-width="2">
+    <ellipse cx="90"  cy="110" rx="32" ry="18" transform="rotate(-10 90 110)"/>
+    <ellipse cx="200" cy="120" rx="36" ry="20" transform="rotate(15 200 120)"/>
+    <ellipse cx="310" cy="100" rx="30" ry="18" transform="rotate(-5 310 100)"/>
+    <ellipse cx="150" cy="180" rx="34" ry="18" transform="rotate(25 150 180)"/>
+    <ellipse cx="280" cy="170" rx="32" ry="18" transform="rotate(-15 280 170)"/>
+  </g>
+  <g fill="#ec4899">
+    <!-- Epithelial cells around each lumen -->
+    <circle cx="60" cy="110" r="3"/><circle cx="66" cy="100" r="3"/><circle cx="78" cy="95" r="3"/>
+    <circle cx="92" cy="93" r="3"/><circle cx="106" cy="95" r="3"/><circle cx="118" cy="103" r="3"/>
+    <circle cx="122" cy="115" r="3"/><circle cx="116" cy="125" r="3"/><circle cx="104" cy="128" r="3"/>
+    <circle cx="90" cy="130" r="3"/><circle cx="76" cy="128" r="3"/><circle cx="62" cy="120" r="3"/>
+
+    <circle cx="164" cy="120" r="3"/><circle cx="172" cy="108" r="3"/><circle cx="186" cy="101" r="3"/>
+    <circle cx="202" cy="99" r="3"/><circle cx="218" cy="103" r="3"/><circle cx="230" cy="114" r="3"/>
+    <circle cx="234" cy="128" r="3"/><circle cx="226" cy="138" r="3"/><circle cx="212" cy="142" r="3"/>
+    <circle cx="198" cy="142" r="3"/><circle cx="182" cy="138" r="3"/><circle cx="170" cy="130" r="3"/>
+
+    <circle cx="282" cy="100" r="3"/><circle cx="290" cy="88" r="3"/><circle cx="304" cy="82" r="3"/>
+    <circle cx="318" cy="82" r="3"/><circle cx="332" cy="88" r="3"/><circle cx="340" cy="102" r="3"/>
+    <circle cx="336" cy="114" r="3"/><circle cx="322" cy="118" r="3"/><circle cx="308" cy="118" r="3"/>
+    <circle cx="294" cy="115" r="3"/>
+
+    <circle cx="120" cy="180" r="3"/><circle cx="128" cy="165" r="3"/><circle cx="142" cy="160" r="3"/>
+    <circle cx="158" cy="160" r="3"/><circle cx="172" cy="168" r="3"/><circle cx="180" cy="182" r="3"/>
+    <circle cx="176" cy="196" r="3"/><circle cx="160" cy="202" r="3"/><circle cx="140" cy="200" r="3"/>
+    <circle cx="126" cy="192" r="3"/>
+
+    <circle cx="252" cy="170" r="3"/><circle cx="262" cy="158" r="3"/><circle cx="278" cy="154" r="3"/>
+    <circle cx="294" cy="158" r="3"/><circle cx="306" cy="168" r="3"/><circle cx="310" cy="182" r="3"/>
+    <circle cx="302" cy="192" r="3"/><circle cx="286" cy="196" r="3"/><circle cx="270" cy="192" r="3"/>
+    <circle cx="258" cy="182" r="3"/>
+  </g>
+  <text x="20" y="220" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">单层肿瘤细胞围成开放性成角小管，管腔清晰</text>
+</svg>
