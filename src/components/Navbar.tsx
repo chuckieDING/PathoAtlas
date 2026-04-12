@@ -36,8 +36,10 @@ export function Navbar() {
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Close menu on route change
+  // Close menu on route change — browser back/forward buttons don't fire our
+  // onClick handlers, so we need to sync menu visibility with the pathname.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
     setSearchOpen(false);
   }, [pathname]);

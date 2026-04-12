@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import type { ReactElement, SVGProps } from 'react';
 import {
   IconOrganBreast,
   IconOrganLung,
@@ -13,7 +13,7 @@ import {
   IconMicroscope,
 } from './Icon';
 
-type IconComponent = (props: SVGProps<SVGSVGElement> & { size?: number }) => React.JSX.Element;
+type IconComponent = (props: SVGProps<SVGSVGElement> & { size?: number }) => ReactElement;
 
 const ORGAN_ICON_MAP: Record<string, IconComponent> = {
   breast: IconOrganBreast,
