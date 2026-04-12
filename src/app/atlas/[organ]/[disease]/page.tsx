@@ -7,8 +7,15 @@ import remarkGfm from 'remark-gfm';
 import { recordDiseaseStudy } from '@/lib/progress';
 import { useProgress } from '@/components/useProgress';
 import { MasteryDots } from '@/components/ProgressWidgets';
-import { IconCheckCircle, IconZap, IconSearch } from '@/components/Icon';
+import { IconCheckCircle, IconZap, IconSearch, IconX, IconBookOpen } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
+import { getMarkerDiagram } from '@/lib/markerDiagrams';
+
+// Translate a free-text marker label from the IHC table into the canonical
+// marker id used in markers.json / URLs (e.g. "CK5/6" → "ck5-6", "Ki-67" → "ki-67").
+function markerSlug(label: string): string {
+  return label.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
 
 interface IHCItem { marker: string; result: string; note: string }
 interface DiseaseData {
@@ -33,6 +40,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   const [tab, setTab] = useState<Tab>('overview');
   const [loading, setLoading] = useState(true);
   const [xpToast, setXpToast] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<{ url: string; caption: string } | null>(null);
   const progress = useProgress();
   const mastery = progress?.diseaseMastery[diseaseId];
 
@@ -61,6 +69,14 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
       }
     }).catch(() => setLoading(false));
   }, [organ, diseaseId]);
+
+  // ESC closes lightbox
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightbox]);
 
   if (loading) return <div className="flex items-center justify-center h-96"><div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div></div>;
   if (!d) return <div className="text-center py-16"><div className="flex justify-center mb-4" style={{ color: 'var(--fg-muted)' }}><IconSearch size={36} /></div><p style={{ color: 'var(--fg-muted)' }}>疾病未找到</p><Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link></div>;
@@ -153,14 +169,14 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           <Section title="流行病学" content={d.epidemiology} />
           <Section title="临床特征" content={d.clinicalFeatures} />
           <Section title="大体观察" content={d.grossPathology} />
-          {d.images.length > 0 && <ImageGallery images={d.images} title="图文示意" />}
+          {d.images.length > 0 && <ImageGallery images={d.images} title="图文示意" onOpen={setLightbox} />}
         </div>
       )}
 
       {tab === 'microscopy' && (
         <div className="space-y-6">
           <Section title="镜下特征" content={d.microscopy} />
-          {d.images.length > 0 && <ImageGallery images={d.images} title="镜下示意图" />}
+          {d.images.length > 0 && <ImageGallery images={d.images} title="镜下示意图" onOpen={setLightbox} />}
         </div>
       )}
 
@@ -181,10 +197,27 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
                 <tbody>
                   {d.ihcProfile.map((m, i) => {
                     const isPositive = m.result.includes('+') || m.result.includes('阳');
+                    const slug = markerSlug(m.marker);
+                    const hasDiagram = !!getMarkerDiagram(slug);
                     return (
                       <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
                         <td className="px-4 py-3 font-mono font-semibold" style={{ color: 'var(--fg)' }}>
-                          <Link href={`/markers#${m.marker.toLowerCase().replace(/[^a-z0-9]/g, '-')}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>{m.marker}</Link>
+                          <Link
+                            href={`/markers#${slug}`}
+                            className="inline-flex items-center gap-1.5 hover:underline"
+                            style={{ color: 'var(--accent)', textDecoration: 'none' }}
+                          >
+                            <span>{m.marker}</span>
+                            {hasDiagram && (
+                              <span
+                                title="点击查看机制概念图"
+                                className="inline-flex items-center"
+                                style={{ color: '#22c55e' }}
+                              >
+                                <IconBookOpen size={12} />
+                              </span>
+                            )}
+                          </Link>
                         </td>
                         <td className="px-4 py-3">
                           <span className="px-2 py-0.5 rounded text-xs font-medium"
@@ -250,22 +283,41 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           )}
         </div>
       )}
+
+      {lightbox && <Lightbox image={lightbox} onClose={() => setLightbox(null)} />}
     </div>
   );
 }
 
-function ImageGallery({ images, title }: { images: { url: string; caption: string }[]; title: string }) {
+function ImageGallery({
+  images,
+  title,
+  onOpen,
+}: {
+  images: { url: string; caption: string }[];
+  title: string;
+  onOpen: (img: { url: string; caption: string }) => void;
+}) {
   return (
     <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-      <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--fg)' }}>{title}</h3>
+      <h3 className="font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
+        <IconBookOpen size={14} style={{ color: 'var(--accent)' }} />
+        <span>{title}</span>
+        <span className="text-xs font-normal" style={{ color: 'var(--fg-muted)' }}>(点击放大)</span>
+      </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {images.map((img, i) => (
-          <figure key={i} className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}>
+          <figure
+            key={i}
+            className="rounded-xl overflow-hidden cursor-zoom-in group transition-transform hover:-translate-y-0.5"
+            style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
+            onClick={() => onOpen(img)}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img.url}
               alt={img.caption}
-              className="w-full aspect-video object-contain"
+              className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
               loading="lazy"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
             />
@@ -273,6 +325,42 @@ function ImageGallery({ images, title }: { images: { url: string; caption: strin
           </figure>
         ))}
       </div>
+    </div>
+  );
+}
+
+function Lightbox({ image, onClose }: { image: { url: string; caption: string }; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-scale-in"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(4px)' }}
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <button
+        className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center"
+        style={{ background: 'rgba(255,255,255,0.12)', color: '#fff' }}
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
+        aria-label="关闭"
+      >
+        <IconX size={20} />
+      </button>
+      <figure
+        className="max-w-5xl w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={image.url}
+          alt={image.caption}
+          className="w-full max-h-[75vh] object-contain rounded-xl"
+          style={{ background: '#fff' }}
+        />
+        <figcaption className="mt-3 text-center text-sm" style={{ color: '#e4e4e7' }}>
+          {image.caption}
+        </figcaption>
+      </figure>
     </div>
   );
 }

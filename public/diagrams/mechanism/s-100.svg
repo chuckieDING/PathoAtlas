@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="S-100 mechanism: calcium-binding protein in neural crest derivatives">
+  <rect width="420" height="260" fill="#fdf4ef"/>
+  <text x="16" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c2d12">S-100 · 神经嵴 Ca²⁺ 结合蛋白</text>
+
+  <!-- Melanocyte -->
+  <g>
+    <circle cx="90" cy="140" r="50" fill="#fef3c7" stroke="#78350f" stroke-width="1.8"/>
+    <!-- Dendrites -->
+    <path d="M50 100 L10 80" stroke="#78350f" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M60 180 L20 210" stroke="#78350f" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M130 100 L170 70" stroke="#78350f" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M128 180 L168 212" stroke="#78350f" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Nucleus -->
+    <circle cx="90" cy="140" r="16" fill="#fde68a" stroke="#78350f" stroke-width="1.3"/>
+    <!-- Melanosomes -->
+    <g fill="#451a03">
+      <ellipse cx="70" cy="120" rx="3" ry="2"/>
+      <ellipse cx="110" cy="118" rx="3" ry="2"/>
+      <ellipse cx="108" cy="158" rx="3" ry="2"/>
+      <ellipse cx="72" cy="162" rx="3" ry="2"/>
+    </g>
+    <text x="90" y="220" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#78350f" font-weight="700">黑色素细胞</text>
+  </g>
+
+  <!-- Schwann cell -->
+  <g>
+    <ellipse cx="220" cy="140" rx="55" ry="28" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.8"/>
+    <path d="M165 140 Q155 130 140 132" stroke="#4338ca" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M275 140 Q285 150 300 148" stroke="#4338ca" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <ellipse cx="220" cy="140" rx="10" ry="7" fill="#c7d2fe" stroke="#3730a3" stroke-width="1"/>
+    <text x="220" y="175" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#3730a3" font-weight="700">施万细胞</text>
+    <text x="220" y="188" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#4338ca">(周围神经鞘)</text>
+  </g>
+
+  <!-- Langerhans cell -->
+  <g>
+    <circle cx="350" cy="140" r="32" fill="#fde68a" stroke="#92400e" stroke-width="1.6"/>
+    <!-- Dendrites -->
+    <g stroke="#92400e" stroke-width="1.8" fill="none" stroke-linecap="round">
+      <path d="M326 115 L308 98"/>
+      <path d="M374 115 L392 98"/>
+      <path d="M324 165 L304 182"/>
+      <path d="M376 165 L396 182"/>
+    </g>
+    <!-- Birbeck granule - tennis racket -->
+    <g fill="#fff" stroke="#92400e" stroke-width="1">
+      <ellipse cx="348" cy="138" rx="6" ry="3"/>
+      <line x1="354" y1="138" x2="362" y2="138"/>
+    </g>
+    <text x="350" y="190" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#78350f" font-weight="700">朗格汉斯细胞</text>
+  </g>
+
+  <!-- Top label -->
+  <text x="210" y="50" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#7c2d12" font-weight="700">S-100 阳性 (核+胞浆)</text>
+  <text x="210" y="62" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle" fill="#92400e">涵盖神经嵴及髓系树突细胞</text>
+
+  <text x="16" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">
+    S-100 敏感但特异性低；恶性黑色素瘤首选筛查；进一步用 SOX10 / HMB-45 / Melan-A 确认
+  </text>
+</svg>
