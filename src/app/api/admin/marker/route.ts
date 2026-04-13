@@ -12,6 +12,7 @@ const EDITABLE_FIELDS = [
   'expertConsensus',
   'literature',
   'references',
+  'stainingImages',
 ] as const;
 
 type EditableField = (typeof EDITABLE_FIELDS)[number];

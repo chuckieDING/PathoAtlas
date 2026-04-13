@@ -38,6 +38,12 @@ interface DiseaseLike {
   expertConsensus?: ConsensusItem[];
   literature?: LiteratureItem[];
 }
+interface StainingGroup {
+  id: string;
+  label: string;
+  description?: string;
+  images: DiseaseImage[];
+}
 interface MarkerLike {
   id: string;
   nameZh: string;
@@ -45,6 +51,7 @@ interface MarkerLike {
   abbreviation: string;
   expertConsensus?: ConsensusItem[];
   literature?: LiteratureItem[];
+  stainingImages?: StainingGroup[];
 }
 
 type EntityKind = 'disease' | 'marker';
@@ -299,12 +306,14 @@ function DiseaseEditor({ disease, onSaved }: { disease: DiseaseLike; onSaved: (m
 function MarkerEditor({ marker, onSaved }: { marker: MarkerLike; onSaved: (msg: string) => void }) {
   const [consensus, setConsensus] = useState<ConsensusItem[]>([]);
   const [literature, setLiterature] = useState<LiteratureItem[]>([]);
+  const [staining, setStaining] = useState<StainingGroup[]>([]);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     setConsensus(marker.expertConsensus || []);
     setLiterature(marker.literature || []);
-  }, [marker.id, marker.expertConsensus, marker.literature]);
+    setStaining(marker.stainingImages || []);
+  }, [marker.id, marker.expertConsensus, marker.literature, marker.stainingImages]);
 
   const save = async (updates: Record<string, unknown>, label: string) => {
     setBusy(true);
@@ -345,6 +354,14 @@ function MarkerEditor({ marker, onSaved }: { marker: MarkerLike; onSaved: (msg: 
         items={literature}
         onChange={setLiterature}
         onSave={() => save({ literature }, '文献参考')}
+        busy={busy}
+      />
+
+      <StainingGroupsEditor
+        markerId={marker.id}
+        groups={staining}
+        onChange={setStaining}
+        onSave={() => save({ stainingImages: staining }, '染色形态图')}
         busy={busy}
       />
     </div>
@@ -586,6 +603,205 @@ function ImageEditor({
                   style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
                 >
                   删除
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function StainingGroupsEditor({
+  markerId,
+  groups,
+  onChange,
+  onSave,
+  busy,
+}: {
+  markerId: string;
+  groups: StainingGroup[];
+  onChange: (next: StainingGroup[]) => void;
+  onSave: () => void;
+  busy: boolean;
+}) {
+  const [uploading, setUploading] = useState(false);
+
+  const updateGroup = (idx: number, patch: Partial<StainingGroup>) => {
+    onChange(groups.map((g, i) => i === idx ? { ...g, ...patch } : g));
+  };
+  const removeGroup = (idx: number) => onChange(groups.filter((_, i) => i !== idx));
+  const addGroup = (label = '新分组') => {
+    onChange([
+      ...groups,
+      { id: `g-${Date.now()}`, label, images: [] },
+    ]);
+  };
+  // Quick-add buttons that seed the canonical labels with zero effort.
+  const addPreset = (labels: string[]) => {
+    const existing = new Set(groups.map(g => g.label.trim().toLowerCase()));
+    const next = [...groups];
+    for (const label of labels) {
+      if (existing.has(label.trim().toLowerCase())) continue;
+      next.push({ id: `g-${Date.now()}-${label}`, label, images: [] });
+    }
+    onChange(next);
+  };
+
+  const updateImg = (gi: number, ii: number, patch: Partial<DiseaseImage>) => {
+    const next = groups.map((g, i) => {
+      if (i !== gi) return g;
+      return { ...g, images: g.images.map((img, j) => j === ii ? { ...img, ...patch } : img) };
+    });
+    onChange(next);
+  };
+  const removeImg = (gi: number, ii: number) => {
+    const next = groups.map((g, i) => {
+      if (i !== gi) return g;
+      return { ...g, images: g.images.filter((_, j) => j !== ii) };
+    });
+    onChange(next);
+  };
+  const addImg = (gi: number) => {
+    const next = groups.map((g, i) => {
+      if (i !== gi) return g;
+      return { ...g, images: [...g.images, { url: '', caption: '' }] };
+    });
+    onChange(next);
+  };
+
+  const uploadFile = async (file: File, field: 'url' | 'fullUrl', gi: number, ii: number, scopeLabel: string) => {
+    setUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      fd.append('scope', `markers/${markerId}/${scopeLabel.replace(/[^a-zA-Z0-9+_-]/g, '_') || 'group'}`);
+      const res = await fetch('/api/admin/upload', { method: 'POST', body: fd });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '上传失败');
+      updateImg(gi, ii, { [field]: j.url });
+    } catch (e) {
+      alert(`上传失败：${e instanceof Error ? e.message : '未知错误'}`);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return (
+    <section>
+      <SectionHead title="染色形态图 (按结果分组)" onAdd={() => addGroup()} onSave={onSave} busy={busy || uploading} />
+
+      <div className="flex flex-wrap items-center gap-2 mb-3 text-[11px]" style={{ color: 'var(--fg-muted)' }}>
+        <span>快速添加常用分组：</span>
+        <button
+          onClick={() => addPreset(['阴性', '阳性'])}
+          className="px-2 py-0.5 rounded"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+        >
+          + 阴性 / 阳性
+        </button>
+        <button
+          onClick={() => addPreset(['0', '1+', '2+', '3+'])}
+          className="px-2 py-0.5 rounded"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+        >
+          + 0 / 1+ / 2+ / 3+
+        </button>
+        <button
+          onClick={() => addPreset(['弱阳', '中阳', '强阳'])}
+          className="px-2 py-0.5 rounded"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+        >
+          + 弱 / 中 / 强
+        </button>
+      </div>
+
+      <div className="space-y-4">
+        {groups.length === 0 && (
+          <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>暂无分组，点上方快速添加或 &quot;+ 新增&quot;</p>
+        )}
+        {groups.map((g, gi) => (
+          <div
+            key={g.id}
+            className="rounded-lg p-3 space-y-3"
+            style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              <Field label="分组标签（如 阴性 / 1+）" value={g.label} onChange={v => updateGroup(gi, { label: v })} />
+              <Field label="描述（可选）" value={g.description || ''} onChange={v => updateGroup(gi, { description: v })} />
+              <Field label="分组 ID" value={g.id} onChange={v => updateGroup(gi, { id: v })} mono />
+            </div>
+
+            <div className="space-y-2">
+              {g.images.length === 0 && (
+                <div
+                  className="text-[11px] text-center py-3 rounded"
+                  style={{ color: 'var(--fg-muted)', border: '1px dashed var(--border)' }}
+                >
+                  该分组还没有图片
+                </div>
+              )}
+              {g.images.map((img, ii) => (
+                <div
+                  key={ii}
+                  className="rounded p-2"
+                  style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-[1fr_100px] gap-2">
+                    <div className="space-y-1.5">
+                      <Field label="压缩图 URL" value={img.url} onChange={v => updateImg(gi, ii, { url: v })} />
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={e => e.target.files?.[0] && uploadFile(e.target.files[0], 'url', gi, ii, g.label)}
+                        className="text-[10px]"
+                        style={{ color: 'var(--fg-muted)' }}
+                      />
+                      <Field label="原图 URL（可选）" value={img.fullUrl || ''} onChange={v => updateImg(gi, ii, { fullUrl: v })} />
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={e => e.target.files?.[0] && uploadFile(e.target.files[0], 'fullUrl', gi, ii, g.label)}
+                        className="text-[10px]"
+                        style={{ color: 'var(--fg-muted)' }}
+                      />
+                      <Field label="说明" value={img.caption} onChange={v => updateImg(gi, ii, { caption: v })} />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      {img.url ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={img.url} alt="" className="w-full aspect-square object-cover rounded" style={{ border: '1px solid var(--border)' }} />
+                      ) : (
+                        <div className="w-full aspect-square rounded flex items-center justify-center text-[9px]" style={{ border: '1px dashed var(--border)', color: 'var(--fg-muted)' }}>
+                          无预览
+                        </div>
+                      )}
+                      <button
+                        onClick={() => removeImg(gi, ii)}
+                        className="text-[10px] px-1.5 py-0.5 rounded"
+                        style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
+                      >
+                        删除
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <div className="flex justify-between items-center">
+                <button
+                  onClick={() => addImg(gi)}
+                  className="text-[11px] px-2 py-1 rounded"
+                  style={{ background: 'var(--card)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+                >
+                  + 添加图片到 {g.label}
+                </button>
+                <button
+                  onClick={() => removeGroup(gi)}
+                  className="text-[11px] px-2 py-1 rounded"
+                  style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
+                >
+                  删除整组
                 </button>
               </div>
             </div>
