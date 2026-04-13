@@ -18,19 +18,45 @@ function markerSlug(label: string): string {
 }
 
 interface IHCItem { marker: string; result: string; note: string }
+interface DiseaseImage { url: string; fullUrl?: string; caption: string; source?: string }
+interface ConsensusItem {
+  id: string;
+  title: string;
+  summary: string;
+  organization?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+interface LiteratureItem {
+  id: string;
+  title: string;
+  summary: string;
+  authors?: string;
+  journal?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
 interface DiseaseData {
   id: string; nameZh: string; nameEn: string; aliases: string[]; organ: string;
   category: string; epidemiology: string; clinicalFeatures: string; grossPathology: string;
+  grossDescription?: string;
   microscopy: string; keyFeatures: string[]; ihcProfile: IHCItem[];
   molecularFeatures: string; differentialDiagnosis: string[]; grading: string;
   staging: string; prognosis: string; treatment: string;
-  images: { url: string; caption: string }[]; references: string[];
+  images: DiseaseImage[];
+  microscopyImages?: DiseaseImage[];
+  grossImages?: DiseaseImage[];
+  expertConsensus?: ConsensusItem[];
+  literature?: LiteratureItem[];
+  references: string[];
 }
 
 interface OrganData { id: string; nameZh: string; icon: string; color: string }
 interface DiffDisease { id: string; nameZh: string; nameEn: string; organ: string }
 
-type Tab = 'overview' | 'microscopy' | 'ihc' | 'molecular' | 'differential' | 'clinical';
+type Tab = 'overview' | 'gross' | 'microscopy' | 'ihc' | 'molecular' | 'differential' | 'consensus' | 'literature' | 'clinical';
 
 export default function DiseasePage({ params }: { params: Promise<{ organ: string; disease: string }> }) {
   const { organ, disease: diseaseId } = use(params);
@@ -41,6 +67,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   const [loading, setLoading] = useState(true);
   const [xpToast, setXpToast] = useState<number | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; caption: string } | null>(null);
+  // Tracks which thumbnails the user has opted into loading the high-res
+  // original for. Keyed by image url so the state survives tab switches.
+  const [fullLoaded, setFullLoaded] = useState<Record<string, boolean>>({});
   const progress = useProgress();
   const mastery = progress?.diseaseMastery[diseaseId];
 
@@ -81,12 +110,18 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   if (loading) return <div className="flex items-center justify-center h-96"><div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div></div>;
   if (!d) return <div className="text-center py-16"><div className="flex justify-center mb-4" style={{ color: 'var(--fg-muted)' }}><IconSearch size={36} /></div><p style={{ color: 'var(--fg-muted)' }}>疾病未找到</p><Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link></div>;
 
+  const consensusCount = d.expertConsensus?.length || 0;
+  const literatureCount = d.literature?.length || 0;
+
   const tabs: { id: Tab; label: string }[] = [
     { id: 'overview', label: '概述' },
+    { id: 'gross', label: '大体描述' },
     { id: 'microscopy', label: '镜下特征' },
     { id: 'ihc', label: `免疫组化 (${d.ihcProfile.length})` },
     { id: 'molecular', label: '分子病理' },
     { id: 'differential', label: `鉴别诊断 (${d.differentialDiagnosis.length})` },
+    { id: 'consensus', label: `专家共识${consensusCount ? ` (${consensusCount})` : ''}` },
+    { id: 'literature', label: `文献参考${literatureCount ? ` (${literatureCount})` : ''}` },
     { id: 'clinical', label: '临床' },
   ];
 
@@ -168,15 +203,49 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           )}
           <Section title="流行病学" content={d.epidemiology} />
           <Section title="临床特征" content={d.clinicalFeatures} />
-          <Section title="大体观察" content={d.grossPathology} />
-          {d.images.length > 0 && <ImageGallery images={d.images} title="图文示意" onOpen={setLightbox} />}
+        </div>
+      )}
+
+      {tab === 'gross' && (
+        <div className="space-y-6">
+          <Section title="大体描述" content={d.grossDescription || d.grossPathology} />
+          {d.grossImages && d.grossImages.length > 0 && (
+            <ImageGallery
+              images={d.grossImages}
+              title="大体形态图"
+              onOpen={setLightbox}
+              fullLoaded={fullLoaded}
+              onLoadFull={(url) => setFullLoaded((s) => ({ ...s, [url]: true }))}
+            />
+          )}
+          {(!d.grossImages || d.grossImages.length === 0) && (
+            <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+              暂无大体形态图片。点击右上角反馈补充更多影像。
+            </p>
+          )}
         </div>
       )}
 
       {tab === 'microscopy' && (
         <div className="space-y-6">
           <Section title="镜下特征" content={d.microscopy} />
-          {d.images.length > 0 && <ImageGallery images={d.images} title="镜下示意图" onOpen={setLightbox} />}
+          {d.microscopyImages && d.microscopyImages.length > 0 ? (
+            <ImageGallery
+              images={d.microscopyImages}
+              title="真实染色形态图"
+              onOpen={setLightbox}
+              fullLoaded={fullLoaded}
+              onLoadFull={(url) => setFullLoaded((s) => ({ ...s, [url]: true }))}
+            />
+          ) : d.images.length > 0 ? (
+            <ImageGallery
+              images={d.images}
+              title="镜下示意图"
+              onOpen={setLightbox}
+              fullLoaded={fullLoaded}
+              onLoadFull={(url) => setFullLoaded((s) => ({ ...s, [url]: true }))}
+            />
+          ) : null}
         </div>
       )}
 
@@ -269,6 +338,14 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
         </div>
       )}
 
+      {tab === 'consensus' && (
+        <ConsensusList items={d.expertConsensus || []} />
+      )}
+
+      {tab === 'literature' && (
+        <LiteratureList items={d.literature || []} />
+      )}
+
       {tab === 'clinical' && (
         <div className="space-y-6">
           <Section title="治疗" content={d.treatment} />
@@ -293,37 +370,89 @@ function ImageGallery({
   images,
   title,
   onOpen,
+  fullLoaded,
+  onLoadFull,
 }: {
-  images: { url: string; caption: string }[];
+  images: DiseaseImage[];
   title: string;
   onOpen: (img: { url: string; caption: string }) => void;
+  fullLoaded?: Record<string, boolean>;
+  onLoadFull?: (url: string) => void;
 }) {
   return (
     <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
       <h3 className="font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
         <IconBookOpen size={14} style={{ color: 'var(--accent)' }} />
         <span>{title}</span>
-        <span className="text-xs font-normal" style={{ color: 'var(--fg-muted)' }}>(点击放大)</span>
+        <span className="text-xs font-normal" style={{ color: 'var(--fg-muted)' }}>(点击放大 · 默认压缩图)</span>
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {images.map((img, i) => (
-          <figure
-            key={i}
-            className="rounded-xl overflow-hidden cursor-zoom-in group transition-transform hover:-translate-y-0.5"
-            style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
-            onClick={() => onOpen(img)}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={img.url}
-              alt={img.caption}
-              className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
-              loading="lazy"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
-            />
-            <figcaption className="p-3 text-xs leading-relaxed" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>{img.caption}</figcaption>
-          </figure>
-        ))}
+        {images.map((img, i) => {
+          const hasFull = !!img.fullUrl;
+          const isFull = hasFull && !!fullLoaded?.[img.url];
+          // Which src to feed the <img>: once the user clicks "加载原图",
+          // swap in the high-res URL. Lightbox always uses full if available.
+          const displaySrc = isFull && img.fullUrl ? img.fullUrl : img.url;
+          const lightboxImg = {
+            url: img.fullUrl || img.url,
+            caption: img.caption,
+          };
+          return (
+            <figure
+              key={i}
+              className="rounded-xl overflow-hidden group transition-transform hover:-translate-y-0.5 flex flex-col"
+              style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
+            >
+              <div
+                className="relative cursor-zoom-in"
+                onClick={() => onOpen(lightboxImg)}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={displaySrc}
+                  alt={img.caption}
+                  className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
+                />
+                {hasFull && (
+                  <span
+                    className="absolute top-2 left-2 text-[10px] px-2 py-0.5 rounded-full font-medium"
+                    style={{
+                      background: isFull ? 'rgba(34,197,94,0.9)' : 'rgba(0,0,0,0.55)',
+                      color: '#fff',
+                    }}
+                  >
+                    {isFull ? '原图' : '压缩图'}
+                  </span>
+                )}
+              </div>
+              <figcaption className="p-3 text-xs leading-relaxed flex-1" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
+                <div>{img.caption}</div>
+                <div className="mt-2 flex items-center justify-between gap-2 flex-wrap">
+                  {img.source && (
+                    <span className="text-[10px] opacity-70">来源：{img.source}</span>
+                  )}
+                  {hasFull && !isFull && onLoadFull && (
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); onLoadFull(img.url); }}
+                      className="text-[11px] px-2 py-1 rounded-md transition-colors ml-auto"
+                      style={{
+                        background: 'var(--card-hover)',
+                        color: 'var(--accent)',
+                        border: '1px solid var(--border)',
+                      }}
+                    >
+                      加载原图
+                    </button>
+                  )}
+                </div>
+              </figcaption>
+            </figure>
+          );
+        })}
       </div>
     </div>
   );
@@ -361,6 +490,105 @@ function Lightbox({ image, onClose }: { image: { url: string; caption: string };
           {image.caption}
         </figcaption>
       </figure>
+    </div>
+  );
+}
+
+function ConsensusList({ items }: { items: ConsensusItem[] }) {
+  if (items.length === 0) {
+    return (
+      <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
+        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无专家共识数据</p>
+        <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>可通过管理后台补充 WHO / NCCN / CSCO 等指南条目</p>
+      </div>
+    );
+  }
+  return (
+    <div className="space-y-3">
+      {items.map((c) => (
+        <article
+          key={c.id}
+          className="rounded-xl p-5"
+          style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+        >
+          <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
+            <h3 className="font-semibold text-sm" style={{ color: 'var(--fg)' }}>{c.title}</h3>
+            <div className="flex items-center gap-2 flex-wrap">
+              {c.organization && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--card-hover)', color: 'var(--accent)' }}>
+                  {c.organization}
+                </span>
+              )}
+              {c.year && (
+                <span className="text-[10px] tabular-nums" style={{ color: 'var(--fg-muted)' }}>{c.year}</span>
+              )}
+            </div>
+          </div>
+          <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</p>
+          <ResourceLinks sourceUrl={c.sourceUrl} viewUrl={c.viewUrl} />
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function LiteratureList({ items }: { items: LiteratureItem[] }) {
+  if (items.length === 0) {
+    return (
+      <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
+        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无文献参考数据</p>
+        <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>可通过管理后台补充 PubMed / 核心期刊文献</p>
+      </div>
+    );
+  }
+  return (
+    <div className="space-y-3">
+      {items.map((lit) => (
+        <article
+          key={lit.id}
+          className="rounded-xl p-5"
+          style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+        >
+          <h3 className="font-semibold text-sm mb-1" style={{ color: 'var(--fg)' }}>{lit.title}</h3>
+          <div className="flex items-center gap-2 text-[11px] mb-2 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
+            {lit.authors && <span>{lit.authors}</span>}
+            {lit.journal && <span>· {lit.journal}</span>}
+            {lit.year && <span className="tabular-nums">· {lit.year}</span>}
+          </div>
+          <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{lit.summary}</p>
+          <ResourceLinks sourceUrl={lit.sourceUrl} viewUrl={lit.viewUrl} />
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
+  if (!sourceUrl && !viewUrl) return null;
+  return (
+    <div className="flex items-center gap-2 mt-3">
+      {sourceUrl && (
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[11px] px-2.5 py-1 rounded-md transition-colors"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)', textDecoration: 'none' }}
+        >
+          源地址 ↗
+        </a>
+      )}
+      {viewUrl && (
+        <a
+          href={viewUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[11px] px-2.5 py-1 rounded-md transition-colors"
+          style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
+        >
+          在线阅览
+        </a>
+      )}
     </div>
   );
 }

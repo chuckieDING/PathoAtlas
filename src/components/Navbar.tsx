@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   IconHome, IconMicroscope, IconFlask, IconScale, IconBrain, IconTrophy,
   IconSearch, IconMenu, IconSun, IconMoon, IconDna, IconInfo, IconHelp,
-  IconGithub, IconX,
+  IconGithub, IconX, IconSettings,
 } from './Icon';
 import { NavbarProgress } from './ProgressWidgets';
 
@@ -22,6 +22,7 @@ const NAV = [
 const MENU_EXTRAS = [
   { href: '/search', label: '高级搜索', icon: IconSearch },
   { href: '/progress', label: '学习成就', icon: IconTrophy },
+  { href: '/admin', label: '内容管理', icon: IconSettings },
   { href: '/about', label: '关于项目', icon: IconInfo },
   { href: '/help', label: '使用帮助', icon: IconHelp },
   { href: 'https://github.com/chuckieding/pathoatlas', label: 'GitHub 仓库', icon: IconGithub, external: true },

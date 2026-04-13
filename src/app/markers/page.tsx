@@ -2,7 +2,29 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { IconFlask, IconSearch, IconX, IconBookOpen } from '@/components/Icon';
+import { OrganIcon } from '@/components/OrganIcon';
 import { getMarkerDiagram, MARKERS_WITH_DIAGRAM, type MarkerDiagram } from '@/lib/markerDiagrams';
+
+interface ConsensusItem {
+  id: string;
+  title: string;
+  summary: string;
+  organization?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+
+interface LiteratureItem {
+  id: string;
+  title: string;
+  summary: string;
+  authors?: string;
+  journal?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
 
 interface Marker {
   id: string; nameZh: string; nameEn: string; abbreviation: string; category: string;
@@ -10,7 +32,13 @@ interface Marker {
   normalExpression: string; function: string; interpretation: string;
   clinicalSignificance: string; positiveIn: string[]; negativeIn: string[];
   relatedDrugs: string[]; pitfalls: string; references?: string[];
+  expertConsensus?: ConsensusItem[];
+  literature?: LiteratureItem[];
+  /** Organ systems this marker is used in, derived server-side from disease IHC panels. */
+  organs?: string[];
 }
+
+interface Organ { id: string; nameZh: string; nameEn: string; color: string }
 
 const CATEGORIES: { key: string; label: string }[] = [
   { key: 'all', label: '全部' },
@@ -26,16 +54,24 @@ const CATEGORIES: { key: string; label: string }[] = [
 
 export default function MarkersPage() {
   const [markers, setMarkers] = useState<Marker[]>([]);
+  const [organs, setOrgans] = useState<Organ[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [organFilter, setOrganFilter] = useState<string>('all');
   const [search, setSearch] = useState('');
   const [expanded, setExpanded] = useState<string | null>(null);
   const [onlyWithDiagram, setOnlyWithDiagram] = useState(false);
 
   useEffect(() => {
-    fetch('/api/markers')
-      .then(r => r.json())
-      .then(d => { setMarkers(Array.isArray(d) ? d : []); setLoading(false); })
+    Promise.all([
+      fetch('/api/markers').then(r => r.json()),
+      fetch('/api/organs').then(r => r.json()),
+    ])
+      .then(([m, o]) => {
+        setMarkers(Array.isArray(m) ? m : []);
+        setOrgans(Array.isArray(o) ? o : []);
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, []);
 
@@ -65,6 +101,7 @@ export default function MarkersPage() {
     const q = search.trim().toLowerCase();
     return markers.filter(m => {
       if (filter !== 'all' && m.category !== filter) return false;
+      if (organFilter !== 'all' && !(m.organs || []).includes(organFilter)) return false;
       if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
       if (!q) return true;
       return (
@@ -75,12 +112,13 @@ export default function MarkersPage() {
         m.positiveIn.some(p => p.toLowerCase().includes(q))
       );
     });
-  }, [markers, filter, search, onlyWithDiagram]);
+  }, [markers, filter, organFilter, search, onlyWithDiagram]);
 
-  // Category counts (respects the search query so the chips reflect the current
-  // result set, not the entire database — matches how users expect filters to feel).
+  // Category counts honor the *organ* filter + search, so toggling an organ
+  // immediately narrows the category chip counts (and vice-versa).
   const counts = useMemo(() => {
     const searchedBase = markers.filter(m => {
+      if (organFilter !== 'all' && !(m.organs || []).includes(organFilter)) return false;
       if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
       const q = search.trim().toLowerCase();
       if (!q) return true;
@@ -93,7 +131,26 @@ export default function MarkersPage() {
     const map: Record<string, number> = { all: searchedBase.length };
     for (const m of searchedBase) map[m.category] = (map[m.category] || 0) + 1;
     return map;
-  }, [markers, search, onlyWithDiagram]);
+  }, [markers, search, organFilter, onlyWithDiagram]);
+
+  // Organ chip counts mirror the same AND logic but ignore the organ filter
+  // itself (so the chip you're currently on doesn't collapse to itself).
+  const organCounts = useMemo(() => {
+    const base = markers.filter(m => {
+      if (filter !== 'all' && m.category !== filter) return false;
+      if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
+      const q = search.trim().toLowerCase();
+      if (!q) return true;
+      return (
+        m.nameZh.includes(q) ||
+        m.nameEn.toLowerCase().includes(q) ||
+        m.abbreviation.toLowerCase().includes(q)
+      );
+    });
+    const map: Record<string, number> = { all: base.length };
+    for (const m of base) for (const o of m.organs || []) map[o] = (map[o] || 0) + 1;
+    return map;
+  }, [markers, filter, search, onlyWithDiagram]);
 
   // Group filtered results by category, preserving CATEGORIES order.
   const groups = useMemo(() => {
@@ -203,6 +260,70 @@ export default function MarkersPage() {
             );
           })}
         </div>
+
+        {/* Organ chips row — filter by organ system the marker is used in */}
+        {organs.length > 0 && (
+          <div className="flex gap-1.5 overflow-x-auto pb-1 mt-2 -mx-1 px-1 items-center">
+            <span className="text-[10px] font-semibold uppercase tracking-wider flex-shrink-0 pl-1 pr-1"
+              style={{ color: 'var(--fg-muted)' }}>
+              器官
+            </span>
+            {/* "All organs" chip */}
+            <button
+              onClick={() => setOrganFilter('all')}
+              className="px-2.5 py-1 rounded-full text-xs font-medium transition-colors flex-shrink-0 flex items-center gap-1.5"
+              style={{
+                background: organFilter === 'all' ? 'var(--accent)' : 'var(--card)',
+                color: organFilter === 'all' ? '#fff' : 'var(--fg-muted)',
+                border: `1px solid ${organFilter === 'all' ? 'var(--accent)' : 'var(--border)'}`,
+              }}
+            >
+              <span>全部</span>
+              <span
+                className="tabular-nums text-[10px] px-1.5 py-px rounded-full"
+                style={{
+                  background: organFilter === 'all' ? 'rgba(255,255,255,0.22)' : 'var(--card-hover)',
+                  color: organFilter === 'all' ? '#fff' : 'var(--fg-muted)',
+                }}
+              >
+                {organCounts.all || 0}
+              </span>
+            </button>
+            {organs.map(o => {
+              const n = organCounts[o.id] || 0;
+              const active = organFilter === o.id;
+              const disabled = n === 0;
+              return (
+                <button
+                  key={o.id}
+                  onClick={() => !disabled && setOrganFilter(o.id)}
+                  disabled={disabled}
+                  title={o.nameEn}
+                  className="px-2.5 py-1 rounded-full text-xs font-medium transition-colors flex-shrink-0 flex items-center gap-1.5"
+                  style={{
+                    background: active ? o.color : 'var(--card)',
+                    color: active ? '#fff' : (disabled ? 'var(--fg-muted)' : 'var(--fg-muted)'),
+                    border: `1px solid ${active ? o.color : 'var(--border)'}`,
+                    opacity: disabled ? 0.35 : 1,
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                  }}
+                >
+                  <OrganIcon organId={o.id} size={12} color={active ? '#fff' : o.color} />
+                  <span>{o.nameZh}</span>
+                  <span
+                    className="tabular-nums text-[10px] px-1.5 py-px rounded-full"
+                    style={{
+                      background: active ? 'rgba(255,255,255,0.25)' : 'var(--card-hover)',
+                      color: active ? '#fff' : 'var(--fg-muted)',
+                    }}
+                  >
+                    {n}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {loading ? (
@@ -216,7 +337,7 @@ export default function MarkersPage() {
           </div>
           <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>未找到匹配的标记物</p>
           <button
-            onClick={() => { setSearch(''); setFilter('all'); setOnlyWithDiagram(false); }}
+            onClick={() => { setSearch(''); setFilter('all'); setOrganFilter('all'); setOnlyWithDiagram(false); }}
             className="mt-4 text-xs underline"
             style={{ color: 'var(--accent)' }}
           >
@@ -360,7 +481,82 @@ function MarkerCard({ marker: m, expanded, onToggle }: { marker: Marker; expande
               </ul>
             </div>
           )}
+
+          {m.expertConsensus && m.expertConsensus.length > 0 && (
+            <div className="rounded-lg p-3 mt-1" style={{ background: 'var(--card-hover)' }}>
+              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>专家共识 ({m.expertConsensus.length})</div>
+              <div className="space-y-2.5">
+                {m.expertConsensus.map(c => (
+                  <div key={c.id} className="rounded-md p-2.5" style={{ background: 'var(--card)' }}>
+                    <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
+                      <div className="text-xs font-semibold" style={{ color: 'var(--fg)' }}>{c.title}</div>
+                      <div className="flex items-center gap-1.5">
+                        {c.organization && (
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full" style={{ background: 'var(--card-hover)', color: 'var(--accent)' }}>{c.organization}</span>
+                        )}
+                        {c.year && <span className="text-[9px] tabular-nums" style={{ color: 'var(--fg-muted)' }}>{c.year}</span>}
+                      </div>
+                    </div>
+                    <div className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</div>
+                    <MarkerResourceLinks sourceUrl={c.sourceUrl} viewUrl={c.viewUrl} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {m.literature && m.literature.length > 0 && (
+            <div className="rounded-lg p-3 mt-1" style={{ background: 'var(--card-hover)' }}>
+              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>文献参考 ({m.literature.length})</div>
+              <div className="space-y-2.5">
+                {m.literature.map(lit => (
+                  <div key={lit.id} className="rounded-md p-2.5" style={{ background: 'var(--card)' }}>
+                    <div className="text-xs font-semibold mb-1" style={{ color: 'var(--fg)' }}>{lit.title}</div>
+                    <div className="text-[10px] mb-1 flex flex-wrap gap-1" style={{ color: 'var(--fg-muted)' }}>
+                      {lit.authors && <span>{lit.authors}</span>}
+                      {lit.journal && <span>· {lit.journal}</span>}
+                      {lit.year && <span className="tabular-nums">· {lit.year}</span>}
+                    </div>
+                    <div className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{lit.summary}</div>
+                    <MarkerResourceLinks sourceUrl={lit.sourceUrl} viewUrl={lit.viewUrl} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+      )}
+    </div>
+  );
+}
+
+function MarkerResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
+  if (!sourceUrl && !viewUrl) return null;
+  return (
+    <div className="flex items-center gap-1.5 mt-2">
+      {sourceUrl && (
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[10px] px-2 py-0.5 rounded transition-colors"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)', textDecoration: 'none' }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          源地址 ↗
+        </a>
+      )}
+      {viewUrl && (
+        <a
+          href={viewUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[10px] px-2 py-0.5 rounded transition-colors"
+          style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          在线阅览
+        </a>
       )}
     </div>
   );

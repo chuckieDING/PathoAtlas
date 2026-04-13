@@ -3,6 +3,50 @@ import path from 'path';
 
 // ── Types ─────────────────────────────────────────────────────────
 
+/**
+ * A pathology figure. `url` is always the thumbnail/compressed preview that
+ * the atlas displays by default. `fullUrl` is optional — if present, the UI
+ * exposes a "加载原图" button that swaps in the high-resolution source
+ * on demand so the page stays lightweight on first paint.
+ * `source` optionally records the human-readable origin (e.g. "Wikimedia
+ * Commons") for attribution.
+ */
+export interface DiseaseImage {
+  url: string;
+  fullUrl?: string;
+  caption: string;
+  source?: string;
+}
+
+/**
+ * An expert consensus / guideline entry referenced by a disease or marker.
+ * `sourceUrl` is the original publisher page (e.g. NCCN / WHO / CSCO),
+ * `viewUrl` is an embeddable online viewer (can be the same as sourceUrl
+ * or a PDF hosted at public/uploads). Both are optional so entries can be
+ * progressively enriched.
+ */
+export interface ConsensusItem {
+  id: string;
+  title: string;
+  summary: string;
+  organization?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+
+/** A literature/paper citation with optional links for fetching or preview. */
+export interface LiteratureItem {
+  id: string;
+  title: string;
+  summary: string;
+  authors?: string;
+  journal?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+
 export interface Disease {
   id: string;
   nameZh: string;
@@ -13,6 +57,7 @@ export interface Disease {
   epidemiology: string;
   clinicalFeatures: string;
   grossPathology: string;
+  grossDescription?: string;
   microscopy: string;
   keyFeatures: string[];
   ihcProfile: { marker: string; result: string; note: string }[];
@@ -22,7 +67,16 @@ export interface Disease {
   staging: string;
   prognosis: string;
   treatment: string;
-  images: { url: string; caption: string }[];
+  /** Legacy generic image list (retained for back-compat with older entries). */
+  images: DiseaseImage[];
+  /** Real H&E / IHC micrographs for the 镜下特征 tab. */
+  microscopyImages?: DiseaseImage[];
+  /** Real gross photos / macroscopy images for the 大体描述 tab. */
+  grossImages?: DiseaseImage[];
+  /** Guideline / expert consensus entries shown in the 专家共识 tab. */
+  expertConsensus?: ConsensusItem[];
+  /** Journal article / paper references shown in the 文献参考 tab. */
+  literature?: LiteratureItem[];
   references: string[];
 }
 
@@ -55,6 +109,10 @@ export interface Marker {
   relatedDrugs: string[];
   pitfalls: string;
   references: string[];
+  /** Guideline / expert consensus entries shown in the marker detail view. */
+  expertConsensus?: ConsensusItem[];
+  /** Journal article / paper references shown in the marker detail view. */
+  literature?: LiteratureItem[];
 }
 
 export interface StagingSystem {
@@ -130,6 +188,47 @@ export function getMarkers(): Marker[] {
 
 export function getMarker(id: string): Marker | undefined {
   return getMarkers().find(m => m.id === id);
+}
+
+/**
+ * Returns every marker augmented with the list of organ systems it is used
+ * in. "Used in" = the marker appears in at least one disease's `ihcProfile`
+ * whose owning organ matches. This is computed at runtime from the existing
+ * disease database so the mapping stays in sync when new diseases/markers
+ * are added — no manual curation required.
+ */
+export function getMarkersWithOrgans(): (Marker & { organs: string[] })[] {
+  const markers = getMarkers();
+  const diseases = getAllDiseases();
+
+  // Normalizes a free-text marker label (e.g. "CK5/6", "Ki-67", "BCL-2")
+  // to the canonical lowercase-dash id used in markers.json so lookups
+  // survive punctuation and case differences.
+  const slug = (s: string) =>
+    s.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+
+  // slug → Set<organId>
+  const organsBySlug = new Map<string, Set<string>>();
+  for (const d of diseases) {
+    for (const item of d.ihcProfile) {
+      const key = slug(item.marker);
+      if (!organsBySlug.has(key)) organsBySlug.set(key, new Set());
+      organsBySlug.get(key)!.add(d.organ);
+    }
+  }
+
+  return markers.map(m => {
+    // A marker can be referenced by its id, abbreviation, or English name.
+    // Try all three lookup keys to maximise matches against disease IHC rows
+    // without requiring authors to use a single canonical form.
+    const candidates = [m.id, slug(m.abbreviation || ''), slug(m.nameEn || '')];
+    const organs = new Set<string>();
+    for (const k of candidates) {
+      const hit = organsBySlug.get(k);
+      if (hit) for (const o of hit) organs.add(o);
+    }
+    return { ...m, organs: Array.from(organs).sort() };
+  });
 }
 
 export function getStagingSystems(): StagingSystem[] {
