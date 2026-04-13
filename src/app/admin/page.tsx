@@ -272,6 +272,7 @@ function DiseaseEditor({ disease, onSaved }: { disease: DiseaseLike; onSaved: (m
         onChange={setConsensus}
         onSave={() => save({ expertConsensus: consensus }, '专家共识')}
         busy={busy}
+        scope={`diseases/${disease.id}/consensus`}
       />
 
       <LiteratureEditor
@@ -279,6 +280,7 @@ function DiseaseEditor({ disease, onSaved }: { disease: DiseaseLike; onSaved: (m
         onChange={setLiterature}
         onSave={() => save({ literature }, '文献参考')}
         busy={busy}
+        scope={`diseases/${disease.id}/literature`}
       />
 
       <ImageEditor
@@ -348,6 +350,7 @@ function MarkerEditor({ marker, onSaved }: { marker: MarkerLike; onSaved: (msg: 
         onChange={setConsensus}
         onSave={() => save({ expertConsensus: consensus }, '专家共识')}
         busy={busy}
+        scope={`markers/${marker.id}/consensus`}
       />
 
       <LiteratureEditor
@@ -355,6 +358,7 @@ function MarkerEditor({ marker, onSaved }: { marker: MarkerLike; onSaved: (msg: 
         onChange={setLiterature}
         onSave={() => save({ literature }, '文献参考')}
         busy={busy}
+        scope={`markers/${marker.id}/literature`}
       />
 
       <StainingGroupsEditor
@@ -403,11 +407,13 @@ function ConsensusEditor({
   onChange,
   onSave,
   busy,
+  scope,
 }: {
   items: ConsensusItem[];
   onChange: (next: ConsensusItem[]) => void;
   onSave: () => void;
   busy: boolean;
+  scope: string;
 }) {
   const update = (idx: number, patch: Partial<ConsensusItem>) => {
     onChange(items.map((x, i) => i === idx ? { ...x, ...patch } : x));
@@ -440,8 +446,13 @@ function ConsensusEditor({
             <TextareaField label="简介" value={c.summary} onChange={v => update(i, { summary: v })} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Field label="源地址 URL（出版商/原始发布页）" value={c.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
-              <Field label="在线阅览 URL（PubMed/摘要/预览）" value={c.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
+              <Field label="在线阅览 URL（PubMed/摘要/PDF）" value={c.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
             </div>
+            <PdfUploadButton
+              scope={`${scope}/${c.id}`}
+              currentUrl={c.viewUrl}
+              onUploaded={(url) => update(i, { viewUrl: url })}
+            />
             <div className="flex justify-end">
               <button
                 onClick={() => remove(i)}
@@ -463,11 +474,13 @@ function LiteratureEditor({
   onChange,
   onSave,
   busy,
+  scope,
 }: {
   items: LiteratureItem[];
   onChange: (next: LiteratureItem[]) => void;
   onSave: () => void;
   busy: boolean;
+  scope: string;
 }) {
   const update = (idx: number, patch: Partial<LiteratureItem>) => {
     onChange(items.map((x, i) => i === idx ? { ...x, ...patch } : x));
@@ -498,8 +511,13 @@ function LiteratureEditor({
             <TextareaField label="简介" value={lit.summary} onChange={v => update(i, { summary: v })} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Field label="源地址 URL（期刊 DOI/原文页）" value={lit.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
-              <Field label="在线阅览 URL（PubMed/摘要/预览）" value={lit.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
+              <Field label="在线阅览 URL（PubMed/摘要/PDF）" value={lit.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
             </div>
+            <PdfUploadButton
+              scope={`${scope}/${lit.id}`}
+              currentUrl={lit.viewUrl}
+              onUploaded={(url) => update(i, { viewUrl: url })}
+            />
             <div className="flex justify-end">
               <button
                 onClick={() => remove(i)}
@@ -809,6 +827,86 @@ function StainingGroupsEditor({
         ))}
       </div>
     </section>
+  );
+}
+
+function PdfUploadButton({
+  scope,
+  currentUrl,
+  onUploaded,
+}: {
+  scope: string;
+  currentUrl?: string;
+  onUploaded: (url: string) => void;
+}) {
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const upload = async (file: File) => {
+    // Allow any file, but nudge toward PDF since that's what the button
+    // advertises. Non-PDF uploads just fall back to browser default handling.
+    setBusy(true);
+    setError(null);
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      fd.append('scope', scope);
+      const res = await fetch('/api/admin/upload', { method: 'POST', body: fd });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '上传失败');
+      onUploaded(j.url);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : '未知错误');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const isPdf = !!currentUrl && /\.pdf(\?|$)/i.test(currentUrl);
+  const isUploaded = !!currentUrl && currentUrl.startsWith('/uploads/');
+
+  return (
+    <div
+      className="rounded-md p-2 flex items-center gap-2 flex-wrap text-[11px]"
+      style={{ background: 'var(--card)', border: '1px dashed var(--border)', color: 'var(--fg-muted)' }}
+    >
+      <span style={{ color: 'var(--fg)' }}>上传 PDF（替换在线阅览 URL）：</span>
+      <label
+        className="px-2 py-1 rounded cursor-pointer"
+        style={{ background: 'var(--card-hover)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+      >
+        {busy ? '上传中...' : '选择 PDF'}
+        <input
+          type="file"
+          accept="application/pdf,.pdf"
+          className="hidden"
+          disabled={busy}
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) upload(f);
+            e.target.value = '';
+          }}
+        />
+      </label>
+      {isUploaded && (
+        <>
+          <span className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: isPdf ? 'rgba(239,68,68,0.12)' : 'rgba(99,102,241,0.12)', color: isPdf ? '#ef4444' : '#818cf8' }}>
+            {isPdf ? 'PDF' : '文件'}
+          </span>
+          <a
+            href={currentUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="underline"
+            style={{ color: 'var(--accent)' }}
+          >
+            预览 ↗
+          </a>
+        </>
+      )}
+      {error && <span style={{ color: '#ef4444' }}>上传失败：{error}</span>}
+    </div>
   );
 }
 

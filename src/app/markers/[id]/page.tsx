@@ -426,6 +426,11 @@ function StainingGallery({ groups }: { groups: StainingGroup[] }) {
 
 function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
   if (!sourceUrl && !viewUrl) return null;
+  // Detect whether the "view" link is a PDF — either by extension or by
+  // being an admin-uploaded file under /uploads/. Browsers natively render
+  // PDFs in a new tab, so a plain <a target="_blank"> is enough; we just
+  // badge the button so users know what to expect.
+  const isPdf = !!viewUrl && /\.pdf(\?|$)/i.test(viewUrl);
   return (
     <div className="flex items-center gap-2 mt-3">
       {sourceUrl && (
@@ -437,8 +442,9 @@ function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: s
       )}
       {viewUrl && (
         <a href={viewUrl} target="_blank" rel="noreferrer"
-          className="text-[11px] px-2.5 py-1 rounded-md"
+          className="text-[11px] px-2.5 py-1 rounded-md inline-flex items-center gap-1"
           style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}>
+          {isPdf && <span className="text-[9px] font-bold px-1 rounded" style={{ background: 'rgba(255,255,255,0.25)' }}>PDF</span>}
           在线阅览
         </a>
       )}
