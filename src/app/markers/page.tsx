@@ -1,40 +1,17 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { IconFlask, IconSearch, IconX, IconBookOpen } from '@/components/Icon';
+import Link from 'next/link';
+import { IconFlask, IconSearch, IconX, IconBookOpen, IconArrowRight } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
-import { getMarkerDiagram, MARKERS_WITH_DIAGRAM, type MarkerDiagram } from '@/lib/markerDiagrams';
-
-interface ConsensusItem {
-  id: string;
-  title: string;
-  summary: string;
-  organization?: string;
-  year?: number;
-  sourceUrl?: string;
-  viewUrl?: string;
-}
-
-interface LiteratureItem {
-  id: string;
-  title: string;
-  summary: string;
-  authors?: string;
-  journal?: string;
-  year?: number;
-  sourceUrl?: string;
-  viewUrl?: string;
-}
+import { getMarkerDiagram, MARKERS_WITH_DIAGRAM } from '@/lib/markerDiagrams';
 
 interface Marker {
   id: string; nameZh: string; nameEn: string; abbreviation: string; category: string;
   cloneInfo: string; targetProtein: string; cellularLocalization: string;
   normalExpression: string; function: string; interpretation: string;
   clinicalSignificance: string; positiveIn: string[]; negativeIn: string[];
-  relatedDrugs: string[]; pitfalls: string; references?: string[];
-  expertConsensus?: ConsensusItem[];
-  literature?: LiteratureItem[];
-  /** Organ systems this marker is used in, derived server-side from disease IHC panels. */
+  relatedDrugs: string[]; pitfalls: string;
   organs?: string[];
 }
 
@@ -59,7 +36,6 @@ export default function MarkersPage() {
   const [filter, setFilter] = useState('all');
   const [organFilter, setOrganFilter] = useState<string>('all');
   const [search, setSearch] = useState('');
-  const [expanded, setExpanded] = useState<string | null>(null);
   const [onlyWithDiagram, setOnlyWithDiagram] = useState(false);
 
   useEffect(() => {
@@ -73,28 +49,6 @@ export default function MarkersPage() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
-
-  // After data loads, auto-expand and scroll to any marker targeted by URL hash
-  // so deep links from disease IHC tables and search results land cleanly.
-  useEffect(() => {
-    if (loading || markers.length === 0) return;
-    const hash = typeof window !== 'undefined' ? decodeURIComponent(window.location.hash.slice(1)) : '';
-    if (!hash) return;
-    const target = markers.find(m => m.id === hash);
-    if (target) {
-      setExpanded(target.id);
-      requestAnimationFrame(() => {
-        document.getElementById(target.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    }
-  }, [loading, markers]);
-
-  // Press ESC to collapse the currently expanded card.
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setExpanded(null); };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
   }, []);
 
   const filtered = useMemo(() => {
@@ -114,45 +68,36 @@ export default function MarkersPage() {
     });
   }, [markers, filter, organFilter, search, onlyWithDiagram]);
 
-  // Category counts honor the *organ* filter + search, so toggling an organ
-  // immediately narrows the category chip counts (and vice-versa).
+  // Category counts that honor the organ filter + search chain so chip
+  // counts stay in sync with the visible results.
   const counts = useMemo(() => {
-    const searchedBase = markers.filter(m => {
+    const base = markers.filter(m => {
       if (organFilter !== 'all' && !(m.organs || []).includes(organFilter)) return false;
       if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
       const q = search.trim().toLowerCase();
       if (!q) return true;
-      return (
-        m.nameZh.includes(q) ||
-        m.nameEn.toLowerCase().includes(q) ||
-        m.abbreviation.toLowerCase().includes(q)
-      );
+      return m.nameZh.includes(q) || m.nameEn.toLowerCase().includes(q) || m.abbreviation.toLowerCase().includes(q);
     });
-    const map: Record<string, number> = { all: searchedBase.length };
-    for (const m of searchedBase) map[m.category] = (map[m.category] || 0) + 1;
+    const map: Record<string, number> = { all: base.length };
+    for (const m of base) map[m.category] = (map[m.category] || 0) + 1;
     return map;
   }, [markers, search, organFilter, onlyWithDiagram]);
 
-  // Organ chip counts mirror the same AND logic but ignore the organ filter
-  // itself (so the chip you're currently on doesn't collapse to itself).
   const organCounts = useMemo(() => {
     const base = markers.filter(m => {
       if (filter !== 'all' && m.category !== filter) return false;
       if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
       const q = search.trim().toLowerCase();
       if (!q) return true;
-      return (
-        m.nameZh.includes(q) ||
-        m.nameEn.toLowerCase().includes(q) ||
-        m.abbreviation.toLowerCase().includes(q)
-      );
+      return m.nameZh.includes(q) || m.nameEn.toLowerCase().includes(q) || m.abbreviation.toLowerCase().includes(q);
     });
     const map: Record<string, number> = { all: base.length };
     for (const m of base) for (const o of m.organs || []) map[o] = (map[o] || 0) + 1;
     return map;
   }, [markers, filter, search, onlyWithDiagram]);
 
-  // Group filtered results by category, preserving CATEGORIES order.
+  // Preserve the grouped-by-category layout so the catalog still reads like
+  // a reference index; each group renders as a responsive card grid.
   const groups = useMemo(() => {
     const byCat: Record<string, Marker[]> = {};
     for (const m of filtered) {
@@ -171,10 +116,10 @@ export default function MarkersPage() {
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-1 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
           <IconFlask size={24} style={{ color: '#22c55e' }} />
-          <span>免疫组化标记物数据库</span>
+          <span>免疫组化标记物目录</span>
         </h1>
         <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-          {markers.length} 个常用标记物 · <span style={{ color: 'var(--accent)' }}>{MARKERS_WITH_DIAGRAM}</span> 个附机制概念图 · 点击展开查看判读/克隆号/靶向药
+          {markers.length} 个常用标记物 · <span style={{ color: 'var(--accent)' }}>{MARKERS_WITH_DIAGRAM}</span> 个附机制概念图 · 点击卡片查看详情
         </p>
       </div>
 
@@ -211,7 +156,6 @@ export default function MarkersPage() {
             )}
           </div>
 
-          {/* Diagram-only toggle */}
           <button
             onClick={() => setOnlyWithDiagram(v => !v)}
             className="px-3 py-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap"
@@ -227,7 +171,7 @@ export default function MarkersPage() {
           </button>
         </div>
 
-        {/* Category chips with counts */}
+        {/* Category chips */}
         <div className="flex gap-1.5 overflow-x-auto pb-1 mt-3 -mx-1 px-1">
           {CATEGORIES.map(c => {
             const n = counts[c.key] || 0;
@@ -261,14 +205,12 @@ export default function MarkersPage() {
           })}
         </div>
 
-        {/* Organ chips row — filter by organ system the marker is used in */}
+        {/* Organ chips */}
         {organs.length > 0 && (
           <div className="flex gap-1.5 overflow-x-auto pb-1 mt-2 -mx-1 px-1 items-center">
-            <span className="text-[10px] font-semibold uppercase tracking-wider flex-shrink-0 pl-1 pr-1"
-              style={{ color: 'var(--fg-muted)' }}>
+            <span className="text-[10px] font-semibold uppercase tracking-wider flex-shrink-0 pl-1 pr-1" style={{ color: 'var(--fg-muted)' }}>
               器官
             </span>
-            {/* "All organs" chip */}
             <button
               onClick={() => setOrganFilter('all')}
               className="px-2.5 py-1 rounded-full text-xs font-medium transition-colors flex-shrink-0 flex items-center gap-1.5"
@@ -302,7 +244,7 @@ export default function MarkersPage() {
                   className="px-2.5 py-1 rounded-full text-xs font-medium transition-colors flex-shrink-0 flex items-center gap-1.5"
                   style={{
                     background: active ? o.color : 'var(--card)',
-                    color: active ? '#fff' : (disabled ? 'var(--fg-muted)' : 'var(--fg-muted)'),
+                    color: active ? '#fff' : 'var(--fg-muted)',
                     border: `1px solid ${active ? o.color : 'var(--border)'}`,
                     opacity: disabled ? 0.35 : 1,
                     cursor: disabled ? 'not-allowed' : 'pointer',
@@ -313,7 +255,7 @@ export default function MarkersPage() {
                   <span
                     className="tabular-nums text-[10px] px-1.5 py-px rounded-full"
                     style={{
-                      background: active ? 'rgba(255,255,255,0.25)' : 'var(--card-hover)',
+                      background: active ? 'rgba(255,255,255,0.22)' : 'var(--card-hover)',
                       color: active ? '#fff' : 'var(--fg-muted)',
                     }}
                   >
@@ -355,14 +297,9 @@ export default function MarkersPage() {
               <span className="tabular-nums">({g.items.length})</span>
               <span className="flex-1 h-px ml-2" style={{ background: 'var(--border)' }} />
             </h2>
-            <div className="space-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {g.items.map(m => (
-                <MarkerCard
-                  key={m.id}
-                  marker={m}
-                  expanded={expanded === m.id}
-                  onToggle={() => setExpanded(prev => prev === m.id ? null : m.id)}
-                />
+                <MarkerCatalogCard key={m.id} marker={m} organs={organs} />
               ))}
             </div>
           </section>
@@ -374,26 +311,24 @@ export default function MarkersPage() {
 
 // ── Card ──────────────────────────────────────────────────────────
 
-function MarkerCard({ marker: m, expanded, onToggle }: { marker: Marker; expanded: boolean; onToggle: () => void }) {
+function MarkerCatalogCard({ marker: m, organs }: { marker: Marker; organs: Organ[] }) {
   const diagram = getMarkerDiagram(m.id);
+  const markerOrgans = (m.organs || [])
+    .map(oid => organs.find(o => o.id === oid))
+    .filter((o): o is Organ => !!o);
 
   return (
-    <div
-      id={m.id}
-      className="rounded-xl border transition-all"
+    <Link
+      href={`/markers/${m.id}`}
+      className="group rounded-xl border p-4 transition-all hover:shadow-md block"
       style={{
         background: 'var(--card)',
-        borderColor: expanded ? 'var(--accent)' : 'var(--border)',
-        scrollMarginTop: '128px',
-        boxShadow: expanded ? '0 2px 14px rgba(99,102,241,0.12)' : 'none',
+        borderColor: 'var(--border)',
+        textDecoration: 'none',
       }}
     >
-      <button
-        className="w-full text-left px-5 py-4 flex items-center justify-between gap-3"
-        onClick={onToggle}
-        aria-expanded={expanded}
-      >
-        <div className="flex items-center gap-3 min-w-0 flex-1">
+      <div className="flex items-start justify-between gap-2 mb-2">
+        <div className="flex items-baseline gap-2 min-w-0 flex-1">
           <span
             className="font-mono font-bold text-sm flex-shrink-0"
             style={{ color: 'var(--accent)' }}
@@ -401,226 +336,50 @@ function MarkerCard({ marker: m, expanded, onToggle }: { marker: Marker; expande
             {m.abbreviation || m.nameEn}
           </span>
           <span className="text-sm truncate" style={{ color: 'var(--fg)' }}>{m.nameZh}</span>
+        </div>
+        <IconArrowRight
+          size={14}
+          className="flex-shrink-0 transition-transform group-hover:translate-x-0.5"
+          style={{ color: 'var(--fg-muted)' }}
+        />
+      </div>
+
+      <div className="text-[11px] mb-2 line-clamp-2" style={{ color: 'var(--fg-muted)' }}>
+        {m.targetProtein || m.function}
+      </div>
+
+      <div className="flex flex-wrap gap-1">
+        <span
+          className="text-[10px] px-1.5 py-0.5 rounded-full"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}
+        >
+          {m.cellularLocalization}
+        </span>
+        {diagram && (
           <span
-            className="text-xs px-2 py-0.5 rounded-full hidden sm:inline flex-shrink-0"
+            className="text-[10px] px-1.5 py-0.5 rounded-full flex items-center gap-1"
+            style={{ background: 'rgba(34,197,94,0.12)', color: '#22c55e' }}
+          >
+            <IconBookOpen size={9} />
+            机制图
+          </span>
+        )}
+        {markerOrgans.slice(0, 3).map(o => (
+          <span
+            key={o.id}
+            className="text-[10px] px-1.5 py-0.5 rounded-full flex items-center gap-1"
             style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}
           >
-            {m.cellularLocalization}
-          </span>
-          {diagram && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded-full flex items-center gap-1 flex-shrink-0"
-              style={{ background: 'rgba(34,197,94,0.12)', color: '#22c55e' }}
-              title="包含机制概念图"
-            >
-              <IconBookOpen size={10} />
-              <span className="hidden sm:inline">机制图</span>
-            </span>
-          )}
-        </div>
-        <svg
-          className="w-4 h-4 flex-shrink-0 transition-transform"
-          style={{ color: 'var(--fg-muted)', transform: expanded ? 'rotate(180deg)' : 'rotate(0)' }}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
-      </button>
-
-      {expanded && (
-        <div className="px-5 pb-5 space-y-4" style={{ borderTop: '1px solid var(--border)' }}>
-          {diagram && <MechanismFigure diagram={diagram} />}
-
-          <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <InfoBox label="靶蛋白" value={m.targetProtein} />
-            <InfoBox label="亚细胞定位" value={m.cellularLocalization} />
-            <InfoBox label="克隆号" value={m.cloneInfo} mono />
-            <InfoBox label="正常表达" value={m.normalExpression} />
-          </div>
-
-          <InfoBox label="功能" value={m.function} />
-          <InfoBox label="判读标准" value={m.interpretation} />
-          <InfoBox label="临床意义" value={m.clinicalSignificance} />
-
-          {m.positiveIn.length > 0 && (
-            <TagRow
-              label="阳性表达"
-              items={m.positiveIn}
-              bg="rgba(34,197,94,0.1)"
-              color="#22c55e"
-            />
-          )}
-          {m.negativeIn.length > 0 && (
-            <TagRow
-              label="阴性表达"
-              items={m.negativeIn}
-              bg="rgba(239,68,68,0.1)"
-              color="#ef4444"
-            />
-          )}
-          {m.relatedDrugs.length > 0 && (
-            <TagRow
-              label="相关靶向药"
-              items={m.relatedDrugs}
-              bg="rgba(99,102,241,0.12)"
-              color="#818cf8"
-            />
-          )}
-          {m.pitfalls && <InfoBox label="诊断陷阱" value={m.pitfalls} accent />}
-
-          {m.references && m.references.length > 0 && (
-            <div className="rounded-lg p-3 mt-1" style={{ background: 'var(--card-hover)' }}>
-              <div className="text-xs font-semibold mb-1.5" style={{ color: 'var(--fg-muted)' }}>参考文献</div>
-              <ul className="space-y-1">
-                {m.references.map((r, i) => (
-                  <li key={i} className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>• {r}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {m.expertConsensus && m.expertConsensus.length > 0 && (
-            <div className="rounded-lg p-3 mt-1" style={{ background: 'var(--card-hover)' }}>
-              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>专家共识 ({m.expertConsensus.length})</div>
-              <div className="space-y-2.5">
-                {m.expertConsensus.map(c => (
-                  <div key={c.id} className="rounded-md p-2.5" style={{ background: 'var(--card)' }}>
-                    <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
-                      <div className="text-xs font-semibold" style={{ color: 'var(--fg)' }}>{c.title}</div>
-                      <div className="flex items-center gap-1.5">
-                        {c.organization && (
-                          <span className="text-[9px] px-1.5 py-0.5 rounded-full" style={{ background: 'var(--card-hover)', color: 'var(--accent)' }}>{c.organization}</span>
-                        )}
-                        {c.year && <span className="text-[9px] tabular-nums" style={{ color: 'var(--fg-muted)' }}>{c.year}</span>}
-                      </div>
-                    </div>
-                    <div className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</div>
-                    <MarkerResourceLinks sourceUrl={c.sourceUrl} viewUrl={c.viewUrl} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {m.literature && m.literature.length > 0 && (
-            <div className="rounded-lg p-3 mt-1" style={{ background: 'var(--card-hover)' }}>
-              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>文献参考 ({m.literature.length})</div>
-              <div className="space-y-2.5">
-                {m.literature.map(lit => (
-                  <div key={lit.id} className="rounded-md p-2.5" style={{ background: 'var(--card)' }}>
-                    <div className="text-xs font-semibold mb-1" style={{ color: 'var(--fg)' }}>{lit.title}</div>
-                    <div className="text-[10px] mb-1 flex flex-wrap gap-1" style={{ color: 'var(--fg-muted)' }}>
-                      {lit.authors && <span>{lit.authors}</span>}
-                      {lit.journal && <span>· {lit.journal}</span>}
-                      {lit.year && <span className="tabular-nums">· {lit.year}</span>}
-                    </div>
-                    <div className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{lit.summary}</div>
-                    <MarkerResourceLinks sourceUrl={lit.sourceUrl} viewUrl={lit.viewUrl} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function MarkerResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
-  if (!sourceUrl && !viewUrl) return null;
-  return (
-    <div className="flex items-center gap-1.5 mt-2">
-      {sourceUrl && (
-        <a
-          href={sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-[10px] px-2 py-0.5 rounded transition-colors"
-          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)', textDecoration: 'none' }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          源地址 ↗
-        </a>
-      )}
-      {viewUrl && (
-        <a
-          href={viewUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-[10px] px-2 py-0.5 rounded transition-colors"
-          style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          在线阅览
-        </a>
-      )}
-    </div>
-  );
-}
-
-// ── Sub-components ────────────────────────────────────────────────
-
-function MechanismFigure({ diagram }: { diagram: MarkerDiagram }) {
-  return (
-    <figure
-      className="rounded-xl overflow-hidden mt-4 animate-scale-in"
-      style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
-    >
-      <div className="flex items-center gap-2 px-4 py-2" style={{ borderBottom: '1px solid var(--border)', background: 'var(--card-hover)' }}>
-        <IconBookOpen size={14} style={{ color: 'var(--accent)' }} />
-        <span className="text-xs font-semibold" style={{ color: 'var(--fg)' }}>机制概念图 · {diagram.title}</span>
-      </div>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={diagram.url}
-        alt={diagram.title}
-        className="w-full block"
-        style={{ maxHeight: '340px', objectFit: 'contain' }}
-        loading="lazy"
-      />
-      <figcaption className="px-4 py-2.5 text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
-        {diagram.caption}
-      </figcaption>
-    </figure>
-  );
-}
-
-function InfoBox({ label, value, mono, accent }: { label: string; value: string; mono?: boolean; accent?: boolean }) {
-  if (!value) return null;
-  return (
-    <div
-      className="rounded-lg p-3"
-      style={{
-        background: accent ? 'rgba(245,158,11,0.08)' : 'var(--card-hover)',
-        border: accent ? '1px solid rgba(245,158,11,0.2)' : 'none',
-      }}
-    >
-      <div className="text-xs font-semibold mb-1" style={{ color: accent ? '#f59e0b' : 'var(--fg-muted)' }}>{label}</div>
-      <div
-        className={`text-sm ${mono ? 'font-mono' : ''}`}
-        style={{ color: 'var(--fg)' }}
-      >
-        {value}
-      </div>
-    </div>
-  );
-}
-
-function TagRow({ label, items, bg, color }: { label: string; items: string[]; bg: string; color: string }) {
-  return (
-    <div>
-      <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg-muted)' }}>{label}</div>
-      <div className="flex flex-wrap gap-1.5">
-        {items.map(d => (
-          <span key={d} className="text-xs px-2 py-0.5 rounded-full" style={{ background: bg, color }}>
-            {d}
+            <OrganIcon organId={o.id} size={9} color={o.color} />
+            {o.nameZh}
           </span>
         ))}
+        {markerOrgans.length > 3 && (
+          <span className="text-[10px] px-1.5 py-0.5 rounded-full" style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}>
+            +{markerOrgans.length - 3}
+          </span>
+        )}
       </div>
-    </div>
+    </Link>
   );
 }

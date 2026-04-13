@@ -35,7 +35,7 @@ export default function DifferentialsPage() {
                   <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--fg-muted)' }}>关键标记物</div>
                   <div className="flex flex-wrap gap-2">
                     {Array.from(new Set(d.keyMarkers)).map(m => (
-                      <Link key={m} href={`/markers#${m.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                      <Link key={m} href={`/markers/${m.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                         className="text-xs px-3 py-1.5 rounded-full font-mono font-medium transition-colors"
                         style={{ background: 'rgba(99,102,241,0.1)', color: 'var(--accent)', border: '1px solid rgba(99,102,241,0.2)', textDecoration: 'none' }}>
                         {m}

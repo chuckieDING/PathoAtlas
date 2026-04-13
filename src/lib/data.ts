@@ -47,6 +47,21 @@ export interface LiteratureItem {
   viewUrl?: string;
 }
 
+/**
+ * A labelled group of staining micrographs for a single marker. Typical
+ * result labels include "阴性" / "阳性" for binary markers and "0" /
+ * "1+" / "2+" / "3+" for semi-quantitative markers (e.g. HER2). Groups are
+ * intentionally stored as an ordered array instead of a record so the UI
+ * can render the canonical clinical order and so custom labels such as
+ * "灶性阳性" or "强阳 (>75%)" are allowed.
+ */
+export interface MarkerStainingGroup {
+  id: string;
+  label: string;
+  description?: string;
+  images: DiseaseImage[];
+}
+
 export interface Disease {
   id: string;
   nameZh: string;
@@ -113,6 +128,12 @@ export interface Marker {
   expertConsensus?: ConsensusItem[];
   /** Journal article / paper references shown in the marker detail view. */
   literature?: LiteratureItem[];
+  /**
+   * Canonical staining micrographs grouped by result category. Each group
+   * is rendered as its own sub-gallery so 0/1+/2+/3+ or negative/positive
+   * slides never get mixed together.
+   */
+  stainingImages?: MarkerStainingGroup[];
 }
 
 export interface StagingSystem {
@@ -278,7 +299,7 @@ export function searchAll(query: string): SearchResult[] {
         id: marker.id,
         title: marker.abbreviation || marker.nameEn,
         subtitle: marker.nameZh,
-        url: `/markers#${marker.id}`,
+        url: `/markers/${marker.id}`,
       });
     }
   }

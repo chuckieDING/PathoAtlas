@@ -272,7 +272,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
                       <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
                         <td className="px-4 py-3 font-mono font-semibold" style={{ color: 'var(--fg)' }}>
                           <Link
-                            href={`/markers#${slug}`}
+                            href={`/markers/${slug}`}
                             className="inline-flex items-center gap-1.5 hover:underline"
                             style={{ color: 'var(--accent)', textDecoration: 'none' }}
                           >
