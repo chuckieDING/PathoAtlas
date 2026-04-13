@@ -34,6 +34,8 @@ interface Marker {
 
 interface Organ { id: string; nameZh: string; nameEn: string; color: string }
 
+type Tab = 'overview' | 'interpretation' | 'staining' | 'consensus' | 'literature';
+
 // ── Page ───────────────────────────────────────────────────────────
 
 export default function MarkerDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -42,6 +44,7 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
   const [organs, setOrgans] = useState<Organ[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [tab, setTab] = useState<Tab>('overview');
 
   useEffect(() => {
     Promise.all([
@@ -134,98 +137,133 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
         </div>
       </header>
 
-      {/* Mechanism figure */}
-      {diagram && <MechanismFigure diagram={diagram} />}
+      {/* Tabs */}
+      {(() => {
+        const stainingCount = m.stainingImages?.length || 0;
+        const consensusCount = m.expertConsensus?.length || 0;
+        const literatureCount = m.literature?.length || 0;
+        const tabs: { id: Tab; label: string }[] = [
+          { id: 'overview', label: '概述' },
+          { id: 'interpretation', label: '判读' },
+          { id: 'staining', label: `染色形态${stainingCount ? ` (${stainingCount})` : ''}` },
+          { id: 'consensus', label: `专家共识${consensusCount ? ` (${consensusCount})` : ''}` },
+          { id: 'literature', label: `文献参考${literatureCount ? ` (${literatureCount})` : ''}` },
+        ];
+        return (
+          <div className="flex gap-1 overflow-x-auto mb-6" style={{ borderBottom: '1px solid var(--border)' }}>
+            {tabs.map(t => (
+              <button
+                key={t.id}
+                onClick={() => setTab(t.id)}
+                className="px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors"
+                style={{
+                  borderBottomColor: tab === t.id ? 'var(--accent)' : 'transparent',
+                  color: tab === t.id ? 'var(--fg)' : 'var(--fg-muted)',
+                }}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+        );
+      })()}
 
-      {/* Basic info grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-        <InfoBox label="靶蛋白" value={m.targetProtein} />
-        <InfoBox label="亚细胞定位" value={m.cellularLocalization} />
-        <InfoBox label="克隆号" value={m.cloneInfo} mono />
-        <InfoBox label="正常表达" value={m.normalExpression} />
-      </div>
-
-      <div className="mt-4 space-y-4">
-        <InfoBox label="功能" value={m.function} />
-        <InfoBox label="判读标准" value={m.interpretation} />
-        <InfoBox label="临床意义" value={m.clinicalSignificance} />
-
-        {m.positiveIn.length > 0 && (
-          <TagRow label="阳性表达" items={m.positiveIn} bg="rgba(34,197,94,0.1)" color="#22c55e" />
-        )}
-        {m.negativeIn.length > 0 && (
-          <TagRow label="阴性表达" items={m.negativeIn} bg="rgba(239,68,68,0.1)" color="#ef4444" />
-        )}
-        {m.relatedDrugs.length > 0 && (
-          <TagRow label="相关靶向药" items={m.relatedDrugs} bg="rgba(99,102,241,0.12)" color="#818cf8" />
-        )}
-        {m.pitfalls && <InfoBox label="诊断陷阱" value={m.pitfalls} accent />}
-      </div>
-
-      {/* Staining gallery */}
-      {m.stainingImages && m.stainingImages.length > 0 && (
-        <div className="mt-8">
-          <SectionHeading icon={<IconBookOpen size={15} style={{ color: 'var(--accent)' }} />}>
-            染色形态图（按结果分组）
-          </SectionHeading>
-          <StainingGallery groups={m.stainingImages} />
+      {/* Tab content */}
+      {tab === 'overview' && (
+        <div className="space-y-4">
+          {diagram && <MechanismFigure diagram={diagram} />}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <InfoBox label="靶蛋白" value={m.targetProtein} />
+            <InfoBox label="亚细胞定位" value={m.cellularLocalization} />
+            <InfoBox label="克隆号" value={m.cloneInfo} mono />
+            <InfoBox label="正常表达" value={m.normalExpression} />
+          </div>
+          <InfoBox label="功能" value={m.function} />
         </div>
       )}
 
-      {/* Consensus */}
-      {m.expertConsensus && m.expertConsensus.length > 0 && (
-        <div className="mt-8">
-          <SectionHeading>专家共识 ({m.expertConsensus.length})</SectionHeading>
-          <div className="space-y-3">
-            {m.expertConsensus.map(c => (
-              <article key={c.id} className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-                <div className="flex items-start justify-between gap-2 mb-2 flex-wrap">
-                  <h3 className="font-semibold text-sm" style={{ color: 'var(--fg)' }}>{c.title}</h3>
-                  <div className="flex items-center gap-2">
-                    {c.organization && (
-                      <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--card-hover)', color: 'var(--accent)' }}>{c.organization}</span>
-                    )}
-                    {c.year && <span className="text-[10px] tabular-nums" style={{ color: 'var(--fg-muted)' }}>{c.year}</span>}
+      {tab === 'interpretation' && (
+        <div className="space-y-4">
+          <InfoBox label="判读标准" value={m.interpretation} />
+          <InfoBox label="临床意义" value={m.clinicalSignificance} />
+          {m.positiveIn.length > 0 && (
+            <TagRow label="阳性表达（常见肿瘤）" items={m.positiveIn} bg="rgba(34,197,94,0.1)" color="#22c55e" />
+          )}
+          {m.negativeIn.length > 0 && (
+            <TagRow label="阴性表达（常见肿瘤）" items={m.negativeIn} bg="rgba(239,68,68,0.1)" color="#ef4444" />
+          )}
+          {m.relatedDrugs.length > 0 && (
+            <TagRow label="相关靶向药" items={m.relatedDrugs} bg="rgba(99,102,241,0.12)" color="#818cf8" />
+          )}
+          {m.pitfalls && <InfoBox label="诊断陷阱" value={m.pitfalls} accent />}
+        </div>
+      )}
+
+      {tab === 'staining' && (
+        <div>
+          {m.stainingImages && m.stainingImages.length > 0 ? (
+            <StainingGallery groups={m.stainingImages} />
+          ) : (
+            <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
+              <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>该标记物尚未配置染色形态分组</p>
+              <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>
+                可在管理后台 <Link href="/admin" style={{ color: 'var(--accent)' }}>/admin</Link> 添加阴/阳性、1+/2+/3+ 等分组并上传图片
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {tab === 'consensus' && (
+        <div>
+          {m.expertConsensus && m.expertConsensus.length > 0 ? (
+            <div className="space-y-3">
+              {m.expertConsensus.map(c => (
+                <article key={c.id} className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+                  <div className="flex items-start justify-between gap-2 mb-2 flex-wrap">
+                    <h3 className="font-semibold text-sm" style={{ color: 'var(--fg)' }}>{c.title}</h3>
+                    <div className="flex items-center gap-2">
+                      {c.organization && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--card-hover)', color: 'var(--accent)' }}>{c.organization}</span>
+                      )}
+                      {c.year && <span className="text-[10px] tabular-nums" style={{ color: 'var(--fg-muted)' }}>{c.year}</span>}
+                    </div>
                   </div>
-                </div>
-                <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</p>
-                <ResourceLinks sourceUrl={c.sourceUrl} viewUrl={c.viewUrl} />
-              </article>
-            ))}
-          </div>
+                  <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</p>
+                  <ResourceLinks sourceUrl={c.sourceUrl} viewUrl={c.viewUrl} />
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
+              <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无专家共识条目</p>
+            </div>
+          )}
         </div>
       )}
 
-      {/* Literature */}
-      {m.literature && m.literature.length > 0 && (
-        <div className="mt-8">
-          <SectionHeading>文献参考 ({m.literature.length})</SectionHeading>
-          <div className="space-y-3">
-            {m.literature.map(lit => (
-              <article key={lit.id} className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-                <h3 className="font-semibold text-sm mb-1" style={{ color: 'var(--fg)' }}>{lit.title}</h3>
-                <div className="flex items-center gap-2 text-[11px] mb-2 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
-                  {lit.authors && <span>{lit.authors}</span>}
-                  {lit.journal && <span>· {lit.journal}</span>}
-                  {lit.year && <span className="tabular-nums">· {lit.year}</span>}
-                </div>
-                <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{lit.summary}</p>
-                <ResourceLinks sourceUrl={lit.sourceUrl} viewUrl={lit.viewUrl} />
-              </article>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* References */}
-      {m.references && m.references.length > 0 && (
-        <div className="mt-8 rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-          <h3 className="text-sm font-semibold mb-2" style={{ color: 'var(--fg)' }}>参考文献</h3>
-          <ul className="space-y-1">
-            {m.references.map((r, i) => (
-              <li key={i} className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>• {r}</li>
-            ))}
-          </ul>
+      {tab === 'literature' && (
+        <div>
+          {m.literature && m.literature.length > 0 ? (
+            <div className="space-y-3">
+              {m.literature.map(lit => (
+                <article key={lit.id} className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+                  <h3 className="font-semibold text-sm mb-1" style={{ color: 'var(--fg)' }}>{lit.title}</h3>
+                  <div className="flex items-center gap-2 text-[11px] mb-2 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
+                    {lit.authors && <span>{lit.authors}</span>}
+                    {lit.journal && <span>· {lit.journal}</span>}
+                    {lit.year && <span className="tabular-nums">· {lit.year}</span>}
+                  </div>
+                  <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{lit.summary}</p>
+                  <ResourceLinks sourceUrl={lit.sourceUrl} viewUrl={lit.viewUrl} />
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
+              <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无文献条目</p>
+            </div>
+          )}
         </div>
       )}
     </div>
