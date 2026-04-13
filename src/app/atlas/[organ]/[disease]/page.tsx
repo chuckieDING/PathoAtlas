@@ -19,6 +19,25 @@ function markerSlug(label: string): string {
 
 interface IHCItem { marker: string; result: string; note: string }
 interface DiseaseImage { url: string; fullUrl?: string; caption: string; source?: string }
+interface ConsensusItem {
+  id: string;
+  title: string;
+  summary: string;
+  organization?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+interface LiteratureItem {
+  id: string;
+  title: string;
+  summary: string;
+  authors?: string;
+  journal?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
 interface DiseaseData {
   id: string; nameZh: string; nameEn: string; aliases: string[]; organ: string;
   category: string; epidemiology: string; clinicalFeatures: string; grossPathology: string;
@@ -29,13 +48,15 @@ interface DiseaseData {
   images: DiseaseImage[];
   microscopyImages?: DiseaseImage[];
   grossImages?: DiseaseImage[];
+  expertConsensus?: ConsensusItem[];
+  literature?: LiteratureItem[];
   references: string[];
 }
 
 interface OrganData { id: string; nameZh: string; icon: string; color: string }
 interface DiffDisease { id: string; nameZh: string; nameEn: string; organ: string }
 
-type Tab = 'overview' | 'gross' | 'microscopy' | 'ihc' | 'molecular' | 'differential' | 'clinical';
+type Tab = 'overview' | 'gross' | 'microscopy' | 'ihc' | 'molecular' | 'differential' | 'consensus' | 'literature' | 'clinical';
 
 export default function DiseasePage({ params }: { params: Promise<{ organ: string; disease: string }> }) {
   const { organ, disease: diseaseId } = use(params);
@@ -89,6 +110,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   if (loading) return <div className="flex items-center justify-center h-96"><div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div></div>;
   if (!d) return <div className="text-center py-16"><div className="flex justify-center mb-4" style={{ color: 'var(--fg-muted)' }}><IconSearch size={36} /></div><p style={{ color: 'var(--fg-muted)' }}>疾病未找到</p><Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link></div>;
 
+  const consensusCount = d.expertConsensus?.length || 0;
+  const literatureCount = d.literature?.length || 0;
+
   const tabs: { id: Tab; label: string }[] = [
     { id: 'overview', label: '概述' },
     { id: 'gross', label: '大体描述' },
@@ -96,6 +120,8 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
     { id: 'ihc', label: `免疫组化 (${d.ihcProfile.length})` },
     { id: 'molecular', label: '分子病理' },
     { id: 'differential', label: `鉴别诊断 (${d.differentialDiagnosis.length})` },
+    { id: 'consensus', label: `专家共识${consensusCount ? ` (${consensusCount})` : ''}` },
+    { id: 'literature', label: `文献参考${literatureCount ? ` (${literatureCount})` : ''}` },
     { id: 'clinical', label: '临床' },
   ];
 
@@ -312,6 +338,14 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
         </div>
       )}
 
+      {tab === 'consensus' && (
+        <ConsensusList items={d.expertConsensus || []} />
+      )}
+
+      {tab === 'literature' && (
+        <LiteratureList items={d.literature || []} />
+      )}
+
       {tab === 'clinical' && (
         <div className="space-y-6">
           <Section title="治疗" content={d.treatment} />
@@ -456,6 +490,105 @@ function Lightbox({ image, onClose }: { image: { url: string; caption: string };
           {image.caption}
         </figcaption>
       </figure>
+    </div>
+  );
+}
+
+function ConsensusList({ items }: { items: ConsensusItem[] }) {
+  if (items.length === 0) {
+    return (
+      <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
+        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无专家共识数据</p>
+        <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>可通过管理后台补充 WHO / NCCN / CSCO 等指南条目</p>
+      </div>
+    );
+  }
+  return (
+    <div className="space-y-3">
+      {items.map((c) => (
+        <article
+          key={c.id}
+          className="rounded-xl p-5"
+          style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+        >
+          <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
+            <h3 className="font-semibold text-sm" style={{ color: 'var(--fg)' }}>{c.title}</h3>
+            <div className="flex items-center gap-2 flex-wrap">
+              {c.organization && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--card-hover)', color: 'var(--accent)' }}>
+                  {c.organization}
+                </span>
+              )}
+              {c.year && (
+                <span className="text-[10px] tabular-nums" style={{ color: 'var(--fg-muted)' }}>{c.year}</span>
+              )}
+            </div>
+          </div>
+          <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</p>
+          <ResourceLinks sourceUrl={c.sourceUrl} viewUrl={c.viewUrl} />
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function LiteratureList({ items }: { items: LiteratureItem[] }) {
+  if (items.length === 0) {
+    return (
+      <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
+        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无文献参考数据</p>
+        <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>可通过管理后台补充 PubMed / 核心期刊文献</p>
+      </div>
+    );
+  }
+  return (
+    <div className="space-y-3">
+      {items.map((lit) => (
+        <article
+          key={lit.id}
+          className="rounded-xl p-5"
+          style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+        >
+          <h3 className="font-semibold text-sm mb-1" style={{ color: 'var(--fg)' }}>{lit.title}</h3>
+          <div className="flex items-center gap-2 text-[11px] mb-2 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
+            {lit.authors && <span>{lit.authors}</span>}
+            {lit.journal && <span>· {lit.journal}</span>}
+            {lit.year && <span className="tabular-nums">· {lit.year}</span>}
+          </div>
+          <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{lit.summary}</p>
+          <ResourceLinks sourceUrl={lit.sourceUrl} viewUrl={lit.viewUrl} />
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
+  if (!sourceUrl && !viewUrl) return null;
+  return (
+    <div className="flex items-center gap-2 mt-3">
+      {sourceUrl && (
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[11px] px-2.5 py-1 rounded-md transition-colors"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)', textDecoration: 'none' }}
+        >
+          源地址 ↗
+        </a>
+      )}
+      {viewUrl && (
+        <a
+          href={viewUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[11px] px-2.5 py-1 rounded-md transition-colors"
+          style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
+        >
+          在线阅览
+        </a>
+      )}
     </div>
   );
 }

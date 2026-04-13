@@ -5,12 +5,35 @@ import { IconFlask, IconSearch, IconX, IconBookOpen } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
 import { getMarkerDiagram, MARKERS_WITH_DIAGRAM, type MarkerDiagram } from '@/lib/markerDiagrams';
 
+interface ConsensusItem {
+  id: string;
+  title: string;
+  summary: string;
+  organization?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+
+interface LiteratureItem {
+  id: string;
+  title: string;
+  summary: string;
+  authors?: string;
+  journal?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+
 interface Marker {
   id: string; nameZh: string; nameEn: string; abbreviation: string; category: string;
   cloneInfo: string; targetProtein: string; cellularLocalization: string;
   normalExpression: string; function: string; interpretation: string;
   clinicalSignificance: string; positiveIn: string[]; negativeIn: string[];
   relatedDrugs: string[]; pitfalls: string; references?: string[];
+  expertConsensus?: ConsensusItem[];
+  literature?: LiteratureItem[];
   /** Organ systems this marker is used in, derived server-side from disease IHC panels. */
   organs?: string[];
 }
@@ -458,7 +481,82 @@ function MarkerCard({ marker: m, expanded, onToggle }: { marker: Marker; expande
               </ul>
             </div>
           )}
+
+          {m.expertConsensus && m.expertConsensus.length > 0 && (
+            <div className="rounded-lg p-3 mt-1" style={{ background: 'var(--card-hover)' }}>
+              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>专家共识 ({m.expertConsensus.length})</div>
+              <div className="space-y-2.5">
+                {m.expertConsensus.map(c => (
+                  <div key={c.id} className="rounded-md p-2.5" style={{ background: 'var(--card)' }}>
+                    <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
+                      <div className="text-xs font-semibold" style={{ color: 'var(--fg)' }}>{c.title}</div>
+                      <div className="flex items-center gap-1.5">
+                        {c.organization && (
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full" style={{ background: 'var(--card-hover)', color: 'var(--accent)' }}>{c.organization}</span>
+                        )}
+                        {c.year && <span className="text-[9px] tabular-nums" style={{ color: 'var(--fg-muted)' }}>{c.year}</span>}
+                      </div>
+                    </div>
+                    <div className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</div>
+                    <MarkerResourceLinks sourceUrl={c.sourceUrl} viewUrl={c.viewUrl} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {m.literature && m.literature.length > 0 && (
+            <div className="rounded-lg p-3 mt-1" style={{ background: 'var(--card-hover)' }}>
+              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>文献参考 ({m.literature.length})</div>
+              <div className="space-y-2.5">
+                {m.literature.map(lit => (
+                  <div key={lit.id} className="rounded-md p-2.5" style={{ background: 'var(--card)' }}>
+                    <div className="text-xs font-semibold mb-1" style={{ color: 'var(--fg)' }}>{lit.title}</div>
+                    <div className="text-[10px] mb-1 flex flex-wrap gap-1" style={{ color: 'var(--fg-muted)' }}>
+                      {lit.authors && <span>{lit.authors}</span>}
+                      {lit.journal && <span>· {lit.journal}</span>}
+                      {lit.year && <span className="tabular-nums">· {lit.year}</span>}
+                    </div>
+                    <div className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{lit.summary}</div>
+                    <MarkerResourceLinks sourceUrl={lit.sourceUrl} viewUrl={lit.viewUrl} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+      )}
+    </div>
+  );
+}
+
+function MarkerResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
+  if (!sourceUrl && !viewUrl) return null;
+  return (
+    <div className="flex items-center gap-1.5 mt-2">
+      {sourceUrl && (
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[10px] px-2 py-0.5 rounded transition-colors"
+          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)', textDecoration: 'none' }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          源地址 ↗
+        </a>
+      )}
+      {viewUrl && (
+        <a
+          href={viewUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[10px] px-2 py-0.5 rounded transition-colors"
+          style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          在线阅览
+        </a>
       )}
     </div>
   );

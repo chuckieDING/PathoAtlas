@@ -18,6 +18,35 @@ export interface DiseaseImage {
   source?: string;
 }
 
+/**
+ * An expert consensus / guideline entry referenced by a disease or marker.
+ * `sourceUrl` is the original publisher page (e.g. NCCN / WHO / CSCO),
+ * `viewUrl` is an embeddable online viewer (can be the same as sourceUrl
+ * or a PDF hosted at public/uploads). Both are optional so entries can be
+ * progressively enriched.
+ */
+export interface ConsensusItem {
+  id: string;
+  title: string;
+  summary: string;
+  organization?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+
+/** A literature/paper citation with optional links for fetching or preview. */
+export interface LiteratureItem {
+  id: string;
+  title: string;
+  summary: string;
+  authors?: string;
+  journal?: string;
+  year?: number;
+  sourceUrl?: string;
+  viewUrl?: string;
+}
+
 export interface Disease {
   id: string;
   nameZh: string;
@@ -44,6 +73,10 @@ export interface Disease {
   microscopyImages?: DiseaseImage[];
   /** Real gross photos / macroscopy images for the 大体描述 tab. */
   grossImages?: DiseaseImage[];
+  /** Guideline / expert consensus entries shown in the 专家共识 tab. */
+  expertConsensus?: ConsensusItem[];
+  /** Journal article / paper references shown in the 文献参考 tab. */
+  literature?: LiteratureItem[];
   references: string[];
 }
 
@@ -76,6 +109,10 @@ export interface Marker {
   relatedDrugs: string[];
   pitfalls: string;
   references: string[];
+  /** Guideline / expert consensus entries shown in the marker detail view. */
+  expertConsensus?: ConsensusItem[];
+  /** Journal article / paper references shown in the marker detail view. */
+  literature?: LiteratureItem[];
 }
 
 export interface StagingSystem {
