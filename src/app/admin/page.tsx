@@ -439,8 +439,8 @@ function ConsensusEditor({
             </div>
             <TextareaField label="简介" value={c.summary} onChange={v => update(i, { summary: v })} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <Field label="源地址 URL" value={c.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
-              <Field label="在线阅览 URL" value={c.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
+              <Field label="源地址 URL（出版商/原始发布页）" value={c.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
+              <Field label="在线阅览 URL（PubMed/摘要/预览）" value={c.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
             </div>
             <div className="flex justify-end">
               <button
@@ -497,8 +497,8 @@ function LiteratureEditor({
             </div>
             <TextareaField label="简介" value={lit.summary} onChange={v => update(i, { summary: v })} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <Field label="源地址 URL" value={lit.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
-              <Field label="在线阅览 URL" value={lit.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
+              <Field label="源地址 URL（期刊 DOI/原文页）" value={lit.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
+              <Field label="在线阅览 URL（PubMed/摘要/预览）" value={lit.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
             </div>
             <div className="flex justify-end">
               <button
