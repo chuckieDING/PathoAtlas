@@ -161,7 +161,139 @@ function blankMarkerDraft(): MarkerLike {
   };
 }
 
+// ── Auth gate ──────────────────────────────────────────────────────
+
+interface AuthState {
+  status: 'loading' | 'open' | 'authenticated' | 'needs-login';
+  email?: string | null;
+  googleConfigured?: boolean;
+  error?: string;
+}
+
 export default function AdminPage() {
+  const [auth, setAuth] = useState<AuthState>({ status: 'loading' });
+
+  const loadAuth = async () => {
+    try {
+      const res = await fetch('/api/auth/me', { cache: 'no-store' });
+      if (res.ok) {
+        const j = await res.json();
+        if (j.authRequired === false) {
+          setAuth({ status: 'open' });
+        } else {
+          setAuth({ status: 'authenticated', email: j.email });
+        }
+        return;
+      }
+      if (res.status === 401) {
+        const j = await res.json().catch(() => ({}));
+        setAuth({ status: 'needs-login', googleConfigured: !!j.googleConfigured });
+        return;
+      }
+      setAuth({ status: 'needs-login', error: `auth error: ${res.status}` });
+    } catch (e) {
+      setAuth({ status: 'needs-login', error: e instanceof Error ? e.message : '无法连接鉴权服务' });
+    }
+  };
+
+  useEffect(() => {
+    // Read auth_error from query string once on mount (set by the OAuth
+    // callback when sign-in fails), then clean it up so refresh doesn't
+    // show a stale error.
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const err = params.get('auth_error');
+      const badEmail = params.get('email');
+      if (err) {
+        setAuth({
+          status: 'needs-login',
+          error: `${err}${badEmail ? ` (${badEmail})` : ''}`,
+          googleConfigured: true,
+        });
+        params.delete('auth_error');
+        params.delete('email');
+        const qs = params.toString();
+        window.history.replaceState({}, '', window.location.pathname + (qs ? `?${qs}` : ''));
+        return;
+      }
+    }
+    loadAuth();
+  }, []);
+
+  const logout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    setAuth({ status: 'needs-login', googleConfigured: true });
+  };
+
+  if (auth.status === 'loading') {
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+        <div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div>
+      </div>
+    );
+  }
+
+  if (auth.status === 'needs-login') {
+    return <LoginScreen error={auth.error} googleConfigured={auth.googleConfigured ?? true} />;
+  }
+
+  return (
+    <AdminInner
+      currentEmail={auth.status === 'authenticated' ? auth.email || null : null}
+      onLogout={auth.status === 'authenticated' ? logout : undefined}
+    />
+  );
+}
+
+// ── Login screen ───────────────────────────────────────────────────
+
+function LoginScreen({ error, googleConfigured }: { error?: string; googleConfigured: boolean }) {
+  return (
+    <div className="max-w-xl mx-auto px-4 py-16">
+      <div className="rounded-2xl p-8 text-center" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+        <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>内容管理 · 登录</h1>
+        <p className="text-sm mb-6" style={{ color: 'var(--fg-muted)' }}>
+          该页面只对授权 Google 账户开放。请使用管理员分配的账号登录。
+        </p>
+        {error && (
+          <div
+            className="rounded-lg p-3 mb-4 text-xs text-left"
+            style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)' }}
+          >
+            登录失败：{error}
+          </div>
+        )}
+        {googleConfigured ? (
+          <a
+            href="/api/auth/login?returnTo=/admin"
+            className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold"
+            style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
+          >
+            使用 Google 账号登录
+          </a>
+        ) : (
+          <div className="rounded-lg p-3 text-xs text-left" style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}>
+            <div className="font-semibold mb-1" style={{ color: 'var(--fg)' }}>Google OAuth 尚未配置</div>
+            <div>部署时请设置以下环境变量：</div>
+            <code className="block mt-2 text-[10px] whitespace-pre-wrap">{`GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+ADMIN_EMAILS=you@example.com
+AUTH_SECRET=<32+ random bytes>
+# optional for external AI callers:
+ADMIN_API_TOKEN=<long random string>`}</code>
+          </div>
+        )}
+        <div className="mt-6 text-[11px]" style={{ color: 'var(--fg-muted)' }}>
+          <Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Admin (authenticated) ──────────────────────────────────────────
+
+function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; onLogout?: () => void }) {
   const [kind, setKind] = useState<EntityKind>('disease');
   const [diseases, setDiseases] = useState<DiseaseLike[]>([]);
   const [markers, setMarkers] = useState<MarkerLike[]>([]);
@@ -234,11 +366,35 @@ export default function AdminPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-1" style={{ color: 'var(--fg)' }}>内容管理</h1>
-        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-          维护疾病/标记物的 <b>专家共识</b>、<b>文献参考</b> 与 <b>图片资源</b>。保存会直接写入仓库中的 JSON 数据文件。
-        </p>
+      <div className="mb-6 flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <h1 className="text-2xl font-bold mb-1" style={{ color: 'var(--fg)' }}>内容管理</h1>
+          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+            维护疾病/标记物的 <b>专家共识</b>、<b>文献参考</b> 与 <b>图片资源</b>。保存会直接写入仓库中的 JSON 数据文件。
+          </p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {currentEmail ? (
+            <>
+              <span className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+                登录为 <span style={{ color: 'var(--fg)' }}>{currentEmail}</span>
+              </span>
+              {onLogout && (
+                <button
+                  onClick={onLogout}
+                  className="text-xs px-3 py-1.5 rounded-md"
+                  style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+                >
+                  登出
+                </button>
+              )}
+            </>
+          ) : (
+            <span className="text-xs px-2 py-1 rounded" style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b', border: '1px solid rgba(245,158,11,0.3)' }}>
+              dev 模式（未启用鉴权）
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Entity-kind switch */}
