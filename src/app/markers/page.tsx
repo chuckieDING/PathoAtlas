@@ -12,6 +12,7 @@ interface Marker {
   normalExpression: string; function: string; interpretation: string;
   clinicalSignificance: string; positiveIn: string[]; negativeIn: string[];
   relatedDrugs: string[]; pitfalls: string;
+  stainingImages?: { id: string; label: string; images: unknown[] }[];
   organs?: string[];
 }
 
@@ -362,6 +363,16 @@ function MarkerCatalogCard({ marker: m, organs }: { marker: Marker; organs: Orga
           >
             <IconBookOpen size={9} />
             机制图
+          </span>
+        )}
+        {m.stainingImages && m.stainingImages.length > 0 && (
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded-full flex items-center gap-1"
+            style={{ background: 'rgba(99,102,241,0.12)', color: '#818cf8' }}
+            title={`包含 ${m.stainingImages.length} 组染色形态图`}
+          >
+            <IconFlask size={9} />
+            染色图 {m.stainingImages.length} 组
           </span>
         )}
         {markerOrgans.slice(0, 3).map(o => (
