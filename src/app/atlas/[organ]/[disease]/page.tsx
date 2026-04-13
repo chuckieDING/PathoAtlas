@@ -18,19 +18,24 @@ function markerSlug(label: string): string {
 }
 
 interface IHCItem { marker: string; result: string; note: string }
+interface DiseaseImage { url: string; fullUrl?: string; caption: string; source?: string }
 interface DiseaseData {
   id: string; nameZh: string; nameEn: string; aliases: string[]; organ: string;
   category: string; epidemiology: string; clinicalFeatures: string; grossPathology: string;
+  grossDescription?: string;
   microscopy: string; keyFeatures: string[]; ihcProfile: IHCItem[];
   molecularFeatures: string; differentialDiagnosis: string[]; grading: string;
   staging: string; prognosis: string; treatment: string;
-  images: { url: string; caption: string }[]; references: string[];
+  images: DiseaseImage[];
+  microscopyImages?: DiseaseImage[];
+  grossImages?: DiseaseImage[];
+  references: string[];
 }
 
 interface OrganData { id: string; nameZh: string; icon: string; color: string }
 interface DiffDisease { id: string; nameZh: string; nameEn: string; organ: string }
 
-type Tab = 'overview' | 'microscopy' | 'ihc' | 'molecular' | 'differential' | 'clinical';
+type Tab = 'overview' | 'gross' | 'microscopy' | 'ihc' | 'molecular' | 'differential' | 'clinical';
 
 export default function DiseasePage({ params }: { params: Promise<{ organ: string; disease: string }> }) {
   const { organ, disease: diseaseId } = use(params);
@@ -41,6 +46,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   const [loading, setLoading] = useState(true);
   const [xpToast, setXpToast] = useState<number | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; caption: string } | null>(null);
+  // Tracks which thumbnails the user has opted into loading the high-res
+  // original for. Keyed by image url so the state survives tab switches.
+  const [fullLoaded, setFullLoaded] = useState<Record<string, boolean>>({});
   const progress = useProgress();
   const mastery = progress?.diseaseMastery[diseaseId];
 
@@ -83,6 +91,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
 
   const tabs: { id: Tab; label: string }[] = [
     { id: 'overview', label: '概述' },
+    { id: 'gross', label: '大体描述' },
     { id: 'microscopy', label: '镜下特征' },
     { id: 'ihc', label: `免疫组化 (${d.ihcProfile.length})` },
     { id: 'molecular', label: '分子病理' },
@@ -168,15 +177,49 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           )}
           <Section title="流行病学" content={d.epidemiology} />
           <Section title="临床特征" content={d.clinicalFeatures} />
-          <Section title="大体观察" content={d.grossPathology} />
-          {d.images.length > 0 && <ImageGallery images={d.images} title="图文示意" onOpen={setLightbox} />}
+        </div>
+      )}
+
+      {tab === 'gross' && (
+        <div className="space-y-6">
+          <Section title="大体描述" content={d.grossDescription || d.grossPathology} />
+          {d.grossImages && d.grossImages.length > 0 && (
+            <ImageGallery
+              images={d.grossImages}
+              title="大体形态图"
+              onOpen={setLightbox}
+              fullLoaded={fullLoaded}
+              onLoadFull={(url) => setFullLoaded((s) => ({ ...s, [url]: true }))}
+            />
+          )}
+          {(!d.grossImages || d.grossImages.length === 0) && (
+            <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+              暂无大体形态图片。点击右上角反馈补充更多影像。
+            </p>
+          )}
         </div>
       )}
 
       {tab === 'microscopy' && (
         <div className="space-y-6">
           <Section title="镜下特征" content={d.microscopy} />
-          {d.images.length > 0 && <ImageGallery images={d.images} title="镜下示意图" onOpen={setLightbox} />}
+          {d.microscopyImages && d.microscopyImages.length > 0 ? (
+            <ImageGallery
+              images={d.microscopyImages}
+              title="真实染色形态图"
+              onOpen={setLightbox}
+              fullLoaded={fullLoaded}
+              onLoadFull={(url) => setFullLoaded((s) => ({ ...s, [url]: true }))}
+            />
+          ) : d.images.length > 0 ? (
+            <ImageGallery
+              images={d.images}
+              title="镜下示意图"
+              onOpen={setLightbox}
+              fullLoaded={fullLoaded}
+              onLoadFull={(url) => setFullLoaded((s) => ({ ...s, [url]: true }))}
+            />
+          ) : null}
         </div>
       )}
 
@@ -293,37 +336,89 @@ function ImageGallery({
   images,
   title,
   onOpen,
+  fullLoaded,
+  onLoadFull,
 }: {
-  images: { url: string; caption: string }[];
+  images: DiseaseImage[];
   title: string;
   onOpen: (img: { url: string; caption: string }) => void;
+  fullLoaded?: Record<string, boolean>;
+  onLoadFull?: (url: string) => void;
 }) {
   return (
     <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
       <h3 className="font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
         <IconBookOpen size={14} style={{ color: 'var(--accent)' }} />
         <span>{title}</span>
-        <span className="text-xs font-normal" style={{ color: 'var(--fg-muted)' }}>(点击放大)</span>
+        <span className="text-xs font-normal" style={{ color: 'var(--fg-muted)' }}>(点击放大 · 默认压缩图)</span>
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {images.map((img, i) => (
-          <figure
-            key={i}
-            className="rounded-xl overflow-hidden cursor-zoom-in group transition-transform hover:-translate-y-0.5"
-            style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
-            onClick={() => onOpen(img)}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={img.url}
-              alt={img.caption}
-              className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
-              loading="lazy"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
-            />
-            <figcaption className="p-3 text-xs leading-relaxed" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>{img.caption}</figcaption>
-          </figure>
-        ))}
+        {images.map((img, i) => {
+          const hasFull = !!img.fullUrl;
+          const isFull = hasFull && !!fullLoaded?.[img.url];
+          // Which src to feed the <img>: once the user clicks "加载原图",
+          // swap in the high-res URL. Lightbox always uses full if available.
+          const displaySrc = isFull && img.fullUrl ? img.fullUrl : img.url;
+          const lightboxImg = {
+            url: img.fullUrl || img.url,
+            caption: img.caption,
+          };
+          return (
+            <figure
+              key={i}
+              className="rounded-xl overflow-hidden group transition-transform hover:-translate-y-0.5 flex flex-col"
+              style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
+            >
+              <div
+                className="relative cursor-zoom-in"
+                onClick={() => onOpen(lightboxImg)}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={displaySrc}
+                  alt={img.caption}
+                  className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
+                />
+                {hasFull && (
+                  <span
+                    className="absolute top-2 left-2 text-[10px] px-2 py-0.5 rounded-full font-medium"
+                    style={{
+                      background: isFull ? 'rgba(34,197,94,0.9)' : 'rgba(0,0,0,0.55)',
+                      color: '#fff',
+                    }}
+                  >
+                    {isFull ? '原图' : '压缩图'}
+                  </span>
+                )}
+              </div>
+              <figcaption className="p-3 text-xs leading-relaxed flex-1" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
+                <div>{img.caption}</div>
+                <div className="mt-2 flex items-center justify-between gap-2 flex-wrap">
+                  {img.source && (
+                    <span className="text-[10px] opacity-70">来源：{img.source}</span>
+                  )}
+                  {hasFull && !isFull && onLoadFull && (
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); onLoadFull(img.url); }}
+                      className="text-[11px] px-2 py-1 rounded-md transition-colors ml-auto"
+                      style={{
+                        background: 'var(--card-hover)',
+                        color: 'var(--accent)',
+                        border: '1px solid var(--border)',
+                      }}
+                    >
+                      加载原图
+                    </button>
+                  )}
+                </div>
+              </figcaption>
+            </figure>
+          );
+        })}
       </div>
     </div>
   );

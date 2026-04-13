@@ -3,6 +3,21 @@ import path from 'path';
 
 // ── Types ─────────────────────────────────────────────────────────
 
+/**
+ * A pathology figure. `url` is always the thumbnail/compressed preview that
+ * the atlas displays by default. `fullUrl` is optional — if present, the UI
+ * exposes a "加载原图" button that swaps in the high-resolution source
+ * on demand so the page stays lightweight on first paint.
+ * `source` optionally records the human-readable origin (e.g. "Wikimedia
+ * Commons") for attribution.
+ */
+export interface DiseaseImage {
+  url: string;
+  fullUrl?: string;
+  caption: string;
+  source?: string;
+}
+
 export interface Disease {
   id: string;
   nameZh: string;
@@ -13,6 +28,7 @@ export interface Disease {
   epidemiology: string;
   clinicalFeatures: string;
   grossPathology: string;
+  grossDescription?: string;
   microscopy: string;
   keyFeatures: string[];
   ihcProfile: { marker: string; result: string; note: string }[];
@@ -22,7 +38,12 @@ export interface Disease {
   staging: string;
   prognosis: string;
   treatment: string;
-  images: { url: string; caption: string }[];
+  /** Legacy generic image list (retained for back-compat with older entries). */
+  images: DiseaseImage[];
+  /** Real H&E / IHC micrographs for the 镜下特征 tab. */
+  microscopyImages?: DiseaseImage[];
+  /** Real gross photos / macroscopy images for the 大体描述 tab. */
+  grossImages?: DiseaseImage[];
   references: string[];
 }
 
