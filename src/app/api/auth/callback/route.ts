@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { signSession, getAdminEmails, SESSION_COOKIE_NAME, OAUTH_STATE_COOKIE } from '@/lib/auth';
+import { signSession, getAdminEmails, SESSION_COOKIE_NAME, OAUTH_STATE_COOKIE, getCanonicalOrigin } from '@/lib/auth';
 
 /**
  * Handles the Google OAuth redirect. Verifies the CSRF state, swaps the
@@ -12,7 +12,11 @@ import { signSession, getAdminEmails, SESSION_COOKIE_NAME, OAUTH_STATE_COOKIE } 
  * so the admin UI can render a human-friendly message.
  */
 export async function GET(request: Request) {
-  const { searchParams, origin } = new URL(request.url);
+  const { searchParams } = new URL(request.url);
+  // Always use canonical origin (APP_URL env var when set) so the
+  // redirect_uri we send to Google matches what's registered in GCP
+  // regardless of how many reverse proxies we're behind.
+  const origin = getCanonicalOrigin(request);
   const failureRedirect = (reason: string, extra?: string) =>
     NextResponse.redirect(
       `${origin}/admin?auth_error=${encodeURIComponent(reason)}${extra ? `&email=${encodeURIComponent(extra)}` : ''}`,

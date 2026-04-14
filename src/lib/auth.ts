@@ -99,6 +99,40 @@ export function extractBearerToken(headers: Headers): string | null {
 }
 
 /**
+ * Resolve the canonical origin for the current request. Critical for OAuth
+ * flows: the redirect_uri we hand to Google must **exactly** match what's
+ * registered in Google Cloud Console, and behind a TLS-terminating proxy
+ * the naive `new URL(request.url).origin` picks up `http://localhost:3000`
+ * or the proxy's internal host instead of the public domain.
+ *
+ * Precedence (highest first):
+ *   1. APP_URL env var — explicit, authoritative, works with any proxy stack.
+ *      Always prefer this in production.
+ *   2. X-Forwarded-Proto + X-Forwarded-Host — standard reverse-proxy pattern.
+ *   3. X-Forwarded-Proto + Host header — partial header setup.
+ *   4. new URL(request.url).origin — local dev with no proxy.
+ */
+export function getCanonicalOrigin(request: Request): string {
+  // 1. Hard override via env var.
+  const envUrl = process.env.APP_URL;
+  if (envUrl) return envUrl.replace(/\/+$/, '');
+
+  // 2 & 3. Trust reverse-proxy headers when present.
+  const proto = request.headers.get('x-forwarded-proto');
+  const fwdHost = request.headers.get('x-forwarded-host') || request.headers.get('host');
+  if (proto && fwdHost) {
+    return `${proto}://${fwdHost}`;
+  }
+  if (fwdHost && fwdHost !== 'localhost' && !fwdHost.startsWith('127.')) {
+    // Host header looks public but proxy didn't set proto — assume https.
+    return `https://${fwdHost}`;
+  }
+
+  // 4. Local dev fallback.
+  return new URL(request.url).origin;
+}
+
+/**
  * Decide whether a request is allowed to hit an admin endpoint.
  * Returns the email (session) or '__api_token__' (bearer) when allowed,
  * or null when rejected.
