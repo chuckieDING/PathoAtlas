@@ -256,9 +256,6 @@ interface DiseaseImage {
 复制 [`.env.local.example`](.env.local.example) 为 `.env.local` 并填写：
 
 ```bash
-# 部署的公开 URL（反代后必须设置，否则 OAuth redirect_uri 会错）
-APP_URL=https://your-domain.com
-
 # Google OAuth 2.0 Client（控制台：console.cloud.google.com）
 GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=GOCSPX-...
@@ -275,9 +272,8 @@ ADMIN_API_TOKEN=<64 字符随机 hex>
 
 在 Google Cloud Console 创建 OAuth 2.0 Client 时，**Authorized redirect URI** 必须填：
 ```
-<APP_URL>/api/auth/callback
+https://<your-domain>/api/auth/callback
 ```
-例如 `APP_URL=https://supercalifragilisticexpialidocious.cloud` 时，GCP 要登记 `https://supercalifragilisticexpialidocious.cloud/api/auth/callback`。
 
 > 三个变量都不设置时进入 **dev-mode**，所有 `/api/admin/*` 对本机开放，方便本地开发。
 
