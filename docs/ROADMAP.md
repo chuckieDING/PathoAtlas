@@ -4,7 +4,7 @@
 
 ## 📊 进度总览
 
-- **Tier 1 · 核心缺失**：0/9 已完成
+- **Tier 1 · 核心缺失**：0/9 已完成（#1 进行中 1/6 子项 ✅）
 - **Tier 2 · 高价值升级**：0/9 已完成
 - **Tier 3 · 差异化拓展**：0/7 已完成
 
@@ -15,7 +15,7 @@
 ### 1. 分级分期交互式评分器
 把 `grading` / `staging` 从纯字符串升级为可交互的评分组件。每个子项对应一个分级系统：
 
-- [ ] **Nottingham Grade**（乳腺浸润癌）—— 腺管形成 + 核多形性 + 核分裂 三项相加，得到 G1/G2/G3
+- [x] **Nottingham Grade**（乳腺浸润癌）—— 腺管形成 + 核多形性 + 核分裂 三项相加，得到 G1/G2/G3 ✅ 已挂到 `/atlas/breast/invasive-ductal-carcinoma-nst` 的分子病理 tab
 - [ ] **Gleason / ISUP Grade Group**（前列腺癌）—— 主次 pattern 组合到 5 级 Grade Group
 - [ ] **ISUP/WHO grading**（肾透明细胞癌）—— 核仁显著度 1–4 级
 - [ ] **FIGO staging**（子宫内膜 / 卵巢 / 宫颈）—— 按组织类型分别建计算器

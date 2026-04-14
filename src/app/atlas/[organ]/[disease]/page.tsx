@@ -10,6 +10,7 @@ import { MasteryDots } from '@/components/ProgressWidgets';
 import { IconCheckCircle, IconZap, IconSearch, IconX, IconBookOpen } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
 import { ImageLightbox } from '@/components/ImageLightbox';
+import { NottinghamGrade } from '@/components/calculators/NottinghamGrade';
 import { getMarkerDiagram } from '@/lib/markerDiagrams';
 
 // Translate a free-text marker label from the IHC table into the canonical
@@ -313,6 +314,11 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           <Section title="分子特征" content={d.molecularFeatures} />
           {d.grading && <Section title="分级" content={d.grading} />}
           {d.staging && <Section title="分期" content={d.staging} />}
+          {/* Interactive grading calculators — attach per (organ, disease).
+              First of several (ROADMAP Tier 1 #1). */}
+          {organ === 'breast' && diseaseId === 'invasive-ductal-carcinoma-nst' && (
+            <NottinghamGrade />
+          )}
         </div>
       )}
 
