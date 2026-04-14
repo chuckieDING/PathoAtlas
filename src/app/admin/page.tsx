@@ -1302,7 +1302,16 @@ function ImageEditor({
       const res = await fetch('/api/admin/upload', { method: 'POST', body: fd });
       const j = await res.json();
       if (!res.ok) throw new Error(j.error || '上传失败');
-      update(idx, { [field]: j.url });
+      // When the server generated a thumbnail (image upload), auto-populate
+      // BOTH url and fullUrl so the user doesn't have to upload twice. The
+      // rule: thumbnail → url (gallery grid), original → fullUrl (lightbox).
+      // For non-image uploads (PDFs, gifs) the response only has `url` and
+      // we fall back to the old single-field behavior.
+      if (j.thumbnail && j.fullUrl) {
+        update(idx, { url: j.url, fullUrl: j.fullUrl });
+      } else {
+        update(idx, { [field]: j.url });
+      }
     } catch (e) {
       alert(`上传失败：${e instanceof Error ? e.message : '未知错误'}`);
     } finally {
@@ -1432,7 +1441,14 @@ function StainingGroupsEditor({
       const res = await fetch('/api/admin/upload', { method: 'POST', body: fd });
       const j = await res.json();
       if (!res.ok) throw new Error(j.error || '上传失败');
-      updateImg(gi, ii, { [field]: j.url });
+      // Image uploads return both `url` (thumbnail) and `fullUrl` (original);
+      // auto-populate both so users only need to upload once for the full
+      // 压缩图/原图 experience in the gallery.
+      if (j.thumbnail && j.fullUrl) {
+        updateImg(gi, ii, { url: j.url, fullUrl: j.fullUrl });
+      } else {
+        updateImg(gi, ii, { [field]: j.url });
+      }
     } catch (e) {
       alert(`上传失败：${e instanceof Error ? e.message : '未知错误'}`);
     } finally {
