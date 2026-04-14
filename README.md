@@ -384,5 +384,6 @@ curl -X POST $BASE/api/admin/upload \
 ## 🔗 链接
 
 - 项目仓库：https://github.com/chuckieding/pathoatlas
+- **产品路线图**：[`docs/ROADMAP.md`](docs/ROADMAP.md)
 - API 文档：[`docs/admin-api.md`](docs/admin-api.md)
 - 环境变量模板：[`.env.local.example`](.env.local.example)
