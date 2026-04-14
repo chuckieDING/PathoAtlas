@@ -161,9 +161,36 @@ export interface DifferentialScenario {
 const DATA_DIR = path.join(process.cwd(), 'data');
 
 // Tiny in-process cache so each JSON file is parsed at most once per Node worker.
-// The data is fully static, so a permanent cache is safe and significantly reduces
-// repeated fs.readFileSync + JSON.parse overhead across API routes and page renders.
+// The data is mostly static, so this is safe and significantly reduces repeated
+// fs.readFileSync + JSON.parse overhead across API routes and page renders.
+//
+// Admin mutations MUST call invalidateJsonCache() after writing to a file so
+// the next read picks up the fresh content; otherwise long-lived `next start`
+// processes will keep serving stale data until restart.
 const jsonCache = new Map<string, unknown>();
+
+/**
+ * Drop a single file (or the entire cache) from the in-process JSON cache.
+ * Call this immediately after any `fs.writeFileSync` against a data file.
+ */
+export function invalidateJsonCache(filePath?: string): void {
+  if (filePath) {
+    jsonCache.delete(filePath);
+  } else {
+    jsonCache.clear();
+  }
+}
+
+/** Absolute path to data/diseases/<organ>.json — exported so admin routes
+ *  can pass the same key to invalidateJsonCache(). */
+export function getDiseaseFilePath(organ: string): string {
+  return path.join(DATA_DIR, 'diseases', `${organ}.json`);
+}
+
+/** Absolute path to data/markers.json. */
+export function getMarkersFilePath(): string {
+  return path.join(DATA_DIR, 'markers.json');
+}
 
 function loadJson<T>(filePath: string): T {
   const cached = jsonCache.get(filePath);
