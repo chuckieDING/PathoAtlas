@@ -565,6 +565,9 @@ function LiteratureList({ items }: { items: LiteratureItem[] }) {
 
 function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
   if (!sourceUrl && !viewUrl) return null;
+  // PDF detection: extension or admin-uploaded path. Browsers render PDFs
+  // natively in a new tab so we don't need a custom viewer component here.
+  const isPdf = !!viewUrl && /\.pdf(\?|$)/i.test(viewUrl);
   return (
     <div className="flex items-center gap-2 mt-3">
       {sourceUrl && (
@@ -583,9 +586,14 @@ function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: s
           href={viewUrl}
           target="_blank"
           rel="noreferrer"
-          className="text-[11px] px-2.5 py-1 rounded-md transition-colors"
+          className="text-[11px] px-2.5 py-1 rounded-md transition-colors inline-flex items-center gap-1"
           style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
         >
+          {isPdf && (
+            <span className="text-[9px] font-bold px-1 rounded" style={{ background: 'rgba(255,255,255,0.25)' }}>
+              PDF
+            </span>
+          )}
           在线阅览
         </a>
       )}

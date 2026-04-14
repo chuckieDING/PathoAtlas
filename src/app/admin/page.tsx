@@ -26,17 +26,33 @@ interface LiteratureItem {
   sourceUrl?: string;
   viewUrl?: string;
 }
+interface IhcRow { marker: string; result: string; note: string }
 interface DiseaseLike {
   id: string;
   nameZh: string;
   nameEn: string;
+  aliases?: string[];
   organ: string;
+  category?: string;
+  epidemiology?: string;
+  clinicalFeatures?: string;
+  grossPathology?: string;
   grossDescription?: string;
+  microscopy?: string;
+  keyFeatures?: string[];
+  ihcProfile?: IhcRow[];
+  molecularFeatures?: string;
+  differentialDiagnosis?: string[];
+  grading?: string;
+  staging?: string;
+  prognosis?: string;
+  treatment?: string;
+  images?: DiseaseImage[];
   microscopyImages?: DiseaseImage[];
   grossImages?: DiseaseImage[];
-  images?: DiseaseImage[];
   expertConsensus?: ConsensusItem[];
   literature?: LiteratureItem[];
+  references?: string[];
 }
 interface StainingGroup {
   id: string;
@@ -49,19 +65,239 @@ interface MarkerLike {
   nameZh: string;
   nameEn: string;
   abbreviation: string;
+  category?: string;
+  cloneInfo?: string;
+  targetProtein?: string;
+  cellularLocalization?: string;
+  normalExpression?: string;
+  function?: string;
+  interpretation?: string;
+  clinicalSignificance?: string;
+  positiveIn?: string[];
+  negativeIn?: string[];
+  relatedDrugs?: string[];
+  pitfalls?: string;
+  references?: string[];
   expertConsensus?: ConsensusItem[];
   literature?: LiteratureItem[];
   stainingImages?: StainingGroup[];
 }
 
+interface OrganOption { id: string; nameZh: string; color: string }
+
+const DISEASE_CATEGORIES = [
+  { key: 'malignant', label: '恶性' },
+  { key: 'benign', label: '良性' },
+  { key: 'precancerous', label: '癌前' },
+  { key: 'inflammatory', label: '炎症' },
+  { key: 'other', label: '其他' },
+];
+
+const MARKER_CATEGORIES = [
+  '上皮标记', '间叶标记', '淋巴标记', '激素受体',
+  '增殖标记', '神经标记', '分子标记', '其他',
+];
+
 type EntityKind = 'disease' | 'marker';
 
 // ── Page ───────────────────────────────────────────────────────────
 
+const NEW_SENTINEL = '__new__';
+
+// Blank draft scaffolds for the create flows. These keep the admin UI
+// self-contained without waiting for an API round-trip to learn field names.
+function blankDiseaseDraft(defaultOrgan: string): DiseaseLike {
+  return {
+    id: '',
+    nameZh: '',
+    nameEn: '',
+    aliases: [],
+    organ: defaultOrgan,
+    category: 'other',
+    epidemiology: '',
+    clinicalFeatures: '',
+    grossPathology: '',
+    grossDescription: '',
+    microscopy: '',
+    keyFeatures: [],
+    ihcProfile: [],
+    molecularFeatures: '',
+    differentialDiagnosis: [],
+    grading: '',
+    staging: '',
+    prognosis: '',
+    treatment: '',
+    images: [],
+    microscopyImages: [],
+    grossImages: [],
+    expertConsensus: [],
+    literature: [],
+    references: [],
+  };
+}
+
+function blankMarkerDraft(): MarkerLike {
+  return {
+    id: '',
+    nameZh: '',
+    nameEn: '',
+    abbreviation: '',
+    category: '其他',
+    cloneInfo: '',
+    targetProtein: '',
+    cellularLocalization: '',
+    normalExpression: '',
+    function: '',
+    interpretation: '',
+    clinicalSignificance: '',
+    positiveIn: [],
+    negativeIn: [],
+    relatedDrugs: [],
+    pitfalls: '',
+    references: [],
+    expertConsensus: [],
+    literature: [],
+    stainingImages: [],
+  };
+}
+
+// ── Auth gate ──────────────────────────────────────────────────────
+
+interface AuthState {
+  status: 'loading' | 'open' | 'authenticated' | 'needs-login';
+  email?: string | null;
+  googleConfigured?: boolean;
+  error?: string;
+}
+
 export default function AdminPage() {
+  const [auth, setAuth] = useState<AuthState>({ status: 'loading' });
+
+  const loadAuth = async () => {
+    try {
+      const res = await fetch('/api/auth/me', { cache: 'no-store' });
+      if (res.ok) {
+        const j = await res.json();
+        if (j.authRequired === false) {
+          setAuth({ status: 'open' });
+        } else {
+          setAuth({ status: 'authenticated', email: j.email });
+        }
+        return;
+      }
+      if (res.status === 401) {
+        const j = await res.json().catch(() => ({}));
+        setAuth({ status: 'needs-login', googleConfigured: !!j.googleConfigured });
+        return;
+      }
+      setAuth({ status: 'needs-login', error: `auth error: ${res.status}` });
+    } catch (e) {
+      setAuth({ status: 'needs-login', error: e instanceof Error ? e.message : '无法连接鉴权服务' });
+    }
+  };
+
+  useEffect(() => {
+    // Read auth_error from query string once on mount (set by the OAuth
+    // callback when sign-in fails), then clean it up so refresh doesn't
+    // show a stale error.
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const err = params.get('auth_error');
+      const badEmail = params.get('email');
+      if (err) {
+        setAuth({
+          status: 'needs-login',
+          error: `${err}${badEmail ? ` (${badEmail})` : ''}`,
+          googleConfigured: true,
+        });
+        params.delete('auth_error');
+        params.delete('email');
+        const qs = params.toString();
+        window.history.replaceState({}, '', window.location.pathname + (qs ? `?${qs}` : ''));
+        return;
+      }
+    }
+    loadAuth();
+  }, []);
+
+  const logout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    setAuth({ status: 'needs-login', googleConfigured: true });
+  };
+
+  if (auth.status === 'loading') {
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+        <div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div>
+      </div>
+    );
+  }
+
+  if (auth.status === 'needs-login') {
+    return <LoginScreen error={auth.error} googleConfigured={auth.googleConfigured ?? true} />;
+  }
+
+  return (
+    <AdminInner
+      currentEmail={auth.status === 'authenticated' ? auth.email || null : null}
+      onLogout={auth.status === 'authenticated' ? logout : undefined}
+    />
+  );
+}
+
+// ── Login screen ───────────────────────────────────────────────────
+
+function LoginScreen({ error, googleConfigured }: { error?: string; googleConfigured: boolean }) {
+  return (
+    <div className="max-w-xl mx-auto px-4 py-16">
+      <div className="rounded-2xl p-8 text-center" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+        <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>内容管理 · 登录</h1>
+        <p className="text-sm mb-6" style={{ color: 'var(--fg-muted)' }}>
+          该页面只对授权 Google 账户开放。请使用管理员分配的账号登录。
+        </p>
+        {error && (
+          <div
+            className="rounded-lg p-3 mb-4 text-xs text-left"
+            style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)' }}
+          >
+            登录失败：{error}
+          </div>
+        )}
+        {googleConfigured ? (
+          <a
+            href="/api/auth/login?returnTo=/admin"
+            className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold"
+            style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
+          >
+            使用 Google 账号登录
+          </a>
+        ) : (
+          <div className="rounded-lg p-3 text-xs text-left" style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}>
+            <div className="font-semibold mb-1" style={{ color: 'var(--fg)' }}>Google OAuth 尚未配置</div>
+            <div>部署时请设置以下环境变量：</div>
+            <code className="block mt-2 text-[10px] whitespace-pre-wrap">{`GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+ADMIN_EMAILS=you@example.com
+AUTH_SECRET=<32+ random bytes>
+# optional for external AI callers:
+ADMIN_API_TOKEN=<long random string>`}</code>
+          </div>
+        )}
+        <div className="mt-6 text-[11px]" style={{ color: 'var(--fg-muted)' }}>
+          <Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Admin (authenticated) ──────────────────────────────────────────
+
+function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; onLogout?: () => void }) {
   const [kind, setKind] = useState<EntityKind>('disease');
   const [diseases, setDiseases] = useState<DiseaseLike[]>([]);
   const [markers, setMarkers] = useState<MarkerLike[]>([]);
+  const [organs, setOrgans] = useState<OrganOption[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
@@ -71,9 +307,11 @@ export default function AdminPage() {
     Promise.all([
       fetch('/api/all-diseases').then(r => r.json()),
       fetch('/api/markers').then(r => r.json()),
-    ]).then(([d, m]) => {
+      fetch('/api/organs').then(r => r.json()),
+    ]).then(([d, m, o]) => {
       setDiseases(Array.isArray(d) ? d : []);
       setMarkers(Array.isArray(m) ? m : []);
+      setOrgans(Array.isArray(o) ? o : []);
       setLoading(false);
     }).catch(() => setLoading(false));
   }, []);
@@ -90,12 +328,19 @@ export default function AdminPage() {
     );
   }, [list, search]);
 
-  const selectedDisease = kind === 'disease'
-    ? diseases.find(d => d.id === selected) || null
-    : null;
-  const selectedMarker = kind === 'marker'
-    ? markers.find(m => m.id === selected) || null
-    : null;
+  // The editor receives either the real record from state (update mode) or
+  // a blank scaffold (create mode, when selected === NEW_SENTINEL).
+  const isCreating = selected === NEW_SENTINEL;
+  const selectedDisease: DiseaseLike | null = (() => {
+    if (kind !== 'disease') return null;
+    if (isCreating) return blankDiseaseDraft(organs[0]?.id || 'lung');
+    return diseases.find(d => d.id === selected) || null;
+  })();
+  const selectedMarker: MarkerLike | null = (() => {
+    if (kind !== 'marker') return null;
+    if (isCreating) return blankMarkerDraft();
+    return markers.find(m => m.id === selected) || null;
+  })();
 
   const showToast = (msg: string) => {
     setToast(msg);
@@ -104,7 +349,15 @@ export default function AdminPage() {
 
   const refreshDisease = async (organ: string, id: string) => {
     const fresh = await fetch(`/api/disease?organ=${organ}&id=${id}`).then(r => r.json());
-    setDiseases(prev => prev.map(d => d.id === id ? { ...d, ...fresh } : d));
+    setDiseases(prev => {
+      const idx = prev.findIndex(d => d.id === id);
+      if (idx >= 0) return prev.map(d => d.id === id ? { ...d, ...fresh } : d);
+      return [...prev, fresh];
+    });
+  };
+  const refreshAllDiseases = async () => {
+    const fresh = await fetch('/api/all-diseases').then(r => r.json());
+    setDiseases(Array.isArray(fresh) ? fresh : []);
   };
   const refreshMarkers = async () => {
     const fresh = await fetch('/api/markers').then(r => r.json());
@@ -113,11 +366,35 @@ export default function AdminPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-1" style={{ color: 'var(--fg)' }}>内容管理</h1>
-        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-          维护疾病/标记物的 <b>专家共识</b>、<b>文献参考</b> 与 <b>图片资源</b>。保存会直接写入仓库中的 JSON 数据文件。
-        </p>
+      <div className="mb-6 flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <h1 className="text-2xl font-bold mb-1" style={{ color: 'var(--fg)' }}>内容管理</h1>
+          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+            维护疾病/标记物的 <b>专家共识</b>、<b>文献参考</b> 与 <b>图片资源</b>。保存会直接写入仓库中的 JSON 数据文件。
+          </p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {currentEmail ? (
+            <>
+              <span className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+                登录为 <span style={{ color: 'var(--fg)' }}>{currentEmail}</span>
+              </span>
+              {onLogout && (
+                <button
+                  onClick={onLogout}
+                  className="text-xs px-3 py-1.5 rounded-md"
+                  style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+                >
+                  登出
+                </button>
+              )}
+            </>
+          ) : (
+            <span className="text-xs px-2 py-1 rounded" style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b', border: '1px solid rgba(245,158,11,0.3)' }}>
+              dev 模式（未启用鉴权）
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Entity-kind switch */}
@@ -140,6 +417,13 @@ export default function AdminPage() {
       <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4">
         {/* List panel */}
         <aside className="rounded-xl p-3" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+          <button
+            onClick={() => setSelected(NEW_SENTINEL)}
+            className="w-full text-xs font-medium px-3 py-2 rounded-md mb-3"
+            style={{ background: 'var(--accent)', color: '#fff' }}
+          >
+            + 新建{kind === 'disease' ? '疾病' : '标记物'}
+          </button>
           <div className="relative mb-3">
             <span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--fg-muted)' }}>
               <IconSearch size={14} />
@@ -167,7 +451,7 @@ export default function AdminPage() {
                       border: selected === x.id ? '1px solid var(--accent)' : '1px solid transparent',
                     }}
                   >
-                    <div className="font-medium">{x.nameZh}</div>
+                    <div className="font-medium">{x.nameZh || x.id}</div>
                     <div className="text-[10px] opacity-70 truncate">{x.nameEn}</div>
                   </button>
                 </li>
@@ -183,24 +467,49 @@ export default function AdminPage() {
         <main className="rounded-xl p-5 min-h-[70vh]" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
           {!selected && (
             <div className="flex items-center justify-center h-full text-sm" style={{ color: 'var(--fg-muted)' }}>
-              请从左侧选择一个{kind === 'disease' ? '疾病' : '标记物'}条目开始编辑
+              请从左侧选择一个{kind === 'disease' ? '疾病' : '标记物'}条目，或点击顶部 &quot;+ 新建&quot; 创建
             </div>
           )}
           {kind === 'disease' && selectedDisease && (
             <DiseaseEditor
+              key={selected || 'new-disease'}
               disease={selectedDisease}
+              organs={organs}
+              isNew={isCreating}
               onSaved={async (msg) => {
-                await refreshDisease(selectedDisease.organ, selectedDisease.id);
+                if (!isCreating && selectedDisease.organ && selectedDisease.id) {
+                  await refreshDisease(selectedDisease.organ, selectedDisease.id);
+                }
                 showToast(msg);
+              }}
+              onCreated={async (organ, id) => {
+                await refreshAllDiseases();
+                setSelected(id);
+                showToast(`已创建：${id}`);
+              }}
+              onDeleted={async () => {
+                await refreshAllDiseases();
+                setSelected(null);
               }}
             />
           )}
           {kind === 'marker' && selectedMarker && (
             <MarkerEditor
+              key={selected || 'new-marker'}
               marker={selectedMarker}
+              isNew={isCreating}
               onSaved={async (msg) => {
                 await refreshMarkers();
                 showToast(msg);
+              }}
+              onCreated={async (id) => {
+                await refreshMarkers();
+                setSelected(id);
+                showToast(`已创建：${id}`);
+              }}
+              onDeleted={async () => {
+                await refreshMarkers();
+                setSelected(null);
               }}
             />
           )}
@@ -227,28 +536,73 @@ export default function AdminPage() {
 
 // ── Disease Editor ─────────────────────────────────────────────────
 
-function DiseaseEditor({ disease, onSaved }: { disease: DiseaseLike; onSaved: (msg: string) => void }) {
-  const [consensus, setConsensus] = useState<ConsensusItem[]>([]);
-  const [literature, setLiterature] = useState<LiteratureItem[]>([]);
-  const [microImages, setMicroImages] = useState<DiseaseImage[]>([]);
-  const [grossImages, setGrossImages] = useState<DiseaseImage[]>([]);
+function DiseaseEditor({
+  disease,
+  organs,
+  isNew,
+  onSaved,
+  onCreated,
+  onDeleted,
+}: {
+  disease: DiseaseLike;
+  organs: OrganOption[];
+  isNew: boolean;
+  onSaved: (msg: string) => void;
+  onCreated: (organ: string, id: string) => void;
+  onDeleted: () => void;
+}) {
+  // The editor keeps a single local draft that mirrors every editable field
+  // on the disease. Section-level save buttons patch individual fields via
+  // PUT; "保存全部" pushes the whole draft in one call; 新建 flow POSTs.
+  const [draft, setDraft] = useState<DiseaseLike>(disease);
   const [busy, setBusy] = useState(false);
 
-  // Reset local drafts whenever selection changes.
   useEffect(() => {
-    setConsensus(disease.expertConsensus || []);
-    setLiterature(disease.literature || []);
-    setMicroImages(disease.microscopyImages || []);
-    setGrossImages(disease.grossImages || []);
-  }, [disease.id, disease.expertConsensus, disease.literature, disease.microscopyImages, disease.grossImages]);
+    setDraft(disease);
+  }, [disease]);
+
+  const patch = <K extends keyof DiseaseLike>(key: K, value: DiseaseLike[K]) => {
+    setDraft(prev => ({ ...prev, [key]: value }));
+  };
+
+  // Collect every editable field in one payload for bulk save / create.
+  const collectPayload = (d: DiseaseLike): Record<string, unknown> => ({
+    nameZh: d.nameZh || '',
+    nameEn: d.nameEn || '',
+    aliases: d.aliases || [],
+    category: d.category || 'other',
+    epidemiology: d.epidemiology || '',
+    clinicalFeatures: d.clinicalFeatures || '',
+    grossPathology: d.grossPathology || '',
+    grossDescription: d.grossDescription || '',
+    microscopy: d.microscopy || '',
+    keyFeatures: d.keyFeatures || [],
+    ihcProfile: d.ihcProfile || [],
+    molecularFeatures: d.molecularFeatures || '',
+    differentialDiagnosis: d.differentialDiagnosis || [],
+    grading: d.grading || '',
+    staging: d.staging || '',
+    prognosis: d.prognosis || '',
+    treatment: d.treatment || '',
+    images: d.images || [],
+    microscopyImages: d.microscopyImages || [],
+    grossImages: d.grossImages || [],
+    expertConsensus: d.expertConsensus || [],
+    literature: d.literature || [],
+    references: d.references || [],
+  });
 
   const save = async (updates: Record<string, unknown>, label: string) => {
+    if (isNew) {
+      onSaved('请先点击"保存创建"完成新建');
+      return;
+    }
     setBusy(true);
     try {
       const res = await fetch('/api/admin/disease', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ organ: disease.organ, id: disease.id, updates }),
+        body: JSON.stringify({ organ: draft.organ, id: draft.id, updates }),
       });
       const j = await res.json();
       if (!res.ok) throw new Error(j.error || '保存失败');
@@ -260,68 +614,297 @@ function DiseaseEditor({ disease, onSaved }: { disease: DiseaseLike; onSaved: (m
     }
   };
 
+  const saveAll = async () => {
+    setBusy(true);
+    try {
+      const payload = collectPayload(draft);
+      const res = await fetch('/api/admin/disease', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ organ: draft.organ, id: draft.id, updates: payload }),
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '保存失败');
+      onSaved('全部字段已保存');
+    } catch (e) {
+      onSaved(`保存失败：${e instanceof Error ? e.message : '未知错误'}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const createNew = async () => {
+    if (!draft.id || !draft.organ) {
+      onSaved('id 和 organ 必填');
+      return;
+    }
+    if (!/^[a-z0-9][a-z0-9-]*$/i.test(draft.id)) {
+      onSaved('id 必须是小写字母、数字和连字符 (kebab-case)');
+      return;
+    }
+    setBusy(true);
+    try {
+      const payload = { id: draft.id, ...collectPayload(draft) };
+      const res = await fetch('/api/admin/disease', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ organ: draft.organ, disease: payload }),
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '创建失败');
+      onCreated(draft.organ, draft.id);
+      onSaved(`已创建：${draft.nameZh || draft.id}`);
+    } catch (e) {
+      onSaved(`创建失败：${e instanceof Error ? e.message : '未知错误'}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const deleteEntity = async () => {
+    if (!confirm(`确定删除 ${draft.nameZh || draft.id}？此操作不可恢复。`)) return;
+    setBusy(true);
+    try {
+      const res = await fetch(`/api/admin/disease?organ=${encodeURIComponent(draft.organ)}&id=${encodeURIComponent(draft.id)}`, {
+        method: 'DELETE',
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '删除失败');
+      onDeleted();
+      onSaved(`已删除：${draft.nameZh || draft.id}`);
+    } catch (e) {
+      onSaved(`删除失败：${e instanceof Error ? e.message : '未知错误'}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <div className="space-y-6">
-      <header>
-        <h2 className="text-lg font-bold" style={{ color: 'var(--fg)' }}>{disease.nameZh}</h2>
-        <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>{disease.nameEn} · {disease.organ} · {disease.id}</p>
+      <header className="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <h2 className="text-lg font-bold" style={{ color: 'var(--fg)' }}>
+            {isNew ? '新建疾病' : (draft.nameZh || draft.id)}
+          </h2>
+          <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+            {isNew ? '填写以下字段后点击"保存创建"' : `${draft.nameEn} · ${draft.organ} · ${draft.id}`}
+          </p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {isNew ? (
+            <button
+              onClick={createNew}
+              disabled={busy}
+              className="text-xs px-3 py-1.5 rounded-md"
+              style={{ background: 'var(--accent)', color: '#fff', opacity: busy ? 0.6 : 1 }}
+            >
+              {busy ? '创建中...' : '保存创建'}
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={saveAll}
+                disabled={busy}
+                className="text-xs px-3 py-1.5 rounded-md"
+                style={{ background: 'var(--accent)', color: '#fff', opacity: busy ? 0.6 : 1 }}
+              >
+                {busy ? '保存中...' : '保存全部'}
+              </button>
+              <button
+                onClick={deleteEntity}
+                disabled={busy}
+                className="text-xs px-3 py-1.5 rounded-md"
+                style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
+              >
+                删除
+              </button>
+            </>
+          )}
+        </div>
       </header>
 
-      <ConsensusEditor
-        items={consensus}
-        onChange={setConsensus}
-        onSave={() => save({ expertConsensus: consensus }, '专家共识')}
-        busy={busy}
-      />
+      {/* Basic identity section */}
+      <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>基本信息</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <Field label="ID (slug)" value={draft.id} onChange={v => isNew && patch('id', v)} mono />
+          <SelectField
+            label="器官"
+            value={draft.organ}
+            disabled={!isNew}
+            onChange={v => patch('organ', v)}
+            options={organs.map(o => ({ key: o.id, label: o.nameZh }))}
+          />
+          <Field label="中文名" value={draft.nameZh || ''} onChange={v => patch('nameZh', v)} />
+          <Field label="英文名" value={draft.nameEn || ''} onChange={v => patch('nameEn', v)} />
+          <SelectField
+            label="类别"
+            value={draft.category || 'other'}
+            onChange={v => patch('category', v)}
+            options={DISEASE_CATEGORIES}
+          />
+        </div>
+        <StringArrayEditor
+          label="别名"
+          items={draft.aliases || []}
+          onChange={v => patch('aliases', v)}
+          placeholder="输入别名回车添加"
+        />
+      </section>
 
-      <LiteratureEditor
-        items={literature}
-        onChange={setLiterature}
-        onSave={() => save({ literature }, '文献参考')}
-        busy={busy}
-      />
+      {/* Clinical + gross + microscopy narratives */}
+      <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>核心描述</h3>
+        <TextareaField label="流行病学" value={draft.epidemiology || ''} onChange={v => patch('epidemiology', v)} />
+        <TextareaField label="临床特征" value={draft.clinicalFeatures || ''} onChange={v => patch('clinicalFeatures', v)} />
+        <TextareaField label="大体观察 (grossPathology)" value={draft.grossPathology || ''} onChange={v => patch('grossPathology', v)} />
+        <TextareaField label="大体描述 (grossDescription, Markdown)" value={draft.grossDescription || ''} onChange={v => patch('grossDescription', v)} rows={5} />
+        <TextareaField label="镜下特征 (Markdown)" value={draft.microscopy || ''} onChange={v => patch('microscopy', v)} rows={6} />
+        <TextareaField label="分子特征" value={draft.molecularFeatures || ''} onChange={v => patch('molecularFeatures', v)} />
+      </section>
 
-      <ImageEditor
-        title="镜下特征图"
-        scope={`diseases/${disease.id}/microscopy`}
-        items={microImages}
-        onChange={setMicroImages}
-        onSave={() => save({ microscopyImages: microImages }, '镜下图片')}
-        busy={busy}
-      />
-      <ImageEditor
-        title="大体形态图"
-        scope={`diseases/${disease.id}/gross`}
-        items={grossImages}
-        onChange={setGrossImages}
-        onSave={() => save({ grossImages: grossImages }, '大体图片')}
-        busy={busy}
-      />
+      {/* Diagnostic key points + IHC + differentials */}
+      <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>诊断要点 / 免疫组化 / 鉴别</h3>
+        <StringArrayEditor
+          label="诊断要点 (keyFeatures)"
+          items={draft.keyFeatures || []}
+          onChange={v => patch('keyFeatures', v)}
+          placeholder="要点内容回车添加"
+        />
+        <IhcProfileEditor
+          items={draft.ihcProfile || []}
+          onChange={v => patch('ihcProfile', v)}
+        />
+        <StringArrayEditor
+          label="鉴别诊断 (disease ID)"
+          items={draft.differentialDiagnosis || []}
+          onChange={v => patch('differentialDiagnosis', v)}
+          placeholder="输入需鉴别的 disease ID 回车"
+        />
+      </section>
+
+      {/* Grading / staging / prognosis / treatment */}
+      <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>分级/分期/预后/治疗</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <Field label="分级" value={draft.grading || ''} onChange={v => patch('grading', v)} />
+          <Field label="分期" value={draft.staging || ''} onChange={v => patch('staging', v)} />
+        </div>
+        <TextareaField label="预后" value={draft.prognosis || ''} onChange={v => patch('prognosis', v)} />
+        <TextareaField label="治疗" value={draft.treatment || ''} onChange={v => patch('treatment', v)} />
+      </section>
+
+      {/* References */}
+      <section className="rounded-lg p-4" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>参考来源</h3>
+        <StringArrayEditor
+          label={'references（文字引用，结构化条目请用"文献参考"区块）'}
+          items={draft.references || []}
+          onChange={v => patch('references', v)}
+          placeholder="如 WHO Thoracic Tumours, 5th Ed"
+        />
+      </section>
+
+      {!isNew && (
+        <>
+          <ConsensusEditor
+            items={draft.expertConsensus || []}
+            onChange={v => patch('expertConsensus', v)}
+            onSave={() => save({ expertConsensus: draft.expertConsensus || [] }, '专家共识')}
+            busy={busy}
+            scope={`diseases/${draft.id}/consensus`}
+          />
+
+          <LiteratureEditor
+            items={draft.literature || []}
+            onChange={v => patch('literature', v)}
+            onSave={() => save({ literature: draft.literature || [] }, '文献参考')}
+            busy={busy}
+            scope={`diseases/${draft.id}/literature`}
+          />
+
+          <ImageEditor
+            title="镜下特征图"
+            scope={`diseases/${draft.id}/microscopy`}
+            items={draft.microscopyImages || []}
+            onChange={v => patch('microscopyImages', v)}
+            onSave={() => save({ microscopyImages: draft.microscopyImages || [] }, '镜下图片')}
+            busy={busy}
+          />
+          <ImageEditor
+            title="大体形态图"
+            scope={`diseases/${draft.id}/gross`}
+            items={draft.grossImages || []}
+            onChange={v => patch('grossImages', v)}
+            onSave={() => save({ grossImages: draft.grossImages || [] }, '大体图片')}
+            busy={busy}
+          />
+        </>
+      )}
     </div>
   );
 }
 
 // ── Marker Editor ──────────────────────────────────────────────────
 
-function MarkerEditor({ marker, onSaved }: { marker: MarkerLike; onSaved: (msg: string) => void }) {
-  const [consensus, setConsensus] = useState<ConsensusItem[]>([]);
-  const [literature, setLiterature] = useState<LiteratureItem[]>([]);
-  const [staining, setStaining] = useState<StainingGroup[]>([]);
+function MarkerEditor({
+  marker,
+  isNew,
+  onSaved,
+  onCreated,
+  onDeleted,
+}: {
+  marker: MarkerLike;
+  isNew: boolean;
+  onSaved: (msg: string) => void;
+  onCreated: (id: string) => void;
+  onDeleted: () => void;
+}) {
+  const [draft, setDraft] = useState<MarkerLike>(marker);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    setConsensus(marker.expertConsensus || []);
-    setLiterature(marker.literature || []);
-    setStaining(marker.stainingImages || []);
-  }, [marker.id, marker.expertConsensus, marker.literature, marker.stainingImages]);
+    setDraft(marker);
+  }, [marker]);
+
+  const patch = <K extends keyof MarkerLike>(key: K, value: MarkerLike[K]) => {
+    setDraft(prev => ({ ...prev, [key]: value }));
+  };
+
+  const collectPayload = (m: MarkerLike): Record<string, unknown> => ({
+    nameZh: m.nameZh || '',
+    nameEn: m.nameEn || '',
+    abbreviation: m.abbreviation || '',
+    category: m.category || '其他',
+    cloneInfo: m.cloneInfo || '',
+    targetProtein: m.targetProtein || '',
+    cellularLocalization: m.cellularLocalization || '',
+    normalExpression: m.normalExpression || '',
+    function: m.function || '',
+    interpretation: m.interpretation || '',
+    clinicalSignificance: m.clinicalSignificance || '',
+    positiveIn: m.positiveIn || [],
+    negativeIn: m.negativeIn || [],
+    relatedDrugs: m.relatedDrugs || [],
+    pitfalls: m.pitfalls || '',
+    references: m.references || [],
+    expertConsensus: m.expertConsensus || [],
+    literature: m.literature || [],
+    stainingImages: m.stainingImages || [],
+  });
 
   const save = async (updates: Record<string, unknown>, label: string) => {
+    if (isNew) {
+      onSaved('请先点击"保存创建"完成新建');
+      return;
+    }
     setBusy(true);
     try {
       const res = await fetch('/api/admin/marker', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: marker.id, updates }),
+        body: JSON.stringify({ id: draft.id, updates }),
       });
       const j = await res.json();
       if (!res.ok) throw new Error(j.error || '保存失败');
@@ -333,37 +916,192 @@ function MarkerEditor({ marker, onSaved }: { marker: MarkerLike; onSaved: (msg: 
     }
   };
 
+  const saveAll = async () => {
+    setBusy(true);
+    try {
+      const res = await fetch('/api/admin/marker', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: draft.id, updates: collectPayload(draft) }),
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '保存失败');
+      onSaved('全部字段已保存');
+    } catch (e) {
+      onSaved(`保存失败：${e instanceof Error ? e.message : '未知错误'}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const createNew = async () => {
+    if (!draft.id) {
+      onSaved('id 必填');
+      return;
+    }
+    if (!/^[a-z0-9][a-z0-9-]*$/i.test(draft.id)) {
+      onSaved('id 必须是 kebab-case 纯 ASCII');
+      return;
+    }
+    setBusy(true);
+    try {
+      const payload = { id: draft.id, ...collectPayload(draft) };
+      const res = await fetch('/api/admin/marker', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ marker: payload }),
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '创建失败');
+      onCreated(draft.id);
+      onSaved(`已创建：${draft.abbreviation || draft.id}`);
+    } catch (e) {
+      onSaved(`创建失败：${e instanceof Error ? e.message : '未知错误'}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const deleteEntity = async () => {
+    if (!confirm(`确定删除 ${draft.abbreviation || draft.id}？此操作不可恢复。`)) return;
+    setBusy(true);
+    try {
+      const res = await fetch(`/api/admin/marker?id=${encodeURIComponent(draft.id)}`, { method: 'DELETE' });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '删除失败');
+      onDeleted();
+      onSaved(`已删除：${draft.abbreviation || draft.id}`);
+    } catch (e) {
+      onSaved(`删除失败：${e instanceof Error ? e.message : '未知错误'}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <div className="space-y-6">
-      <header>
-        <h2 className="text-lg font-bold" style={{ color: 'var(--fg)' }}>
-          <span className="font-mono" style={{ color: 'var(--accent)' }}>{marker.abbreviation}</span>
-          <span className="ml-2">{marker.nameZh}</span>
-        </h2>
-        <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>{marker.nameEn} · {marker.id}</p>
+      <header className="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <h2 className="text-lg font-bold" style={{ color: 'var(--fg)' }}>
+            {isNew ? '新建标记物' : (
+              <>
+                <span className="font-mono" style={{ color: 'var(--accent)' }}>{draft.abbreviation || draft.id}</span>
+                <span className="ml-2">{draft.nameZh}</span>
+              </>
+            )}
+          </h2>
+          <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+            {isNew ? '填写以下字段后点击"保存创建"' : `${draft.nameEn} · ${draft.id}`}
+          </p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {isNew ? (
+            <button
+              onClick={createNew}
+              disabled={busy}
+              className="text-xs px-3 py-1.5 rounded-md"
+              style={{ background: 'var(--accent)', color: '#fff', opacity: busy ? 0.6 : 1 }}
+            >
+              {busy ? '创建中...' : '保存创建'}
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={saveAll}
+                disabled={busy}
+                className="text-xs px-3 py-1.5 rounded-md"
+                style={{ background: 'var(--accent)', color: '#fff', opacity: busy ? 0.6 : 1 }}
+              >
+                {busy ? '保存中...' : '保存全部'}
+              </button>
+              <button
+                onClick={deleteEntity}
+                disabled={busy}
+                className="text-xs px-3 py-1.5 rounded-md"
+                style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
+              >
+                删除
+              </button>
+            </>
+          )}
+        </div>
       </header>
 
-      <ConsensusEditor
-        items={consensus}
-        onChange={setConsensus}
-        onSave={() => save({ expertConsensus: consensus }, '专家共识')}
-        busy={busy}
-      />
+      {/* Basic identity */}
+      <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>基本信息</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <Field label="ID (slug)" value={draft.id} onChange={v => isNew && patch('id', v)} mono />
+          <Field label="缩写 (abbreviation)" value={draft.abbreviation || ''} onChange={v => patch('abbreviation', v)} mono />
+          <Field label="中文名" value={draft.nameZh || ''} onChange={v => patch('nameZh', v)} />
+          <Field label="英文名" value={draft.nameEn || ''} onChange={v => patch('nameEn', v)} />
+          <SelectField
+            label="类别"
+            value={draft.category || '其他'}
+            onChange={v => patch('category', v)}
+            options={MARKER_CATEGORIES.map(c => ({ key: c, label: c }))}
+          />
+          <Field label="亚细胞定位" value={draft.cellularLocalization || ''} onChange={v => patch('cellularLocalization', v)} />
+          <Field label="克隆号" value={draft.cloneInfo || ''} onChange={v => patch('cloneInfo', v)} mono />
+        </div>
+      </section>
 
-      <LiteratureEditor
-        items={literature}
-        onChange={setLiterature}
-        onSave={() => save({ literature }, '文献参考')}
-        busy={busy}
-      />
+      {/* Expression + interpretation */}
+      <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>表达与判读</h3>
+        <Field label="靶蛋白" value={draft.targetProtein || ''} onChange={v => patch('targetProtein', v)} />
+        <Field label="正常表达" value={draft.normalExpression || ''} onChange={v => patch('normalExpression', v)} />
+        <TextareaField label="功能" value={draft.function || ''} onChange={v => patch('function', v)} />
+        <TextareaField label="判读标准" value={draft.interpretation || ''} onChange={v => patch('interpretation', v)} />
+        <TextareaField label="临床意义" value={draft.clinicalSignificance || ''} onChange={v => patch('clinicalSignificance', v)} />
+        <TextareaField label="诊断陷阱 (pitfalls)" value={draft.pitfalls || ''} onChange={v => patch('pitfalls', v)} />
+      </section>
 
-      <StainingGroupsEditor
-        markerId={marker.id}
-        groups={staining}
-        onChange={setStaining}
-        onSave={() => save({ stainingImages: staining }, '染色形态图')}
-        busy={busy}
-      />
+      {/* Expression profile tags */}
+      <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>表达谱</h3>
+        <StringArrayEditor label="阳性表达 (positiveIn)" items={draft.positiveIn || []} onChange={v => patch('positiveIn', v)} />
+        <StringArrayEditor label="阴性表达 (negativeIn)" items={draft.negativeIn || []} onChange={v => patch('negativeIn', v)} />
+        <StringArrayEditor label="相关靶向药 (relatedDrugs)" items={draft.relatedDrugs || []} onChange={v => patch('relatedDrugs', v)} />
+      </section>
+
+      <section className="rounded-lg p-4" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+        <h3 className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>参考来源</h3>
+        <StringArrayEditor
+          label="references"
+          items={draft.references || []}
+          onChange={v => patch('references', v)}
+          placeholder="输入参考来源回车添加"
+        />
+      </section>
+
+      {!isNew && (
+        <>
+          <ConsensusEditor
+            items={draft.expertConsensus || []}
+            onChange={v => patch('expertConsensus', v)}
+            onSave={() => save({ expertConsensus: draft.expertConsensus || [] }, '专家共识')}
+            busy={busy}
+            scope={`markers/${draft.id}/consensus`}
+          />
+
+          <LiteratureEditor
+            items={draft.literature || []}
+            onChange={v => patch('literature', v)}
+            onSave={() => save({ literature: draft.literature || [] }, '文献参考')}
+            busy={busy}
+            scope={`markers/${draft.id}/literature`}
+          />
+
+          <StainingGroupsEditor
+            markerId={draft.id}
+            groups={draft.stainingImages || []}
+            onChange={v => patch('stainingImages', v)}
+            onSave={() => save({ stainingImages: draft.stainingImages || [] }, '染色形态图')}
+            busy={busy}
+          />
+        </>
+      )}
     </div>
   );
 }
@@ -403,11 +1141,13 @@ function ConsensusEditor({
   onChange,
   onSave,
   busy,
+  scope,
 }: {
   items: ConsensusItem[];
   onChange: (next: ConsensusItem[]) => void;
   onSave: () => void;
   busy: boolean;
+  scope: string;
 }) {
   const update = (idx: number, patch: Partial<ConsensusItem>) => {
     onChange(items.map((x, i) => i === idx ? { ...x, ...patch } : x));
@@ -440,8 +1180,13 @@ function ConsensusEditor({
             <TextareaField label="简介" value={c.summary} onChange={v => update(i, { summary: v })} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Field label="源地址 URL（出版商/原始发布页）" value={c.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
-              <Field label="在线阅览 URL（PubMed/摘要/预览）" value={c.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
+              <Field label="在线阅览 URL（PubMed/摘要/PDF）" value={c.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
             </div>
+            <PdfUploadButton
+              scope={`${scope}/${c.id}`}
+              currentUrl={c.viewUrl}
+              onUploaded={(url) => update(i, { viewUrl: url })}
+            />
             <div className="flex justify-end">
               <button
                 onClick={() => remove(i)}
@@ -463,11 +1208,13 @@ function LiteratureEditor({
   onChange,
   onSave,
   busy,
+  scope,
 }: {
   items: LiteratureItem[];
   onChange: (next: LiteratureItem[]) => void;
   onSave: () => void;
   busy: boolean;
+  scope: string;
 }) {
   const update = (idx: number, patch: Partial<LiteratureItem>) => {
     onChange(items.map((x, i) => i === idx ? { ...x, ...patch } : x));
@@ -498,8 +1245,13 @@ function LiteratureEditor({
             <TextareaField label="简介" value={lit.summary} onChange={v => update(i, { summary: v })} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Field label="源地址 URL（期刊 DOI/原文页）" value={lit.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
-              <Field label="在线阅览 URL（PubMed/摘要/预览）" value={lit.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
+              <Field label="在线阅览 URL（PubMed/摘要/PDF）" value={lit.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
             </div>
+            <PdfUploadButton
+              scope={`${scope}/${lit.id}`}
+              currentUrl={lit.viewUrl}
+              onUploaded={(url) => update(i, { viewUrl: url })}
+            />
             <div className="flex justify-end">
               <button
                 onClick={() => remove(i)}
@@ -812,6 +1564,86 @@ function StainingGroupsEditor({
   );
 }
 
+function PdfUploadButton({
+  scope,
+  currentUrl,
+  onUploaded,
+}: {
+  scope: string;
+  currentUrl?: string;
+  onUploaded: (url: string) => void;
+}) {
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const upload = async (file: File) => {
+    // Allow any file, but nudge toward PDF since that's what the button
+    // advertises. Non-PDF uploads just fall back to browser default handling.
+    setBusy(true);
+    setError(null);
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      fd.append('scope', scope);
+      const res = await fetch('/api/admin/upload', { method: 'POST', body: fd });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || '上传失败');
+      onUploaded(j.url);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : '未知错误');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const isPdf = !!currentUrl && /\.pdf(\?|$)/i.test(currentUrl);
+  const isUploaded = !!currentUrl && currentUrl.startsWith('/uploads/');
+
+  return (
+    <div
+      className="rounded-md p-2 flex items-center gap-2 flex-wrap text-[11px]"
+      style={{ background: 'var(--card)', border: '1px dashed var(--border)', color: 'var(--fg-muted)' }}
+    >
+      <span style={{ color: 'var(--fg)' }}>上传 PDF（替换在线阅览 URL）：</span>
+      <label
+        className="px-2 py-1 rounded cursor-pointer"
+        style={{ background: 'var(--card-hover)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+      >
+        {busy ? '上传中...' : '选择 PDF'}
+        <input
+          type="file"
+          accept="application/pdf,.pdf"
+          className="hidden"
+          disabled={busy}
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) upload(f);
+            e.target.value = '';
+          }}
+        />
+      </label>
+      {isUploaded && (
+        <>
+          <span className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: isPdf ? 'rgba(239,68,68,0.12)' : 'rgba(99,102,241,0.12)', color: isPdf ? '#ef4444' : '#818cf8' }}>
+            {isPdf ? 'PDF' : '文件'}
+          </span>
+          <a
+            href={currentUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="underline"
+            style={{ color: 'var(--accent)' }}
+          >
+            预览 ↗
+          </a>
+        </>
+      )}
+      {error && <span style={{ color: '#ef4444' }}>上传失败：{error}</span>}
+    </div>
+  );
+}
+
 // ── Primitive inputs ──────────────────────────────────────────────
 
 function Field({ label, value, onChange, span, mono }: { label: string; value: string; onChange: (v: string) => void; span?: number; mono?: boolean }) {
@@ -828,17 +1660,187 @@ function Field({ label, value, onChange, span, mono }: { label: string; value: s
   );
 }
 
-function TextareaField({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) {
+function TextareaField({ label, value, onChange, rows }: { label: string; value: string; onChange: (v: string) => void; rows?: number }) {
   return (
     <label className="block text-[11px]" style={{ color: 'var(--fg-muted)' }}>
       <span>{label}</span>
       <textarea
         value={value}
         onChange={e => onChange(e.target.value)}
-        rows={3}
+        rows={rows ?? 3}
         className="mt-1 w-full px-2.5 py-1.5 rounded-md outline-none text-xs leading-relaxed"
         style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)', resize: 'vertical' }}
       />
     </label>
+  );
+}
+
+function SelectField({
+  label,
+  value,
+  onChange,
+  options,
+  disabled,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: { key: string; label: string }[];
+  disabled?: boolean;
+}) {
+  return (
+    <label className="block text-[11px]" style={{ color: 'var(--fg-muted)' }}>
+      <span>{label}</span>
+      <select
+        value={value}
+        disabled={disabled}
+        onChange={e => onChange(e.target.value)}
+        className="mt-1 w-full px-2.5 py-1.5 rounded-md outline-none text-xs"
+        style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+      >
+        {options.map(o => <option key={o.key} value={o.key}>{o.label}</option>)}
+      </select>
+    </label>
+  );
+}
+
+/**
+ * Generic editor for a simple array of strings — rendered as chips with an
+ * inline "add" input. Used for aliases, keyFeatures, differentialDiagnosis,
+ * positiveIn, negativeIn, relatedDrugs, and references.
+ */
+function StringArrayEditor({
+  label,
+  items,
+  onChange,
+  placeholder,
+}: {
+  label: string;
+  items: string[];
+  onChange: (next: string[]) => void;
+  placeholder?: string;
+}) {
+  const [draft, setDraft] = useState('');
+  const commit = () => {
+    const v = draft.trim();
+    if (!v) return;
+    onChange([...items, v]);
+    setDraft('');
+  };
+  return (
+    <div>
+      <div className="text-[11px] mb-1" style={{ color: 'var(--fg-muted)' }}>{label}</div>
+      <div className="flex flex-wrap gap-1.5 mb-1.5">
+        {items.length === 0 && (
+          <span className="text-[10px]" style={{ color: 'var(--fg-muted)', opacity: 0.6 }}>（空）</span>
+        )}
+        {items.map((v, i) => (
+          <span
+            key={i}
+            className="text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1.5"
+            style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+          >
+            <span>{v}</span>
+            <button
+              onClick={() => onChange(items.filter((_, j) => j !== i))}
+              className="text-[10px] leading-none"
+              style={{ color: '#ef4444' }}
+              aria-label="删除"
+            >
+              ×
+            </button>
+          </span>
+        ))}
+      </div>
+      <div className="flex items-center gap-1.5">
+        <input
+          value={draft}
+          onChange={e => setDraft(e.target.value)}
+          onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); commit(); } }}
+          placeholder={placeholder || '输入后回车添加'}
+          className="flex-1 px-2 py-1 rounded text-[11px] outline-none"
+          style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+        />
+        <button
+          onClick={commit}
+          className="text-[10px] px-2 py-1 rounded"
+          style={{ background: 'var(--card-hover)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+        >
+          添加
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Structured editor for disease.ihcProfile — an array of { marker, result, note }.
+ * Laid out as mini-rows so admins don't have to edit JSON by hand.
+ */
+function IhcProfileEditor({
+  items,
+  onChange,
+}: {
+  items: IhcRow[];
+  onChange: (next: IhcRow[]) => void;
+}) {
+  const update = (idx: number, patch: Partial<IhcRow>) => {
+    onChange(items.map((r, i) => i === idx ? { ...r, ...patch } : r));
+  };
+  const remove = (idx: number) => onChange(items.filter((_, i) => i !== idx));
+  const add = () => onChange([...items, { marker: '', result: '', note: '' }]);
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-1.5">
+        <div className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>免疫组化谱 (marker / result / note)</div>
+        <button
+          onClick={add}
+          className="text-[10px] px-2 py-1 rounded"
+          style={{ background: 'var(--card-hover)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+        >
+          + 新增一行
+        </button>
+      </div>
+      <div className="space-y-1.5">
+        {items.length === 0 && (
+          <p className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>暂无，可点击右上角添加</p>
+        )}
+        {items.map((r, i) => (
+          <div
+            key={i}
+            className="grid grid-cols-[1fr_1fr_2fr_auto] gap-1.5 items-center"
+          >
+            <input
+              value={r.marker}
+              onChange={e => update(i, { marker: e.target.value })}
+              placeholder="标记物 (e.g. TTF-1)"
+              className="px-2 py-1 rounded text-[11px] outline-none font-mono"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <input
+              value={r.result}
+              onChange={e => update(i, { result: e.target.value })}
+              placeholder="结果 (阳性/阴性/1+)"
+              className="px-2 py-1 rounded text-[11px] outline-none"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <input
+              value={r.note}
+              onChange={e => update(i, { note: e.target.value })}
+              placeholder="备注"
+              className="px-2 py-1 rounded text-[11px] outline-none"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <button
+              onClick={() => remove(i)}
+              className="text-[10px] px-1.5 py-1 rounded"
+              style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
+            >
+              删除
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
