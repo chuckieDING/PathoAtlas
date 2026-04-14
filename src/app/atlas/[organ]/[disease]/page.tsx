@@ -44,7 +44,9 @@ interface DiseaseData {
   category: string; epidemiology: string; clinicalFeatures: string; grossPathology: string;
   grossDescription?: string;
   microscopy: string; keyFeatures: string[]; ihcProfile: IHCItem[];
-  molecularFeatures: string; differentialDiagnosis: string[]; grading: string;
+  molecularFeatures: string; differentialDiagnosis: string[];
+  differentialDiagnosisNotes?: string;
+  grading: string;
   staging: string; prognosis: string; treatment: string;
   images: DiseaseImage[];
   microscopyImages?: DiseaseImage[];
@@ -315,12 +317,18 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
       )}
 
       {tab === 'differential' && (
-        <div className="space-y-4">
-          {d.differentialDiagnosis.length === 0 ? (
+        <div className="space-y-6">
+          {/* 鉴别要点：展示用什么线索（形态 + IHC + 分子）把本病和下面列出
+              的疾病区分开。Markdown 渲染以便写项目列表、加粗等结构。 */}
+          {d.differentialDiagnosisNotes && (
+            <Section title="鉴别要点" content={d.differentialDiagnosisNotes} />
+          )}
+
+          {d.differentialDiagnosis.length === 0 && !d.differentialDiagnosisNotes ? (
             <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无鉴别诊断数据</p>
-          ) : (
-            <>
-              <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>需要与以下疾病鉴别：</p>
+          ) : d.differentialDiagnosis.length > 0 ? (
+            <div>
+              <p className="text-sm mb-3" style={{ color: 'var(--fg-muted)' }}>需要与以下疾病鉴别：</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {d.differentialDiagnosis.map(diffId => {
                   const dd = diffDiseases.find(x => x.id === diffId);
@@ -334,8 +342,8 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
                   );
                 })}
               </div>
-            </>
-          )}
+            </div>
+          ) : null}
         </div>
       )}
 

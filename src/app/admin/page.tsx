@@ -43,6 +43,7 @@ interface DiseaseLike {
   ihcProfile?: IhcRow[];
   molecularFeatures?: string;
   differentialDiagnosis?: string[];
+  differentialDiagnosisNotes?: string;
   grading?: string;
   staging?: string;
   prognosis?: string;
@@ -123,6 +124,7 @@ function blankDiseaseDraft(defaultOrgan: string): DiseaseLike {
     ihcProfile: [],
     molecularFeatures: '',
     differentialDiagnosis: [],
+    differentialDiagnosisNotes: '',
     grading: '',
     staging: '',
     prognosis: '',
@@ -580,6 +582,7 @@ function DiseaseEditor({
     ihcProfile: d.ihcProfile || [],
     molecularFeatures: d.molecularFeatures || '',
     differentialDiagnosis: d.differentialDiagnosis || [],
+    differentialDiagnosisNotes: d.differentialDiagnosisNotes || '',
     grading: d.grading || '',
     staging: d.staging || '',
     prognosis: d.prognosis || '',
@@ -781,6 +784,12 @@ function DiseaseEditor({
           items={draft.differentialDiagnosis || []}
           onChange={v => patch('differentialDiagnosis', v)}
           placeholder="输入需鉴别的 disease ID 回车"
+        />
+        <TextareaField
+          label="鉴别要点 (Markdown，可用 -/** 列表和加粗)"
+          value={draft.differentialDiagnosisNotes || ''}
+          onChange={v => patch('differentialDiagnosisNotes', v)}
+          rows={6}
         />
       </section>
 

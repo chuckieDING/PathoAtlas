@@ -44,6 +44,7 @@ const EDITABLE_FIELDS = [
   'grossPathology', 'grossDescription', 'microscopy',
   'keyFeatures', 'ihcProfile', 'molecularFeatures',
   'differentialDiagnosis',
+  'differentialDiagnosisNotes',
   'grading', 'staging', 'prognosis', 'treatment',
   'images', 'microscopyImages', 'grossImages',
   'expertConsensus', 'literature', 'references',
