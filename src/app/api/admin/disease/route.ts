@@ -1,6 +1,29 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import fs from 'fs';
 import path from 'path';
+import { invalidateJsonCache } from '@/lib/data';
+
+/**
+ * Drops both the in-process JSON cache for the affected file and the
+ * Next.js Router cache entries for any pages that read this disease.
+ * Without this, `next start`'s long-lived process keeps serving stale
+ * data until restart even though the file on disk was updated.
+ */
+function invalidateAfterWrite(filePath: string, organ: string, id?: string) {
+  invalidateJsonCache(filePath);
+  // Pages affected by a disease change:
+  //   /atlas                    (homepage organ index)
+  //   /atlas/<organ>            (organ disease list)
+  //   /atlas/<organ>/<id>       (disease detail page)
+  //   /search                   (full-text search)
+  // revalidatePath blows away both the data cache and the rendered HTML
+  // for the next request, triggering an on-demand ISR rebuild.
+  revalidatePath('/atlas');
+  revalidatePath(`/atlas/${organ}`);
+  if (id) revalidatePath(`/atlas/${organ}/${id}`);
+  revalidatePath('/search');
+}
 
 /**
  * Admin CRUD for diseases. All three verbs (POST/PUT/DELETE) are
@@ -107,6 +130,7 @@ export async function PUT(request: Request) {
     }
     list[idx] = next;
     writeList(filePath, list);
+    invalidateAfterWrite(filePath, organ, id);
     return NextResponse.json({ ok: true, disease: next });
   } catch (e) {
     const msg = e instanceof Error ? e.message : 'unknown error';
@@ -148,6 +172,7 @@ export async function POST(request: Request) {
     }
     list.push(next);
     writeList(filePath, list);
+    invalidateAfterWrite(filePath, organ, disease.id);
     return NextResponse.json({ ok: true, disease: next });
   } catch (e) {
     const msg = e instanceof Error ? e.message : 'unknown error';
@@ -176,6 +201,7 @@ export async function DELETE(request: Request) {
     }
     const removed = list.splice(idx, 1)[0];
     writeList(filePath, list);
+    invalidateAfterWrite(filePath, organ, id);
     return NextResponse.json({ ok: true, removed });
   } catch (e) {
     const msg = e instanceof Error ? e.message : 'unknown error';

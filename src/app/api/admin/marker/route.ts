@@ -1,6 +1,24 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import fs from 'fs';
 import path from 'path';
+import { invalidateJsonCache } from '@/lib/data';
+
+/**
+ * Drop the in-process JSON cache for markers.json and revalidate every
+ * page that displays marker data so a long-lived `next start` worker
+ * picks up the change without a restart.
+ */
+function invalidateAfterWrite(filePath: string, id?: string) {
+  invalidateJsonCache(filePath);
+  revalidatePath('/markers');
+  if (id) revalidatePath(`/markers/${id}`);
+  // The IHC profile column on disease pages also pulls marker metadata,
+  // so blow up the disease catalog too. Cheap because revalidatePath only
+  // marks paths dirty, real work happens on next request.
+  revalidatePath('/atlas');
+  revalidatePath('/search');
+}
 
 /**
  * Admin CRUD for IHC markers. Same contract as /api/admin/disease but the
@@ -82,6 +100,7 @@ export async function PUT(request: Request) {
     }
     list[idx] = next;
     writeList(list);
+    invalidateAfterWrite(MARKERS_FILE, id);
     return NextResponse.json({ ok: true, marker: next });
   } catch (e) {
     const msg = e instanceof Error ? e.message : 'unknown error';
@@ -115,6 +134,7 @@ export async function POST(request: Request) {
     }
     list.push(next);
     writeList(list);
+    invalidateAfterWrite(MARKERS_FILE, marker.id);
     return NextResponse.json({ ok: true, marker: next });
   } catch (e) {
     const msg = e instanceof Error ? e.message : 'unknown error';
@@ -138,6 +158,7 @@ export async function DELETE(request: Request) {
     }
     const removed = list.splice(idx, 1)[0];
     writeList(list);
+    invalidateAfterWrite(MARKERS_FILE, id);
     return NextResponse.json({ ok: true, removed });
   } catch (e) {
     const msg = e instanceof Error ? e.message : 'unknown error';
