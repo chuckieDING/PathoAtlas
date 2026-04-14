@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { OAUTH_STATE_COOKIE, isGoogleConfigured, getCanonicalOrigin } from '@/lib/auth';
+import { OAUTH_STATE_COOKIE, isGoogleConfigured } from '@/lib/auth';
 
 /**
  * Kicks off Google OAuth. Generates a CSRF state that also encodes the
@@ -14,8 +14,7 @@ export async function GET(request: Request) {
     );
   }
 
-  const { searchParams } = new URL(request.url);
-  const origin = getCanonicalOrigin(request);
+  const { searchParams, origin } = new URL(request.url);
   const returnTo = searchParams.get('returnTo') || '/admin';
 
   // State = random nonce + base64url(returnTo). The callback verifies the
