@@ -9,6 +9,7 @@ import { useProgress } from '@/components/useProgress';
 import { MasteryDots } from '@/components/ProgressWidgets';
 import { IconCheckCircle, IconZap, IconSearch, IconX, IconBookOpen } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
+import { ImageLightbox } from '@/components/ImageLightbox';
 import { getMarkerDiagram } from '@/lib/markerDiagrams';
 
 // Translate a free-text marker label from the IHC table into the canonical
@@ -361,7 +362,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
         </div>
       )}
 
-      {lightbox && <Lightbox image={lightbox} onClose={() => setLightbox(null)} />}
+      {lightbox && <ImageLightbox image={lightbox} onClose={() => setLightbox(null)} />}
     </div>
   );
 }
@@ -454,42 +455,6 @@ function ImageGallery({
           );
         })}
       </div>
-    </div>
-  );
-}
-
-function Lightbox({ image, onClose }: { image: { url: string; caption: string }; onClose: () => void }) {
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-scale-in"
-      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(4px)' }}
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-    >
-      <button
-        className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center"
-        style={{ background: 'rgba(255,255,255,0.12)', color: '#fff' }}
-        onClick={(e) => { e.stopPropagation(); onClose(); }}
-        aria-label="关闭"
-      >
-        <IconX size={20} />
-      </button>
-      <figure
-        className="max-w-5xl w-full"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={image.url}
-          alt={image.caption}
-          className="w-full max-h-[75vh] object-contain rounded-xl"
-          style={{ background: '#fff' }}
-        />
-        <figcaption className="mt-3 text-center text-sm" style={{ color: '#e4e4e7' }}>
-          {image.caption}
-        </figcaption>
-      </figure>
     </div>
   );
 }

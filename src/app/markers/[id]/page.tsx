@@ -4,6 +4,7 @@ import { useEffect, useState, use } from 'react';
 import Link from 'next/link';
 import { IconFlask, IconBookOpen, IconSearch } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
+import { ImageLightbox } from '@/components/ImageLightbox';
 import { getMarkerDiagram, type MarkerDiagram } from '@/lib/markerDiagrams';
 
 // ── Types ──────────────────────────────────────────────────────────
@@ -45,6 +46,10 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [tab, setTab] = useState<Tab>('overview');
+  // Lightbox + per-image "full image loaded" state, keyed by thumbnail URL
+  // so the choice survives tab switches within the detail page.
+  const [lightbox, setLightbox] = useState<{ url: string; caption: string } | null>(null);
+  const [fullLoaded, setFullLoaded] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     Promise.all([
@@ -202,7 +207,12 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
       {tab === 'staining' && (
         <div>
           {m.stainingImages && m.stainingImages.length > 0 ? (
-            <StainingGallery groups={m.stainingImages} />
+            <StainingGallery
+              groups={m.stainingImages}
+              fullLoaded={fullLoaded}
+              onLoadFull={(url) => setFullLoaded((s) => ({ ...s, [url]: true }))}
+              onOpen={setLightbox}
+            />
           ) : (
             <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
               <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>该标记物尚未配置染色形态分组</p>
@@ -266,6 +276,8 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
           )}
         </div>
       )}
+
+      {lightbox && <ImageLightbox image={lightbox} onClose={() => setLightbox(null)} />}
     </div>
   );
 }
@@ -354,7 +366,17 @@ function groupTone(label: string): { bg: string; color: string; border: string }
   return { bg: 'var(--card-hover)', color: 'var(--fg)', border: 'var(--border)' };
 }
 
-function StainingGallery({ groups }: { groups: StainingGroup[] }) {
+function StainingGallery({
+  groups,
+  fullLoaded,
+  onLoadFull,
+  onOpen,
+}: {
+  groups: StainingGroup[];
+  fullLoaded: Record<string, boolean>;
+  onLoadFull: (url: string) => void;
+  onOpen: (img: { url: string; caption: string }) => void;
+}) {
   return (
     <div className="space-y-4">
       {groups.map((g) => {
@@ -391,30 +413,75 @@ function StainingGallery({ groups }: { groups: StainingGroup[] }) {
               </div>
             ) : (
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {g.images.map((img, i) => (
-                  <figure
-                    key={i}
-                    className="rounded-lg overflow-hidden"
-                    style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
-                  >
-                    <a href={img.fullUrl || img.url} target="_blank" rel="noreferrer">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={img.url}
-                        alt={img.caption}
-                        className="w-full aspect-square object-cover transition-transform hover:scale-[1.03]"
-                        loading="lazy"
-                        referrerPolicy="no-referrer"
-                        onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
-                      />
-                    </a>
-                    {img.caption && (
-                      <figcaption className="p-2 text-[11px] leading-snug" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
-                        {img.caption}
+                {g.images.map((img, i) => {
+                  const hasFull = !!img.fullUrl;
+                  const isFull = hasFull && !!fullLoaded[img.url];
+                  // Thumbnail is `url` by default; once the user clicks
+                  // "加载原图", swap in `fullUrl` for the in-page <img>.
+                  // The lightbox always uses the highest-res variant.
+                  const displaySrc = isFull && img.fullUrl ? img.fullUrl : img.url;
+                  const lightboxImg = {
+                    url: img.fullUrl || img.url,
+                    caption: img.caption || g.label,
+                  };
+                  return (
+                    <figure
+                      key={i}
+                      className="rounded-lg overflow-hidden group flex flex-col"
+                      style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
+                    >
+                      <div
+                        className="relative cursor-zoom-in"
+                        onClick={() => onOpen(lightboxImg)}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={displaySrc}
+                          alt={img.caption || g.label}
+                          className="w-full aspect-square object-cover transition-transform group-hover:scale-[1.03]"
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
+                        />
+                        {hasFull && (
+                          <span
+                            className="absolute top-1.5 left-1.5 text-[9px] px-1.5 py-0.5 rounded-full font-medium"
+                            style={{
+                              background: isFull ? 'rgba(34,197,94,0.9)' : 'rgba(0,0,0,0.55)',
+                              color: '#fff',
+                            }}
+                          >
+                            {isFull ? '原图' : '压缩图'}
+                          </span>
+                        )}
+                      </div>
+                      <figcaption className="p-2 text-[11px] leading-snug flex-1" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
+                        {img.caption && <div>{img.caption}</div>}
+                        {(img.source || (hasFull && !isFull)) && (
+                          <div className="mt-1.5 flex items-center justify-between gap-1 flex-wrap">
+                            {img.source && (
+                              <span className="text-[9px] opacity-70">来源：{img.source}</span>
+                            )}
+                            {hasFull && !isFull && (
+                              <button
+                                type="button"
+                                onClick={(e) => { e.stopPropagation(); onLoadFull(img.url); }}
+                                className="text-[10px] px-1.5 py-0.5 rounded ml-auto"
+                                style={{
+                                  background: 'var(--card-hover)',
+                                  color: 'var(--accent)',
+                                  border: '1px solid var(--border)',
+                                }}
+                              >
+                                加载原图
+                              </button>
+                            )}
+                          </div>
+                        )}
                       </figcaption>
-                    )}
-                  </figure>
-                ))}
+                    </figure>
+                  );
+                })}
               </div>
             )}
           </div>
