@@ -78,6 +78,8 @@ export interface Disease {
   ihcProfile: { marker: string; result: string; note: string }[];
   molecularFeatures: string;
   differentialDiagnosis: string[];
+  /** Markdown 鉴别要点：哪些形态/免疫组化/分子线索可用于把本病和 differentialDiagnosis 里的条目区分开 */
+  differentialDiagnosisNotes?: string;
   grading: string;
   staging: string;
   prognosis: string;
