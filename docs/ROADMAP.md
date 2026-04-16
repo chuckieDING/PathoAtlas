@@ -17,7 +17,7 @@
 
 - [x] **Nottingham Grade**（乳腺浸润癌）—— 腺管形成 + 核多形性 + 核分裂 三项相加，得到 G1/G2/G3 ✅ 已挂到 `/atlas/breast/invasive-ductal-carcinoma-nst` 的分子病理 tab
 - [x] **Gleason / ISUP Grade Group**（前列腺癌）—— 主次 pattern 组合到 5 级 Grade Group ✅ `/atlas/urology/prostate-adenocarcinoma`
-- [ ] **ISUP/WHO grading**（肾透明细胞癌）—— 核仁显著度 1–4 级
+- [x] **ISUP/WHO grading**（肾透明细胞癌）—— 核仁显著度 1–4 级 ✅ `/atlas/kidney/clear-cell-rcc` + `papillary-rcc`
 - [ ] **FIGO staging**（子宫内膜 / 卵巢 / 宫颈）—— 按组织类型分别建计算器
 - [ ] **Bethesda / TBS**（甲状腺 FNA）—— 6 类分层 + 风险评估
 - [ ] **TNM 第 8 版** 通用框架，可被任意癌症复用

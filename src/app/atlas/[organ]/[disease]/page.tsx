@@ -12,6 +12,7 @@ import { OrganIcon } from '@/components/OrganIcon';
 import { ImageLightbox } from '@/components/ImageLightbox';
 import { NottinghamGrade } from '@/components/calculators/NottinghamGrade';
 import { GleasonGradeGroup } from '@/components/calculators/GleasonGradeGroup';
+import { ISUPRenalGrade } from '@/components/calculators/ISUPRenalGrade';
 import { getMarkerDiagram } from '@/lib/markerDiagrams';
 
 // Translate a free-text marker label from the IHC table into the canonical
@@ -322,6 +323,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           )}
           {organ === 'urology' && diseaseId === 'prostate-adenocarcinoma' && (
             <GleasonGradeGroup />
+          )}
+          {organ === 'kidney' && (diseaseId === 'clear-cell-rcc' || diseaseId === 'papillary-rcc') && (
+            <ISUPRenalGrade />
           )}
         </div>
       )}
