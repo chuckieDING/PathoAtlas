@@ -1357,6 +1357,10 @@ function ImageEditor({
                 />
                 <Field label="说明" value={img.caption} onChange={v => update(i, { caption: v })} />
                 <Field label="来源" value={img.source || ''} onChange={v => update(i, { source: v })} />
+                <div className="grid grid-cols-2 gap-2">
+                  <SelectField label="放大倍数" value={(img as unknown as Record<string, string>).magnification || ''} onChange={v => update(i, { ...img, magnification: v || undefined } as DiseaseImage)} options={[{key:'',label:'未标注'},{key:'2x',label:'2×'},{key:'4x',label:'4×'},{key:'10x',label:'10×'},{key:'20x',label:'20×'},{key:'40x',label:'40×'},{key:'100x',label:'100× (油镜)'}]} />
+                  <SelectField label="染色类型" value={(img as unknown as Record<string, string>).stainType || ''} onChange={v => update(i, { ...img, stainType: v || undefined } as DiseaseImage)} options={[{key:'',label:'未标注'},{key:'HE',label:'H&E'},{key:'IHC',label:'IHC 免疫组化'},{key:'Special',label:'特殊染色'},{key:'Gross',label:'大体'}]} />
+                </div>
               </div>
               <div className="flex flex-col items-stretch gap-2">
                 {img.url ? (

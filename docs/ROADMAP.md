@@ -47,7 +47,7 @@
 
 - [x] `DiseaseImage` / `MarkerStainingImage` schema 扩字段：`magnification: '2x'|'4x'|'10x'|'20x'|'40x'|'100x'`、`stainType: 'HE'|'IHC'|'Special'|'Gross'`、`ihcMarker?: string` ✅
 - [x] ImageGallery 按放大倍数分组渲染 ✅（有 mag 信息时按组显示，无则平铺兼容）
-- [ ] Admin 编辑器增加倍数和染色类型下拉框
+- [x] Admin 编辑器增加倍数和染色类型下拉框 ✅
 - [ ] 上传 API 自动把倍数和类型写入响应
 
 ### 5. 特殊染色数据库（非 IHC）
