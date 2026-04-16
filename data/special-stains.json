@@ -1,0 +1,102 @@
+[
+  {
+    "id": "pas",
+    "nameZh": "PAS染色",
+    "nameEn": "Periodic Acid-Schiff Stain",
+    "purpose": "检测糖原、多糖、黏蛋白等碳水化合物",
+    "positiveResult": "品红染色",
+    "negativeResult": "无染色",
+    "interpretation": "阳性提示糖原沉积（如糖尿病肾病）、真菌、淀粉样物质",
+    "images": []
+  },
+  {
+    "id": "prussian-blue",
+    "nameZh": "普鲁士蓝染色",
+    "nameEn": "Prussian Blue Stain",
+    "purpose": "检测含铁血黄素",
+    "positiveResult": "蓝色颗粒",
+    "negativeResult": "无蓝色颗粒",
+    "interpretation": "阳性见于出血后铁沉积、血色病、含铁血黄素沉着症",
+    "images": []
+  },
+  {
+    "id": "acid-fast",
+    "nameZh": "抗酸染色",
+    "nameEn": "Acid-Fast Stain",
+    "purpose": "检测分枝杆菌",
+    "positiveResult": "红色杆菌",
+    "negativeResult": "无红色杆菌",
+    "interpretation": "阳性提示结核分枝杆菌、麻风分枝杆菌等",
+    "images": []
+  },
+  {
+    "id": "giemsa",
+    "nameZh": "姬姆萨染色",
+    "nameEn": "Giemsa Stain",
+    "purpose": "染色细胞核和细胞质",
+    "positiveResult": "核紫色，细胞质蓝色",
+    "negativeResult": "无特异染色",
+    "interpretation": "用于血液涂片、骨髓检查，鉴别细胞类型",
+    "images": []
+  },
+  {
+    "id": "masson-trichrome",
+    "nameZh": "Masson三色染色",
+    "nameEn": "Masson Trichrome Stain",
+    "purpose": "区分胶原纤维、肌肉和平滑肌",
+    "positiveResult": "胶原蓝，肌肉红，细胞核黑",
+    "negativeResult": "无特异染色",
+    "interpretation": "评估纤维化程度，鉴别组织成分",
+    "images": []
+  },
+  {
+    "id": "alcian-blue",
+    "nameZh": "阿利新蓝染色",
+    "nameEn": "Alcian Blue Stain",
+    "purpose": "检测酸性黏多糖",
+    "positiveResult": "蓝色染色",
+    "negativeResult": "无蓝色染色",
+    "interpretation": "阳性见于黏液瘤、软骨、间叶组织",
+    "images": []
+  },
+  {
+    "id": "congo-red",
+    "nameZh": "刚果红染色",
+    "nameEn": "Congo Red Stain",
+    "purpose": "检测淀粉样物质",
+    "positiveResult": "红色染色，双折光",
+    "negativeResult": "无红色染色",
+    "interpretation": "阳性提示淀粉样变性",
+    "images": []
+  },
+  {
+    "id": "reticulin",
+    "nameZh": "网状纤维染色",
+    "nameEn": "Reticulin Stain",
+    "purpose": "显示网状纤维",
+    "positiveResult": "黑色纤维网",
+    "negativeResult": "无黑色纤维",
+    "interpretation": "评估肝纤维化、骨髓纤维化",
+    "images": []
+  },
+  {
+    "id": "verhoeff",
+    "nameZh": "Verhoeff染色",
+    "nameEn": "Verhoeff Stain",
+    "purpose": "显示弹性纤维",
+    "positiveResult": "黑色弹性纤维",
+    "negativeResult": "无黑色纤维",
+    "interpretation": "评估动脉硬化、弹性纤维变性",
+    "images": []
+  },
+  {
+    "id": "oil-red-o",
+    "nameZh": "油红O染色",
+    "nameEn": "Oil Red O Stain",
+    "purpose": "检测中性脂肪",
+    "positiveResult": "红色脂滴",
+    "negativeResult": "无红色脂滴",
+    "interpretation": "阳性见于脂肪变性、脂肪瘤",
+    "images": []
+  }
+]

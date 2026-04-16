@@ -366,3 +366,30 @@ export const IconOrganUrology = ({ size, ...p }: IconProps) => (
     <path d="M10 21h4"/>
   </svg>
 );
+
+export const IconOrganCns = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M8 4a4 4 0 0 1 8 0v8a4 4 0 0 1-8 0Z"/>
+    <path d="M6 8h12"/>
+    <path d="M6 12h12"/>
+    <path d="M10 16h4"/>
+  </svg>
+);
+
+export const IconOrganSoftTissue = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M6 6a6 6 0 0 1 12 0v12a6 6 0 0 1-12 0Z"/>
+    <path d="M10 10h4"/>
+    <path d="M8 14h8"/>
+    <path d="M12 6v4"/>
+  </svg>
+);
+
+export const IconOrganBone = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M8 4a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0Z"/>
+    <path d="M6 8h12"/>
+    <path d="M6 16h12"/>
+    <path d="M10 12h4"/>
+  </svg>
+);

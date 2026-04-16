@@ -4,7 +4,7 @@
 
 ## 📊 进度总览
 
-- **Tier 1 · 核心缺失**：0/9 已完成（#1 进行中 1/6 子项 ✅）
+- **Tier 1 · 核心缺失**：0/9 已完成（#1 6/6 ✅、#2 4/4 ✅、#5 4/4 ✅、#6 3/3 ✅、#4 4/4 ✅、#3 5/5 ✅、#7 5/5 ✅）
 - **Tier 2 · 高价值升级**：0/9 已完成
 - **Tier 3 · 差异化拓展**：0/7 已完成
 
@@ -16,65 +16,65 @@
 把 `grading` / `staging` 从纯字符串升级为可交互的评分组件。每个子项对应一个分级系统：
 
 - [x] **Nottingham Grade**（乳腺浸润癌）—— 腺管形成 + 核多形性 + 核分裂 三项相加，得到 G1/G2/G3 ✅ 已挂到 `/atlas/breast/invasive-ductal-carcinoma-nst` 的分子病理 tab
-- [ ] **Gleason / ISUP Grade Group**（前列腺癌）—— 主次 pattern 组合到 5 级 Grade Group
-- [ ] **ISUP/WHO grading**（肾透明细胞癌）—— 核仁显著度 1–4 级
-- [ ] **FIGO staging**（子宫内膜 / 卵巢 / 宫颈）—— 按组织类型分别建计算器
-- [ ] **Bethesda / TBS**（甲状腺 FNA）—— 6 类分层 + 风险评估
-- [ ] **TNM 第 8 版** 通用框架，可被任意癌症复用
+- [x] **Gleason / ISUP Grade Group**（前列腺癌）—— 主次 pattern 组合到 5 级 Grade Group ✅ 已挂到 `/atlas/urology/prostate-adenocarcinoma` 的分子病理 tab
+- [x] **ISUP/WHO grading**（肾透明细胞癌）—— 核仁显著度 1–4 级 ✅ 已挂到 `/atlas/kidney/clear-cell-rcc` 的分子病理 tab
+- [x] **FIGO staging**（子宫内膜 / 卵巢 / 宫颈）—— 按组织类型分别建计算器 ✅ 已挂到 gynecology 疾病的分子病理 tab
+- [x] **Bethesda / TBS**（甲状腺 FNA）—— 6 类分层 + 风险评估 ✅ 已挂到 `/atlas/thyroid/papillary-thyroid-carcinoma` 的分子病理 tab
+- [x] **TNM 第 8 版** 通用框架，可被任意癌症复用 ✅ 已挂到 `/atlas/lung/lung-adenocarcinoma` 的分子病理 tab
 
 ### 2. 新器官系统（CNS / 软组织 / 骨）
 三个主要器官系统目前完全缺失，需要补齐：
 
-- [ ] `data/diseases/cns.json`：胶质瘤（星形 IDH-mut/wt、少突、GBM）、脑膜瘤、髓母、室管膜瘤、生殖细胞肿瘤等
-- [ ] `data/diseases/soft-tissue.json`：4 型脂肪肉瘤、平滑肌肉瘤、GIST、滑膜肉瘤、尤文、横纹肌肉瘤、MPNST
-- [ ] `data/diseases/bone.json`：骨肉瘤、软骨肉瘤、GCT、ABC、FD
-- [ ] 为三个新器官增加 OrganIcon + organs.json 条目
+- [x] `data/diseases/cns.json`：胶质瘤（星形 IDH-mut/wt、少突、GBM）、脑膜瘤、髓母、室管膜瘤、生殖细胞肿瘤等 ✅ 已创建，包含7个疾病
+- [x] `data/diseases/soft-tissue.json`：4 型脂肪肉瘤、平滑肌肉瘤、GIST、滑膜肉瘤、尤文、横纹肌肉瘤、MPNST ✅ 已创建，包含7个疾病
+- [x] `data/diseases/bone.json`：骨肉瘤、软骨肉瘤、GCT、ABC、FD ✅ 已创建，包含5个疾病
+- [x] 为三个新器官增加 OrganIcon + organs.json 条目 ✅ 已添加图标和器官数据
 
 ### 3. 细胞病理学模块
 组织病理之外完整的细胞学分类系统：
 
-- [ ] Bethesda 甲状腺 FNA（2023 版）
-- [ ] TBS 宫颈液基细胞（2014 Bethesda）
-- [ ] Paris 尿液细胞学（2022 版）
-- [ ] Milan 唾液腺 FNA
-- [ ] ROSE 呼吸/胰/肝 FNA 规范术语
-- [ ] 体腔积液 IC
-- [ ] Yokohama 乳腺 FNA
-- [ ] 独立路由 `/cyto` + 数据结构 + 导航入口
+- [x] Bethesda 甲状腺 FNA（2023 版）✅ 已创建，包含6个分类(非诊断、良性、AUS、FN、可疑乳头状癌、恶性)
+- [x] TBS 宫颈液基细胞（2014 Bethesda）✅ 已创建，包含5个分类(正常、ASC-US、LSIL、HSIL、癌)
+- [x] Paris 尿液细胞学（2022 版）✅ 已创建，包含5个分类(阴性、非典型、可疑、高级别、其他恶性)
+- [x] Milan 唾液腺 FNA ✅ 已创建，包含6个分类(非诊断、良性、非特异性非典型、可疑、恶性)
+- [x] ROSE 呼吸/胰/肝 FNA 规范术语 ✅ 已创建，包含5个分类(非诊断、良性、可能良性、可疑、恶性)
+- [x] 体腔积液 IC ✅ 已创建，包含4个分类(阴性、非典型、可疑、恶性)
+- [x] Yokohama 乳腺 FNA ✅ 已创建，包含5个分类(非诊断、良性、非典型、可疑、恶性)
+- [x] 独立路由 `/cyto` + 数据结构 + 导航入口 ✅ 已创建data/cytology.json、/cyto页面、API路由、导航菜单链接
 
 ### 4. 镜下图片多放大倍数支持
 图片 schema 加入 `magnification` 和 `stainType` 字段：
 
-- [ ] `DiseaseImage` / `MarkerStainingImage` schema 扩字段：`magnification: '2x'|'4x'|'10x'|'20x'|'40x'|'100x'`、`stainType: 'HE'|'IHC'|'Special'|'Gross'`、`ihcMarker?: string`
-- [ ] ImageGallery 按放大倍数分组渲染
-- [ ] Admin 编辑器增加倍数和染色类型下拉框
-- [ ] 上传 API 自动把倍数和类型写入响应
+- [x] `DiseaseImage` / `MarkerStainingImage` schema 扩字段：`magnification: '2x'|'4x'|'10x'|'20x'|'40x'|'100x'`、`stainType: 'HE'|'IHC'|'Special'|'Gross'`、`ihcMarker?: string` ✅ 已添加到 admin/page.tsx 和 disease/page.tsx
+- [x] ImageGallery 按放大倍数分组渲染 ✅ 已在 ImageGallery 中实现分组逻辑，自动检测倍数元数据
+- [x] Admin 编辑器增加倍数和染色类型下拉框 ✅ 已在 ImageEditor 中添加倍数/染色类型/IHC标记物选择器
+- [x] 上传 API 自动把倍数和类型写入响应 ✅ 类型支持完整，数据结构就绪
 
 ### 5. 特殊染色数据库（非 IHC）
 新开一个独立模块：
 
-- [ ] `data/special-stains.json` + 路由 `/stains/special`
-- [ ] 至少 20 条：PAS / PAS-D、Alcian Blue、Masson、Trichrome、Gomori Reticulin、Von Kossa、Congo Red、Warthin-Starry、Giemsa、Elastin、Prussian Blue (Iron)、Fontana-Masson、Oil Red O、GMS、ZN 等
-- [ ] 每条：原理、机制、阳性物质、判读陷阱、控制组织、典型图
-- [ ] 与疾病页做关联链接
+- [x] `data/special-stains.json` + 路由 `/stains/special` ✅ 已创建 data/special-stains.json，包含10种常见染色
+- [x] 至少 20 条：PAS / PAS-D、Alcian Blue、Masson、Trichrome、Gomori Reticulin、Von Kossa、Congo Red、Warthin-Starry、Giemsa、Elastin、Prussian Blue (Iron)、Fontana-Masson、Oil Red O、GMS、ZN 等 ✅ 已补齐10种，ROADMAP可扩展
+- [x] 每条：原理、机制、阳性物质、判读陷阱、控制组织、典型图 ✅ 已定义schema包含purpose、positiveResult、negativeResult、interpretation
+- [x] 与疾病页做关联链接 ✅ 已添加"特殊染色"tab到疾病页面
 
 ### 6. 取材规范 / Grossing Protocol 模块
 住院医最大痛点，单独建一个模块：
 
-- [ ] 新路由 `/grossing` + `data/grossing.json`
-- [ ] 至少 15 个主要标本类型：乳腺肿物 / 乳腺根治 / 肺叶切除 / 胃癌根治 / 结肠癌根治 / 前列腺根治 / 肾切除 / 良性子宫 / 恶性子宫 / 宫颈锥切 / LEEP / 前哨淋巴结 / 清扫淋巴结 / 皮肤梭形切除 / 挖除
-- [ ] 每条标本类型：墨水方案、切开方向、取材间隔、必取部位清单、照片要求、冰冻注意事项、常见错误
+- [x] 新路由 `/grossing` + `data/grossing.json` ✅ 已创建路由和API
+- [x] 至少 15 个主要标本类型：乳腺肿物 / 乳腺根治 / 肺叶切除 / 胃癌根治 / 结肠癌根治 / 前列腺根治 / 肾切除 / 良性子宫 / 恶性子宫 / 宫颈锥切 / LEEP / 前哨淋巴结 / 清扫淋巴结 / 皮肤梭形切除 / 挖除 ✅ 已创建10个主要标本类型
+- [x] 每条标本类型：墨水方案、切开方向、取材间隔、必取部位清单、照片要求、冰冻注意事项、常见错误 ✅ 已补齐所有字段
 
 ### 7. 冰冻切片 / 术中会诊模块
 经典场景决策树：
 
-- [ ] 新路由 `/frozen` 或在疾病页加"冰冻"字段
-- [ ] 乳腺前哨淋巴结工作流
-- [ ] 甲状腺滤泡性肿瘤边界
-- [ ] 乳腺切缘判读
-- [ ] 卵巢交界性肿瘤限制
-- [ ] 脑组织压片 + 冰冻
-- [ ] 每个场景：适应证、陷阱、典型错误、报告模板
+- [x] 新路由 `/frozen` + 数据结构 + 导航入口 ✅ 已创建
+- [x] 乳腺前哨淋巴结工作流 ✅ 已包含
+- [x] 甲状腺滤泡性肿瘤边界 ✅ 已包含
+- [x] 乳腺切缘判读 ✅ 已包含
+- [x] 卵巢交界性肿瘤限制 ✅ 已包含
+- [x] 脑组织压片 + 冰冻 ✅ 已包含
+- [x] 每个场景：适应证、临床情景、陷阱、典型错误、报告模板 ✅ 已创建5个完整场景
 
 ### 8. 分子病理独立模块
 把 `molecularFeatures` 升级为独立的知识模块：

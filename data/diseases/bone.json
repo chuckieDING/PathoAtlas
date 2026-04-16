@@ -1,0 +1,123 @@
+[
+  {
+    "id": "osteosarcoma",
+    "nameZh": "骨肉瘤",
+    "nameEn": "Osteosarcoma",
+    "aliases": ["骨肉瘤"],
+    "organ": "bone",
+    "category": "malignant",
+    "epidemiology": "最常见的原发性骨恶性肿瘤。",
+    "clinicalFeatures": "疼痛，青少年常见。",
+    "grossPathology": "骨破坏，软组织肿块。",
+    "microscopy": "肿瘤细胞产生骨样组织。",
+    "keyFeatures": ["骨样组织", "梭形细胞", "异型性"],
+    "ihcProfile": [
+      {"marker": "S-100", "result": "阴性", "note": ""},
+      {"marker": "Vimentin", "result": "阳性", "note": ""}
+    ],
+    "molecularFeatures": "复杂核型。",
+    "differentialDiagnosis": ["ewing-sarcoma", "chondrosarcoma"],
+    "grading": "不分级",
+    "staging": "AJCC",
+    "prognosis": "化疗有效。",
+    "treatment": "化疗+手术。",
+    "images": [],
+    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+  },
+  {
+    "id": "chondrosarcoma",
+    "nameZh": "软骨肉瘤",
+    "nameEn": "Chondrosarcoma",
+    "aliases": ["软骨肉瘤"],
+    "organ": "bone",
+    "category": "malignant",
+    "epidemiology": "成人常见。",
+    "clinicalFeatures": "疼痛。",
+    "grossPathology": "软骨样肿块。",
+    "microscopy": "软骨细胞异型性。",
+    "keyFeatures": ["软骨细胞", "S-100+", "分级1-3级"],
+    "ihcProfile": [
+      {"marker": "S-100", "result": "阳性", "note": ""}
+    ],
+    "molecularFeatures": "IDH1/2突变。",
+    "differentialDiagnosis": ["enchondroma", "osteochondroma"],
+    "grading": "1-3级",
+    "staging": "AJCC",
+    "prognosis": "取决于分级。",
+    "treatment": "手术。",
+    "images": [],
+    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+  },
+  {
+    "id": "giant-cell-tumor",
+    "nameZh": "巨细胞瘤",
+    "nameEn": "Giant Cell Tumor",
+    "aliases": ["GCT"],
+    "organ": "bone",
+    "category": "benign",
+    "epidemiology": "成人常见。",
+    "clinicalFeatures": "疼痛。",
+    "grossPathology": "溶骨性病变。",
+    "microscopy": "多核巨细胞+梭形细胞。",
+    "keyFeatures": ["多核巨细胞", "CD68+", "H3F3A突变"],
+    "ihcProfile": [
+      {"marker": "CD68", "result": "阳性", "note": ""}
+    ],
+    "molecularFeatures": "H3F3A突变。",
+    "differentialDiagnosis": ["aneurysmal-bone-cyst", "chondroblastoma"],
+    "grading": "不分级",
+    "staging": "不适用",
+    "prognosis": "良性，但可复发。",
+    "treatment": "刮除+骨水泥。",
+    "images": [],
+    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+  },
+  {
+    "id": "aneurysmal-bone-cyst",
+    "nameZh": "动脉瘤样骨囊肿",
+    "nameEn": "Aneurysmal Bone Cyst",
+    "aliases": ["ABC"],
+    "organ": "bone",
+    "category": "benign",
+    "epidemiology": "青少年常见。",
+    "clinicalFeatures": "疼痛，肿胀。",
+    "grossPathology": "囊性，血性内容物。",
+    "microscopy": "血腔+梭形细胞。",
+    "keyFeatures": ["血腔", "梭形细胞", "USP6融合"],
+    "ihcProfile": [
+      {"marker": "CD31", "result": "阳性", "note": "内皮细胞"}
+    ],
+    "molecularFeatures": "USP6融合。",
+    "differentialDiagnosis": ["giant-cell-tumor", "telangiectatic-osteosarcoma"],
+    "grading": "不分级",
+    "staging": "不适用",
+    "prognosis": "良性。",
+    "treatment": "手术。",
+    "images": [],
+    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+  },
+  {
+    "id": "fibrous-dysplasia",
+    "nameZh": "纤维发育不良",
+    "nameEn": "Fibrous Dysplasia",
+    "aliases": ["FD"],
+    "organ": "bone",
+    "category": "benign",
+    "epidemiology": "儿童常见。",
+    "clinicalFeatures": "畸形。",
+    "grossPathology": "纤维组织替代骨。",
+    "microscopy": "梭形细胞+不成熟骨小梁。",
+    "keyFeatures": ["不成熟骨小梁", "GNAS突变"],
+    "ihcProfile": [
+      {"marker": "SMA", "result": "阳性", "note": ""}
+    ],
+    "molecularFeatures": "GNAS突变。",
+    "differentialDiagnosis": ["fibrous-cortical-defect", "osteofibrous-dysplasia"],
+    "grading": "不分级",
+    "staging": "不适用",
+    "prognosis": "良性。",
+    "treatment": "观察。",
+    "images": [],
+    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+  }
+]

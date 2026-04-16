@@ -14,6 +14,9 @@
 - **🔬 疾病图谱** — **72** 种常见疾病，按 **10** 大器官系统组织；每个疾病一组 9 个分页 Tab：概述 / 大体描述 / 镜下特征 / 免疫组化 / 分子病理 / 鉴别诊断 / 专家共识 / 文献参考 / 临床
 - **🧪 标记物数据库** — **49** 个常用 IHC 标记物，独立详情页 + 5 Tab 视图（概述 / 判读 / 染色形态 / 专家共识 / 文献参考），含按结果分组的染色形态图框架（阴/阳、0/1+/2+/3+、低/中/高 等）
 - **⚖️ 鉴别诊断** — **13** 个常见鉴别诊断场景与对应免疫组化套餐策略
+- **🔬 细胞病理学模块** — **7** 个细胞学分类系统（Bethesda甲状腺、TBS宫颈、Paris尿液、Milan唾液腺、ROSE FNA、体腔积液、Yokohama乳腺），每个系统含 5-6 个分类标准与恶变风险评估
+- **❄️ 冰冻切片模块** — **5** 个术中会诊决策树（乳腺前哨淋巴结、甲状腺滤泡性肿瘤、乳腺切缘、卵巢交界性肿瘤、脑组织压片），含陷阱识别与报告模板
+- **📋 取材规范模块** — **10+** 种标本取材协议，包含墨水方案、切开方向、必取部位、冰冻注意事项、常见错误
 - **📚 专家共识 + 文献参考** — 每条目支持「**源地址**」（出版商 DOI/原文页）+「**在线阅览**」（PubMed/摘要/PDF 预览）双链接
 - **🖼️ 图片资源** — 镜下图、大体图分类管理；默认压缩图懒加载，点击「加载原图」按需切换高清版
 - **📝 复习与进度** — 闪卡式复习、XP/掌握度/连击的轻量学习追踪
@@ -33,25 +36,34 @@ PathoAtlas/
 │   ├── markers.json                   # 49 个 IHC 标记物
 │   ├── staging.json                   # 分级分期系统
 │   ├── differentials.json             # 鉴别诊断场景
+│   ├── cytology.json                  # 7 个细胞学分类系统
+│   ├── frozen-sections.json           # 5 个冰冻切片会诊场景
+│   ├── grossing.json                  # 10+ 种标本取材规范
+│   ├── special-stains.json            # 特殊染色数据库
 │   └── diseases/
 │       ├── breast.json | gi.json | gynecology.json | kidney.json
 │       ├── liver.json  | lung.json | lymphoma.json | skin.json
-│       ├── thyroid.json | urology.json    # 共 72 种疾病
+│       ├── thyroid.json | urology.json | cns.json | soft-tissue.json | bone.json    # 共 72+ 种疾病
 ├── public/
 │   ├── diagrams/                      # 标记物机制概念 SVG
 │   └── uploads/                       # 管理后台上传的图片/PDF 落点
 ├── docs/
-│   └── admin-api.md                   # 外部 AI 调用方 API 文档
+│   ├── api.md                         # 公开 API 文档
+│   └── admin-api.md                   # 内容管理 API 文档
 ├── src/
 │   ├── app/                           # Next.js App Router
 │   │   ├── atlas/[organ]/[disease]/   # 疾病详情页（9 Tab）
 │   │   ├── markers/                   # 卡片目录（搜索 + 分类 + 器官 chip）
 │   │   ├── markers/[id]/              # 标记物详情页（5 Tab）
+│   │   ├── cyto/                      # 细胞病理学交互页面
+│   │   ├── frozen/                    # 冰冻切片会诊决策树
+│   │   ├── grossing/                  # 取材规范协议查询
 │   │   ├── differentials/ review/ progress/ search/ help/ about/
 │   │   ├── admin/                     # 内容管理后台
 │   │   └── api/
 │   │       ├── disease | marker | organ | markers | organs
 │   │       ├── all-diseases | diseases-by-ids | search | stats
+│   │       ├── cytology | frozen | grossing                 # 新模块数据接口
 │   │       ├── auth/{login,callback,me,logout}    # Google OAuth 流
 │   │       └── admin/{disease,marker,upload}      # 受保护的 CRUD + 上传
 │   ├── lib/
@@ -221,7 +233,28 @@ interface DiseaseImage {
 - ✅ "保存全部" 一键 PUT；section 级保存按钮做精细更新
 - ✅ Google 登录 / 登出 / 调用方身份显示
 
-### API 一览（后台和外部调用统一）
+### API 一览
+
+#### 🔓 公开 API（无需鉴权）
+
+| 方法 | 端点 | 说明 |
+|---|---|---|
+| `GET` | `/api/all-diseases` | 获取全库疾病 |
+| `GET` | `/api/disease?organ=X&id=Y` | 获取单个疾病 |
+| `GET` | `/api/diseases-by-ids?ids=X,Y` | 批量查询疾病 |
+| `GET` | `/api/organs` | 获取全部器官列表 |
+| `GET` | `/api/organ?organ=X` | 获取单个器官 |
+| `GET` | `/api/markers` | 获取全库标记物 |
+| `GET` | `/api/marker?id=X` | 获取单个标记物 |
+| `GET` | `/api/search?q=keyword` | 全文搜索 |
+| `GET` | `/api/stats` | 数据库统计 |
+| `GET` | `/api/cytology` | 细胞学分类系统 |
+| `GET` | `/api/frozen` | 冰冻切片会诊场景 |
+| `GET` | `/api/grossing` | 取材规范协议 |
+
+完整说明见 [`docs/api.md`](docs/api.md)。
+
+#### 🔒 内容管理 API（需鉴权）
 
 | 方法 | 端点 | 说明 |
 |---|---|---|

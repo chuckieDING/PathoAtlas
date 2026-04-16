@@ -1,0 +1,248 @@
+'use client';
+
+import { useState } from 'react';
+
+/**
+ * FIGO staging for ovarian carcinoma (2014).
+ * Based on surgical findings.
+ *
+ * T categories:
+ * - T1: Tumor limited to ovaries
+ * - T2: Tumor involves one or both ovaries with pelvic extension
+ * - T3: Tumor involves one or both ovaries with peritoneal implants outside pelvis
+ *
+ * N categories:
+ * - N0: No regional lymph node metastasis
+ * - N1: Regional lymph node metastasis
+ *
+ * M categories:
+ * - M0: No distant metastasis
+ * - M1: Distant metastasis
+ *
+ * Reference: FIGO Committee on Gynecologic Oncology. Int J Gynaecol Obstet 2014; 124: 1–5.
+ */
+
+interface StagingOption {
+  code: string;
+  label: string;
+  description: string;
+}
+
+const T_OPTIONS: StagingOption[] = [
+  { code: 'T1', label: 'T1', description: '肿瘤限于卵巢' },
+  { code: 'T1a', label: 'T1a', description: '一侧卵巢，无表面种植' },
+  { code: 'T1b', label: 'T1b', description: '双侧卵巢，无表面种植' },
+  { code: 'T1c', label: 'T1c', description: '一侧或双侧，有表面种植、包膜破裂或腹水细胞学阳性' },
+  { code: 'T2', label: 'T2', description: '一侧或双侧卵巢伴盆腔扩散' },
+  { code: 'T2a', label: 'T2a', description: '子宫和/或输卵管' },
+  { code: 'T2b', label: 'T2b', description: '其他盆腔组织' },
+  { code: 'T3', label: 'T3', description: '一侧或双侧卵巢伴腹腔种植超出盆腔' },
+  { code: 'T3a', label: 'T3a', description: '腹腔种植<2cm' },
+  { code: 'T3b', label: 'T3b', description: '腹腔种植2-5cm' },
+  { code: 'T3c', label: 'T3c', description: '腹腔种植>5cm' },
+];
+
+const N_OPTIONS: StagingOption[] = [
+  { code: 'N0', label: 'N0', description: '无区域淋巴结转移' },
+  { code: 'N1', label: 'N1', description: '区域淋巴结转移' },
+];
+
+const M_OPTIONS: StagingOption[] = [
+  { code: 'M0', label: 'M0', description: '无远处转移' },
+  { code: 'M1', label: 'M1', description: '远处转移' },
+];
+
+function calculateFIGO(t: string, n: string, m: string): { stage: string; color: string; note: string } {
+  if (m === 'M1') {
+    return {
+      stage: 'IV',
+      color: '#ef4444',
+      note: '远处转移，预后差',
+    };
+  }
+
+  if (t.startsWith('T3') || n === 'N1') {
+    if (t === 'T3c' || n === 'N1') {
+      return {
+        stage: 'IIIC',
+        color: '#f97316',
+        note: '广泛腹腔种植或淋巴结阳性',
+      };
+    }
+    if (t === 'T3b') {
+      return {
+        stage: 'IIIB',
+        color: '#f97316',
+        note: '腹腔种植2-5cm',
+      };
+    }
+    if (t === 'T3a') {
+      return {
+        stage: 'IIIA',
+        color: '#f97316',
+        note: '腹腔种植<2cm',
+      };
+    }
+    return {
+      stage: 'III',
+      color: '#f97316',
+      note: '腹腔扩散',
+    };
+  }
+
+  if (t.startsWith('T2')) {
+    return {
+      stage: 'II',
+      color: '#f59e0b',
+      note: '盆腔扩散',
+    };
+  }
+
+  if (t.startsWith('T1')) {
+    return {
+      stage: 'I',
+      color: '#22c55e',
+      note: '限于卵巢，预后好',
+    };
+  }
+
+  return {
+    stage: 'Unknown',
+    color: '#6b7280',
+    note: '请选择完整分期信息',
+  };
+}
+
+export function FIGOOvarian() {
+  const [t, setT] = useState<string>('T1a');
+  const [n, setN] = useState<string>('N0');
+  const [m, setM] = useState<string>('M0');
+  const result = calculateFIGO(t, n, m);
+
+  return (
+    <div
+      className="rounded-xl p-5 space-y-4"
+      style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+    >
+      <div>
+        <h3 className="text-sm font-semibold mb-1" style={{ color: 'var(--fg)' }}>
+          FIGO 分期 · 卵巢癌 (2014)
+        </h3>
+        <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+          基于手术发现的卵巢癌分期系统。选择 T、N、M 类别以计算 FIGO 分期。
+        </p>
+      </div>
+
+      <StagingGroup
+        label="T · 原发肿瘤"
+        value={t}
+        onChange={setT}
+        options={T_OPTIONS}
+      />
+      <StagingGroup
+        label="N · 区域淋巴结"
+        value={n}
+        onChange={setN}
+        options={N_OPTIONS}
+      />
+      <StagingGroup
+        label="M · 远处转移"
+        value={m}
+        onChange={setM}
+        options={M_OPTIONS}
+      />
+
+      <div
+        className="rounded-lg p-4 mt-4"
+        style={{ background: 'var(--card-hover)', border: `2px solid ${result.color}` }}
+      >
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>FIGO Stage</div>
+            <div className="text-2xl font-bold tabular-nums" style={{ color: 'var(--fg)' }}>
+              {t} {n} {m}
+            </div>
+          </div>
+          <div className="text-right">
+            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>分期</div>
+            <div className="text-base font-bold" style={{ color: result.color }}>
+              Stage {result.stage}
+            </div>
+            <div className="text-[11px] mt-0.5" style={{ color: 'var(--fg-muted)' }}>
+              {result.note}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <details className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+        <summary className="cursor-pointer hover:underline select-none">分期含义与注意事项</summary>
+        <div className="mt-2 space-y-1.5 pl-3 leading-relaxed">
+          <p>
+            <strong>I 期</strong>：限于卵巢，5 年生存率 >90%
+          </p>
+          <p>
+            <strong>II 期</strong>：盆腔扩散，5 年生存率 70-80%
+          </p>
+          <p>
+            <strong>III 期</strong>：腹腔扩散，5 年生存率 30-50%
+          </p>
+          <p>
+            <strong>IV 期</strong>：远处转移，5 年生存率 <20%
+          </p>
+          <p className="mt-2 opacity-80">
+            * 分期基于手术探索。浆液性癌常为III-IV期。
+          </p>
+          <p className="mt-1 opacity-80">
+            * 参考：FIGO Committee on Gynecologic Oncology. <em>Int J Gynaecol Obstet</em> 2014; 124: 1–5.
+          </p>
+        </div>
+      </details>
+    </div>
+  );
+}
+
+function StagingGroup({
+  label,
+  value,
+  onChange,
+  options,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: StagingOption[];
+}) {
+  return (
+    <div>
+      <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg)' }}>
+        {label}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {options.map((opt) => {
+          const active = value === opt.code;
+          return (
+            <button
+              key={opt.code}
+              onClick={() => onChange(opt.code)}
+              className="rounded-lg p-3 text-left transition-colors"
+              style={{
+                background: active ? 'rgba(99,102,241,0.12)' : 'var(--card-hover)',
+                border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
+              }}
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-semibold" style={{ color: 'var(--fg)' }}>
+                  {opt.label}
+                </span>
+              </div>
+              <div className="text-[10px] leading-tight" style={{ color: 'var(--fg-muted)' }}>
+                {opt.description}
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}

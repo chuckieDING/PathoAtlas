@@ -1,0 +1,373 @@
+[
+  {
+    "id": "bethesda-thyroid-fna",
+    "nameZh": "Bethesda甲状腺细胞学分类（2023版）",
+    "nameEn": "Bethesda Classification for Thyroid Cytopathology v2023",
+    "description": "用于甲状腺细针穿刺细胞学(FNA)的6类分类系统，包含恶变风险和临床处理建议。2023年更新版增加了分子检测指导。",
+    "categories": [
+      {
+        "id": "nondiagnostic",
+        "nameZh": "非诊断/血样不满意",
+        "nameEn": "Nondiagnostic/Unsatisfactory",
+        "criteria": "细胞数量不足，标本质量差，或无法判断细胞性质。至少需要6个滤泡细胞群，每群≥10个细胞。",
+        "malignancyRisk": "1-4%",
+        "management": "建议复查FNA（通常间隔3个月后）或直接进行超声引导下重复穿刺。",
+        "notes": "约占FNA的5-10%。对技术员要求较高。"
+      },
+      {
+        "id": "benign",
+        "nameZh": "良性",
+        "nameEn": "Benign",
+        "criteria": "良性甲状腺疾病特征：滤泡性增生、胶样结节、淋巴细胞性甲状腺炎、肉芽肿性病变。无细胞异型。",
+        "malignancyRisk": "0-3%",
+        "management": "临床和超声随访。通常无需进一步检查。甲状腺功能检测(TSH)可考虑。",
+        "notes": "占FNA的60-70%。包括结节性增生、腺瘤样结节等。"
+      },
+      {
+        "id": "atypia-undetermined-significance",
+        "nameZh": "细胞学不确定(AUS)/不明确意义的非典型细胞",
+        "nameEn": "Atypia of Undetermined Significance (AUS)",
+        "criteria": "细胞异型性表现为：核增大、核仁明显、核质比升高、但不足以诊断滤泡性肿瘤或乳头状癌。不典型的炎症表现。",
+        "malignancyRisk": "5-15%",
+        "management": "推荐分子检测(ThyroSeq、Afirma等)。如分子结果阳性或可疑，行超声引导穿刺复查或甲状腺素(TSH)抑制、临床随访。强烈推荐分子检测。",
+        "notes": "占FNA的7-10%。分子检测可显著改进管理策略。"
+      },
+      {
+        "id": "follicular-neoplasm",
+        "nameZh": "滤泡性肿瘤(FN)或可疑滤泡性肿瘤",
+        "nameEn": "Follicular Neoplasm (FN) / Suspicious for Follicular Neoplasm (SFN)",
+        "criteria": "主要表现为微滤泡结构（过量的滤泡细胞聚集），缺乏胶质背景。细胞均质、核仁小或不明显。无乳头状癌的特征。",
+        "malignancyRisk": "15-30%",
+        "management": "推荐分子检测。通常需要甲状腺素(TSH)抑制治疗或手术(通常半侧叶切除，Delphian淋巴结取样)。分子检测可帮助筛选低风险患者进行保守治疗。",
+        "notes": "占FNA的15-25%。包括滤泡腺瘤和乳头状癌的滤泡变异。"
+      },
+      {
+        "id": "suspicious-for-papillary-cancer",
+        "nameZh": "可疑乳头状癌(SPC)",
+        "nameEn": "Suspicious for Papillary Carcinoma (SPC)",
+        "criteria": "乳头状癌的部分特征表现明显：核沟、核内伪包含体、偶见乳头状结构。但不足以确诊。异型细胞成簇。",
+        "malignancyRisk": "50-75%",
+        "management": "推荐全甲状腺切除加中央区淋巴结清扫(如超声显示淋巴结病变)。分子检测可支持诊断(BRAF V600E、RET/PTC)。通常建议手术治疗。",
+        "notes": "占FNA的3-5%。核沟和核内伪包含体是关键特征。"
+      },
+      {
+        "id": "malignant",
+        "nameZh": "恶性",
+        "nameEn": "Malignant",
+        "criteria": "明确的甲状腺恶性肿瘤特征：乳头状癌(核沟、伪包含体、乳头状)、髓样癌(粗颗粒胞浆、淀粉样物)、淋巴瘤、其他恶性肿瘤。",
+        "malignancyRisk": "97-99%",
+        "management": "推荐全甲状腺切除。中央和侧方淋巴结清扫决定于肿瘤类型和超声所见。放射性碘治疗常需进行(乳头状癌)。分子检测指导个性化治疗。",
+        "notes": "占FNA的3-5%。需要手术、核医学和肿瘤科多学科管理。"
+      }
+    ]
+  },
+  {
+    "id": "tbs-cervical",
+    "nameZh": "TBS宫颈液基细胞学分类（2014年Bethesda系统）",
+    "nameEn": "The Bethesda System for Cervical Cytology (TBS) 2014",
+    "description": "用于宫颈液基细胞学的5类分类系统，包含HPV风险分层。是全球宫颈癌筛查的标准。",
+    "categories": [
+      {
+        "id": "normal",
+        "nameZh": "正常",
+        "nameEn": "Negative for Intraepithelial Lesion or Malignancy (NILM)",
+        "criteria": "宫颈细胞正常，无不典型细胞、无感染迹象(或仅有常见的炎症变化)。核质比正常(约1:6)。",
+        "malignancyRisk": "0.1-0.3%",
+        "management": "常规筛查：3年或5年进行一次Pap检查(取决于国家指南)。HPV联合检测(HPV co-testing)可进行。",
+        "notes": "占Pap检查的80-95%。良好的预后预期。"
+      },
+      {
+        "id": "asc-us",
+        "nameZh": "意义不明的非典型鳞状细胞(ASC-US)",
+        "nameEn": "Atypical Squamous Cells of Undetermined Significance (ASC-US)",
+        "criteria": "核增大、核仁明显、核质比轻度升高(约1:4-1:5)，但不足以诊断上皮内病变。包括核异质性、核浓集。",
+        "malignancyRisk": "5-10%",
+        "management": "优先进行HPV检测：HPV阳性→进行细胞学或组织学确认；HPV阴性→常规筛查。或重复Pap检查1年。",
+        "notes": "占Pap检查的5-10%。HPV检测是主要管理方式。"
+      },
+      {
+        "id": "lsil",
+        "nameZh": "低级别鳞状上皮内病变(LSIL)",
+        "nameEn": "Low-Grade Squamous Intraepithelial Lesion (LSIL)",
+        "criteria": "核增大(约2-3倍)、核质比升高(约1:2-1:3)、核膜不规则、粗颗粒核质。可见HPV效应(绞叶细胞)。",
+        "malignancyRisk": "15-30%",
+        "management": "HPV检测(如未进行)：阳性→12个月后Pap检查或直接阴道镜；阴性→常规筛查。可考虑自理观察(self-sampling)HPV检测。",
+        "notes": "占Pap检查的2-5%。大多数LSIL在2年内自行消退。"
+      },
+      {
+        "id": "hsil",
+        "nameZh": "高级别鳞状上皮内病变(HSIL)",
+        "nameEn": "High-Grade Squamous Intraepithelial Lesion (HSIL)",
+        "criteria": "高度异型细胞：核显著增大、核质比高(约1:1-2:1)、核膜明显不规则、核仁多个、粗颗粒核质、可见异常核分裂。",
+        "malignancyRisk": "30-75%",
+        "management": "推荐立即阴道镜检查(不依赖HPV结果)。可考虑直接进行冷刀圆锥切除(Cold Knife Conization)或环形电切(LEEP)。病理学确认后决定治疗。",
+        "notes": "占Pap检查的0.5-2%。需要尽快进行专科评估。"
+      },
+      {
+        "id": "scc-adenocarcinoma",
+        "nameZh": "鳞状细胞癌或腺癌",
+        "nameEn": "Squamous Cell Carcinoma or Adenocarcinoma",
+        "criteria": "明确的恶性细胞群：异型性显著、核分裂活跃、组织学背景可见肿瘤细胞巢团、坏死背景。鳞状癌具有标志性核。",
+        "malignancyRisk": "95-100%",
+        "management": "立即妇科/肿瘤科转诊。进行全面临床评估、分期、组织病理诊断和治疗计划(手术、放疗、化疗)。",
+        "notes": "占Pap检查的0.1-0.2%。预后取决于肿瘤分期和类型。"
+      }
+    ]
+  },
+  {
+    "id": "paris-urine",
+    "nameZh": "Paris尿液细胞学分类（2022版）",
+    "nameEn": "Paris System for Reporting Urinary Cytology 2022",
+    "description": "用于尿液细胞学的5类分类系统，旨在改进尿路上皮癌(urothelial carcinoma)的检测和报告一致性。",
+    "categories": [
+      {
+        "id": "urine-negative",
+        "nameZh": "阴性(无恶性肿瘤)",
+        "nameEn": "Negative for High-Grade Urothelial Carcinoma (NHGUC)",
+        "criteria": "尿液中无高级别肿瘤细胞。可见正常尿路上皮细胞、红细胞、脓细胞或其他良性成分。背景清晰。",
+        "malignancyRisk": "0-5%",
+        "management": "临床相关的症状追踪。如有临床症状(血尿等)，进行膀胱镜或影像学评估。",
+        "notes": "占尿液细胞学的50-60%。低恶变风险。"
+      },
+      {
+        "id": "urine-atypia",
+        "nameZh": "不明确的非典型性(AUUC)",
+        "nameEn": "Atypical Urothelial Cells of Undetermined Significance (AUUC)",
+        "criteria": "细胞轻度异型：核增大、核质比轻度升高、但不足以诊断高级别病变。包括肾脏或膀胱良性病变导致的异型。",
+        "malignancyRisk": "10-30%",
+        "management": "重复尿液细胞学(3-6个月)或进行膀胱镜检查(如症状存在)。推荐尿路上皮脱落细胞学联合尿路镜检(尤其是高危患者)。",
+        "notes": "占尿液细胞学的10-20%。需要临床关联和随访。"
+      },
+      {
+        "id": "urine-suspicious",
+        "nameZh": "可疑高级别尿路上皮病变(SHG)",
+        "nameEn": "Suspicious for High-Grade Urothelial Carcinoma (SHG)",
+        "criteria": "细胞异型明显但未达到确诊标准：核显著增大、核质比升高、核膜不规则、核仁明显、但细胞数量少或背景因素影响诊断。",
+        "malignancyRisk": "40-90%",
+        "management": "推荐膀胱镜检查 ± 活检、尿路上皮脱落细胞学重复检查(尤其重要)、或虚拟膀胱镜(VUE)。需要临床决策。",
+        "notes": "占尿液细胞学的3-5%。需要快速进行进一步评估。"
+      },
+      {
+        "id": "urine-hguc",
+        "nameZh": "高级别尿路上皮癌(HGUC)",
+        "nameEn": "High-Grade Urothelial Carcinoma (HGUC)",
+        "criteria": "明确的恶性肿瘤细胞：核显著异常、核质比高、核膜高度不规则、多个核仁、异常核分裂。可见肿瘤细胞聚集。",
+        "malignancyRisk": "90-100%",
+        "management": "立即膀胱镜检查 ± 活检、尿路上皮脱落细胞学复查、泌尿科转诊。完整分期评估(影像学、肾功能)。治疗包括TURBT ± 膀胱根治术/化疗/免疫治疗。",
+        "notes": "占尿液细胞学的1-3%。高恶变风险，需要快速诊疗。"
+      },
+      {
+        "id": "urine-cancer-other",
+        "nameZh": "其他恶性肿瘤",
+        "nameEn": "Other Malignancy",
+        "criteria": "非尿路上皮起源的恶性肿瘤：腺癌(来自膀胱腺体)、小细胞癌、其他泌尿生殖系统肿瘤、继发性肿瘤。",
+        "malignancyRisk": "95-100%",
+        "management": "组织学确认、影像学评估、肿瘤科转诊。治疗方案取决于肿瘤类型和分期。",
+        "notes": "占尿液细胞学的<1%。需要多学科管理。"
+      }
+    ]
+  },
+  {
+    "id": "milan-salivary",
+    "nameZh": "Milan唾液腺细胞学分类",
+    "nameEn": "Milan Classification for Salivary Gland Cytology",
+    "description": "用于唾液腺细针穿刺细胞学的6类分类系统，改进报告一致性和预后预测。",
+    "categories": [
+      {
+        "id": "salivary-nondiagnostic",
+        "nameZh": "非诊断性",
+        "nameEn": "Nondiagnostic",
+        "criteria": "标本质量差、细胞数量不足或无法判断。可能为血样或只有背景，无足够细胞用于诊断。",
+        "malignancyRisk": "1-3%",
+        "management": "建议重复穿刺(2-4周后)以获得诊断性标本。超声引导穿刺可提高成功率。",
+        "notes": "占唾液腺FNA的10-15%。影响诊断准确性。"
+      },
+      {
+        "id": "salivary-benign",
+        "nameZh": "良性",
+        "nameEn": "Benign",
+        "criteria": "良性唾液腺病变：多形性腺瘤、沃辛瘤(Warthin tumor)、基底细胞腺瘤、淋巴瘤样病变、嗜酸性病变。细胞均质，无异型。",
+        "malignancyRisk": "<1%",
+        "management": "临床和超声随访。多形性腺瘤可考虑手术切除(浅叶或深叶切除)。Warthin瘤可保守治疗。",
+        "notes": "占唾液腺FNA的60-65%。预后良好。"
+      },
+      {
+        "id": "salivary-atypia",
+        "nameZh": "非特异性不确定病变(NSOCL)或不明确意义的非典型细胞",
+        "nameEn": "Non-Specific Oncocytic Lesion (NSOCL) or Atypia of Undetermined Significance",
+        "criteria": "细胞轻度异型、组织学特征不明确：上皮细胞略大、核增大、但不足以诊断特定肿瘤。可见嗜酸性细胞或混合成分。",
+        "malignancyRisk": "15-40%",
+        "management": "临床和超声相关性评估。推荐重复FNA或进行组织学评估(手术)。影像学监测或小切除可考虑。分子检测(FISH、突变分析)可帮助分层。",
+        "notes": "占唾液腺FNA的15-20%。诊断挑战，需要多模态评估。"
+      },
+      {
+        "id": "salivary-suspicious",
+        "nameZh": "可疑恶性",
+        "nameEn": "Suspicious for Malignancy",
+        "criteria": "细胞明显异型、恶性可能性大：核显著增大、核质比高、核膜不规则、异常核分裂。但证据不足以确诊特定恶性肿瘤。",
+        "malignancyRisk": "50-80%",
+        "management": "推荐手术治疗(浅叶或深叶切除 ± 面神经解剖)。术中冰冻切片确认。分子检测(如可用)可指导手术范围。",
+        "notes": "占唾液腺FNA的3-5%。需要快速进行手术评估。"
+      },
+      {
+        "id": "salivary-malignant",
+        "nameZh": "恶性",
+        "nameEn": "Malignant",
+        "criteria": "明确的恶性肿瘤：黏液表皮样癌(MEC)、腺样囊性癌(ACC)、腺癌、鳞状细胞癌等。明显异型、高核质比、异常核分裂。",
+        "malignancyRisk": "95-100%",
+        "management": "立即头颈部肿瘤科转诊。进行完整分期(影像学、生物标志物)、广泛手术切除(包括受侵犯的邻近结构) ± 颈部淋巴结清扫 ± 辅助治疗(放疗/化疗)。",
+        "notes": "占唾液腺FNA的5-10%。预后取决于组织学类型、分级和分期。"
+      }
+    ]
+  },
+  {
+    "id": "rose-fna",
+    "nameZh": "ROSE呼吸/胰/肝细针穿刺术中快速超声指导规范术语",
+    "nameEn": "ROSE (Rapid On-Site Evaluation) Terminology for Respiratory/Pancreatic/Hepatic FNA",
+    "description": "用于内镜超声引导穿刺(EUS-FNA)或经皮穿刺的术中快速细胞学评估标准术语。改进标本质量和临床沟通。",
+    "categories": [
+      {
+        "id": "rose-nondiagnostic",
+        "nameZh": "非诊断性(血样/缺乏细胞)",
+        "nameEn": "Nondiagnostic/Inadequate",
+        "criteria": "标本仅含血液、无足够的靶器官细胞或背景物质。无法进行诊断评估。",
+        "malignancyRisk": "N/A",
+        "management": "术中决定是否需要再次穿刺(通常在同一过程中)。调整穿刺部位或手法。如仍无法获得诊断性标本，可考虑其他诊断方法。",
+        "notes": "ROSE的关键价值：实时反馈穿刺质量，减少非诊断性标本。"
+      },
+      {
+        "id": "rose-benign",
+        "nameZh": "良性",
+        "nameEn": "Benign",
+        "criteria": "明确的良性病变：炎症、感染性病变(肺结核、真菌感染)、囊肿、良性肿瘤。细胞形态良好，无异型性。",
+        "malignancyRisk": "<5%",
+        "management": "内科治疗或临床随访。感染性病变进行抗微生物治疗。良性肿瘤可保守治疗。",
+        "notes": "ROSE诊断良性时，临床医生通常停止穿刺。高准确性。"
+      },
+      {
+        "id": "rose-atypia-benign",
+        "nameZh": "轻度异型/可能良性",
+        "nameEn": "Atypical/Probably Benign",
+        "criteria": "细胞轻度异型、形态学特征局限但具有良性倾向：炎症诱导的异型、某些反应性病变。不太可能代表恶性肿瘤。",
+        "malignancyRisk": "10-20%",
+        "management": "术中决定：可考虑再次穿刺以获得更多信息或直接闭合。术后进行常规细胞学和组织学评估(如适用)。临床随访。",
+        "notes": "ROSE可指导术中决策，避免过度穿刺或诊疗延迟。"
+      },
+      {
+        "id": "rose-suspicious-malignancy",
+        "nameZh": "可疑恶性",
+        "nameEn": "Suspicious for Malignancy",
+        "criteria": "细胞异型明显、恶性可能性高：核显著异常、核质比升高、但证据未达到确诊恶性标准。包括高级别病变但组织学诊断未确定。",
+        "malignancyRisk": "60-90%",
+        "management": "术中通常完成穿刺(获取足够组织用于病理/免疫组化/分子检测)。临床医生可基于ROSE结果调整后续治疗计划。可考虑快速冰冻切片或流式细胞仪。",
+        "notes": "ROSE对疑似恶性病变的诊断改变临床管理至关重要。"
+      },
+      {
+        "id": "rose-malignant",
+        "nameZh": "恶性",
+        "nameEn": "Malignant",
+        "criteria": "明确的恶性肿瘤细胞：肺癌、胰腺癌、肝癌、淋巴瘤等。高度异型、异常核分裂、肿瘤特异性特征。",
+        "malignancyRisk": "95-100%",
+        "management": "术中确认诊断后立即通知临床医生。可进行额外穿刺用于流式细胞仪(淋巴瘤)或分子检测。完成EUS检查并进行临床分期。肿瘤科多学科评估。",
+        "notes": "ROSE诊断恶性肿瘤改变患者管理：从诊断性穿刺转向治疗策略讨论。"
+      }
+    ]
+  },
+  {
+    "id": "body-cavity-ic",
+    "nameZh": "体腔积液细胞学国际协作组(IC)分类",
+    "nameEn": "International Collaboration on Cancer Reporting (ICCR) Body Cavity Fluid Cytology",
+    "description": "用于胸腔液、腹腔液、心包液等体腔液细胞学的标准化分类系统。用于检测恶性肿瘤和感染。",
+    "categories": [
+      {
+        "id": "body-cavity-negative",
+        "nameZh": "恶性肿瘤阴性",
+        "nameEn": "Negative for Malignancy",
+        "criteria": "体腔液中无恶性肿瘤细胞。可见反应性介孔细胞、淋巴细胞、单核细胞等炎症细胞或感染生物体。背景清洁。",
+        "malignancyRisk": "<5%",
+        "management": "临床症状相关的治疗(例如感染进行抗微生物治疗)。胸腔穿刺可进行治疗性引流。临床随访。",
+        "notes": "占体腔液的85-90%。低恶变风险。"
+      },
+      {
+        "id": "body-cavity-atypia",
+        "nameZh": "不明确的非典型性(AUC)",
+        "nameEn": "Atypical Cells of Undetermined Significance (AUC)",
+        "criteria": "细胞轻度异型：介孔细胞增大、核质比轻度升高、核膜不规则、但不足以诊断恶性肿瘤。可能是反应性改变或早期恶性肿瘤。",
+        "malignancyRisk": "10-30%",
+        "management": "临床和放射学相关性评估。重复穿刺(2-4周)或进行免疫细胞化学/流式细胞仪。如仍不确定，可进行影像学或组织学评估。",
+        "notes": "占体腔液的5-10%。需要多模态确认诊断。"
+      },
+      {
+        "id": "body-cavity-suspicious",
+        "nameZh": "可疑恶性肿瘤",
+        "nameEn": "Suspicious for Malignancy",
+        "criteria": "细胞异型明显、恶性可能性大：核显著增大、核质比高、核膜明显不规则、但细胞特征或数量尚不足以确诊。包括高度怀疑但证据限制的情况。",
+        "malignancyRisk": "50-80%",
+        "management": "推荐免疫细胞化学确认(上皮标记物、器官特异性标记物、结蛋白)。流式细胞仪评估是否为淋巴瘤。重复穿刺或组织学评估。临床分期。",
+        "notes": "占体腔液的2-5%。需要进一步确认诊断。"
+      },
+      {
+        "id": "body-cavity-malignant",
+        "nameZh": "恶性肿瘤",
+        "nameEn": "Malignant",
+        "criteria": "明确的恶性肿瘤细胞：腺癌、鳞状细胞癌、淋巴瘤、恶性中皮瘤等。高度异型、多核、异常核分裂、肿瘤特异性特征。",
+        "malignancyRisk": "95-100%",
+        "management": "立即肿瘤科转诊。进行完整的肿瘤分期(影像学、肿瘤标志物、分子检测)。确定原发灶(如未知)。进行治疗分层(化疗、放疗、靶向、免疫治疗)。",
+        "notes": "占体腔液的3-8%。恶性体腔液通常提示转移性肿瘤或原发性浆膜肿瘤，预后取决于原发灶。"
+      }
+    ]
+  },
+  {
+    "id": "yokohama-breast",
+    "nameZh": "Yokohama乳腺细针穿刺细胞学分类",
+    "nameEn": "Yokohama Classification for Breast Cytology",
+    "description": "用于乳腺细针穿刺细胞学的分类系统，改进对乳腺肿块的预检查评估和诊断准确性。",
+    "categories": [
+      {
+        "id": "breast-nondiagnostic",
+        "nameZh": "非诊断性",
+        "nameEn": "Nondiagnostic",
+        "criteria": "标本质量差、细胞数量不足或仅含脂肪/背景。无足够可评估的细胞用于诊断。",
+        "malignancyRisk": "1-2%",
+        "management": "建议重复穿刺(通常在2-4周后)以获得诊断性标本。超声引导穿刺可提高成功率。",
+        "notes": "占乳腺FNA的10-15%。影响诊断置信度。"
+      },
+      {
+        "id": "breast-benign",
+        "nameZh": "良性",
+        "nameEn": "Benign",
+        "criteria": "良性乳腺病变：纤维腺瘤、脂肪瘤、乳腺增生、乳管内乳头状瘤。细胞规则、无异型、清晰的良性背景。",
+        "malignancyRisk": "<1%",
+        "management": "临床和放射学随访。纤维腺瘤通常无需手术(除非有症状或患者要求)。其他良性病变保守治疗或定期监测。",
+        "notes": "占乳腺FNA的60-70%。预后极好。"
+      },
+      {
+        "id": "breast-atypia",
+        "nameZh": "不明确的非典型细胞(AUC)",
+        "nameEn": "Atypia of Undetermined Significance (AUC)",
+        "criteria": "细胞轻度异型：核增大、核仁明显、但不足以诊断恶性肿瘤。可包括导管内乳头状瘤伴不典型增生、低级别病变。",
+        "malignancyRisk": "15-30%",
+        "management": "推荐组织学评估(芯针活检或手术切除)。临床和放射学相关性非常重要。分子检测(ER/PR/HER2)可指导进一步管理。",
+        "notes": "占乳腺FNA的10-20%。需要进一步评估以排除恶性肿瘤。"
+      },
+      {
+        "id": "breast-suspicious",
+        "nameZh": "可疑恶性",
+        "nameEn": "Suspicious for Malignancy",
+        "criteria": "细胞异型明显、恶性可能性大：核显著增大、核质比高、核膜不规则、异常核分裂、但所有恶性特征未完全具备。",
+        "malignancyRisk": "60-90%",
+        "management": "强烈推荐进行组织学评估(芯针活检或手术切除)。分子检测(ER/PR/HER2/Ki-67)可预测恶性程度。确认诊断后进行适当治疗(手术/放疗/化疗)。",
+        "notes": "占乳腺FNA的3-5%。需要快速进行组织学确认。"
+      },
+      {
+        "id": "breast-malignant",
+        "nameZh": "恶性",
+        "nameEn": "Malignant",
+        "criteria": "明确的乳腺恶性肿瘤：浸润性导管癌、浸润性小叶癌等。高度异型、异常核分裂、肿瘤特异性特征。",
+        "malignancyRisk": "95-100%",
+        "management": "立即外科肿瘤科转诊。进行完整临床分期(乳房影像学、腋窝评估、全身分期)。分子分型(ER/PR/HER2)。进行手术治疗 ± 辅助治疗(放疗/化疗/内分泌治疗/靶向治疗)。",
+        "notes": "占乳腺FNA的3-8%。需要多学科肿瘤管理。预后取决于分级、分期和分子分型。"
+      }
+    ]
+  }
+]

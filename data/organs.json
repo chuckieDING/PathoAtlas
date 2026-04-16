@@ -98,5 +98,35 @@
     "description": "膀胱、前列腺、睾丸等泌尿男性生殖系统肿瘤及非肿瘤性疾病的病理诊断",
     "commonStains": ["HE", "CK7", "CK20", "GATA3", "Uroplakin", "PSA", "PSAP", "P504S", "P63", "HMWCK", "OCT4", "PLAP", "CD30"],
     "keyPatterns": ["乳头状结构", "尿路上皮分化", "腺泡结构", "Gleason模式", "精原细胞", "胚胎性癌"]
+  },
+  {
+    "id": "cns",
+    "nameZh": "中枢神经系统",
+    "nameEn": "Central Nervous System",
+    "icon": "🧠",
+    "color": "#6366f1",
+    "description": "中枢神经系统肿瘤及非肿瘤性疾病的病理诊断，包括胶质瘤、脑膜瘤、髓母细胞瘤及生殖细胞肿瘤",
+    "commonStains": ["HE", "GFAP", "IDH1", "ATRX", "P53", "Ki-67", "EMA", "S-100", "Synaptophysin", "Chromogranin A", "CD56"],
+    "keyPatterns": ["星形细胞", "少突细胞", "室管膜细胞", "神经元分化", "血管增生", "假菊形团"]
+  },
+  {
+    "id": "soft-tissue",
+    "nameZh": "软组织",
+    "nameEn": "Soft Tissue",
+    "icon": "🦵",
+    "color": "#10b981",
+    "description": "软组织肿瘤及非肿瘤性疾病的病理诊断，包括脂肪肉瘤、平滑肌肉瘤、GIST、滑膜肉瘤及横纹肌肉瘤",
+    "commonStains": ["HE", "S-100", "Desmin", "SMA", "CD34", "CD117", "DOG1", "MyoD1", "Myogenin", "H-Caldesmon", "Calponin", "ALK"],
+    "keyPatterns": ["梭形细胞", "多形性细胞", "脂肪细胞", "平滑肌细胞", "横纹肌细胞", "血管结构"]
+  },
+  {
+    "id": "bone",
+    "nameZh": "骨骼",
+    "nameEn": "Bone",
+    "icon": "🦴",
+    "color": "#64748b",
+    "description": "骨骼肿瘤及非肿瘤性疾病的病理诊断，包括骨肉瘤、软骨肉瘤、巨细胞瘤及骨囊肿",
+    "commonStains": ["HE", "S-100", "CD68", "CD163", "TRAP", "Ki-67", "Vimentin", "CK", "EMA", "CD99", "Fli-1"],
+    "keyPatterns": ["骨样组织", "软骨组织", "巨细胞", "梭形细胞", "上皮样细胞", "骨破坏"]
   }
 ]

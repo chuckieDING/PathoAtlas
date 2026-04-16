@@ -21,6 +21,9 @@ const NAV = [
 
 const MENU_EXTRAS = [
   { href: '/search', label: '高级搜索', icon: IconSearch },
+  { href: '/cyto', label: '细胞病理学', icon: IconFlask },
+  { href: '/frozen', label: '冻存切片', icon: IconBrain },
+  { href: '/grossing', label: '取材规范', icon: IconMicroscope },
   { href: '/progress', label: '学习成就', icon: IconTrophy },
   { href: '/admin', label: '内容管理', icon: IconSettings },
   { href: '/about', label: '关于项目', icon: IconInfo },

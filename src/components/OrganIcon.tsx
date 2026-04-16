@@ -10,6 +10,9 @@ import {
   IconOrganSkin,
   IconOrganGyn,
   IconOrganUrology,
+  IconOrganCns,
+  IconOrganSoftTissue,
+  IconOrganBone,
   IconMicroscope,
 } from './Icon';
 
@@ -26,6 +29,9 @@ const ORGAN_ICON_MAP: Record<string, IconComponent> = {
   skin: IconOrganSkin,
   gynecology: IconOrganGyn,
   urology: IconOrganUrology,
+  cns: IconOrganCns,
+  'soft-tissue': IconOrganSoftTissue,
+  bone: IconOrganBone,
 };
 
 interface OrganIconProps {

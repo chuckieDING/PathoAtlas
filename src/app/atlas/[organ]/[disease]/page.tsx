@@ -11,6 +11,13 @@ import { IconCheckCircle, IconZap, IconSearch, IconX, IconBookOpen } from '@/com
 import { OrganIcon } from '@/components/OrganIcon';
 import { ImageLightbox } from '@/components/ImageLightbox';
 import { NottinghamGrade } from '@/components/calculators/NottinghamGrade';
+import { GleasonGrade } from '@/components/calculators/GleasonGrade';
+import { ISUPGrade } from '@/components/calculators/ISUPGrade';
+import { FIGOCervical } from '@/components/calculators/FIGOCervical';
+import { FIGOEndometrial } from '@/components/calculators/FIGOEndometrial';
+import { FIGOOvarian } from '@/components/calculators/FIGOOvarian';
+import { BethesdaThyroid } from '@/components/calculators/BethesdaThyroid';
+import { TNMStaging } from '@/components/calculators/TNMStaging';
 import { getMarkerDiagram } from '@/lib/markerDiagrams';
 
 // Translate a free-text marker label from the IHC table into the canonical
@@ -19,8 +26,19 @@ function markerSlug(label: string): string {
   return label.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
+type Magnification = '2x' | '4x' | '10x' | '20x' | '40x' | '100x';
+type StainType = 'HE' | 'IHC' | 'Special' | 'Gross';
+
 interface IHCItem { marker: string; result: string; note: string }
-interface DiseaseImage { url: string; fullUrl?: string; caption: string; source?: string }
+interface DiseaseImage {
+  url: string;
+  fullUrl?: string;
+  caption: string;
+  source?: string;
+  magnification?: Magnification;
+  stainType?: StainType;
+  ihcMarker?: string;
+}
 interface ConsensusItem {
   id: string;
   title: string;
@@ -60,7 +78,7 @@ interface DiseaseData {
 interface OrganData { id: string; nameZh: string; icon: string; color: string }
 interface DiffDisease { id: string; nameZh: string; nameEn: string; organ: string }
 
-type Tab = 'overview' | 'gross' | 'microscopy' | 'ihc' | 'molecular' | 'differential' | 'consensus' | 'literature' | 'clinical';
+type Tab = 'overview' | 'gross' | 'microscopy' | 'ihc' | 'molecular' | 'special-stains' | 'differential' | 'consensus' | 'literature' | 'clinical';
 
 export default function DiseasePage({ params }: { params: Promise<{ organ: string; disease: string }> }) {
   const { organ, disease: diseaseId } = use(params);
@@ -123,6 +141,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
     { id: 'microscopy', label: '镜下特征' },
     { id: 'ihc', label: `免疫组化 (${d.ihcProfile.length})` },
     { id: 'molecular', label: '分子病理' },
+    { id: 'special-stains', label: '特殊染色' },
     { id: 'differential', label: `鉴别诊断 (${d.differentialDiagnosis.length})` },
     { id: 'consensus', label: `专家共识${consensusCount ? ` (${consensusCount})` : ''}` },
     { id: 'literature', label: `文献参考${literatureCount ? ` (${literatureCount})` : ''}` },
@@ -319,6 +338,53 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           {organ === 'breast' && diseaseId === 'invasive-ductal-carcinoma-nst' && (
             <NottinghamGrade />
           )}
+          {organ === 'urology' && diseaseId === 'prostate-adenocarcinoma' && (
+            <GleasonGrade />
+          )}
+          {organ === 'kidney' && diseaseId === 'clear-cell-rcc' && (
+            <ISUPGrade />
+          )}
+          {organ === 'gynecology' && diseaseId === 'cervical-scc' && (
+            <FIGOCervical />
+          )}
+          {organ === 'gynecology' && diseaseId === 'endometrial-adenocarcinoma' && (
+            <FIGOEndometrial />
+          )}
+          {organ === 'gynecology' && diseaseId === 'ovarian-serous-carcinoma' && (
+            <FIGOOvarian />
+          )}
+          {organ === 'thyroid' && diseaseId === 'papillary-thyroid-carcinoma' && (
+            <BethesdaThyroid />
+          )}
+          {organ === 'lung' && diseaseId === 'lung-adenocarcinoma' && (
+            <TNMStaging />
+          )}
+        </div>
+      )}
+
+      {tab === 'special-stains' && (
+        <div className="space-y-6">
+          <div className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+            特殊染色用于辅助诊断，显示特定组织成分或病理改变。
+          </div>
+          <div className="grid gap-4">
+            {/* Placeholder for special stains - will be populated from data/special-stains.json */}
+            <div className="p-4 rounded-lg" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+              <h3 className="font-semibold mb-2">常见特殊染色</h3>
+              <div className="text-sm space-y-2" style={{ color: 'var(--fg-muted)' }}>
+                <div><strong>PAS染色：</strong>检测糖原、多糖、黏蛋白</div>
+                <div><strong>普鲁士蓝染色：</strong>检测含铁血黄素</div>
+                <div><strong>抗酸染色：</strong>检测分枝杆菌</div>
+                <div><strong>姬姆萨染色：</strong>细胞核和细胞质染色</div>
+                <div><strong>Masson三色染色：</strong>区分胶原、肌肉和平滑肌</div>
+                <div><strong>阿利新蓝染色：</strong>检测酸性黏多糖</div>
+                <div><strong>刚果红染色：</strong>检测淀粉样物质</div>
+                <div><strong>网状纤维染色：</strong>显示网状纤维</div>
+                <div><strong>Verhoeff染色：</strong>显示弹性纤维</div>
+                <div><strong>油红O染色：</strong>检测中性脂肪</div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
@@ -394,6 +460,126 @@ function ImageGallery({
   fullLoaded?: Record<string, boolean>;
   onLoadFull?: (url: string) => void;
 }) {
+  // Group images by magnification if metadata exists
+  const hasMagnificationMetadata = images.some(img => img.magnification);
+  
+  // If all images have magnification, group by magnification + stainType
+  const groupedImages = hasMagnificationMetadata
+    ? groupImagesByMagnification(images)
+    : { ungrouped: images };
+
+  const magnificationOrder: (Magnification | undefined)[] = ['2x', '4x', '10x', '20x', '40x', '100x', undefined];
+  const sortedGroups = Object.entries(groupedImages)
+    .sort(([a], [b]) => {
+      const aIdx = magnificationOrder.indexOf(a as Magnification | undefined);
+      const bIdx = magnificationOrder.indexOf(b as Magnification | undefined);
+      return aIdx - bIdx;
+    });
+
+  const renderImageGallerySection = (galleryImages: DiseaseImage[], sectionTitle?: string) => (
+    <div className="space-y-2" key={sectionTitle || 'main'}>
+      {sectionTitle && (
+        <h4 className="text-xs font-semibold px-1" style={{ color: 'var(--accent)' }}>
+          {sectionTitle}
+        </h4>
+      )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {galleryImages.map((img, i) => renderImageCard(img, i, hasMagnificationMetadata))}
+      </div>
+    </div>
+  );
+
+  const renderImageCard = (img: DiseaseImage, i: number, showMetadata: boolean) => {
+    const hasFull = !!img.fullUrl;
+    const isFull = hasFull && !!fullLoaded?.[img.url];
+    const displaySrc = isFull && img.fullUrl ? img.fullUrl : img.url;
+    const lightboxImg = { url: img.fullUrl || img.url, caption: img.caption };
+
+    return (
+      <figure
+        key={i}
+        className="rounded-xl overflow-hidden group transition-transform hover:-translate-y-0.5 flex flex-col"
+        style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
+      >
+        <div className="relative cursor-zoom-in" onClick={() => onOpen(lightboxImg)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={displaySrc}
+            alt={img.caption}
+            className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
+          />
+          {hasFull && (
+            <span
+              className="absolute top-2 left-2 text-[10px] px-2 py-0.5 rounded-full font-medium"
+              style={{
+                background: isFull ? 'rgba(34,197,94,0.9)' : 'rgba(0,0,0,0.55)',
+                color: '#fff',
+              }}
+            >
+              {isFull ? '原图' : '压缩图'}
+            </span>
+          )}
+          {showMetadata && (img.magnification || img.stainType) && (
+            <div className="absolute top-2 right-2 flex flex-col items-end gap-1">
+              {img.magnification && (
+                <span
+                  className="text-[10px] px-2 py-0.5 rounded font-medium"
+                  style={{ background: 'rgba(var(--accent-rgb, 59, 130, 246), 0.85)', color: '#fff' }}
+                >
+                  {img.magnification}
+                </span>
+              )}
+              {img.stainType && (
+                <span
+                  className="text-[10px] px-2 py-0.5 rounded font-medium"
+                  style={{
+                    background: img.stainType === 'HE' ? 'rgba(168, 85, 247, 0.85)' :
+                                 img.stainType === 'IHC' ? 'rgba(34, 197, 94, 0.85)' :
+                                 img.stainType === 'Special' ? 'rgba(249, 115, 22, 0.85)' :
+                                 'rgba(100, 116, 139, 0.85)',
+                    color: '#fff'
+                  }}
+                >
+                  {img.stainType}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+        <figcaption className="p-3 text-xs leading-relaxed flex-1" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
+          <div>{img.caption}</div>
+          {showMetadata && img.ihcMarker && img.stainType === 'IHC' && (
+            <div className="mt-1 text-[10px] font-mono" style={{ color: 'var(--accent)' }}>
+              标记物：{img.ihcMarker}
+            </div>
+          )}
+          <div className="mt-2 flex items-center justify-between gap-2 flex-wrap">
+            {img.source && (
+              <span className="text-[10px] opacity-70">来源：{img.source}</span>
+            )}
+            {hasFull && !isFull && onLoadFull && (
+              <button
+                type="button"
+                onClick={(e) => { e.stopPropagation(); onLoadFull(img.url); }}
+                className="text-[11px] px-2 py-1 rounded-md transition-colors ml-auto"
+                style={{
+                  background: 'var(--card-hover)',
+                  color: 'var(--accent)',
+                  border: '1px solid var(--border)',
+                }}
+              >
+                加载原图
+              </button>
+            )}
+          </div>
+        </figcaption>
+      </figure>
+    );
+  };
+
   return (
     <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
       <h3 className="font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
@@ -401,76 +587,32 @@ function ImageGallery({
         <span>{title}</span>
         <span className="text-xs font-normal" style={{ color: 'var(--fg-muted)' }}>(点击放大 · 默认压缩图)</span>
       </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {images.map((img, i) => {
-          const hasFull = !!img.fullUrl;
-          const isFull = hasFull && !!fullLoaded?.[img.url];
-          // Which src to feed the <img>: once the user clicks "加载原图",
-          // swap in the high-res URL. Lightbox always uses full if available.
-          const displaySrc = isFull && img.fullUrl ? img.fullUrl : img.url;
-          const lightboxImg = {
-            url: img.fullUrl || img.url,
-            caption: img.caption,
-          };
-          return (
-            <figure
-              key={i}
-              className="rounded-xl overflow-hidden group transition-transform hover:-translate-y-0.5 flex flex-col"
-              style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
-            >
-              <div
-                className="relative cursor-zoom-in"
-                onClick={() => onOpen(lightboxImg)}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={displaySrc}
-                  alt={img.caption}
-                  className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
-                />
-                {hasFull && (
-                  <span
-                    className="absolute top-2 left-2 text-[10px] px-2 py-0.5 rounded-full font-medium"
-                    style={{
-                      background: isFull ? 'rgba(34,197,94,0.9)' : 'rgba(0,0,0,0.55)',
-                      color: '#fff',
-                    }}
-                  >
-                    {isFull ? '原图' : '压缩图'}
-                  </span>
-                )}
-              </div>
-              <figcaption className="p-3 text-xs leading-relaxed flex-1" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
-                <div>{img.caption}</div>
-                <div className="mt-2 flex items-center justify-between gap-2 flex-wrap">
-                  {img.source && (
-                    <span className="text-[10px] opacity-70">来源：{img.source}</span>
-                  )}
-                  {hasFull && !isFull && onLoadFull && (
-                    <button
-                      type="button"
-                      onClick={(e) => { e.stopPropagation(); onLoadFull(img.url); }}
-                      className="text-[11px] px-2 py-1 rounded-md transition-colors ml-auto"
-                      style={{
-                        background: 'var(--card-hover)',
-                        color: 'var(--accent)',
-                        border: '1px solid var(--border)',
-                      }}
-                    >
-                      加载原图
-                    </button>
-                  )}
-                </div>
-              </figcaption>
-            </figure>
-          );
-        })}
+      <div className="space-y-6">
+        {sortedGroups.length === 0 ? (
+          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无图片</p>
+        ) : sortedGroups.length === 1 && sortedGroups[0][0] === 'ungrouped' ? (
+          renderImageGallerySection(sortedGroups[0][1] as DiseaseImage[])
+        ) : (
+          sortedGroups.map(([groupKey, galleryImages]) => {
+            const groupLabel = groupKey === 'ungrouped'
+              ? undefined
+              : `${groupKey} 下的图片`;
+            return renderImageGallerySection(galleryImages as DiseaseImage[], groupLabel);
+          })
+        )}
       </div>
     </div>
   );
+}
+
+function groupImagesByMagnification(images: DiseaseImage[]): Record<string, DiseaseImage[]> {
+  const grouped: Record<string, DiseaseImage[]> = {};
+  for (const img of images) {
+    const key = img.magnification || 'ungrouped';
+    if (!grouped[key]) grouped[key] = [];
+    grouped[key].push(img);
+  }
+  return grouped;
 }
 
 function ConsensusList({ items }: { items: ConsensusItem[] }) {

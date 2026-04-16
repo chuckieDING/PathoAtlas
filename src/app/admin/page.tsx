@@ -6,7 +6,18 @@ import { IconBookOpen, IconSearch } from '@/components/Icon';
 
 // ── Types ──────────────────────────────────────────────────────────
 
-interface DiseaseImage { url: string; fullUrl?: string; caption: string; source?: string }
+type Magnification = '2x' | '4x' | '10x' | '20x' | '40x' | '100x';
+type StainType = 'HE' | 'IHC' | 'Special' | 'Gross';
+
+interface DiseaseImage {
+  url: string;
+  fullUrl?: string;
+  caption: string;
+  source?: string;
+  magnification?: Magnification;
+  stainType?: StainType;
+  ihcMarker?: string; // 当 stainType === 'IHC' 时
+}
 interface ConsensusItem {
   id: string;
   title: string;
@@ -304,6 +315,11 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
+  // 疾病筛选
+  const [filterOrgan, setFilterOrgan] = useState('');
+  const [filterCategory, setFilterCategory] = useState('');
+  // 标记物筛选
+  const [filterMarkerCategory, setFilterMarkerCategory] = useState('');
 
   useEffect(() => {
     Promise.all([
@@ -322,13 +338,31 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    if (!q) return list;
-    return list.filter(x =>
+    let result = list.filter(x =>
       x.nameZh.includes(q) ||
       x.nameEn.toLowerCase().includes(q) ||
       x.id.toLowerCase().includes(q)
     );
-  }, [list, search]);
+
+    // 针对疾病的额外筛选
+    if (kind === 'disease') {
+      if (filterOrgan) {
+        result = result.filter(x => (x as DiseaseLike).organ === filterOrgan);
+      }
+      if (filterCategory) {
+        result = result.filter(x => (x as DiseaseLike).category === filterCategory);
+      }
+    }
+
+    // 针对标记物的额外筛选
+    if (kind === 'marker') {
+      if (filterMarkerCategory) {
+        result = result.filter(x => (x as MarkerLike).category === filterMarkerCategory);
+      }
+    }
+
+    return result;
+  }, [list, search, kind, filterOrgan, filterCategory, filterMarkerCategory]);
 
   // The editor receives either the real record from state (update mode) or
   // a blank scaffold (create mode, when selected === NEW_SENTINEL).
@@ -404,7 +438,14 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         {(['disease', 'marker'] as EntityKind[]).map(k => (
           <button
             key={k}
-            onClick={() => { setKind(k); setSelected(null); }}
+            onClick={() => { 
+              setKind(k);
+              setSelected(null);
+              setSearch('');
+              setFilterOrgan('');
+              setFilterCategory('');
+              setFilterMarkerCategory('');
+            }}
             className="px-4 py-2.5 text-sm font-medium border-b-2 transition-colors"
             style={{
               borderBottomColor: kind === k ? 'var(--accent)' : 'transparent',
@@ -438,6 +479,50 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
               style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
             />
           </div>
+
+          {/* Filters */}
+          <div className="space-y-2 mb-3 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
+            {kind === 'disease' && (
+              <>
+                <select
+                  value={filterOrgan}
+                  onChange={e => setFilterOrgan(e.target.value)}
+                  className="w-full text-xs px-3 py-1.5 rounded-md outline-none"
+                  style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+                >
+                  <option value="">全部器官</option>
+                  {organs.map(o => (
+                    <option key={o.id} value={o.id}>{o.nameZh}</option>
+                  ))}
+                </select>
+                <select
+                  value={filterCategory}
+                  onChange={e => setFilterCategory(e.target.value)}
+                  className="w-full text-xs px-3 py-1.5 rounded-md outline-none"
+                  style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+                >
+                  <option value="">全部分类</option>
+                  {DISEASE_CATEGORIES.map(c => (
+                    <option key={c.key} value={c.key}>{c.label}</option>
+                  ))}
+                </select>
+              </>
+            )}
+            {kind === 'marker' && (
+              <select
+                value={filterMarkerCategory}
+                onChange={e => setFilterMarkerCategory(e.target.value)}
+                className="w-full text-xs px-3 py-1.5 rounded-md outline-none"
+                style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+              >
+                <option value="">全部分类</option>
+                {MARKER_CATEGORIES.map(c => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </select>
+            )}
+          </div>
+
           {loading ? (
             <div className="text-xs py-4 text-center" style={{ color: 'var(--fg-muted)' }}>加载中...</div>
           ) : (
@@ -1357,6 +1442,40 @@ function ImageEditor({
                 />
                 <Field label="说明" value={img.caption} onChange={v => update(i, { caption: v })} />
                 <Field label="来源" value={img.source || ''} onChange={v => update(i, { source: v })} />
+                <SelectField
+                  label="放大倍数"
+                  value={img.magnification || ''}
+                  onChange={v => update(i, { magnification: v as Magnification | undefined })}
+                  options={[
+                    { key: '', label: '未指定' },
+                    { key: '2x', label: '2x' },
+                    { key: '4x', label: '4x' },
+                    { key: '10x', label: '10x' },
+                    { key: '20x', label: '20x' },
+                    { key: '40x', label: '40x' },
+                    { key: '100x', label: '100x' },
+                  ]}
+                />
+                <SelectField
+                  label="染色类型"
+                  value={img.stainType || ''}
+                  onChange={v => update(i, { stainType: v as StainType | undefined })}
+                  options={[
+                    { key: '', label: '未指定' },
+                    { key: 'HE', label: 'HE（常规）' },
+                    { key: 'IHC', label: 'IHC（免疫组化）' },
+                    { key: 'Special', label: '特殊染色' },
+                    { key: 'Gross', label: '大体标本' },
+                  ]}
+                />
+                {img.stainType === 'IHC' && (
+                  <Field
+                    label="IHC标记物（如 CD20）"
+                    value={img.ihcMarker || ''}
+                    onChange={v => update(i, { ihcMarker: v || undefined })}
+                    placeholder="可选"
+                  />
+                )}
               </div>
               <div className="flex flex-col items-stretch gap-2">
                 {img.url ? (

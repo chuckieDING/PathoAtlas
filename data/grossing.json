@@ -1,0 +1,252 @@
+[
+  {
+    "id": "breast-mass",
+    "nameZh": "乳腺肿物（良性或不确定）",
+    "nameEn": "Breast Mass Excision",
+    "indication": "乳腺良性或BI-RADS 3-4级肿物活检/切除",
+    "inkScheme": "肿物周边1-2mm处全周涂黑墨，或按四象限分别涂不同颜色（上红、下黄、左蓝、右绿）",
+    "incisionDirection": "沿乳房长轴切开（从乳头到乳房边缘方向）",
+    "samplingInterval": "高倍下可见的异常区域整体送检；若>2cm分片（间隔3-5mm）",
+    "mandatorySites": [
+      "肿物中心及四周（含边界处）",
+      "周边正常乳腺1cm范围",
+      "脂肪垫及皮肤（如有）"
+    ],
+    "photoRequirements": "照大体全景图、墨水标记部位、切面示意图",
+    "frozenConsiderations": "冰冻前确认临床是否需要术中诊断（通常良性不需冰冻）；若需冰冻，取肿物中心及边界各一块",
+    "commonErrors": [
+      "未标记方向——无法评估切缘",
+      "肿物>2cm未分片——组织固定不充分",
+      "遗漏周边异常区域（如不典型增生）",
+      "皮肤/乳头未包括在内——无法判断表浅病变与皮肤关系"
+    ]
+  },
+  {
+    "id": "breast-mastectomy",
+    "nameZh": "乳腺根治切除术（全乳切除±腋淋巴结）",
+    "nameEn": "Breast Mastectomy Specimen",
+    "indication": "乳腺恶性肿瘤根治性手术标本",
+    "inkScheme": "胸肌面（深面）黑墨，皮肤面（浅面）其他颜色或不染；乳头-肿物连线可用钉子或线标记",
+    "incisionDirection": "从乳头到乳房边缘纵向切开，暴露肿物；然后分片取材（间隔1cm）",
+    "samplingInterval": "1-2cm厚度分片，重点区域（肿物周边、皮肤、胸肌面）每片都要取",
+    "mandatorySites": [
+      "肿物中心及四周各0.5cm正常乳腺",
+      "皮肤及皮下脂肪",
+      "胸肌面（深切缘）",
+      "乳头（涂片找导管癌）",
+      "腋淋巴结（分离后逐个取材）"
+    ],
+    "photoRequirements": "照体表标记、切面全景、肿物部位、淋巴结分离",
+    "frozenConsiderations": "术中冰冻通常用于切缘评估或淋巴结转移判断；在肿物周边1cm、胸肌面、皮肤面各冻一块",
+    "commonErrors": [
+      "胸肌面未送检——无法判断深切缘",
+      "皮肤未送检——乳头旁Paget病易漏诊",
+      "腋淋巴结未分离逐个取材——分期不准",
+      "未标记方向——无法评估6个切缘"
+    ]
+  },
+  {
+    "id": "lung-lobectomy",
+    "nameZh": "肺叶切除术标本",
+    "nameEn": "Lung Lobectomy Specimen",
+    "indication": "肺癌或良性肺病的肺叶/全肺切除",
+    "inkScheme": "支气管切面涂黑墨，胸膜面不染（可用线标记支气管-肿物连线）",
+    "incisionDirection": "沿支气管树走行分离、逐级切开至肿物部位；在支气管和肿物周边1-2cm处垂直切开",
+    "samplingInterval": "肿物<2cm整体取；>2cm分片（每片1-1.5cm）；同时取支气管近端、支气管远端各1块",
+    "mandatorySites": [
+      "肿物中心、边界处各0.5-1cm",
+      "肿物周边肺实质（尤其查STAS、脉管侵犯）",
+      "支气管切面（距肿物最近处）",
+      "肺门淋巴结（分离并逐个取材）",
+      "胸膜面（若肿物靠近）"
+    ],
+    "photoRequirements": "照整体肺叶、肿物部位、切面、支气管关系、淋巴结",
+    "frozenConsicerations": "术中冰冻主要用于支气管切缘、淋巴结转移判断；在支气管近端冻一块",
+    "commonErrors": [
+      "未取支气管近端/远端——TNM分期不准确",
+      "肺门淋巴结未分离逐个取——淋巴结分期错误",
+      "未查气腔播散(STAS)——预后评估不完整",
+      "肿物周边肺实质取材不够——脉管侵犯漏诊"
+    ]
+  },
+  {
+    "id": "gastric-cancer-resection",
+    "nameZh": "胃癌根治切除标本",
+    "nameEn": "Gastric Cancer Resection Specimen",
+    "indication": "胃恶性肿瘤根治性切除（远端/全胃/近端切除）",
+    "inkScheme": "肛侧（远端）黑墨，喷门侧（近端）红墨；大弯或小弯另涂颜色",
+    "incisionDirection": "沿大弯或小弯纵向切开，暴露肿物；然后环周分片（间隔1cm）",
+    "samplingInterval": "1-1.5cm厚度分片，整个胃都要分片取材（尤其肿物部位）",
+    "mandatorySites": [
+      "肿物中心及四周各1cm胃壁（含黏膜、肌层、浆膜）",
+      "肛侧切面（距肿物至少5cm）",
+      "喷门侧切面（距肿物至少5cm）",
+      "大弯、小弯各1片",
+      "胃周淋巴结（D1、D2按解剖位置分离逐个取）"
+    ],
+    "photoRequirements": "照体表标记、打开胃腔全景、肿物部位、切面示意、淋巴结分布",
+    "frozenConsiderations": "术中冰冻用于切缘评估（尤其进展期可能切缘阳性时）；在肛侧/喷门侧切面各冻一块",
+    "commonErrors": [
+      "淋巴结未按D分类分离——分期错误，TNM计数不准",
+      "切缘取材位置不对（太靠近肿物）——假阴性",
+      "未分别取肛/喷侧黏膜——对肠腺化生等背景病变评估不足",
+      "肌层、浆膜取材不足——肌层侵犯程度(T)评估不准"
+    ]
+  },
+  {
+    "id": "colorectal-cancer-resection",
+    "nameZh": "结直肠癌根治切除标本",
+    "nameEn": "Colorectal Cancer Resection Specimen",
+    "indication": "结肠/直肠恶性肿瘤根治性切除（局部切除/部分结肠切除/腹会阴切除）",
+    "inkScheme": "近侧（近心端）黑墨，远侧（远心端）红墨；腹膜反折线用绿墨标记",
+    "incisionDirection": "纵向沿肠腔走行切开，暴露肿物；然后环周分片",
+    "samplingInterval": "0.5-1cm厚度分片，特别在肿物周边密集取（间隔2-3mm）",
+    "mandatorySites": [
+      "肿物中心及四周各1cm肠壁",
+      "近侧切面（距肿物至少2cm）",
+      "远侧切面（距肿物至少2cm）",
+      "腹膜反折及腹膜外脂肪",
+      "地区淋巴结（按解剖位置分离逐个取，至少12个）"
+    ],
+    "photoRequirements": "照体表标记、打开肠腔全景、肿物部位及大小、两个切面、淋巴结总数",
+    "frozenConsiderations": "术中冰冻用于近/远侧切缘评估；两个切面都需冻片",
+    "commonErrors": [
+      "淋巴结<12个——分期信息不足，无法准确评估N分期",
+      "切缘阳性但未做冻片追加切除——肿瘤学后患",
+      "肿物穿孔未特别说明——T4 vs T3判断困难",
+      "未评估脉管侵犯(L/V)——高危因素漏记"
+    ]
+  },
+  {
+    "id": "prostate-turp",
+    "nameZh": "前列腺经尿道切除(TURP)标本",
+    "nameEn": "Prostate TURP Specimen",
+    "indication": "前列腺良性增生引起的梗阻症状或前列腺癌诊断",
+    "inkScheme": "通常不需墨水（TURP碎片无方向性）；若可见基底面，用黑墨标记",
+    "incisionDirection": "对TURP碎片直接送检，无需进一步切开（保护脆弱组织）",
+    "samplingInterval": "将所有碎片汇总后分组送检：正常增生腺体、明显异型增生区、肿物样区分别送",
+    "mandatorySites": [
+      "所有碎片的典型代表性样品",
+      "任何异常外观区域（颜色异常、质地异常）",
+      "若有明确肿瘤，集中取材"
+    ],
+    "photoRequirements": "照碎片全景、重点区域放大",
+    "frozenConsiderations": "通常无术中冰冻需求（已是小碎片）；若临床强烈怀疑癌症，可冻快确认",
+    "commonErrors": [
+      "碎片丢失——取材代表性不足",
+      "混淆为膀胱上皮（尿路上皮）——需与前列腺上皮区别",
+      "未仔细检查所有碎片——低级别癌易漏诊"
+    ]
+  },
+  {
+    "id": "prostate-radical-prostatectomy",
+    "nameZh": "前列腺根治切除标本",
+    "nameEn": "Radical Prostatectomy Specimen",
+    "indication": "前列腺癌根治性手术切除（含精囊）",
+    "inkScheme": "外周区（截断面）全周涂黑墨标记手术边界；前面涂一种颜色，后面涂另一种颜色",
+    "incisionDirection": "从基底部到顶部沿冠状面（或矢状面）分片（间隔2-3mm），暴露前列腺内部",
+    "samplingInterval": "2-3mm厚分片，整个前列腺都要薄片取材",
+    "mandatorySites": [
+      "肿物中心及四周各0.5cm",
+      "截断面（外周边界），特别是黑墨标记部位",
+      "精囊（左右各取）",
+      "前列腺基底部、中部、顶部各1片（即使未见肿物）",
+      "膜性尿道括约肌（若可见）"
+    ],
+    "photoRequirements": "照体表标记、分片全景（显示每片编号）、肿物部位、截断面",
+    "frozenConsiderations": "术中冰冻通常不需（已是标本）；若临床需要外周边界评估，可冻片验证",
+    "commonErrors": [
+      "分片过厚（>5mm）——内部组织固定不充分，易伪影",
+      "未标记前后方向——无法准确判断肿物与神经血管束的关系",
+      "精囊未分离取材——精囊侵犯漏诊",
+      "未查膜性尿道括约肌——T2分期判定困难"
+    ]
+  },
+  {
+    "id": "nephrectomy",
+    "nameZh": "肾切除标本（部分肾切除或全肾切除）",
+    "nameEn": "Nephrectomy Specimen",
+    "indication": "肾肿瘤或良性肾病的肾切除",
+    "inkScheme": "肾蒂（血管切面）涂黑墨，Gerota筋膜面（外周）不染或用红墨",
+    "incisionDirection": "沿肾长轴纵向切开，暴露肿物；然后环周分片",
+    "samplingInterval": "0.5-1cm厚分片，肿物部位密集取（间隔2-3mm），同时取正常肾实质远离肿物处",
+    "mandatorySites": [
+      "肿物中心及四周各0.5-1cm",
+      "肾蒂血管切面（最重要——判断脉管侵犯）",
+      "Gerota筋膜面（评估T4）",
+      "正常肾实质（评估背景、肾炎情况）",
+      "肾周淋巴结（若可见）"
+    ],
+    "photoRequirements": "照整体肾脏、肿物部位、切面全景、肾蒂、Gerota筋膜",
+    "frozenConsiderations": "术中冰冻主要用于肾蒂切缘评估（确认无肿瘤侵犯）；在肾蒂冻片",
+    "commonErrors": [
+      "肾蒂切面未充分取材——脉管侵犯漏诊",
+      "未评估Gerota筋膜——T4分期错误",
+      "肾盂尿管切面未检查——上尿路肿瘤漏诊",
+      "正常肾实质未充分取——背景肾病（如IgA肾炎）评估不足"
+    ]
+  },
+  {
+    "id": "endometrial-curettage",
+    "nameZh": "子宫内膜诊刮标本",
+    "nameEn": "Endometrial Curettage/Pipelle Specimen",
+    "indication": "异常子宫出血诊断、内膜增生/癌症筛查",
+    "inkScheme": "无需墨水（小碎片标本）",
+    "incisionDirection": "对刮出物不需进一步分离，直接送检",
+    "samplingInterval": "将所有组织汇总后集中在一张载玻片上制片或分组送检",
+    "mandatorySites": [
+      "所有刮出的内膜组织",
+      "若有明确病变（息肉、肿块样组织），集中送检"
+    ],
+    "photoRequirements": "可不拍大体照（太小）；显微镜下拍异常区域",
+    "frozenConsiderations": "通常不需冰冻（诊刮标本已是诊断目的）",
+    "commonErrors": [
+      "组织太少，缺乏代表性",
+      "混淆为不典型增生 vs 癌（需仔细评估，必要时免疫组化）",
+      "未评估基层（尤其腺瘤型增生是否侵犯肌层）"
+    ]
+  },
+  {
+    "id": "sentinel-lymph-node",
+    "nameZh": "前哨淋巴结标本",
+    "nameEn": "Sentinel Lymph Node Specimen",
+    "indication": "乳腺癌、黑色素瘤等前哨淋巴结评估",
+    "inkScheme": "分别用不同墨水标记左右（或多个淋巴结来源），外周涂黑墨",
+    "incisionDirection": "对单个淋巴结：纵向或横向对半切开，暴露内部",
+    "samplingInterval": "淋巴结<5mm整体送检；5-15mm对半后每片送1-2块；>15mm分片（间隔2-3mm）",
+    "mandatorySites": [
+      "淋巴结全部组织（尤其中央部分易有转移）",
+      "若见黑色素或异常，集中取材"
+    ],
+    "photoRequirements": "照淋巴结大小、切面、是否有色素沉着/肿瘤栓",
+    "frozenConsiderations": "术中冰冻是前哨淋巴结的标准做法（确定是否转移，决定是否清扫）；整个淋巴结冻或对半冻一侧",
+    "commonErrors": [
+      "取材不足导致微转移漏诊",
+      "淋巴结来源混淆（未用不同颜色墨水标记）",
+      "未注意淋巴结边界（capsule rupture判断）"
+    ]
+  },
+  {
+    "id": "skin-excision",
+    "nameZh": "皮肤梭形切除标本（黑色素瘤/基底细胞癌等）",
+    "nameEn": "Skin Excision Specimen",
+    "indication": "皮肤肿物的梭形手术切除",
+    "inkScheme": "四个长边各用不同颜色墨水标记（上红、下黄、左蓝、右绿），深面（皮下）涂黑墨",
+    "incisionDirection": "顺着梭形长轴纵向分片（间隔2-3mm），暴露肿物",
+    "samplingInterval": "2-3mm厚分片，整个标本分片，尤其肿物部位密集取",
+    "mandatorySites": [
+      "肿物中心及四周各0.5cm",
+      "四个长切缘（近端、远端、左边、右边）",
+      "深切缘（皮下脂肪）",
+      "皮肤表面（若有溃疡/毛囊关系）"
+    ],
+    "photoRequirements": "照梭形标本全景、四边标记、肿物部位、切面示意",
+    "frozenConsiderations": "术中冰冻用于评估切缘充分性；若可疑，在四边切缘冻片",
+    "commonErrors": [
+      "四边标记不清——无法准确判断6个切缘（近、远、上、下、左、右）",
+      "深面取材不足——侵犯深度(Clark level/Breslow厚度)评估不准",
+      "未分离标本周边脂肪——脉管侵犯漏诊",
+      "皮肤表面处理不当——表浅病变关系判断困难"
+    ]
+  }
+]
