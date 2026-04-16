@@ -1,0 +1,949 @@
+[
+  {
+    "id": "case-001",
+    "titleZh": "55岁女性乳腺肿物",
+    "difficulty": "easy",
+    "organ": "breast",
+    "clinicalHistory": "55岁女性，发现左乳外上象限无痛性肿物2月。体检：左乳外上象限可触及一约2.5cm质硬肿物，边界不清，活动度差。腋窝未触及明显肿大淋巴结。",
+    "grossDescription": "收到左乳腺肿物切除标本，大小3.0x2.5x2.0cm。切面见一灰白色质硬肿物，最大径2.3cm，边界不规则，呈放射状向周围浸润，切面质地硬。",
+    "microscopyClues": [
+      "低倍镜：不规则浸润性腺体，呈条索状、巢状排列",
+      "高倍镜：瘤细胞较大，异型性明显，核分裂象易见",
+      "间质纤维化明显（硬化性间质反应）"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "根据HE形态学特征，你的初步诊断考虑是什么？",
+        "type": "multiple-choice",
+        "options": ["浸润性导管癌（非特殊型）", "浸润性小叶癌", "导管原位癌", "纤维腺瘤", "叶状肿瘤"],
+        "correctIndex": 0,
+        "explanation": "不规则浸润性腺体伴硬化性间质反应是浸润性导管癌（非特殊型）的典型特征。小叶癌呈单行排列，DCIS局限于导管内，纤维腺瘤和叶状肿瘤有不同的结构特征。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来进一步评估？",
+        "type": "marker-select",
+        "recommendedMarkers": ["ER", "PR", "HER2", "Ki-67"],
+        "results": { "ER": "强阳性(>90%)", "PR": "阳性(约60%)", "HER2": "阴性(1+)", "Ki-67": "约15%" },
+        "explanation": "乳腺浸润性癌必做ER/PR/HER2/Ki-67四项，指导分子分型和治疗方案选择。该例为Luminal A型（ER+/PR+/HER2-/Ki-67低）。"
+      },
+      {
+        "step": 3,
+        "prompt": "基于免疫组化结果，该肿瘤的分子分型是什么？",
+        "type": "multiple-choice",
+        "options": ["Luminal A型", "Luminal B型", "HER2过表达型", "三阴性/基底样型"],
+        "correctIndex": 0,
+        "explanation": "ER强阳性(>90%)、PR阳性(>=20%)、HER2阴性、Ki-67<20%符合Luminal A型分子分型，预后相对良好，内分泌治疗有效。"
+      }
+    ],
+    "finalDiagnosis": "左乳浸润性导管癌（非特殊型），Nottingham组织学分级II级，Luminal A分子分型",
+    "keyLearningPoints": [
+      "浸润性导管癌（NST）占乳腺癌的70-80%",
+      "ER/PR/HER2/Ki-67是乳腺癌必做的预测性标记物",
+      "Luminal A型预后最好，内分泌治疗为主"
+    ],
+    "relatedDiseaseIds": ["invasive-ductal-carcinoma-nst"],
+    "relatedMarkerIds": ["er", "pr", "her2", "ki-67"],
+    "expertCommentary": "本例为典型的浸润性导管癌，形态学诊断相对直接。关键在于准确的免疫组化评估和分子分型。"
+  },
+  {
+    "id": "case-002",
+    "titleZh": "48岁女性乳腺钼靶微钙化",
+    "difficulty": "medium",
+    "organ": "breast",
+    "clinicalHistory": "48岁女性，常规乳腺筛查钼靶发现左乳上象限簇状微钙化。体检未触及明确肿块。乳头无溢液。",
+    "grossDescription": "收到左乳腺钼靶定位切除标本，大小4.0x3.5x2.5cm。标本X线确认含微钙化灶。切面未见明确肿物，但见数个灰白色小区域，质地稍硬。",
+    "microscopyClues": [
+      "低倍镜：多个扩张的导管，内充满异型增生的上皮细胞",
+      "高倍镜：核级别高，核仁明显，中央可见粉刺样坏死",
+      "基底膜完整，周围可见肌上皮细胞层"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "组织学所见最符合以下哪一诊断？",
+        "type": "multiple-choice",
+        "options": ["高级别导管原位癌（粉刺型）", "低级别导管原位癌", "浸润性导管癌", "不典型导管增生", "小叶原位癌"],
+        "correctIndex": 0,
+        "explanation": "扩张导管内充满高级别异型细胞伴中央粉刺样坏死是高级别DCIS的特征。基底膜完整排除浸润性癌。核级别高排除低级别DCIS。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来确认诊断？",
+        "type": "marker-select",
+        "recommendedMarkers": ["p63", "CK5/6", "HER2", "Ki-67"],
+        "results": { "p63": "肌上皮阳性（基底膜完整）", "CK5/6": "肿瘤细胞阴性", "HER2": "3+强阳性", "Ki-67": "约40%" },
+        "explanation": "p63证实肌上皮层完整，确认原位病变。高级别粉刺型DCIS常伴HER2过表达。CK5/6阴性排除普通型增生。"
+      },
+      {
+        "step": 3,
+        "prompt": "高级别DCIS进展为浸润性癌的风险约为多少？",
+        "type": "multiple-choice",
+        "options": ["<5%", "30-50%（若未治疗）", "80-90%", "几乎不会进展"],
+        "correctIndex": 1,
+        "explanation": "高级别DCIS若未经治疗，约30-50%可在10-15年内进展为浸润性癌。因此需要积极手术治疗，ER阳性者可加内分泌治疗。"
+      }
+    ],
+    "finalDiagnosis": "左乳高级别导管原位癌（粉刺型），HER2过表达(3+)，切缘阴性",
+    "keyLearningPoints": [
+      "DCIS约占新诊断乳腺癌的20-25%，多通过钼靶微钙化发现",
+      "高级别粉刺型DCIS常伴HER2过表达",
+      "肌上皮标记物（p63/SMA）确认基底膜完整是诊断原位癌的关键",
+      "未治疗的DCIS约30-50%可进展为浸润性癌"
+    ],
+    "relatedDiseaseIds": ["dcis", "invasive-ductal-carcinoma-nst"],
+    "relatedMarkerIds": ["p63", "her2", "ki-67", "ck5-6"],
+    "expertCommentary": "高级别DCIS的诊断要点是确认肿瘤局限于基底膜内。肌上皮免疫组化标记在排除微浸润时至关重要。"
+  },
+  {
+    "id": "case-003",
+    "titleZh": "42岁女性乳腺快速增大肿物",
+    "difficulty": "medium",
+    "organ": "breast",
+    "clinicalHistory": "42岁女性，右乳肿物半年内快速增大，现直径约8cm。体检：右乳巨大分叶状肿物，质韧，边界尚清，皮肤菲薄，可见浅表静脉扩张。",
+    "grossDescription": "收到右乳腺肿物切除标本，大小9.0x8.0x6.0cm。切面呈分叶状，灰白灰红相间，质地不均匀，可见裂隙状结构和局灶坏死区域。",
+    "microscopyClues": [
+      "低倍镜：显著的叶状结构，间质叶片状突入扩张的囊性腔隙",
+      "间质细胞丰富，中等异型性，核分裂象约8个/10HPF",
+      "间质过度增生，但无明确异源性分化"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该肿物的形态学特征最符合哪种诊断？",
+        "type": "multiple-choice",
+        "options": ["叶状肿瘤（交界性）", "纤维腺瘤", "浸润性导管癌", "乳腺肉瘤", "黏液癌"],
+        "correctIndex": 0,
+        "explanation": "叶状结构突出，间质叶片状突入腺腔，间质丰富伴中等异型性，核分裂象8/10HPF，符合交界性叶状肿瘤。纤维腺瘤间质温和无异型。"
+      },
+      {
+        "step": 2,
+        "prompt": "区分叶状肿瘤良性、交界性和恶性的关键指标有哪些？",
+        "type": "multiple-choice",
+        "options": ["间质细胞密度、异型性、核分裂象和边界浸润方式", "仅看核分裂象计数", "仅依据免疫组化CD34结果", "仅依据肿物大小"],
+        "correctIndex": 0,
+        "explanation": "叶状肿瘤的分级依据间质细胞密度、异型性、核分裂象计数（良性<5/10HPF，交界性5-9/10HPF，恶性>=10/10HPF）和边界浸润方式（推挤性vs浸润性）综合判断。"
+      },
+      {
+        "step": 3,
+        "prompt": "叶状肿瘤的治疗原则是什么？",
+        "type": "multiple-choice",
+        "options": ["广泛切除确保切缘>1cm阴性", "针吸活检后化疗", "内分泌治疗", "放疗为主"],
+        "correctIndex": 0,
+        "explanation": "叶状肿瘤治疗以广泛手术切除为主，要求切缘至少1cm阴性，因其局部复发率高。交界性和恶性者切缘不足需再次扩大切除。化疗和内分泌治疗效果有限。"
+      }
+    ],
+    "finalDiagnosis": "右乳交界性叶状肿瘤，间质核分裂象8/10HPF，切缘阴性（最近切缘距肿瘤1.5cm）",
+    "keyLearningPoints": [
+      "叶状肿瘤约占乳腺肿瘤的0.3-1%，好发于40-50岁女性",
+      "与纤维腺瘤的鉴别关键在于间质过度增生和异型性",
+      "分级依据间质密度、异型性、核分裂象和边界综合判断",
+      "治疗以广泛切除为主，切缘>1cm是关键"
+    ],
+    "relatedDiseaseIds": ["phyllodes-tumor", "fibroadenoma"],
+    "relatedMarkerIds": ["cd34", "ki-67"],
+    "expertCommentary": "叶状肿瘤与巨大纤维腺瘤的鉴别有时具有挑战性。需要充分取材，评估间质最丰富区域的细胞密度和异型性。"
+  },
+  {
+    "id": "case-004",
+    "titleZh": "62岁男性肺部磨玻璃结节",
+    "difficulty": "medium",
+    "organ": "lung",
+    "clinicalHistory": "62岁男性，体检CT发现右肺上叶1.8cm混合磨玻璃结节，无症状。有30年吸烟史（20支/天），已戒烟5年。PET-CT示轻度FDG摄取。",
+    "grossDescription": "收到右肺上叶楔形切除标本，大小4.0x3.0x2.0cm。切面见一灰白色结节，最大径1.6cm，边界尚清，质地稍硬，部分区域呈半透明灰白色。",
+    "microscopyClues": [
+      "低倍镜：肿瘤细胞沿肺泡壁贴壁生长（鳞屑样生长），部分区域可见腺泡和乳头结构",
+      "高倍镜：肿瘤细胞呈柱状，核轻度异型，核仁不明显",
+      "可见浸润性成分，突破肺泡壁形成腺泡样结构"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该病变最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["肺浸润性腺癌（贴壁为主型伴腺泡型浸润）", "原位腺癌", "微浸润腺癌", "鳞状细胞癌", "类癌"],
+        "correctIndex": 0,
+        "explanation": "以贴壁生长为主但含有浸润性成分（腺泡型），浸润灶>5mm，诊断为浸润性腺癌。原位腺癌无浸润，微浸润腺癌浸润<=5mm。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物进行鉴别？",
+        "type": "marker-select",
+        "recommendedMarkers": ["TTF-1", "Napsin A", "CK7", "P40"],
+        "results": { "TTF-1": "弥漫核阳性", "Napsin A": "弥漫胞浆颗粒状阳性", "CK7": "弥漫阳性", "P40": "阴性" },
+        "explanation": "TTF-1和Napsin A弥漫阳性支持肺腺癌诊断。P40阴性排除鳞状细胞癌。CK7阳性是肺腺癌的常见表现。"
+      }
+    ],
+    "finalDiagnosis": "右肺上叶浸润性腺癌，以贴壁型为主伴腺泡型浸润，最大浸润灶径0.8cm，切缘阴性，pT1bN0",
+    "keyLearningPoints": [
+      "肺腺癌WHO分型需报告各组织学亚型及其比例",
+      "贴壁型、腺泡型、乳头型、微乳头型、实性型预后不同",
+      "TTF-1和Napsin A是肺腺癌的特异性标记物",
+      "磨玻璃结节对应贴壁生长，实性成分对应浸润性成分"
+    ],
+    "relatedDiseaseIds": ["lung-adenocarcinoma", "lung-adenocarcinoma-in-situ"],
+    "relatedMarkerIds": ["ttf-1", "napsin-a", "ck7", "p40"],
+    "expertCommentary": "磨玻璃结节的病理评估需要充分取材。浸润灶的大小直接影响TNM分期。建议弹力纤维染色辅助评估浸润范围。"
+  },
+  {
+    "id": "case-005",
+    "titleZh": "58岁男性中央型肺肿物",
+    "difficulty": "easy",
+    "organ": "lung",
+    "clinicalHistory": "58岁男性，咳嗽、咯血1月。有40年重度吸烟史。CT示右肺门区4.5cm肿物，伴右肺门和纵隔淋巴结肿大。支气管镜见右主支气管新生物，行活检。",
+    "grossDescription": "支气管镜活检组织数块，总大小0.4x0.3x0.2cm。组织灰白灰褐色，质脆。",
+    "microscopyClues": [
+      "低倍镜：实性细胞巢团，可见角化珠和细胞间桥",
+      "高倍镜：细胞呈鳞状分化特征，核大深染，异型性明显",
+      "可见坏死和炎细胞浸润"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "根据HE形态，最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["肺鳞状细胞癌", "肺腺癌", "小细胞肺癌", "大细胞神经内分泌癌", "类癌"],
+        "correctIndex": 0,
+        "explanation": "角化珠和细胞间桥是鳞状细胞癌的特征性表现。中央型肺癌伴吸烟史高度支持鳞癌诊断。腺癌通常为周围型。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物确认诊断？",
+        "type": "marker-select",
+        "recommendedMarkers": ["P40", "P63", "CK5/6", "TTF-1"],
+        "results": { "P40": "弥漫核阳性", "P63": "弥漫核阳性", "CK5/6": "弥漫阳性", "TTF-1": "阴性" },
+        "explanation": "P40和P63是鳞状分化的高特异性标记物。CK5/6支持鳞状分化。TTF-1阴性排除腺癌。P40较P63对鳞癌更具特异性。"
+      },
+      {
+        "step": 3,
+        "prompt": "肺鳞状细胞癌常需做哪些分子检测？",
+        "type": "multiple-choice",
+        "options": ["PD-L1检测（指导免疫治疗）", "EGFR突变检测（吉非替尼）", "ALK融合检测", "BRAF V600E检测"],
+        "correctIndex": 0,
+        "explanation": "肺鳞癌EGFR/ALK突变率极低，常规不做驱动基因检测。PD-L1 TPS评分指导免疫检查点抑制剂使用（TPS>=50%一线免疫单药，TPS 1-49%联合化疗）。"
+      }
+    ],
+    "finalDiagnosis": "右肺鳞状细胞癌（角化型），PD-L1 TPS 60%",
+    "keyLearningPoints": [
+      "肺鳞癌约占肺癌的25-30%，与吸烟密切相关",
+      "P40是鳞状分化最特异的标记物",
+      "角化珠和细胞间桥是诊断鳞癌的形态学要点",
+      "PD-L1检测是肺鳞癌必做的预测性检测"
+    ],
+    "relatedDiseaseIds": ["lung-squamous-cell-carcinoma"],
+    "relatedMarkerIds": ["p40", "p63", "ck5-6", "ttf-1", "pd-l1"],
+    "expertCommentary": "角化型鳞癌形态学诊断较易。低分化鳞癌与低分化腺癌、大细胞癌的鉴别需要免疫组化。活检标本需合理使用组织做免疫组化和分子检测。"
+  },
+  {
+    "id": "case-006",
+    "titleZh": "65岁男性直肠肿物",
+    "difficulty": "easy",
+    "organ": "gi",
+    "clinicalHistory": "65岁男性，便血伴排便习惯改变3月。肠镜见直肠距肛门8cm处一溃疡型肿物，环周约3/4圈，质脆易出血。活检送检。",
+    "grossDescription": "活检组织数块，总大小0.5x0.4x0.3cm。灰白灰红色，质脆。",
+    "microscopyClues": [
+      "低倍镜：异型腺体浸润性生长，结构不规则，可见筛状和不规则腺管",
+      "高倍镜：柱状上皮细胞，核深染，假复层排列，核分裂象多见",
+      "可见脏层坏死（dirty necrosis）"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["直肠腺癌（中分化）", "直肠类癌", "直肠间质瘤", "直肠淋巴瘤", "增生性息肉"],
+        "correctIndex": 0,
+        "explanation": "异型腺体浸润性生长伴脏层坏死是结直肠腺癌的典型特征。类癌呈巢状排列，间质瘤呈梭形细胞，淋巴瘤为弥漫小细胞浸润。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化检测来评估错配修复蛋白状态？",
+        "type": "marker-select",
+        "recommendedMarkers": ["MLH1", "MSH2", "MSH6", "PMS2"],
+        "results": { "MLH1": "弥漫阳性（保留表达）", "MSH2": "弥漫阳性（保留表达）", "MSH6": "弥漫阳性（保留表达）", "PMS2": "弥漫阳性（保留表达）" },
+        "explanation": "错配修复蛋白（MMR）四项均保留表达（pMMR），提示微卫星稳定（MSS）型。若任一蛋白缺失（dMMR），则提示微卫星不稳定（MSI-H），可能与Lynch综合征相关，并可从免疫治疗获益。"
+      },
+      {
+        "step": 3,
+        "prompt": "该患者还需做哪些分子检测指导治疗？",
+        "type": "multiple-choice",
+        "options": ["RAS/BRAF基因突变检测", "EGFR基因突变检测", "ALK融合检测", "BCR-ABL融合检测"],
+        "correctIndex": 0,
+        "explanation": "结直肠癌需检测KRAS/NRAS/BRAF突变状态。RAS野生型可使用抗EGFR靶向药（西妥昔单抗/帕尼单抗）。BRAF V600E突变提示预后差但可用靶向联合治疗。"
+      }
+    ],
+    "finalDiagnosis": "直肠中分化腺癌，pMMR/MSS型，需进一步行RAS/BRAF分子检测",
+    "keyLearningPoints": [
+      "结直肠腺癌是最常见的消化道恶性肿瘤",
+      "错配修复蛋白（MMR）检测是结直肠癌的常规项目",
+      "脏层坏死（dirty necrosis）是结直肠腺癌的特征",
+      "RAS/BRAF突变状态指导靶向治疗选择"
+    ],
+    "relatedDiseaseIds": ["colorectal-adenocarcinoma", "colorectal-adenoma"],
+    "relatedMarkerIds": ["cdx2", "ck20", "ck7", "ki-67"],
+    "expertCommentary": "结直肠腺癌诊断相对直接。关键在于准确的MMR免疫组化评估和分子检测。活检标本需保留足够组织用于分子检测。"
+  },
+  {
+    "id": "case-007",
+    "titleZh": "52岁女性胃壁黏膜下肿物",
+    "difficulty": "medium",
+    "organ": "gi",
+    "clinicalHistory": "52岁女性，上腹不适1年，胃镜发现胃体大弯侧一4cm黏膜下肿物，表面光滑，黏膜完整。超声内镜示肿物起源于固有肌层，低回声均匀。行腹腔镜胃楔形切除。",
+    "grossDescription": "收到胃楔形切除标本，大小6.0x5.0x4.0cm。切面见黏膜下一灰白色结节，最大径3.8cm，边界清楚，质地韧，切面灰白色鱼肉样，未见坏死。",
+    "microscopyClues": [
+      "低倍镜：黏膜下梭形细胞肿瘤，细胞排列呈束状和旋涡状",
+      "高倍镜：梭形细胞温和，核呈雪茄状，核分裂象2个/5mm2",
+      "未见坏死，无明显异型性"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该黏膜下梭形细胞肿瘤最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["胃肠间质瘤（GIST）", "平滑肌瘤", "神经鞘瘤", "纤维瘤病", "炎性肌纤维母细胞瘤"],
+        "correctIndex": 0,
+        "explanation": "胃壁固有肌层起源的梭形细胞肿瘤首先考虑GIST。平滑肌瘤在胃中罕见（食管多见），神经鞘瘤S-100阳性但CD117阴性。需要免疫组化鉴别。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来确认诊断？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CD117", "DOG1", "CD34", "SMA", "S-100", "Desmin"],
+        "results": { "CD117": "弥漫强阳性", "DOG1": "弥漫强阳性", "CD34": "阳性(约70%)", "SMA": "灶性弱阳性", "S-100": "阴性", "Desmin": "阴性" },
+        "explanation": "CD117和DOG1双阳性是GIST的诊断标准。CD117（KIT蛋白）约95%的GIST阳性，DOG1敏感性更高。S-100阴性排除神经鞘瘤，Desmin阴性排除平滑肌瘤。"
+      },
+      {
+        "step": 3,
+        "prompt": "该GIST的NIH风险分级属于哪一级？（胃，大小3.8cm，核分裂象2/5mm2）",
+        "type": "multiple-choice",
+        "options": ["极低风险", "低风险", "中等风险", "高风险"],
+        "correctIndex": 1,
+        "explanation": "根据NIH改良风险分级，胃来源GIST，大小2-5cm，核分裂象<=5/5mm2属于低风险。若>5cm或核分裂象>5/5mm2则升级为中等或高风险。"
+      }
+    ],
+    "finalDiagnosis": "胃肠间质瘤（GIST），梭形细胞型，低风险（胃，3.8cm，核分裂象2/5mm2），CD117(+)，DOG1(+)",
+    "keyLearningPoints": [
+      "GIST是消化道最常见的间叶源性肿瘤",
+      "CD117和DOG1是GIST的诊断标记物",
+      "风险分级依据肿瘤部位、大小和核分裂象计数",
+      "KIT/PDGFRA基因突变检测指导伊马替尼靶向治疗"
+    ],
+    "relatedDiseaseIds": ["gist"],
+    "relatedMarkerIds": ["cd117", "dog1", "cd34", "sma", "s-100", "desmin"],
+    "expertCommentary": "GIST的诊断依赖免疫组化。需注意约5%的GIST CD117阴性，此时DOG1有助于诊断。基因突变类型（KIT外显子11/9/13/17，PDGFRA外显子18）影响伊马替尼疗效。"
+  },
+  {
+    "id": "case-008",
+    "titleZh": "45岁女性胃壁弥漫增厚",
+    "difficulty": "hard",
+    "organ": "gi",
+    "clinicalHistory": "45岁女性，上腹饱胀感伴体重下降6月。胃镜见胃壁弥漫性增厚，黏膜皱襞粗大僵硬（皮革胃表现），多点活检。有胃癌家族史。",
+    "grossDescription": "胃镜活检组织多块，总大小0.6x0.5x0.3cm。灰白色组织碎片。",
+    "microscopyClues": [
+      "低倍镜：黏膜固有层和黏膜下层弥漫浸润的小圆细胞",
+      "高倍镜：肿瘤细胞小而均匀，胞浆内可见黏液空泡（印戒细胞），核偏位",
+      "弥漫浸润于间质中，无腺管形成"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该组织学形态最符合哪种诊断？",
+        "type": "multiple-choice",
+        "options": ["弥漫型胃癌（印戒细胞癌/低黏附性癌）", "肠型胃腺癌", "胃淋巴瘤", "胃神经内分泌肿瘤", "胃间质瘤"],
+        "correctIndex": 0,
+        "explanation": "印戒细胞形态（胞浆内黏液空泡将核推向一侧）、弥漫浸润无腺管形成是Lauren弥漫型胃癌的特征。肠型胃癌形成腺管结构。淋巴瘤需要免疫组化鉴别。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物进行鉴别？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CK", "E-cadherin", "CD20", "CD3", "HER2", "PD-L1"],
+        "results": { "CK": "弥漫阳性", "E-cadherin": "表达缺失", "CD20": "阴性", "CD3": "阴性", "HER2": "阴性(0)", "PD-L1": "CPS 5" },
+        "explanation": "CK阳性确认上皮来源。E-cadherin表达缺失是弥漫型/印戒细胞癌的特征（CDH1基因失活）。CD20/CD3阴性排除淋巴瘤。HER2阴性。"
+      },
+      {
+        "step": 3,
+        "prompt": "E-cadherin（CDH1）基因胚系突变与哪种遗传性综合征相关？",
+        "type": "multiple-choice",
+        "options": ["遗传性弥漫型胃癌（HDGC）综合征", "Lynch综合征", "Li-Fraumeni综合征", "家族性腺瘤性息肉病"],
+        "correctIndex": 0,
+        "explanation": "CDH1胚系突变导致遗传性弥漫型胃癌（HDGC）综合征，终生胃癌风险高达80%。患者年轻、有家族史时应进行遗传咨询和CDH1基因检测。女性携带者同时有乳腺小叶癌风险增高。"
+      }
+    ],
+    "finalDiagnosis": "胃弥漫型癌（印戒细胞癌/低黏附性癌），E-cadherin表达缺失，HER2阴性，建议遗传咨询",
+    "keyLearningPoints": [
+      "Lauren分型将胃癌分为肠型和弥漫型，预后和生物学行为不同",
+      "印戒细胞癌是弥漫型胃癌的特征性组织学表现",
+      "E-cadherin缺失是弥漫型胃癌的分子特征",
+      "CDH1胚系突变导致HDGC综合征，需遗传咨询"
+    ],
+    "relatedDiseaseIds": ["gastric-adenocarcinoma"],
+    "relatedMarkerIds": ["e-cadherin", "ck7", "her2", "pd-l1"],
+    "expertCommentary": "皮革胃表现的弥漫型胃癌活检有时可能取到正常黏膜。多点深取活检至关重要。需注意印戒细胞癌与淋巴瘤在活检中的鉴别。"
+  },
+  {
+    "id": "case-009",
+    "titleZh": "56岁男性肝脏占位",
+    "difficulty": "easy",
+    "organ": "liver",
+    "clinicalHistory": "56岁男性，乙肝病毒携带者20余年，近期查体AFP升高至850ng/ml。CT示肝右叶一5.2cm占位，动脉期明显强化，门脉期快速退出（快进快出），符合典型肝细胞癌影像学表现。行肝右叶切除术。",
+    "grossDescription": "收到肝右叶部分切除标本，大小12x10x8cm。切面见一黄绿色结节，最大径5.0cm，边界较清，有不完整纤维包膜。结节切面质软，部分区域呈绿色（胆汁染色），局灶出血。周围肝组织呈细结节性肝硬化改变。",
+    "microscopyClues": [
+      "低倍镜：肿瘤呈粗梁状和假腺管状排列，梁宽超过3层细胞",
+      "高倍镜：肿瘤细胞呈多角形，胞浆嗜酸性丰富，部分含胆汁和脂肪空泡",
+      "网状纤维染色示肝板增厚（>3层），正常网状支架消失"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "根据临床及形态学特征，最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["肝细胞癌（中分化）", "胆管细胞癌", "肝转移癌", "肝细胞腺瘤", "局灶性结节增生"],
+        "correctIndex": 0,
+        "explanation": "乙肝肝硬化背景、AFP显著升高、典型影像学表现（快进快出），结合粗梁状排列、多角形嗜酸性肿瘤细胞、含胆汁，高度支持肝细胞癌。胆管癌形成腺管伴纤维间质。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来确认肝细胞来源？",
+        "type": "marker-select",
+        "recommendedMarkers": ["Hepatocyte(Hep Par-1)", "Arginase-1", "GPC-3", "CD34", "CK7", "CK19"],
+        "results": { "Hepatocyte(Hep Par-1)": "弥漫阳性", "Arginase-1": "弥漫阳性", "GPC-3": "阳性(约60%)", "CD34": "窦隙内皮弥漫阳性（毛细血管化）", "CK7": "阴性", "CK19": "阴性" },
+        "explanation": "Hep Par-1和Arginase-1确认肝细胞分化。GPC-3是HCC的肿瘤标记物（良性肝细胞病变通常阴性）。CD34弥漫阳性示窦隙毛细血管化，是HCC的特征。CK7/CK19阴性排除胆管分化。"
+      }
+    ],
+    "finalDiagnosis": "肝细胞癌（中分化），Edmondson-Steiner II-III级，背景乙肝肝硬化，切缘阴性",
+    "keyLearningPoints": [
+      "肝细胞癌是最常见的原发性肝癌，与乙肝/丙肝肝硬化密切相关",
+      "Arginase-1是目前最敏感的肝细胞分化标记物",
+      "GPC-3有助于区分HCC与良性肝细胞病变",
+      "CD34弥漫阳性示窦隙毛细血管化，支持HCC诊断",
+      "网状纤维染色辅助评估肝板增厚"
+    ],
+    "relatedDiseaseIds": ["hepatocellular-carcinoma", "focal-nodular-hyperplasia"],
+    "relatedMarkerIds": ["arginase-1", "glypican-3", "hepar1", "cd34", "ck7", "ck19"],
+    "expertCommentary": "HCC诊断需结合临床（肝炎史、AFP）、影像学（快进快出）和病理学。高分化HCC与异型增生结节的鉴别可能困难，GPC-3和网状纤维染色有帮助。"
+  },
+  {
+    "id": "case-010",
+    "titleZh": "60岁女性肝内胆管占位",
+    "difficulty": "hard",
+    "organ": "liver",
+    "clinicalHistory": "60岁女性，黄疸伴上腹痛2月，体重下降5kg。无乙肝/丙肝病史。CT示肝左叶一6cm不规则占位，呈延迟强化，伴肝内胆管扩张。CA19-9升高至580U/ml。AFP正常。",
+    "grossDescription": "收到肝左叶切除标本。切面见一灰白色硬性肿物，最大径5.8cm，边界不规则，质地坚硬呈纤维化外观。肿物中央可见灰白色瘢痕样区域。周围肝组织无肝硬化改变。",
+    "microscopyClues": [
+      "低倍镜：不规则腺管状结构浸润于丰富的纤维化间质中",
+      "高倍镜：腺管上皮为立方至柱状细胞，核异型性中等，黏液分泌可见",
+      "丰富的促纤维增生反应（硬化性间质），可见神经侵犯"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["肝内胆管细胞癌", "肝细胞癌", "转移性腺癌", "肝脓肿", "肝内胆管乳头状瘤"],
+        "correctIndex": 0,
+        "explanation": "无肝硬化背景、AFP正常、CA19-9升高、延迟强化影像特点，结合腺管状结构伴丰富纤维间质和黏液分泌，高度支持胆管细胞癌。HCC通常有肝硬化背景和AFP升高。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物进行鉴别？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CK7", "CK19", "Hep Par-1", "Arginase-1", "CK20", "CDX2"],
+        "results": { "CK7": "弥漫强阳性", "CK19": "弥漫强阳性", "Hep Par-1": "阴性", "Arginase-1": "阴性", "CK20": "灶性阳性", "CDX2": "阴性" },
+        "explanation": "CK7/CK19强阳性支持胆管分化。Hep Par-1/Arginase-1阴性排除肝细胞癌。CDX2阴性降低胃肠道转移癌可能。胆管癌的免疫表型与胰腺癌相似，需结合临床鉴别。"
+      }
+    ],
+    "finalDiagnosis": "肝内胆管细胞癌（中分化腺癌），伴神经侵犯，切缘阴性",
+    "keyLearningPoints": [
+      "肝内胆管癌是第二常见的原发性肝癌，约占10-15%",
+      "无肝硬化背景、AFP正常、CA19-9升高是与HCC鉴别的临床线索",
+      "CK7/CK19阳性是胆管分化的免疫组化特征",
+      "延迟强化的影像学表现反映了丰富的纤维间质"
+    ],
+    "relatedDiseaseIds": ["cholangiocarcinoma", "hepatocellular-carcinoma"],
+    "relatedMarkerIds": ["ck7", "ck19", "arginase-1", "hepar1"],
+    "expertCommentary": "胆管癌与转移性腺癌（尤其是胰腺癌）的鉴别有时十分困难，需综合影像学和临床信息。混合型肝癌（HCC-CCA）也需纳入鉴别。"
+  },
+  {
+    "id": "case-011",
+    "titleZh": "35岁女性甲状腺结节",
+    "difficulty": "easy",
+    "organ": "thyroid",
+    "clinicalHistory": "35岁女性，体检超声发现右甲状腺叶1.5cm低回声结节，TI-RADS 4c类，伴微钙化和边界不规则。细针穿刺细胞学：Bethesda V级（疑恶性）。行右甲状腺叶切除术。",
+    "grossDescription": "收到右甲状腺叶切除标本，大小5.0x3.0x2.5cm。切面见一灰白色结节，最大径1.3cm，边界不清，质硬，伴砂砾感。",
+    "microscopyClues": [
+      "低倍镜：复杂分支乳头状结构，纤维血管轴心被覆异型上皮",
+      "高倍镜：特征性核改变——毛玻璃样核（核透明）、核沟、核内假包涵体",
+      "可见砂粒体（同心圆层状钙化）"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该组织学形态最符合哪种诊断？",
+        "type": "multiple-choice",
+        "options": ["甲状腺乳头状癌（经典型）", "甲状腺滤泡性腺瘤", "甲状腺滤泡癌", "甲状腺髓样癌", "结节性甲状腺肿"],
+        "correctIndex": 0,
+        "explanation": "分支乳头状结构伴特征性核改变（毛玻璃样核、核沟、核内假包涵体）和砂粒体是甲状腺乳头状癌经典型的诊断要点。核特征是诊断PTC最重要的依据。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化/分子检测来评估？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CK19", "Galectin-3", "HBME-1", "TTF-1"],
+        "results": { "CK19": "弥漫强阳性", "Galectin-3": "弥漫阳性", "HBME-1": "弥漫阳性", "TTF-1": "弥漫阳性" },
+        "explanation": "CK19弥漫强阳性、Galectin-3阳性和HBME-1阳性是PTC的辅助诊断标记物。良性甲状腺结节CK19仅灶性弱阳性或阴性。TTF-1确认甲状腺来源。"
+      },
+      {
+        "step": 3,
+        "prompt": "甲状腺乳头状癌最常见的基因改变是什么？",
+        "type": "multiple-choice",
+        "options": ["BRAF V600E突变", "RAS突变", "RET/PTC重排", "PAX8/PPARγ融合"],
+        "correctIndex": 0,
+        "explanation": "BRAF V600E突变见于约45-50%的PTC，是最常见的驱动基因改变。与经典型和高细胞型相关，可能提示较差预后。RAS突变更多见于滤泡亚型。RET/PTC重排见于约15%。"
+      }
+    ],
+    "finalDiagnosis": "右甲状腺乳头状癌（经典型），pT1bN0，BRAF V600E突变阳性",
+    "keyLearningPoints": [
+      "PTC是最常见的甲状腺恶性肿瘤（约80-85%）",
+      "诊断依据核特征：毛玻璃样核、核沟、核内假包涵体",
+      "CK19/Galectin-3/HBME-1三联组合辅助诊断",
+      "BRAF V600E是最常见的驱动基因突变"
+    ],
+    "relatedDiseaseIds": ["papillary-thyroid-carcinoma", "follicular-adenoma"],
+    "relatedMarkerIds": ["ck19", "ttf-1", "calcitonin"],
+    "expertCommentary": "经典型PTC形态学诊断通常不困难。困难在于滤泡亚型PTC与滤泡性肿瘤的鉴别，以及NIFTP（非浸润性滤泡型甲状腺乳头状肿瘤）的识别。"
+  },
+  {
+    "id": "case-012",
+    "titleZh": "50岁女性甲状腺包裹性结节",
+    "difficulty": "hard",
+    "organ": "thyroid",
+    "clinicalHistory": "50岁女性，体检发现左甲状腺叶3cm结节，超声示实性均匀低回声结节，边界清楚，有完整包膜，TI-RADS 4a类。细针穿刺细胞学：Bethesda IV级（可疑滤泡性肿瘤）。行左甲状腺叶切除术。",
+    "grossDescription": "收到左甲状腺叶切除标本，大小5.5x3.5x3.0cm。切面见一完整包裹的棕褐色结节，最大径2.8cm，包膜完整。结节切面均匀，呈微滤泡至正常滤泡状排列。",
+    "microscopyClues": [
+      "低倍镜：包膜完整的滤泡性肿瘤，以微滤泡和实性/梁状结构为主",
+      "高倍镜：滤泡上皮轻度异型性，但无PTC样核特征",
+      "包膜上可见2处可疑血管侵犯灶"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "区分滤泡性腺瘤和滤泡癌的关键依据是什么？",
+        "type": "multiple-choice",
+        "options": ["包膜侵犯和/或血管侵犯", "肿瘤大小", "细胞异型性程度", "Ki-67增殖指数"],
+        "correctIndex": 0,
+        "explanation": "滤泡性腺瘤与滤泡癌的区别在于是否有包膜侵犯（肿瘤穿透整个包膜厚度）和/或血管侵犯（包膜血管或包膜外血管内有肿瘤栓子）。细胞形态学不能可靠区分两者。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些辅助检查来评估包膜和血管侵犯？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CD34", "CD31", "CK", "TTF-1"],
+        "results": { "CD34": "内皮标记：确认2处为包膜内真性血管侵犯", "CD31": "内皮标记：与CD34一致", "CK": "肿瘤细胞弥漫阳性，确认血管内为肿瘤成分", "TTF-1": "弥漫阳性" },
+        "explanation": "CD34/CD31标记血管内皮，确认可疑灶为真性血管腔。CK标记肿瘤上皮，确认管腔内为肿瘤栓子而非人工假象。该例有2处血管侵犯，属于微浸润型滤泡癌。"
+      },
+      {
+        "step": 3,
+        "prompt": "该病例确认血管侵犯后，最终诊断为？",
+        "type": "multiple-choice",
+        "options": ["甲状腺滤泡癌（微浸润型，血管侵犯<4处）", "甲状腺滤泡癌（广泛浸润型）", "甲状腺滤泡性腺瘤", "甲状腺乳头状癌滤泡亚型"],
+        "correctIndex": 0,
+        "explanation": "包裹性滤泡癌有2处血管侵犯（<4处），分类为微浸润型滤泡癌。广泛浸润型需有广泛的包膜和/或血管侵犯（>=4处血管侵犯）。微浸润型预后好，广泛浸润型预后较差。"
+      }
+    ],
+    "finalDiagnosis": "左甲状腺滤泡癌（微浸润型），包膜内血管侵犯2处，无包膜穿透",
+    "keyLearningPoints": [
+      "滤泡性肿瘤的良恶性鉴别依赖包膜/血管侵犯评估",
+      "需要对包膜区域充分取材（推荐全包膜取材或至少每1cm取一块）",
+      "微浸润型（血管侵犯<4处）预后好，广泛浸润型预后差",
+      "细针穿刺不能区分滤泡性腺瘤和滤泡癌"
+    ],
+    "relatedDiseaseIds": ["follicular-thyroid-carcinoma", "follicular-adenoma", "niftp"],
+    "relatedMarkerIds": ["ttf-1", "cd34"],
+    "expertCommentary": "滤泡性肿瘤的诊断是病理学中最具挑战性的领域之一。充分的包膜取材至关重要。需注意区分真性血管侵犯与术中操作造成的人工假象。"
+  },
+  {
+    "id": "case-013",
+    "titleZh": "58岁女性异常子宫出血",
+    "difficulty": "easy",
+    "organ": "gynecology",
+    "clinicalHistory": "58岁绝经后女性，不规则阴道出血2月。超声示子宫内膜增厚至1.2cm（绝经后正常<5mm）。行诊断性刮宫术。患者有肥胖（BMI 32）、糖尿病和高血压病史。",
+    "grossDescription": "收到宫腔刮出物，总量约3ml。灰白灰红色碎组织，部分呈绒毛状。",
+    "microscopyClues": [
+      "低倍镜：融合的、回对背排列的腺体，间质明显减少",
+      "高倍镜：腺上皮呈柱状，轻-中度异型性，核复层排列",
+      "鳞状分化灶可见，无肌层浸润（刮宫标本）"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "根据组织学特征，最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["子宫内膜样腺癌（FIGO 1级）", "子宫内膜单纯增生", "子宫内膜不典型增生", "浆液性子宫内膜癌", "子宫内膜间质肉瘤"],
+        "correctIndex": 0,
+        "explanation": "融合的、回对背排列的腺体伴间质减少是子宫内膜样腺癌的特征。FIGO 1级（<5%实性成分）。单纯增生和不典型增生的腺体未达融合程度。浆液性癌核异型性更高。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物评估该肿瘤？",
+        "type": "marker-select",
+        "recommendedMarkers": ["ER", "PR", "P53", "MLH1", "MSH2", "MSH6", "PMS2"],
+        "results": { "ER": "弥漫强阳性", "PR": "弥漫强阳性", "P53": "野生型表达模式", "MLH1": "缺失", "MSH2": "保留", "MSH6": "保留", "PMS2": "缺失" },
+        "explanation": "ER/PR强阳性支持子宫内膜样腺癌（I型）。P53野生型排除浆液性癌（通常P53异常型）。MLH1/PMS2缺失提示微卫星不稳定，需进一步排除Lynch综合征或MLH1启动子甲基化。"
+      }
+    ],
+    "finalDiagnosis": "子宫内膜样腺癌（FIGO 1级），ER/PR阳性，MLH1/PMS2缺失（dMMR），需进一步检测MLH1启动子甲基化",
+    "keyLearningPoints": [
+      "子宫内膜样腺癌是最常见的子宫内膜癌类型（约80%）",
+      "肥胖、糖尿病、高血压是经典危险因素（代谢综合征）",
+      "MMR蛋白检测是子宫内膜癌的常规项目",
+      "MLH1/PMS2缺失需区分Lynch综合征和散发性（MLH1启动子甲基化）"
+    ],
+    "relatedDiseaseIds": ["endometrial-adenocarcinoma", "endometrial-hyperplasia"],
+    "relatedMarkerIds": ["er", "pr", "ki-67"],
+    "expertCommentary": "子宫内膜样腺癌的诊断要点在于与不典型增生的鉴别。融合性腺体生长（间质消失）是癌的判断标准。MMR免疫组化是目前所有子宫内膜癌的推荐常规检测。"
+  },
+  {
+    "id": "case-014",
+    "titleZh": "55岁女性盆腔囊实性肿物",
+    "difficulty": "hard",
+    "organ": "gynecology",
+    "clinicalHistory": "55岁女性，腹胀进行性加重3月，伴腹水。CT示双侧附件区囊实性肿物，左侧约8cm，右侧约5cm，伴大网膜饼状增厚和腹膜多发结节。CA-125升高至1250U/ml。行全子宫+双附件+大网膜切除+腹膜活检术。",
+    "grossDescription": "左卵巢：8.5x7.0x6.0cm，囊实性，实性区灰白色质脆，囊性区含浑浊液体。右卵巢：5.0x4.0x3.5cm，表面有乳头状突起。大网膜：多发灰白色结节，最大径2cm。",
+    "microscopyClues": [
+      "低倍镜：复杂分支乳头状结构和实性片状区域交替出现",
+      "高倍镜：细胞重度异型性，核大深染多形性，核分裂象非常多见（>20/10HPF）",
+      "可见砂粒体，裂隙样空腔，大网膜见相同形态的转移灶"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["卵巢高级别浆液性癌", "卵巢子宫内膜样癌", "卵巢黏液性癌", "卵巢透明细胞癌", "卵巢颗粒细胞瘤"],
+        "correctIndex": 0,
+        "explanation": "双侧卵巢受累、CA-125显著升高、腹膜广泛转移、乳头状结构伴砂粒体和高级别核异型性，是高级别浆液性癌的典型表现。是最常见的卵巢恶性肿瘤。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来确认诊断？",
+        "type": "marker-select",
+        "recommendedMarkers": ["WT1", "PAX8", "P53", "P16", "ER", "Ki-67"],
+        "results": { "WT1": "弥漫核阳性", "PAX8": "弥漫核阳性", "P53": "异常型（弥漫强阳性，突变型）", "P16": "弥漫阳性（block staining）", "ER": "弥漫阳性", "Ki-67": "约70%" },
+        "explanation": "WT1和PAX8弥漫阳性确认苗勒管/卵巢来源。P53异常型（弥漫强阳性或完全缺失）是高级别浆液性癌的特征性改变，反映TP53突变。P16 block staining也是典型表现。"
+      },
+      {
+        "step": 3,
+        "prompt": "高级别浆液性癌患者应考虑哪种遗传学检测？",
+        "type": "multiple-choice",
+        "options": ["BRCA1/BRCA2基因检测", "CDH1基因检测", "RET基因检测", "VHL基因检测"],
+        "correctIndex": 0,
+        "explanation": "约20%的高级别浆液性卵巢癌与BRCA1/2胚系突变相关。BRCA突变患者可使用PARP抑制剂（奥拉帕利、尼拉帕利）维持治疗，显著改善无进展生存期。所有高级别浆液性癌患者均应接受BRCA检测。"
+      }
+    ],
+    "finalDiagnosis": "双侧卵巢高级别浆液性癌，FIGO IIIC期（大网膜和腹膜转移），P53异常型，建议BRCA基因检测",
+    "keyLearningPoints": [
+      "高级别浆液性癌是最常见的卵巢恶性肿瘤（约70%）",
+      "P53异常型表达是诊断的关键（反映TP53突变，见于>95%病例）",
+      "WT1和PAX8是苗勒管来源的诊断标记物",
+      "所有患者应接受BRCA检测，指导PARP抑制剂治疗",
+      "多数患者诊断时已为晚期（III-IV期）"
+    ],
+    "relatedDiseaseIds": ["ovarian-serous-carcinoma"],
+    "relatedMarkerIds": ["wt1", "pax8", "er", "ki-67"],
+    "expertCommentary": "高级别浆液性癌的起源目前认为多来自输卵管上皮（STIC病变）。病理报告需注明P53免疫组化结果和建议进行BRCA遗传学检测。"
+  },
+  {
+    "id": "case-015",
+    "titleZh": "68岁男性颈部淋巴结肿大",
+    "difficulty": "medium",
+    "organ": "lymphoma",
+    "clinicalHistory": "68岁男性，发现颈部多发肿大淋巴结2月，最大约4cm，质硬固定。伴盗汗和体重下降8kg。LDH升高至450U/L。PET-CT示全身多站淋巴结高代谢。行颈部淋巴结切除活检。",
+    "grossDescription": "收到颈部淋巴结一枚，大小4.5x3.0x2.5cm。切面灰白色鱼肉样，质地均匀，正常淋巴结结构消失。",
+    "microscopyClues": [
+      "低倍镜：淋巴结结构完全破坏，弥漫性大细胞浸润",
+      "高倍镜：大细胞为中心母细胞和免疫母细胞形态，核大，核仁明显，核分裂象多见",
+      "可见散在凋亡小体和灶性坏死"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该淋巴结病变最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["弥漫性大B细胞淋巴瘤（DLBCL）", "滤泡性淋巴瘤", "经典型霍奇金淋巴瘤", "伯基特淋巴瘤", "反应性淋巴结增生"],
+        "correctIndex": 0,
+        "explanation": "弥漫性大细胞浸润完全破坏淋巴结结构，细胞呈中心母/免疫母细胞形态，是DLBCL的典型表现。滤泡性淋巴瘤保留滤泡结构，霍奇金淋巴瘤有R-S细胞，伯基特有星空现象。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来确诊和分型？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CD20", "CD3", "CD10", "BCL-6", "MUM1", "BCL-2", "Ki-67"],
+        "results": { "CD20": "弥漫强阳性", "CD3": "阴性（散在T细胞背景）", "CD10": "阴性", "BCL-6": "阳性(约40%)", "MUM1": "弥漫阳性", "BCL-2": "阳性(约60%)", "Ki-67": "约80%" },
+        "explanation": "CD20弥漫阳性确认B细胞来源。根据Hans分类：CD10(-)/BCL-6(+)/MUM1(+)=非生发中心B细胞型（non-GCB/ABC型）。ABC型预后较GCB型差。Ki-67高增殖活性。"
+      },
+      {
+        "step": 3,
+        "prompt": "DLBCL Hans分型中，该例属于？",
+        "type": "multiple-choice",
+        "options": ["非生发中心B细胞型（non-GCB/ABC型）", "生发中心B细胞型（GCB型）", "无法分型", "T细胞来源"],
+        "correctIndex": 0,
+        "explanation": "Hans算法：CD10(-)→BCL-6(+)→MUM1(+)→non-GCB型。GCB型需满足CD10(+)或CD10(-)/BCL-6(+)/MUM1(-)。non-GCB型与活化B细胞型(ABC)大致对应，预后较差。"
+      }
+    ],
+    "finalDiagnosis": "弥漫性大B细胞淋巴瘤（non-GCB/ABC型），Ann Arbor III期B，IPI评分3分",
+    "keyLearningPoints": [
+      "DLBCL是最常见的非霍奇金淋巴瘤（约30-40%）",
+      "Hans免疫组化分型（CD10/BCL-6/MUM1）区分GCB和non-GCB型",
+      "GCB型预后优于non-GCB型",
+      "R-CHOP方案是标准一线治疗",
+      "需排除双打击/三打击淋巴瘤（MYC+BCL2/BCL6重排）"
+    ],
+    "relatedDiseaseIds": ["dlbcl", "burkitt-lymphoma"],
+    "relatedMarkerIds": ["cd20", "cd3", "cd10", "bcl2", "bcl6", "ki-67"],
+    "expertCommentary": "DLBCL的病理诊断需要完整的免疫组化panel和FISH检测（MYC/BCL2/BCL6重排）。双打击淋巴瘤预后极差，需在报告中明确。"
+  },
+  {
+    "id": "case-016",
+    "titleZh": "45岁女性腹股沟淋巴结肿大",
+    "difficulty": "medium",
+    "organ": "lymphoma",
+    "clinicalHistory": "45岁女性，发现双侧腹股沟淋巴结肿大1年，无明显自觉症状。查体：双侧腹股沟多枚肿大淋巴结，最大约3cm，活动，无压痛。无B症状。LDH正常。",
+    "grossDescription": "收到左腹股沟淋巴结一枚，大小3.2x2.0x1.8cm。切面灰白色，可见模糊的结节状结构。",
+    "microscopyClues": [
+      "低倍镜：淋巴结内见密集排列的滤泡结构，背对背排列，大小较均匀",
+      "高倍镜：滤泡内以中心细胞（有裂细胞）为主，少量中心母细胞",
+      "滤泡间区明显受压，极性消失"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该淋巴结的组织学特征最符合哪种诊断？",
+        "type": "multiple-choice",
+        "options": ["滤泡性淋巴瘤", "反应性滤泡增生", "套细胞淋巴瘤", "边缘区淋巴瘤", "弥漫性大B细胞淋巴瘤"],
+        "correctIndex": 0,
+        "explanation": "密集排列的、大小均匀的肿瘤性滤泡，极性消失，滤泡间区受压，以中心细胞为主，是滤泡性淋巴瘤的典型表现。反应性增生的滤泡大小不等且保留极性。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来确诊？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CD20", "CD10", "BCL-2", "BCL-6", "CD3", "CD5", "Ki-67"],
+        "results": { "CD20": "弥漫阳性", "CD10": "滤泡内阳性", "BCL-2": "滤泡内强阳性", "BCL-6": "滤泡内阳性", "CD3": "滤泡间散在阳性", "CD5": "阴性", "Ki-67": "滤泡内低（<20%）" },
+        "explanation": "BCL-2在肿瘤性滤泡中阳性是关键诊断依据（正常生发中心BCL-2阴性）。CD10/BCL-6阳性确认生发中心表型。CD5阴性排除套细胞淋巴瘤。Ki-67低符合低级别滤泡性淋巴瘤。"
+      },
+      {
+        "step": 3,
+        "prompt": "滤泡性淋巴瘤最常见的分子遗传学改变是什么？",
+        "type": "multiple-choice",
+        "options": ["t(14;18)(q32;q21) BCL2-IGH融合", "t(11;14)(q13;q32) CCND1-IGH融合", "t(8;14)(q24;q32) MYC-IGH融合", "t(11;18)(q21;q21) API2-MALT1融合"],
+        "correctIndex": 0,
+        "explanation": "t(14;18)导致BCL-2基因与IGH融合是滤泡性淋巴瘤的标志性改变（约85%），使BCL-2蛋白过表达，抑制细胞凋亡。t(11;14)见于套细胞淋巴瘤，t(8;14)见于伯基特淋巴瘤。"
+      }
+    ],
+    "finalDiagnosis": "滤泡性淋巴瘤，1-2级（每HPF中心母细胞5-10个），Ann Arbor III期A，FLIPI评分2分",
+    "keyLearningPoints": [
+      "滤泡性淋巴瘤是第二常见的非霍奇金淋巴瘤",
+      "BCL-2在肿瘤性滤泡中阳性是区分反应性增生的关键",
+      "t(14;18)(BCL2-IGH)是特征性遗传学改变",
+      "通常为惰性病程，可观察等待（watch and wait）",
+      "需警惕向DLBCL转化（约每年2-3%风险）"
+    ],
+    "relatedDiseaseIds": ["follicular-lymphoma", "dlbcl"],
+    "relatedMarkerIds": ["cd20", "cd10", "bcl2", "bcl6", "ki-67"],
+    "expertCommentary": "滤泡性淋巴瘤与反应性滤泡增生的鉴别是常见的诊断挑战。BCL-2免疫组化和t(14;18) FISH检测是可靠的鉴别手段。分级依据每HPF中心母细胞数量。"
+  },
+  {
+    "id": "case-017",
+    "titleZh": "55岁男性肾脏肿物",
+    "difficulty": "easy",
+    "organ": "kidney",
+    "clinicalHistory": "55岁男性，体检超声发现左肾上极4cm实性肿物，无症状。CT增强示肿物富血供，动脉期明显强化。无肾静脉癌栓。行腹腔镜左肾部分切除术。",
+    "grossDescription": "收到左肾部分切除标本，肿物大小4.2x3.8x3.5cm。切面金黄色，质软，边界清楚，有假包膜。局部可见出血灶，无明显坏死。",
+    "microscopyClues": [
+      "低倍镜：透明细胞呈腺泡状和巢状排列，富含纤细血管网（鸡笼样血管）",
+      "高倍镜：细胞大，胞浆丰富透亮（富含糖原和脂质），核圆形，Fuhrman 2级",
+      "间质有丰富的薄壁血窦"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "根据形态学特征，最可能的诊断是什么？",
+        "type": "multiple-choice",
+        "options": ["透明细胞性肾细胞癌", "乳头状肾细胞癌", "嫌色细胞性肾细胞癌", "嗜酸细胞腺瘤", "血管平滑肌脂肪瘤"],
+        "correctIndex": 0,
+        "explanation": "金黄色切面、透明细胞形态、腺泡状排列伴鸡笼样丰富血管网是透明细胞性肾细胞癌的经典表现。乳头状RCC呈乳头结构，嫌色细胞RCC细胞膜明显。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来确认？",
+        "type": "marker-select",
+        "recommendedMarkers": ["CA-IX", "PAX8", "CD10", "Vimentin", "CK7"],
+        "results": { "CA-IX": "弥漫强膜阳性（box-like）", "PAX8": "弥漫核阳性", "CD10": "弥漫阳性", "Vimentin": "弥漫阳性", "CK7": "阴性" },
+        "explanation": "CA-IX弥漫强膜阳性（box-like pattern）是透明细胞RCC的高度特异性标记物，反映VHL基因失活导致的HIF通路激活。PAX8确认肾脏来源。CK7阴性排除嫌色细胞RCC和乳头状RCC。"
+      }
+    ],
+    "finalDiagnosis": "左肾透明细胞性肾细胞癌，WHO/ISUP 2级，pT1b，切缘阴性",
+    "keyLearningPoints": [
+      "透明细胞RCC是最常见的肾细胞癌亚型（约70-80%）",
+      "CA-IX弥漫box-like阳性是高度特异性标记",
+      "VHL基因失活（3p缺失或突变）是核心分子机制",
+      "WHO/ISUP核分级取代了Fuhrman分级系统",
+      "术后可能需要靶向治疗（抗VEGF/mTOR）或免疫治疗"
+    ],
+    "relatedDiseaseIds": ["clear-cell-rcc", "papillary-rcc", "chromophobe-rcc"],
+    "relatedMarkerIds": ["ca9", "pax8", "cd10", "vimentin", "ck7"],
+    "expertCommentary": "透明细胞RCC的诊断通常较为直接。需注意与透明细胞型乳头状肾细胞癌和TFE3融合肾细胞癌的鉴别。CA-IX的box-like膜阳性模式具有诊断价值。"
+  },
+  {
+    "id": "case-018",
+    "titleZh": "38岁男性背部色素性皮损",
+    "difficulty": "hard",
+    "organ": "skin",
+    "clinicalHistory": "38岁男性，背部一色素性皮损近半年增大、颜色变深且不均匀。体检：背部一不规则色素斑，直径约1.5cm，颜色不均（黑褐混合），边界不规则，表面不平。ABCDE评分阳性。行完整切除活检。",
+    "grossDescription": "收到皮肤椭圆切除标本，大小2.5x1.5x0.8cm。中央见一不规则色素性皮损，最大径1.4cm，颜色不均匀，黑褐相间。",
+    "microscopyClues": [
+      "低倍镜：表皮内和真皮浅层不对称性黑色素细胞增生，侧方皮损边缘不锐利",
+      "高倍镜：黑色素细胞明显异型性，核大深染多形性，可见核分裂象（包括真皮内）",
+      "Pagetoid扩散（黑色素细胞向表皮上层散布），无成熟现象"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该色素性病变的组织学特征最支持哪种诊断？",
+        "type": "multiple-choice",
+        "options": ["恶性黑色素瘤", "不典型痣（发育不良痣）", "普通型复合痣", "蓝痣", "Spitz痣"],
+        "correctIndex": 0,
+        "explanation": "不对称性、细胞异型性明显、Pagetoid扩散、真皮内核分裂象、无成熟现象等均支持恶性黑色素瘤。不典型痣虽有轻度异型但保持对称性和成熟。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化标记物来评估？",
+        "type": "marker-select",
+        "recommendedMarkers": ["S-100", "SOX10", "Melan-A", "HMB-45", "Ki-67"],
+        "results": { "S-100": "弥漫强阳性", "SOX10": "弥漫核阳性", "Melan-A": "弥漫阳性", "HMB-45": "阳性，真皮深部不减弱（无成熟）", "Ki-67": "约25%（真皮成分）" },
+        "explanation": "S-100和SOX10是黑色素细胞最敏感的标记物。HMB-45在黑色素瘤中真皮深部不减弱（无成熟），而良性痣HMB-45在真皮深部减弱至阴性。Ki-67在黑色素瘤中高于良性痣。"
+      },
+      {
+        "step": 3,
+        "prompt": "Breslow厚度测量为1.8mm，无溃疡。该黑色素瘤的T分期是？",
+        "type": "multiple-choice",
+        "options": ["pT2a", "pT1a", "pT3a", "pT4a"],
+        "correctIndex": 0,
+        "explanation": "根据AJCC第8版：Breslow厚度>1.0-2.0mm为T2；无溃疡为a。因此pT2a。T1<=1.0mm，T3>2.0-4.0mm，T4>4.0mm。Breslow厚度是最重要的预后因素。"
+      }
+    ],
+    "finalDiagnosis": "恶性黑色素瘤（浅表扩散型），Breslow厚度1.8mm，Clark IV级，无溃疡，pT2a，核分裂象3/mm2",
+    "keyLearningPoints": [
+      "黑色素瘤与痣的鉴别要点：对称性、成熟、Pagetoid扩散、真皮核分裂象",
+      "HMB-45成熟模式是鉴别良恶性的有用工具",
+      "Breslow厚度是最重要的预后因素和分期依据",
+      "BRAF V600E突变检测指导靶向治疗（约50%阳性）",
+      "前哨淋巴结活检适用于Breslow>=0.8mm的患者"
+    ],
+    "relatedDiseaseIds": ["melanoma", "dysplastic-nevus"],
+    "relatedMarkerIds": ["s-100", "sox10", "melan-a", "hmb45", "ki-67"],
+    "expertCommentary": "黑色素瘤与不典型痣的鉴别是皮肤病理中最常见的疑难问题。需综合评估对称性、边界、成熟度、核分裂象等多项特征。BRAF/NRAS/KIT突变检测对于治疗指导至关重要。"
+  },
+  {
+    "id": "case-019",
+    "titleZh": "25岁男性膝关节旁肿物",
+    "difficulty": "medium",
+    "organ": "soft-tissue",
+    "clinicalHistory": "25岁男性，右膝关节内侧肿物进行性增大6月，伴轻度疼痛。MRI示一5cm梭形软组织肿物，位于深筋膜下，T2WI不均匀高信号，增强后明显强化。行穿刺活检后扩大切除。",
+    "grossDescription": "收到右膝关节旁软组织肿物切除标本，大小6.0x4.0x3.5cm。切面灰白灰黄色，质地鱼肉样至韧，可见小囊腔和灶性出血。",
+    "microscopyClues": [
+      "低倍镜：双相分化特征——梭形细胞密集区和上皮样/腺样分化区交替",
+      "高倍镜：梭形细胞区呈束状排列，核呈卵圆形至梭形，核分裂象易见",
+      "上皮样区域可见腺样结构和实性巢团"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "年轻患者关节旁深部软组织肿物，双相分化（梭形+上皮样），最可能的诊断是？",
+        "type": "multiple-choice",
+        "options": ["滑膜肉瘤", "恶性周围神经鞘瘤", "横纹肌肉瘤", "纤维肉瘤", "上皮样肉瘤"],
+        "correctIndex": 0,
+        "explanation": "年轻患者关节旁深部肿物，双相分化（梭形细胞+上皮/腺样分化），高度提示滑膜肉瘤。尽管名字含滑膜，但实际并非起源于滑膜。双相型和单相型是两种主要亚型。"
+      },
+      {
+        "step": 2,
+        "prompt": "确诊滑膜肉瘤需要做哪些辅助检查？",
+        "type": "marker-select",
+        "recommendedMarkers": ["TLE1", "CK", "EMA", "CD34", "S-100", "SS18-SSX FISH"],
+        "results": { "TLE1": "弥漫核强阳性", "CK": "上皮样区域阳性，梭形区灶性阳性", "EMA": "上皮样区域阳性", "CD34": "阴性", "S-100": "阴性", "SS18-SSX FISH": "SS18基因断裂信号阳性" },
+        "explanation": "TLE1是滑膜肉瘤最敏感的免疫组化标记物（但非完全特异）。CK/EMA在上皮成分阳性证实双相分化。SS18(SYT)基因重排（SS18-SSX融合）是滑膜肉瘤的特征性分子改变，确诊依据。"
+      },
+      {
+        "step": 3,
+        "prompt": "t(X;18)(p11;q11)导致的融合基因是什么？",
+        "type": "multiple-choice",
+        "options": ["SS18-SSX融合", "EWS-FLI1融合", "PAX3-FOXO1融合", "COL1A1-PDGFB融合"],
+        "correctIndex": 0,
+        "explanation": "t(X;18)(p11;q11)导致SS18(SYT)基因与SSX1、SSX2或SSX4基因融合，是滑膜肉瘤的特征性分子改变，见于>95%病例。EWS-FLI1见于尤文肉瘤，PAX3-FOXO1见于腺泡状横纹肌肉瘤。"
+      }
+    ],
+    "finalDiagnosis": "滑膜肉瘤（双相型），SS18-SSX融合阳性，切缘阴性",
+    "keyLearningPoints": [
+      "滑膜肉瘤好发于青年人关节旁深部软组织",
+      "双相型（梭形+上皮分化）和单相梭形型是两种主要亚型",
+      "TLE1免疫组化和SS18(SYT) FISH/RT-PCR是诊断要点",
+      "t(X;18)(SS18-SSX)融合见于>95%病例",
+      "治疗以手术+化疗为主（异环磷酰胺/多柔比星方案）"
+    ],
+    "relatedDiseaseIds": ["synovial-sarcoma"],
+    "relatedMarkerIds": ["ck7", "s-100", "cd34", "desmin"],
+    "expertCommentary": "单相梭形型滑膜肉瘤的诊断更具挑战性，形态学上需与MPNST、纤维肉瘤等鉴别。分子检测（SS18重排）在疑难病例中是确诊的金标准。"
+  },
+  {
+    "id": "case-020",
+    "titleZh": "58岁男性颞叶占位",
+    "difficulty": "medium",
+    "organ": "cns",
+    "clinicalHistory": "58岁男性，头痛伴左侧肢体乏力2周，进行性加重。MRI示右颞叶一不规则占位，大小约5cm，呈环形强化伴中心坏死，周围明显水肿和占位效应。行开颅肿瘤切除术。",
+    "grossDescription": "收到脑组织碎块，总大小5.0x4.0x3.0cm。组织灰白灰黄色，质软至中等，部分区域呈坏死表现，可见局灶出血。",
+    "microscopyClues": [
+      "低倍镜：高度富于细胞的胶质肿瘤，可见栅栏状坏死和微血管增生",
+      "高倍镜：肿瘤细胞多形性显著，核异型性明显，核分裂象非常活跃",
+      "血管内皮增生呈肾小球样结构（微血管增生）"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "prompt": "该脑肿瘤的形态学特征最符合哪种诊断？",
+        "type": "multiple-choice",
+        "options": ["胶质母细胞瘤（GBM）", "弥漫性星形细胞瘤（IDH突变型）", "少突胶质细胞瘤", "脑膜瘤", "脑转移癌"],
+        "correctIndex": 0,
+        "explanation": "高度富于细胞、显著多形性、栅栏状坏死和微血管增生（肾小球样）是胶质母细胞瘤的经典组织学特征。栅栏状坏死和微血管增生是WHO 4级胶质瘤的诊断标准。"
+      },
+      {
+        "step": 2,
+        "prompt": "你会选择哪些免疫组化/分子标记物进行分型？",
+        "type": "marker-select",
+        "recommendedMarkers": ["GFAP", "IDH1 R132H", "ATRX", "P53", "Ki-67"],
+        "results": { "GFAP": "弥漫阳性", "IDH1 R132H": "阴性", "ATRX": "保留表达", "P53": "散在阳性（野生型模式）", "Ki-67": "约40%" },
+        "explanation": "GFAP阳性确认胶质分化。IDH1 R132H阴性，在>55岁患者中高度支持IDH野生型GBM（占GBM的90%以上）。ATRX保留表达。IDH野生型GBM是最具侵袭性的胶质瘤。"
+      },
+      {
+        "step": 3,
+        "prompt": "根据WHO 2021 CNS肿瘤分类，该例的完整诊断名称是？",
+        "type": "multiple-choice",
+        "options": ["胶质母细胞瘤，IDH野生型，WHO 4级", "星形细胞瘤，IDH突变型，WHO 4级", "少突胶质细胞瘤，IDH突变1p/19q共缺失，WHO 3级", "弥漫中线胶质瘤，H3 K27M突变型"],
+        "correctIndex": 0,
+        "explanation": "WHO 2021分类中，胶质母细胞瘤仅指IDH野生型。IDH突变型高级别星形细胞瘤不再称为GBM，而称为星形细胞瘤IDH突变型4级。分子分型已成为CNS肿瘤分类的基础。"
+      }
+    ],
+    "finalDiagnosis": "胶质母细胞瘤，IDH野生型，WHO 4级，MGMT启动子甲基化状态待检",
+    "keyLearningPoints": [
+      "胶质母细胞瘤是成人最常见且最恶性的原发性脑肿瘤",
+      "栅栏状坏死和微血管增生是WHO 4级的组织学标准",
+      "WHO 2021分类要求IDH突变状态用于GBM定义（仅IDH野生型）",
+      "MGMT启动子甲基化预测替莫唑胺疗效",
+      "中位生存期约14-16个月（标准Stupp方案治疗后）"
+    ],
+    "relatedDiseaseIds": ["glioblastoma-multiforme", "diffuse-astrocytoma-idh-mutant"],
+    "relatedMarkerIds": ["ki-67", "synaptophysin", "cd56"],
+    "expertCommentary": "GBM的诊断在2021 WHO分类后增加了分子要求。IDH状态是最关键的分子指标。对于年龄>55岁的典型形态GBM，IDH1 R132H免疫组化阴性即可确定IDH野生型。年轻患者需做IDH测序。"
+  }
+]

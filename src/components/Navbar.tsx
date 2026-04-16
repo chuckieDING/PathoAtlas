@@ -7,7 +7,7 @@ import {
   IconHome, IconMicroscope, IconFlask, IconScale, IconZap, IconTrophy,
   IconSearch, IconMenu, IconSun, IconMoon, IconDna, IconInfo, IconHelp,
   IconGithub, IconX, IconSettings, IconBookOpen, IconSnowflake, IconScissors,
-  IconClipboard,
+  IconClipboard, IconLayers, IconMap, IconFileText, IconBrain, IconHeart,
 } from './Icon';
 import { NavbarProgress } from './ProgressWidgets';
 
@@ -33,11 +33,21 @@ const MENU_GROUPS = [
   {
     title: '专项工具',
     items: [
+      { href: '/panel-builder', label: 'IHC Panel Builder', desc: '交互式免疫组化鉴别诊断', icon: IconLayers, color: '#6366f1' },
       { href: '/molecular', label: '分子病理学', desc: '驱动基因与靶向检测', icon: IconDna, color: '#8b5cf6' },
       { href: '/cyto', label: '细胞病理学', desc: '分类标准与恶性风险', icon: IconBookOpen, color: '#06b6d4' },
       { href: '/frozen', label: '冰冻切片', desc: '术中快速诊断决策', icon: IconSnowflake, color: '#3b82f6' },
       { href: '/grossing', label: '取材规范', desc: '标本处理操作规程', icon: IconScissors, color: '#14b8a6' },
       { href: '/reports', label: 'CAP报告', desc: '结构化病理报告模板', icon: IconClipboard, color: '#f97316' },
+    ],
+  },
+  {
+    title: '教学资源',
+    items: [
+      { href: '/cases', label: '虚拟病例', desc: '20例交互式诊断训练', icon: IconFileText, color: '#ef4444' },
+      { href: '/curriculum', label: '学习路径', desc: '按年级和专科组织', icon: IconMap, color: '#22c55e' },
+      { href: '/glossary', label: '术语词汇表', desc: '300+病理学术语', icon: IconBrain, color: '#f59e0b' },
+      { href: '/favorites', label: '我的收藏', desc: '收藏夹与学习笔记', icon: IconHeart, color: '#ec4899' },
     ],
   },
   {

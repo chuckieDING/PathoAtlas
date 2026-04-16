@@ -3,7 +3,8 @@ import { getOrgans, getStats, getAllDiseases } from '@/lib/data';
 import {
   IconMicroscope, IconFlask, IconScale, IconZap, IconGrid, IconActivity,
   IconBookOpen, IconDna, IconSnowflake, IconScissors, IconClipboard,
-  IconArrowRight, IconSearch, IconTrophy, IconBrain,
+  IconArrowRight, IconSearch, IconTrophy, IconBrain, IconLayers, IconMap,
+  IconFileText, IconHeart,
 } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
 import { HomeDashboard } from '@/components/HomeDashboard';
@@ -78,6 +79,34 @@ const SPECIALTY_MODULES = [
     title: 'CAP 报告',
     desc: '结构化肿瘤病理报告模板，支持生成与导出',
     color: '#f97316',
+  },
+  {
+    href: '/panel-builder',
+    icon: IconLayers,
+    title: 'IHC Panel Builder',
+    desc: '交互式免疫组化鉴别诊断工具，4步推导',
+    color: '#6366f1',
+  },
+  {
+    href: '/cases',
+    icon: IconFileText,
+    title: '虚拟病例',
+    desc: '20例跨器官系统的交互式诊断训练',
+    color: '#ef4444',
+  },
+  {
+    href: '/curriculum',
+    icon: IconMap,
+    title: '学习路径',
+    desc: '按年级和专科组织的系统化学习课程',
+    color: '#22c55e',
+  },
+  {
+    href: '/glossary',
+    icon: IconBrain,
+    title: '术语词汇表',
+    desc: '300+病理学专业术语中英文释义',
+    color: '#f59e0b',
   },
 ];
 
@@ -265,7 +294,12 @@ export default function HomePage() {
             { href: '/frozen', label: '冰冻切片', icon: IconSnowflake },
             { href: '/grossing', label: '取材规范', icon: IconScissors },
             { href: '/reports', label: 'CAP报告', icon: IconClipboard },
+            { href: '/panel-builder', label: 'IHC Panel', icon: IconLayers },
+            { href: '/cases', label: '虚拟病例', icon: IconFileText },
+            { href: '/curriculum', label: '学习路径', icon: IconMap },
+            { href: '/glossary', label: '术语表', icon: IconBrain },
             { href: '/review', label: '复习测验', icon: IconZap },
+            { href: '/favorites', label: '我的收藏', icon: IconHeart },
             { href: '/progress', label: '学习成就', icon: IconTrophy },
             { href: '/search', label: '搜索', icon: IconSearch },
           ].map(item => (

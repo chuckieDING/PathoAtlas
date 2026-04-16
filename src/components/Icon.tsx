@@ -260,6 +260,44 @@ export const IconGithub = ({ size, ...p }: IconProps) => (
   </svg>
 );
 
+export const IconLayers = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg>
+);
+
+export const IconMap = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+    <line x1="8" y1="2" x2="8" y2="18"/>
+    <line x1="16" y1="6" x2="16" y2="22"/>
+  </svg>
+);
+
+export const IconFileText = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <polyline points="10 9 9 9 8 9"/>
+  </svg>
+);
+
+export const IconHeart = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+);
+
+export const IconPencil = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+  </svg>
+);
+
 export const IconSnowflake = ({ size, ...p }: IconProps) => (
   <svg {...baseProps(size)} {...p}>
     <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/>

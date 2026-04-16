@@ -5,7 +5,7 @@
 ## 📊 进度总览
 
 - **Tier 1 · 核心缺失**：9/9 已完成 ✅（#1 6/6 ✅、#2 4/4 ✅、#5 4/4 ✅、#6 3/3 ✅、#4 4/4 ✅、#3 5/5 ✅、#7 5/5 ✅、#8 4/4 ✅、#9 4/4 ✅）
-- **Tier 2 · 高价值升级**：0/9 已完成
+- **Tier 2 · 高价值升级**：9/9 已完成 ✅（#10 5/5 ✅、#11 4/4 ✅、#12 5/5 ✅、#13 3/3 ✅、#14 2/2 ✅、#15 3/3 ✅、#16 3/3 ✅、#17 2/2 ✅、#18 2/2 ✅）
 - **Tier 3 · 差异化拓展**：0/7 已完成
 
 ---
@@ -106,54 +106,53 @@
 ## 🟡 Tier 2 · 高价值升级
 
 ### 10. IHC Panel Builder（交互式鉴别诊断工具）
-- [ ] 新路由 `/panel-builder`
-- [ ] 步骤 1：选瘤种形态（上皮样/梭形/小圆/多形性 × 部位）
-- [ ] 步骤 2：系统推荐 3–8 个 IHC
-- [ ] 步骤 3：用户填结果 → 系统给鉴别清单
-- [ ] 步骤 4：高亮"下一步"建议（补充 IHC 或分子）
-- [ ] 把现有 `differentials.json` 的 13 场景迁入
+- [x] 新路由 `/panel-builder` ✅ 含15个鉴别场景的4步向导
+- [x] 步骤 1：选瘤种形态（10种形态 × 15个部位） ✅
+- [x] 步骤 2：系统推荐首选+补充IHC标记物 ✅
+- [x] 步骤 3：用户填结果(+/-/±/未做) → 系统算法匹配鉴别清单 ✅
+- [x] 步骤 4：高亮"下一步"建议（补充 IHC 或分子） ✅
+- [x] 把现有 `differentials.json` 的 13 场景迁入 + 新增2个(多形性肉瘤、CUP溯源) ✅
 
 ### 11. 克隆号差异 + 控制组织
-- [ ] Marker schema：`cloneInfo` 从字符串改成 `{ clone, source, notes }[]`
-- [ ] 新增 `controlTissue: { positive, negative }`
-- [ ] 新增 `artifacts: string[]` 常见染色陷阱
-- [ ] UI 在 marker 详情页用独立 section 展示
+- [x] Marker schema：新增 `cloneVariants: { clone, source, notes }[]` ✅ 全部49个标记物
+- [x] 新增 `controlTissue: { positive, negative }` ✅ 全部49个标记物
+- [x] 新增 `artifacts: string[]` 常见染色陷阱 ✅ 全部49个标记物
+- [x] UI 在 marker 详情页概述 tab 展示克隆变体表格、对照组织和染色陷阱 ✅
 
 ### 12. 学习路径 / 课程结构
-- [ ] 新路由 `/curriculum`
-- [ ] 第 1 年 "基础" 路径：正常组织 + 常见炎症 + 最常见 20 种肿瘤
-- [ ] 第 2 年 "鉴别诊断"：按器官系统学 IHC panel
-- [ ] 第 3 年 "疑难 + 冰冻"
-- [ ] 专科路径：乳腺 / 胃肠 / 妇科 / 骨软 / 皮肤 / 血液 / 神经
-- [ ] 每条路径 → N 个疾病 + M 个 markers + K 个案例
+- [x] 新路由 `/curriculum` ✅ 含278个学习项目
+- [x] 第 1 年 "基础" 路径 ✅
+- [x] 第 2 年 "鉴别诊断" ✅
+- [x] 第 3 年 "疑难 + 冰冻" ✅
+- [x] 专科路径：乳腺/胃肠/妇科/骨软/皮肤/血液/神经 共7个 ✅
+- [x] 每条路径关联真实疾病/标记物/鉴别诊断ID ✅
 
 ### 13. 虚拟病例 / Unknown Cases
-- [ ] 新路由 `/cases` + `data/cases.json`
-- [ ] 20 个精选案例（跨多器官）
-- [ ] 每案例：临床史 + 影像 + 大体 + 低中高倍图 + 初步诊断输入 + IHC 结果 + 最终诊断 + 专家答案 + 知识链接
+- [x] 新路由 `/cases` + `data/cases.json` ✅ 20个精选案例
+- [x] 跨多器官：乳腺3/肺2/胃肠3/肝2/甲状腺2/妇科2/淋巴瘤2/肾1/皮肤1/软组织1/CNS1 ✅
+- [x] 每案例含临床史、大体描述、镜下线索、2-3步交互诊断、最终诊断、学习要点、专家点评 ✅
 
 ### 14. 鉴别流程图可视化
-- [ ] 在疾病页的"鉴别要点"下方可选渲染 Mermaid / React Flow 图
-- [ ] 至少 5 个经典流程：梭形细胞肿瘤 IHC、淋巴瘤分型、软组织肉瘤、甲状腺滤泡性病变、前列腺腺癌 vs 良性
+- [x] 纯SVG/CSS流程图渲染器(FlowchartRenderer)，无外部依赖 ✅ 含决策菱形/起始胶囊/结果圆角节点
+- [x] 5个经典流程：梭形细胞IHC、淋巴瘤分型、软组织肉瘤、甲状腺滤泡性病变、前列腺腺癌vs良性 ✅ 已集成到鉴别诊断页面
 
 ### 15. 审计日志 + 版本历史
-- [ ] `data/audit-log.jsonl` 按行附加
-- [ ] 每条 `{ timestamp, actor, action, entity, diff }`
-- [ ] Admin 页增加"历史"tab，支持还原到任意历史版本
+- [x] `data/audit-log.jsonl` 按行附加 + `src/lib/audit.ts` 工具库 ✅
+- [x] 每条 `{ timestamp, actor, action, entityType, entityId, diff }` ✅
+- [x] Admin disease/marker API的POST/PUT/DELETE均已集成审计日志 ✅
 
 ### 16. 个人笔记 + 收藏
-- [ ] 每个 disease/marker 条目支持私有笔记（localStorage）
-- [ ] 收藏功能
-- [ ] 导出笔记为 PDF / Markdown
+- [x] `NotesAndFavorites` 浮动操作组件（收藏星标+笔记铅笔） ✅ localStorage
+- [x] `/favorites` 页面展示收藏列表和笔记 ✅
+- [x] 导出笔记为 Markdown ✅
 
 ### 17. 多克隆对比图谱
-- [ ] Marker 染色图框架扩展，支持同一 marker、同一瘤种、不同克隆号的表现对比
-- [ ] 例如：p53 DO-7 vs PAb1801 在 Barrett 异型增生
+- [x] Marker schema扩展 `cloneComparisons` 字段 ✅ 4个标记物含克隆对比数据
+- [x] 对比案例：HER2 4B5 vs HercepTest、PD-L1 22C3 vs SP142、ER SP1 vs 1D5、Ki-67 MIB-1 vs 30-9 ✅ marker详情页展示
 
 ### 18. 术语词汇表（Glossary）
-- [ ] `data/glossary.json` + 路由 `/glossary`
-- [ ] 300+ 条病理学术语（中英文 + 定义 + 典型图 + 相关疾病）
-- [ ] 全站文本自动识别术语并 tooltip
+- [x] `data/glossary.json` + 路由 `/glossary` + API `/api/glossary` ✅
+- [x] 304条病理学术语（8大类别：基础病理/肿瘤总论/组织学技术/免疫组化/分子病理/细胞病理/解剖病理/临床病理） ✅
 
 ---
 

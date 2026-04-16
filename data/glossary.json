@@ -1,0 +1,3807 @@
+[
+  {
+    "id": "apoptosis",
+    "termZh": "凋亡",
+    "termEn": "Apoptosis",
+    "definition": "程序性细胞死亡，细胞收缩、核固缩碎裂、形成凋亡小体，不伴炎症反应。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis",
+      "autophagy"
+    ],
+    "synonyms": [
+      "程序性细胞死亡"
+    ]
+  },
+  {
+    "id": "necrosis",
+    "termZh": "坏死",
+    "termEn": "Necrosis",
+    "definition": "由病理性因素引起的不可逆细胞死亡，伴有炎症反应。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "apoptosis",
+      "coagulative-necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "coagulative-necrosis",
+    "termZh": "凝固性坏死",
+    "termEn": "Coagulative Necrosis",
+    "definition": "最常见的坏死类型，组织结构轮廓在短期内保留，常见于缺血性梗死。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis",
+      "infarction"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "liquefactive-necrosis",
+    "termZh": "液化性坏死",
+    "termEn": "Liquefactive Necrosis",
+    "definition": "坏死组织完全液化消失，常见于脑梗死和化脓性感染。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis",
+      "abscess"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "caseous-necrosis",
+    "termZh": "干酪样坏死",
+    "termEn": "Caseous Necrosis",
+    "definition": "介于凝固性和液化性之间，呈干酪样外观，是结核病的特征性表现。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis",
+      "granuloma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fat-necrosis",
+    "termZh": "脂肪坏死",
+    "termEn": "Fat Necrosis",
+    "definition": "脂肪组织坏死，脂肪酶释放导致脂肪分解，可见皂化灶。常见于急性胰腺炎和乳腺外伤后。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fibrinoid-necrosis",
+    "termZh": "纤维素样坏死",
+    "termEn": "Fibrinoid Necrosis",
+    "definition": "血管壁出现纤维素样物质沉积和坏死，常见于恶性高血压和免疫性血管炎。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis",
+      "vasculitis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "gangrene",
+    "termZh": "坏疽",
+    "termEn": "Gangrene",
+    "definition": "大块组织坏死后继发腐败菌感染，分为干性、湿性和气性坏疽。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "inflammation",
+    "termZh": "炎症",
+    "termEn": "Inflammation",
+    "definition": "机体对损伤因子的防御性反应，以血管反应为中心，表现为红肿热痛和功能障碍。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "acute-inflammation",
+      "chronic-inflammation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "acute-inflammation",
+    "termZh": "急性炎症",
+    "termEn": "Acute Inflammation",
+    "definition": "以血管扩张、通透性增高和中性粒细胞渗出为特征的短期炎症反应。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "inflammation",
+      "abscess"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "chronic-inflammation",
+    "termZh": "慢性炎症",
+    "termEn": "Chronic Inflammation",
+    "definition": "持续时间长，以淋巴细胞、巨噬细胞浸润和纤维化为特征的炎症。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "inflammation",
+      "fibrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "granulomatous-inflammation",
+    "termZh": "肉芽肿性炎症",
+    "termEn": "Granulomatous Inflammation",
+    "definition": "以肉芽肿形成为特征的慢性炎症，常见于结核、结节病、异物反应等。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "granuloma",
+      "chronic-inflammation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "granuloma",
+    "termZh": "肉芽肿",
+    "termEn": "Granuloma",
+    "definition": "由上皮样细胞和多核巨细胞组成的结节状病变，是肉芽肿性炎症的基本病变。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "granulomatous-inflammation",
+      "giant-cell"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "abscess",
+    "termZh": "脓肿",
+    "termEn": "Abscess",
+    "definition": "局限性化脓性炎症，中央为脓液，周围有脓肿膜。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "acute-inflammation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "empyema",
+    "termZh": "积脓",
+    "termEn": "Empyema",
+    "definition": "体腔内大量脓液积聚，如胸腔积脓。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "abscess"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "sinus",
+    "termZh": "窦道",
+    "termEn": "Sinus",
+    "definition": "连接脓肿与体表的病理性管道，只有一个开口。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "fistula"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fistula",
+    "termZh": "瘘管",
+    "termEn": "Fistula",
+    "definition": "连接两个体腔或体腔与体表的病理性管道，有两个开口。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "sinus"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fibrosis",
+    "termZh": "纤维化",
+    "termEn": "Fibrosis",
+    "definition": "组织中胶原纤维过度沉积，是慢性炎症和损伤修复的结果。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "chronic-inflammation",
+      "cirrhosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cirrhosis",
+    "termZh": "肝硬化",
+    "termEn": "Cirrhosis",
+    "definition": "肝脏弥漫性纤维化伴假小叶形成，是各种慢性肝病的终末期表现。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "fibrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "metaplasia",
+    "termZh": "化生",
+    "termEn": "Metaplasia",
+    "definition": "一种分化成熟的细胞类型被另一种分化成熟的细胞类型取代。是适应性改变，可逆。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "dysplasia",
+      "squamous-metaplasia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "squamous-metaplasia",
+    "termZh": "鳞状化生",
+    "termEn": "Squamous Metaplasia",
+    "definition": "柱状上皮被鳞状上皮取代，常见于支气管和宫颈。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "metaplasia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "intestinal-metaplasia",
+    "termZh": "肠化生",
+    "termEn": "Intestinal Metaplasia",
+    "definition": "胃黏膜上皮被肠型上皮（杯状细胞）取代，是胃癌的癌前状态。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "metaplasia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "dysplasia",
+    "termZh": "异型增生",
+    "termEn": "Dysplasia",
+    "definition": "细胞和组织结构的异常发育，表现为细胞异型性增加和组织结构紊乱，是癌前病变。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "metaplasia",
+      "carcinoma-in-situ"
+    ],
+    "synonyms": [
+      "不典型增生"
+    ]
+  },
+  {
+    "id": "hyperplasia",
+    "termZh": "增生",
+    "termEn": "Hyperplasia",
+    "definition": "组织或器官中细胞数目增多导致体积增大，是对刺激的适应性反应。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "hypertrophy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hypertrophy",
+    "termZh": "肥大",
+    "termEn": "Hypertrophy",
+    "definition": "细胞体积增大导致组织或器官体积增大，不伴细胞数目增多。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "hyperplasia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "atrophy",
+    "termZh": "萎缩",
+    "termEn": "Atrophy",
+    "definition": "已发育正常的组织、器官体积缩小，可由废用、去神经、缺血等引起。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "hypertrophy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "autolysis",
+    "termZh": "自溶",
+    "termEn": "Autolysis",
+    "definition": "细胞死后由自身溶酶体酶引起的自我消化过程。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "autophagy",
+    "termZh": "自噬",
+    "termEn": "Autophagy",
+    "definition": "细胞通过溶酶体降解自身成分的过程，在营养匮乏时可促进细胞存活。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "apoptosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "edema",
+    "termZh": "水肿",
+    "termEn": "Edema",
+    "definition": "组织间隙或体腔内液体过多积聚。可由静水压升高、胶体渗透压降低等引起。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "congestion"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "congestion",
+    "termZh": "淤血",
+    "termEn": "Congestion",
+    "definition": "静脉回流受阻导致血液在器官或组织中淤积。分主动和被动充血。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "edema",
+      "hemorrhage"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hemorrhage",
+    "termZh": "出血",
+    "termEn": "Hemorrhage",
+    "definition": "血液从血管腔溢出到组织间隙或体腔。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "congestion"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "thrombosis",
+    "termZh": "血栓形成",
+    "termEn": "Thrombosis",
+    "definition": "活体心血管内血液成分形成固体质块的过程，与Virchow三联征相关。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "embolism",
+      "infarction"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "embolism",
+    "termZh": "栓塞",
+    "termEn": "Embolism",
+    "definition": "循环血液中异常物质随血流阻塞血管腔的过程。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "thrombosis",
+      "infarction"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "infarction",
+    "termZh": "梗死",
+    "termEn": "Infarction",
+    "definition": "器官或组织因血供中断导致的缺血性坏死。分白色（贫血性）和红色（出血性）梗死。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "thrombosis",
+      "coagulative-necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "ischemia",
+    "termZh": "缺血",
+    "termEn": "Ischemia",
+    "definition": "组织或器官的血液供应不足或中断。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "infarction"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "amyloidosis",
+    "termZh": "淀粉样变性",
+    "termEn": "Amyloidosis",
+    "definition": "淀粉样蛋白在细胞外沉积的一组疾病。刚果红染色阳性并呈苹果绿双折射。",
+    "category": "基础病理",
+    "relatedTerms": [],
+    "synonyms": [
+      "淀粉样变"
+    ]
+  },
+  {
+    "id": "calcification",
+    "termZh": "钙化",
+    "termEn": "Calcification",
+    "definition": "钙盐沉积于组织中，分营养不良性（坏死组织内）和转移性（高钙血症引起）。",
+    "category": "基础病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "hemosiderosis",
+    "termZh": "含铁血黄素沉着症",
+    "termEn": "Hemosiderosis",
+    "definition": "含铁血黄素在组织中过度沉积。Prussian blue染色阳性。",
+    "category": "基础病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "repair",
+    "termZh": "修复",
+    "termEn": "Repair",
+    "definition": "组织损伤后的恢复过程，包括再生和纤维化修复两种方式。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "regeneration",
+      "fibrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "regeneration",
+    "termZh": "再生",
+    "termEn": "Regeneration",
+    "definition": "损伤组织由同种细胞增生修复的过程。再生能力：不稳定细胞>稳定细胞>永久细胞。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "repair"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "wound-healing",
+    "termZh": "伤口愈合",
+    "termEn": "Wound Healing",
+    "definition": "皮肤伤口的修复过程，分一期愈合和二期愈合。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "repair"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "keloid",
+    "termZh": "瘢痕疙瘩",
+    "termEn": "Keloid",
+    "definition": "瘢痕组织过度增生，超越原伤口范围，不会自行消退。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "wound-healing"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "foreign-body-reaction",
+    "termZh": "异物反应",
+    "termEn": "Foreign Body Reaction",
+    "definition": "对体内异物的慢性炎症反应，以异物巨细胞形成为特征。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "granuloma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "giant-cell",
+    "termZh": "巨细胞",
+    "termEn": "Giant Cell",
+    "definition": "多个巨噬细胞融合形成的多核细胞。类型包括Langhans巨细胞、异物巨细胞、Touton巨细胞等。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "granuloma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "langhans-giant-cell",
+    "termZh": "Langhans巨细胞",
+    "termEn": "Langhans Giant Cell",
+    "definition": "细胞核排列成马蹄形或环形，常见于结核性肉芽肿。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "giant-cell",
+      "granuloma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "touton-giant-cell",
+    "termZh": "Touton巨细胞",
+    "termEn": "Touton Giant Cell",
+    "definition": "核排列成环形，外周胞质含脂质空泡，常见于黄色瘤。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "giant-cell"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "reed-sternberg-cell",
+    "termZh": "Reed-Sternberg细胞",
+    "termEn": "Reed-Sternberg Cell",
+    "definition": "经典型霍奇金淋巴瘤的标志性细胞，双核或多核，核仁大而嗜酸性（\"猫头鹰眼\"样）。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "giant-cell"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "epithelioid-cell",
+    "termZh": "上皮样细胞",
+    "termEn": "Epithelioid Cell",
+    "definition": "活化的巨噬细胞，胞浆丰富嗜酸性，形态类似上皮细胞，是肉芽肿的主要组成。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "granuloma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hemostasis",
+    "termZh": "止血",
+    "termEn": "Hemostasis",
+    "definition": "血管损伤后阻止出血的生理过程，包括血管收缩、血小板聚集和凝血级联。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "thrombosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "vasculitis",
+    "termZh": "血管炎",
+    "termEn": "Vasculitis",
+    "definition": "血管壁的炎症性疾病，可累及各种大小的血管。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "fibrinoid-necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cell-injury",
+    "termZh": "细胞损伤",
+    "termEn": "Cell Injury",
+    "definition": "当细胞受到超过其适应能力的应激时发生的改变，分可逆和不可逆损伤。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis",
+      "apoptosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hydropic-change",
+    "termZh": "水变性",
+    "termEn": "Hydropic Change",
+    "definition": "细胞内水分增多导致肿胀，是最早最常见的可逆性细胞损伤。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "cell-injury"
+    ],
+    "synonyms": [
+      "细胞水肿"
+    ]
+  },
+  {
+    "id": "fatty-change",
+    "termZh": "脂肪变性",
+    "termEn": "Fatty Change",
+    "definition": "非脂肪细胞胞质内出现脂滴，常见于肝细胞、心肌细胞。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "cell-injury"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "pyknosis",
+    "termZh": "核固缩",
+    "termEn": "Pyknosis",
+    "definition": "细胞核浓缩变小、嗜碱性增强，是细胞坏死的形态学标志之一。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "karyorrhexis",
+    "termZh": "核碎裂",
+    "termEn": "Karyorrhexis",
+    "definition": "固缩的细胞核断裂为碎片。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis",
+      "pyknosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "karyolysis",
+    "termZh": "核溶解",
+    "termEn": "Karyolysis",
+    "definition": "核内DNA被核酸酶降解，核逐渐消失。",
+    "category": "基础病理",
+    "relatedTerms": [
+      "necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "neoplasm",
+    "termZh": "肿瘤",
+    "termEn": "Neoplasm",
+    "definition": "机体细胞异常增殖形成的新生物，生长不受正常生长调控机制约束。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "benign-tumor",
+      "malignant-tumor"
+    ],
+    "synonyms": [
+      "新生物"
+    ]
+  },
+  {
+    "id": "benign-tumor",
+    "termZh": "良性肿瘤",
+    "termEn": "Benign Tumor",
+    "definition": "生长缓慢、边界清楚、不转移的肿瘤。一般不危及生命。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "malignant-tumor",
+      "neoplasm"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "malignant-tumor",
+    "termZh": "恶性肿瘤",
+    "termEn": "Malignant Tumor",
+    "definition": "生长迅速、浸润性生长、可发生转移的肿瘤。包括癌、肉瘤和淋巴瘤等。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "carcinoma",
+      "sarcoma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "carcinoma",
+    "termZh": "癌",
+    "termEn": "Carcinoma",
+    "definition": "起源于上皮组织的恶性肿瘤，是最常见的恶性肿瘤类型。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "sarcoma",
+      "adenocarcinoma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "sarcoma",
+    "termZh": "肉瘤",
+    "termEn": "Sarcoma",
+    "definition": "起源于间叶组织（结缔组织、肌肉、骨等）的恶性肿瘤。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "carcinoma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "lymphoma",
+    "termZh": "淋巴瘤",
+    "termEn": "Lymphoma",
+    "definition": "起源于淋巴组织的恶性肿瘤，分霍奇金和非霍奇金淋巴瘤。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "leukemia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "leukemia",
+    "termZh": "白血病",
+    "termEn": "Leukemia",
+    "definition": "造血干/祖细胞的恶性克隆性疾病，异常白细胞在骨髓和血液中大量增殖。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "lymphoma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "adenoma",
+    "termZh": "腺瘤",
+    "termEn": "Adenoma",
+    "definition": "起源于腺上皮的良性肿瘤。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "adenocarcinoma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "adenocarcinoma",
+    "termZh": "腺癌",
+    "termEn": "Adenocarcinoma",
+    "definition": "起源于腺上皮的恶性肿瘤，具有腺体形成或黏液分泌特征。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "carcinoma",
+      "adenoma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "papilloma",
+    "termZh": "乳头状瘤",
+    "termEn": "Papilloma",
+    "definition": "上皮向表面外生性生长形成乳头状或指状突起的良性肿瘤。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "polyp"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "polyp",
+    "termZh": "息肉",
+    "termEn": "Polyp",
+    "definition": "从黏膜表面突出的肿物的统称，可以是肿瘤性或非肿瘤性。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "papilloma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hamartoma",
+    "termZh": "错构瘤",
+    "termEn": "Hamartoma",
+    "definition": "组织成分正常但排列紊乱形成的瘤样病变，属发育异常而非真性肿瘤。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "choristoma",
+    "termZh": "迷离瘤",
+    "termEn": "Choristoma",
+    "definition": "正常组织异位存在形成的瘤样病变。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "hamartoma"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "teratoma",
+    "termZh": "畸胎瘤",
+    "termEn": "Teratoma",
+    "definition": "含有两个或三个胚层来源组织成分的生殖细胞肿瘤。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "carcinoma-in-situ",
+    "termZh": "原位癌",
+    "termEn": "Carcinoma in Situ",
+    "definition": "恶性上皮细胞局限于基底膜以内，未突破基底膜，无间质浸润。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "invasive-carcinoma",
+      "dysplasia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "invasive-carcinoma",
+    "termZh": "浸润性癌",
+    "termEn": "Invasive Carcinoma",
+    "definition": "癌细胞突破基底膜向间质浸润生长，具有转移能力。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "carcinoma-in-situ",
+      "metastasis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "grade",
+    "termZh": "分级",
+    "termEn": "Grade",
+    "definition": "根据肿瘤细胞的分化程度对恶性肿瘤进行分级，通常分为高、中、低分化。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "differentiation",
+      "stage"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "differentiation",
+    "termZh": "分化",
+    "termEn": "Differentiation",
+    "definition": "肿瘤细胞与正常起源细胞的相似程度。分化越好，恶性程度越低。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "grade",
+      "anaplasia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "anaplasia",
+    "termZh": "间变",
+    "termEn": "Anaplasia",
+    "definition": "肿瘤细胞极度缺乏分化，形态和功能与正常细胞差异极大。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "differentiation",
+      "pleomorphism"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "pleomorphism",
+    "termZh": "多形性",
+    "termEn": "Pleomorphism",
+    "definition": "肿瘤细胞大小和形态差异显著，是高级别恶性肿瘤的特征之一。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "anaplasia"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "stage",
+    "termZh": "分期",
+    "termEn": "Stage",
+    "definition": "根据肿瘤大小、浸润深度、淋巴结转移和远处转移情况进行临床分期。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "tnm",
+      "grade"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "tnm",
+    "termZh": "TNM分期",
+    "termEn": "TNM Staging",
+    "definition": "T（原发肿瘤大小/浸润程度）、N（区域淋巴结转移）、M（远处转移）的标准化分期系统。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "stage"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "metastasis",
+    "termZh": "转移",
+    "termEn": "Metastasis",
+    "definition": "恶性肿瘤细胞从原发灶脱离，经血道、淋巴道或种植途径到达远处组织继续生长。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "lymphatic-invasion",
+      "venous-invasion"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "lymphatic-invasion",
+    "termZh": "淋巴管侵犯",
+    "termEn": "Lymphatic Invasion",
+    "definition": "肿瘤细胞侵入淋巴管腔，是淋巴结转移的前提。缩写LVI。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "metastasis",
+      "venous-invasion"
+    ],
+    "synonyms": [
+      "LVI"
+    ]
+  },
+  {
+    "id": "venous-invasion",
+    "termZh": "静脉侵犯",
+    "termEn": "Venous Invasion",
+    "definition": "肿瘤细胞侵入静脉管腔，与血行转移风险相关。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "metastasis",
+      "lymphatic-invasion"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "perineural-invasion",
+    "termZh": "神经侵犯",
+    "termEn": "Perineural Invasion",
+    "definition": "肿瘤细胞沿神经周围间隙生长或浸润神经束膜，缩写PNI。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "metastasis"
+    ],
+    "synonyms": [
+      "PNI"
+    ]
+  },
+  {
+    "id": "tumor-budding",
+    "termZh": "肿瘤出芽",
+    "termEn": "Tumor Budding",
+    "definition": "浸润前沿孤立的肿瘤细胞或小细胞簇（<5个细胞），是不良预后指标。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "metastasis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "mitotic-figure",
+    "termZh": "核分裂象",
+    "termEn": "Mitotic Figure",
+    "definition": "组织切片中可见的有丝分裂期细胞，数量反映肿瘤增殖活性。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "grade"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "desmoplasia",
+    "termZh": "促纤维增生",
+    "termEn": "Desmoplasia",
+    "definition": "肿瘤刺激间质产生大量纤维结缔组织增生。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "field-cancerization",
+    "termZh": "区域癌化",
+    "termEn": "Field Cancerization",
+    "definition": "暴露于致癌因素的区域内多处独立发生癌前/癌性改变的现象。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "clonality",
+    "termZh": "克隆性",
+    "termEn": "Clonality",
+    "definition": "肿瘤来源于单个突变细胞的克隆性增殖。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "driver-mutation",
+    "termZh": "驱动突变",
+    "termEn": "Driver Mutation",
+    "definition": "赋予肿瘤细胞生长优势、直接参与肿瘤发生的基因突变。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "passenger-mutation",
+      "oncogene"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "passenger-mutation",
+    "termZh": "乘客突变",
+    "termEn": "Passenger Mutation",
+    "definition": "在肿瘤演变过程中积累但不直接驱动肿瘤生长的基因突变。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "driver-mutation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "tumor-suppressor",
+    "termZh": "抑癌基因",
+    "termEn": "Tumor Suppressor",
+    "definition": "正常情况下抑制细胞增殖的基因，两个等位基因均失活后促进肿瘤发生。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "oncogene"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "oncogene",
+    "termZh": "癌基因",
+    "termEn": "Oncogene",
+    "definition": "原癌基因突变激活后获得促进细胞增殖的功能，仅需一个等位基因激活。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "tumor-suppressor",
+      "proto-oncogene"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "proto-oncogene",
+    "termZh": "原癌基因",
+    "termEn": "Proto-oncogene",
+    "definition": "正常细胞中参与细胞生长和分化的基因，突变后可转变为癌基因。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "oncogene"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "tumor-marker",
+    "termZh": "肿瘤标志物",
+    "termEn": "Tumor Marker",
+    "definition": "由肿瘤细胞产生或机体对肿瘤反应产生的可检测物质，用于诊断和监测。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "paraneoplastic",
+    "termZh": "副肿瘤",
+    "termEn": "Paraneoplastic",
+    "definition": "肿瘤引起的非直接侵犯或转移导致的远隔部位症状。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "tumor-marker"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "carcinogenesis",
+    "termZh": "癌变过程",
+    "termEn": "Carcinogenesis",
+    "definition": "正常细胞转变为癌细胞的多步骤多基因过程，包括启动、促进和进展阶段。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "tumor-heterogeneity",
+    "termZh": "肿瘤异质性",
+    "termEn": "Tumor Heterogeneity",
+    "definition": "同一肿瘤内存在不同的细胞亚群，具有不同的基因组特征和生物学行为。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "tumor-microenvironment",
+    "termZh": "肿瘤微环境",
+    "termEn": "Tumor Microenvironment",
+    "definition": "肿瘤细胞周围的非肿瘤细胞成分，包括免疫细胞、成纤维细胞、血管和细胞外基质。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "angiogenesis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "angiogenesis",
+    "termZh": "血管生成",
+    "termEn": "Angiogenesis",
+    "definition": "新血管从已有血管中发芽形成的过程，肿瘤生长超过1-2mm时依赖于血管生成。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "tumor-microenvironment"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "immune-evasion",
+    "termZh": "免疫逃逸",
+    "termEn": "Immune Evasion",
+    "definition": "肿瘤细胞逃避免疫系统识别和杀伤的机制。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "tumor-microenvironment"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "emt",
+    "termZh": "上皮-间质转化",
+    "termEn": "Epithelial-Mesenchymal Transition",
+    "definition": "上皮细胞获得间质细胞表型的过程，与肿瘤侵袭转移密切相关。缩写EMT。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "metastasis"
+    ],
+    "synonyms": [
+      "EMT"
+    ]
+  },
+  {
+    "id": "tumor-dormancy",
+    "termZh": "肿瘤休眠",
+    "termEn": "Tumor Dormancy",
+    "definition": "肿瘤细胞长期处于非增殖状态，可在多年后重新激活导致复发或转移。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "grading-system",
+    "termZh": "分级系统",
+    "termEn": "Grading System",
+    "definition": "根据肿瘤形态学特征评估恶性程度的标准化系统。不同肿瘤有不同的分级标准。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "grade"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "staging-system",
+    "termZh": "分期系统",
+    "termEn": "Staging System",
+    "definition": "评估肿瘤扩散范围的标准化系统。AJCC/UICC TNM是最广泛使用的分期系统。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "stage",
+      "tnm"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "sentinel-lymph-node",
+    "termZh": "前哨淋巴结",
+    "termEn": "Sentinel Lymph Node",
+    "definition": "最先接收肿瘤区域淋巴引流的淋巴结，其状态可预测区域淋巴结转移情况。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "metastasis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "micrometastasis",
+    "termZh": "微转移",
+    "termEn": "Micrometastasis",
+    "definition": "淋巴结中大于0.2mm但不超过2mm的转移灶。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "metastasis",
+      "sentinel-lymph-node"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "isolated-tumor-cells",
+    "termZh": "孤立肿瘤细胞",
+    "termEn": "Isolated Tumor Cells",
+    "definition": "淋巴结中≤0.2mm的单个或小簇肿瘤细胞。分期中通常不计为阳性淋巴结。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "micrometastasis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "regression",
+    "termZh": "消退",
+    "termEn": "Regression",
+    "definition": "肿瘤自发或治疗后体积缩小或消失的现象。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "tumor-necrosis-rate",
+    "termZh": "肿瘤坏死率",
+    "termEn": "Tumor Necrosis Rate",
+    "definition": "肿瘤内坏死区域占肿瘤总面积的百分比，在部分肿瘤中是预后因子。",
+    "category": "肿瘤总论",
+    "relatedTerms": [
+      "necrosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "margin-status",
+    "termZh": "切缘状态",
+    "termEn": "Margin Status",
+    "definition": "手术标本切除边缘是否存在肿瘤细胞。阳性切缘提示肿瘤切除不完整。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "residual-tumor",
+    "termZh": "残留肿瘤",
+    "termEn": "Residual Tumor",
+    "definition": "新辅助治疗后仍存在的活肿瘤组织。",
+    "category": "肿瘤总论",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "he-staining",
+    "termZh": "苏木精-伊红染色",
+    "termEn": "Hematoxylin and Eosin Staining",
+    "definition": "最基本最常用的组织学染色方法。苏木精染细胞核为蓝紫色，伊红染细胞质为红色。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": [
+      "HE染色"
+    ]
+  },
+  {
+    "id": "hematoxylin",
+    "termZh": "苏木精",
+    "termEn": "Hematoxylin",
+    "definition": "碱性染料，与DNA和RNA结合将细胞核染为蓝紫色。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "eosin",
+      "he-staining"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "eosin",
+    "termZh": "伊红",
+    "termEn": "Eosin",
+    "definition": "酸性染料，将蛋白质丰富的细胞质和细胞外基质染为粉红色。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "hematoxylin"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fixation",
+    "termZh": "固定",
+    "termEn": "Fixation",
+    "definition": "用固定液处理组织以保存细胞形态和分子抗原的过程。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "formalin",
+      "ffpe"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "formalin",
+    "termZh": "福尔马林",
+    "termEn": "Formalin",
+    "definition": "10%中性缓冲福尔马林是最常用的组织固定液。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "fixation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "ffpe",
+    "termZh": "石蜡包埋组织",
+    "termEn": "FFPE",
+    "definition": "Formalin-Fixed Paraffin-Embedded的缩写，常规病理标本的标准处理方式。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "fixation",
+      "embedding"
+    ],
+    "synonyms": [
+      "福尔马林固定石蜡包埋"
+    ]
+  },
+  {
+    "id": "frozen-section",
+    "termZh": "冰冻切片",
+    "termEn": "Frozen Section",
+    "definition": "不经固定和石蜡包埋，直接冷冻切片的快速病理诊断方法。用于术中快速诊断。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "cryostat"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cryostat",
+    "termZh": "冰冻切片机",
+    "termEn": "Cryostat",
+    "definition": "在低温环境中切割冰冻组织的专用设备。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "frozen-section"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "microtome",
+    "termZh": "石蜡切片机",
+    "termEn": "Microtome",
+    "definition": "将石蜡包埋的组织块切成薄片（通常3-5μm）的精密切割仪器。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "embedding",
+    "termZh": "包埋",
+    "termEn": "Embedding",
+    "definition": "将固定脱水后的组织浸入包埋介质（通常为石蜡）中，使其获得一定硬度以利切片。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "ffpe"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "tissue-processor",
+    "termZh": "组织脱水机",
+    "termEn": "Tissue Processor",
+    "definition": "自动完成组织脱水、透明和浸蜡过程的设备。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "embedding"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "deparaffinization",
+    "termZh": "脱蜡",
+    "termEn": "Deparaffinization",
+    "definition": "染色或IHC前去除切片中石蜡的步骤，通常用二甲苯处理。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "dehydration",
+    "termZh": "脱水",
+    "termEn": "Dehydration",
+    "definition": "用递增浓度的乙醇去除组织中水分的过程。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "tissue-processor"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "clearing",
+    "termZh": "透明",
+    "termEn": "Clearing",
+    "definition": "用透明剂（二甲苯）替代脱水剂，使组织透明，利于石蜡浸入。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "dehydration"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "mounting",
+    "termZh": "封片",
+    "termEn": "Mounting",
+    "definition": "将盖玻片用封片剂固定于载玻片上的操作。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "coverslip",
+    "termZh": "盖玻片",
+    "termEn": "Coverslip",
+    "definition": "覆盖在组织切片上的薄玻璃片，保护切片并利于显微镜观察。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "mounting"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "decalcification",
+    "termZh": "脱钙",
+    "termEn": "Decalcification",
+    "definition": "用酸或螯合剂去除骨和钙化组织中钙盐的处理过程，使硬组织可以切片。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "special-stain",
+    "termZh": "特殊染色",
+    "termEn": "Special Stain",
+    "definition": "除HE外的其他组织化学染色方法，用于显示特定组织成分。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "pas",
+      "masson-trichrome"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "pas",
+    "termZh": "过碘酸-Schiff染色",
+    "termEn": "Periodic Acid-Schiff Stain",
+    "definition": "显示糖原、中性黏多糖和基底膜的特殊染色。呈品红色为阳性。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain"
+    ],
+    "synonyms": [
+      "PAS染色"
+    ]
+  },
+  {
+    "id": "masson-trichrome",
+    "termZh": "Masson三色染色",
+    "termEn": "Masson Trichrome Stain",
+    "definition": "显示胶原纤维（蓝色）、肌纤维（红色）和核（黑色）的三色染色法。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "reticulin-stain",
+    "termZh": "网状纤维染色",
+    "termEn": "Reticulin Stain",
+    "definition": "显示网状纤维（III型胶原）的银染法。在肝脏病理中用于评估网架结构。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "congo-red",
+    "termZh": "刚果红染色",
+    "termEn": "Congo Red Stain",
+    "definition": "淀粉样蛋白的特异性染色，阳性呈橘红色，偏振光下呈苹果绿双折射。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain",
+      "amyloidosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "giemsa",
+    "termZh": "吉姆萨染色",
+    "termEn": "Giemsa Stain",
+    "definition": "用于显示幽门螺杆菌、原虫和某些细胞的特殊染色。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "ziehl-neelsen",
+    "termZh": "抗酸染色",
+    "termEn": "Ziehl-Neelsen Stain",
+    "definition": "显示抗酸杆菌（结核分枝杆菌等）的特殊染色。阳性菌呈红色。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain"
+    ],
+    "synonyms": [
+      "ZN染色"
+    ]
+  },
+  {
+    "id": "gms",
+    "termZh": "六胺银染色",
+    "termEn": "Grocott Methenamine Silver",
+    "definition": "显示真菌的特殊染色。真菌菌丝和孢子呈黑色。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain"
+    ],
+    "synonyms": [
+      "GMS"
+    ]
+  },
+  {
+    "id": "prussian-blue",
+    "termZh": "普鲁士蓝染色",
+    "termEn": "Prussian Blue Stain",
+    "definition": "显示含铁血黄素（三价铁）的特殊染色。阳性呈蓝色。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain",
+      "hemosiderosis"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "oil-red-o",
+    "termZh": "油红O染色",
+    "termEn": "Oil Red O Stain",
+    "definition": "显示脂质的特殊染色，需要冰冻切片（石蜡处理会溶解脂质）。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "special-stain",
+      "frozen-section"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "immunofluorescence",
+    "termZh": "免疫荧光",
+    "termEn": "Immunofluorescence",
+    "definition": "用荧光标记的抗体检测组织中抗原的方法。在肾脏和皮肤病理中广泛应用。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "immunohistochemistry"
+    ],
+    "synonyms": [
+      "IF"
+    ]
+  },
+  {
+    "id": "electron-microscopy",
+    "termZh": "电子显微镜",
+    "termEn": "Electron Microscopy",
+    "definition": "利用电子束成像的高分辨率显微镜，可观察超微结构。在肾脏病理和某些肿瘤诊断中有价值。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": [
+      "EM",
+      "电镜"
+    ]
+  },
+  {
+    "id": "digital-pathology",
+    "termZh": "数字病理",
+    "termEn": "Digital Pathology",
+    "definition": "将组织切片数字化并通过计算机进行观察、分析和存储的技术。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "whole-slide-imaging"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "whole-slide-imaging",
+    "termZh": "全切片扫描",
+    "termEn": "Whole Slide Imaging",
+    "definition": "将整张组织切片扫描为高分辨率数字图像。缩写WSI。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "digital-pathology"
+    ],
+    "synonyms": [
+      "WSI"
+    ]
+  },
+  {
+    "id": "polarized-light",
+    "termZh": "偏振光显微镜",
+    "termEn": "Polarized Light Microscopy",
+    "definition": "利用偏振光观察具有双折射特性的物质，如淀粉样蛋白、尿酸盐结晶、痛风石等。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "phase-contrast",
+    "termZh": "相差显微镜",
+    "termEn": "Phase Contrast Microscopy",
+    "definition": "利用光的相位差增强透明标本对比度的显微镜技术。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "teleconsultation",
+    "termZh": "远程病理会诊",
+    "termEn": "Teleconsultation",
+    "definition": "通过数字化切片或实时视频进行远程病理诊断会诊。",
+    "category": "组织学技术",
+    "relatedTerms": [
+      "digital-pathology"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "tissue-microarray",
+    "termZh": "组织芯片",
+    "termEn": "Tissue Microarray",
+    "definition": "将多个标本的组织柱排列在同一蜡块中，实现高通量平行分析。缩写TMA。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": [
+      "TMA"
+    ]
+  },
+  {
+    "id": "staining-artifact",
+    "termZh": "染色伪影",
+    "termEn": "Staining Artifact",
+    "definition": "由于固定、处理或染色过程中的问题产生的非真实组织形态改变。",
+    "category": "组织学技术",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "immunohistochemistry",
+    "termZh": "免疫组织化学",
+    "termEn": "Immunohistochemistry",
+    "definition": "利用抗原-抗体反应和显色系统在组织切片上定位特定蛋白的技术。缩写IHC。",
+    "category": "免疫组化",
+    "relatedTerms": [],
+    "synonyms": [
+      "IHC",
+      "免疫组化"
+    ]
+  },
+  {
+    "id": "antigen",
+    "termZh": "抗原",
+    "termEn": "Antigen",
+    "definition": "能与抗体特异性结合的分子。IHC中指组织切片中需要检测的目标蛋白。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "antibody",
+      "epitope"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "antibody",
+    "termZh": "抗体",
+    "termEn": "Antibody",
+    "definition": "由B细胞产生的免疫球蛋白，能特异性识别和结合抗原。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "antigen",
+      "monoclonal"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "clone",
+    "termZh": "克隆号",
+    "termEn": "Clone",
+    "definition": "产生特定抗体的杂交瘤细胞系的标识。不同克隆号的抗体识别同一蛋白的不同表位。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "monoclonal",
+      "antibody"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "monoclonal-antibody",
+    "termZh": "单克隆抗体",
+    "termEn": "Monoclonal Antibody",
+    "definition": "由单一B细胞克隆产生的抗体，只识别一个表位，特异性高。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "polyclonal-antibody",
+      "clone"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "polyclonal-antibody",
+    "termZh": "多克隆抗体",
+    "termEn": "Polyclonal Antibody",
+    "definition": "由多个B细胞克隆产生的抗体混合物，识别多个表位，敏感性高但特异性较低。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "monoclonal-antibody"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "primary-antibody",
+    "termZh": "一抗",
+    "termEn": "Primary Antibody",
+    "definition": "直接与组织中目标抗原结合的抗体。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "secondary-antibody"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "secondary-antibody",
+    "termZh": "二抗",
+    "termEn": "Secondary Antibody",
+    "definition": "与一抗结合的标记抗体，携带酶或荧光标记用于信号放大和检测。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "primary-antibody",
+      "polymer-method"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "chromogen",
+    "termZh": "显色剂",
+    "termEn": "Chromogen",
+    "definition": "酶催化底物产生有色沉淀的试剂。常用DAB（棕色）和AEC（红色）。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "dab"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "dab",
+    "termZh": "DAB显色",
+    "termEn": "Diaminobenzidine",
+    "definition": "最常用的IHC显色剂，辣根过氧化物酶催化产生棕色沉淀。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "chromogen"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "counterstain",
+    "termZh": "复染",
+    "termEn": "Counterstain",
+    "definition": "IHC显色后用苏木精等染料对背景进行轻度染色以显示组织结构。",
+    "category": "免疫组化",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "antigen-retrieval",
+    "termZh": "抗原修复",
+    "termEn": "Antigen Retrieval",
+    "definition": "通过加热或酶处理恢复福尔马林固定导致的蛋白交联，暴露抗原表位。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "hier",
+      "enzymatic-retrieval"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hier",
+    "termZh": "热诱导抗原修复",
+    "termEn": "Heat-Induced Epitope Retrieval",
+    "definition": "用高温高压（柠檬酸缓冲液或EDTA）进行抗原修复。是最常用的修复方法。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "antigen-retrieval"
+    ],
+    "synonyms": [
+      "HIER"
+    ]
+  },
+  {
+    "id": "enzymatic-retrieval",
+    "termZh": "酶消化抗原修复",
+    "termEn": "Enzymatic Retrieval",
+    "definition": "用蛋白酶K、胃蛋白酶等酶进行抗原修复。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "antigen-retrieval"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "epitope",
+    "termZh": "表位",
+    "termEn": "Epitope",
+    "definition": "抗原分子上被抗体识别和结合的特定区域。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "antigen",
+      "clone"
+    ],
+    "synonyms": [
+      "抗原决定簇"
+    ]
+  },
+  {
+    "id": "blocking",
+    "termZh": "封闭",
+    "termEn": "Blocking",
+    "definition": "用血清或蛋白溶液封闭非特异性结合位点，减少背景染色。",
+    "category": "免疫组化",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "endogenous-peroxidase",
+    "termZh": "内源性过氧化物酶",
+    "termEn": "Endogenous Peroxidase",
+    "definition": "组织中固有的过氧化物酶活性（如红细胞、粒细胞），可产生假阳性，需预处理灭活。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "blocking"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "polymer-method",
+    "termZh": "聚合物法",
+    "termEn": "Polymer Method",
+    "definition": "现代IHC检测系统，用聚合物连接多个酶分子和二抗，提高灵敏度。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "secondary-antibody"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "internal-control",
+    "termZh": "内对照",
+    "termEn": "Internal Control",
+    "definition": "切片中已知表达目标蛋白的正常组织结构，用于验证染色成功。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "external-control"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "external-control",
+    "termZh": "外对照",
+    "termEn": "External Control",
+    "definition": "与待测切片同时染色的已知阳性/阴性对照组织切片。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "internal-control"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "sensitivity-ihc",
+    "termZh": "灵敏度",
+    "termEn": "Sensitivity (IHC)",
+    "definition": "IHC检测真阳性的能力，即阳性检出率。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "specificity-ihc"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "specificity-ihc",
+    "termZh": "特异度",
+    "termEn": "Specificity (IHC)",
+    "definition": "IHC正确排除阴性的能力，即假阳性率的反面。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "sensitivity-ihc"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "h-score",
+    "termZh": "H评分",
+    "termEn": "H-Score",
+    "definition": "IHC半定量评分方法：3×强阳%+2×中阳%+1×弱阳%，范围0-300。常用于ER/PR评分。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "allred-score"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "allred-score",
+    "termZh": "Allred评分",
+    "termEn": "Allred Score",
+    "definition": "ER/PR的IHC评分方法：阳性比例分(0-5)+染色强度分(0-3)=总分(0-8)。≥3分为阳性。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "h-score"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "multiplex-ihc",
+    "termZh": "多重免疫组化",
+    "termEn": "Multiplex IHC",
+    "definition": "在同一切片上同时检测多个标记物的技术，使用不同颜色的显色剂或荧光标记。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "dual-staining"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "dual-staining",
+    "termZh": "双染色",
+    "termEn": "Dual Staining",
+    "definition": "同一切片上同时显示两种不同抗原的IHC方法。如p16/Ki-67双染用于宫颈筛查。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "multiplex-ihc"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "background-staining",
+    "termZh": "背景着色",
+    "termEn": "Background Staining",
+    "definition": "IHC中非特异性的着色，影响结果判读。可由内源酶、抗体浓度过高等引起。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "staining-artifact"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "edge-artifact",
+    "termZh": "切片边缘伪影",
+    "termEn": "Edge Artifact",
+    "definition": "切片边缘组织的非特异性着色，系处理过程中造成，判读时应忽略。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "staining-artifact"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "crush-artifact",
+    "termZh": "挤压伪影",
+    "termEn": "Crush Artifact",
+    "definition": "组织取材或处理过程中机械挤压导致的细胞变形，可影响形态学和IHC判读。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "staining-artifact"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "ventana",
+    "termZh": "Ventana自动化染色平台",
+    "termEn": "Ventana",
+    "definition": "Roche旗下的全自动IHC/ISH染色平台（BenchMark系列），市场占有率高。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "leica-bond"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "leica-bond",
+    "termZh": "Leica Bond自动化染色平台",
+    "termEn": "Leica Bond",
+    "definition": "Leica Biosystems的全自动IHC/ISH染色平台，另一主流自动化系统。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "ventana"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "pcr",
+    "termZh": "聚合酶链式反应",
+    "termEn": "Polymerase Chain Reaction",
+    "definition": "体外扩增特定DNA片段的技术，是分子生物学的基础技术。",
+    "category": "分子病理",
+    "relatedTerms": [],
+    "synonyms": [
+      "PCR"
+    ]
+  },
+  {
+    "id": "qpcr",
+    "termZh": "实时定量PCR",
+    "termEn": "Real-time Quantitative PCR",
+    "definition": "在PCR扩增过程中实时监测产物量的技术，可定量检测目标序列。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "pcr"
+    ],
+    "synonyms": [
+      "定量PCR",
+      "RT-qPCR"
+    ]
+  },
+  {
+    "id": "rt-pcr",
+    "termZh": "逆转录PCR",
+    "termEn": "Reverse Transcription PCR",
+    "definition": "先将RNA逆转录为cDNA再进行PCR扩增的技术。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "pcr"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "digital-pcr",
+    "termZh": "数字PCR",
+    "termEn": "Digital PCR",
+    "definition": "将样品分成数万个微滴分别进行PCR，实现绝对定量。灵敏度高于qPCR。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "pcr"
+    ],
+    "synonyms": [
+      "ddPCR"
+    ]
+  },
+  {
+    "id": "ngs",
+    "termZh": "二代测序",
+    "termEn": "Next-Generation Sequencing",
+    "definition": "高通量平行测序技术，可同时检测多个基因的多种变异类型。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "targeted-panel"
+    ],
+    "synonyms": [
+      "NGS",
+      "高通量测序"
+    ]
+  },
+  {
+    "id": "wes",
+    "termZh": "全外显子组测序",
+    "termEn": "Whole Exome Sequencing",
+    "definition": "对基因组中所有外显子区域进行测序的技术。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ngs",
+      "wgs"
+    ],
+    "synonyms": [
+      "WES"
+    ]
+  },
+  {
+    "id": "wgs",
+    "termZh": "全基因组测序",
+    "termEn": "Whole Genome Sequencing",
+    "definition": "对整个基因组进行测序的技术，包括编码区和非编码区。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ngs"
+    ],
+    "synonyms": [
+      "WGS"
+    ]
+  },
+  {
+    "id": "rna-seq",
+    "termZh": "RNA测序",
+    "termEn": "RNA Sequencing",
+    "definition": "对转录组进行测序分析的技术，可检测基因表达和融合基因。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ngs"
+    ],
+    "synonyms": [
+      "RNA-seq"
+    ]
+  },
+  {
+    "id": "targeted-panel",
+    "termZh": "靶向测序Panel",
+    "termEn": "Targeted Sequencing Panel",
+    "definition": "只对预选的一组基因进行测序的方法，测序深度高，成本较低。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ngs"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fish",
+    "termZh": "荧光原位杂交",
+    "termEn": "Fluorescence In Situ Hybridization",
+    "definition": "用荧光标记的DNA探针与组织切片上的DNA杂交，检测基因扩增、缺失和易位。",
+    "category": "分子病理",
+    "relatedTerms": [],
+    "synonyms": [
+      "FISH"
+    ]
+  },
+  {
+    "id": "cish",
+    "termZh": "显色原位杂交",
+    "termEn": "Chromogenic In Situ Hybridization",
+    "definition": "与FISH类似但用显色剂替代荧光标记，可在光学显微镜下观察。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "fish"
+    ],
+    "synonyms": [
+      "CISH"
+    ]
+  },
+  {
+    "id": "ish",
+    "termZh": "原位杂交",
+    "termEn": "In Situ Hybridization",
+    "definition": "用标记的核酸探针与组织中的DNA或RNA杂交，在原位检测目标序列。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "fish",
+      "cish"
+    ],
+    "synonyms": [
+      "ISH"
+    ]
+  },
+  {
+    "id": "liquid-biopsy",
+    "termZh": "液体活检",
+    "termEn": "Liquid Biopsy",
+    "definition": "通过检测血液等体液中的肿瘤来源物质（ctDNA、CTC等）进行非侵入性肿瘤检测。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ctdna"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "ctdna",
+    "termZh": "循环肿瘤DNA",
+    "termEn": "Circulating Tumor DNA",
+    "definition": "血浆中来源于肿瘤细胞的游离DNA片段，可用于无创基因检测和疗效监测。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "liquid-biopsy",
+      "cfdna"
+    ],
+    "synonyms": [
+      "ctDNA"
+    ]
+  },
+  {
+    "id": "cfdna",
+    "termZh": "游离DNA",
+    "termEn": "Cell-free DNA",
+    "definition": "血浆中的游离DNA，包括正常细胞和肿瘤细胞释放的DNA。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ctdna"
+    ],
+    "synonyms": [
+      "cfDNA"
+    ]
+  },
+  {
+    "id": "mutation",
+    "termZh": "突变",
+    "termEn": "Mutation",
+    "definition": "DNA序列的永久性改变。分为点突变、插入、缺失、重排等类型。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "point-mutation",
+      "frameshift"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "point-mutation",
+    "termZh": "点突变",
+    "termEn": "Point Mutation",
+    "definition": "单个核苷酸的替换，分为错义突变、无义突变和同义突变。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "missense",
+      "nonsense"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "frameshift",
+    "termZh": "移码突变",
+    "termEn": "Frameshift Mutation",
+    "definition": "插入或缺失非3的倍数个核苷酸，导致阅读框移位，通常产生截短蛋白。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "mutation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "missense",
+    "termZh": "错义突变",
+    "termEn": "Missense Mutation",
+    "definition": "单核苷酸替换导致编码的氨基酸改变。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "point-mutation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "nonsense",
+    "termZh": "无义突变",
+    "termEn": "Nonsense Mutation",
+    "definition": "单核苷酸替换产生终止密码子，导致蛋白提前终止（截短蛋白）。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "point-mutation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "splice-site",
+    "termZh": "剪接位点突变",
+    "termEn": "Splice Site Mutation",
+    "definition": "影响内含子-外显子交界处的突变，导致异常mRNA剪接。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "mutation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "amplification",
+    "termZh": "基因扩增",
+    "termEn": "Gene Amplification",
+    "definition": "基因拷贝数显著增加。如HER2扩增在乳腺癌中指导曲妥珠单抗治疗。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "cnv"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "translocation",
+    "termZh": "易位",
+    "termEn": "Translocation",
+    "definition": "两条非同源染色体间的片段交换。常产生融合基因。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "fusion-gene"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fusion-gene",
+    "termZh": "融合基因",
+    "termEn": "Fusion Gene",
+    "definition": "两个原本独立的基因因染色体重排而连接产生的嵌合基因。如BCR-ABL, EML4-ALK。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "translocation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cnv",
+    "termZh": "拷贝数变异",
+    "termEn": "Copy Number Variation",
+    "definition": "基因组中DNA片段拷贝数的增减。包括基因扩增和缺失。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "amplification"
+    ],
+    "synonyms": [
+      "CNV"
+    ]
+  },
+  {
+    "id": "msi",
+    "termZh": "微卫星不稳定性",
+    "termEn": "Microsatellite Instability",
+    "definition": "DNA错配修复缺陷导致微卫星重复序列长度改变。MSI-H是免疫治疗的预测标志物。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "mmr"
+    ],
+    "synonyms": [
+      "MSI"
+    ]
+  },
+  {
+    "id": "tmb",
+    "termZh": "肿瘤突变负荷",
+    "termEn": "Tumor Mutational Burden",
+    "definition": "肿瘤基因组中体细胞突变的数量，高TMB可能预测免疫治疗疗效。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "msi"
+    ],
+    "synonyms": [
+      "TMB"
+    ]
+  },
+  {
+    "id": "vaf",
+    "termZh": "变异等位基因频率",
+    "termEn": "Variant Allele Frequency",
+    "definition": "检测到的变异等位基因在总等位基因中的比例。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "mutation"
+    ],
+    "synonyms": [
+      "VAF"
+    ]
+  },
+  {
+    "id": "germline",
+    "termZh": "胚系突变",
+    "termEn": "Germline Mutation",
+    "definition": "存在于生殖细胞中的突变，可遗传给后代。如BRCA1/2突变。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "somatic"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "somatic",
+    "termZh": "体细胞突变",
+    "termEn": "Somatic Mutation",
+    "definition": "仅存在于体细胞（非生殖细胞）中的突变，不遗传，大多数肿瘤突变属此类。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "germline"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "epigenetics",
+    "termZh": "表观遗传学",
+    "termEn": "Epigenetics",
+    "definition": "不改变DNA序列但影响基因表达的可遗传修饰，如DNA甲基化和组蛋白修饰。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "methylation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "methylation",
+    "termZh": "DNA甲基化",
+    "termEn": "DNA Methylation",
+    "definition": "胞嘧啶第5位碳加上甲基基团的化学修饰。启动子区过甲基化可导致基因沉默。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "epigenetics"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "loh",
+    "termZh": "杂合性缺失",
+    "termEn": "Loss of Heterozygosity",
+    "definition": "一个等位基因的丢失，使该基因座仅剩一个等位基因。常见于抑癌基因失活。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "tumor-suppressor"
+    ],
+    "synonyms": [
+      "LOH"
+    ]
+  },
+  {
+    "id": "companion-diagnostics",
+    "termZh": "伴随诊断",
+    "termEn": "Companion Diagnostics",
+    "definition": "与特定靶向治疗药物配套使用的诊断检测，指导用药决策。如HER2 IHC/FISH。",
+    "category": "分子病理",
+    "relatedTerms": [],
+    "synonyms": [
+      "CDx"
+    ]
+  },
+  {
+    "id": "mmr",
+    "termZh": "错配修复",
+    "termEn": "Mismatch Repair",
+    "definition": "修复DNA复制过程中碱基配对错误的系统。MMR蛋白：MLH1、MSH2、MSH6、PMS2。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "msi"
+    ],
+    "synonyms": [
+      "MMR"
+    ]
+  },
+  {
+    "id": "cytology",
+    "termZh": "细胞学",
+    "termEn": "Cytology",
+    "definition": "通过检查脱落或穿刺获取的单个或小簇细胞进行疾病诊断的学科。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "fine-needle-aspiration"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fine-needle-aspiration",
+    "termZh": "细针穿刺吸引术",
+    "termEn": "Fine Needle Aspiration",
+    "definition": "用细针（22-27G）穿入病灶获取细胞学标本的微创技术。缩写FNA。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "fnab"
+    ],
+    "synonyms": [
+      "FNA"
+    ]
+  },
+  {
+    "id": "fnab",
+    "termZh": "细针穿刺活检",
+    "termEn": "Fine Needle Aspiration Biopsy",
+    "definition": "细针穿刺获取组织学和细胞学标本的方法。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "fine-needle-aspiration"
+    ],
+    "synonyms": [
+      "FNAB"
+    ]
+  },
+  {
+    "id": "liquid-based-cytology",
+    "termZh": "液基细胞学",
+    "termEn": "Liquid-Based Cytology",
+    "definition": "将细胞悬浮于保存液中，通过自动化制片获得薄层均匀涂片的技术。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "thinprep",
+      "surepath"
+    ],
+    "synonyms": [
+      "LBC"
+    ]
+  },
+  {
+    "id": "conventional-smear",
+    "termZh": "常规涂片",
+    "termEn": "Conventional Smear",
+    "definition": "将标本直接涂抹在玻片上的传统细胞学制片方法。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "liquid-based-cytology"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "thinprep",
+    "termZh": "ThinPrep",
+    "termEn": "ThinPrep",
+    "definition": "Hologic公司的液基细胞学系统，通过膜过滤技术制备薄层细胞涂片。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "liquid-based-cytology"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "surepath",
+    "termZh": "SurePath",
+    "termEn": "SurePath",
+    "definition": "BD公司的液基细胞学系统，通过密度梯度离心制备薄层涂片。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "liquid-based-cytology"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cell-block",
+    "termZh": "细胞块",
+    "termEn": "Cell Block",
+    "definition": "将细胞学标本离心后制成石蜡块，可进行HE和IHC染色。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "papanicolaou-stain",
+    "termZh": "巴氏染色",
+    "termEn": "Papanicolaou Stain",
+    "definition": "细胞学中最常用的染色方法，可显示细胞核和胞质的细节。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": [
+      "Pap染色"
+    ]
+  },
+  {
+    "id": "diff-quik",
+    "termZh": "Diff-Quik染色",
+    "termEn": "Diff-Quik Stain",
+    "definition": "快速Romanowsky染色，用于术中ROSE和FNA现场评估。1分钟内完成。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "rose"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "rose",
+    "termZh": "快速现场评估",
+    "termEn": "Rapid On-Site Evaluation",
+    "definition": "细胞病理医师在穿刺现场即时评估标本充分性的过程。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "fine-needle-aspiration"
+    ],
+    "synonyms": [
+      "ROSE"
+    ]
+  },
+  {
+    "id": "adequacy",
+    "termZh": "标本充分性",
+    "termEn": "Adequacy",
+    "definition": "评估细胞学标本是否含有足够的诊断性细胞，是报告的首要评估项。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "atypical-cells",
+    "termZh": "非典型细胞",
+    "termEn": "Atypical Cells",
+    "definition": "形态学上偏离正常但尚不能明确诊断为恶性的细胞。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "suspicious-malignancy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "suspicious-malignancy",
+    "termZh": "可疑恶性",
+    "termEn": "Suspicious for Malignancy",
+    "definition": "高度提示恶性但证据不够充分以做出确定性恶性诊断。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "atypical-cells"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "bethesda-system",
+    "termZh": "Bethesda报告系统",
+    "termEn": "Bethesda Reporting System",
+    "definition": "甲状腺FNA细胞学的标准化六级分类报告系统。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "tbs-cervical",
+    "termZh": "TBS宫颈细胞学",
+    "termEn": "The Bethesda System (Cervical)",
+    "definition": "宫颈液基细胞学的标准化报告系统。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": [
+      "TBS"
+    ]
+  },
+  {
+    "id": "paris-system",
+    "termZh": "Paris尿液系统",
+    "termEn": "Paris System",
+    "definition": "尿液细胞学的标准化报告系统，分为阴性、非典型、可疑、高级别和其他恶性。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "milan-system",
+    "termZh": "Milan唾液腺系统",
+    "termEn": "Milan System",
+    "definition": "唾液腺FNA细胞学的标准化报告系统。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "nuclear-cytoplasmic-ratio",
+    "termZh": "核浆比",
+    "termEn": "Nuclear-Cytoplasmic Ratio",
+    "definition": "细胞核面积与细胞质面积的比值，增大提示恶性。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "atypical-cells"
+    ],
+    "synonyms": [
+      "N/C比"
+    ]
+  },
+  {
+    "id": "chromatin-pattern",
+    "termZh": "染色质类型",
+    "termEn": "Chromatin Pattern",
+    "definition": "细胞核中染色质的分布模式，粗糙不规则提示恶性。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "koilocyte",
+    "termZh": "挖空细胞",
+    "termEn": "Koilocyte",
+    "definition": "HPV感染导致的特征性细胞改变，核周空晕+核异型，是LSIL的标志。",
+    "category": "细胞病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "cellularity",
+    "termZh": "细胞量",
+    "termEn": "Cellularity",
+    "definition": "标本中诊断性细胞的数量，是评估标本充分性的重要指标。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "adequacy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "gross-examination",
+    "termZh": "大体检查",
+    "termEn": "Gross Examination",
+    "definition": "用肉眼和简单工具对手术标本进行检查、描述和取材的过程。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "grossing"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "orientation",
+    "termZh": "标本定位",
+    "termEn": "Orientation",
+    "definition": "根据外科医生放置的缝线或标记确定标本的解剖方位。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "inking"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "inking",
+    "termZh": "标本涂墨",
+    "termEn": "Inking",
+    "definition": "用不同颜色墨水标记标本切缘，以便在切片上识别各个切缘。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "surgical-margin"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "surgical-margin",
+    "termZh": "手术切缘",
+    "termEn": "Surgical Margin",
+    "definition": "手术标本的切除边缘，评估是否有残留肿瘤。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "margin-status",
+      "closest-margin"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "closest-margin",
+    "termZh": "最近切缘",
+    "termEn": "Closest Margin",
+    "definition": "距肿瘤最近的手术切缘及其距离（mm），对评估局部复发风险至关重要。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "surgical-margin"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "serial-sectioning",
+    "termZh": "系列切片",
+    "termEn": "Serial Sectioning",
+    "definition": "将标本按固定间隔切成连续薄片的方法。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "bread-loafing"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "bread-loafing",
+    "termZh": "面包片法切开",
+    "termEn": "Bread-loafing",
+    "definition": "将标本像切面包一样等距平行切开的取材方法，是最常用的取材方式。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "serial-sectioning"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "perpendicular-section",
+    "termZh": "垂直切缘取材",
+    "termEn": "Perpendicular Section",
+    "definition": "垂直于切缘面取材，可同时评估肿瘤浸润深度和切缘距离。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "surgical-margin"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "shave-margin",
+    "termZh": "平行切缘取材",
+    "termEn": "Shave Margin",
+    "definition": "平行于切缘面取材，最大化检测面积但无法评估距离。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "surgical-margin"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "frozen-margin",
+    "termZh": "冰冻切缘",
+    "termEn": "Frozen Margin",
+    "definition": "术中对手术切缘进行冰冻切片以评估是否阳性。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "frozen-section",
+      "surgical-margin"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "grossing",
+    "termZh": "取材",
+    "termEn": "Grossing",
+    "definition": "从手术标本中选取代表性组织放入包埋盒的过程。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "gross-examination",
+      "cassette-submission"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cassette-submission",
+    "termZh": "组织包埋盒",
+    "termEn": "Cassette Submission",
+    "definition": "将取材的组织块放入标准化包埋盒中进行处理和制片。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "grossing"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "representative-section",
+    "termZh": "代表性取材",
+    "termEn": "Representative Section",
+    "definition": "选取能代表病变特征的组织块进行制片检查。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "grossing"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "specimen-mapping",
+    "termZh": "标本定位图",
+    "termEn": "Specimen Mapping",
+    "definition": "绘制标本切开面示意图，标注各取材块的位置，便于追溯。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "grossing"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "photography",
+    "termZh": "标本照相",
+    "termEn": "Photography",
+    "definition": "对标本进行标准化摄影记录，包括固定前和切开后的照片。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "gross-examination"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "fixation-time",
+    "termZh": "固定时间",
+    "termEn": "Fixation Time",
+    "definition": "标本在福尔马林中固定的时间。乳腺癌ER/PR/HER2要求6-72小时固定。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "fixation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cold-ischemia-time",
+    "termZh": "冷缺血时间",
+    "termEn": "Cold Ischemia Time",
+    "definition": "标本离体到放入固定液的时间间隔。应尽量缩短以保存抗原活性。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "fixation-time"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "lymph-node-dissection",
+    "termZh": "淋巴结清扫",
+    "termEn": "Lymph Node Dissection",
+    "definition": "手术中完整切除特定区域的淋巴结及周围脂肪组织。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "sentinel-lymph-node"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "specimen-integrity",
+    "termZh": "标本完整性",
+    "termEn": "Specimen Integrity",
+    "definition": "评估手术标本是否完整未受损，影响切缘评估的可靠性。",
+    "category": "解剖病理",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "re-excision",
+    "termZh": "再次切除",
+    "termEn": "Re-excision",
+    "definition": "因切缘阳性或不充分而进行的二次手术切除。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "margin-status"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "biopsy",
+    "termZh": "活检",
+    "termEn": "Biopsy",
+    "definition": "从活体组织中取得少量标本进行病理学检查的方法。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "core-biopsy",
+      "incisional-biopsy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "core-biopsy",
+    "termZh": "粗针穿刺活检",
+    "termEn": "Core Biopsy",
+    "definition": "用弹簧驱动的穿刺针获取组织条的活检方法。可获得完整的组织结构。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "biopsy"
+    ],
+    "synonyms": [
+      "空芯针穿刺"
+    ]
+  },
+  {
+    "id": "incisional-biopsy",
+    "termZh": "切取活检",
+    "termEn": "Incisional Biopsy",
+    "definition": "切取病变的一部分进行检查。适用于大的体表肿物。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "excisional-biopsy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "excisional-biopsy",
+    "termZh": "切除活检",
+    "termEn": "Excisional Biopsy",
+    "definition": "将病变完整切除并送检，兼具诊断和治疗目的。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "incisional-biopsy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "punch-biopsy",
+    "termZh": "穿孔活检",
+    "termEn": "Punch Biopsy",
+    "definition": "用圆柱形刀具获取全层皮肤标本的活检方法。常用2-6mm直径。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "biopsy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "shave-biopsy",
+    "termZh": "刮除活检",
+    "termEn": "Shave Biopsy",
+    "definition": "用刀片水平削除皮肤表层病变的活检方法。不能评估浸润深度。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "biopsy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "endoscopic-biopsy",
+    "termZh": "内镜活检",
+    "termEn": "Endoscopic Biopsy",
+    "definition": "通过内镜钳取消化道、呼吸道等黏膜组织的活检方法。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "biopsy"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "resection",
+    "termZh": "切除术",
+    "termEn": "Resection",
+    "definition": "手术切除全部或部分器官/组织。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "radical-resection"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "radical-resection",
+    "termZh": "根治性切除",
+    "termEn": "Radical Resection",
+    "definition": "将肿瘤连同周围正常组织和区域淋巴结一并切除的手术方式。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "resection"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "whipple",
+    "termZh": "Whipple手术",
+    "termEn": "Whipple Procedure",
+    "definition": "胰十二指肠切除术，用于胰头和壶腹部肿瘤的根治手术。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "radical-resection"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "lobectomy",
+    "termZh": "肺叶切除术",
+    "termEn": "Lobectomy",
+    "definition": "切除一个肺叶的手术，是非小细胞肺癌的标准术式。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "resection"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "mastectomy",
+    "termZh": "乳腺切除术",
+    "termEn": "Mastectomy",
+    "definition": "部分或全部切除乳腺组织的手术。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "resection"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hysterectomy",
+    "termZh": "子宫切除术",
+    "termEn": "Hysterectomy",
+    "definition": "切除子宫的手术，分为全子宫切除和次全子宫切除。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "resection"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "turbt",
+    "termZh": "经尿道膀胱肿瘤切除",
+    "termEn": "TURBT",
+    "definition": "经尿道电切膀胱肿瘤的手术方法。报告必须注明是否包含固有肌层。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "resection"
+    ],
+    "synonyms": [
+      "TURBT"
+    ]
+  },
+  {
+    "id": "leep",
+    "termZh": "宫颈环形电切术",
+    "termEn": "LEEP",
+    "definition": "用电圈切除宫颈转化区病变的方法。缩写LEEP。",
+    "category": "临床病理相关",
+    "relatedTerms": [],
+    "synonyms": [
+      "LEEP"
+    ]
+  },
+  {
+    "id": "conization",
+    "termZh": "宫颈锥切术",
+    "termEn": "Conization",
+    "definition": "切除宫颈锥形组织的手术，用于诊断和治疗宫颈上皮内瘤变。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "leep"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "curettage",
+    "termZh": "刮宫术",
+    "termEn": "Curettage",
+    "definition": "用刮匙刮取子宫内膜组织的手术。分诊断性和治疗性。",
+    "category": "临床病理相关",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "consultation",
+    "termZh": "会诊",
+    "termEn": "Consultation",
+    "definition": "就疑难病例征求其他病理医师或临床医师意见的过程。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "second-opinion"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "second-opinion",
+    "termZh": "二次会诊",
+    "termEn": "Second Opinion",
+    "definition": "将病例送交另一位病理专家独立诊断以确认或修改原始诊断。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "consultation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "quality-assurance",
+    "termZh": "质量保证",
+    "termEn": "Quality Assurance",
+    "definition": "确保病理诊断准确性和服务质量的系统性活动。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "proficiency-testing"
+    ],
+    "synonyms": [
+      "QA"
+    ]
+  },
+  {
+    "id": "proficiency-testing",
+    "termZh": "能力验证",
+    "termEn": "Proficiency Testing",
+    "definition": "通过外部机构提供的未知标本测试来评估实验室诊断能力。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "quality-assurance"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "turnaround-time",
+    "termZh": "报告周转时间",
+    "termEn": "Turnaround Time",
+    "definition": "从标本接收到最终病理报告发出的时间。缩写TAT。",
+    "category": "临床病理相关",
+    "relatedTerms": [],
+    "synonyms": [
+      "TAT"
+    ]
+  },
+  {
+    "id": "addendum",
+    "termZh": "补充报告",
+    "termEn": "Addendum",
+    "definition": "在原始报告发出后添加的补充信息，不改变原始诊断。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "amendment"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "amendment",
+    "termZh": "修正报告",
+    "termEn": "Amendment",
+    "definition": "对原始报告中的诊断进行更改的正式修订。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "addendum"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "synoptic-report",
+    "termZh": "结构化报告",
+    "termEn": "Synoptic Report",
+    "definition": "按标准化清单格式书写的病理报告，确保所有必要信息完整记录。如CAP格式。",
+    "category": "临床病理相关",
+    "relatedTerms": [],
+    "synonyms": [
+      "同步报告"
+    ]
+  },
+  {
+    "id": "multidisciplinary-team",
+    "termZh": "多学科团队",
+    "termEn": "Multidisciplinary Team",
+    "definition": "由多个学科专家组成的团队讨论复杂病例的诊治方案。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "tumor-board"
+    ],
+    "synonyms": [
+      "MDT"
+    ]
+  },
+  {
+    "id": "tumor-board",
+    "termZh": "肿瘤讨论会",
+    "termEn": "Tumor Board",
+    "definition": "多学科团队定期召开的肿瘤病例讨论会议。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "multidisciplinary-team"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "clinical-correlation",
+    "termZh": "临床相关性",
+    "termEn": "Clinical Correlation",
+    "definition": "病理诊断需结合临床信息（病史、影像学等）综合分析。",
+    "category": "临床病理相关",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "intraoperative-consultation",
+    "termZh": "术中会诊",
+    "termEn": "Intraoperative Consultation",
+    "definition": "手术过程中对冰冻切片或其他标本进行快速病理诊断。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "frozen-section"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "specimen-requisition",
+    "termZh": "病理申请单",
+    "termEn": "Specimen Requisition",
+    "definition": "临床医师填写的伴随标本的申请表，包含患者信息和临床信息。",
+    "category": "临床病理相关",
+    "relatedTerms": [],
+    "synonyms": []
+  },
+  {
+    "id": "supplementary-report",
+    "termZh": "补充检查报告",
+    "termEn": "Supplementary Report",
+    "definition": "IHC、分子检测等补充检查结果出来后追加发出的报告。",
+    "category": "临床病理相关",
+    "relatedTerms": [
+      "addendum"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "aec",
+    "termZh": "AEC显色",
+    "termEn": "Aminoethylcarbazole",
+    "definition": "一种红色IHC显色剂，水溶性，适用于免疫荧光共染。不耐乙醇脱水。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "dab",
+      "chromogen"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "immunophenotype",
+    "termZh": "免疫表型",
+    "termEn": "Immunophenotype",
+    "definition": "通过IHC或流式细胞术检测到的一组蛋白表达谱，用于肿瘤分类和鉴别诊断。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "immunohistochemistry"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cocktail-staining",
+    "termZh": "鸡尾酒抗体染色",
+    "termEn": "Cocktail Staining",
+    "definition": "将多种抗体混合同时应用于一张切片的IHC方法。如CK cocktail(AE1/AE3)。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "multiplex-ihc"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "signal-amplification",
+    "termZh": "信号放大",
+    "termEn": "Signal Amplification",
+    "definition": "通过酪胺信号放大(TSA)等方法增强IHC检测灵敏度的技术。",
+    "category": "免疫组化",
+    "relatedTerms": [
+      "polymer-method"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "sanger-sequencing",
+    "termZh": "Sanger测序",
+    "termEn": "Sanger Sequencing",
+    "definition": "基于双脱氧链终止法的一代测序技术，是基因突变检测的金标准但通量低。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ngs",
+      "pcr"
+    ],
+    "synonyms": [
+      "一代测序"
+    ]
+  },
+  {
+    "id": "southern-blot",
+    "termZh": "Southern印迹",
+    "termEn": "Southern Blot",
+    "definition": "检测DNA中特定序列的杂交技术，以发明者Edwin Southern命名。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "western-blot"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "western-blot",
+    "termZh": "Western印迹",
+    "termEn": "Western Blot",
+    "definition": "检测蛋白质的免疫印迹技术，通过电泳分离蛋白后用抗体检测。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "southern-blot"
+    ],
+    "synonyms": [
+      "蛋白质印迹"
+    ]
+  },
+  {
+    "id": "microarray",
+    "termZh": "基因芯片",
+    "termEn": "Microarray",
+    "definition": "在固相载体上高密度排列核酸探针，用于同时检测大量基因表达或基因变异。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "ngs"
+    ],
+    "synonyms": [
+      "微阵列"
+    ]
+  },
+  {
+    "id": "pharmacogenomics",
+    "termZh": "药物基因组学",
+    "termEn": "Pharmacogenomics",
+    "definition": "研究基因变异如何影响药物反应的学科，指导个体化用药。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "companion-diagnostics"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "hpv-testing",
+    "termZh": "HPV检测",
+    "termEn": "HPV Testing",
+    "definition": "检测高危型人乳头瘤病毒的分子检测方法，用于宫颈癌筛查和分流。",
+    "category": "分子病理",
+    "relatedTerms": [
+      "koilocyte"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cytomorphology",
+    "termZh": "细胞形态学",
+    "termEn": "Cytomorphology",
+    "definition": "通过显微镜观察和分析细胞形态特征进行诊断的方法。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "cytology"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "nuclear-membrane",
+    "termZh": "核膜",
+    "termEn": "Nuclear Membrane",
+    "definition": "包围细胞核的双层膜结构。恶性细胞核膜常不规则。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "chromatin-pattern"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "nucleolus",
+    "termZh": "核仁",
+    "termEn": "Nucleolus",
+    "definition": "细胞核内的致密结构，rRNA合成场所。恶性细胞核仁常增大、数目增多。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "nuclear-membrane"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "cytoplasmic-vacuolation",
+    "termZh": "胞质空泡化",
+    "termEn": "Cytoplasmic Vacuolation",
+    "definition": "细胞质中出现空泡的形态学改变，可见于腺癌（黏液）和某些反应性改变。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "cytomorphology"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "malignant-effusion",
+    "termZh": "恶性积液",
+    "termEn": "Malignant Effusion",
+    "definition": "体腔积液中含有恶性肿瘤细胞。常见于胸腔积液和腹腔积液。",
+    "category": "细胞病理",
+    "relatedTerms": [
+      "cytology"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "specimen-container",
+    "termZh": "标本容器",
+    "termEn": "Specimen Container",
+    "definition": "盛放手术标本的容器，应含足量福尔马林（标本体积的10倍以上）。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "fixation"
+    ],
+    "synonyms": []
+  },
+  {
+    "id": "tissue-banking",
+    "termZh": "组织库",
+    "termEn": "Tissue Banking",
+    "definition": "系统化收集、处理和储存人体组织标本供未来研究使用的设施。",
+    "category": "解剖病理",
+    "relatedTerms": [],
+    "synonyms": [
+      "生物样本库"
+    ]
+  },
+  {
+    "id": "autopsy",
+    "termZh": "尸检",
+    "termEn": "Autopsy",
+    "definition": "对死者遗体进行的系统性解剖和检查，明确死亡原因和疾病过程。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "gross-examination"
+    ],
+    "synonyms": [
+      "尸体解剖"
+    ]
+  },
+  {
+    "id": "intraoperative-imprint",
+    "termZh": "术中印片",
+    "termEn": "Intraoperative Imprint",
+    "definition": "将组织新鲜切面印压在玻片上进行快速细胞学评估的术中技术。",
+    "category": "解剖病理",
+    "relatedTerms": [
+      "frozen-section"
+    ],
+    "synonyms": [
+      "印片细胞学"
+    ]
+  },
+  {
+    "id": "mohs-surgery",
+    "termZh": "Mohs手术",
+    "termEn": "Mohs Micrographic Surgery",
+    "definition": "逐层切除皮肤肿瘤并即时进行全切缘冰冻检查的手术方式。确保完全切除同时最大限度保留正常组织。",
+    "category": "解剖病理",
+    "relatedTerms": ["frozen-section", "surgical-margin"],
+    "synonyms": ["Mohs显微手术"]
+  },
+  {
+    "id": "prostate-mapping",
+    "termZh": "前列腺全取材",
+    "termEn": "Prostate Mapping",
+    "definition": "前列腺根治标本全部包埋切片的标准化方法。每个切面标注方位，完整评估肿瘤分布和切缘状态。",
+    "category": "解剖病理",
+    "relatedTerms": ["total-sampling", "surgical-margin"],
+    "synonyms": []
+  },
+  {
+    "id": "breast-specimen-handling",
+    "termZh": "乳腺标本处理",
+    "termEn": "Breast Specimen Handling",
+    "definition": "乳腺手术标本的标准化处理流程。包括标本定向、涂墨、切面间隔切开、固定和系统取材。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "inking", "orientation"],
+    "synonyms": []
+  },
+  {
+    "id": "gastrectomy-grossing",
+    "termZh": "胃切除标本取材",
+    "termEn": "Gastrectomy Grossing",
+    "definition": "胃手术标本的标准化处理。需沿大弯侧剪开，详细描述肿瘤大小、位置和浆膜面情况。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "lymph-node-dissection"],
+    "synonyms": []
+  },
+  {
+    "id": "colectomy-grossing",
+    "termZh": "结肠切除标本取材",
+    "termEn": "Colectomy Grossing",
+    "definition": "结肠手术标本的标准化处理。需纵行剪开对侧肠壁，测量肿瘤距切缘距离，充分检索淋巴结。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "lymph-node-dissection"],
+    "synonyms": []
+  },
+  {
+    "id": "lung-resection-grossing",
+    "termZh": "肺切除标本取材",
+    "termEn": "Lung Resection Grossing",
+    "definition": "肺切除标本的标准化处理。需经支气管注入福尔马林膨胀固定，评估肿瘤与支气管和胸膜的关系。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "surgical-margin"],
+    "synonyms": []
+  },
+  {
+    "id": "macrodissection",
+    "termZh": "宏观分离",
+    "termEn": "Macrodissection",
+    "definition": "在切片上用手工方法刮取富含肿瘤细胞区域的操作。用于提高分子检测的肿瘤细胞纯度。",
+    "category": "解剖病理",
+    "relatedTerms": ["microdissection"],
+    "synonyms": []
+  },
+  {
+    "id": "microdissection",
+    "termZh": "显微切割",
+    "termEn": "Microdissection",
+    "definition": "在显微镜下精确分离特定细胞群的技术。激光捕获显微切割可获取纯净目标细胞用于分子分析。",
+    "category": "解剖病理",
+    "relatedTerms": ["macrodissection", "ngs"],
+    "synonyms": ["LCM"]
+  },
+  {
+    "id": "skin-ellipse-grossing",
+    "termZh": "皮肤梭形标本取材",
+    "termEn": "Skin Ellipse Grossing",
+    "definition": "皮肤梭形切除标本的标准化处理。需涂墨标记切缘，垂直切面或面包切片法取材。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "surgical-margin", "inking"],
+    "synonyms": []
+  },
+  {
+    "id": "nephrectomy-grossing",
+    "termZh": "肾切除标本取材",
+    "termEn": "Nephrectomy Grossing",
+    "definition": "肾脏手术标本的标准化处理。需检查肾被膜和肾窦脂肪，评估肿瘤侵犯范围和肾静脉癌栓。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "surgical-margin"],
+    "synonyms": []
+  },
+  {
+    "id": "urine-cytology",
+    "termZh": "尿细胞学",
+    "termEn": "Urine Cytology",
+    "definition": "对尿液中脱落细胞进行形态学检查。主要用于检测高级别尿路上皮癌，对低级别肿瘤灵敏度较低。",
+    "category": "细胞病理",
+    "relatedTerms": ["paris-system", "exfoliative-cytology"],
+    "synonyms": []
+  },
+  {
+    "id": "thyroid-fna",
+    "termZh": "甲状腺细针穿刺",
+    "termEn": "Thyroid FNA",
+    "definition": "超声引导下对甲状腺结节进行细针穿刺抽吸的首选诊断方法。按Bethesda六级分类报告。",
+    "category": "细胞病理",
+    "relatedTerms": ["fine-needle-aspiration", "thyroid-bethesda"],
+    "synonyms": []
+  },
+  {
+    "id": "csf-cytology",
+    "termZh": "脑脊液细胞学",
+    "termEn": "Cerebrospinal Fluid Cytology",
+    "definition": "对脑脊液中细胞进行形态学检查。用于检测中枢神经系统肿瘤播散、白血病累及和感染性疾病。",
+    "category": "细胞病理",
+    "relatedTerms": ["cytology", "cell-block"],
+    "synonyms": []
+  },
+  {
+    "id": "ascitic-fluid-cytology",
+    "termZh": "腹水细胞学",
+    "termEn": "Ascitic Fluid Cytology",
+    "definition": "对腹腔积液中细胞进行形态学检查。主要用于检测腹膜转移性肿瘤和原发性腹膜恶性间皮瘤。",
+    "category": "细胞病理",
+    "relatedTerms": ["serous-effusion-cytology", "cell-block"],
+    "synonyms": []
+  },
+  {
+    "id": "pleural-fluid-cytology",
+    "termZh": "胸水细胞学",
+    "termEn": "Pleural Fluid Cytology",
+    "definition": "对胸腔积液中细胞进行形态学检查。可检测转移性癌、恶性间皮瘤和淋巴瘤等恶性肿瘤。",
+    "category": "细胞病理",
+    "relatedTerms": ["serous-effusion-cytology", "cell-block"],
+    "synonyms": []
+  },
+  {
+    "id": "agc",
+    "termZh": "非典型腺细胞",
+    "termEn": "Atypical Glandular Cells",
+    "definition": "TBS分类中腺细胞异常的诊断类别。需进一步评估排除子宫内膜和宫颈腺体病变。",
+    "category": "细胞病理",
+    "relatedTerms": ["tbs", "cytology"],
+    "synonyms": ["AGC"]
+  },
+  {
+    "id": "nipple-discharge-cytology",
+    "termZh": "乳头溢液细胞学",
+    "termEn": "Nipple Discharge Cytology",
+    "definition": "对乳头溢液进行细胞学检查。用于筛查乳管内病变，如导管内乳头状瘤和导管原位癌。",
+    "category": "细胞病理",
+    "relatedTerms": ["exfoliative-cytology"],
+    "synonyms": []
+  },
+  {
+    "id": "gram-stain",
+    "termZh": "革兰染色",
+    "termEn": "Gram Stain",
+    "definition": "鉴别细菌的经典染色方法。革兰阳性菌染紫色，革兰阴性菌染红色。可在组织切片上检测细菌感染。",
+    "category": "组织学技术",
+    "relatedTerms": ["special-stain"],
+    "synonyms": []
+  },
+  {
+    "id": "warthin-starry",
+    "termZh": "Warthin-Starry染色",
+    "termEn": "Warthin-Starry Stain",
+    "definition": "银染色方法，用于显示幽门螺杆菌和巴尔通体等微小细菌。细菌染成黑色。",
+    "category": "组织学技术",
+    "relatedTerms": ["silver-stain", "special-stain"],
+    "synonyms": []
+  },
+  {
+    "id": "von-kossa",
+    "termZh": "Von Kossa染色",
+    "termEn": "Von Kossa Stain",
+    "definition": "检测组织中钙盐沉积的银染色方法。钙沉积呈黑色，用于评估钙化病变。",
+    "category": "组织学技术",
+    "relatedTerms": ["calcification", "special-stain"],
+    "synonyms": []
+  },
+  {
+    "id": "orcein-stain",
+    "termZh": "地衣红染色",
+    "termEn": "Orcein Stain",
+    "definition": "显示弹力纤维和乙型肝炎表面抗原的特殊染色。弹力纤维染棕红色。",
+    "category": "组织学技术",
+    "relatedTerms": ["elastic-stain", "special-stain"],
+    "synonyms": []
+  },
+  {
+    "id": "colloidal-iron",
+    "termZh": "胶体铁染色",
+    "termEn": "Colloidal Iron Stain",
+    "definition": "显示酸性黏多糖呈蓝色的特殊染色。可帮助鉴别肾细胞癌亚型等。",
+    "category": "组织学技术",
+    "relatedTerms": ["alcian-blue", "special-stain"],
+    "synonyms": []
+  },
+  {
+    "id": "toluidine-blue",
+    "termZh": "甲苯胺蓝染色",
+    "termEn": "Toluidine Blue Stain",
+    "definition": "碱性染料，显示肥大细胞颗粒的异染性（紫红色）。也用于半薄切片染色和术中冰冻切片。",
+    "category": "组织学技术",
+    "relatedTerms": ["special-stain"],
+    "synonyms": []
+  },
+  {
+    "id": "sirius-red",
+    "termZh": "天狼星红染色",
+    "termEn": "Sirius Red Stain",
+    "definition": "显示胶原纤维的特殊染色方法。偏振光下可区分I型（红/黄）和III型（绿）胶原，用于评估纤维化程度。",
+    "category": "组织学技术",
+    "relatedTerms": ["masson-trichrome", "fibrosis"],
+    "synonyms": []
+  },
+  {
+    "id": "ngs-library-preparation",
+    "termZh": "NGS文库构建",
+    "termEn": "NGS Library Preparation",
+    "definition": "将提取的核酸制备为适合测序仪上机的DNA片段文库的过程。包括片段化、接头连接和扩增富集等步骤。",
+    "category": "分子病理",
+    "relatedTerms": ["ngs", "targeted-sequencing"],
+    "synonyms": []
+  },
+  {
+    "id": "bioinformatics-pipeline",
+    "termZh": "生物信息学分析流程",
+    "termEn": "Bioinformatics Pipeline",
+    "definition": "对NGS原始数据进行自动化处理和分析的计算流程。包括序列比对、变异检测、注释和过滤等步骤。",
+    "category": "分子病理",
+    "relatedTerms": ["ngs", "variant-allele-frequency"],
+    "synonyms": []
+  },
+  {
+    "id": "tumor-purity",
+    "termZh": "肿瘤纯度",
+    "termEn": "Tumor Purity",
+    "definition": "送检标本中肿瘤细胞占总细胞的比例。分子检测通常要求肿瘤纯度≥20%以确保检测灵敏度。",
+    "category": "分子病理",
+    "relatedTerms": ["macrodissection", "variant-allele-frequency"],
+    "synonyms": ["肿瘤细胞比例"]
+  },
+  {
+    "id": "nccn-guidelines",
+    "termZh": "NCCN指南",
+    "termEn": "National Comprehensive Cancer Network Guidelines",
+    "definition": "美国国立综合癌症网络发布的循证临床实践指南。涵盖各类肿瘤的诊断、治疗和随访规范，定期更新。",
+    "category": "临床病理相关",
+    "relatedTerms": ["multidisciplinary-team"],
+    "synonyms": []
+  },
+  {
+    "id": "frozen-section-indication",
+    "termZh": "冰冻切片适应证",
+    "termEn": "Frozen Section Indication",
+    "definition": "术中冰冻切片的合理使用范围。主要适应证包括判断病变性质、评估切缘和确认取材组织的代表性。",
+    "category": "临床病理相关",
+    "relatedTerms": ["frozen-section", "intraoperative-consultation"],
+    "synonyms": []
+  },
+  {
+    "id": "breast-cancer-molecular-subtype",
+    "termZh": "乳腺癌分子分型",
+    "termEn": "Breast Cancer Molecular Subtype",
+    "definition": "根据ER、PR、HER2和Ki-67将乳腺癌分为Luminal A、Luminal B、HER2过表达和三阴性四种亚型。指导治疗方案选择。",
+    "category": "免疫组化",
+    "relatedTerms": ["er", "pr", "her2", "ki67"],
+    "synonyms": []
+  },
+  {
+    "id": "calretinin",
+    "termZh": "钙视网膜蛋白",
+    "termEn": "Calretinin",
+    "definition": "钙结合蛋白，是间皮细胞的标记物。用于恶性间皮瘤与肺腺癌的鉴别诊断。",
+    "category": "免疫组化",
+    "relatedTerms": ["immunohistochemistry", "wt1"],
+    "synonyms": []
+  },
+  {
+    "id": "wt1",
+    "termZh": "WT1",
+    "termEn": "Wilms Tumor 1",
+    "definition": "Wilms瘤基因编码的转录因子。在间皮瘤和浆液性卵巢癌中阳性，用于肿瘤鉴别诊断。",
+    "category": "免疫组化",
+    "relatedTerms": ["calretinin", "immunohistochemistry"],
+    "synonyms": []
+  },
+  {
+    "id": "napsin-a",
+    "termZh": "NapsinA",
+    "termEn": "Napsin A",
+    "definition": "天冬氨酸蛋白酶，表达于II型肺泡上皮细胞。与TTF-1联合使用是诊断肺腺癌的重要标记物组合。",
+    "category": "免疫组化",
+    "relatedTerms": ["ttf1", "lung-adenocarcinoma"],
+    "synonyms": []
+  },
+  {
+    "id": "sox10",
+    "termZh": "SOX10",
+    "termEn": "SOX10",
+    "definition": "神经嵴来源细胞的核转录因子。对黑色素瘤和神经鞘瘤具有高灵敏度和特异度。",
+    "category": "免疫组化",
+    "relatedTerms": ["s100", "melanoma"],
+    "synonyms": []
+  },
+  {
+    "id": "melan-a",
+    "termZh": "Melan-A",
+    "termEn": "Melan-A",
+    "definition": "黑色素细胞分化抗原。在黑色素瘤中阳性，与HMB-45和SOX10联合使用提高诊断准确性。",
+    "category": "免疫组化",
+    "relatedTerms": ["melanoma", "sox10"],
+    "synonyms": ["MART-1"]
+  },
+  {
+    "id": "hmb45",
+    "termZh": "HMB-45",
+    "termEn": "HMB-45",
+    "definition": "识别黑色素体相关蛋白gp100的单克隆抗体。在黑色素瘤和PEComa中阳性。",
+    "category": "免疫组化",
+    "relatedTerms": ["melan-a", "melanoma"],
+    "synonyms": []
+  },
+  {
+    "id": "ema",
+    "termZh": "上皮膜抗原",
+    "termEn": "Epithelial Membrane Antigen",
+    "definition": "糖蛋白MUC1，广泛表达于多种上皮和部分非上皮肿瘤。用于鉴别诊断，在脑膜瘤和浆细胞瘤中阳性。",
+    "category": "免疫组化",
+    "relatedTerms": ["cytokeratin", "immunohistochemistry"],
+    "synonyms": ["EMA", "MUC1"]
+  },
+  {
+    "id": "podoplanin",
+    "termZh": "平足蛋白",
+    "termEn": "Podoplanin",
+    "definition": "淋巴管内皮标记物，也称D2-40。用于检测淋巴管侵犯和鉴别淋巴管与血管。在间皮瘤中也阳性。",
+    "category": "免疫组化",
+    "relatedTerms": ["lymphovascular-invasion", "cd34"],
+    "synonyms": ["D2-40"]
+  },
+  {
+    "id": "specimen-photography",
+    "termZh": "标本摄影",
+    "termEn": "Specimen Photography",
+    "definition": "对手术标本大体特征进行标准化照片记录的操作。需包含标尺和标签，用于病理存档和教学。",
+    "category": "解剖病理",
+    "relatedTerms": ["gross-examination"],
+    "synonyms": []
+  },
+  {
+    "id": "hysterectomy-grossing",
+    "termZh": "子宫切除标本取材",
+    "termEn": "Hysterectomy Grossing",
+    "definition": "子宫切除标本的标准化处理。需测量子宫和附件大小，切开宫腔评估肌层浸润深度和宫旁组织累及情况。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "surgical-margin"],
+    "synonyms": []
+  },
+  {
+    "id": "head-neck-dissection-grossing",
+    "termZh": "头颈清扫标本取材",
+    "termEn": "Head and Neck Dissection Grossing",
+    "definition": "头颈部手术标本的标准化处理。需定向标本，评估肿瘤大小和浸润范围，系统分组检索淋巴结。",
+    "category": "解剖病理",
+    "relatedTerms": ["grossing", "lymph-node-dissection"],
+    "synonyms": []
+  }
+]

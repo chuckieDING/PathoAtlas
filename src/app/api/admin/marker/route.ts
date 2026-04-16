@@ -3,6 +3,7 @@ import { revalidatePath } from 'next/cache';
 import fs from 'fs';
 import path from 'path';
 import { invalidateJsonCache } from '@/lib/data';
+import { appendAuditLog, computeDiff } from '@/lib/audit';
 
 /**
  * Drop the in-process JSON cache for markers.json and revalidate every
@@ -92,6 +93,7 @@ export async function PUT(request: Request) {
     if (idx < 0) {
       return NextResponse.json({ error: `marker not found: ${id}` }, { status: 404 });
     }
+    const oldRecord = { ...list[idx] };
     const next = { ...list[idx] };
     for (const key of EDITABLE_FIELDS) {
       if (key in updates) {
@@ -100,6 +102,15 @@ export async function PUT(request: Request) {
     }
     list[idx] = next;
     writeList(list);
+    const diff = computeDiff(oldRecord, next);
+    appendAuditLog({
+      timestamp: new Date().toISOString(),
+      actor: 'admin',
+      action: 'update',
+      entityType: 'marker',
+      entityId: id,
+      diff,
+    });
     invalidateAfterWrite(MARKERS_FILE, id);
     return NextResponse.json({ ok: true, marker: next });
   } catch (e) {
@@ -134,6 +145,13 @@ export async function POST(request: Request) {
     }
     list.push(next);
     writeList(list);
+    appendAuditLog({
+      timestamp: new Date().toISOString(),
+      actor: 'admin',
+      action: 'create',
+      entityType: 'marker',
+      entityId: marker.id,
+    });
     invalidateAfterWrite(MARKERS_FILE, marker.id);
     return NextResponse.json({ ok: true, marker: next });
   } catch (e) {
@@ -158,6 +176,13 @@ export async function DELETE(request: Request) {
     }
     const removed = list.splice(idx, 1)[0];
     writeList(list);
+    appendAuditLog({
+      timestamp: new Date().toISOString(),
+      actor: 'admin',
+      action: 'delete',
+      entityType: 'marker',
+      entityId: id,
+    });
     invalidateAfterWrite(MARKERS_FILE, id);
     return NextResponse.json({ ok: true, removed });
   } catch (e) {

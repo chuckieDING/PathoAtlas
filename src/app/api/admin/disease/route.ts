@@ -3,6 +3,7 @@ import { revalidatePath } from 'next/cache';
 import fs from 'fs';
 import path from 'path';
 import { invalidateJsonCache } from '@/lib/data';
+import { appendAuditLog, computeDiff } from '@/lib/audit';
 
 /**
  * Drops both the in-process JSON cache for the affected file and the
@@ -123,6 +124,7 @@ export async function PUT(request: Request) {
     if (idx < 0) {
       return NextResponse.json({ error: `disease not found: ${id}` }, { status: 404 });
     }
+    const oldRecord = { ...list[idx] };
     const next = { ...list[idx] };
     for (const key of EDITABLE_FIELDS) {
       if (key in updates) {
@@ -131,6 +133,16 @@ export async function PUT(request: Request) {
     }
     list[idx] = next;
     writeList(filePath, list);
+    const diff = computeDiff(oldRecord, next);
+    appendAuditLog({
+      timestamp: new Date().toISOString(),
+      actor: 'admin',
+      action: 'update',
+      entityType: 'disease',
+      entityId: id,
+      organ,
+      diff,
+    });
     invalidateAfterWrite(filePath, organ, id);
     return NextResponse.json({ ok: true, disease: next });
   } catch (e) {
@@ -173,6 +185,14 @@ export async function POST(request: Request) {
     }
     list.push(next);
     writeList(filePath, list);
+    appendAuditLog({
+      timestamp: new Date().toISOString(),
+      actor: 'admin',
+      action: 'create',
+      entityType: 'disease',
+      entityId: disease.id,
+      organ,
+    });
     invalidateAfterWrite(filePath, organ, disease.id);
     return NextResponse.json({ ok: true, disease: next });
   } catch (e) {
@@ -202,6 +222,14 @@ export async function DELETE(request: Request) {
     }
     const removed = list.splice(idx, 1)[0];
     writeList(filePath, list);
+    appendAuditLog({
+      timestamp: new Date().toISOString(),
+      actor: 'admin',
+      action: 'delete',
+      entityType: 'disease',
+      entityId: id,
+      organ,
+    });
     invalidateAfterWrite(filePath, organ, id);
     return NextResponse.json({ ok: true, removed });
   } catch (e) {

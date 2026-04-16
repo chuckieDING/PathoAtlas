@@ -1,6 +1,7 @@
 import { getDifferentials } from '@/lib/data';
 import Link from 'next/link';
 import { IconScale } from '@/components/Icon';
+import { DifferentialFlowcharts } from './flowcharts';
 
 export default function DifferentialsPage() {
   const diffs = getDifferentials();
@@ -29,8 +30,7 @@ export default function DifferentialsPage() {
               </div>
 
               <div className="px-6 py-5 space-y-4">
-                {/* Key markers — dedupe defensively so a data typo can't
-                    explode the render with duplicate React keys. */}
+                {/* Key markers */}
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--fg-muted)' }}>关键标记物</div>
                   <div className="flex flex-wrap gap-2">
@@ -55,6 +55,9 @@ export default function DifferentialsPage() {
                     ))}
                   </div>
                 </div>
+
+                {/* Flowchart */}
+                <DifferentialFlowcharts differentialId={d.id} />
 
                 {/* Related diseases */}
                 <div>

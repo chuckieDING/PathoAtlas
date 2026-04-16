@@ -21,6 +21,15 @@ interface LiteratureItem {
   authors?: string; journal?: string; year?: number; sourceUrl?: string; viewUrl?: string;
 }
 
+interface CloneVariant { clone: string; source: string; notes: string }
+interface ControlTissue { positive: string; negative: string }
+interface CloneComparison {
+  id: string; titleZh: string;
+  clone1: { name: string; vendor: string; pattern: string; interpretation: string };
+  clone2: { name: string; vendor: string; pattern: string; interpretation: string };
+  clinicalImplication: string; context: string;
+}
+
 interface Marker {
   id: string; nameZh: string; nameEn: string; abbreviation: string; category: string;
   cloneInfo: string; targetProtein: string; cellularLocalization: string;
@@ -31,6 +40,10 @@ interface Marker {
   literature?: LiteratureItem[];
   stainingImages?: StainingGroup[];
   organs?: string[];
+  cloneVariants?: CloneVariant[];
+  controlTissue?: ControlTissue;
+  artifacts?: string[];
+  cloneComparisons?: CloneComparison[];
 }
 
 interface Organ { id: string; nameZh: string; nameEn: string; color: string }
@@ -184,6 +197,95 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
             <InfoBox label="正常表达" value={m.normalExpression} />
           </div>
           <InfoBox label="功能" value={m.function} />
+
+          {/* Clone Variants */}
+          {m.cloneVariants && m.cloneVariants.length > 0 && (
+            <div>
+              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg-muted)' }}>克隆号变体</div>
+              <div className="rounded-lg overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr style={{ background: 'var(--card-hover)' }}>
+                      <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg-muted)' }}>克隆号</th>
+                      <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg-muted)' }}>来源/厂商</th>
+                      <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg-muted)' }}>备注</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {m.cloneVariants.map((cv, i) => (
+                      <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                        <td className="px-3 py-2 font-mono font-medium" style={{ color: 'var(--accent)' }}>{cv.clone}</td>
+                        <td className="px-3 py-2" style={{ color: 'var(--fg)' }}>{cv.source}</td>
+                        <td className="px-3 py-2" style={{ color: 'var(--fg-muted)' }}>{cv.notes}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {/* Control Tissue */}
+          {m.controlTissue && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="rounded-lg p-3" style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.2)' }}>
+                <div className="text-xs font-semibold mb-1" style={{ color: '#22c55e' }}>阳性对照组织</div>
+                <div className="text-sm" style={{ color: 'var(--fg)' }}>{m.controlTissue.positive}</div>
+              </div>
+              <div className="rounded-lg p-3" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>
+                <div className="text-xs font-semibold mb-1" style={{ color: '#ef4444' }}>阴性对照组织</div>
+                <div className="text-sm" style={{ color: 'var(--fg)' }}>{m.controlTissue.negative}</div>
+              </div>
+            </div>
+          )}
+
+          {/* Artifacts */}
+          {m.artifacts && m.artifacts.length > 0 && (
+            <div className="rounded-lg p-3" style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)' }}>
+              <div className="text-xs font-semibold mb-2" style={{ color: '#f59e0b' }}>常见染色陷阱</div>
+              <ul className="space-y-1">
+                {m.artifacts.map((a, i) => (
+                  <li key={i} className="text-sm flex items-start gap-2" style={{ color: 'var(--fg)' }}>
+                    <span style={{ color: '#f59e0b' }}>•</span> {a}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Clone Comparisons */}
+          {m.cloneComparisons && m.cloneComparisons.length > 0 && (
+            <div>
+              <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg-muted)' }}>克隆号对比</div>
+              <div className="space-y-3">
+                {m.cloneComparisons.map(cc => (
+                  <div key={cc.id} className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+                    <div className="font-semibold text-sm mb-2" style={{ color: 'var(--fg)' }}>{cc.titleZh}</div>
+                    <div className="text-xs mb-2 px-2 py-1 rounded-md inline-block" style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}>
+                      场景：{cc.context}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                      <div className="rounded-lg p-3" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}>
+                        <div className="font-mono font-bold text-sm mb-1" style={{ color: 'var(--accent)' }}>{cc.clone1.name}</div>
+                        <div className="text-[11px] mb-1" style={{ color: 'var(--fg-muted)' }}>{cc.clone1.vendor}</div>
+                        <div className="text-xs" style={{ color: 'var(--fg)' }}>{cc.clone1.pattern}</div>
+                        <div className="text-xs mt-1" style={{ color: 'var(--fg-muted)' }}>{cc.clone1.interpretation}</div>
+                      </div>
+                      <div className="rounded-lg p-3" style={{ background: 'rgba(236,72,153,0.08)', border: '1px solid rgba(236,72,153,0.2)' }}>
+                        <div className="font-mono font-bold text-sm mb-1" style={{ color: '#ec4899' }}>{cc.clone2.name}</div>
+                        <div className="text-[11px] mb-1" style={{ color: 'var(--fg-muted)' }}>{cc.clone2.vendor}</div>
+                        <div className="text-xs" style={{ color: 'var(--fg)' }}>{cc.clone2.pattern}</div>
+                        <div className="text-xs mt-1" style={{ color: 'var(--fg-muted)' }}>{cc.clone2.interpretation}</div>
+                      </div>
+                    </div>
+                    <div className="text-xs mt-3 p-2 rounded-md" style={{ background: 'rgba(245,158,11,0.08)', color: 'var(--fg)' }}>
+                      <span className="font-semibold" style={{ color: '#f59e0b' }}>临床意义：</span>{cc.clinicalImplication}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
 
