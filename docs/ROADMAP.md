@@ -16,7 +16,7 @@
 把 `grading` / `staging` 从纯字符串升级为可交互的评分组件。每个子项对应一个分级系统：
 
 - [x] **Nottingham Grade**（乳腺浸润癌）—— 腺管形成 + 核多形性 + 核分裂 三项相加，得到 G1/G2/G3 ✅ 已挂到 `/atlas/breast/invasive-ductal-carcinoma-nst` 的分子病理 tab
-- [ ] **Gleason / ISUP Grade Group**（前列腺癌）—— 主次 pattern 组合到 5 级 Grade Group
+- [x] **Gleason / ISUP Grade Group**（前列腺癌）—— 主次 pattern 组合到 5 级 Grade Group ✅ `/atlas/urology/prostate-adenocarcinoma`
 - [ ] **ISUP/WHO grading**（肾透明细胞癌）—— 核仁显著度 1–4 级
 - [ ] **FIGO staging**（子宫内膜 / 卵巢 / 宫颈）—— 按组织类型分别建计算器
 - [ ] **Bethesda / TBS**（甲状腺 FNA）—— 6 类分层 + 风险评估

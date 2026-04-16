@@ -11,6 +11,7 @@ import { IconCheckCircle, IconZap, IconSearch, IconX, IconBookOpen } from '@/com
 import { OrganIcon } from '@/components/OrganIcon';
 import { ImageLightbox } from '@/components/ImageLightbox';
 import { NottinghamGrade } from '@/components/calculators/NottinghamGrade';
+import { GleasonGradeGroup } from '@/components/calculators/GleasonGradeGroup';
 import { getMarkerDiagram } from '@/lib/markerDiagrams';
 
 // Translate a free-text marker label from the IHC table into the canonical
@@ -318,6 +319,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
               First of several (ROADMAP Tier 1 #1). */}
           {organ === 'breast' && diseaseId === 'invasive-ductal-carcinoma-nst' && (
             <NottinghamGrade />
+          )}
+          {organ === 'urology' && diseaseId === 'prostate-adenocarcinoma' && (
+            <GleasonGradeGroup />
           )}
         </div>
       )}
