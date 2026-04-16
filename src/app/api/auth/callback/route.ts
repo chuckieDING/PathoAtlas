@@ -86,7 +86,7 @@ export async function GET(request: Request) {
     return failureRedirect('not_authorized', email);
   }
 
-  const session = signSession(email);
+  const session = await signSession(email);
   const res = NextResponse.redirect(`${origin}${returnTo}`);
   res.cookies.set(SESSION_COOKIE_NAME, session, {
     httpOnly: true,

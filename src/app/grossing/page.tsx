@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect, useMemo } from 'react';
-import { IconSearch, IconBookOpen } from '@/components/Icon';
+import { IconSearch, IconScissors } from '@/components/Icon';
 
 interface GrossingProtocol {
   id: string;
@@ -56,7 +56,7 @@ export default function GrossingPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <IconBookOpen size={32} style={{ color: '#3b82f6' }} />
+          <IconScissors size={32} style={{ color: '#3b82f6' }} />
           <h1 className="text-3xl font-bold">取材规范 (Grossing Protocol)</h1>
         </div>
         <p style={{ color: 'var(--fg-muted)', marginTop: '0.5rem' }}>

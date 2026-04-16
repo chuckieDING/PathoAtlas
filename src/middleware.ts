@@ -10,8 +10,8 @@ import { authorize } from '@/lib/auth';
  * `authorize()` returns a truthy "dev-mode" marker and the request passes
  * through unmodified — local dev keeps working out of the box.
  */
-export function middleware(request: NextRequest) {
-  const identity = authorize({
+export async function middleware(request: NextRequest) {
+  const identity = await authorize({
     headers: request.headers,
     cookies: request.cookies,
   });

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
-import { IconBrain, IconSearch } from '@/components/Icon';
+import { IconSnowflake, IconSearch } from '@/components/Icon';
 
 interface FrozenSection {
   id: string;
@@ -65,7 +65,7 @@ export default function FrozenSectionPage() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <IconBrain size={32} style={{ color: 'var(--accent)' }} />
+            <IconSnowflake size={32} style={{ color: 'var(--accent)' }} />
             <h1 className="text-3xl font-bold" style={{ color: 'var(--fg)' }}>术中冰冻切片</h1>
           </div>
           <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>Intraoperative Frozen Section Consultation</p>

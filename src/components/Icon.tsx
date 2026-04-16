@@ -260,6 +260,38 @@ export const IconGithub = ({ size, ...p }: IconProps) => (
   </svg>
 );
 
+export const IconSnowflake = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/>
+    <path d="m9 3 3 3 3-3M9 21l3-3 3 3M3 9l3 3-3 3M21 9l-3 3 3 3"/>
+  </svg>
+);
+
+export const IconScissors = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <circle cx="6" cy="6" r="3"/>
+    <circle cx="6" cy="18" r="3"/>
+    <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+    <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+    <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+  </svg>
+);
+
+export const IconClipboard = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M9 14h6M9 18h6M9 10h6"/>
+  </svg>
+);
+
+export const IconTrendingUp = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+    <polyline points="16 7 22 7 22 13"/>
+  </svg>
+);
+
 // ── Organ icons (anatomical, stylised) ─────────────────────
 // Each is a stroke-based 24×24 SVG representing the organ.
 

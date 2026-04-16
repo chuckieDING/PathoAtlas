@@ -18,7 +18,7 @@ export async function GET() {
 
   const cookieStore = await cookies();
   const token = cookieStore.get(SESSION_COOKIE_NAME)?.value;
-  const email = verifySession(token);
+  const email = await verifySession(token);
   if (!email) {
     return NextResponse.json(
       {
