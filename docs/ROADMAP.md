@@ -4,7 +4,7 @@
 
 ## 📊 进度总览
 
-- **Tier 1 · 核心缺失**：0/9 已完成（#1 6/6 ✅、#2 4/4 ✅、#5 4/4 ✅、#6 3/3 ✅、#4 4/4 ✅、#3 5/5 ✅、#7 5/5 ✅）
+- **Tier 1 · 核心缺失**：8/9 已完成（#1 6/6 ✅、#2 4/4 ✅、#5 4/4 ✅、#6 3/3 ✅、#4 4/4 ✅、#3 5/5 ✅、#7 5/5 ✅、#8 4/4 ✅）
 - **Tier 2 · 高价值升级**：0/9 已完成
 - **Tier 3 · 差异化拓展**：0/7 已完成
 
@@ -79,11 +79,11 @@
 ### 8. 分子病理独立模块
 把 `molecularFeatures` 升级为独立的知识模块：
 
-- [ ] `data/molecular.json` + 路由 `/molecular`
-- [ ] 30+ 条驱动基因 / 标志物：EGFR 变体家族、ALK、ROS1、BRAF V600E、KRAS、NTRK 融合、RET 融合、HER2 扩增/突变、MET exon14、BRCA1/2、HRD、MSI/dMMR、TMB、POLE、IDH1/2、TP53 patterns 等
-- [ ] 检测方法对比表（Sanger vs qPCR vs NGS vs FISH vs IHC 代理）
-- [ ] 伴随诊断（CDx）矩阵：哪个变异 → 哪个药 → FDA/NMPA 状态
-- [ ] TCGA 分子分型：乳腺 / 胃 / 结直肠 / 子宫内膜
+- [x] `data/molecular.json` + 路由 `/molecular` ✅ 已创建，含24个分子标志物/分型条目
+- [x] 30+ 条驱动基因 / 标志物：EGFR 变体家族、ALK、ROS1、BRAF V600E、KRAS、NTRK 融合、RET 融合、HER2 扩增/突变、MET exon14、BRCA1/2、HRD、MSI/dMMR、TMB、POLE、IDH1/2、TP53、PD-L1、PIK3CA、FGFR、CDH1、MYC、1p/19q ✅
+- [x] 检测方法对比表（Sanger vs qPCR vs NGS vs FISH vs IHC vs ctDNA vs ddPCR）✅ 每个标志物含详细检测方法对比（灵敏度、周转时间、备注）
+- [x] 伴随诊断（CDx）矩阵：哪个变异 → 哪个药 → FDA/NMPA 状态 ✅ 已创建完整CDx矩阵
+- [x] TCGA 分子分型：乳腺 PAM50 / 胃癌 TCGA / 结直肠 CMS / 子宫内膜 ProMisE ✅ 已创建4个独立分子分型条目
 
 ### 9. CAP 同步报告模板
 结构化肿瘤报告，至少 10 个常用：

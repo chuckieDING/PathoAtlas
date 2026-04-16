@@ -21,6 +21,7 @@ const NAV = [
 
 const MENU_EXTRAS = [
   { href: '/search', label: '高级搜索', icon: IconSearch },
+  { href: '/molecular', label: '分子病理学', icon: IconDna },
   { href: '/cyto', label: '细胞病理学', icon: IconFlask },
   { href: '/frozen', label: '冻存切片', icon: IconBrain },
   { href: '/grossing', label: '取材规范', icon: IconMicroscope },
