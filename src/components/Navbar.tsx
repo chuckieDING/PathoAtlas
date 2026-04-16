@@ -24,7 +24,7 @@ const MENU_EXTRAS = [
   { href: '/molecular', label: '分子病理学', icon: IconDna },
   { href: '/reports', label: 'CAP报告', icon: IconBookOpen },
   { href: '/cyto', label: '细胞病理学', icon: IconFlask },
-  { href: '/frozen', label: '冻存切片', icon: IconBrain },
+  { href: '/frozen', label: '冰冻切片', icon: IconBrain },
   { href: '/grossing', label: '取材规范', icon: IconMicroscope },
   { href: '/progress', label: '学习成就', icon: IconTrophy },
   { href: '/admin', label: '内容管理', icon: IconSettings },
@@ -101,7 +101,7 @@ export function Navbar() {
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-colors"
                   style={{
                     color: active ? 'var(--fg)' : 'var(--fg-muted)',
-                    background: active ? 'var(--card-hover)' : 'transparent',
+                    background: active ? 'rgba(99,102,241,0.15)' : 'transparent',
                     textDecoration: 'none',
                   }}
                 >
@@ -183,7 +183,7 @@ export function Navbar() {
                       className="flex items-center gap-2.5 px-3 py-3 text-sm rounded-lg"
                       style={{
                         color: active ? 'var(--fg)' : 'var(--fg-muted)',
-                        background: active ? 'var(--card-hover)' : 'transparent',
+                        background: active ? 'rgba(99,102,241,0.15)' : 'transparent',
                         textDecoration: 'none',
                       }}
                     >

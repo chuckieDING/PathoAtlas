@@ -100,8 +100,8 @@ export default function GrossingPage() {
                 onClick={() => setSelectedId(p.id)}
                 className="w-full text-left px-4 py-3 rounded-lg transition-colors"
                 style={{
-                  background: selectedId === p.id ? 'var(--accent)' : 'var(--card)',
-                  color: selectedId === p.id ? 'white' : 'var(--fg)',
+                  background: selectedId === p.id ? 'rgba(99,102,241,0.15)' : 'var(--card)',
+                  color: selectedId === p.id ? 'var(--fg)' : 'var(--fg-muted)',
                   border: `1px solid ${selectedId === p.id ? 'var(--accent)' : 'var(--border)'}`
                 }}
               >
