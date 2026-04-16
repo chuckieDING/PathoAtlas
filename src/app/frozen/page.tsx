@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
-import { Icon } from '@/components/Icon';
+import { IconBrain, IconSearch } from '@/components/Icon';
 
 interface FrozenSection {
   id: string;
@@ -26,12 +26,12 @@ export default function FrozenSectionPage() {
       try {
         const res = await fetch('/api/frozen');
         const data = await res.json();
-        setSections(data);
-        if (data.length > 0) {
+        const items = Array.isArray(data) ? data : [];
+        setSections(items);
+        if (items.length > 0) {
           setSelectedId(data[0].id);
         }
-      } catch (error) {
-        console.error('Failed to fetch frozen sections:', error);
+      } catch {
       } finally {
         setLoading(false);
       }
@@ -66,7 +66,7 @@ export default function FrozenSectionPage() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <Icon name="IconScalpel" className="w-8 h-8 text-accent" />
+            <IconBrain size={32} style={{ color: 'var(--accent)' }} />
             <h1 className="text-4xl font-bold text-fg">术中冻存切片</h1>
           </div>
           <p className="text-fg-muted">Intraoperative Frozen Section Consultation</p>
@@ -81,11 +81,12 @@ export default function FrozenSectionPage() {
               <input
                 type="text"
                 placeholder="搜索..."
+                aria-label="搜索冻存切片"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full px-4 py-2 bg-white border border-border rounded-lg text-fg placeholder-fg-muted focus:outline-none focus:ring-2 focus:ring-accent"
               />
-              <Icon name="IconSearch" className="absolute right-3 top-2.5 w-5 h-5 text-fg-muted" />
+              <IconSearch size={20} style={{ position: 'absolute', right: 12, top: 10, color: 'var(--fg-muted)' }} />
             </div>
 
             {/* Sections List */}

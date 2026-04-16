@@ -1,20 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { CalculatorDisclaimer, CalculatorNotes } from './shared';
 
 /**
- * Bethesda System for Reporting Thyroid Cytopathology (2017, 2nd Edition).
+ * Bethesda System for Reporting Thyroid Cytopathology (2023, 3rd Edition).
  * Six diagnostic categories with associated malignancy risk.
  *
- * Categories:
- * - I: Nondiagnostic or Unsatisfactory
- * - II: Benign
- * - III: Atypia of Undetermined Significance or Follicular Lesion of Undetermined Significance
- * - IV: Follicular Neoplasm or Suspicious for Follicular Neoplasm
- * - V: Suspicious for Malignancy
- * - VI: Malignant
- *
- * Reference: Ali SZ, Cibas ES. The Bethesda System for Reporting Thyroid Cytopathology. Springer, 2018.
+ * Reference: Ali SZ, Baloch ZW, Cochand-Priollet B, et al. The 2023 Bethesda System
+ * for Reporting Thyroid Cytopathology. Thyroid 2023; 33: 1039–44.
  */
 
 interface CategoryOption {
@@ -32,7 +26,7 @@ const CATEGORY_OPTIONS: CategoryOption[] = [
     roman: 'I',
     label: 'Nondiagnostic or Unsatisfactory',
     description: '不满意或非诊断性标本',
-    malignancyRisk: '<1-4%',
+    malignancyRisk: '5-10%',
     recommendation: '重复穿刺',
   },
   {
@@ -48,8 +42,8 @@ const CATEGORY_OPTIONS: CategoryOption[] = [
     roman: 'III',
     label: 'Atypia of Undetermined Significance',
     description: '非典型未定意义',
-    malignancyRisk: '10-30%',
-    recommendation: '重复穿刺或分子检测',
+    malignancyRisk: '~10-30%',
+    recommendation: '重复穿刺、分子检测或诊断性手术切除',
   },
   {
     category: 4,
@@ -92,7 +86,7 @@ export function BethesdaThyroid() {
     >
       <div>
         <h3 className="text-sm font-semibold mb-1" style={{ color: 'var(--fg)' }}>
-          Bethesda 分级 · 甲状腺 FNA (2017 第2版)
+          Bethesda 分级 · 甲状腺 FNA (2023 第3版)
         </h3>
         <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
           甲状腺细针穿刺细胞学报告的标准化系统。选择诊断类别以查看恶性风险和临床建议。
@@ -101,7 +95,7 @@ export function BethesdaThyroid() {
 
       <CategoryGroup
         value={category}
-        onChange={(v) => setCategory(v)}
+        onChange={setCategory}
         options={CATEGORY_OPTIONS}
       />
 
@@ -126,6 +120,14 @@ export function BethesdaThyroid() {
             </div>
           </div>
         </div>
+        <div className="mt-2 text-xs font-medium px-2 py-1 rounded inline-block"
+          style={{
+            background: category >= 5 ? 'rgba(239,68,68,0.12)' : category >= 4 ? 'rgba(249,115,22,0.12)' : category >= 3 ? 'rgba(245,158,11,0.12)' : 'rgba(34,197,94,0.12)',
+            color: category >= 5 ? '#ef4444' : category >= 4 ? '#f97316' : category >= 3 ? '#f59e0b' : '#22c55e',
+          }}
+        >
+          {category >= 5 ? '高危' : category >= 4 ? '中-高危' : category >= 3 ? '中危' : '低危'}
+        </div>
         <div className="mt-3 pt-3 border-t" style={{ borderColor: 'var(--border)' }}>
           <div className="text-xs font-semibold mb-1" style={{ color: 'var(--fg)' }}>临床建议</div>
           <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>
@@ -134,35 +136,18 @@ export function BethesdaThyroid() {
         </div>
       </div>
 
-      <details className="text-xs" style={{ color: 'var(--fg-muted)' }}>
-        <summary className="cursor-pointer hover:underline select-none">分级含义与注意事项</summary>
-        <div className="mt-2 space-y-1.5 pl-3 leading-relaxed">
-          <p>
-            <strong>I (不满意)</strong>：标本质量不佳，需重复穿刺
-          </p>
-          <p>
-            <strong>II (良性)</strong>：结节性甲状腺肿或慢性淋巴细胞性甲状腺炎
-          </p>
-          <p>
-            <strong>III (非典型)</strong>：细胞异型但不足以诊断恶性，需进一步评估
-          </p>
-          <p>
-            <strong>IV (滤泡肿瘤)</strong>：滤泡性腺瘤 vs 癌，需手术鉴别
-          </p>
-          <p>
-            <strong>V (可疑恶性)</strong>：高度提示恶性，建议手术
-          </p>
-          <p>
-            <strong>VI (恶性)</strong>：明确恶性，需手术治疗
-          </p>
-          <p className="mt-2 opacity-80">
-            * 恶性风险基于大样本研究，可能因地区和实验室而异。
-          </p>
-          <p className="mt-1 opacity-80">
-            * 参考：Ali SZ, Cibas ES. <em>The Bethesda System for Reporting Thyroid Cytopathology</em>, 2nd Edition, 2018.
-          </p>
-        </div>
-      </details>
+      <CalculatorNotes summary="分级含义与注意事项">
+        <p><strong>I (不满意)</strong>：标本质量不佳，需重复穿刺</p>
+        <p><strong>II (良性)</strong>：结节性甲状腺肿或慢性淋巴细胞性甲状腺炎</p>
+        <p><strong>III (非典型)</strong>：细胞异型但不足以诊断恶性，需进一步评估</p>
+        <p><strong>IV (滤泡肿瘤)</strong>：滤泡性腺瘤 vs 癌，需手术鉴别</p>
+        <p><strong>V (可疑恶性)</strong>：高度提示恶性，建议手术</p>
+        <p><strong>VI (恶性)</strong>：明确恶性，需手术治疗</p>
+        <p className="mt-2 opacity-80">* 恶性风险基于大样本研究，可能因地区和实验室而异。</p>
+        <p className="mt-1 opacity-80">* 参考：Ali SZ et al. <em>Thyroid</em> 2023; 33: 1039–44 (第3版).</p>
+      </CalculatorNotes>
+
+      <CalculatorDisclaimer />
     </div>
   );
 }
@@ -177,7 +162,7 @@ function CategoryGroup({
   options: CategoryOption[];
 }) {
   return (
-    <div>
+    <div role="radiogroup" aria-label="选择诊断类别">
       <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg)' }}>
         选择诊断类别
       </div>
@@ -187,6 +172,8 @@ function CategoryGroup({
           return (
             <button
               key={opt.category}
+              role="radio"
+              aria-checked={active}
               onClick={() => onChange(opt.category)}
               className="rounded-lg p-3 text-left transition-colors"
               style={{

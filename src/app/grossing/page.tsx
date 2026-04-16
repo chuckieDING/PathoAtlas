@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { IconSearch, IconBookOpen } from '@/components/Icon';
 
 interface GrossingProtocol {
@@ -28,19 +28,20 @@ export default function GrossingPage() {
     fetch('/api/grossing')
       .then(r => r.json())
       .then(data => {
-        setProtocols(data);
-        if (data.length > 0) setSelectedId(data[0].id);
+        const items = Array.isArray(data) ? data : [];
+        setProtocols(items);
+        if (items.length > 0) setSelectedId(items[0].id);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
 
   const selected = protocols.find(p => p.id === selectedId);
-  const filtered = protocols.filter(p =>
+  const filtered = useMemo(() => protocols.filter(p =>
     p.nameZh.includes(searchQuery) ||
     p.nameEn.toLowerCase().includes(searchQuery.toLowerCase()) ||
     p.indication.includes(searchQuery)
-  );
+  ), [protocols, searchQuery]);
 
   if (loading) {
     return (
@@ -79,6 +80,7 @@ export default function GrossingPage() {
               <input
                 type="text"
                 placeholder="搜索标本..."
+                aria-label="搜索取材规范"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 rounded-lg border"

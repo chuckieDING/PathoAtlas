@@ -43,7 +43,6 @@ export function Navbar() {
   // Close menu on route change — browser back/forward buttons don't fire our
   // onClick handlers, so we need to sync menu visibility with the pathname.
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
     setSearchOpen(false);
   }, [pathname]);
@@ -150,6 +149,7 @@ export function Navbar() {
             <input
               autoFocus type="text" value={query} onChange={e => setQuery(e.target.value)}
               placeholder="搜索疾病、标记物、鉴别诊断..."
+              aria-label="搜索疾病、标记物、鉴别诊断"
               className="w-full px-4 py-2.5 rounded-lg text-sm outline-none"
               style={{ background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--fg)' }}
             />

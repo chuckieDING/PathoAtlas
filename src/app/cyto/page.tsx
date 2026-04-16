@@ -38,7 +38,10 @@ export default function CytologyPage() {
         }
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        setSystems([]);
+        setLoading(false);
+      });
   }, []);
 
   const selectedSystem = systems.find(s => s.id === selectedSystemId);
@@ -92,6 +95,7 @@ export default function CytologyPage() {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder="搜索..."
+                aria-label="搜索细胞病理学"
                 className="w-full text-xs pl-9 pr-3 py-2 rounded-lg outline-none"
                 style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
               />

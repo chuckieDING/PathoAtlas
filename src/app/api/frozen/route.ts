@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 
 interface FrozenSection {
   id: string;
@@ -13,13 +13,17 @@ interface FrozenSection {
   reportingTemplate: string;
 }
 
+let cachedFrozen: FrozenSection[] | null = null;
+
 export async function GET() {
   try {
-    const filePath = join(process.cwd(), 'data', 'frozen-sections.json');
-    const data = readFileSync(filePath, 'utf-8');
-    const frozen = JSON.parse(data) as FrozenSection[];
-    return Response.json(frozen);
-  } catch (error) {
-    return Response.json({ error: 'Failed to fetch frozen sections' }, { status: 500 });
+    if (!cachedFrozen) {
+      const filePath = join(process.cwd(), 'data', 'frozen-sections.json');
+      const data = await readFile(filePath, 'utf-8');
+      cachedFrozen = JSON.parse(data);
+    }
+    return Response.json(cachedFrozen);
+  } catch {
+    return Response.json({ error: '无法加载冻存切片数据' }, { status: 500 });
   }
 }

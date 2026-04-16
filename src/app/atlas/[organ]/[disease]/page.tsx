@@ -111,15 +111,24 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
 
       // Record study after successful load (triggers XP + streak)
       if (diseaseData) {
-        const wasStudiedBefore = typeof window !== 'undefined' &&
-          JSON.parse(localStorage.getItem('pathoatlas-progress') || '{}')?.diseaseMastery?.[diseaseId];
+        let wasStudiedBefore = false;
+        try {
+          wasStudiedBefore = typeof window !== 'undefined' &&
+            !!JSON.parse(localStorage.getItem('pathoatlas-progress') || '{}')?.diseaseMastery?.[diseaseId];
+        } catch { /* private browsing or storage denied */ }
         recordDiseaseStudy(diseaseId);
         const gained = wasStudiedBefore ? 5 : 10;
         setXpToast(gained);
-        setTimeout(() => setXpToast(null), 2500);
       }
     }).catch(() => setLoading(false));
   }, [organ, diseaseId]);
+
+  // Auto-clear XP toast
+  useEffect(() => {
+    if (xpToast === null) return;
+    const timer = setTimeout(() => setXpToast(null), 2500);
+    return () => clearTimeout(timer);
+  }, [xpToast]);
 
   // ESC closes lightbox
   useEffect(() => {
@@ -200,9 +209,11 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
       )}
 
       {/* Tabs */}
-      <div className="flex gap-1 overflow-x-auto mb-6" style={{ borderBottom: '1px solid var(--border)' }}>
+      <div className="flex gap-1 overflow-x-auto mb-6" role="tablist" style={{ borderBottom: '1px solid var(--border)' }}>
         {tabs.map(t => (
           <button key={t.id} onClick={() => setTab(t.id)}
+            role="tab"
+            aria-selected={tab === t.id}
             className="px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors"
             style={{ borderBottomColor: tab === t.id ? 'var(--accent)' : 'transparent', color: tab === t.id ? 'var(--fg)' : 'var(--fg-muted)' }}>
             {t.label}
@@ -725,13 +736,21 @@ function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: s
 function Section({ title, content }: { title: string; content: string }) {
   if (!content) return null;
   // Render with Markdown support (bold, lists, tables via GFM) so content can be rich.
-  const isMarkdown = /[*_`#\[\]|]/.test(content);
+  // Check for actual Markdown syntax (headings, bold, lists, links, tables)
+  const isMarkdown = /(\*\*|__|#{1,6}\s|^\s*[-*+]\s|\[.*\]\(|\|.*\|)/m.test(content);
   return (
     <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
       <h3 className="font-semibold text-sm mb-3" style={{ color: 'var(--fg)' }}>{title}</h3>
       {isMarkdown ? (
         <div className="prose text-sm leading-relaxed" style={{ color: 'var(--fg)', opacity: 0.9 }}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            urlTransform={(url) => {
+              // Block javascript: and data: URIs to prevent XSS
+              if (/^(javascript|data|vbscript):/i.test(url)) return '';
+              return url;
+            }}
+          >{content}</ReactMarkdown>
         </div>
       ) : (
         <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--fg)', opacity: 0.85 }}>{content}</p>
