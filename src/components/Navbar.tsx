@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   IconHome, IconMicroscope, IconFlask, IconScale, IconBrain, IconTrophy,
   IconSearch, IconMenu, IconSun, IconMoon, IconDna, IconInfo, IconHelp,
-  IconGithub, IconX, IconSettings,
+  IconGithub, IconX, IconSettings, IconBookOpen,
 } from './Icon';
 import { NavbarProgress } from './ProgressWidgets';
 
@@ -21,6 +21,8 @@ const NAV = [
 
 const MENU_EXTRAS = [
   { href: '/search', label: '高级搜索', icon: IconSearch },
+  { href: '/molecular', label: '分子病理学', icon: IconDna },
+  { href: '/reports', label: 'CAP报告', icon: IconBookOpen },
   { href: '/cyto', label: '细胞病理学', icon: IconFlask },
   { href: '/frozen', label: '冻存切片', icon: IconBrain },
   { href: '/grossing', label: '取材规范', icon: IconMicroscope },

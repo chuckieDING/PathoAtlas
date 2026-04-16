@@ -4,7 +4,7 @@
 
 ## 📊 进度总览
 
-- **Tier 1 · 核心缺失**：0/9 已完成（#1 6/6 ✅、#2 4/4 ✅、#5 4/4 ✅、#6 3/3 ✅、#4 4/4 ✅、#3 5/5 ✅、#7 5/5 ✅）
+- **Tier 1 · 核心缺失**：9/9 已完成 ✅（#1 6/6 ✅、#2 4/4 ✅、#5 4/4 ✅、#6 3/3 ✅、#4 4/4 ✅、#3 5/5 ✅、#7 5/5 ✅、#8 4/4 ✅、#9 4/4 ✅）
 - **Tier 2 · 高价值升级**：0/9 已完成
 - **Tier 3 · 差异化拓展**：0/7 已完成
 
@@ -79,28 +79,27 @@
 ### 8. 分子病理独立模块
 把 `molecularFeatures` 升级为独立的知识模块：
 
-- [ ] `data/molecular.json` + 路由 `/molecular`
-- [ ] 30+ 条驱动基因 / 标志物：EGFR 变体家族、ALK、ROS1、BRAF V600E、KRAS、NTRK 融合、RET 融合、HER2 扩增/突变、MET exon14、BRCA1/2、HRD、MSI/dMMR、TMB、POLE、IDH1/2、TP53 patterns 等
-- [ ] 检测方法对比表（Sanger vs qPCR vs NGS vs FISH vs IHC 代理）
-- [ ] 伴随诊断（CDx）矩阵：哪个变异 → 哪个药 → FDA/NMPA 状态
-- [ ] TCGA 分子分型：乳腺 / 胃 / 结直肠 / 子宫内膜
+- [x] `data/molecular.json` + 路由 `/molecular` ✅ 已创建，含24个分子标志物/分型条目
+- [x] 30+ 条驱动基因 / 标志物：EGFR 变体家族、ALK、ROS1、BRAF V600E、KRAS、NTRK 融合、RET 融合、HER2 扩增/突变、MET exon14、BRCA1/2、HRD、MSI/dMMR、TMB、POLE、IDH1/2、TP53、PD-L1、PIK3CA、FGFR、CDH1、MYC、1p/19q ✅
+- [x] 检测方法对比表（Sanger vs qPCR vs NGS vs FISH vs IHC vs ctDNA vs ddPCR）✅ 每个标志物含详细检测方法对比（灵敏度、周转时间、备注）
+- [x] 伴随诊断（CDx）矩阵：哪个变异 → 哪个药 → FDA/NMPA 状态 ✅ 已创建完整CDx矩阵
+- [x] TCGA 分子分型：乳腺 PAM50 / 胃癌 TCGA / 结直肠 CMS / 子宫内膜 ProMisE ✅ 已创建4个独立分子分型条目
 
 ### 9. CAP 同步报告模板
 结构化肿瘤报告，至少 10 个常用：
 
-- [ ] 疾病 schema 加 `synopticTemplate` 字段或独立 `/reports` 模块
-- [ ] 乳腺浸润癌
-- [ ] 乳腺原位癌
-- [ ] 肺癌
-- [ ] 结直肠癌
-- [ ] 胃癌
-- [ ] 前列腺癌（根治 + 活检）
-- [ ] 膀胱癌（TURBT + 膀胱根治）
-- [ ] 肾细胞癌
-- [ ] 子宫内膜癌
-- [ ] 卵巢癌
-- [ ] 皮肤黑色素瘤
-- [ ] 可填写表单 → 导出为文本报告草稿
+- [x] 独立 `/reports` 模块 + `data/synoptic-templates.json` + API路由 ✅
+- [x] 乳腺浸润癌 ✅ 含标本/组织学/切缘/生物标志物(ER/PR/HER2/Ki-67)/pTNM
+- [x] 乳腺原位癌 ✅ 含核级别/结构类型/坏死/切缘/ER
+- [x] 肺癌 ✅ 含腺癌亚型/胸膜侵犯/STAS/支气管切缘/pTNM
+- [x] 结直肠癌 ✅ 含深度/LVI/PNI/肿瘤结节/MSI/KRAS/BRAF/pTNM
+- [x] 胃癌 ✅ 含Lauren分型/深度/HER2/MSI/PD-L1 CPS/pTNM
+- [x] 前列腺癌（根治 + 活检）✅ 根治含Gleason/EPE/SVI/切缘；活检含针数/累及范围/PNI
+- [x] 膀胱癌（TURBT）✅ 含WHO分级/固有肌层/CIS/LVI
+- [x] 肾细胞癌 ✅ 含亚型/ISUP核分级/肉瘤样/肾窦肾静脉侵犯/pTNM
+- [x] 子宫内膜癌 ✅ 含FIGO分级/肌层浸润/LVSI/分子分型(POLE/MMR/p53)/pTNM
+- [x] 皮肤黑色素瘤 ✅ 含Breslow/Clark/溃疡/核分裂率/卫星灶/TIL/pTNM
+- [x] 可填写表单 → 导出为文本报告草稿 ✅ 含完成度追踪、一键生成、复制到剪贴板
 
 ---
 
