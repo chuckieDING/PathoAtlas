@@ -11,11 +11,20 @@ import path from 'path';
  * `source` optionally records the human-readable origin (e.g. "Wikimedia
  * Commons") for attribution.
  */
+export type Magnification = '2x' | '4x' | '10x' | '20x' | '40x' | '100x';
+export type StainType = 'HE' | 'IHC' | 'Special' | 'Gross';
+
 export interface DiseaseImage {
   url: string;
   fullUrl?: string;
   caption: string;
   source?: string;
+  /** Objective magnification at which this image was captured. */
+  magnification?: Magnification;
+  /** Staining method used for this image. */
+  stainType?: StainType;
+  /** When stainType is 'IHC', which marker (e.g. "TTF-1", "Ki-67"). */
+  ihcMarker?: string;
 }
 
 /**

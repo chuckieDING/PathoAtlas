@@ -45,8 +45,8 @@
 ### 4. 镜下图片多放大倍数支持
 图片 schema 加入 `magnification` 和 `stainType` 字段：
 
-- [ ] `DiseaseImage` / `MarkerStainingImage` schema 扩字段：`magnification: '2x'|'4x'|'10x'|'20x'|'40x'|'100x'`、`stainType: 'HE'|'IHC'|'Special'|'Gross'`、`ihcMarker?: string`
-- [ ] ImageGallery 按放大倍数分组渲染
+- [x] `DiseaseImage` / `MarkerStainingImage` schema 扩字段：`magnification: '2x'|'4x'|'10x'|'20x'|'40x'|'100x'`、`stainType: 'HE'|'IHC'|'Special'|'Gross'`、`ihcMarker?: string` ✅
+- [x] ImageGallery 按放大倍数分组渲染 ✅（有 mag 信息时按组显示，无则平铺兼容）
 - [ ] Admin 编辑器增加倍数和染色类型下拉框
 - [ ] 上传 API 自动把倍数和类型写入响应
 

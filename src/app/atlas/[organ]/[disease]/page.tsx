@@ -22,7 +22,7 @@ function markerSlug(label: string): string {
 }
 
 interface IHCItem { marker: string; result: string; note: string }
-interface DiseaseImage { url: string; fullUrl?: string; caption: string; source?: string }
+interface DiseaseImage { url: string; fullUrl?: string; caption: string; source?: string; magnification?: string; stainType?: string; ihcMarker?: string }
 interface ConsensusItem {
   id: string;
   title: string;
@@ -409,75 +409,109 @@ function ImageGallery({
         <span>{title}</span>
         <span className="text-xs font-normal" style={{ color: 'var(--fg-muted)' }}>(点击放大 · 默认压缩图)</span>
       </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {images.map((img, i) => {
-          const hasFull = !!img.fullUrl;
-          const isFull = hasFull && !!fullLoaded?.[img.url];
-          // Which src to feed the <img>: once the user clicks "加载原图",
-          // swap in the high-res URL. Lightbox always uses full if available.
-          const displaySrc = isFull && img.fullUrl ? img.fullUrl : img.url;
-          const lightboxImg = {
-            url: img.fullUrl || img.url,
-            caption: img.caption,
-          };
+      {/* Group images by magnification if at least one has it set;
+          otherwise flat grid (backward-compatible). */}
+      {(() => {
+        const hasMagInfo = images.some(img => img.magnification);
+        if (hasMagInfo) {
+          const MAG_ORDER = ['2x','4x','10x','20x','40x','100x','未标注'];
+          const groups: Record<string, DiseaseImage[]> = {};
+          for (const img of images) {
+            const key = img.magnification || '未标注';
+            (groups[key] ||= []).push(img);
+          }
           return (
-            <figure
-              key={i}
-              className="rounded-xl overflow-hidden group transition-transform hover:-translate-y-0.5 flex flex-col"
-              style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
-            >
-              <div
-                className="relative cursor-zoom-in"
-                onClick={() => onOpen(lightboxImg)}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={displaySrc}
-                  alt={img.caption}
-                  className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
-                />
-                {hasFull && (
-                  <span
-                    className="absolute top-2 left-2 text-[10px] px-2 py-0.5 rounded-full font-medium"
-                    style={{
-                      background: isFull ? 'rgba(34,197,94,0.9)' : 'rgba(0,0,0,0.55)',
-                      color: '#fff',
-                    }}
-                  >
-                    {isFull ? '原图' : '压缩图'}
-                  </span>
-                )}
-              </div>
-              <figcaption className="p-3 text-xs leading-relaxed flex-1" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
-                <div>{img.caption}</div>
-                <div className="mt-2 flex items-center justify-between gap-2 flex-wrap">
-                  {img.source && (
-                    <span className="text-[10px] opacity-70">来源：{img.source}</span>
-                  )}
-                  {hasFull && !isFull && onLoadFull && (
-                    <button
-                      type="button"
-                      onClick={(e) => { e.stopPropagation(); onLoadFull(img.url); }}
-                      className="text-[11px] px-2 py-1 rounded-md transition-colors ml-auto"
-                      style={{
-                        background: 'var(--card-hover)',
-                        color: 'var(--accent)',
-                        border: '1px solid var(--border)',
-                      }}
-                    >
-                      加载原图
-                    </button>
-                  )}
+            <div className="space-y-4">
+              {MAG_ORDER.filter(k => groups[k]).map(mag => (
+                <div key={mag}>
+                  <div className="text-xs font-semibold mb-2 flex items-center gap-1.5" style={{ color: 'var(--fg-muted)' }}>
+                    <span className="px-1.5 py-0.5 rounded text-[10px]" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>{mag}</span>
+                    <span>({groups[mag].length})</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {groups[mag].map((img, i) => (
+                      <ImageFigure key={`${mag}-${i}`} img={img} fullLoaded={fullLoaded} onLoadFull={onLoadFull} onOpen={onOpen} />
+                    ))}
+                  </div>
                 </div>
-              </figcaption>
-            </figure>
+              ))}
+            </div>
           );
-        })}
-      </div>
+        }
+        // Flat grid fallback
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {images.map((img, i) => (
+              <ImageFigure key={i} img={img} fullLoaded={fullLoaded} onLoadFull={onLoadFull} onOpen={onOpen} />
+            ))}
+          </div>
+        );
+      })()}
     </div>
+  );
+}
+
+function ImageFigure({ img, fullLoaded, onLoadFull, onOpen }: {
+  img: DiseaseImage;
+  fullLoaded?: Record<string, boolean>;
+  onLoadFull?: (url: string) => void;
+  onOpen: (img: { url: string; caption: string }) => void;
+}) {
+  const hasFull = !!img.fullUrl;
+  const isFull = hasFull && !!fullLoaded?.[img.url];
+  const displaySrc = isFull && img.fullUrl ? img.fullUrl : img.url;
+  const lightboxImg = { url: img.fullUrl || img.url, caption: img.caption };
+  // Build a small badge set: magnification + stainType if present
+  const badges: string[] = [];
+  if (img.magnification) badges.push(img.magnification);
+  if (img.stainType) badges.push(img.stainType === 'IHC' && img.ihcMarker ? `IHC: ${img.ihcMarker}` : img.stainType);
+  return (
+    <figure
+      className="rounded-xl overflow-hidden group transition-transform hover:-translate-y-0.5 flex flex-col"
+      style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }}
+    >
+      <div className="relative cursor-zoom-in" onClick={() => onOpen(lightboxImg)}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={displaySrc}
+          alt={img.caption}
+          className="w-full aspect-video object-contain transition-transform group-hover:scale-[1.02]"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.25'; }}
+        />
+        <div className="absolute top-2 left-2 flex items-center gap-1">
+          {hasFull && (
+            <span className="text-[10px] px-2 py-0.5 rounded-full font-medium"
+              style={{ background: isFull ? 'rgba(34,197,94,0.9)' : 'rgba(0,0,0,0.55)', color: '#fff' }}>
+              {isFull ? '原图' : '压缩图'}
+            </span>
+          )}
+          {badges.map(b => (
+            <span key={b} className="text-[9px] px-1.5 py-0.5 rounded-full"
+              style={{ background: 'rgba(0,0,0,0.55)', color: '#fff' }}>
+              {b}
+            </span>
+          ))}
+        </div>
+      </div>
+      <figcaption className="p-3 text-xs leading-relaxed flex-1" style={{ color: 'var(--fg-muted)', background: 'var(--card)' }}>
+        <div>{img.caption}</div>
+        <div className="mt-2 flex items-center justify-between gap-2 flex-wrap">
+          {img.source && <span className="text-[10px] opacity-70">来源：{img.source}</span>}
+          {hasFull && !isFull && onLoadFull && (
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); onLoadFull(img.url); }}
+              className="text-[11px] px-2 py-1 rounded-md transition-colors ml-auto"
+              style={{ background: 'var(--card-hover)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+            >
+              加载原图
+            </button>
+          )}
+        </div>
+      </figcaption>
+    </figure>
   );
 }
 
