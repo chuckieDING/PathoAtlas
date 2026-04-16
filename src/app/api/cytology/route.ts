@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 import { join } from 'path';
 
 interface CytologySystem {
@@ -17,15 +17,19 @@ interface CytologySystem {
   }>;
 }
 
+let cachedSystems: CytologySystem[] | null = null;
+
 export async function GET() {
   try {
-    const filePath = join(process.cwd(), 'data', 'cytology.json');
-    const data = readFileSync(filePath, 'utf-8');
-    const systems: CytologySystem[] = JSON.parse(data);
-    return Response.json(systems);
-  } catch (error) {
+    if (!cachedSystems) {
+      const filePath = join(process.cwd(), 'data', 'cytology.json');
+      const data = await readFile(filePath, 'utf-8');
+      cachedSystems = JSON.parse(data);
+    }
+    return Response.json(cachedSystems);
+  } catch {
     return Response.json(
-      { error: '无法加载细胞病理学数据', details: error instanceof Error ? error.message : '未知错误' },
+      { error: '无法加载细胞病理学数据' },
       { status: 500 }
     );
   }

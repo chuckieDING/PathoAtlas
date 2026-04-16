@@ -1,24 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import { StagingGroup, ResultCard, CalculatorDisclaimer, CalculatorNotes } from './shared';
 
 /**
  * FIGO staging for cervical cancer (2018 revision).
- * Based on clinical and pathological findings.
  *
- * T categories:
- * - T1: Confined to cervix
- * - T2: Invades beyond cervix but not to pelvic wall
- * - T3: Extends to pelvic wall or lower third vagina
- * - T4: Invades bladder/rectal mucosa or beyond true pelvis
- *
- * N categories:
+ * N categories now distinguish pelvic vs. para-aortic nodes:
  * - N0: No regional lymph node metastasis
- * - N1: Regional lymph node metastasis
- *
- * M categories:
- * - M0: No distant metastasis
- * - M1: Distant metastasis
+ * - N1: Pelvic lymph node metastasis only → IIIC1
+ * - N2: Para-aortic lymph node metastasis → IIIC2
  *
  * Reference: FIGO Committee on Gynecologic Oncology. Int J Gynaecol Obstet 2019; 145: 129–35.
  */
@@ -50,7 +41,8 @@ const T_OPTIONS: StagingOption[] = [
 
 const N_OPTIONS: StagingOption[] = [
   { code: 'N0', label: 'N0', description: '无区域淋巴结转移' },
-  { code: 'N1', label: 'N1', description: '区域淋巴结转移' },
+  { code: 'N1', label: 'N1', description: '盆腔淋巴结转移' },
+  { code: 'N2', label: 'N2', description: '腹主动脉旁淋巴结转移' },
 ];
 
 const M_OPTIONS: StagingOption[] = [
@@ -58,67 +50,42 @@ const M_OPTIONS: StagingOption[] = [
   { code: 'M1', label: 'M1', description: '远处转移' },
 ];
 
-function calculateFIGO(t: string, n: string, m: string): { stage: string; color: string; note: string } {
+function calculateFIGO(t: string, n: string, m: string): { stage: string; color: string; note: string; riskLevel: string } {
   if (m === 'M1') {
-    return {
-      stage: 'IVB',
-      color: '#ef4444',
-      note: '远处转移，预后差',
-    };
+    return { stage: 'IVB', color: '#ef4444', note: '远处转移，预后差', riskLevel: '极高危' };
+  }
+
+  if (n === 'N2') {
+    return { stage: 'IIIC2', color: '#f97316', note: '腹主动脉旁淋巴结阳性', riskLevel: '高危' };
   }
 
   if (n === 'N1') {
-    if (t.startsWith('T3')) {
-      return {
-        stage: 'IIIC2',
-        color: '#f97316',
-        note: '盆壁浸润 + 淋巴结阳性',
-      };
-    }
-    return {
-      stage: 'IIIC1',
-      color: '#f97316',
-      note: '淋巴结阳性',
-    };
+    return { stage: 'IIIC1', color: '#f97316', note: '盆腔淋巴结阳性', riskLevel: '高危' };
   }
 
   if (t === 'T4') {
-    return {
-      stage: 'IVA',
-      color: '#ef4444',
-      note: '邻近器官浸润',
-    };
+    return { stage: 'IVA', color: '#ef4444', note: '邻近器官浸润', riskLevel: '极高危' };
   }
 
-  if (t.startsWith('T3')) {
-    return {
-      stage: 'III',
-      color: '#f97316',
-      note: '局部晚期',
-    };
+  if (t === 'T3b') {
+    return { stage: 'IIIB', color: '#f97316', note: '达盆壁或肾积水', riskLevel: '高危' };
+  }
+  if (t === 'T3a') {
+    return { stage: 'IIIA', color: '#f97316', note: '下1/3阴道受累', riskLevel: '高危' };
+  }
+  if (t === 'T3') {
+    return { stage: 'III', color: '#f97316', note: '局部晚期', riskLevel: '高危' };
   }
 
   if (t.startsWith('T2')) {
-    return {
-      stage: 'II',
-      color: '#f59e0b',
-      note: '超出宫颈',
-    };
+    return { stage: 'II', color: '#f59e0b', note: '超出宫颈', riskLevel: '中危' };
   }
 
   if (t.startsWith('T1')) {
-    return {
-      stage: 'I',
-      color: '#22c55e',
-      note: '限于宫颈，预后好',
-    };
+    return { stage: 'I', color: '#22c55e', note: '限于宫颈，预后好', riskLevel: '低危' };
   }
 
-  return {
-    stage: 'Unknown',
-    color: '#6b7280',
-    note: '请选择完整分期信息',
-  };
+  return { stage: 'Unknown', color: '#6b7280', note: '请选择完整分期信息', riskLevel: '' };
 }
 
 export function FIGOCervical() {
@@ -141,116 +108,31 @@ export function FIGOCervical() {
         </p>
       </div>
 
-      <StagingGroup
-        label="T · 原发肿瘤"
-        value={t}
-        onChange={setT}
-        options={T_OPTIONS}
-      />
-      <StagingGroup
-        label="N · 区域淋巴结"
-        value={n}
-        onChange={setN}
-        options={N_OPTIONS}
-      />
-      <StagingGroup
-        label="M · 远处转移"
-        value={m}
-        onChange={setM}
-        options={M_OPTIONS}
+      <StagingGroup label="T · 原发肿瘤" value={t} onChange={setT} options={T_OPTIONS} />
+      <StagingGroup label="N · 区域淋巴结" value={n} onChange={setN} options={N_OPTIONS} />
+      <StagingGroup label="M · 远处转移" value={m} onChange={setM} options={M_OPTIONS} />
+
+      <ResultCard
+        leftLabel="FIGO Stage"
+        leftValue={`${t} ${n} ${m}`}
+        rightLabel="分期"
+        rightValue={`Stage ${result.stage}`}
+        note={result.note}
+        color={result.color}
+        riskLevel={result.riskLevel}
       />
 
-      <div
-        className="rounded-lg p-4 mt-4"
-        style={{ background: 'var(--card-hover)', border: `2px solid ${result.color}` }}
-      >
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>FIGO Stage</div>
-            <div className="text-2xl font-bold tabular-nums" style={{ color: 'var(--fg)' }}>
-              {t} {n} {m}
-            </div>
-          </div>
-          <div className="text-right">
-            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>分期</div>
-            <div className="text-base font-bold" style={{ color: result.color }}>
-              Stage {result.stage}
-            </div>
-            <div className="text-[11px] mt-0.5" style={{ color: 'var(--fg-muted)' }}>
-              {result.note}
-            </div>
-          </div>
-        </div>
-      </div>
+      <CalculatorNotes summary="分期含义与注意事项">
+        <p><strong>I 期</strong>：限于宫颈，5 年生存率 &gt;90%</p>
+        <p><strong>II 期</strong>：超出宫颈但未达盆壁，5 年生存率 65-80%</p>
+        <p><strong>III 期</strong>：达盆壁或淋巴结阳性，5 年生存率 35-50%</p>
+        <p><strong>IIIC1</strong>：盆腔淋巴结转移；<strong>IIIC2</strong>：腹主动脉旁淋巴结转移</p>
+        <p><strong>IV 期</strong>：远处转移或邻近器官，5 年生存率 &lt;20%</p>
+        <p className="mt-2 opacity-80">* 分期基于临床检查、影像学和病理。手术后可重新分期。</p>
+        <p className="mt-1 opacity-80">* 参考：FIGO Committee on Gynecologic Oncology. <em>Int J Gynaecol Obstet</em> 2019; 145: 129–35.</p>
+      </CalculatorNotes>
 
-      <details className="text-xs" style={{ color: 'var(--fg-muted)' }}>
-        <summary className="cursor-pointer hover:underline select-none">分期含义与注意事项</summary>
-        <div className="mt-2 space-y-1.5 pl-3 leading-relaxed">
-          <p>
-            <strong>I 期</strong>：限于宫颈，5 年生存率 >90%
-          </p>
-          <p>
-            <strong>II 期</strong>：超出宫颈但未达盆壁，5 年生存率 65-80%
-          </p>
-          <p>
-            <strong>III 期</strong>：达盆壁或淋巴结阳性，5 年生存率 35-50%
-          </p>
-          <p>
-            <strong>IV 期</strong>：远处转移或邻近器官，5 年生存率 <20%
-          </p>
-          <p className="mt-2 opacity-80">
-            * 分期基于临床检查、影像学和病理。手术后可重新分期。
-          </p>
-          <p className="mt-1 opacity-80">
-            * 参考：FIGO Committee on Gynecologic Oncology. <em>Int J Gynaecol Obstet</em> 2019; 145: 129–35.
-          </p>
-        </div>
-      </details>
-    </div>
-  );
-}
-
-function StagingGroup({
-  label,
-  value,
-  onChange,
-  options,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  options: StagingOption[];
-}) {
-  return (
-    <div>
-      <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg)' }}>
-        {label}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        {options.map((opt) => {
-          const active = value === opt.code;
-          return (
-            <button
-              key={opt.code}
-              onClick={() => onChange(opt.code)}
-              className="rounded-lg p-3 text-left transition-colors"
-              style={{
-                background: active ? 'rgba(99,102,241,0.12)' : 'var(--card-hover)',
-                border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
-              }}
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-semibold" style={{ color: 'var(--fg)' }}>
-                  {opt.label}
-                </span>
-              </div>
-              <div className="text-[10px] leading-tight" style={{ color: 'var(--fg-muted)' }}>
-                {opt.description}
-              </div>
-            </button>
-          );
-        })}
-      </div>
+      <CalculatorDisclaimer />
     </div>
   );
 }

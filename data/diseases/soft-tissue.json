@@ -55,7 +55,7 @@
     "nameZh": "胃肠道间质瘤",
     "nameEn": "Gastrointestinal Stromal Tumor",
     "aliases": ["GIST"],
-    "organ": "soft-tissue",
+    "organ": "gi",
     "category": "malignant",
     "epidemiology": "最常见的胃肠道间叶肿瘤。",
     "clinicalFeatures": "胃肠道出血。",

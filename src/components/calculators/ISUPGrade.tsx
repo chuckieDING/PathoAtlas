@@ -1,15 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { ResultCard, CalculatorDisclaimer, CalculatorNotes } from './shared';
 
 /**
  * ISUP/WHO nuclear grading for clear cell renal cell carcinoma (2013).
  * Four grades based on nuclear size, irregularity, and nucleolar prominence.
- *
- * - Grade 1: Nuclei round, uniform, similar to normal tubular cells
- * - Grade 2: Nuclei slightly irregular, enlarged, nucleoli inconspicuous
- * - Grade 3: Nuclei obviously irregular, enlarged, nucleoli prominent
- * - Grade 4: Nuclei bizarre, multilobated, macronucleoli, sarcomatoid
  *
  * Reference: Delahunt B et al. Am J Surg Pathol 2013; 37: 1469–74.
  */
@@ -27,32 +23,16 @@ const GRADE_OPTIONS: GradeOption[] = [
   { grade: 4, label: 'Grade 4', description: '核极度异型、多叶状、大核仁、肉瘤样' },
 ];
 
-function gradeInfo(grade: 1 | 2 | 3 | 4): { label: string; color: string; note: string } {
+function gradeInfo(grade: 1 | 2 | 3 | 4): { label: string; color: string; note: string; riskLevel: string } {
   switch (grade) {
     case 1:
-      return {
-        label: 'Grade 1 · 低级别',
-        color: '#22c55e',
-        note: '预后极好，5年生存率 >95%',
-      };
+      return { label: 'Grade 1 · 低级别', color: '#22c55e', note: '预后极好，5年生存率 >95%', riskLevel: '低危' };
     case 2:
-      return {
-        label: 'Grade 2 · 中低级别',
-        color: '#84cc16',
-        note: '预后良好，5年生存率 85-95%',
-      };
+      return { label: 'Grade 2 · 中低级别', color: '#84cc16', note: '预后良好，5年生存率 85-95%', riskLevel: '低-中危' };
     case 3:
-      return {
-        label: 'Grade 3 · 中高级别',
-        color: '#f59e0b',
-        note: '预后中等，5年生存率 70-85%',
-      };
+      return { label: 'Grade 3 · 中高级别', color: '#f59e0b', note: '预后中等，5年生存率 70-85%', riskLevel: '中-高危' };
     case 4:
-      return {
-        label: 'Grade 4 · 高级别',
-        color: '#ef4444',
-        note: '预后差，5年生存率 <70%，常伴肉瘤样变',
-      };
+      return { label: 'Grade 4 · 高级别', color: '#ef4444', note: '预后差，5年生存率 <70%，常伴肉瘤样变', riskLevel: '高危' };
   }
 }
 
@@ -74,58 +54,28 @@ export function ISUPGrade() {
         </p>
       </div>
 
-      <GradeGroup
-        value={grade}
-        onChange={(v) => setGrade(v)}
-        options={GRADE_OPTIONS}
+      <GradeGroup value={grade} onChange={setGrade} options={GRADE_OPTIONS} />
+
+      <ResultCard
+        leftLabel="ISUP Grade"
+        leftValue={String(grade)}
+        rightLabel="分级"
+        rightValue={result.label}
+        note={result.note}
+        color={result.color}
+        riskLevel={result.riskLevel}
       />
 
-      <div
-        className="rounded-lg p-4 mt-4"
-        style={{ background: 'var(--card-hover)', border: `2px solid ${result.color}` }}
-      >
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>ISUP Grade</div>
-            <div className="text-2xl font-bold tabular-nums" style={{ color: 'var(--fg)' }}>
-              {grade}
-            </div>
-          </div>
-          <div className="text-right">
-            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>分级</div>
-            <div className="text-base font-bold" style={{ color: result.color }}>
-              {result.label}
-            </div>
-            <div className="text-[11px] mt-0.5" style={{ color: 'var(--fg-muted)' }}>
-              {result.note}
-            </div>
-          </div>
-        </div>
-      </div>
+      <CalculatorNotes summary="分级含义与注意事项">
+        <p><strong>G1</strong>：核与正常肾小管相似，预后极好</p>
+        <p><strong>G2</strong>：核轻度增大，异型轻微，中低危</p>
+        <p><strong>G3</strong>：核明显增大，核仁突出，中高危</p>
+        <p><strong>G4</strong>：核极度异型，常伴肉瘤样变，高危</p>
+        <p className="mt-2 opacity-80">* 肉瘤样变自动为 G4，无论核形态如何。</p>
+        <p className="mt-1 opacity-80">* 参考：Delahunt B et al. <em>Am J Surg Pathol</em> 2013; 37: 1469–74.</p>
+      </CalculatorNotes>
 
-      <details className="text-xs" style={{ color: 'var(--fg-muted)' }}>
-        <summary className="cursor-pointer hover:underline select-none">分级含义与注意事项</summary>
-        <div className="mt-2 space-y-1.5 pl-3 leading-relaxed">
-          <p>
-            <strong>G1</strong>：核与正常肾小管相似，预后极好
-          </p>
-          <p>
-            <strong>G2</strong>：核轻度增大，异型轻微，中低危
-          </p>
-          <p>
-            <strong>G3</strong>：核明显增大，核仁突出，中高危
-          </p>
-          <p>
-            <strong>G4</strong>：核极度异型，常伴肉瘤样变，高危
-          </p>
-          <p className="mt-2 opacity-80">
-            * 肉瘤样变自动为 G4，无论核形态如何。
-          </p>
-          <p className="mt-1 opacity-80">
-            * 参考：Delahunt B et al. <em>Am J Surg Pathol</em> 2013; 37: 1469–74.
-          </p>
-        </div>
-      </details>
+      <CalculatorDisclaimer />
     </div>
   );
 }
@@ -140,7 +90,7 @@ function GradeGroup({
   options: GradeOption[];
 }) {
   return (
-    <div>
+    <div role="radiogroup" aria-label="选择核分级">
       <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg)' }}>
         选择核分级
       </div>
@@ -150,6 +100,8 @@ function GradeGroup({
           return (
             <button
               key={opt.grade}
+              role="radio"
+              aria-checked={active}
               onClick={() => onChange(opt.grade)}
               className="rounded-lg p-3 text-left transition-colors"
               style={{

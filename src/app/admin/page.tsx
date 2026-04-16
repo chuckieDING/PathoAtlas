@@ -218,9 +218,12 @@ export default function AdminPage() {
       const err = params.get('auth_error');
       const badEmail = params.get('email');
       if (err) {
+        // Sanitize attacker-controlled query params: truncate and strip HTML
+        const safeErr = (err || '').replace(/[<>"'&]/g, '').slice(0, 100);
+        const safeEmail = (badEmail || '').replace(/[<>"'&]/g, '').slice(0, 100);
         setAuth({
           status: 'needs-login',
-          error: `${err}${badEmail ? ` (${badEmail})` : ''}`,
+          error: `${safeErr}${safeEmail ? ` (${safeEmail})` : ''}`,
           googleConfigured: true,
         });
         params.delete('auth_error');
@@ -1790,13 +1793,14 @@ function PdfUploadButton({
 
 // ── Primitive inputs ──────────────────────────────────────────────
 
-function Field({ label, value, onChange, span, mono }: { label: string; value: string; onChange: (v: string) => void; span?: number; mono?: boolean }) {
+function Field({ label, value, onChange, span, mono, placeholder }: { label: string; value: string; onChange: (v: string) => void; span?: number; mono?: boolean; placeholder?: string }) {
   return (
     <label className={`block text-[11px] ${span === 3 ? 'sm:col-span-3' : span === 2 ? 'sm:col-span-2' : ''}`} style={{ color: 'var(--fg-muted)' }}>
       <span>{label}</span>
       <input
         value={value}
         onChange={e => onChange(e.target.value)}
+        placeholder={placeholder}
         className={`mt-1 w-full px-2.5 py-1.5 rounded-md outline-none text-xs ${mono ? 'font-mono' : ''}`}
         style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
       />

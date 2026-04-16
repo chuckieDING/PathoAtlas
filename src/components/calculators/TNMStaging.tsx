@@ -1,13 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { StagingGroup, CalculatorDisclaimer, CalculatorNotes } from './shared';
 
 /**
  * TNM Staging System (8th Edition) - Generic framework for cancer staging.
- * TNM describes the extent of cancer: T (tumor), N (nodes), M (metastasis).
- * This is a generic framework that can be adapted for different cancer types.
- *
- * Note: Actual staging rules vary by cancer type. This provides the basic TNM notation.
  */
 
 interface TNMOption {
@@ -61,24 +58,9 @@ export function TNMStaging() {
         </p>
       </div>
 
-      <StagingGroup
-        label="T · 原发肿瘤"
-        value={t}
-        onChange={setT}
-        options={T_OPTIONS}
-      />
-      <StagingGroup
-        label="N · 区域淋巴结"
-        value={n}
-        onChange={setN}
-        options={N_OPTIONS}
-      />
-      <StagingGroup
-        label="M · 远处转移"
-        value={m}
-        onChange={setM}
-        options={M_OPTIONS}
-      />
+      <StagingGroup label="T · 原发肿瘤" value={t} onChange={setT} options={T_OPTIONS} />
+      <StagingGroup label="N · 区域淋巴结" value={n} onChange={setN} options={N_OPTIONS} />
+      <StagingGroup label="M · 远处转移" value={m} onChange={setM} options={M_OPTIONS} />
 
       <div
         className="rounded-lg p-4 mt-4"
@@ -94,77 +76,21 @@ export function TNMStaging() {
           <div className="text-right">
             <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>描述</div>
             <div className="text-base font-bold" style={{ color: 'var(--fg)' }}>
-              {T_OPTIONS.find(opt => opt.code === t)?.label} {N_OPTIONS.find(opt => opt.code === n)?.label} {M_OPTIONS.find(opt => opt.code === m)?.label}
+              {T_OPTIONS.find(opt => opt.code === t)?.label ?? t} {N_OPTIONS.find(opt => opt.code === n)?.label ?? n} {M_OPTIONS.find(opt => opt.code === m)?.label ?? m}
             </div>
           </div>
         </div>
       </div>
 
-      <details className="text-xs" style={{ color: 'var(--fg-muted)' }}>
-        <summary className="cursor-pointer hover:underline select-none">TNM 系统说明</summary>
-        <div className="mt-2 space-y-1.5 pl-3 leading-relaxed">
-          <p>
-            <strong>T (Tumor)</strong>：描述原发肿瘤的大小和局部侵犯程度
-          </p>
-          <p>
-            <strong>N (Node)</strong>：描述区域淋巴结转移的情况
-          </p>
-          <p>
-            <strong>M (Metastasis)</strong>：描述远处转移的存在
-          </p>
-          <p className="mt-2 opacity-80">
-            * TNM 是描述性系统，实际的临床分期(Stage I-IV)需要结合具体癌症的规则。
-          </p>
-          <p className="mt-1 opacity-80">
-            * 参考：AJCC Cancer Staging Manual, 8th Edition.
-          </p>
-        </div>
-      </details>
-    </div>
-  );
-}
+      <CalculatorNotes summary="TNM 系统说明">
+        <p><strong>T (Tumor)</strong>：描述原发肿瘤的大小和局部侵犯程度</p>
+        <p><strong>N (Node)</strong>：描述区域淋巴结转移的情况</p>
+        <p><strong>M (Metastasis)</strong>：描述远处转移的存在</p>
+        <p className="mt-2 opacity-80">* TNM 是描述性系统，实际的临床分期(Stage I-IV)需要结合具体癌症的规则。</p>
+        <p className="mt-1 opacity-80">* 参考：AJCC Cancer Staging Manual, 8th Edition.</p>
+      </CalculatorNotes>
 
-function StagingGroup({
-  label,
-  value,
-  onChange,
-  options,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  options: TNMOption[];
-}) {
-  return (
-    <div>
-      <div className="text-xs font-semibold mb-2" style={{ color: 'var(--fg)' }}>
-        {label}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        {options.map((opt) => {
-          const active = value === opt.code;
-          return (
-            <button
-              key={opt.code}
-              onClick={() => onChange(opt.code)}
-              className="rounded-lg p-3 text-left transition-colors"
-              style={{
-                background: active ? 'rgba(99,102,241,0.12)' : 'var(--card-hover)',
-                border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
-              }}
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-semibold" style={{ color: 'var(--fg)' }}>
-                  {opt.label}
-                </span>
-              </div>
-              <div className="text-[10px] leading-tight" style={{ color: 'var(--fg-muted)' }}>
-                {opt.description}
-              </div>
-            </button>
-          );
-        })}
-      </div>
+      <CalculatorDisclaimer />
     </div>
   );
 }
