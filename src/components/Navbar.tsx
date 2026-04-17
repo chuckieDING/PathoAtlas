@@ -118,7 +118,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-0.5 text-sm">
+          <div className="hidden md:flex items-center gap-0.5 text-sm">
             {NAV_PRIMARY.map(({ href, label, icon: Icon }) => {
               const active = isActive(href);
               return (
@@ -206,7 +206,7 @@ export function Navbar() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5">
               {/* Mobile primary nav */}
-              <div className="lg:hidden mb-5">
+              <div className="md:hidden mb-5">
                 <div className="flex flex-wrap gap-2">
                   {NAV_PRIMARY.map(({ href, label, icon: Icon }) => {
                     const active = isActive(href);
@@ -232,7 +232,7 @@ export function Navbar() {
               </div>
 
               {/* Menu groups */}
-              <div className="grid gap-6 md:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
                 {MENU_GROUPS.map(group => (
                   <div key={group.title}>
                     <div className="text-[11px] uppercase tracking-widest font-semibold mb-3 px-1" style={{ color: 'var(--fg-muted)' }}>
