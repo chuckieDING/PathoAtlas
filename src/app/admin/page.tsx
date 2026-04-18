@@ -2381,7 +2381,7 @@ function ContentManager({
     if (!q) return entries;
     return entries.filter(e => {
       const id = String(e.id || '');
-      const name = String(e.nameZh || e.titleZh || e.titleEn || e.nameEn || '');
+      const name = String(e.nameZh || e.titleZh || e.termZh || e.titleEn || e.nameEn || e.termEn || '');
       return id.toLowerCase().includes(q) || name.toLowerCase().includes(q);
     });
   }, [entries, search]);
@@ -2577,7 +2577,10 @@ function ContentManager({
             <ul className="max-h-[500px] overflow-y-auto space-y-0.5">
               {filtered.map(e => {
                 const id = String(e.id);
-                const name = String(e.nameZh || e.titleZh || e.nameEn || e.titleEn || id);
+                const name = String(e.nameZh || e.titleZh || e.termZh || e.nameEn || e.titleEn || e.termEn || id);
+                const enName = String(e.nameEn || e.titleEn || e.termEn || '');
+                const subtitle = enName || id;
+                const subtitleIsEn = !!enName;
                 const organColor = module === 'organs' ? String(e.color || 'var(--accent)') : undefined;
                 return (
                   <li key={id}>
@@ -2588,13 +2591,16 @@ function ContentManager({
                         background: selectedId === id ? 'var(--accent)' : 'transparent',
                         color: selectedId === id ? '#fff' : 'var(--fg)',
                       }}
+                      title={id}
                     >
                       {module === 'organs' && (
                         <OrganIcon organId={id} size={20} color={selectedId === id ? '#fff' : organColor} />
                       )}
                       <div className="min-w-0 flex-1">
                         <div className="font-medium truncate">{name}</div>
-                        <div className="font-mono text-[10px] truncate" style={{ opacity: 0.7 }}>{id}</div>
+                        <div className={`text-[10px] truncate ${subtitleIsEn ? '' : 'font-mono'}`} style={{ opacity: 0.7 }}>
+                          {subtitle}
+                        </div>
                       </div>
                     </button>
                   </li>
@@ -2624,9 +2630,19 @@ function ContentManager({
                   )}
                   <div>
                     <div className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>
-                      {String(selectedEntry.nameZh || selectedEntry.titleZh || selectedEntry.id)}
+                      {String(selectedEntry.nameZh || selectedEntry.titleZh || selectedEntry.termZh || selectedEntry.id)}
                     </div>
-                    <code className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{String(selectedEntry.id)}</code>
+                    {(() => {
+                      const enName = String(selectedEntry.nameEn || selectedEntry.titleEn || selectedEntry.termEn || '');
+                      return (
+                        <div className="flex items-center gap-2 mt-0.5">
+                          {enName && (
+                            <span className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>{enName}</span>
+                          )}
+                          <code className="text-[10px]" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>{String(selectedEntry.id)}</code>
+                        </div>
+                      );
+                    })()}
                   </div>
                 </div>
                 <div className="flex gap-2">
