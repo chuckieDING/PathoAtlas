@@ -15,6 +15,49 @@
 export const SESSION_COOKIE_NAME = 'pathoatlas-admin-session';
 export const USER_SESSION_COOKIE_NAME = 'pathoatlas-user-session';
 export const OAUTH_STATE_COOKIE = 'pathoatlas-oauth-state';
+
+/**
+ * Resolve the public-facing origin for OAuth redirect URIs.
+ * Priority:
+ *   1. OAUTH_REDIRECT_URI env var (full URL override)
+ *   2. PUBLIC_BASE_URL env var
+ *   3. X-Forwarded-Proto + X-Forwarded-Host headers (behind reverse proxy)
+ *   4. Host header + protocol guess
+ *   5. request.url origin (fallback for local dev)
+ */
+export function getPublicOrigin(request: Request): string {
+  // 1. Full redirect URI override (if user sets OAUTH_REDIRECT_URI, we use its origin)
+  if (process.env.OAUTH_REDIRECT_URI) {
+    try {
+      return new URL(process.env.OAUTH_REDIRECT_URI).origin;
+    } catch { /* fall through */ }
+  }
+  // 2. PUBLIC_BASE_URL
+  if (process.env.PUBLIC_BASE_URL) {
+    return process.env.PUBLIC_BASE_URL.replace(/\/$/, '');
+  }
+  // 3. X-Forwarded-* headers (Nginx / Cloudflare / Vercel preview)
+  const forwardedProto = request.headers.get('x-forwarded-proto');
+  const forwardedHost = request.headers.get('x-forwarded-host');
+  if (forwardedHost) {
+    const proto = forwardedProto || 'https';
+    return `${proto}://${forwardedHost}`;
+  }
+  // 4. Host header
+  const host = request.headers.get('host');
+  if (host) {
+    const proto = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+    return `${proto}://${host}`;
+  }
+  // 5. Request URL origin (local dev)
+  return new URL(request.url).origin;
+}
+
+/** The canonical redirect URI registered with Google OAuth */
+export function getOAuthRedirectUri(request: Request): string {
+  if (process.env.OAUTH_REDIRECT_URI) return process.env.OAUTH_REDIRECT_URI;
+  return `${getPublicOrigin(request)}/api/auth/callback`;
+}
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 7; // 7 days
 
 const encoder = new TextEncoder();

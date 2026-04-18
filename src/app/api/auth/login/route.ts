@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { OAUTH_STATE_COOKIE, isGoogleConfigured } from '@/lib/auth';
+import { OAUTH_STATE_COOKIE, isGoogleConfigured, getOAuthRedirectUri } from '@/lib/auth';
 
 /**
  * Kicks off Google OAuth. Generates a CSRF state that also encodes the
@@ -14,16 +14,14 @@ export async function GET(request: Request) {
     );
   }
 
-  const { searchParams, origin } = new URL(request.url);
+  const { searchParams } = new URL(request.url);
   const returnTo = searchParams.get('returnTo') || '/';
 
-  // State = random nonce + base64url(returnTo). The callback verifies the
-  // nonce against a cookie to block CSRF-based login fixation, then decodes
-  // returnTo to bounce the user back where they started.
+  // State = random nonce + base64url(returnTo).
   const nonce = crypto.randomBytes(16).toString('base64url');
   const state = `${nonce}:${Buffer.from(returnTo).toString('base64url')}`;
 
-  const redirectUri = `${origin}/api/auth/callback`;
+  const redirectUri = getOAuthRedirectUri(request);
   const params = new URLSearchParams({
     client_id: process.env.GOOGLE_CLIENT_ID || '',
     redirect_uri: redirectUri,

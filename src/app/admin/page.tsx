@@ -8,6 +8,7 @@ import { CONTENT_SCHEMAS } from './contentSchemas';
 import { FormRenderer } from './FormRenderer';
 import { FlowchartEditor } from './FlowchartEditor';
 import { ReportTemplateEditor } from './ReportTemplateEditor';
+import { EntityRefArraySelector, EntityRefSelector } from './EntityRefSelector';
 
 // ── Types ──────────────────────────────────────────────────────────
 
@@ -43,6 +44,7 @@ interface LiteratureItem {
   viewUrl?: string;
 }
 interface IhcRow { marker: string; result: string; note: string }
+interface StainRow { stain: string; result: string; note: string }
 interface DiseaseLike {
   id: string;
   nameZh: string;
@@ -57,6 +59,7 @@ interface DiseaseLike {
   microscopy?: string;
   keyFeatures?: string[];
   ihcProfile?: IhcRow[];
+  specialStainProfile?: StainRow[];
   molecularFeatures?: string;
   differentialDiagnosis?: string[];
   differentialDiagnosisNotes?: string;
@@ -77,6 +80,16 @@ interface StainingGroup {
   description?: string;
   images: DiseaseImage[];
 }
+interface CompanionDiagnostic {
+  drug: string;
+  indication: string;
+  positivityCriterion?: string;
+  regulatoryStatus?: string;
+  line?: string;
+  clone?: string;
+  note?: string;
+}
+
 interface MarkerLike {
   id: string;
   nameZh: string;
@@ -93,6 +106,7 @@ interface MarkerLike {
   positiveIn?: string[];
   negativeIn?: string[];
   relatedDrugs?: string[];
+  companionDiagnostics?: CompanionDiagnostic[];
   pitfalls?: string;
   references?: string[];
   expertConsensus?: ConsensusItem[];
@@ -115,7 +129,14 @@ const MARKER_CATEGORIES = [
   '增殖标记', '神经标记', '分子标记', '其他',
 ];
 
-type EntityKind = 'disease' | 'marker' | 'content';
+type EntityKind =
+  | 'disease'
+  | 'marker'
+  | 'basic-dict'          // 基础字典维护：器官系统 / 术语词汇表
+  | 'differentials-group' // 鉴别诊断：鉴别场景 / 鉴别流程图
+  | 'specialty-dx'        // 专科诊断：细胞病理学 / 分子病理 / 冰冻切片 / 取材规范
+  | 'grading-reports'     // 分级与报告：分级分期系统 / CAP 报告模板
+  | 'learning-tools';     // 学习工具：虚拟病例
 
 /** Non-disease/non-marker modules managed via the generic content API */
 export const CONTENT_MODULES = [
@@ -134,6 +155,15 @@ export const CONTENT_MODULES = [
 ] as const;
 
 export type ContentModule = (typeof CONTENT_MODULES)[number]['key'];
+
+/** Top-level kind → allowed modules + default module */
+const CONTENT_CATEGORY_MAP: Record<string, { label: string; modules: readonly ContentModule[] }> = {
+  'basic-dict':          { label: '基础字典维护', modules: ['organs', 'glossary'] },
+  'differentials-group': { label: '鉴别诊断',     modules: ['differentials', 'flowcharts'] },
+  'specialty-dx':        { label: '专科诊断',     modules: ['cytology', 'molecular', 'frozen-sections', 'grossing'] },
+  'grading-reports':     { label: '分级与报告',   modules: ['staging', 'reports'] },
+  'learning-tools':      { label: '学习工具',     modules: ['cases'] },
+};
 
 // ── Page ───────────────────────────────────────────────────────────
 
@@ -156,6 +186,7 @@ function blankDiseaseDraft(defaultOrgan: string): DiseaseLike {
     microscopy: '',
     keyFeatures: [],
     ihcProfile: [],
+    specialStainProfile: [],
     molecularFeatures: '',
     differentialDiagnosis: [],
     differentialDiagnosisNotes: '',
@@ -189,6 +220,7 @@ function blankMarkerDraft(): MarkerLike {
     positiveIn: [],
     negativeIn: [],
     relatedDrugs: [],
+    companionDiagnostics: [],
     pitfalls: '',
     references: [],
     expertConsensus: [],
@@ -448,26 +480,11 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         <div>
           <h1 className="text-2xl font-bold mb-1" style={{ color: 'var(--fg)' }}>内容管理</h1>
           <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-            维护疾病/标记物的 <b>专家共识</b>、<b>文献参考</b> 与 <b>图片资源</b>。保存会直接写入仓库中的 JSON 数据文件。
+            统一维护疾病、标记物、鉴别诊断、分级分期、报告模板、病例等全部内容。修改即时生效。
           </p>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          {currentEmail ? (
-            <>
-              <span className="text-xs" style={{ color: 'var(--fg-muted)' }}>
-                登录为 <span style={{ color: 'var(--fg)' }}>{currentEmail}</span>
-              </span>
-              {onLogout && (
-                <button
-                  onClick={onLogout}
-                  className="text-xs px-3 py-1.5 rounded-md"
-                  style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
-                >
-                  登出
-                </button>
-              )}
-            </>
-          ) : (
+          {!currentEmail && (
             <span className="text-xs px-2 py-1 rounded" style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b', border: '1px solid rgba(245,158,11,0.3)' }}>
               dev 模式（未启用鉴权）
             </span>
@@ -475,32 +492,37 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         </div>
       </div>
 
-      {/* Entity-kind switch */}
-      <div className="flex gap-1 mb-4" style={{ borderBottom: '1px solid var(--border)' }}>
-        {(['disease', 'marker', 'content'] as EntityKind[]).map(k => (
-          <button
-            key={k}
-            onClick={() => {
-              setKind(k);
-              setSelected(null);
-              setSearch('');
-              setFilterOrgan('');
-              setFilterCategory('');
-              setFilterMarkerCategory('');
-            }}
-            className="px-4 py-2.5 text-sm font-medium border-b-2 transition-colors"
-            style={{
-              borderBottomColor: kind === k ? 'var(--accent)' : 'transparent',
-              color: kind === k ? 'var(--fg)' : 'var(--fg-muted)',
-            }}
-          >
-            {k === 'disease' ? `疾病 (${diseases.length})` : k === 'marker' ? `标记物 (${markers.length})` : '其他模块'}
-          </button>
-        ))}
+      {/* Entity-kind switch (7 top-level categories) */}
+      <div className="flex gap-1 mb-4 overflow-x-auto" style={{ borderBottom: '1px solid var(--border)' }}>
+        {(['disease', 'marker', 'basic-dict', 'differentials-group', 'specialty-dx', 'grading-reports', 'learning-tools'] as EntityKind[]).map(k => {
+          const label = k === 'disease' ? `疾病 (${diseases.length})`
+            : k === 'marker' ? `标记物 (${markers.length})`
+            : CONTENT_CATEGORY_MAP[k]?.label || k;
+          return (
+            <button
+              key={k}
+              onClick={() => {
+                setKind(k);
+                setSelected(null);
+                setSearch('');
+                setFilterOrgan('');
+                setFilterCategory('');
+                setFilterMarkerCategory('');
+              }}
+              className="px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap flex-shrink-0"
+              style={{
+                borderBottomColor: kind === k ? 'var(--accent)' : 'transparent',
+                color: kind === k ? 'var(--fg)' : 'var(--fg-muted)',
+              }}
+            >
+              {label}
+            </button>
+          );
+        })}
       </div>
 
-      {kind === 'content' && (
-        <ContentManager showToast={showToast} />
+      {CONTENT_CATEGORY_MAP[kind] && (
+        <ContentManager showToast={showToast} allowedModules={CONTENT_CATEGORY_MAP[kind].modules} />
       )}
 
       {/* Marker sub-category: IHC / Special stains */}
@@ -522,11 +544,11 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         </div>
       )}
 
-      {kind !== 'content' && (
-      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4 items-start">
+      {(kind === 'disease' || kind === 'marker') && (
+      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4 lg:h-[calc(100vh-14rem)]">
         {/* List panel */}
         <aside
-          className="rounded-xl p-3 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto"
+          className="rounded-xl p-3 lg:overflow-y-auto"
           style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
         >
           <button
@@ -620,7 +642,7 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         </aside>
 
         {/* Editor panel */}
-        <main className="rounded-xl p-5 min-h-[70vh]" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+        <main className="rounded-xl p-5 lg:overflow-y-auto" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
           {!selected && (
             <div className="flex items-center justify-center h-full text-sm" style={{ color: 'var(--fg-muted)' }}>
               请从左侧选择一个{kind === 'disease' ? '疾病' : '标记物'}条目，或点击顶部 &quot;+ 新建&quot; 创建
@@ -764,6 +786,7 @@ function DiseaseEditor({
     microscopy: d.microscopy || '',
     keyFeatures: d.keyFeatures || [],
     ihcProfile: d.ihcProfile || [],
+    specialStainProfile: d.specialStainProfile || [],
     molecularFeatures: d.molecularFeatures || '',
     differentialDiagnosis: d.differentialDiagnosis || [],
     differentialDiagnosisNotes: d.differentialDiagnosisNotes || '',
@@ -963,11 +986,16 @@ function DiseaseEditor({
           items={draft.ihcProfile || []}
           onChange={v => patch('ihcProfile', v)}
         />
-        <StringArrayEditor
-          label="鉴别诊断 (disease ID)"
-          items={draft.differentialDiagnosis || []}
+        <SpecialStainProfileEditor
+          items={draft.specialStainProfile || []}
+          onChange={v => patch('specialStainProfile', v)}
+        />
+        <EntityRefArraySelector
+          entityType="disease"
+          label="鉴别诊断"
+          values={draft.differentialDiagnosis || []}
           onChange={v => patch('differentialDiagnosis', v)}
-          placeholder="输入需鉴别的 disease ID 回车"
+          placeholder="搜索中文名 / 英文名 / ID 添加需鉴别疾病..."
         />
         <TextareaField
           label="鉴别要点 (Markdown，可用 -/** 列表和加粗)"
@@ -1080,6 +1108,7 @@ function MarkerEditor({
     positiveIn: m.positiveIn || [],
     negativeIn: m.negativeIn || [],
     relatedDrugs: m.relatedDrugs || [],
+    companionDiagnostics: m.companionDiagnostics || [],
     pitfalls: m.pitfalls || '',
     references: m.references || [],
     expertConsensus: m.expertConsensus || [],
@@ -1257,6 +1286,11 @@ function MarkerEditor({
         <StringArrayEditor label="阴性表达 (negativeIn)" items={draft.negativeIn || []} onChange={v => patch('negativeIn', v)} />
         <StringArrayEditor label="相关靶向药 (relatedDrugs)" items={draft.relatedDrugs || []} onChange={v => patch('relatedDrugs', v)} />
       </section>
+
+      <CompanionDiagnosticsEditor
+        items={draft.companionDiagnostics || []}
+        onChange={v => patch('companionDiagnostics', v)}
+      />
 
       <section className="rounded-lg p-4" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
         <h3 className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>参考来源</h3>
@@ -1949,6 +1983,120 @@ function SelectField({
 }
 
 /**
+ * CompanionDiagnostics editor — row-based form for clinical CDx entries.
+ * Each row: drug / indication / positivityCriterion / regulatoryStatus / line / clone / note.
+ */
+function CompanionDiagnosticsEditor({
+  items,
+  onChange,
+}: {
+  items: CompanionDiagnostic[];
+  onChange: (next: CompanionDiagnostic[]) => void;
+}) {
+  const updateRow = (i: number, patch: Partial<CompanionDiagnostic>) => {
+    onChange(items.map((r, idx) => (idx === i ? { ...r, ...patch } : r)));
+  };
+  const removeRow = (i: number) => onChange(items.filter((_, idx) => idx !== i));
+  const addRow = () => onChange([...items, { drug: '', indication: '' }]);
+  const moveRow = (i: number, dir: -1 | 1) => {
+    const next = [...items];
+    const t = i + dir;
+    if (t < 0 || t >= next.length) return;
+    [next[i], next[t]] = [next[t], next[i]];
+    onChange(next);
+  };
+
+  const STATUS_OPTIONS = ['FDA+NMPA', 'FDA', 'NMPA', 'EMA', '实验性', ''];
+  const LINE_OPTIONS = ['一线', '二线', '三线', '二/三线', '辅助', '新辅助', '辅助/新辅助', '维持', '挽救', ''];
+
+  return (
+    <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+      <div className="flex items-center justify-between">
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
+          伴随诊断 (Companion Diagnostics) · {items.length} 条
+        </h3>
+        <button
+          onClick={addRow}
+          className="text-xs px-2 py-1 rounded-md cursor-pointer"
+          style={{ background: 'var(--accent)', color: '#fff' }}
+        >
+          + 新增一条
+        </button>
+      </div>
+      {items.length === 0 ? (
+        <p className="text-[11px] text-center py-3" style={{ color: 'var(--fg-muted)' }}>暂无 CDx 条目，点击上方按钮新增</p>
+      ) : (
+        <div className="space-y-2">
+          {items.map((row, i) => (
+            <div
+              key={i}
+              className="rounded-lg p-3"
+              style={{ background: 'var(--bg)', border: '1px solid var(--border)' }}
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-semibold" style={{ color: 'var(--fg-muted)' }}>#{i + 1}</span>
+                <div className="flex gap-0.5">
+                  <button onClick={() => moveRow(i, -1)} disabled={i === 0} className="px-1.5 py-0.5 rounded text-[10px] cursor-pointer"
+                    style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)', border: '1px solid var(--border)', opacity: i === 0 ? 0.4 : 1 }}>↑</button>
+                  <button onClick={() => moveRow(i, 1)} disabled={i === items.length - 1} className="px-1.5 py-0.5 rounded text-[10px] cursor-pointer"
+                    style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)', border: '1px solid var(--border)', opacity: i === items.length - 1 ? 0.4 : 1 }}>↓</button>
+                  <button onClick={() => removeRow(i)} className="px-2 py-0.5 rounded text-[10px] cursor-pointer"
+                    style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)' }}>删除</button>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <CdxField label="药物 *" value={row.drug} onChange={v => updateRow(i, { drug: v })} placeholder="曲妥珠单抗 (Trastuzumab)" />
+                <CdxField label="适应证 *" value={row.indication} onChange={v => updateRow(i, { indication: v })} placeholder="HER2+ 乳腺癌 / 胃癌" />
+                <CdxField label="阳性判读标准" value={row.positivityCriterion || ''} onChange={v => updateRow(i, { positivityCriterion: v })} placeholder="IHC 3+ 或 FISH 扩增" />
+                <CdxField label="IHC 克隆号（可选）" value={row.clone || ''} onChange={v => updateRow(i, { clone: v })} placeholder="22C3 / SP142 / SP263" />
+                <CdxSelect label="监管状态" value={row.regulatoryStatus || ''} onChange={v => updateRow(i, { regulatoryStatus: v })} options={STATUS_OPTIONS} />
+                <CdxSelect label="治疗线" value={row.line || ''} onChange={v => updateRow(i, { line: v })} options={LINE_OPTIONS} />
+                <div className="sm:col-span-2">
+                  <CdxField label="备注" value={row.note || ''} onChange={v => updateRow(i, { note: v })} placeholder="补充说明" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function CdxField({ label, value, onChange, placeholder }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string }) {
+  return (
+    <div>
+      <label className="block text-[10px] mb-0.5" style={{ color: 'var(--fg-muted)' }}>{label}</label>
+      <input
+        type="text"
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="w-full px-2 py-1.5 rounded text-xs outline-none"
+        style={{ background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+      />
+    </div>
+  );
+}
+
+function CdxSelect({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: string[] }) {
+  return (
+    <div>
+      <label className="block text-[10px] mb-0.5" style={{ color: 'var(--fg-muted)' }}>{label}</label>
+      <select
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        className="w-full px-2 py-1.5 rounded text-xs outline-none"
+        style={{ background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+      >
+        <option value="">-- 选择 --</option>
+        {options.filter(o => o).map(o => <option key={o} value={o}>{o}</option>)}
+      </select>
+    </div>
+  );
+}
+
+/**
  * Generic editor for a simple array of strings — rendered as chips with an
  * inline "add" input. Used for aliases, keyFeatures, differentialDiagnosis,
  * positiveIn, negativeIn, relatedDrugs, and references.
@@ -2089,10 +2237,100 @@ function IhcProfileEditor({
   );
 }
 
+/**
+ * Structured editor for disease.specialStainProfile — same shape as IHC but
+ * field is `stain` instead of `marker`.
+ */
+function SpecialStainProfileEditor({
+  items,
+  onChange,
+}: {
+  items: StainRow[];
+  onChange: (next: StainRow[]) => void;
+}) {
+  const update = (idx: number, patch: Partial<StainRow>) => {
+    onChange(items.map((r, i) => i === idx ? { ...r, ...patch } : r));
+  };
+  const remove = (idx: number) => onChange(items.filter((_, i) => i !== idx));
+  const add = () => onChange([...items, { stain: '', result: '', note: '' }]);
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-1.5">
+        <div className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>
+          特殊染色谱 (stain / result / note)
+        </div>
+        <button
+          onClick={add}
+          className="text-[10px] px-2 py-1 rounded"
+          style={{ background: 'var(--card-hover)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+        >
+          + 新增一行
+        </button>
+      </div>
+      <div className="space-y-1.5">
+        {items.length === 0 && (
+          <p className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>暂无，可点击右上角添加</p>
+        )}
+        {items.map((r, i) => (
+          <div key={i} className="grid grid-cols-[1fr_1fr_2fr_auto] gap-1.5 items-center">
+            <input
+              value={r.stain}
+              onChange={e => update(i, { stain: e.target.value })}
+              placeholder="染色方法 (e.g. PAS / Masson)"
+              className="px-2 py-1 rounded text-[11px] outline-none font-mono"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <input
+              value={r.result}
+              onChange={e => update(i, { result: e.target.value })}
+              placeholder="结果 (阳性/蓝染/...)"
+              className="px-2 py-1 rounded text-[11px] outline-none"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <input
+              value={r.note}
+              onChange={e => update(i, { note: e.target.value })}
+              placeholder="备注"
+              className="px-2 py-1 rounded text-[11px] outline-none"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <button
+              onClick={() => remove(i)}
+              className="text-[10px] px-1.5 py-1 rounded"
+              style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
+            >
+              删除
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ── ContentManager: generic admin UI for non-disease/non-marker modules ──
 
-function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
-  const [module, setModule] = useState<ContentModule>('organs');
+function ContentManager({
+  showToast,
+  allowedModules,
+}: {
+  showToast: (msg: string) => void;
+  allowedModules?: readonly ContentModule[];
+}) {
+  const filteredModules = useMemo(
+    () => (allowedModules ? CONTENT_MODULES.filter(m => allowedModules.includes(m.key)) : CONTENT_MODULES),
+    [allowedModules],
+  );
+  const defaultModule = filteredModules[0]?.key || 'organs';
+  const [module, setModule] = useState<ContentModule>(defaultModule);
+
+  // If allowedModules changes (category switch at parent), reset to first allowed
+  useEffect(() => {
+    if (allowedModules && !allowedModules.includes(module)) {
+      setModule(defaultModule);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allowedModules]);
   const [entries, setEntries] = useState<Record<string, unknown>[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -2128,7 +2366,7 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
     if (!q) return entries;
     return entries.filter(e => {
       const id = String(e.id || '');
-      const name = String(e.nameZh || e.titleZh || e.titleEn || e.nameEn || '');
+      const name = String(e.nameZh || e.titleZh || e.termZh || e.titleEn || e.nameEn || e.termEn || '');
       return id.toLowerCase().includes(q) || name.toLowerCase().includes(q);
     });
   }, [entries, search]);
@@ -2255,9 +2493,9 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
 
   return (
     <div>
-      {/* Module selector */}
+      {/* Module selector — always shown for 二级菜单一致性 */}
       <div className="flex gap-1.5 overflow-x-auto pb-1 mb-4 -mx-1 px-1">
-        {CONTENT_MODULES.map(m => (
+        {filteredModules.map(m => (
           <button
             key={m.key}
             onClick={() => setModule(m.key)}
@@ -2278,10 +2516,10 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-4 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-4 lg:h-[calc(100vh-18rem)]">
         {/* Left: entry list */}
         <aside
-          className="rounded-xl p-3 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto"
+          className="rounded-xl p-3 lg:overflow-y-auto"
           style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
         >
           {/* Create new */}
@@ -2324,7 +2562,10 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
             <ul className="max-h-[500px] overflow-y-auto space-y-0.5">
               {filtered.map(e => {
                 const id = String(e.id);
-                const name = String(e.nameZh || e.titleZh || e.nameEn || e.titleEn || id);
+                const name = String(e.nameZh || e.titleZh || e.termZh || e.nameEn || e.titleEn || e.termEn || id);
+                const enName = String(e.nameEn || e.titleEn || e.termEn || '');
+                const subtitle = enName || id;
+                const subtitleIsEn = !!enName;
                 const organColor = module === 'organs' ? String(e.color || 'var(--accent)') : undefined;
                 return (
                   <li key={id}>
@@ -2335,13 +2576,16 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
                         background: selectedId === id ? 'var(--accent)' : 'transparent',
                         color: selectedId === id ? '#fff' : 'var(--fg)',
                       }}
+                      title={id}
                     >
                       {module === 'organs' && (
                         <OrganIcon organId={id} size={20} color={selectedId === id ? '#fff' : organColor} />
                       )}
                       <div className="min-w-0 flex-1">
                         <div className="font-medium truncate">{name}</div>
-                        <div className="font-mono text-[10px] truncate" style={{ opacity: 0.7 }}>{id}</div>
+                        <div className={`text-[10px] truncate ${subtitleIsEn ? '' : 'font-mono'}`} style={{ opacity: 0.7 }}>
+                          {subtitle}
+                        </div>
                       </div>
                     </button>
                   </li>
@@ -2352,7 +2596,7 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
         </aside>
 
         {/* Right: JSON editor */}
-        <main className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+        <main className="rounded-xl p-4 lg:overflow-y-auto" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
           {!selectedEntry ? (
             <div className="text-center py-16" style={{ color: 'var(--fg-muted)' }}>
               <p className="text-sm mb-2">选择左侧条目以编辑</p>
@@ -2371,9 +2615,19 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
                   )}
                   <div>
                     <div className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>
-                      {String(selectedEntry.nameZh || selectedEntry.titleZh || selectedEntry.id)}
+                      {String(selectedEntry.nameZh || selectedEntry.titleZh || selectedEntry.termZh || selectedEntry.id)}
                     </div>
-                    <code className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{String(selectedEntry.id)}</code>
+                    {(() => {
+                      const enName = String(selectedEntry.nameEn || selectedEntry.titleEn || selectedEntry.termEn || '');
+                      return (
+                        <div className="flex items-center gap-2 mt-0.5">
+                          {enName && (
+                            <span className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>{enName}</span>
+                          )}
+                          <code className="text-[10px]" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>{String(selectedEntry.id)}</code>
+                        </div>
+                      );
+                    })()}
                   </div>
                 </div>
                 <div className="flex gap-2">

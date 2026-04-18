@@ -110,6 +110,22 @@ export interface Organ {
   keyPatterns: string[];
 }
 
+/**
+ * Companion diagnostic entry: maps an IHC/molecular biomarker to its
+ * associated targeted therapy, approved indication and regulatory status.
+ * Used on marker detail pages to show the clinical action-ability of a
+ * positive test result.
+ */
+export interface CompanionDiagnostic {
+  drug: string;                    // e.g. "曲妥珠单抗 (Trastuzumab)"
+  indication: string;              // e.g. "HER2+乳腺癌/胃癌"
+  positivityCriterion?: string;    // e.g. "IHC 3+ 或 FISH 扩增"
+  regulatoryStatus?: string;       // e.g. "FDA+NMPA" / "FDA" / "实验性"
+  line?: string;                   // e.g. "一线" / "二/三线" / "辅助/新辅助"
+  clone?: string;                  // specific IHC clone if relevant (e.g. "22C3" for pembrolizumab)
+  note?: string;
+}
+
 export interface Marker {
   id: string;
   nameZh: string;
@@ -126,6 +142,8 @@ export interface Marker {
   positiveIn: string[];
   negativeIn: string[];
   relatedDrugs: string[];
+  /** Structured companion diagnostics table: biomarker → drug → approval */
+  companionDiagnostics?: CompanionDiagnostic[];
   pitfalls: string;
   references: string[];
   /** Guideline / expert consensus entries shown in the marker detail view. */
@@ -293,62 +311,264 @@ export function getDifferentials(): DifferentialScenario[] {
 
 // ── Search ────────────────────────────────────────────────────────
 
+export type SearchResultType =
+  | 'disease'
+  | 'marker'
+  | 'differential'
+  | 'glossary'
+  | 'case'
+  | 'staging'
+  | 'cytology'
+  | 'frozen'
+  | 'grossing'
+  | 'molecular'
+  | 'special-stain';
+
 export interface SearchResult {
-  type: 'disease' | 'marker' | 'differential';
+  type: SearchResultType;
   id: string;
   title: string;
   subtitle: string;
+  snippet?: string;   // Short preview with matched context
   organ?: string;
   url: string;
+  score: number;
+}
+
+/**
+ * Score a query match based on WHERE it hit:
+ * - Title/name exact match: 100
+ * - Title/name starts with: 60
+ * - Title/name contains: 40
+ * - Alias/abbreviation contains: 30
+ * - Body text contains: 10
+ */
+function scoreMatch(q: string, fields: { title?: string; primaryFields?: string[]; bodyFields?: string[] }): number {
+  let score = 0;
+  const lq = q.toLowerCase();
+
+  const title = (fields.title || '').toLowerCase();
+  if (title === lq) score += 100;
+  else if (title.startsWith(lq)) score += 60;
+  else if (title.includes(lq)) score += 40;
+
+  for (const f of fields.primaryFields || []) {
+    if (f && f.toLowerCase().includes(lq)) { score += 30; break; }
+  }
+
+  for (const f of fields.bodyFields || []) {
+    if (f && f.toLowerCase().includes(lq)) { score += 10; break; }
+  }
+
+  return score;
+}
+
+/** Make a short snippet around the first match in the given text. */
+function makeSnippet(text: string, query: string, maxLen = 100): string | undefined {
+  if (!text) return undefined;
+  const lq = query.toLowerCase();
+  const lt = text.toLowerCase();
+  const idx = lt.indexOf(lq);
+  if (idx < 0) return undefined;
+  const start = Math.max(0, idx - 20);
+  const end = Math.min(text.length, idx + query.length + 60);
+  let snippet = text.slice(start, end);
+  if (start > 0) snippet = '…' + snippet;
+  if (end < text.length) snippet = snippet + '…';
+  return snippet.length > maxLen ? snippet.slice(0, maxLen) + '…' : snippet;
 }
 
 export function searchAll(query: string): SearchResult[] {
-  const q = query.toLowerCase();
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
   const results: SearchResult[] = [];
 
-  // Search diseases
-  for (const disease of getAllDiseases()) {
-    const haystack = [disease.nameZh, disease.nameEn, ...disease.aliases, disease.microscopy, disease.clinicalFeatures, ...disease.keyFeatures].join(' ').toLowerCase();
-    if (haystack.includes(q)) {
+  // Diseases
+  for (const d of getAllDiseases()) {
+    const score = scoreMatch(q, {
+      title: d.nameZh,
+      primaryFields: [d.nameEn, ...(d.aliases || [])],
+      bodyFields: [d.microscopy, d.clinicalFeatures, ...(d.keyFeatures || [])],
+    });
+    if (score > 0) {
       results.push({
-        type: 'disease',
-        id: disease.id,
-        title: disease.nameZh,
-        subtitle: disease.nameEn,
-        organ: disease.organ,
-        url: `/atlas/${disease.organ}/${disease.id}`,
+        type: 'disease', id: d.id, title: d.nameZh, subtitle: d.nameEn,
+        organ: d.organ, url: `/atlas/${d.organ}/${d.id}`, score,
+        snippet: makeSnippet(d.microscopy, q) || makeSnippet(d.clinicalFeatures, q),
       });
     }
   }
 
-  // Search markers
-  for (const marker of getMarkers()) {
-    const haystack = [marker.nameZh, marker.nameEn, marker.abbreviation, marker.function, marker.clinicalSignificance, ...marker.positiveIn].join(' ').toLowerCase();
-    if (haystack.includes(q)) {
+  // Markers
+  for (const m of getMarkers()) {
+    const score = scoreMatch(q, {
+      title: m.nameZh,
+      primaryFields: [m.nameEn, m.abbreviation],
+      bodyFields: [m.function, m.clinicalSignificance, ...(m.positiveIn || [])],
+    });
+    if (score > 0) {
       results.push({
-        type: 'marker',
-        id: marker.id,
-        title: marker.abbreviation || marker.nameEn,
-        subtitle: marker.nameZh,
-        url: `/markers/${marker.id}`,
+        type: 'marker', id: m.id, title: m.abbreviation || m.nameEn, subtitle: m.nameZh,
+        url: `/markers/${m.id}`, score,
+        snippet: makeSnippet(m.function, q) || makeSnippet(m.clinicalSignificance, q),
       });
     }
   }
 
-  // Search differentials
-  for (const diff of getDifferentials()) {
-    const haystack = [diff.titleZh, diff.titleEn, diff.description, diff.algorithm].join(' ').toLowerCase();
-    if (haystack.includes(q)) {
+  // Differentials
+  for (const d of getDifferentials()) {
+    const score = scoreMatch(q, {
+      title: d.titleZh,
+      primaryFields: [d.titleEn],
+      bodyFields: [d.description, d.algorithm, ...(d.keyMarkers || [])],
+    });
+    if (score > 0) {
       results.push({
-        type: 'differential',
-        id: diff.id,
-        title: diff.titleZh,
-        subtitle: diff.titleEn,
-        url: `/differentials#${diff.id}`,
+        type: 'differential', id: d.id, title: d.titleZh, subtitle: d.titleEn,
+        url: `/differentials#${d.id}`, score,
+        snippet: makeSnippet(d.description, q) || makeSnippet(d.algorithm, q),
       });
     }
   }
 
+  // Glossary terms
+  const glossary = loadJson<any[]>(path.join(DATA_DIR, 'glossary.json'));
+  for (const g of glossary) {
+    const score = scoreMatch(q, {
+      title: g.termZh,
+      primaryFields: [g.termEn, ...(g.synonyms || [])],
+      bodyFields: [g.definition],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'glossary', id: g.id, title: g.termZh, subtitle: g.termEn,
+        url: `/glossary#${g.id}`, score,
+        snippet: makeSnippet(g.definition, q),
+      });
+    }
+  }
+
+  // Cases
+  const cases = loadJson<any[]>(path.join(DATA_DIR, 'cases.json'));
+  for (const c of cases) {
+    const score = scoreMatch(q, {
+      title: c.titleZh,
+      primaryFields: [c.organ, c.finalDiagnosis],
+      bodyFields: [c.clinicalHistory, c.grossDescription, c.expertCommentary, ...(c.keyLearningPoints || [])],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'case', id: c.id, title: c.titleZh, subtitle: c.finalDiagnosis || c.organ || '',
+        url: `/cases#${c.id}`, score,
+        snippet: makeSnippet(c.clinicalHistory, q),
+      });
+    }
+  }
+
+  // Staging systems
+  const staging = loadJson<any[]>(path.join(DATA_DIR, 'staging.json'));
+  for (const s of staging) {
+    const score = scoreMatch(q, {
+      title: s.nameZh,
+      primaryFields: [s.nameEn],
+      bodyFields: [s.description],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'staging', id: s.id, title: s.nameZh, subtitle: s.nameEn,
+        url: `/staging`, score,
+        snippet: makeSnippet(s.description, q),
+      });
+    }
+  }
+
+  // Special stains
+  const stains = loadJson<any[]>(path.join(DATA_DIR, 'special-stains.json'));
+  for (const s of stains) {
+    const score = scoreMatch(q, {
+      title: s.nameZh,
+      primaryFields: [s.nameEn, s.abbreviation],
+      bodyFields: [s.function, s.interpretation, s.clinicalSignificance],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'special-stain', id: s.id, title: s.abbreviation || s.nameZh, subtitle: s.nameZh,
+        url: `/markers/${s.id}`, score,
+        snippet: makeSnippet(s.function, q) || makeSnippet(s.interpretation, q),
+      });
+    }
+  }
+
+  // Molecular markers
+  const molecular = loadJson<any[]>(path.join(DATA_DIR, 'molecular.json'));
+  for (const m of molecular) {
+    const score = scoreMatch(q, {
+      title: m.nameZh || m.geneSymbol,
+      primaryFields: [m.nameEn, m.geneSymbol, ...(m.associatedTumors || [])],
+      bodyFields: [m.clinicalSignificance],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'molecular', id: m.id, title: m.geneSymbol || m.nameZh, subtitle: m.nameZh || m.nameEn || '',
+        url: `/molecular#${m.id}`, score,
+        snippet: makeSnippet(m.clinicalSignificance, q),
+      });
+    }
+  }
+
+  // Frozen section protocols
+  const frozen = loadJson<any[]>(path.join(DATA_DIR, 'frozen-sections.json'));
+  for (const f of frozen) {
+    const score = scoreMatch(q, {
+      title: f.nameZh,
+      primaryFields: [f.nameEn, f.indication],
+      bodyFields: [f.clinicalScenario, f.reportingTemplate],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'frozen', id: f.id, title: f.nameZh, subtitle: f.nameEn,
+        url: `/frozen#${f.id}`, score,
+        snippet: makeSnippet(f.clinicalScenario, q) || makeSnippet(f.indication, q),
+      });
+    }
+  }
+
+  // Grossing protocols
+  const grossing = loadJson<any[]>(path.join(DATA_DIR, 'grossing.json'));
+  for (const g of grossing) {
+    const score = scoreMatch(q, {
+      title: g.nameZh,
+      primaryFields: [g.nameEn, g.indication],
+      bodyFields: [g.inkScheme, g.samplingInterval, ...(g.mandatorySites || [])],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'grossing', id: g.id, title: g.nameZh, subtitle: g.nameEn,
+        url: `/grossing#${g.id}`, score,
+        snippet: makeSnippet(g.indication, q) || makeSnippet(g.inkScheme, q),
+      });
+    }
+  }
+
+  // Cytology systems
+  const cytology = loadJson<any[]>(path.join(DATA_DIR, 'cytology.json'));
+  for (const c of cytology) {
+    const score = scoreMatch(q, {
+      title: c.nameZh,
+      primaryFields: [c.nameEn],
+      bodyFields: [c.description],
+    });
+    if (score > 0) {
+      results.push({
+        type: 'cytology', id: c.id, title: c.nameZh, subtitle: c.nameEn,
+        url: `/cyto#${c.id}`, score,
+        snippet: makeSnippet(c.description, q),
+      });
+    }
+  }
+
+  // Sort by relevance score desc
+  results.sort((a, b) => b.score - a.score);
   return results;
 }
 

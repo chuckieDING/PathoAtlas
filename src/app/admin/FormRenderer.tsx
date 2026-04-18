@@ -12,6 +12,7 @@
 import { useState } from 'react';
 import { IconX } from '@/components/Icon';
 import { ColorField } from './ColorField';
+import { EntityRefSelector, EntityRefArraySelector } from './EntityRefSelector';
 import type { FieldDef, ModuleSchema } from './contentSchemas';
 
 interface FormProps {
@@ -141,6 +142,28 @@ function FieldInput({
           <option key={opt} value={opt}>{opt}</option>
         ))}
       </select>
+    );
+  }
+
+  if (field.type === 'entity-ref') {
+    return (
+      <EntityRefSelector
+        entityType={field.entityType || 'disease'}
+        value={(value as string) || ''}
+        onChange={onChange}
+        placeholder={field.placeholder}
+      />
+    );
+  }
+
+  if (field.type === 'entity-ref-array') {
+    return (
+      <EntityRefArraySelector
+        entityType={field.entityType || 'disease'}
+        values={(value as string[]) || []}
+        onChange={onChange}
+        placeholder={field.placeholder}
+      />
     );
   }
 
