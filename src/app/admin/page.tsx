@@ -8,6 +8,7 @@ import { CONTENT_SCHEMAS } from './contentSchemas';
 import { FormRenderer } from './FormRenderer';
 import { FlowchartEditor } from './FlowchartEditor';
 import { ReportTemplateEditor } from './ReportTemplateEditor';
+import { EntityRefArraySelector, EntityRefSelector } from './EntityRefSelector';
 
 // ── Types ──────────────────────────────────────────────────────────
 
@@ -983,11 +984,12 @@ function DiseaseEditor({
           items={draft.specialStainProfile || []}
           onChange={v => patch('specialStainProfile', v)}
         />
-        <StringArrayEditor
-          label="鉴别诊断 (disease ID)"
-          items={draft.differentialDiagnosis || []}
+        <EntityRefArraySelector
+          entityType="disease"
+          label="鉴别诊断"
+          values={draft.differentialDiagnosis || []}
           onChange={v => patch('differentialDiagnosis', v)}
-          placeholder="输入需鉴别的 disease ID 回车"
+          placeholder="搜索中文名 / 英文名 / ID 添加需鉴别疾病..."
         />
         <TextareaField
           label="鉴别要点 (Markdown，可用 -/** 列表和加粗)"

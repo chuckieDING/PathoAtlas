@@ -6,13 +6,15 @@
  */
 
 export type FieldType =
-  | 'text'           // single-line string
-  | 'textarea'       // multi-line string
-  | 'select'         // dropdown with options
-  | 'number'         // numeric input
-  | 'color'          // hex color with swatch palette
-  | 'string-array'   // list of strings (tag-like)
-  | 'object-array';  // list of objects (nested form)
+  | 'text'              // single-line string
+  | 'textarea'          // multi-line string
+  | 'select'            // dropdown with options
+  | 'number'            // numeric input
+  | 'color'             // hex color with swatch palette
+  | 'string-array'      // list of strings (tag-like)
+  | 'object-array'      // list of objects (nested form)
+  | 'entity-ref'        // single reference to disease/marker/glossary with fuzzy search
+  | 'entity-ref-array'; // list of entity references with fuzzy search
 
 export interface FieldDef {
   key: string;
@@ -27,6 +29,8 @@ export interface FieldDef {
   rows?: number;
   /** Help text shown below the field */
   help?: string;
+  /** For entity-ref/entity-ref-array: the referenced entity kind */
+  entityType?: 'disease' | 'marker' | 'glossary-term';
 }
 
 export interface ModuleSchema {
@@ -57,7 +61,7 @@ const differentialSchema: ModuleSchema = {
     { key: 'titleZh', label: '中文标题', type: 'text', required: true },
     { key: 'titleEn', label: '英文标题', type: 'text', required: true },
     { key: 'description', label: '场景描述', type: 'textarea', rows: 3 },
-    { key: 'diseases', label: '涉及疾病 ID', type: 'string-array', help: '引用 disease 的 id（需在 data/diseases/*.json 中存在）' },
+    { key: 'diseases', label: '涉及疾病', type: 'entity-ref-array', entityType: 'disease', help: '搜索疾病中文名/英文名/ID 添加' },
     { key: 'keyMarkers', label: '关键标记物', type: 'string-array' },
     { key: 'algorithm', label: '诊断思路', type: 'textarea', rows: 6, help: '用分号分隔多个步骤' },
   ],
@@ -68,7 +72,7 @@ const differentialSchema: ModuleSchema = {
 const flowchartSchema: ModuleSchema = {
   fields: [
     { key: 'titleZh', label: '标题', type: 'text', required: true },
-    { key: 'relatedDifferentialId', label: '关联鉴别场景 ID', type: 'text', help: '引用 differentials.json 中的 id' },
+    { key: 'relatedDifferentialId', label: '关联鉴别场景', type: 'text', help: '引用 differentials.json 中的 id（可手动输入或留空）' },
     {
       key: 'nodes', label: '节点', type: 'object-array',
       itemSchema: [
@@ -97,7 +101,7 @@ const stagingSchema: ModuleSchema = {
   fields: [
     { key: 'nameZh', label: '中文名', type: 'text', required: true },
     { key: 'nameEn', label: '英文名', type: 'text', required: true },
-    { key: 'applicableTo', label: '适用疾病 ID', type: 'string-array' },
+    { key: 'applicableTo', label: '适用疾病', type: 'entity-ref-array', entityType: 'disease' },
     { key: 'description', label: '描述', type: 'textarea', rows: 3 },
     {
       key: 'criteria', label: '评分标准', type: 'object-array',
@@ -143,8 +147,8 @@ const caseSchema: ModuleSchema = {
     { key: 'finalDiagnosis', label: '最终诊断', type: 'textarea', rows: 2 },
     { key: 'keyLearningPoints', label: '关键学习要点', type: 'string-array' },
     { key: 'expertCommentary', label: '专家点评', type: 'textarea', rows: 4 },
-    { key: 'relatedDiseaseIds', label: '相关疾病 ID', type: 'string-array' },
-    { key: 'relatedMarkerIds', label: '相关标记物 ID', type: 'string-array' },
+    { key: 'relatedDiseaseIds', label: '相关疾病', type: 'entity-ref-array', entityType: 'disease' },
+    { key: 'relatedMarkerIds', label: '相关标记物', type: 'entity-ref-array', entityType: 'marker' },
   ],
 };
 
@@ -194,7 +198,7 @@ const glossarySchema: ModuleSchema = {
       '基础病理', '肿瘤总论', '组织学技术', '免疫组化', '分子病理', '细胞病理', '解剖病理', '临床病理',
     ] as const },
     { key: 'synonyms', label: '同义词', type: 'string-array' },
-    { key: 'relatedTerms', label: '相关术语 ID', type: 'string-array' },
+    { key: 'relatedTerms', label: '相关术语', type: 'entity-ref-array', entityType: 'glossary-term' },
   ],
 };
 
