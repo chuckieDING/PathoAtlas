@@ -480,7 +480,7 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         <div>
           <h1 className="text-2xl font-bold mb-1" style={{ color: 'var(--fg)' }}>内容管理</h1>
           <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-            维护疾病/标记物的 <b>专家共识</b>、<b>文献参考</b> 与 <b>图片资源</b>。保存会直接写入仓库中的 JSON 数据文件。
+            统一维护疾病、标记物、鉴别诊断、分级分期、报告模板、病例等全部内容。修改即时生效。
           </p>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
