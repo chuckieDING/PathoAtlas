@@ -6,24 +6,48 @@
 [![React](https://img.shields.io/badge/React-19-61DAFB)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38BDF8)](https://tailwindcss.com/)
+[![Tests](https://img.shields.io/badge/tests-204%20passing-22c55e)](https://vitest.dev/)
 
 ---
 
 ## ✨ 核心特性
 
-- **🔬 疾病图谱** — **72** 种常见疾病，按 **10** 大器官系统组织；每个疾病一组 9 个分页 Tab：概述 / 大体描述 / 镜下特征 / 免疫组化 / 分子病理 / 鉴别诊断 / 专家共识 / 文献参考 / 临床
-- **🧪 标记物数据库** — **49** 个常用 IHC 标记物，独立详情页 + 5 Tab 视图（概述 / 判读 / 染色形态 / 专家共识 / 文献参考），含按结果分组的染色形态图框架（阴/阳、0/1+/2+/3+、低/中/高 等）
-- **⚖️ 鉴别诊断** — **13** 个常见鉴别诊断场景与对应免疫组化套餐策略
-- **🔬 细胞病理学模块** — **7** 个细胞学分类系统（Bethesda甲状腺、TBS宫颈、Paris尿液、Milan唾液腺、ROSE FNA、体腔积液、Yokohama乳腺），每个系统含 5-6 个分类标准与恶变风险评估
-- **❄️ 冰冻切片模块** — **5** 个术中会诊决策树（乳腺前哨淋巴结、甲状腺滤泡性肿瘤、乳腺切缘、卵巢交界性肿瘤、脑组织压片），含陷阱识别与报告模板
-- **📋 取材规范模块** — **10+** 种标本取材协议，包含墨水方案、切开方向、必取部位、冰冻注意事项、常见错误
-- **📚 专家共识 + 文献参考** — 每条目支持「**源地址**」（出版商 DOI/原文页）+「**在线阅览**」（PubMed/摘要/PDF 预览）双链接
-- **🖼️ 图片资源** — 镜下图、大体图分类管理；默认压缩图懒加载，点击「加载原图」按需切换高清版
-- **📝 复习与进度** — 闪卡式复习、XP/掌握度/连击的轻量学习追踪
+### 学习与参考
+
+- **🔬 疾病图谱** — **132** 种疾病，按 **13** 大器官系统组织（乳腺 / 肺 / 胃肠 / 肝 / 肾 / 甲状腺 / 淋巴瘤 / 皮肤 / 妇科 / 泌尿 / CNS / 软组织 / 骨）；每个疾病 10 个 Tab：概述 / 大体 / 镜下 / 免疫组化 / 分子 / 特殊染色 / 鉴别 / 专家共识 / 文献 / 临床
+- **🧪 标记物数据库** — **49** 个免疫组化标记物 + **10** 种特殊染色，统一标记物目录双 tab 切换，详情页含机制概念图、克隆变体、对照组织、染色陷阱
+- **⚖️ 鉴别诊断** — **13** 个场景 + **13** 个可视化流程图（SVG 决策树），点击疾病直接跳转详情
+- **📊 分级分期系统** — **9** 个评分体系（Nottingham / Gleason / ISUP / FIGO / Bethesda / TNM 等），配套交互式计算器挂载在疾病详情页
+- **🔬 细胞病理** — **7** 个分类系统（Bethesda 甲状腺 / TBS 宫颈 / Paris 尿液 / Milan 唾液腺 / ROSE / 体腔积液 / Yokohama 乳腺）
+- **❄️ 冰冻切片** — **10** 个术中会诊决策场景，含诊断陷阱 + 常见错误 + 报告模板
+- **📋 取材规范** — **11+** 种标本协议（墨水方案 / 切开方向 / 必取部位 / 冰冻注意 / 常见错误）
+- **🧬 分子病理** — **26** 个驱动基因/生物标志物，检测方法对比表 + 伴随诊断 CDx 矩阵
+- **📝 CAP 同步报告** — **11** 个结构化肿瘤报告模板，可填写导出
+- **🎓 虚拟病例** — **20** 个跨器官交互式病例（分难度 + 步进诊断）
+- **🛠️ IHC 组合构建器** — 4 步推导：选形态 → 选标记物 → 录入结果 → 排序鉴别清单
+- **📚 术语词汇表** — **345** 条病理学专业术语（8 大类别，中英文释义）
+- **🗺️ 学习路径** — Year 1-4 按年级 + 7 个专科路径
+
+### 用户体验
+
+- **🔐 Google 登录 + 独立进度** — 所有用户通过 Google 登录，每人独立的 XP / 掌握度 / 收藏 / 笔记（服务端持久化）
+- **📝 复习测验** — 闪卡式间隔学习，按器官筛选 / 错题解析 / 错题复习模式
+- **⭐ 收藏与笔记** — 在任意疾病/标记物页面浮动按钮收藏、写笔记，Markdown 一键导出
 - **🔍 全文搜索** — 跨疾病、标记物、鉴别诊断的统一搜索
-- **🛠️ 内容管理后台** — `/admin` 全字段 CRUD，所有前台展示的内容均可在线维护
-- **🔐 双通道授权** — Google OAuth 邮箱白名单（人工）+ Bearer Token（外部 AI / 自动化），两者任一通过即可
+- **🎯 功能引导** — 新用户首次访问自动 6 步引导熟悉模块
+- **🏆 成就系统** — 15 个成就徽章 + 连击统计 + 每日 XP 目标
 - **🌗 暗黑/亮色主题** — 跟随系统并可手动切换
+
+### 内容管理
+
+- **🛠️ 通用内容管理后台** — `/admin` 全字段 CRUD，覆盖 **全部 14 类内容**（疾病 / 标记物 / 特殊染色 / 器官 / 鉴别场景 / 流程图 / 分期 / 病例 / 细胞学 / 冰冻切片 / 术语 / 取材 / 分子 / CAP 报告）
+- **📝 双模式编辑** — schema 驱动表单编辑 + JSON 原始模式无缝切换
+- **🎨 色板选择器** — 所有颜色字段支持 14 色预设色板 + hex 输入
+- **🗺️ 可视化流程图编辑器** — 拖拽节点、连线、属性面板（鉴别流程图专用）
+- **📋 CAP 报告三级嵌套编辑器** — template → sections → fields，字段类型感知（select 选项 / number 单位）
+- **🖼️ 染色图管理** — IHC 标记物和特殊染色均支持按结果分组（阴/阳、0/1+/2+/3+）上传图片
+- **📊 审计日志** — 所有 CRUD 操作记录到 JSONL
+- **🔐 双通道授权** — Google OAuth 邮箱白名单（管理员）+ Bearer Token（外部 AI / 自动化）
 
 ---
 
@@ -31,49 +55,85 @@
 
 ```
 PathoAtlas/
-├── data/                              # 结构化 JSON 数据（版本控制友好）
-│   ├── organs.json                    # 器官系统元数据
+├── data/                              # 结构化 JSON 数据（种子模板，git 跟踪）
+│   ├── organs.json                    # 13 个器官系统
 │   ├── markers.json                   # 49 个 IHC 标记物
-│   ├── staging.json                   # 分级分期系统
-│   ├── differentials.json             # 鉴别诊断场景
-│   ├── cytology.json                  # 7 个细胞学分类系统
-│   ├── frozen-sections.json           # 5 个冰冻切片会诊场景
-│   ├── grossing.json                  # 10+ 种标本取材规范
-│   ├── special-stains.json            # 特殊染色数据库
+│   ├── special-stains.json            # 10 种特殊染色
+│   ├── differentials.json             # 13 个鉴别场景
+│   ├── flowcharts.json                # 13 个鉴别流程图
+│   ├── staging.json                   # 9 个分级分期系统
+│   ├── cytology.json                  # 7 个细胞学分类
+│   ├── frozen-sections.json           # 10 个冰冻切片协议
+│   ├── grossing.json                  # 11 种取材规范
+│   ├── molecular.json                 # 26 个分子标志物
+│   ├── cases.json                     # 20 个虚拟病例
+│   ├── curriculum.json                # 学习路径
+│   ├── glossary.json                  # 345 条术语
+│   ├── synoptic-templates.json        # 11 个 CAP 报告模板
 │   └── diseases/
-│       ├── breast.json | gi.json | gynecology.json | kidney.json
-│       ├── liver.json  | lung.json | lymphoma.json | skin.json
-│       ├── thyroid.json | urology.json | cns.json | soft-tissue.json | bone.json    # 共 72+ 种疾病
+│       └── *.json                     # 132 个疾病分 13 个器官文件
+├── data-runtime/                      # 运行时数据（gitignored，保留 admin 编辑）
+│   └── users/<sha256(email)>/         # 每用户独立目录
+│       ├── profile.json
+│       ├── progress.json
+│       ├── favorites.json
+│       └── notes.json
 ├── public/
-│   ├── diagrams/                      # 标记物机制概念 SVG
-│   └── uploads/                       # 管理后台上传的图片/PDF 落点
+│   ├── diagrams/                      # 44 个病理形态 + 标记物机制 SVG
+│   └── uploads/                       # admin 上传的图片/PDF
 ├── docs/
-│   ├── api.md                         # 公开 API 文档
-│   └── admin-api.md                   # 内容管理 API 文档
+│   ├── ROADMAP.md                     # 产品路线图（Tier 1-3）
+│   └── admin-api.md                   # 完整 API 文档
 ├── src/
-│   ├── app/                           # Next.js App Router
-│   │   ├── atlas/[organ]/[disease]/   # 疾病详情页（9 Tab）
-│   │   ├── markers/                   # 卡片目录（搜索 + 分类 + 器官 chip）
-│   │   ├── markers/[id]/              # 标记物详情页（5 Tab）
-│   │   ├── cyto/                      # 细胞病理学交互页面
-│   │   ├── frozen/                    # 冰冻切片会诊决策树
-│   │   ├── grossing/                  # 取材规范协议查询
-│   │   ├── differentials/ review/ progress/ search/ help/ about/
+│   ├── app/
+│   │   ├── page.tsx                   # 首页 Dashboard
+│   │   ├── login/                     # Google 登录页
+│   │   ├── atlas/[organ]/[disease]/   # 疾病详情（10 Tab）
+│   │   ├── markers/                   # IHC + 特殊染色 双 tab 目录
+│   │   ├── markers/[id]/              # 标记物/染色详情（5 Tab）
+│   │   ├── staging/                   # 分级分期系统查询
+│   │   ├── differentials/             # 鉴别场景 + 流程图
+│   │   ├── cyto/ frozen/ grossing/    # 专项模块
+│   │   ├── molecular/ panel-builder/
+│   │   ├── reports/ cases/ curriculum/
+│   │   ├── glossary/ review/
+│   │   ├── progress/ favorites/
+│   │   ├── search/ help/ about/
 │   │   ├── admin/                     # 内容管理后台
+│   │   │   ├── contentSchemas.ts      # 12 模块字段 schema
+│   │   │   ├── FormRenderer.tsx       # 通用表单
+│   │   │   ├── ColorField.tsx         # 色板选择器
+│   │   │   ├── FlowchartEditor.tsx    # 可视化流程图
+│   │   │   └── ReportTemplateEditor.tsx  # CAP 报告编辑器
 │   │   └── api/
-│   │       ├── disease | marker | organ | markers | organs
-│   │       ├── all-diseases | diseases-by-ids | search | stats
-│   │       ├── cytology | frozen | grossing                 # 新模块数据接口
-│   │       ├── auth/{login,callback,me,logout}    # Google OAuth 流
-│   │       └── admin/{disease,marker,upload}      # 受保护的 CRUD + 上传
+│   │       ├── [all data routes]      # 16 个公开数据 API
+│   │       ├── user/{progress,favorites,notes}/  # 用户数据 API
+│   │       ├── auth/{login,callback,me,logout,dev-login}/  # OAuth 流
+│   │       └── admin/
+│   │           ├── disease | marker | upload | audit
+│   │           └── content/[module]   # 通用 CRUD（11 个模块）
 │   ├── lib/
-│   │   ├── data.ts                    # 数据访问层 + 类型定义
-│   │   ├── auth.ts                    # HMAC 会话 + Bearer 鉴权
-│   │   ├── markerDiagrams.ts          # 机制概念图清单
-│   │   └── progress.ts                # 学习进度
-│   ├── components/                    # 通用 UI 组件
-│   └── middleware.ts                  # /api/admin/* 边缘鉴权
-├── .env.local.example                 # 环境变量模板
+│   │   ├── data.ts                    # 数据访问 + 类型定义
+│   │   ├── dataDir.ts                 # 种子 → 运行时数据目录
+│   │   ├── auth.ts                    # 双 session + Bearer 鉴权
+│   │   ├── userStorage.ts             # 服务端用户文件存储
+│   │   ├── userDataClient.ts          # 客户端用户数据 API 封装
+│   │   ├── progress.ts                # 学习进度（内存缓存 + 服务端同步）
+│   │   ├── audit.ts                   # 审计日志
+│   │   └── markerDiagrams.ts          # 机制概念图清单
+│   ├── components/
+│   │   ├── Navbar.tsx FeatureGuide.tsx HomeGuide.tsx
+│   │   ├── FlowchartRenderer.tsx ImageLightbox.tsx
+│   │   ├── NotesAndFavorites.tsx ProgressWidgets.tsx
+│   │   ├── useUser.ts useGuide.ts useProgress.ts useDiseaseIndex.ts
+│   │   └── calculators/               # TNM/FIGO/Gleason/ISUP/Nottingham/Bethesda 计算器
+│   └── middleware.ts                  # 全站登录门控 + admin 鉴权
+├── tests/                             # Vitest 测试套件
+│   ├── data-integrity.test.ts         # 数据完整性 + 交叉引用
+│   ├── lib-*.test.ts                  # 单元测试
+│   ├── api-routes.test.ts             # HTTP 集成测试
+│   └── flowchart-overlap.test.ts
+├── vitest.config.ts
 └── package.json
 ```
 
@@ -81,18 +141,42 @@ PathoAtlas/
 
 ## 🚀 快速开始
 
-### 本地开发（无需任何凭据）
+### 本地开发（零配置）
 
 ```bash
-git clone https://github.com/chuckieding/pathoatlas.git
-cd pathoatlas
+git clone https://github.com/chuckieDING/PathoAtlas.git
+cd PathoAtlas
 npm install
 npm run dev
 ```
 
 访问 http://localhost:3000
 
-> 默认 dev-mode：`/admin` 和所有 `/api/admin/*` 接口对本机开放，不需要登录。一旦在环境变量里设置了 `GOOGLE_CLIENT_ID` 或 `ADMIN_API_TOKEN`，鉴权会自动启用。
+**Dev mode** 特性（未设置 `GOOGLE_CLIENT_ID` 时）：
+- 所有页面开放，无需登录
+- `/admin` 和 `/api/admin/*` 对本机开放
+- 适合本地数据维护与 UI 调试
+
+**配置 Google 登录** 后所有用户必须登录：
+
+```bash
+# .env.local
+GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=GOCSPX-...
+ADMIN_EMAILS=admin@example.com,manager@example.com
+AUTH_SECRET=<openssl rand -base64 32>
+```
+
+dev 环境会自动以 `ADMIN_EMAILS` 第一个邮箱免密登录（`/api/auth/dev-login`），生产环境强制走 Google OAuth。
+
+### 运行测试
+
+```bash
+npm test           # 单次运行全部测试
+npm run test:watch # watch 模式
+```
+
+当前状态：**204 / 204 passing**
 
 ### 生产构建
 
@@ -110,9 +194,9 @@ npm run start
 ```ts
 interface Disease {
   id: string;                      // kebab-case，例 lung-adenocarcinoma
-  nameZh: string;                  // 中文名
-  nameEn: string;                  // 英文名
-  aliases: string[];               // 别名
+  nameZh: string;
+  nameEn: string;
+  aliases: string[];
   organ: string;                   // 关联 organs.json 的 id
   category: 'malignant' | 'benign' | 'precancerous' | 'inflammatory' | 'other';
 
@@ -120,8 +204,8 @@ interface Disease {
   epidemiology: string;
   clinicalFeatures: string;
   grossPathology: string;
-  grossDescription?: string;       // 详细大体描述
-  microscopy: string;              // 镜下特征
+  grossDescription?: string;
+  microscopy: string;
   molecularFeatures: string;
   grading: string;
   staging: string;
@@ -131,21 +215,23 @@ interface Disease {
   // 结构化字段
   keyFeatures: string[];
   ihcProfile: { marker: string; result: string; note: string }[];
-  differentialDiagnosis: string[]; // 鉴别诊断的 disease.id 数组
+  specialStainProfile?: { stain: string; result: string; note: string }[];
+  differentialDiagnosis: string[];
+  differentialDiagnosisNotes?: string;
   references: string[];
 
   // 多媒体
-  images: DiseaseImage[];          // 兼容旧字段
+  images: DiseaseImage[];
   microscopyImages?: DiseaseImage[];
   grossImages?: DiseaseImage[];
 
-  // 引用
+  // 指南引用
   expertConsensus?: ConsensusItem[];
   literature?: LiteratureItem[];
 }
 ```
 
-### Marker（IHC 标记物）
+### Marker（IHC 标记物 & 特殊染色）
 
 ```ts
 interface Marker {
@@ -153,196 +239,179 @@ interface Marker {
   nameZh: string;
   nameEn: string;
   abbreviation: string;
-  category: '上皮标记' | '间叶标记' | '淋巴标记' | '激素受体' | '增殖标记' | '神经标记' | '分子标记' | '其他';
+  category: string;                // 上皮/间叶/淋巴/激素/... (IHC) 或 多糖/微生物/... (特殊染色)
   cloneInfo: string;
   targetProtein: string;
-  cellularLocalization: string;    // 核 / 胞浆 / 膜 / 核仁
-  normalExpression: string;
+  cellularLocalization: string;
   function: string;
-  interpretation: string;          // 判读标准
+  interpretation: string;
   clinicalSignificance: string;
   positiveIn: string[];
   negativeIn: string[];
-  relatedDrugs: string[];
   pitfalls: string;
   references: string[];
 
   expertConsensus?: ConsensusItem[];
   literature?: LiteratureItem[];
 
-  // 染色形态图框架（按结果分组）
+  // 克隆变体（IHC 专用）
+  cloneVariants?: { clone: string; source: string; notes: string }[];
+  controlTissue?: { positive: string; negative: string };
+  artifacts?: string[];
+
+  // 染色图框架（按结果分组）
   stainingImages?: {
     id: string;
-    label: string;                 // 阴性 / 阳性 / 0 / 1+ / 2+ / 3+ / 弱 / 中 / 强 ...
+    label: string;                 // 阴性 / 阳性 / 0 / 1+ / 2+ / 3+ ...
     description?: string;
     images: DiseaseImage[];
   }[];
+
+  // 特殊染色独有
+  positiveResult?: string;
+  negativeResult?: string;
 }
 ```
 
-### ConsensusItem / LiteratureItem
-
-```ts
-interface ConsensusItem {
-  id: string;
-  title: string;
-  summary: string;
-  organization?: string;           // WHO / NCCN / CSCO / ESMO ...
-  year?: number;
-  sourceUrl?: string;              // 出版商/原始发布页
-  viewUrl?: string;                // 在线阅览（PubMed/摘要/PDF）
-}
-
-interface LiteratureItem {
-  id: string;
-  title: string;
-  summary: string;
-  authors?: string;
-  journal?: string;
-  year?: number;
-  sourceUrl?: string;
-  viewUrl?: string;
-}
-```
-
-### DiseaseImage
-
-```ts
-interface DiseaseImage {
-  url: string;                     // 默认压缩图 / 缩略图
-  fullUrl?: string;                // 高清原图，按需加载
-  caption: string;
-  source?: string;                 // 来源标注（Wikimedia Commons / 自有库）
-}
-```
+更多数据结构（ConsensusItem / LiteratureItem / DiseaseImage / Flowchart / StagingSystem 等）见 [`src/lib/data.ts`](src/lib/data.ts)。
 
 ---
 
 ## 🛠️ 内容管理后台 `/admin`
 
-`/admin` 是一个完整的 CRUD 后台，**所有在前台展示的字段都可以在线维护**：
+### 三大分类 Tab
 
-### 功能
-- ✅ **新建 / 修改 / 删除** 疾病和标记物
-- ✅ 文本字段（流行病学、镜下特征、判读标准等）富文本编辑
-- ✅ 字符串数组（别名、要点、表达谱等）chip 风格编辑器
-- ✅ IHC 谱结构化行编辑（`marker / result / note`）
-- ✅ **图片上传** — 拖拽 / 点选直传到 `public/uploads/<scope>/`，自动回填 URL
-- ✅ **PDF 上传** — 共识/文献条目可直传 PDF，浏览器原生在线阅览
-- ✅ **染色图分组维护** — 按结果（阴/阳、0~3+ 等）独立管理图片
-- ✅ "保存全部" 一键 PUT；section 级保存按钮做精细更新
-- ✅ Google 登录 / 登出 / 调用方身份显示
+- **疾病** — 13 个器官文件，全字段表单 + 图片上传（大体/镜下按放大倍数分组）+ PDF 共识/文献
+- **标记物** — 双子 tab：
+  - **免疫组化**：49 条记录 + 克隆变体 + 对照组织 + 染色图
+  - **特殊染色**：10 条记录 + 染色图管理
+- **其他模块** — 统一 schema 驱动界面管理 11 个内容模块：
+  - 器官系统（实时 OrganIcon 预览）
+  - 鉴别场景 / **鉴别流程图（可视化拖拽编辑器）**
+  - 分期系统 / 虚拟病例 / 细胞病理 / 冰冻切片
+  - 术语词汇表 / 取材规范 / 分子病理 / **CAP 报告（三级嵌套编辑器）**
 
-### API 一览
+### API 速览
 
-#### 🔓 公开 API（无需鉴权）
+#### 🔓 公开数据 API
 
-| 方法 | 端点 | 说明 |
-|---|---|---|
-| `GET` | `/api/all-diseases` | 获取全库疾病 |
-| `GET` | `/api/disease?organ=X&id=Y` | 获取单个疾病 |
-| `GET` | `/api/diseases-by-ids?ids=X,Y` | 批量查询疾病 |
-| `GET` | `/api/organs` | 获取全部器官列表 |
-| `GET` | `/api/organ?organ=X` | 获取单个器官 |
-| `GET` | `/api/markers` | 获取全库标记物 |
-| `GET` | `/api/marker?id=X` | 获取单个标记物 |
-| `GET` | `/api/search?q=keyword` | 全文搜索 |
-| `GET` | `/api/stats` | 数据库统计 |
-| `GET` | `/api/cytology` | 细胞学分类系统 |
-| `GET` | `/api/frozen` | 冰冻切片会诊场景 |
-| `GET` | `/api/grossing` | 取材规范协议 |
-
-完整说明见 [`docs/api.md`](docs/api.md)。
+| 端点 | 说明 |
+|------|------|
+| `GET /api/all-diseases` | 全部疾病 |
+| `GET /api/disease?organ=&id=` | 单个疾病 |
+| `GET /api/markers` `?id=` | 标记物列表/详情 |
+| `GET /api/organs` `?id=` | 器官列表/详情 |
+| `GET /api/search?q=` | 全文搜索 |
+| `GET /api/stats` | 数据库统计 |
+| `GET /api/differentials` | 鉴别场景 |
+| `GET /api/flowcharts` | 鉴别流程图 |
+| `GET /api/staging` | 分级分期系统 |
+| `GET /api/special-stains` | 特殊染色 |
+| `GET /api/cytology` `/api/frozen` `/api/grossing` `/api/molecular` | 专项模块 |
+| `GET /api/glossary` `/api/cases` `/api/curriculum` `/api/reports` `/api/panel-builder` | 其他 |
 
 #### 🔒 内容管理 API（需鉴权）
 
 | 方法 | 端点 | 说明 |
-|---|---|---|
-| `POST` | `/api/admin/disease` | 新建疾病 |
-| `PUT` | `/api/admin/disease` | 更新指定疾病 |
-| `DELETE` | `/api/admin/disease?organ=&id=` | 删除疾病 |
-| `POST` | `/api/admin/marker` | 新建标记物 |
-| `PUT` | `/api/admin/marker` | 更新指定标记物 |
-| `DELETE` | `/api/admin/marker?id=` | 删除标记物 |
-| `POST` | `/api/admin/upload` | 上传图片或 PDF（multipart/form-data） |
+|------|------|------|
+| `POST/PUT/DELETE` | `/api/admin/disease` | 疾病 CRUD |
+| `POST/PUT/DELETE` | `/api/admin/marker` | 标记物 CRUD |
+| `GET/POST/PUT/DELETE` | `/api/admin/content/<module>` | 通用模块 CRUD |
+| `POST` | `/api/admin/upload` | 图片/PDF 上传 |
+| `GET` | `/api/admin/audit` | 审计日志查询 |
 
-完整 schema 与 curl 示例见 [`docs/admin-api.md`](docs/admin-api.md)。
+其中 `<module>` 支持：organs / differentials / flowcharts / staging / cases / cytology / frozen-sections / glossary / grossing / molecular / reports / special-stains
+
+#### 👤 用户数据 API（登录后可访问）
+
+| 方法 | 端点 | 说明 |
+|------|------|------|
+| `GET/PUT` | `/api/user/progress` | 学习进度（XP / 掌握度 / 连击） |
+| `GET/PUT` | `/api/user/favorites` | 收藏（疾病 + 标记物） |
+| `GET/PUT` | `/api/user/notes` | 笔记 |
+
+完整说明见 [`docs/admin-api.md`](docs/admin-api.md)。
 
 ---
 
 ## 🔐 鉴权
 
-`/admin` 页面与所有 `/api/admin/*` 端点支持**双通道**鉴权，任一通过即放行：
+### 用户登录（全站必需）
 
-### 通道 1：Google OAuth（浏览器人工使用）
-- 用户访问 `/admin` → 跳转 Google → 选账号 → 服务端校验邮箱在 `ADMIN_EMAILS` 白名单内 → 下发 HMAC-SHA256 签名的 session cookie（7 天有效）
-- 自实现 OAuth 流，**零依赖**（不引入 NextAuth）
-- 流程：`/api/auth/login` → Google → `/api/auth/callback` → set cookie
+所有非管理员页面也需要 Google 登录：
+- 访问任意页面 → 未登录跳转 `/login`
+- Google OAuth → 写入 `pathoatlas-user-session` cookie (HMAC-SHA256, 7 天)
+- `ADMIN_EMAILS` 中的邮箱额外下发 `pathoatlas-admin-session`
 
-### 通道 2：Bearer Token（外部 AI / 自动化调用）
-- 服务端配置 `ADMIN_API_TOKEN=<长随机字符串>`
-- 调用方在每个请求头里带 `Authorization: Bearer <token>`
-- 服务端 `crypto.timingSafeEqual` 常量时间比对
+### 管理员（双通道）
 
-### 配置（部署时设置环境变量）
+`/api/admin/*` 端点支持：
+1. **Google 登录 + ADMIN_EMAILS 白名单**（浏览器人工使用）
+2. **Bearer Token**（外部 AI / 自动化）—— `Authorization: Bearer <ADMIN_API_TOKEN>`
 
-复制 [`.env.local.example`](.env.local.example) 为 `.env.local` 并填写：
+### 配置
 
 ```bash
-# Google OAuth 2.0 Client（控制台：console.cloud.google.com）
-GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=GOCSPX-...
-
-# 邮箱白名单（仅这些 Google 账户可登录 /admin）
+# .env.local
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
 ADMIN_EMAILS=alice@example.com,bob@example.com
-
-# Session 签名密钥（openssl rand -base64 32）
-AUTH_SECRET=<32+ 字节随机>
-
-# 可选：外部程序化调用的 Bearer Token（openssl rand -hex 32）
-ADMIN_API_TOKEN=<64 字符随机 hex>
+AUTH_SECRET=<openssl rand -base64 32>
+ADMIN_API_TOKEN=<openssl rand -hex 32>   # 可选，供外部程序使用
 ```
 
-在 Google Cloud Console 创建 OAuth 2.0 Client 时，**Authorized redirect URI** 必须填：
-```
-https://<your-domain>/api/auth/callback
-```
-
-> 三个变量都不设置时进入 **dev-mode**，所有 `/api/admin/*` 对本机开放，方便本地开发。
+在 Google Cloud Console 的 OAuth Client 里把 `https://<your-domain>/api/auth/callback` 加入 Authorized redirect URI。
 
 ### 安全细节
+
 - Session cookie：`httpOnly` + `sameSite=lax` + `secure`（生产）+ HMAC-SHA256
-- CSRF：OAuth state 用一次性 cookie，callback 校验后立刻清除
+- CSRF：OAuth state 一次性 cookie，callback 校验后清除
 - `email_verified=false` 的 Google 账户被拒
-- 配了 OAuth 但 `ADMIN_EMAILS` 为空时 **不会** 让任意 Google 账户进入，会直接报 `no_admin_emails_configured`
-- Bearer token 比对走 `crypto.timingSafeEqual`，防时序攻击
-- middleware 仅 matcher `/api/admin/:path*`，其他路由零开销
+- 配了 OAuth 但 `ADMIN_EMAILS` 为空 → 直接报 `no_admin_emails_configured`（不让任意 Google 账户进 admin）
+- Bearer token 走 `crypto.timingSafeEqual`，防时序攻击
+- 每用户数据目录名为 `sha256(email).slice(0,16)`，不泄露邮箱
 
 ---
 
-## 🧪 给外部 AI 的快速接入示例
+## 💾 数据持久化
+
+### 种子 + 运行时分离
+
+- **`data/`** — git 跟踪的种子模板，版本控制
+- **`data-runtime/`** — gitignored，首次启动自动从 `data/` 复制
+- 效果：`git pull` 更新种子数据，`data-runtime/` 保留 admin 所有编辑
+
+### 用户数据
+
+- `data-runtime/users/<hash>/`：profile.json / progress.json / favorites.json / notes.json
+- 原子写入（.tmp + rename）
+- debounced 服务端同步（进度 500ms、收藏 300ms、笔记 500ms）
+
+---
+
+## 🧪 外部 AI 接入示例
 
 ```bash
-# 设置环境变量（如何取值见 docs/admin-api.md）
-export ADMIN_API_TOKEN="a3f9c1b7..."
+export ADMIN_API_TOKEN="..."
 export BASE="https://your-deployment.example.com"
 
-# 创建一条新疾病
-curl -X POST $BASE/api/admin/disease \
+# 创建一条新的鉴别场景
+curl -X POST $BASE/api/admin/content/differentials \
   -H "Authorization: Bearer $ADMIN_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "organ": "lung",
-    "disease": {
-      "id": "ai-test-disease",
-      "nameZh": "AI 测试疾病",
-      "nameEn": "AI Test Disease",
-      "category": "other",
-      "keyFeatures": ["AI 生成"]
+    "entry": {
+      "id": "myxoid-tumors",
+      "titleZh": "黏液样肿瘤鉴别",
+      "titleEn": "Myxoid Tumor Differentials",
+      "description": "...",
+      "diseases": ["myxoid-liposarcoma"],
+      "keyMarkers": ["SMA", "Desmin", "S-100"],
+      "algorithm": "..."
     }
   }'
 
-# 部分更新已有疾病
+# 更新已有疾病
 curl -X PUT $BASE/api/admin/disease \
   -H "Authorization: Bearer $ADMIN_API_TOKEN" \
   -H "Content-Type: application/json" \
@@ -352,59 +421,61 @@ curl -X PUT $BASE/api/admin/disease \
     "updates": { "epidemiology": "AI 修订..." }
   }'
 
-# 上传一张图片，把返回的 url 写入标记物染色分组
+# 上传图片
 curl -X POST $BASE/api/admin/upload \
   -H "Authorization: Bearer $ADMIN_API_TOKEN" \
-  -F "file=@./her2_3plus.jpg" \
+  -F "file=@her2_3plus.jpg" \
   -F "scope=markers/her2/3+"
 ```
 
-完整字段清单与所有端点示例见 [`docs/admin-api.md`](docs/admin-api.md)。
-
 ---
 
-## 📚 数据来源说明
+## 📚 数据来源
 
-- **疾病文本** — WHO Classification of Tumours（5th Edition 系列）、AJCC TNM 第 8 版、各专科 NCCN/CSCO/ESMO 指南
-- **IHC 标记物** — ASCO/CAP guidelines、CAP IHC Quality Improvement Program、PathologyOutlines.com
-- **图片占位** — 每个疾病/标记物预置图片框架，实际图片可通过 `/admin` 后台上传（推荐使用 Wikimedia Commons 等开放许可来源，并在 `source` 字段标注）
+- **疾病文本** — WHO Classification of Tumours（5th Edition 系列）、AJCC TNM 第 8 版、NCCN / CSCO / ESMO 指南
+- **IHC 标记物** — ASCO/CAP guidelines、CAP IHC QI Program、PathologyOutlines.com
+- **特殊染色** — Bancroft 组化技术手册
+- **分子病理** — COSMIC / TCGA / 各基因 FDA 批准的伴随诊断矩阵
+- **图片** — Wikimedia Commons 等开放许可来源；每张图 `source` 字段标注
 
-数据均为结构化 JSON，纯文本可在 git 中追踪 diff，便于多人协作维护。
+数据结构化为 JSON，纯文本 diff 易于多人协作。
 
 ---
 
 ## 🛣️ 技术栈
 
 | 层 | 选型 |
-|---|---|
-| 框架 | Next.js 16 (App Router + Server Components) |
+|---|------|
+| 框架 | Next.js 16（App Router + Server Components） |
 | 语言 | TypeScript 5 |
 | UI | React 19 + Tailwind CSS 4 |
 | Markdown | react-markdown + remark-gfm |
-| 数据 | 静态 JSON 文件（无数据库） |
 | 鉴权 | 自实现 Google OAuth + HMAC session（零外部依赖） |
-| 部署 | Vercel / Cloud Run / 任何支持 Node 的平台 |
+| 数据 | 文件系统 JSON（无数据库） |
+| 测试 | Vitest + @testing-library/react + jsdom |
+| 部署 | Vercel / Cloud Run / 任何 Node 平台 |
 
 ---
 
 ## 🤝 贡献
 
-欢迎以 PR 形式补充：
-- 新疾病条目（`data/diseases/<organ>.json` 增加一条记录）
-- 新 IHC 标记物（`data/markers.json` 增加一条记录）
-- 已有条目的镜下/大体图片、共识、文献
+欢迎 PR：
+- 新疾病条目（`data/diseases/<organ>.json` 或 admin 后台）
+- 新 IHC 标记物 / 特殊染色
+- 疾病/标记物的镜下/大体图、专家共识、文献
 - Bug 修复与 UI 改进
 
-每个 PR 请确保：
-- `npx tsc --noEmit` 通过
-- `npx next build` 通过
-- JSON 文件可被 `python3 -c "import json; json.load(open('...'))"` 解析
+提交前请确保：
+- `npm test` 全部通过（现有 204 个用例 + 新增功能对应测试）
+- `npx tsc --noEmit` 无新增错误
+- JSON 文件可被 `JSON.parse` 解析
+- 若改动涉及数据交叉引用，`disease.differentialDiagnosis` / `differentials.diseases` / `staging.applicableTo` 中的 ID 必须实际存在
 
 ---
 
 ## 📄 许可
 
-代码部分采用 MIT 协议。
+代码部分采用 **MIT** 协议。
 
 数据部分（疾病文本、IHC 判读等）来自公开权威指南并以教育用途整理，**不构成临床诊疗建议**，使用者应结合本地法规与所在机构的标准操作流程。
 
@@ -412,7 +483,6 @@ curl -X POST $BASE/api/admin/upload \
 
 ## 🔗 链接
 
-- 项目仓库：https://github.com/chuckieding/pathoatlas
+- 项目仓库：https://github.com/chuckieDING/PathoAtlas
 - **产品路线图**：[`docs/ROADMAP.md`](docs/ROADMAP.md)
-- API 文档：[`docs/admin-api.md`](docs/admin-api.md)
-- 环境变量模板：[`.env.local.example`](.env.local.example)
+- **API 文档**：[`docs/admin-api.md`](docs/admin-api.md)

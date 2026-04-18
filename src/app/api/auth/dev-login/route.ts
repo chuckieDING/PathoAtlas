@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import {
   signUserSession, signSession, isAdmin,
   getAdminEmails, USER_SESSION_COOKIE_NAME, SESSION_COOKIE_NAME,
+  getPublicOrigin,
 } from '@/lib/auth';
 import { initUserOnLogin } from '@/lib/userStorage';
 
@@ -15,8 +16,9 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'dev-login is disabled in production' }, { status: 403 });
   }
 
-  const { searchParams, origin } = new URL(request.url);
+  const { searchParams } = new URL(request.url);
   const returnTo = searchParams.get('returnTo') || '/';
+  const publicOrigin = getPublicOrigin(request);
 
   // Pick the dev identity: first admin email, or a fallback
   const admins = getAdminEmails();
@@ -37,7 +39,7 @@ export async function GET(request: Request) {
     maxAge: 60 * 60 * 24 * 7,
   };
 
-  const res = NextResponse.redirect(`${origin}${returnTo}`);
+  const res = NextResponse.redirect(`${publicOrigin}${returnTo}`);
   res.cookies.set(USER_SESSION_COOKIE_NAME, userSession, cookieOpts);
 
   if (isAdmin(email)) {
