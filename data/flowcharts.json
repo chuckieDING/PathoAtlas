@@ -40,10 +40,10 @@
       { "id": "cd20cd3", "type": "decision", "label": "CD20 / CD3", "x": 400, "y": 130 },
       { "id": "bcell", "type": "decision", "label": "CD10/BCL-6", "x": 200, "y": 250 },
       { "id": "tcell", "type": "decision", "label": "CD30", "x": 600, "y": 250 },
-      { "id": "fl", "type": "result", "label": "滤泡性淋巴瘤\n(CD10+/BCL-2+)", "color": "#3b82f6", "x": 60, "y": 380 },
-      { "id": "cd5cyc", "type": "decision", "label": "CD5/Cyclin D1", "x": 200, "y": 380 },
-      { "id": "mcl", "type": "result", "label": "套细胞淋巴瘤\n(Cyclin D1+/SOX11+)", "color": "#ef4444", "x": 60, "y": 500 },
-      { "id": "dlbcl", "type": "result", "label": "DLBCL\n(Hans分型GCB/non-GCB)", "color": "#f59e0b", "x": 270, "y": 500 },
+      { "id": "fl", "type": "result", "label": "滤泡性淋巴瘤\n(CD10+/BCL-2+)", "color": "#3b82f6", "x": 20, "y": 380 },
+      { "id": "cd5cyc", "type": "decision", "label": "CD5/Cyclin D1", "x": 230, "y": 380 },
+      { "id": "mcl", "type": "result", "label": "套细胞淋巴瘤\n(Cyclin D1+/SOX11+)", "color": "#ef4444", "x": 50, "y": 500 },
+      { "id": "dlbcl", "type": "result", "label": "DLBCL\n(Hans分型GCB/non-GCB)", "color": "#f59e0b", "x": 280, "y": 500 },
       { "id": "alk", "type": "decision", "label": "ALK", "x": 600, "y": 380 },
       { "id": "alcl", "type": "result", "label": "间变大细胞淋巴瘤\n(ALK+/ALK−)", "color": "#ec4899", "x": 480, "y": 500 },
       { "id": "cxcl13", "type": "decision", "label": "CXCL13/PD-1", "x": 720, "y": 500 },
@@ -75,12 +75,12 @@
       { "id": "spindle", "type": "decision", "label": "梭形细胞\nCD117/SMA/S100", "x": 120, "y": 260 },
       { "id": "round", "type": "decision", "label": "小圆细胞\nCD99/Desmin", "x": 400, "y": 260 },
       { "id": "pleo", "type": "decision", "label": "多形性\nSMA/MyoD1/MDM2", "x": 680, "y": 260 },
-      { "id": "gist-r", "type": "result", "label": "GIST\n(CD117+/DOG1+)", "color": "#ef4444", "x": 30, "y": 400 },
-      { "id": "mpnst", "type": "result", "label": "MPNST\n(S100灶+/H3K27me3缺失)", "color": "#8b5cf6", "x": 210, "y": 400 },
-      { "id": "ewing", "type": "result", "label": "Ewing肉瘤\n(CD99膜+/NKX2.2+)", "color": "#3b82f6", "x": 310, "y": 400 },
-      { "id": "rms", "type": "result", "label": "横纹肌肉瘤\n(Desmin+/Myogenin+)", "color": "#f59e0b", "x": 490, "y": 400 },
-      { "id": "ups", "type": "result", "label": "未分化多形性肉瘤\n(排除性诊断)", "color": "#6b7280", "x": 600, "y": 400 },
-      { "id": "ddlps", "type": "result", "label": "去分化脂肪肉瘤\n(MDM2+/CDK4+)", "color": "#ec4899", "x": 770, "y": 400 }
+      { "id": "gist-r", "type": "result", "label": "GIST\n(CD117+/DOG1+)", "color": "#ef4444", "x": -50, "y": 400 },
+      { "id": "mpnst", "type": "result", "label": "MPNST\n(S100灶+/H3K27me3缺失)", "color": "#8b5cf6", "x": 140, "y": 400 },
+      { "id": "ewing", "type": "result", "label": "Ewing肉瘤\n(CD99膜+/NKX2.2+)", "color": "#3b82f6", "x": 330, "y": 400 },
+      { "id": "rms", "type": "result", "label": "横纹肌肉瘤\n(Desmin+/Myogenin+)", "color": "#f59e0b", "x": 520, "y": 400 },
+      { "id": "ups", "type": "result", "label": "未分化多形性肉瘤\n(排除性诊断)", "color": "#6b7280", "x": 710, "y": 400 },
+      { "id": "ddlps", "type": "result", "label": "去分化脂肪肉瘤\n(MDM2+/CDK4+)", "color": "#ec4899", "x": 900, "y": 400 }
     ],
     "edges": [
       { "from": "start", "to": "morph" },
@@ -147,6 +147,216 @@
       { "from": "basal-pos", "to": "pin", "label": "不连续" },
       { "from": "amacr", "to": "pca", "label": "阳性" },
       { "from": "amacr", "to": "asap", "label": "阴性/弱" }
+    ]
+  },
+  {
+    "id": "small-round-blue-cell",
+    "titleZh": "小圆蓝细胞肿瘤IHC鉴别流程",
+    "relatedDifferentialId": "small-round-blue-cell-tumors",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "小圆蓝细胞肿瘤", "x": 400, "y": 30 },
+      { "id": "cd99", "type": "decision", "label": "CD99", "x": 400, "y": 130 },
+      { "id": "ewing", "type": "result", "label": "Ewing肉瘤", "color": "#3b82f6", "x": 150, "y": 250 },
+      { "id": "desmin", "type": "decision", "label": "Desmin/Myogenin", "x": 400, "y": 250 },
+      { "id": "rms", "type": "result", "label": "横纹肌肉瘤", "color": "#ef4444", "x": 150, "y": 370 },
+      { "id": "cd45", "type": "decision", "label": "CD45", "x": 400, "y": 370 },
+      { "id": "lymphoma", "type": "result", "label": "淋巴瘤", "color": "#8b5cf6", "x": 150, "y": 490 },
+      { "id": "syn-cga", "type": "decision", "label": "Syn/CgA", "x": 400, "y": 490 },
+      { "id": "neuroendocrine", "type": "result", "label": "神经内分泌肿瘤", "color": "#f59e0b", "x": 150, "y": 610 },
+      { "id": "phox2b", "type": "decision", "label": "PHOX2B", "x": 400, "y": 610 },
+      { "id": "neuroblastoma", "type": "result", "label": "神经母细胞瘤", "color": "#ec4899", "x": 150, "y": 730 },
+      { "id": "ck20", "type": "decision", "label": "CK20", "x": 400, "y": 730 },
+      { "id": "merkel", "type": "result", "label": "Merkel细胞癌", "color": "#22c55e", "x": 150, "y": 850 }
+    ],
+    "edges": [
+      { "from": "start", "to": "cd99" },
+      { "from": "cd99", "to": "ewing", "label": "+" },
+      { "from": "cd99", "to": "desmin", "label": "−" },
+      { "from": "desmin", "to": "rms", "label": "+" },
+      { "from": "desmin", "to": "cd45", "label": "−" },
+      { "from": "cd45", "to": "lymphoma", "label": "+" },
+      { "from": "cd45", "to": "syn-cga", "label": "−" },
+      { "from": "syn-cga", "to": "neuroendocrine", "label": "+" },
+      { "from": "syn-cga", "to": "phox2b", "label": "−" },
+      { "from": "phox2b", "to": "neuroblastoma", "label": "+" },
+      { "from": "phox2b", "to": "ck20", "label": "−" },
+      { "from": "ck20", "to": "merkel", "label": "+" }
+    ]
+  },
+  {
+    "id": "clear-cell-tumors",
+    "titleZh": "透明细胞肿瘤IHC鉴别流程",
+    "relatedDifferentialId": "clear-cell-tumors",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "透明细胞肿瘤", "x": 400, "y": 30 },
+      { "id": "pax8", "type": "decision", "label": "PAX8", "x": 400, "y": 130 },
+      { "id": "caix", "type": "decision", "label": "CA-IX", "x": 200, "y": 250 },
+      { "id": "inhibin", "type": "decision", "label": "Inhibin/SF-1", "x": 600, "y": 250 },
+      { "id": "ccrcc", "type": "result", "label": "透明细胞RCC", "color": "#3b82f6", "x": 0, "y": 370 },
+      { "id": "hnf1b", "type": "decision", "label": "HNF1β/NapsinA", "x": 220, "y": 370 },
+      { "id": "cc-gyn", "type": "result", "label": "透明细胞癌-妇科", "color": "#ef4444", "x": 200, "y": 490 },
+      { "id": "adrenal", "type": "result", "label": "肾上腺皮质肿瘤", "color": "#f59e0b", "x": 480, "y": 370 },
+      { "id": "s100-sox10", "type": "decision", "label": "S-100/SOX10", "x": 680, "y": 370 },
+      { "id": "melanoma", "type": "result", "label": "黑色素瘤", "color": "#8b5cf6", "x": 680, "y": 490 }
+    ],
+    "edges": [
+      { "from": "start", "to": "pax8" },
+      { "from": "pax8", "to": "caix", "label": "+" },
+      { "from": "pax8", "to": "inhibin", "label": "−" },
+      { "from": "caix", "to": "ccrcc", "label": "+" },
+      { "from": "caix", "to": "hnf1b", "label": "−" },
+      { "from": "hnf1b", "to": "cc-gyn", "label": "+" },
+      { "from": "inhibin", "to": "adrenal", "label": "+" },
+      { "from": "inhibin", "to": "s100-sox10", "label": "−" },
+      { "from": "s100-sox10", "to": "melanoma", "label": "+" }
+    ]
+  },
+  {
+    "id": "ck7-ck20-algorithm",
+    "titleZh": "CK7+/CK20-腺癌IHC鉴别流程",
+    "relatedDifferentialId": "ck7-pos-ck20-neg-tumors",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "CK7+/CK20-腺癌", "x": 400, "y": 30 },
+      { "id": "ttf1", "type": "decision", "label": "TTF-1/NapsinA", "x": 400, "y": 130 },
+      { "id": "lung", "type": "result", "label": "肺腺癌", "color": "#3b82f6", "x": 150, "y": 250 },
+      { "id": "gata3", "type": "decision", "label": "GATA3/Mammaglobin", "x": 400, "y": 250 },
+      { "id": "breast", "type": "result", "label": "乳腺癌", "color": "#ef4444", "x": 150, "y": 370 },
+      { "id": "pax8-er", "type": "decision", "label": "PAX8/ER", "x": 400, "y": 370 },
+      { "id": "endometrial", "type": "result", "label": "子宫内膜癌", "color": "#f59e0b", "x": 150, "y": 490 },
+      { "id": "pax8-wt1", "type": "decision", "label": "PAX8/WT1", "x": 400, "y": 490 },
+      { "id": "ovarian", "type": "result", "label": "卵巢浆液性癌", "color": "#ec4899", "x": 150, "y": 610 },
+      { "id": "calretinin", "type": "decision", "label": "Calretinin/D2-40", "x": 400, "y": 610 },
+      { "id": "mesothelioma", "type": "result", "label": "间皮瘤", "color": "#8b5cf6", "x": 150, "y": 730 }
+    ],
+    "edges": [
+      { "from": "start", "to": "ttf1" },
+      { "from": "ttf1", "to": "lung", "label": "+" },
+      { "from": "ttf1", "to": "gata3", "label": "−" },
+      { "from": "gata3", "to": "breast", "label": "+" },
+      { "from": "gata3", "to": "pax8-er", "label": "−" },
+      { "from": "pax8-er", "to": "endometrial", "label": "+" },
+      { "from": "pax8-er", "to": "pax8-wt1", "label": "−" },
+      { "from": "pax8-wt1", "to": "ovarian", "label": "+" },
+      { "from": "pax8-wt1", "to": "calretinin", "label": "−" },
+      { "from": "calretinin", "to": "mesothelioma", "label": "+" }
+    ]
+  },
+  {
+    "id": "ck20-pos-algorithm",
+    "titleZh": "CK7-/CK20+肿瘤IHC鉴别流程",
+    "relatedDifferentialId": "ck7-neg-ck20-pos-tumors",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "CK7-/CK20+肿瘤", "x": 400, "y": 30 },
+      { "id": "cdx2", "type": "decision", "label": "CDX2/SATB2", "x": 400, "y": 130 },
+      { "id": "colorectal", "type": "result", "label": "结直肠癌", "color": "#3b82f6", "x": 150, "y": 250 },
+      { "id": "ck20-dot", "type": "decision", "label": "CK20核旁点状+Syn", "x": 400, "y": 250 },
+      { "id": "merkel", "type": "result", "label": "Merkel细胞癌", "color": "#ef4444", "x": 150, "y": 370 },
+      { "id": "appendiceal", "type": "result", "label": "阑尾黏液性肿瘤", "color": "#f59e0b", "x": 400, "y": 370 }
+    ],
+    "edges": [
+      { "from": "start", "to": "cdx2" },
+      { "from": "cdx2", "to": "colorectal", "label": "+" },
+      { "from": "cdx2", "to": "ck20-dot", "label": "−" },
+      { "from": "ck20-dot", "to": "merkel", "label": "+" },
+      { "from": "ck20-dot", "to": "appendiceal", "label": "−" }
+    ]
+  },
+  {
+    "id": "melanocytic-lesion",
+    "titleZh": "黑色素细胞病变IHC鉴别流程",
+    "relatedDifferentialId": "melanocytic-lesions",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "黑色素细胞病变", "x": 400, "y": 30 },
+      { "id": "hmb45-prame", "type": "decision", "label": "HMB-45成熟递减\n/PRAME", "x": 400, "y": 130 },
+      { "id": "benign-nevus", "type": "result", "label": "良性痣", "color": "#22c55e", "x": 150, "y": 270 },
+      { "id": "ki67", "type": "decision", "label": "Ki-67", "x": 400, "y": 270 },
+      { "id": "melanoma", "type": "result", "label": "浸润性黑色素瘤", "color": "#ef4444", "x": 200, "y": 400 },
+      { "id": "spitz", "type": "result", "label": "Spitz痣\n(需分子检测)", "color": "#f59e0b", "x": 500, "y": 400 }
+    ],
+    "edges": [
+      { "from": "start", "to": "hmb45-prame" },
+      { "from": "hmb45-prame", "to": "benign-nevus", "label": "HMB-45成熟递减+\nPRAME−" },
+      { "from": "hmb45-prame", "to": "ki67", "label": "HMB-45深层仍+\n/PRAME+" },
+      { "from": "ki67", "to": "melanoma", "label": "高" },
+      { "from": "ki67", "to": "spitz", "label": "低" }
+    ]
+  },
+  {
+    "id": "neuroendocrine-grading",
+    "titleZh": "神经内分泌肿瘤分级鉴别流程",
+    "relatedDifferentialId": "neuroendocrine-tumors",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "Syn+/CgA+确认NE分化", "x": 400, "y": 30 },
+      { "id": "ki67", "type": "decision", "label": "Ki-67", "x": 400, "y": 130 },
+      { "id": "net-g1", "type": "result", "label": "NET G1", "color": "#22c55e", "x": 100, "y": 250 },
+      { "id": "net-g2", "type": "result", "label": "NET G2", "color": "#f59e0b", "x": 290, "y": 250 },
+      { "id": "rb-p53", "type": "decision", "label": "Rb/p53", "x": 500, "y": 250 },
+      { "id": "net-g3", "type": "result", "label": "NET G3", "color": "#3b82f6", "x": 350, "y": 370 },
+      { "id": "morphology", "type": "decision", "label": "形态", "x": 600, "y": 370 },
+      { "id": "sclc", "type": "result", "label": "小细胞癌(SCLC)", "color": "#ef4444", "x": 470, "y": 490 },
+      { "id": "lcnec", "type": "result", "label": "大细胞神经内分泌癌\n(LCNEC)", "color": "#8b5cf6", "x": 700, "y": 490 }
+    ],
+    "edges": [
+      { "from": "start", "to": "ki67" },
+      { "from": "ki67", "to": "net-g1", "label": "<3%" },
+      { "from": "ki67", "to": "net-g2", "label": "3-20%" },
+      { "from": "ki67", "to": "rb-p53", "label": ">20%" },
+      { "from": "rb-p53", "to": "net-g3", "label": "正常" },
+      { "from": "rb-p53", "to": "morphology", "label": "异常(NEC)" },
+      { "from": "morphology", "to": "sclc", "label": "小细胞" },
+      { "from": "morphology", "to": "lcnec", "label": "大细胞" }
+    ]
+  },
+  {
+    "id": "glandular-vs-squamous",
+    "titleZh": "低分化癌腺/鳞分化鉴别流程",
+    "relatedDifferentialId": "glandular-vs-squamous",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "低分化癌", "x": 400, "y": 30 },
+      { "id": "ttf1", "type": "decision", "label": "TTF-1/NapsinA", "x": 400, "y": 130 },
+      { "id": "adeno", "type": "result", "label": "腺癌", "color": "#3b82f6", "x": 150, "y": 250 },
+      { "id": "p40", "type": "decision", "label": "P40/CK5/6", "x": 400, "y": 250 },
+      { "id": "squamous", "type": "result", "label": "鳞癌", "color": "#ef4444", "x": 150, "y": 370 },
+      { "id": "syn-cga", "type": "decision", "label": "Syn/CgA", "x": 400, "y": 370 },
+      { "id": "nec", "type": "result", "label": "神经内分泌癌", "color": "#8b5cf6", "x": 150, "y": 490 },
+      { "id": "adenosquamous", "type": "result", "label": "腺鳞癌", "color": "#f59e0b", "x": 400, "y": 490 }
+    ],
+    "edges": [
+      { "from": "start", "to": "ttf1" },
+      { "from": "ttf1", "to": "adeno", "label": "+" },
+      { "from": "ttf1", "to": "p40", "label": "−" },
+      { "from": "p40", "to": "squamous", "label": "+" },
+      { "from": "p40", "to": "syn-cga", "label": "−" },
+      { "from": "syn-cga", "to": "nec", "label": "+" },
+      { "from": "syn-cga", "to": "adenosquamous", "label": "两者均+" }
+    ]
+  },
+  {
+    "id": "rcc-subtypes",
+    "titleZh": "肾细胞癌亚型IHC鉴别流程",
+    "relatedDifferentialId": "renal-cell-carcinoma-subtypes",
+    "nodes": [
+      { "id": "start", "type": "start", "label": "肾肿瘤", "x": 400, "y": 30 },
+      { "id": "caix", "type": "decision", "label": "CA-IX", "x": 400, "y": 130 },
+      { "id": "ccrcc", "type": "result", "label": "透明细胞RCC", "color": "#3b82f6", "x": 150, "y": 250 },
+      { "id": "ck7-amacr", "type": "decision", "label": "CK7/AMACR", "x": 400, "y": 250 },
+      { "id": "papillary", "type": "result", "label": "乳头状RCC", "color": "#ef4444", "x": 150, "y": 370 },
+      { "id": "ck7-cd117", "type": "decision", "label": "CK7/CD117", "x": 400, "y": 370 },
+      { "id": "chromophobe", "type": "result", "label": "嫌色细胞RCC", "color": "#f59e0b", "x": 150, "y": 490 },
+      { "id": "oncocytoma", "type": "result", "label": "嗜酸细胞瘤", "color": "#22c55e", "x": 400, "y": 490 },
+      { "id": "tfe3", "type": "decision", "label": "TFE3", "x": 600, "y": 490 },
+      { "id": "translocation", "type": "result", "label": "易位型RCC", "color": "#8b5cf6", "x": 600, "y": 610 }
+    ],
+    "edges": [
+      { "from": "start", "to": "caix" },
+      { "from": "caix", "to": "ccrcc", "label": "弥漫膜+" },
+      { "from": "caix", "to": "ck7-amacr", "label": "−" },
+      { "from": "ck7-amacr", "to": "papillary", "label": "+" },
+      { "from": "ck7-amacr", "to": "ck7-cd117", "label": "−" },
+      { "from": "ck7-cd117", "to": "chromophobe", "label": "CK7+/CD117+" },
+      { "from": "ck7-cd117", "to": "oncocytoma", "label": "CD117+/CK7−" },
+      { "from": "ck7-cd117", "to": "tfe3", "label": "−" },
+      { "from": "tfe3", "to": "translocation", "label": "+" }
     ]
   }
 ]

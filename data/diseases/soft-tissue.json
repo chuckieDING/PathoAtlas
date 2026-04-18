@@ -3,179 +3,869 @@
     "id": "well-differentiated-liposarcoma",
     "nameZh": "高分化脂肪肉瘤",
     "nameEn": "Well-Differentiated Liposarcoma",
-    "aliases": ["脂肪肉瘤"],
+    "aliases": [
+      "脂肪肉瘤"
+    ],
     "organ": "soft-tissue",
     "category": "malignant",
-    "epidemiology": "最常见的脂肪肉瘤亚型。",
+    "epidemiology": "最常见的脂肪肉瘤亚型，占脂肪肉瘤的40-50%。好发于50-70岁成人，男性略多见。最常发生于腹膜后和四肢深部（大腿），腹膜后者常巨大。与去分化脂肪肉瘤为同一疾病谱。",
     "clinicalFeatures": "深部软组织肿块。",
     "grossPathology": "黄色脂肪样肿块。",
-    "microscopy": "成熟脂肪细胞+异型细胞，纤维间隔。",
-    "keyFeatures": ["成熟脂肪细胞", "异型梭形细胞", "MDM2扩增"],
+    "microscopy": "肿瘤主要由成熟脂肪细胞组成，与正常脂肪组织相似但可见大小不等的脂肪细胞变异。关键诊断特征为纤维间隔中散在的异型梭形细胞和脂母细胞（含有异型深染核和胞浆内脂滴的不规则大细胞）。纤维间隔增宽，含有异型性的间质细胞，核大深染，可见多空泡状脂母细胞。脂肪细胞大小变异明显。硬化性亚型以粗大胶原纤维束为特征。炎症型伴有显著淋巴浆细胞浸润，可模拟淋巴瘤。MDM2/CDK4核阳性是诊断金标准。",
+    "keyFeatures": [
+      "成熟脂肪细胞",
+      "异型梭形细胞",
+      "MDM2扩增"
+    ],
     "ihcProfile": [
-      {"marker": "S-100", "result": "阳性", "note": "脂肪细胞"},
-      {"marker": "MDM2", "result": "阳性", "note": "扩增"}
+      {
+        "marker": "S-100",
+        "result": "阳性",
+        "note": "脂肪细胞"
+      },
+      {
+        "marker": "MDM2",
+        "result": "阳性",
+        "note": "核阳性，12q13-15扩增标记"
+      },
+      {
+        "marker": "CDK4",
+        "result": "阳性",
+        "note": "与MDM2共扩增，诊断辅助"
+      },
+      {
+        "marker": "p16",
+        "result": "阳性",
+        "note": "CDK4过表达的下游标记"
+      },
+      {
+        "marker": "HMGA2",
+        "result": "阳性",
+        "note": "12q扩增区域基因"
+      }
     ],
     "molecularFeatures": "12q13-15扩增，MDM2/HMGA2。",
-    "differentialDiagnosis": ["lipoma", "myxoid-liposarcoma"],
+    "differentialDiagnosis": [],
     "grading": "FNCLCC 1级",
     "staging": "AJCC",
     "prognosis": "局部复发常见，不转移。",
     "treatment": "手术切除。",
     "images": [],
-    "references": ["WHO Soft Tissue Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "leiomyosarcoma",
     "nameZh": "平滑肌肉瘤",
     "nameEn": "Leiomyosarcoma",
-    "aliases": ["平滑肌肉瘤"],
+    "aliases": [
+      "平滑肌肉瘤"
+    ],
     "organ": "soft-tissue",
     "category": "malignant",
-    "epidemiology": "常见于成人。",
+    "epidemiology": "成人最常见的软组织肉瘤之一，好发于50-70岁，女性略多见（子宫和腹膜后）。常见部位为子宫、腹膜后和四肢深部软组织。子宫平滑肌肉瘤占子宫肉瘤的60-70%。",
     "clinicalFeatures": "疼痛性肿块。",
     "grossPathology": "灰白色梭形肿块。",
-    "microscopy": "梭形细胞，核异型性，核分裂活跃。",
-    "keyFeatures": ["梭形细胞", "平滑肌分化", "SMA+", "Desmin+"],
+    "microscopy": "肿瘤由交叉束状排列的梭形细胞组成，显示平滑肌分化特征。细胞胞浆丰富嗜酸性纤维状，核呈雪茄样钝圆形但有明显异型性，核增大深染多形性，核仁可显著。核分裂象活跃（通常>10/10HPF），可见病理性核分裂。凝固性坏死（通常为地图样/蛇行状）是诊断恶性的重要依据之一。高级别者可出现上皮样或多形性区域。SMA、Desmin和h-Caldesmon阳性证实平滑肌分化。",
+    "keyFeatures": [
+      "梭形细胞",
+      "平滑肌分化",
+      "SMA+",
+      "Desmin+"
+    ],
     "ihcProfile": [
-      {"marker": "SMA", "result": "阳性", "note": ""},
-      {"marker": "Desmin", "result": "阳性", "note": ""},
-      {"marker": "H-Caldesmon", "result": "阳性", "note": ""}
+      {
+        "marker": "SMA",
+        "result": "阳性",
+        "note": "平滑肌分化标记"
+      },
+      {
+        "marker": "Desmin",
+        "result": "阳性",
+        "note": "肌源性分化"
+      },
+      {
+        "marker": "H-Caldesmon",
+        "result": "阳性",
+        "note": "平滑肌特异性标记"
+      },
+      {
+        "marker": "ER",
+        "result": "可阳性",
+        "note": "子宫来源者常表达"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "高(>10%)",
+        "note": "增殖活跃"
+      }
     ],
     "molecularFeatures": "复杂核型。",
-    "differentialDiagnosis": ["leiomyoma", "malignant-peripheral-nerve-sheath-tumor"],
+    "differentialDiagnosis": [
+      "leiomyoma",
+      "malignant-peripheral-nerve-sheath-tumor"
+    ],
     "grading": "FNCLCC 2-3级",
     "staging": "AJCC",
     "prognosis": "中位生存5年。",
     "treatment": "手术+放疗。",
     "images": [],
-    "references": ["WHO Soft Tissue Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "gastrointestinal-stromal-tumor",
     "nameZh": "胃肠道间质瘤",
     "nameEn": "Gastrointestinal Stromal Tumor",
-    "aliases": ["GIST"],
-    "organ": "gi",
+    "aliases": [
+      "GIST"
+    ],
+    "organ": "soft-tissue",
     "category": "malignant",
-    "epidemiology": "最常见的胃肠道间叶肿瘤。",
+    "epidemiology": "最常见的胃肠道间叶性肿瘤，年发病率约1-1.5/10万。好发于50-70岁成人，男女比约1:1。胃最常见（60%），其次为小肠（30%）。起源于Cajal间质细胞或其前体。约5%与遗传综合征相关（Carney三联征、SDH缺陷型GIST、NF1）。",
     "clinicalFeatures": "胃肠道出血。",
     "grossPathology": "胃壁肿块。",
-    "microscopy": "梭形细胞，核分裂计数决定恶性度。",
-    "keyFeatures": ["梭形细胞", "CD117+", "DOG1+", "c-KIT突变"],
+    "microscopy": "肿瘤主要呈三种形态：梭形细胞型（最常见，约70%）由均匀的梭形细胞排列成束状或旋涡状，胞浆淡嗜酸性，核呈椭圆形两端钝圆，可见核旁空泡（paranuclear vacuole）；上皮样型（约20%）细胞圆形至多角形，胞浆丰富嗜酸性或透明；混合型兼有两者特征。间质可见纤维化、黏液样变性和出血。核分裂计数（每5mm2）结合肿瘤大小和部位用于风险评估。CD117和DOG1弥漫膜阳性。",
+    "keyFeatures": [
+      "梭形细胞",
+      "CD117+",
+      "DOG1+",
+      "c-KIT突变"
+    ],
     "ihcProfile": [
-      {"marker": "CD117", "result": "阳性", "note": ""},
-      {"marker": "DOG1", "result": "阳性", "note": ""},
-      {"marker": "CD34", "result": "阳性", "note": "部分"}
+      {
+        "marker": "CD117",
+        "result": "阳性",
+        "note": "c-KIT膜阳性"
+      },
+      {
+        "marker": "DOG1",
+        "result": "阳性",
+        "note": "最敏感标记(98%)"
+      },
+      {
+        "marker": "CD34",
+        "result": "阳性",
+        "note": "约70%阳性"
+      },
+      {
+        "marker": "SMA",
+        "result": "部分阳性",
+        "note": "约20-30%表达"
+      },
+      {
+        "marker": "S-100",
+        "result": "阴性",
+        "note": "排除神经鞘瘤"
+      }
     ],
     "molecularFeatures": "KIT/PDGFRA突变。",
-    "differentialDiagnosis": ["leiomyoma", "schwannoma"],
+    "differentialDiagnosis": [
+      "leiomyoma",
+      "schwannoma"
+    ],
     "grading": "根据核分裂计数",
     "staging": "不适用",
     "prognosis": "靶向治疗有效。",
     "treatment": "伊马替尼。",
     "images": [],
-    "references": ["WHO Digestive System Tumours, 5th Ed, 2019"]
+    "references": [
+      "WHO Digestive System Tumours, 5th Ed, 2019"
+    ]
   },
   {
     "id": "synovial-sarcoma",
     "nameZh": "滑膜肉瘤",
     "nameEn": "Synovial Sarcoma",
-    "aliases": ["滑膜瘤"],
+    "aliases": [
+      "滑膜瘤"
+    ],
     "organ": "soft-tissue",
     "category": "malignant",
-    "epidemiology": "青少年常见。",
+    "epidemiology": "好发于15-40岁青少年和年轻成人，是该年龄段最常见的软组织肉瘤之一，男性略多见。常见于四肢深部（尤其大腿和膝关节附近），约占软组织肉瘤的5-10%。特征性SS18-SSX融合基因是诊断金标准。",
     "clinicalFeatures": "关节附近肿块。",
     "grossPathology": "灰白色肿块。",
-    "microscopy": "双相型：上皮细胞+梭形细胞。",
-    "keyFeatures": ["双相细胞", "SS18-SSX融合", "TLE1+"],
+    "microscopy": "双相型（约20-30%）：由上皮成分（腺管状或乳头状结构，细胞立方至柱状）和梭形细胞成分（密集排列的均匀梭形细胞呈鲱鱼骨样或束状）两种成分混合构成。单相梭形细胞型（最常见，约50-60%）仅见均匀一致的梭形细胞密集排列，核呈卵圆形，染色质均匀，核仁不明显。间质可见丰富的薄壁分支状\"鹿角样\"血管和灶性钙化（约30%）。低分化型细胞密集，核异型性明显，类似小圆细胞肿瘤。TLE1核弥漫强阳性。",
+    "keyFeatures": [
+      "双相细胞",
+      "SS18-SSX融合",
+      "TLE1+"
+    ],
     "ihcProfile": [
-      {"marker": "TLE1", "result": "阳性", "note": ""},
-      {"marker": "EMA", "result": "阳性", "note": ""},
-      {"marker": "CK", "result": "阳性", "note": ""}
+      {
+        "marker": "TLE1",
+        "result": "阳性",
+        "note": "核弥漫强阳性，最敏感标记"
+      },
+      {
+        "marker": "EMA",
+        "result": "阳性",
+        "note": "上皮成分表达"
+      },
+      {
+        "marker": "CK",
+        "result": "阳性",
+        "note": "上皮成分CK7/CK19可阳性"
+      },
+      {
+        "marker": "BCL2",
+        "result": "阳性",
+        "note": "弥漫强阳性"
+      },
+      {
+        "marker": "CD99",
+        "result": "阳性",
+        "note": "约60%表达"
+      }
     ],
     "molecularFeatures": "t(X;18)，SS18-SSX融合。",
-    "differentialDiagnosis": ["malignant-fibrous-histiocytoma", "fibrosarcoma"],
+    "differentialDiagnosis": [],
     "grading": "FNCLCC 2-3级",
     "staging": "AJCC",
     "prognosis": "中位生存5-10年。",
     "treatment": "手术+化疗。",
     "images": [],
-    "references": ["WHO Soft Tissue Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "ewing-sarcoma",
     "nameZh": "尤因肉瘤",
     "nameEn": "Ewing Sarcoma",
-    "aliases": ["尤因瘤"],
+    "aliases": [
+      "尤因瘤"
+    ],
     "organ": "soft-tissue",
     "category": "malignant",
-    "epidemiology": "儿童和青年常见。",
+    "epidemiology": "好发于5-25岁儿童和青年，是第二常见的原发性骨恶性肿瘤和儿童/青少年第二常见的骨肿瘤。男性略多见（男女比约1.5:1），白种人发病率明显高于其他种族。骨和软组织均可原发，骨Ewing肉瘤约占80%。",
     "clinicalFeatures": "骨痛。",
     "grossPathology": "灰白色肿块。",
-    "microscopy": "小圆细胞。",
-    "keyFeatures": ["小圆细胞", "CD99+", "EWSR1-FLI1融合"],
+    "microscopy": "肿瘤由弥漫片状排列的均匀一致的小圆蓝细胞组成，细胞大小一致，核圆形，染色质细腻均匀，核仁不明显，胞浆极少透明（含糖原，PAS阳性可被淀粉酶消化）。细胞边界不清晰，呈\"合胞体样\"排列。核分裂象活跃，坏死常见（可呈地图样大片坏死）。CD99呈特征性弥漫膜阳性。可见Homer-Wright菊形团（约20%）。间质极少，缺乏纤维基质背景。",
+    "keyFeatures": [
+      "小圆细胞",
+      "CD99+",
+      "EWSR1-FLI1融合"
+    ],
     "ihcProfile": [
-      {"marker": "CD99", "result": "阳性", "note": "膜阳性"},
-      {"marker": "FLI1", "result": "阳性", "note": ""}
+      {
+        "marker": "CD99",
+        "result": "阳性",
+        "note": "弥漫膜阳性，特征性"
+      },
+      {
+        "marker": "FLI1",
+        "result": "阳性",
+        "note": "核阳性"
+      },
+      {
+        "marker": "NKX2-2",
+        "result": "阳性",
+        "note": "特异性较高的新标记"
+      },
+      {
+        "marker": "PAS",
+        "result": "胞浆糖原阳性",
+        "note": "淀粉酶消化后阴性"
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阳性",
+        "note": "间叶标记"
+      }
     ],
     "molecularFeatures": "EWSR1-ETS融合。",
-    "differentialDiagnosis": ["neuroblastoma", "rhabdomyosarcoma"],
+    "differentialDiagnosis": [
+      "neuroblastoma",
+      "rhabdomyosarcoma"
+    ],
     "grading": "不分级",
     "staging": "不适用",
     "prognosis": "化疗敏感。",
     "treatment": "化疗+手术+放疗。",
     "images": [],
-    "references": ["WHO Soft Tissue Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "rhabdomyosarcoma",
     "nameZh": "横纹肌肉瘤",
     "nameEn": "Rhabdomyosarcoma",
-    "aliases": ["横纹肌肉瘤"],
+    "aliases": [
+      "横纹肌肉瘤"
+    ],
     "organ": "soft-tissue",
     "category": "malignant",
-    "epidemiology": "儿童最常见软组织肉瘤。",
+    "epidemiology": "儿童最常见的软组织肉瘤，占儿童软组织肉瘤的50%以上。胚胎型最常见（好发于0-10岁，头颈部和泌尿生殖区），腺泡型好发于10-25岁青少年（四肢深部）。男孩略多见，年发病率约4.5/百万儿童。",
     "clinicalFeatures": "头颈部肿块。",
     "grossPathology": "灰白色肿块。",
-    "microscopy": "横纹肌分化。",
-    "keyFeatures": ["横纹肌细胞", "MyoD1+", "Myogenin+"],
+    "microscopy": "肿瘤细胞显示不同程度的横纹肌分化。胚胎型由原始圆形至梭形细胞在疏松黏液样间质中排列组成，部分细胞可见胞浆嗜酸性横纹（交叉条纹，电镜下见肌节结构）。腺泡型（更具侵袭性）由小圆细胞排列成假腺泡状结构，细胞围绕纤维间隔排列，中央细胞松散脱落形成腺泡样空腔。葡萄簇样亚型（好发于黏膜面）呈息肉样突入腔道。MyoD1和Myogenin核阳性证实横纹肌分化，Desmin胞浆阳性。",
+    "keyFeatures": [
+      "横纹肌细胞",
+      "MyoD1+",
+      "Myogenin+"
+    ],
     "ihcProfile": [
-      {"marker": "MyoD1", "result": "阳性", "note": ""},
-      {"marker": "Myogenin", "result": "阳性", "note": ""},
-      {"marker": "Desmin", "result": "阳性", "note": ""}
+      {
+        "marker": "MyoD1",
+        "result": "阳性",
+        "note": "横纹肌分化核标记"
+      },
+      {
+        "marker": "Myogenin",
+        "result": "阳性",
+        "note": "腺泡型弥漫强阳性，胚胎型灶状"
+      },
+      {
+        "marker": "Desmin",
+        "result": "阳性",
+        "note": "胞浆阳性"
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阳性",
+        "note": "间叶标记"
+      },
+      {
+        "marker": "AP2β",
+        "result": "腺泡型阳性",
+        "note": "PAX3/7-FOXO1融合下游标记"
+      }
     ],
     "molecularFeatures": "PAX3/7-FOXO1融合。",
-    "differentialDiagnosis": ["leiomyosarcoma", "ewing-sarcoma"],
+    "differentialDiagnosis": [
+      "leiomyosarcoma",
+      "ewing-sarcoma"
+    ],
     "grading": "不分级",
     "staging": "不适用",
     "prognosis": "预后良好。",
     "treatment": "化疗+手术。",
     "images": [],
-    "references": ["WHO Soft Tissue Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "malignant-peripheral-nerve-sheath-tumor",
     "nameZh": "恶性周围神经鞘瘤",
     "nameEn": "Malignant Peripheral Nerve Sheath Tumor",
-    "aliases": ["MPNST"],
+    "aliases": [
+      "MPNST"
+    ],
     "organ": "soft-tissue",
     "category": "malignant",
-    "epidemiology": "神经纤维瘤病患者高发。",
+    "epidemiology": "罕见的高度恶性软组织肉瘤，约占软组织肉瘤的3-5%。约50%发生于1型神经纤维瘤病（NF1）患者，多由丛状神经纤维瘤恶变而来。好发于20-50岁成人，NF1相关者发病更早。四肢近端和躯干深部最常见。",
     "clinicalFeatures": "疼痛性肿块。",
     "grossPathology": "梭形肿块。",
-    "microscopy": "梭形细胞，核异型性。",
-    "keyFeatures": ["梭形细胞", "S-100+", "NF1突变"],
+    "microscopy": "肿瘤由密集排列的梭形细胞组成，呈束状或鲱鱼骨样（herringbone）排列，细胞核呈波浪状或逗号样。核异型性中度至显著，核增大深染，核分裂象活跃。特征性的血管周围肿瘤细胞致密聚集（\"大理石样\"外观）和交替的细胞密集区与细胞稀疏区是重要诊断线索。可见地图样坏死。高级别者可出现上皮样、横纹肌样或腺样分化。S-100灶状弱阳性（约50%，较良性神经鞘瘤表达明显减弱），SOX10表达常丢失，H3K27me3三甲基化丢失见于约50%病例。",
+    "keyFeatures": [
+      "梭形细胞",
+      "S-100+",
+      "NF1突变"
+    ],
     "ihcProfile": [
-      {"marker": "S-100", "result": "阳性", "note": "灶性"},
-      {"marker": "SOX10", "result": "阳性", "note": ""}
+      {
+        "marker": "S-100",
+        "result": "灶状弱阳性",
+        "note": "约50%，较良性神经鞘瘤显著减弱"
+      },
+      {
+        "marker": "SOX10",
+        "result": "灶状阳性或丢失",
+        "note": "高级别常丢失"
+      },
+      {
+        "marker": "H3K27me3",
+        "result": "丢失(约50%)",
+        "note": "三甲基化丢失是诊断辅助"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "高(>20%)",
+        "note": "增殖活跃"
+      },
+      {
+        "marker": "p53",
+        "result": "异常表达",
+        "note": "TP53突变相关"
+      }
     ],
     "molecularFeatures": "NF1突变。",
-    "differentialDiagnosis": ["fibrosarcoma", "leiomyosarcoma"],
+    "differentialDiagnosis": [
+      "leiomyosarcoma"
+    ],
     "grading": "FNCLCC 2-3级",
     "staging": "AJCC",
     "prognosis": "预后差。",
     "treatment": "手术。",
     "images": [],
-    "references": ["WHO Soft Tissue Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
+  },
+  {
+    "id": "leiomyoma",
+    "nameZh": "平滑肌瘤",
+    "nameEn": "Leiomyoma",
+    "aliases": [
+      "平滑肌瘤",
+      "子宫肌瘤"
+    ],
+    "organ": "soft-tissue",
+    "category": "benign",
+    "epidemiology": "最常见的良性平滑肌肿瘤，子宫平滑肌瘤是育龄期女性最常见的盆腔肿瘤，发病率可达70-80%。软组织平滑肌瘤可发生于皮肤（立毛肌来源）、深部软组织及血管壁。",
+    "clinicalFeatures": "子宫平滑肌瘤表现为月经过多、盆腔压迫感、不孕。软组织平滑肌瘤多为无痛性缓慢增大的肿块，皮肤型可有疼痛。",
+    "grossPathology": "界限清楚的灰白色实性肿块，切面呈编织状或旋涡状，质韧。可有钙化、囊性变或玻璃样变。",
+    "microscopy": "肿瘤由梭形平滑肌细胞组成，排列成相互交错的束状结构。细胞胞质丰富嗜酸性，核呈雪茄样钝圆形，染色质均匀。无核异型性，核分裂象罕见（<5/50HPF）。间质可见玻璃样变性、黏液样变性或钙化。血管平滑肌瘤可见明显的厚壁血管。",
+    "keyFeatures": [
+      "梭形平滑肌细胞束状排列",
+      "雪茄样细胞核",
+      "核分裂<5/50HPF",
+      "SMA/Desmin/h-Caldesmon阳性",
+      "无坏死和核异型"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "SMA",
+        "result": "阳性",
+        "note": "弥漫强阳性，平滑肌分化标记"
+      },
+      {
+        "marker": "Desmin",
+        "result": "阳性",
+        "note": "弥漫阳性"
+      },
+      {
+        "marker": "h-Caldesmon",
+        "result": "阳性",
+        "note": "平滑肌特异性标记"
+      },
+      {
+        "marker": "ER",
+        "result": "阳性",
+        "note": "子宫来源者常阳性"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低(<5%)",
+        "note": "增殖指数低"
+      }
+    ],
+    "molecularFeatures": "子宫平滑肌瘤常见MED12突变（约70%）、HMGA2重排、FH突变（遗传性平滑肌瘤病）。软组织平滑肌瘤无特征性分子改变。",
+    "differentialDiagnosis": [
+      "leiomyosarcoma",
+      "gastrointestinal-stromal-tumor",
+      "schwannoma"
+    ],
+    "grading": "不适用（良性肿瘤）",
+    "staging": "不适用",
+    "prognosis": "良性肿瘤，手术切除后极少复发。恶变罕见。",
+    "treatment": "症状性患者手术切除（子宫肌瘤切除术或子宫切除术）。无症状可随访观察。GnRH激动剂可暂时缩小肿瘤。",
+    "images": [],
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
+  },
+  {
+    "id": "schwannoma",
+    "nameZh": "神经鞘瘤",
+    "nameEn": "Schwannoma",
+    "aliases": [
+      "雪旺细胞瘤",
+      "神经鞘瘤"
+    ],
+    "organ": "soft-tissue",
+    "category": "benign",
+    "epidemiology": "最常见的良性外周神经鞘肿瘤，可发生于任何年龄，30-60岁多见。散发性多为单发，NF2相关者可多发（双侧听神经瘤为NF2特征）。好发于头颈部、四肢屈侧及脊柱旁。",
+    "clinicalFeatures": "缓慢增大的无痛性或轻度疼痛性肿块，可有放射痛或感觉异常（Tinel征阳性）。前庭神经鞘瘤表现为单侧感音神经性听力下降。",
+    "grossPathology": "界限清楚的包膜完整的椭圆形肿块，切面黄褐色，质韧，可有囊性变、出血或钙化。肿瘤偏心性附着于神经干。",
+    "microscopy": "肿瘤由两种组织学区域组成：Antoni A区（细胞密集，梭形Schwann细胞呈束状排列，可见Verocay小体——由栅栏状排列的细胞核与无核区交替形成的结构）和Antoni B区（细胞疏松，基质黏液样/水肿性，细胞稀疏排列不规则）。退行性改变常见，包括含铁血黄素沉着、厚壁玻璃样变血管和核异型（古典型/退变型schwannoma）。",
+    "keyFeatures": [
+      "Antoni A区和Antoni B区",
+      "Verocay小体",
+      "S-100弥漫强阳性",
+      "完整包膜",
+      "偏心性附着神经"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "弥漫强阳性",
+        "note": "Schwann细胞标记，弥漫一致表达"
+      },
+      {
+        "marker": "SOX10",
+        "result": "阳性",
+        "note": "神经嵴来源标记"
+      },
+      {
+        "marker": "GFAP",
+        "result": "灶状阳性",
+        "note": "部分病例表达"
+      },
+      {
+        "marker": "EMA",
+        "result": "包膜阳性",
+        "note": "包膜的神经束膜细胞阳性"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低(<5%)",
+        "note": "增殖指数低"
+      }
+    ],
+    "molecularFeatures": "散发性schwannoma常见NF2基因（22q12）双等位基因失活（突变/LOH），导致merlin蛋白缺失。SMARCB1/INI1缺失见于部分schwannomatosis。LZTR1突变与schwannomatosis相关。",
+    "differentialDiagnosis": [
+      "malignant-peripheral-nerve-sheath-tumor",
+      "leiomyoma",
+      "solitary-fibrous-tumor"
+    ],
+    "grading": "不适用（良性肿瘤）",
+    "staging": "不适用",
+    "prognosis": "良性，手术切除后极少复发（<5%）。恶变极罕见。古典型schwannoma虽有核异型但仍为良性。",
+    "treatment": "有症状者手术切除，保留受累神经。前庭神经鞘瘤可选择手术或立体定向放射治疗（伽马刀）。",
+    "images": [],
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
+  },
+  {
+    "id": "solitary-fibrous-tumor",
+    "nameZh": "孤立性纤维性肿瘤",
+    "nameEn": "Solitary Fibrous Tumor",
+    "aliases": [
+      "SFT",
+      "血管外皮瘤"
+    ],
+    "organ": "soft-tissue",
+    "category": "other",
+    "epidemiology": "中等生物学行为的间叶性肿瘤，可发生于任何部位，以胸膜、脑膜、眼眶、盆腔和四肢深部软组织多见。成人多见，40-70岁高峰，无明显性别差异。发病率约0.35/10万。",
+    "clinicalFeatures": "缓慢增大的无痛性肿块。胸膜SFT可导致胸腔积液和呼吸困难。约5%出现副肿瘤性低血糖（Doege-Potter综合征，与IGF-II分泌相关）。",
+    "grossPathology": "界限清楚的分叶状肿块，切面灰白色至灰褐色，质韧或胶冻样，可见出血和坏死。常有丰富的分支状鹿角样血管。",
+    "microscopy": "肿瘤由梭形至卵圆形细胞在胶原基质中无特定模式排列（patternless pattern），细胞疏密交替分布。特征性分支状鹿角样（staghorn）薄壁血管，类似血管外皮瘤样结构。细胞核椭圆形，染色质均匀。恶性SFT特征：核分裂>4/10HPF、细胞密度增高、坏死、核异型性明显。",
+    "keyFeatures": [
+      "无模式的模式(patternless pattern)",
+      "鹿角样薄壁血管",
+      "STAT6核阳性（诊断标准）",
+      "NAB2-STAT6融合",
+      "CD34阳性（但恶性变时可丢失）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD34",
+        "result": "阳性",
+        "note": "约90%阳性，恶性变时可丢失"
+      },
+      {
+        "marker": "STAT6",
+        "result": "核阳性",
+        "note": "NAB2-STAT6融合导致，诊断特异性高"
+      },
+      {
+        "marker": "Bcl-2",
+        "result": "阳性",
+        "note": "非特异性"
+      },
+      {
+        "marker": "CD99",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "SMA",
+        "result": "阴性",
+        "note": "排除平滑肌肿瘤"
+      }
+    ],
+    "molecularFeatures": "NAB2-STAT6基因融合（12q13倒位）是特征性分子改变，导致STAT6核转位。TERT启动子突变与恶性行为和不良预后相关。",
+    "differentialDiagnosis": [
+      "leiomyoma",
+      "schwannoma",
+      "synovial-sarcoma",
+      "desmoid-fibromatosis"
+    ],
+    "grading": "WHO风险分层模型：基于年龄、肿瘤大小、核分裂计数（低/中/高风险）",
+    "staging": "不适用（按风险分层）",
+    "prognosis": "大多数为良性病程，10-15%表现为恶性行为。恶性SFT 5年转移率约20-30%。TERT启动子突变提示预后不良。",
+    "treatment": "手术完整切除是主要治疗。恶性或复发者可考虑放疗。抗血管生成靶向药（帕唑帕尼、贝伐珠单抗+替莫唑胺）对晚期有效。",
+    "images": [],
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
+  },
+  {
+    "id": "desmoid-fibromatosis",
+    "nameZh": "韧带样纤维瘤病",
+    "nameEn": "Desmoid Fibromatosis",
+    "aliases": [
+      "硬纤维瘤",
+      "侵袭性纤维瘤病",
+      "深部纤维瘤病"
+    ],
+    "organ": "soft-tissue",
+    "category": "other",
+    "epidemiology": "中间型（局部侵袭性）纤维母细胞/肌纤维母细胞肿瘤，发病率约2-4/百万/年。好发于15-60岁，女性略多。腹壁型与妊娠和手术史相关，腹内型与家族性腺瘤性息肉病（FAP/Gardner综合征）相关。",
+    "clinicalFeatures": "缓慢增大的深部软组织肿块，界限不清，可有疼痛和功能障碍。可发生于腹壁、腹腔内（肠系膜）和腹壁外（肩部、胸壁、四肢近端）。FAP相关者多为腹内型，术后高发。",
+    "grossPathology": "灰白色致密纤维组织肿块，质硬如橡皮，切面编织状，无包膜，边界不清，浸润周围组织。",
+    "microscopy": "肿瘤由均匀一致的梭形纤维母细胞/肌纤维母细胞在丰富的胶原基质中呈长束状或波浪状排列。细胞核温和，呈椭圆形或细长形，无明显异型性，核分裂少见。间质富含胶原纤维，可有黏液样变性区域。特征性的裂隙样薄壁血管散在分布。浸润性边缘侵入周围肌肉和脂肪组织。",
+    "keyFeatures": [
+      "β-catenin核阳性（诊断标记）",
+      "CTNNB1突变（散发性85%）",
+      "均匀梭形细胞+胶原基质",
+      "局部浸润性但不转移",
+      "APC突变（FAP相关型）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "β-catenin",
+        "result": "核阳性",
+        "note": "CTNNB1突变导致核积聚，诊断标记"
+      },
+      {
+        "marker": "SMA",
+        "result": "灶状阳性",
+        "note": "肌纤维母细胞分化"
+      },
+      {
+        "marker": "Desmin",
+        "result": "阴性",
+        "note": "排除平滑肌肿瘤"
+      },
+      {
+        "marker": "S-100",
+        "result": "阴性",
+        "note": "排除神经鞘肿瘤"
+      },
+      {
+        "marker": "CD34",
+        "result": "阴性",
+        "note": "排除SFT"
+      }
+    ],
+    "molecularFeatures": "散发性约85%存在CTNNB1（β-catenin）外显子3错义突变（T41A/S45F等），导致β-catenin蛋白稳定化及核转位。FAP相关型由APC基因胚系突变导致，无CTNNB1突变。",
+    "differentialDiagnosis": [
+      "solitary-fibrous-tumor",
+      "leiomyoma",
+      "leiomyosarcoma"
+    ],
+    "grading": "不适用（中间型肿瘤，局部侵袭性）",
+    "staging": "不适用",
+    "prognosis": "局部复发率约20-30%，不转移。部分病例可自发消退。CTNNB1 S45F突变型复发率较高。",
+    "treatment": "首选积极监测（观察等待策略）。有症状或进展者可手术切除，但不要求阴性切缘。药物治疗包括NSAID（舒林酸）、抗雌激素药物、低剂量化疗（甲氨蝶呤+长春花碱）及γ-分泌酶抑制剂（nirogacestat）。",
+    "images": [],
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
+  },
+  {
+    "id": "inflammatory-myofibroblastic-tumor",
+    "nameZh": "炎性肌纤维母细胞瘤",
+    "nameEn": "Inflammatory Myofibroblastic Tumor",
+    "aliases": [
+      "IMT",
+      "炎性假瘤",
+      "浆细胞肉芽肿"
+    ],
+    "organ": "soft-tissue",
+    "category": "other",
+    "epidemiology": "中间型（偶可转移）间叶性肿瘤，好发于儿童和青年成人，中位年龄约10岁。最常见于肺、腹腔（肠系膜/网膜）、腹膜后和盆腔。无明显性别差异，发病率低。",
+    "clinicalFeatures": "表现为缓慢增大的肿块，常伴全身炎症症状（发热、体重减轻、贫血、血沉增快、CRP升高、血小板增多、高丙种球蛋白血症），切除后炎症指标可恢复正常。",
+    "grossPathology": "界限较清的灰白色至黄褐色实性肿块，切面编织状或胶冻样，质韧或质软，可有钙化或坏死灶。",
+    "microscopy": "肿瘤由增生的肌纤维母细胞和纤维母细胞组成，在丰富的炎症细胞背景（浆细胞、淋巴细胞、嗜酸性粒细胞）中排列呈三种主要模式：黏液样/血管型（疏松黏液样基质，丰富血管，似结节性筋膜炎）、梭形细胞密集型（fascicular pattern，细胞密集束状排列）和瘢痕样纤维型（致密胶原化，细胞少，钙化常见）。无明显核异型性，核分裂少见。",
+    "keyFeatures": [
+      "肌纤维母细胞增生+浆细胞/淋巴细胞浸润",
+      "ALK阳性（50-60%病例）",
+      "三种组织学模式",
+      "常伴全身炎症症状",
+      "中间型肿瘤（偶可复发/转移）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "ALK",
+        "result": "阳性(50-60%)",
+        "note": "ALK基因重排导致，多为胞质弥漫阳性"
+      },
+      {
+        "marker": "SMA",
+        "result": "阳性",
+        "note": "肌纤维母细胞分化"
+      },
+      {
+        "marker": "Desmin",
+        "result": "灶状阳性",
+        "note": "部分病例表达"
+      },
+      {
+        "marker": "CD30",
+        "result": "阴性",
+        "note": "排除ALCL"
+      },
+      {
+        "marker": "S-100",
+        "result": "阴性",
+        "note": "排除神经鞘肿瘤"
+      }
+    ],
+    "molecularFeatures": "约50-60%存在ALK基因重排，常见融合伴侣包括TPM3-ALK、TPM4-ALK、CLTC-ALK、RANBP2-ALK等。ALK阴性病例中部分存在ROS1、PDGFRB、RET或NTRK3基因融合。RANBP2-ALK融合型更具侵袭性，常见上皮样形态。",
+    "differentialDiagnosis": [
+      "desmoid-fibromatosis",
+      "leiomyosarcoma",
+      "anaplastic-large-cell-lymphoma"
+    ],
+    "grading": "不适用（中间型肿瘤）",
+    "staging": "不适用",
+    "prognosis": "大多数为良性病程，局部复发率约15-25%。远处转移少见（<5%），RANBP2-ALK融合型转移风险较高。ALK阳性者对靶向治疗反应好。",
+    "treatment": "首选手术完整切除。不可切除或复发者可用ALK抑制剂（克唑替尼、色瑞替尼）靶向治疗。ROS1融合阳性者可用ROS1抑制剂。NSAID（塞来昔布）对部分病例有效。",
+    "images": [],
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
+  },
+  {
+    "id": "neuroblastoma",
+    "nameZh": "神经母细胞瘤",
+    "nameEn": "Neuroblastoma",
+    "aliases": [
+      "NB",
+      "成神经细胞瘤"
+    ],
+    "organ": "soft-tissue",
+    "category": "malignant",
+    "epidemiology": "儿童最常见的颅外实体肿瘤，占儿童恶性肿瘤约7-10%，中位发病年龄约18个月，90%在5岁前诊断。起源于神经嵴交感神经系统，最常见于肾上腺髓质（约40%），其次为腹膜后交感神经节链、后纵隔和盆腔。",
+    "clinicalFeatures": "腹部肿块是最常见表现，可伴腹痛、高血压（儿茶酚胺分泌）、腹泻（VIP分泌）、眼眶周围瘀斑（浣熊眼征，眶骨转移）、Horner综合征（颈部/上纵隔肿瘤）。婴儿4S期可自发消退。尿VMA/HVA升高。",
+    "grossPathology": "灰白色至灰红色分叶状软性肿块，可有包膜或浸润周围组织，切面常见出血、坏死和钙化。较大肿瘤可跨中线，包绕大血管。",
+    "microscopy": "小圆蓝细胞呈弥漫片状或巢状排列，胞浆极少，核深染。特征性Homer-Wright菊形团（细胞围绕嗜酸性纤维轴心即神经纤维丝排列）。根据分化程度分为未分化型、分化差型和分化型（神经节细胞成分增多）。Shimada分类根据年龄、分化程度、MKI指数和间质丰富度分为预后好和预后差组。可见neuropil（嗜酸性纤维基质）背景。",
+    "keyFeatures": [
+      "小圆蓝细胞+Homer-Wright菊形团",
+      "PHOX2B+/NB84+/Syn+/CgA+/NSE+",
+      "S-100+限于sustentacular细胞（而非肿瘤细胞本身）",
+      "CD99阴性（区别于Ewing肉瘤）",
+      "MYCN扩增是最重要的不良预后分子标记"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "PHOX2B",
+        "result": "阳性",
+        "note": "最特异的神经母细胞瘤标记"
+      },
+      {
+        "marker": "NB84",
+        "result": "阳性",
+        "note": "神经母细胞瘤特异性标记"
+      },
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": "神经内分泌/神经分化标记"
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "阳性",
+        "note": "分化较好者更强"
+      },
+      {
+        "marker": "NSE",
+        "result": "阳性",
+        "note": "敏感但不特异"
+      },
+      {
+        "marker": "S-100",
+        "result": "sustentacular细胞阳性",
+        "note": "肿瘤细胞本身阴性，支持细胞阳性"
+      },
+      {
+        "marker": "CD99",
+        "result": "阴性",
+        "note": "区别于Ewing肉瘤"
+      }
+    ],
+    "molecularFeatures": "MYCN扩增（约20-25%）是最重要的不良预后因素。1p缺失、11q缺失、17q获得与不良预后相关。ALK突变/扩增约10-14%（可靶向）。DNA倍体为超二倍体者预后较好（婴儿）。分节段染色体异常（SCA）vs整条染色体异常（NCA）对预后分层有价值。",
+    "differentialDiagnosis": [
+      "ewing-sarcoma",
+      "rhabdomyosarcoma",
+      "wilms-tumor",
+      "desmoplastic-small-round-cell-tumor"
+    ],
+    "grading": "INPC分类：未分化/分化差/分化型；Shimada预后分组",
+    "staging": "INRGSS（International Neuroblastoma Risk Group Staging System）：L1/L2/M/MS",
+    "prognosis": "高度异质性：低危组5年生存率>95%，高危组（MYCN扩增、>18月龄、晚期）约40-50%。婴儿4S/MS期可自发消退。",
+    "treatment": "低危：观察或仅手术。中危：手术+中等强度化疗。高危：强化诱导化疗+手术+大剂量化疗/自体造血干细胞移植+放疗+维持治疗（13-顺式维甲酸+抗GD2单抗dinutuximab）。ALK突变者可用克唑替尼。",
+    "images": [],
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
+  },
+  {
+    "id": "desmoplastic-small-round-cell-tumor",
+    "nameZh": "促结缔组织增生性小圆细胞肿瘤",
+    "nameEn": "Desmoplastic Small Round Cell Tumor",
+    "aliases": [
+      "DSRCT",
+      "促纤维增生性小圆细胞瘤"
+    ],
+    "organ": "soft-tissue",
+    "category": "malignant",
+    "epidemiology": "极为罕见的高度侵袭性肿瘤，好发于青少年和年轻成人男性（男女比约4:1），中位发病年龄约22岁。最常发生于腹腔/盆腔腹膜，也可见于胸膜、睾丸旁和其他部位。",
+    "clinicalFeatures": "腹痛、腹胀、腹部肿块、腹水。确诊时通常已有广泛腹腔内播散（多发腹膜结节）。可伴肠梗阻和尿路梗阻。CA125可升高。",
+    "grossPathology": "腹腔内多发灰白色实性结节，质硬，弥漫种植于腹膜表面，可形成巨大融合肿块。切面灰白色纤维样，伴坏死灶。",
+    "microscopy": "肿瘤由大小不一的小圆蓝细胞巢团嵌于丰富的促纤维增生性间质（胶原纤维束）中。肿瘤细胞小、核圆至卵圆形、染色质深染、核分裂活跃。巢团中央可见坏死。最具特征性的免疫表型是多重分化：同时表达上皮（CK/EMA）、间叶（Desmin核旁点状）和神经（NSE）标记。WT1抗体（C末端）核阳性是诊断关键。",
+    "keyFeatures": [
+      "小圆细胞巢团嵌于丰富促纤维增生间质中",
+      "WT1核阳性（C末端抗体）+Desmin核旁点状阳性+CK/EMA阳性",
+      "多重分化（上皮+间叶+神经）是特征性免疫表型",
+      "EWSR1-WT1融合（t(11;22)(p13;q12)）是诊断金标准",
+      "好发于年轻男性腹腔，预后极差"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "WT1",
+        "result": "核阳性（C末端）",
+        "note": "EWSR1-WT1融合蛋白的C末端保留WT1核定位信号"
+      },
+      {
+        "marker": "Desmin",
+        "result": "核旁点状阳性",
+        "note": "特征性的核旁点状（perinuclear dot）模式"
+      },
+      {
+        "marker": "CK",
+        "result": "阳性",
+        "note": "上皮分化标记"
+      },
+      {
+        "marker": "EMA",
+        "result": "阳性",
+        "note": "上皮分化标记"
+      },
+      {
+        "marker": "NSE",
+        "result": "阳性",
+        "note": "神经分化标记"
+      },
+      {
+        "marker": "CD99",
+        "result": "灶状阳性",
+        "note": "不如Ewing肉瘤弥漫"
+      }
+    ],
+    "molecularFeatures": "特征性t(11;22)(p13;q12)导致EWSR1-WT1融合基因，产生的嵌合转录因子既有EWSR1的转录激活域又有WT1的DNA结合域。该融合基因可通过RT-PCR或FISH检测确认。无其他特征性突变。",
+    "differentialDiagnosis": [
+      "ewing-sarcoma",
+      "neuroblastoma",
+      "rhabdomyosarcoma",
+      "small-cell-carcinoma"
+    ],
+    "grading": "不分级，均为高级别",
+    "staging": "无统一分期系统，通常按腹腔内播散范围评估",
+    "prognosis": "预后极差，5年生存率约15-25%。大多数患者在3年内死于疾病进展。完全细胞减灭术（CRS）可改善生存。",
+    "treatment": "多模式综合治疗：强化化疗（P6方案：环磷酰胺/阿霉素/长春新碱交替异环磷酰胺/依托泊苷）+积极手术减灭+全腹放疗。HIPEC可考虑。预后仍很差，鼓励参加临床试验。",
+    "images": [],
+    "references": [
+      "WHO Soft Tissue Tumours, 5th Ed, 2020"
+    ]
   }
 ]
