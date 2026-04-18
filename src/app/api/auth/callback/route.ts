@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import {
-  signSession, signUserSession, getAdminEmails, isAdmin,
+  signSession, signUserSession, isAdmin,
   SESSION_COOKIE_NAME, USER_SESSION_COOKIE_NAME, OAUTH_STATE_COOKIE,
+  getPublicOrigin, getOAuthRedirectUri,
 } from '@/lib/auth';
 import { initUserOnLogin } from '@/lib/userStorage';
 
@@ -11,10 +12,11 @@ import { initUserOnLogin } from '@/lib/userStorage';
  * get an admin-session cookie.
  */
 export async function GET(request: Request) {
-  const { searchParams, origin } = new URL(request.url);
+  const { searchParams } = new URL(request.url);
+  const publicOrigin = getPublicOrigin(request);
   const failureRedirect = (reason: string, extra?: string) =>
     NextResponse.redirect(
-      `${origin}/login?auth_error=${encodeURIComponent(reason)}${extra ? `&email=${encodeURIComponent(extra)}` : ''}`,
+      `${publicOrigin}/login?auth_error=${encodeURIComponent(reason)}${extra ? `&email=${encodeURIComponent(extra)}` : ''}`,
     );
 
   const code = searchParams.get('code');
@@ -50,7 +52,7 @@ export async function GET(request: Request) {
       code,
       client_id: process.env.GOOGLE_CLIENT_ID || '',
       client_secret: process.env.GOOGLE_CLIENT_SECRET || '',
-      redirect_uri: `${origin}/api/auth/callback`,
+      redirect_uri: getOAuthRedirectUri(request),
       grant_type: 'authorization_code',
     }),
   });
@@ -81,7 +83,7 @@ export async function GET(request: Request) {
 
   // Set user session cookie (for all Google users)
   const userSession = await signUserSession(email, name, picture);
-  const res = NextResponse.redirect(`${origin}${returnTo}`);
+  const res = NextResponse.redirect(`${publicOrigin}${returnTo}`);
   const cookieOpts = {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
