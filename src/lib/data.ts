@@ -110,6 +110,22 @@ export interface Organ {
   keyPatterns: string[];
 }
 
+/**
+ * Companion diagnostic entry: maps an IHC/molecular biomarker to its
+ * associated targeted therapy, approved indication and regulatory status.
+ * Used on marker detail pages to show the clinical action-ability of a
+ * positive test result.
+ */
+export interface CompanionDiagnostic {
+  drug: string;                    // e.g. "曲妥珠单抗 (Trastuzumab)"
+  indication: string;              // e.g. "HER2+乳腺癌/胃癌"
+  positivityCriterion?: string;    // e.g. "IHC 3+ 或 FISH 扩增"
+  regulatoryStatus?: string;       // e.g. "FDA+NMPA" / "FDA" / "实验性"
+  line?: string;                   // e.g. "一线" / "二/三线" / "辅助/新辅助"
+  clone?: string;                  // specific IHC clone if relevant (e.g. "22C3" for pembrolizumab)
+  note?: string;
+}
+
 export interface Marker {
   id: string;
   nameZh: string;
@@ -126,6 +142,8 @@ export interface Marker {
   positiveIn: string[];
   negativeIn: string[];
   relatedDrugs: string[];
+  /** Structured companion diagnostics table: biomarker → drug → approval */
+  companionDiagnostics?: CompanionDiagnostic[];
   pitfalls: string;
   references: string[];
   /** Guideline / expert consensus entries shown in the marker detail view. */

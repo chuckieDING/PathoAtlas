@@ -35,9 +35,10 @@ const EDITABLE_FIELDS = [
   'nameZh', 'nameEn', 'abbreviation', 'category',
   'cloneInfo', 'targetProtein', 'cellularLocalization', 'normalExpression',
   'function', 'interpretation', 'clinicalSignificance',
-  'positiveIn', 'negativeIn', 'relatedDrugs', 'pitfalls',
+  'positiveIn', 'negativeIn', 'relatedDrugs', 'companionDiagnostics', 'pitfalls',
   'references',
   'expertConsensus', 'literature', 'stainingImages',
+  'cloneVariants', 'controlTissue', 'artifacts', 'cloneComparisons',
 ] as const;
 
 type EditableField = (typeof EDITABLE_FIELDS)[number];

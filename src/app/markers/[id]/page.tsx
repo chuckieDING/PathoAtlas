@@ -31,12 +31,23 @@ interface CloneComparison {
   clinicalImplication: string; context: string;
 }
 
+interface CompanionDiagnostic {
+  drug: string;
+  indication: string;
+  positivityCriterion?: string;
+  regulatoryStatus?: string;
+  line?: string;
+  clone?: string;
+  note?: string;
+}
+
 interface Marker {
   id: string; nameZh: string; nameEn: string; abbreviation: string; category: string;
   cloneInfo: string; targetProtein: string; cellularLocalization: string;
   normalExpression: string; function: string; interpretation: string;
   clinicalSignificance: string; positiveIn: string[]; negativeIn: string[];
   relatedDrugs: string[]; pitfalls: string; references?: string[];
+  companionDiagnostics?: CompanionDiagnostic[];
   expertConsensus?: ConsensusItem[];
   literature?: LiteratureItem[];
   stainingImages?: StainingGroup[];
@@ -304,6 +315,9 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
           {m.relatedDrugs.length > 0 && (
             <TagRow label="相关靶向药" items={m.relatedDrugs} bg="rgba(99,102,241,0.12)" color="#818cf8" />
           )}
+          {m.companionDiagnostics && m.companionDiagnostics.length > 0 && (
+            <CompanionDiagnosticsTable items={m.companionDiagnostics} />
+          )}
           {m.pitfalls && <InfoBox label="诊断陷阱" value={m.pitfalls} accent />}
         </div>
       )}
@@ -440,6 +454,75 @@ function TagRow({ label, items, bg, color }: { label: string; items: string[]; b
             {d}
           </span>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function statusPillColor(status?: string): { bg: string; color: string } {
+  const s = (status || '').toUpperCase();
+  if (s.includes('FDA') && s.includes('NMPA')) return { bg: 'rgba(34,197,94,0.15)', color: '#22c55e' };
+  if (s.includes('FDA')) return { bg: 'rgba(59,130,246,0.15)', color: '#3b82f6' };
+  if (s.includes('NMPA')) return { bg: 'rgba(239,68,68,0.15)', color: '#ef4444' };
+  if (s.includes('实验') || s.includes('CLINICAL') || s.includes('TRIAL')) return { bg: 'rgba(245,158,11,0.15)', color: '#f59e0b' };
+  return { bg: 'var(--card-hover)', color: 'var(--fg-muted)' };
+}
+
+function CompanionDiagnosticsTable({ items }: { items: CompanionDiagnostic[] }) {
+  return (
+    <div>
+      <div className="text-xs font-semibold mb-2 flex items-center gap-2" style={{ color: 'var(--fg-muted)' }}>
+        <span>伴随诊断 (Companion Diagnostics)</span>
+        <span className="text-[10px] px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(99,102,241,0.12)', color: 'var(--accent)' }}>
+          {items.length} 条
+        </span>
+      </div>
+      <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+        <table className="w-full text-xs">
+          <thead>
+            <tr style={{ background: 'var(--card-hover)' }}>
+              <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg)' }}>药物 / 靶向治疗</th>
+              <th className="text-left px-3 py-2 font-semibold hidden sm:table-cell" style={{ color: 'var(--fg)' }}>适应证</th>
+              <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg)' }}>阳性判读</th>
+              <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg)' }}>监管 / 治疗线</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((c, i) => {
+              const status = statusPillColor(c.regulatoryStatus);
+              return (
+                <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                  <td className="px-3 py-2.5 align-top">
+                    <div className="font-medium" style={{ color: 'var(--fg)' }}>{c.drug}</div>
+                    {c.clone && (
+                      <div className="text-[10px] mt-0.5 font-mono" style={{ color: 'var(--fg-muted)' }}>
+                        克隆：{c.clone}
+                      </div>
+                    )}
+                  </td>
+                  <td className="px-3 py-2.5 align-top hidden sm:table-cell" style={{ color: 'var(--fg-muted)' }}>
+                    {c.indication}
+                  </td>
+                  <td className="px-3 py-2.5 align-top" style={{ color: 'var(--fg-muted)' }}>
+                    {c.positivityCriterion || '—'}
+                  </td>
+                  <td className="px-3 py-2.5 align-top">
+                    <div className="flex flex-col gap-1">
+                      {c.regulatoryStatus && (
+                        <span className="text-[10px] px-1.5 py-0.5 rounded inline-block w-fit" style={{ background: status.bg, color: status.color }}>
+                          {c.regulatoryStatus}
+                        </span>
+                      )}
+                      {c.line && (
+                        <span className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{c.line}</span>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   );

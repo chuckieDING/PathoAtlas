@@ -142,6 +142,43 @@
         "clinicalImplication": "ASCO/CAP指南将ER阳性cutoff定为≥1%。在1-10%低表达区间，SP1的检出率优于1D5，选择高灵敏度克隆号对临床决策有重要影响。",
         "context": "乳腺癌ER评估，特别是ER低表达(1-10%)病例"
       }
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "他莫昔芬 (Tamoxifen)",
+        "indication": "ER+ 乳腺癌 — 绝经前后辅助/新辅助/转移解救",
+        "positivityCriterion": "ER ≥1% (Allred ≥3)",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "辅助/一线"
+      },
+      {
+        "drug": "芳香化酶抑制剂 (来曲唑/阿那曲唑/依西美坦)",
+        "indication": "ER+ 绝经后乳腺癌",
+        "positivityCriterion": "ER ≥1%",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "辅助/一线"
+      },
+      {
+        "drug": "氟维司群 (Fulvestrant)",
+        "indication": "ER+ 晚期乳腺癌（选择性 ER 降解剂）",
+        "positivityCriterion": "ER ≥1%",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线及以后"
+      },
+      {
+        "drug": "CDK4/6 抑制剂 (Palbociclib/Ribociclib/Abemaciclib)",
+        "indication": "ER+/HER2− 晚期乳腺癌（联合内分泌治疗）",
+        "positivityCriterion": "ER ≥1%",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一/二线"
+      },
+      {
+        "drug": "Elacestrant",
+        "indication": "ER+/ESR1突变晚期乳腺癌",
+        "positivityCriterion": "ER ≥1% + ESR1 突变",
+        "regulatoryStatus": "FDA",
+        "line": "二线"
+      }
     ]
   },
   {
@@ -256,6 +293,29 @@
       "固定延迟导致假阴性",
       "异质性表达需全面评估",
       "PR-A/PR-B亚型表达差异"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "他莫昔芬 (Tamoxifen)",
+        "indication": "ER+/PR+ 乳腺癌 (PR 可辅助预测内分泌治疗获益)",
+        "positivityCriterion": "PR ≥1% (通常与 ER 联合判读)",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "辅助/一线"
+      },
+      {
+        "drug": "芳香化酶抑制剂",
+        "indication": "ER+/PR+ 绝经后乳腺癌",
+        "positivityCriterion": "PR ≥1%",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "辅助/一线"
+      },
+      {
+        "drug": "醋酸甲羟孕酮",
+        "indication": "晚期子宫内膜癌/部分乳腺癌",
+        "positivityCriterion": "PR 阳性",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线"
+      }
     ]
   },
   {
@@ -431,6 +491,57 @@
         },
         "clinicalImplication": "乳腺癌中两种克隆号一致性较好；胃癌中4B5可能显示更高阳性率，需注意胃癌特有的基底外侧膜不完整染色模式（胃癌HER2评分标准与乳腺不同）。",
         "context": "乳腺癌HER2评估、胃癌HER2检测"
+      }
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "曲妥珠单抗 (Trastuzumab/Herceptin)",
+        "indication": "HER2+ 乳腺癌 / 胃癌 / 胃食管交界癌",
+        "positivityCriterion": "IHC 3+ 或 IHC 2+/FISH 扩增 (HER2/CEP17 ≥2.0)",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "辅助/新辅助/一线"
+      },
+      {
+        "drug": "帕妥珠单抗 (Pertuzumab/Perjeta)",
+        "indication": "HER2+ 乳腺癌（联合曲妥珠单抗+化疗）",
+        "positivityCriterion": "IHC 3+ 或 FISH 扩增",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "T-DM1 (Ado-trastuzumab emtansine/Kadcyla)",
+        "indication": "HER2+ 乳腺癌 — 辅助（新辅助后残留病灶）/ 晚期二线",
+        "positivityCriterion": "IHC 3+ 或 FISH 扩增",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线/辅助强化"
+      },
+      {
+        "drug": "T-DXd / DS-8201 (Trastuzumab deruxtecan/Enhertu)",
+        "indication": "HER2+/HER2-low 乳腺癌、HER2+ 胃癌、HER2 突变 NSCLC",
+        "positivityCriterion": "IHC 3+ 或 FISH+；HER2-low = IHC 1+ 或 2+/FISH−",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二/三线"
+      },
+      {
+        "drug": "Tucatinib",
+        "indication": "HER2+ 晚期乳腺癌（含脑转移）",
+        "positivityCriterion": "IHC 3+ 或 FISH+",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "三线"
+      },
+      {
+        "drug": "拉帕替尼 (Lapatinib)",
+        "indication": "HER2+ 乳腺癌",
+        "positivityCriterion": "IHC 3+ 或 FISH+",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线"
+      },
+      {
+        "drug": "Margetuximab",
+        "indication": "HER2+ 晚期乳腺癌",
+        "positivityCriterion": "IHC 3+ 或 FISH+",
+        "regulatoryStatus": "FDA",
+        "line": "三线"
       }
     ]
   },
@@ -1704,6 +1815,43 @@
       "肥大细胞阳性为正常",
       "ICC细胞（Cajal间质细胞）阳性为正常",
       "部分GIST（约5%）CD117阴性"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "伊马替尼 (Imatinib/Gleevec)",
+        "indication": "GIST (KIT exon 11/9 突变); Ph+ CML/ALL",
+        "positivityCriterion": "CD117 阳性 GIST + KIT/PDGFRA 突变分子确认",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线 (GIST)"
+      },
+      {
+        "drug": "舒尼替尼 (Sunitinib/Sutent)",
+        "indication": "伊马替尼耐药或不耐受 GIST",
+        "positivityCriterion": "CD117+ GIST, 伊马替尼失败",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线"
+      },
+      {
+        "drug": "瑞戈非尼 (Regorafenib)",
+        "indication": "伊马替尼+舒尼替尼失败的 GIST",
+        "positivityCriterion": "CD117+ GIST, 前线治疗失败",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "三线"
+      },
+      {
+        "drug": "瑞普替尼 (Ripretinib)",
+        "indication": "多线治疗失败的晚期 GIST",
+        "positivityCriterion": "CD117+ GIST",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "四线"
+      },
+      {
+        "drug": "阿伐替尼 (Avapritinib)",
+        "indication": "PDGFRA D842V 突变 GIST",
+        "positivityCriterion": "PDGFRA D842V (IHC 通常 DOG1+/CD117±)",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线 (D842V 亚组)"
+      }
     ]
   },
   {
@@ -3516,6 +3664,55 @@
         },
         "clinicalImplication": "不同PD-L1克隆号与不同免疫检查点抑制剂绑定，不可互换。22C3应用范围最广（NSCLC/胃癌/TNBC等），SP142在TNBC和尿路上皮癌中使用。SP263与22C3在多数cutoff下一致性较好。28-8用于纳武利尤单抗。",
         "context": "非小细胞肺癌、三阴性乳腺癌、尿路上皮癌免疫治疗伴随诊断"
+      }
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "帕博利珠单抗 (Pembrolizumab/Keytruda)",
+        "indication": "NSCLC / HNSCC / 胃癌 / 食管癌 / 宫颈癌 / 膀胱癌 / TNBC 等多癌种",
+        "positivityCriterion": "NSCLC: TPS ≥1%（单药≥50%）；胃食管/HNSCC/TNBC: CPS ≥1/≥10/≥20（癌种不同）",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一/二线",
+        "clone": "22C3"
+      },
+      {
+        "drug": "阿替利珠单抗 (Atezolizumab/Tecentriq)",
+        "indication": "NSCLC / TNBC / 膀胱癌 / HCC",
+        "positivityCriterion": "NSCLC: TC≥50% 或 IC≥10%；TNBC: IC≥1%",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一/二线",
+        "clone": "SP142 (TNBC) / SP263 (NSCLC)"
+      },
+      {
+        "drug": "纳武利尤单抗 (Nivolumab/Opdivo)",
+        "indication": "多癌种（部分无需 PD-L1 选择）",
+        "positivityCriterion": "部分适应证需 TPS≥1% 或 CPS≥5",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一/二线",
+        "clone": "28-8"
+      },
+      {
+        "drug": "度伐利尤单抗 (Durvalumab/Imfinzi)",
+        "indication": "III 期 NSCLC 巩固 / SCLC / BTC",
+        "positivityCriterion": "III 期 NSCLC: TC≥1% (欧盟)；其他适应证不选择",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "巩固/一线",
+        "clone": "SP263"
+      },
+      {
+        "drug": "西米普利单抗 (Cemiplimab/Libtayo)",
+        "indication": "皮肤鳞癌 / NSCLC / 宫颈癌",
+        "positivityCriterion": "NSCLC: TPS ≥50%",
+        "regulatoryStatus": "FDA",
+        "line": "一线",
+        "clone": "22C3"
+      },
+      {
+        "drug": "信迪利单抗 / 替雷利珠单抗 / 卡瑞利珠单抗",
+        "indication": "国产 PD-1 抑制剂（多癌种）",
+        "positivityCriterion": "部分需 PD-L1 表达（参照各药物说明）",
+        "regulatoryStatus": "NMPA",
+        "line": "一/二线"
       }
     ]
   },
