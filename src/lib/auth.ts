@@ -13,6 +13,7 @@
  */
 
 export const SESSION_COOKIE_NAME = 'pathoatlas-admin-session';
+export const USER_SESSION_COOKIE_NAME = 'pathoatlas-user-session';
 export const OAUTH_STATE_COOKIE = 'pathoatlas-oauth-state';
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 7; // 7 days
 
@@ -159,4 +160,51 @@ export async function authorize(req: { headers: Headers; cookies?: { get(name: s
   }
 
   return null;
+}
+
+// ── User Session (for all Google users, not just admins) ─────
+
+export interface UserSessionPayload {
+  email: string;
+  name: string;
+  picture: string;
+}
+
+/** Sign a user session cookie containing profile info. */
+export async function signUserSession(email: string, name: string, picture: string): Promise<string> {
+  const expires = Date.now() + SESSION_TTL_MS;
+  const payload = `${email}|${name}|${picture}|${expires}`;
+  const payloadB64 = toBase64url(encoder.encode(payload).buffer as ArrayBuffer);
+  const hmac = await hmacSign(payloadB64);
+  return `${payloadB64}.${hmac}`;
+}
+
+/** Verify a user session cookie. Returns profile info or null. No admin allow-list check. */
+export async function verifyUserSession(token: string | undefined | null): Promise<UserSessionPayload | null> {
+  if (!token) return null;
+  try {
+    const [payloadB64, receivedHmac] = token.split('.');
+    if (!payloadB64 || !receivedHmac) return null;
+    const valid = await hmacVerify(payloadB64, receivedHmac);
+    if (!valid) return null;
+    const payload = new TextDecoder().decode(fromBase64url(payloadB64));
+    const parts = payload.split('|');
+    if (parts.length < 4) return null;
+    const expires = parseInt(parts[parts.length - 1], 10);
+    if (Number.isNaN(expires) || expires < Date.now()) return null;
+    const email = parts[0];
+    const name = parts[1];
+    const picture = parts.slice(2, parts.length - 1).join('|');
+    if (!email) return null;
+    return { email, name, picture };
+  } catch {
+    return null;
+  }
+}
+
+/** Check if an email is in the admin allow-list. */
+export function isAdmin(email: string): boolean {
+  const allowed = getAdminEmails();
+  if (allowed.length === 0) return false;
+  return allowed.includes(email.toLowerCase());
 }

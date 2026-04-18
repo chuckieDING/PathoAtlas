@@ -1,13 +1,14 @@
 import fs from 'fs';
 import path from 'path';
+import { getDataDir } from './dataDir';
 
-const AUDIT_LOG_PATH = path.join(process.cwd(), 'data', 'audit-log.jsonl');
+const AUDIT_LOG_PATH = path.join(getDataDir(), 'audit-log.jsonl');
 
 export interface AuditEntry {
   timestamp: string;
   actor: string;
   action: 'create' | 'update' | 'delete';
-  entityType: 'disease' | 'marker';
+  entityType: string;
   entityId: string;
   organ?: string;
   diff?: Record<string, { old: unknown; new: unknown }>;
