@@ -1,12 +1,13 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+import { getDataDir } from '@/lib/dataDir';
 
 let cachedProtocols: unknown[] | null = null;
 
 export async function GET() {
   try {
     if (!cachedProtocols) {
-      const filePath = join(process.cwd(), 'data', 'grossing.json');
+      const filePath = join(getDataDir(), 'grossing.json');
       const data = await readFile(filePath, 'utf-8');
       cachedProtocols = JSON.parse(data);
     }

@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { invalidateJsonCache } from '@/lib/data';
 import { appendAuditLog, computeDiff } from '@/lib/audit';
+import { getDataDir } from '@/lib/dataDir';
 
 /**
  * Drops both the in-process JSON cache for the affected file and the
@@ -59,7 +60,7 @@ function organFilePath(organ: string): string {
   if (!/^[a-z][a-z0-9-]*$/i.test(organ)) {
     throw new Error(`invalid organ id: ${organ}`);
   }
-  return path.join(process.cwd(), 'data', 'diseases', `${organ}.json`);
+  return path.join(getDataDir(), 'diseases', `${organ}.json`);
 }
 
 function readList(filePath: string): Record<string, unknown>[] {

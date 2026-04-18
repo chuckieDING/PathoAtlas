@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { invalidateJsonCache } from '@/lib/data';
 import { appendAuditLog, computeDiff } from '@/lib/audit';
+import { getDataDir } from '@/lib/dataDir';
 
 /**
  * Drop the in-process JSON cache for markers.json and revalidate every
@@ -41,7 +42,7 @@ const EDITABLE_FIELDS = [
 
 type EditableField = (typeof EDITABLE_FIELDS)[number];
 
-const MARKERS_FILE = path.join(process.cwd(), 'data', 'markers.json');
+const MARKERS_FILE = path.join(getDataDir(), 'markers.json');
 
 function readList(): Record<string, unknown>[] {
   return JSON.parse(fs.readFileSync(MARKERS_FILE, 'utf-8')) as Record<string, unknown>[];

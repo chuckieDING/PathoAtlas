@@ -1,5 +1,6 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+import { getDataDir } from '@/lib/dataDir';
 
 interface MolecularMarker {
   id: string;
@@ -22,7 +23,7 @@ let cachedMarkers: MolecularMarker[] | null = null;
 export async function GET() {
   try {
     if (!cachedMarkers) {
-      const filePath = join(process.cwd(), 'data', 'molecular.json');
+      const filePath = join(getDataDir(), 'molecular.json');
       const data = await readFile(filePath, 'utf-8');
       cachedMarkers = JSON.parse(data);
     }

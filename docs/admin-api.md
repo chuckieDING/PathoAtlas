@@ -222,6 +222,111 @@ curl -X PUT https://your-deployment.example.com/api/admin/marker \
 
 ---
 
+## 通用 Content API（其他 12 个模块）
+
+非疾病/标记物的模块（器官、鉴别诊断、分期、病例等）统一通过一个通用路由管理：
+
+```
+GET    /api/admin/content/<module>           → 列表
+POST   /api/admin/content/<module>           → 新建（body: { entry: { id, ... } }）
+PUT    /api/admin/content/<module>           → 合并更新（body: { id, updates: {...} }）
+DELETE /api/admin/content/<module>?id=<id>   → 删除
+```
+
+### 支持的模块
+
+| Module key | 数据文件 | 内容 |
+|------------|---------|------|
+| `organs` | organs.json | 器官系统 |
+| `differentials` | differentials.json | 鉴别诊断场景 |
+| `flowcharts` | flowcharts.json | 鉴别流程图（SVG 节点/边） |
+| `staging` | staging.json | 分级分期系统（Nottingham、TNM 等） |
+| `cases` | cases.json | 虚拟病例 |
+| `cytology` | cytology.json | 细胞病理分类系统（Bethesda、TBS 等） |
+| `frozen-sections` | frozen-sections.json | 冰冻切片协议 |
+| `glossary` | glossary.json | 术语词汇表 |
+| `grossing` | grossing.json | 取材规范 |
+| `molecular` | molecular.json | 分子病理标志物 |
+| `reports` | synoptic-templates.json | CAP 同步报告模板 |
+| `special-stains` | special-stains.json | 特殊染色 |
+
+### 示例：添加一个鉴别诊断场景
+
+```bash
+curl -X POST https://your-deployment.example.com/api/admin/content/differentials \
+  -H "Authorization: Bearer $ADMIN_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "entry": {
+      "id": "pleomorphic-sarcoma",
+      "titleZh": "多形性肉瘤鉴别",
+      "titleEn": "Pleomorphic Sarcoma Differentials",
+      "description": "...",
+      "diseases": ["leiomyosarcoma", "malignant-peripheral-nerve-sheath-tumor"],
+      "keyMarkers": ["SMA", "Desmin", "S-100", "MDM2"],
+      "algorithm": "..."
+    }
+  }'
+```
+
+### 示例：更新一个分期系统
+
+```bash
+curl -X PUT https://your-deployment.example.com/api/admin/content/staging \
+  -H "Authorization: Bearer $ADMIN_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": "breast-nottingham",
+    "updates": {
+      "description": "修订后的 Nottingham 评分说明"
+    }
+  }'
+```
+
+### 示例：删除一个术语
+
+```bash
+curl -X DELETE "https://your-deployment.example.com/api/admin/content/glossary?id=obsolete-term" \
+  -H "Authorization: Bearer $ADMIN_API_TOKEN"
+```
+
+### 约束
+
+- `entry.id` 必须匹配 `^[a-z0-9][a-z0-9-]*$`（字母数字 + 连字符）
+- PUT 时 `id` 字段会被忽略（防止 ID 修改破坏交叉引用）
+- POST 创建时如 id 已存在返回 409
+- 所有 PUT/POST/DELETE 操作都会自动：
+  1. 写入 `data-runtime/<file>.json`（原子替换）
+  2. 清除内存 JSON 缓存
+  3. 触发相关页面的 Next.js Router 缓存刷新
+  4. 追加一条审计日志到 `data-runtime/audit-log.jsonl`
+
+---
+
+## 审计日志
+
+所有 CRUD 操作自动写入 `data-runtime/audit-log.jsonl`，每行一条 JSON：
+
+```json
+{
+  "timestamp": "2026-04-18T10:30:00.000Z",
+  "actor": "chuckieding@gmail.com",
+  "action": "update",
+  "entityType": "disease",
+  "entityId": "invasive-ductal-carcinoma-nst",
+  "organ": "breast",
+  "diff": { "microscopy": { "old": "...", "new": "..." } }
+}
+```
+
+查询接口：
+
+```
+GET /api/admin/audit                    → 返回全部日志（最新在前）
+```
+
+---
+
 ## 错误响应
 
 所有失败都返回 JSON `{ error: "..." }` 配合 HTTP 状态码：
@@ -230,6 +335,6 @@ curl -X PUT https://your-deployment.example.com/api/admin/marker \
 |---|---|
 | 400 | 缺字段 / id 格式错误 |
 | 401 | 未鉴权 / session 过期 / bearer 不匹配 |
-| 404 | organ 文件或 id 不存在 |
+| 404 | organ 文件、module 或 id 不存在 |
 | 409 | POST 新建时 id 冲突 |
 | 500 | 服务端异常（磁盘写入失败等） |
