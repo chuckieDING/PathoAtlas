@@ -2508,8 +2508,7 @@ function ContentManager({
 
   return (
     <div>
-      {/* Module selector (hidden when category has only 1 module) */}
-      {filteredModules.length > 1 && (
+      {/* Module selector — always shown for 二级菜单一致性 */}
       <div className="flex gap-1.5 overflow-x-auto pb-1 mb-4 -mx-1 px-1">
         {filteredModules.map(m => (
           <button
@@ -2531,7 +2530,6 @@ function ContentManager({
           </button>
         ))}
       </div>
-      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-4 items-start">
         {/* Left: entry list */}
