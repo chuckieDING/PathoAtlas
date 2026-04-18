@@ -484,22 +484,7 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
           </p>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          {currentEmail ? (
-            <>
-              <span className="text-xs" style={{ color: 'var(--fg-muted)' }}>
-                登录为 <span style={{ color: 'var(--fg)' }}>{currentEmail}</span>
-              </span>
-              {onLogout && (
-                <button
-                  onClick={onLogout}
-                  className="text-xs px-3 py-1.5 rounded-md"
-                  style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' }}
-                >
-                  登出
-                </button>
-              )}
-            </>
-          ) : (
+          {!currentEmail && (
             <span className="text-xs px-2 py-1 rounded" style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b', border: '1px solid rgba(245,158,11,0.3)' }}>
               dev 模式（未启用鉴权）
             </span>
@@ -560,10 +545,10 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
       )}
 
       {(kind === 'disease' || kind === 'marker') && (
-      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4 lg:h-[calc(100vh-14rem)]">
         {/* List panel */}
         <aside
-          className="rounded-xl p-3 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto"
+          className="rounded-xl p-3 lg:overflow-y-auto"
           style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
         >
           <button
@@ -657,7 +642,7 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         </aside>
 
         {/* Editor panel */}
-        <main className="rounded-xl p-5 min-h-[70vh]" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+        <main className="rounded-xl p-5 lg:overflow-y-auto" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
           {!selected && (
             <div className="flex items-center justify-center h-full text-sm" style={{ color: 'var(--fg-muted)' }}>
               请从左侧选择一个{kind === 'disease' ? '疾病' : '标记物'}条目，或点击顶部 &quot;+ 新建&quot; 创建
@@ -2531,10 +2516,10 @@ function ContentManager({
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-4 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-4 lg:h-[calc(100vh-18rem)]">
         {/* Left: entry list */}
         <aside
-          className="rounded-xl p-3 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto"
+          className="rounded-xl p-3 lg:overflow-y-auto"
           style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
         >
           {/* Create new */}
@@ -2611,7 +2596,7 @@ function ContentManager({
         </aside>
 
         {/* Right: JSON editor */}
-        <main className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+        <main className="rounded-xl p-4 lg:overflow-y-auto" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
           {!selectedEntry ? (
             <div className="text-center py-16" style={{ color: 'var(--fg-muted)' }}>
               <p className="text-sm mb-2">选择左侧条目以编辑</p>
