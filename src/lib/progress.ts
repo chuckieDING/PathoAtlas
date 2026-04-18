@@ -1,9 +1,8 @@
 // Duolingo-style gamification + learning progress system
-// All data stored in localStorage, no backend required.
+// Data persisted to server via /api/user/progress.
+// In-memory cache keeps the synchronous API surface unchanged.
 
 'use client';
-
-const STORAGE_KEY = 'pathoatlas-progress';
 
 export type MasteryLevel = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -58,6 +57,9 @@ export interface ProgressState {
   totalCardsReviewed: number;
   totalCorrect: number;
   totalWrong: number;
+
+  // Onboarding
+  guideCompleted?: boolean;
 
   createdAt: string;
 }
@@ -127,25 +129,48 @@ function createDefaultState(): ProgressState {
   };
 }
 
-// ── Storage ───────────────────────────────────────────────
+// ── Storage (in-memory cache + debounced server sync) ────
+
+let cachedState: ProgressState | null = null;
+let saveTimer: ReturnType<typeof setTimeout> | null = null;
+
 export function loadProgress(): ProgressState {
-  if (typeof window === 'undefined') return createDefaultState();
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return createDefaultState();
-    return { ...createDefaultState(), ...JSON.parse(raw) };
-  } catch {
-    return createDefaultState();
-  }
+  if (cachedState) return cachedState;
+  return createDefaultState();
 }
 
 export function saveProgress(state: ProgressState): void {
+  cachedState = state;
   if (typeof window === 'undefined') return;
+  // Notify components immediately
+  window.dispatchEvent(new CustomEvent('pathoatlas:progress-update'));
+  // Debounced server write (500ms)
+  if (saveTimer) clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    fetch('/api/user/progress', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(state),
+    }).catch(() => { /* network error — will retry on next save */ });
+  }, 500);
+}
+
+/** Hydrate the in-memory cache from the server. Call once on app mount. */
+export async function initProgress(): Promise<ProgressState> {
+  if (typeof window === 'undefined') return createDefaultState();
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    // Dispatch event so components can re-render
-    window.dispatchEvent(new CustomEvent('pathoatlas:progress-update'));
-  } catch { /* quota exceeded etc */ }
+    const res = await fetch('/api/user/progress');
+    if (res.ok) {
+      const data = await res.json();
+      cachedState = { ...createDefaultState(), ...data };
+    } else {
+      cachedState = createDefaultState();
+    }
+  } catch {
+    cachedState = createDefaultState();
+  }
+  window.dispatchEvent(new CustomEvent('pathoatlas:progress-update'));
+  return cachedState!;
 }
 
 // ── Streak Updates ─────────────────────────────────────────

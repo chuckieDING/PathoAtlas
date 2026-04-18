@@ -8,6 +8,7 @@ import {
 } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
 import { HomeDashboard } from '@/components/HomeDashboard';
+import { HomeGuide } from '@/components/HomeGuide';
 
 const CORE_MODULES = [
   {
@@ -83,7 +84,7 @@ const SPECIALTY_MODULES = [
   {
     href: '/panel-builder',
     icon: IconLayers,
-    title: 'IHC Panel Builder',
+    title: 'IHC组合构建器',
     desc: '交互式免疫组化鉴别诊断工具，4步推导',
     color: '#6366f1',
   },
@@ -108,6 +109,13 @@ const SPECIALTY_MODULES = [
     desc: '300+病理学专业术语中英文释义',
     color: '#f59e0b',
   },
+  {
+    href: '/staging',
+    icon: IconActivity,
+    title: '分级分期系统',
+    desc: 'TNM/FIGO/Nottingham等分级与分期评分体系',
+    color: '#eab308',
+  },
 ];
 
 export default function HomePage() {
@@ -118,8 +126,10 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <HomeGuide />
+
       {/* ── Hero ── */}
-      <section className="pt-12 sm:pt-20 pb-10 sm:pb-14 text-center">
+      <section data-guide="hero" className="pt-12 sm:pt-20 pb-10 sm:pb-14 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
           style={{ background: 'rgba(99,102,241,0.1)', color: 'var(--accent)' }}>
           <IconDna size={14} />
@@ -165,7 +175,7 @@ export default function HomePage() {
       <HomeDashboard />
 
       {/* ── Core Learning Modules ── */}
-      <section className="mb-14">
+      <section data-guide="core-modules" className="mb-14">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-xl font-bold" style={{ color: 'var(--fg)' }}>核心学习模块</h2>
         </div>
@@ -199,7 +209,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Specialty Modules ── */}
-      <section className="mb-14">
+      <section data-guide="specialty-modules" className="mb-14">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-xl font-bold" style={{ color: 'var(--fg)' }}>专项工具</h2>
         </div>

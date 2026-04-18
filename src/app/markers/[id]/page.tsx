@@ -6,6 +6,7 @@ import { IconFlask, IconBookOpen, IconSearch } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
 import { ImageLightbox } from '@/components/ImageLightbox';
 import { getMarkerDiagram, type MarkerDiagram } from '@/lib/markerDiagrams';
+import NotesAndFavorites from '@/components/NotesAndFavorites';
 
 // ── Types ──────────────────────────────────────────────────────────
 
@@ -104,7 +105,8 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
     .filter((o): o is Organ => !!o);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+    <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-8">
+      <NotesAndFavorites entityType="marker" entityId={m.id} entityName={m.nameZh || m.abbreviation} entityHref={`/markers/${m.id}`} />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm mb-6 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
         <Link href="/markers" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>
@@ -318,9 +320,6 @@ export default function MarkerDetailPage({ params }: { params: Promise<{ id: str
           ) : (
             <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
               <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>该标记物尚未配置染色形态分组</p>
-              <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>
-                可在管理后台 <Link href="/admin" style={{ color: 'var(--accent)' }}>/admin</Link> 添加阴/阳性、1+/2+/3+ 等分组并上传图片
-              </p>
             </div>
           )}
         </div>
@@ -511,7 +510,7 @@ function StainingGallery({
                 className="text-xs text-center py-6 rounded"
                 style={{ color: 'var(--fg-muted)', border: '1px dashed var(--border)', background: 'var(--bg-secondary)' }}
               >
-                暂无 {g.label} 结果的染色图 · 管理后台可上传
+                暂无 {g.label} 结果的染色图
               </div>
             ) : (
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

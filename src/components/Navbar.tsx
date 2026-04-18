@@ -8,8 +8,11 @@ import {
   IconSearch, IconMenu, IconSun, IconMoon, IconDna, IconInfo, IconHelp,
   IconGithub, IconX, IconSettings, IconBookOpen, IconSnowflake, IconScissors,
   IconClipboard, IconLayers, IconMap, IconFileText, IconBrain, IconHeart,
+  IconActivity,
 } from './Icon';
 import { NavbarProgress } from './ProgressWidgets';
+import { useUser, clearUserCache } from './useUser';
+import { GUIDE_START_EVENT } from './useGuide';
 
 const NAV_PRIMARY = [
   { href: '/', label: '首页', icon: IconHome },
@@ -33,12 +36,13 @@ const MENU_GROUPS = [
   {
     title: '专项工具',
     items: [
-      { href: '/panel-builder', label: 'IHC Panel Builder', desc: '交互式免疫组化鉴别诊断', icon: IconLayers, color: '#6366f1' },
+      { href: '/panel-builder', label: 'IHC组合构建器', desc: '交互式免疫组化鉴别诊断', icon: IconLayers, color: '#6366f1' },
       { href: '/molecular', label: '分子病理学', desc: '驱动基因与靶向检测', icon: IconDna, color: '#8b5cf6' },
       { href: '/cyto', label: '细胞病理学', desc: '分类标准与恶性风险', icon: IconBookOpen, color: '#06b6d4' },
       { href: '/frozen', label: '冰冻切片', desc: '术中快速诊断决策', icon: IconSnowflake, color: '#3b82f6' },
       { href: '/grossing', label: '取材规范', desc: '标本处理操作规程', icon: IconScissors, color: '#14b8a6' },
       { href: '/reports', label: 'CAP报告', desc: '结构化病理报告模板', icon: IconClipboard, color: '#f97316' },
+      { href: '/staging', label: '分级分期系统', desc: 'TNM/FIGO/Nottingham等评分', icon: IconActivity, color: '#eab308' },
     ],
   },
   {
@@ -68,6 +72,8 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const user = useUser();
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -142,10 +148,11 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-1.5">
-            <NavbarProgress />
+            <span data-guide="progress"><NavbarProgress /></span>
 
             {/* Search */}
             <button
+              data-guide="search"
               onClick={() => { setSearchOpen(v => !v); setMenuOpen(false); }}
               className="theme-btn"
               title="搜索"
@@ -165,13 +172,65 @@ export function Navbar() {
               ref={menuButtonRef}
               type="button"
               className="theme-btn"
-              onClick={() => { setMenuOpen(v => !v); setSearchOpen(false); }}
+              onClick={() => { setMenuOpen(v => !v); setSearchOpen(false); setUserMenuOpen(false); }}
               aria-label="菜单"
               aria-haspopup="menu"
               aria-expanded={menuOpen}
             >
               {menuOpen ? <IconX size={18} /> : <IconMenu size={18} />}
             </button>
+
+            {/* User avatar */}
+            {user && (
+              <div data-guide="user-avatar" className="relative">
+                <button
+                  onClick={() => { setUserMenuOpen(v => !v); setMenuOpen(false); setSearchOpen(false); }}
+                  className="w-8 h-8 rounded-full overflow-hidden border-2 transition-colors cursor-pointer flex-shrink-0"
+                  style={{ borderColor: userMenuOpen ? 'var(--accent)' : 'var(--border)' }}
+                  title={user.name || user.email}
+                >
+                  {user.picture ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={user.picture} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  ) : (
+                    <span className="w-full h-full flex items-center justify-center text-xs font-bold" style={{ background: 'var(--accent)', color: '#fff' }}>
+                      {(user.name || user.email)[0]?.toUpperCase()}
+                    </span>
+                  )}
+                </button>
+                {userMenuOpen && (
+                  <>
+                    <div className="fixed inset-0" style={{ zIndex: 40 }} onClick={() => setUserMenuOpen(false)} />
+                    <div
+                      className="absolute right-0 top-10 w-56 rounded-xl border shadow-lg p-3 space-y-2"
+                      style={{ background: 'var(--card)', borderColor: 'var(--border)', zIndex: 50 }}
+                    >
+                      <div className="px-2 py-1">
+                        <div className="text-sm font-medium truncate" style={{ color: 'var(--fg)' }}>{user.name || '用户'}</div>
+                        <div className="text-xs truncate" style={{ color: 'var(--fg-muted)' }}>{user.email}</div>
+                        {user.isAdmin && (
+                          <span className="inline-block mt-1 text-[10px] px-1.5 py-0.5 rounded" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent)' }}>管理员</span>
+                        )}
+                      </div>
+                      <div style={{ borderTop: '1px solid var(--border)' }} />
+                      <button
+                        onClick={async () => {
+                          await fetch('/api/auth/logout', { method: 'POST' });
+                          clearUserCache();
+                          window.location.href = '/login';
+                        }}
+                        className="w-full text-left px-2 py-1.5 rounded-lg text-sm cursor-pointer transition-colors"
+                        style={{ color: 'var(--danger)' }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--card-hover)'; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
+                      >
+                        退出登录
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -279,6 +338,22 @@ export function Navbar() {
                   <IconGithub size={14} />
                   <span>GitHub</span>
                 </a>
+                <button
+                  onClick={() => {
+                    setMenuOpen(false);
+                    // Navigate to homepage first, then trigger guide
+                    if (window.location.pathname !== '/') {
+                      window.location.href = '/?guide=1';
+                    } else {
+                      window.dispatchEvent(new CustomEvent(GUIDE_START_EVENT));
+                    }
+                  }}
+                  className="flex items-center gap-1 transition-colors"
+                  style={{ color: 'var(--accent)', background: 'none', border: 'none', cursor: 'pointer' }}
+                >
+                  <IconHelp size={14} />
+                  <span>功能引导</span>
+                </button>
                 <button onClick={() => setMenuOpen(false)} className="flex items-center gap-1 transition-colors" style={{ color: 'var(--fg-muted)', background: 'none', border: 'none', cursor: 'pointer' }}>
                   <span>关闭菜单</span>
                   <span style={{ opacity: 0.5 }}>ESC</span>

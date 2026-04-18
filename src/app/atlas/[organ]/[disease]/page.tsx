@@ -10,6 +10,7 @@ import { MasteryDots } from '@/components/ProgressWidgets';
 import { IconCheckCircle, IconZap, IconSearch, IconX, IconBookOpen } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
 import { ImageLightbox } from '@/components/ImageLightbox';
+import NotesAndFavorites from '@/components/NotesAndFavorites';
 import { NottinghamGrade } from '@/components/calculators/NottinghamGrade';
 import { GleasonGrade } from '@/components/calculators/GleasonGrade';
 import { ISUPGrade } from '@/components/calculators/ISUPGrade';
@@ -58,11 +59,18 @@ interface LiteratureItem {
   sourceUrl?: string;
   viewUrl?: string;
 }
+interface StainProfileItem {
+  stain: string;
+  result: string;
+  note: string;
+}
+
 interface DiseaseData {
   id: string; nameZh: string; nameEn: string; aliases: string[]; organ: string;
   category: string; epidemiology: string; clinicalFeatures: string; grossPathology: string;
   grossDescription?: string;
   microscopy: string; keyFeatures: string[]; ihcProfile: IHCItem[];
+  specialStainProfile?: StainProfileItem[];
   molecularFeatures: string; differentialDiagnosis: string[];
   differentialDiagnosisNotes?: string;
   grading: string;
@@ -150,7 +158,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
     { id: 'microscopy', label: '镜下特征' },
     { id: 'ihc', label: `免疫组化 (${d.ihcProfile.length})` },
     { id: 'molecular', label: '分子病理' },
-    { id: 'special-stains', label: '特殊染色' },
+    { id: 'special-stains', label: `特殊染色${d.specialStainProfile?.length ? ` (${d.specialStainProfile.length})` : ''}` },
     { id: 'differential', label: `鉴别诊断 (${d.differentialDiagnosis.length})` },
     { id: 'consensus', label: `专家共识${consensusCount ? ` (${consensusCount})` : ''}` },
     { id: 'literature', label: `文献参考${literatureCount ? ` (${literatureCount})` : ''}` },
@@ -160,7 +168,8 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   const categoryBadge = { malignant: '恶性', benign: '良性', precancerous: '癌前', inflammatory: '炎症', other: '其他' }[d.category] || d.category;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+    <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-8">
+      <NotesAndFavorites entityType="disease" entityId={d.id} entityName={d.nameZh} entityHref={`/atlas/${organ}/${d.id}`} />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm mb-6 flex-wrap" style={{ color: 'var(--fg-muted)' }}>
         <Link href="/atlas" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>图谱</Link>
@@ -254,7 +263,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
           )}
           {(!d.grossImages || d.grossImages.length === 0) && (
             <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>
-              暂无大体形态图片。点击右上角反馈补充更多影像。
+              暂无大体形态图片
             </p>
           )}
         </div>
@@ -374,29 +383,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
       )}
 
       {tab === 'special-stains' && (
-        <div className="space-y-6">
-          <div className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-            特殊染色用于辅助诊断，显示特定组织成分或病理改变。
-          </div>
-          <div className="grid gap-4">
-            {/* Placeholder for special stains - will be populated from data/special-stains.json */}
-            <div className="p-4 rounded-lg" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-              <h3 className="font-semibold mb-2">常见特殊染色</h3>
-              <div className="text-sm space-y-2" style={{ color: 'var(--fg-muted)' }}>
-                <div><strong>PAS染色：</strong>检测糖原、多糖、黏蛋白</div>
-                <div><strong>普鲁士蓝染色：</strong>检测含铁血黄素</div>
-                <div><strong>抗酸染色：</strong>检测分枝杆菌</div>
-                <div><strong>姬姆萨染色：</strong>细胞核和细胞质染色</div>
-                <div><strong>Masson三色染色：</strong>区分胶原、肌肉和平滑肌</div>
-                <div><strong>阿利新蓝染色：</strong>检测酸性黏多糖</div>
-                <div><strong>刚果红染色：</strong>检测淀粉样物质</div>
-                <div><strong>网状纤维染色：</strong>显示网状纤维</div>
-                <div><strong>Verhoeff染色：</strong>显示弹性纤维</div>
-                <div><strong>油红O染色：</strong>检测中性脂肪</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SpecialStainsTab profile={d.specialStainProfile || []} />
       )}
 
       {tab === 'differential' && (
@@ -631,7 +618,6 @@ function ConsensusList({ items }: { items: ConsensusItem[] }) {
     return (
       <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
         <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无专家共识数据</p>
-        <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>可通过管理后台补充 WHO / NCCN / CSCO 等指南条目</p>
       </div>
     );
   }
@@ -669,7 +655,6 @@ function LiteratureList({ items }: { items: LiteratureItem[] }) {
     return (
       <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
         <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无文献参考数据</p>
-        <p className="text-xs mt-2" style={{ color: 'var(--fg-muted)', opacity: 0.7 }}>可通过管理后台补充 PubMed / 核心期刊文献</p>
       </div>
     );
   }
@@ -728,6 +713,120 @@ function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: s
           )}
           在线阅览
         </a>
+      )}
+    </div>
+  );
+}
+
+// ── Special Stains Tab ───────────────────────────────────────
+
+function stainSlug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
+
+interface SpecialStainRef {
+  id: string; nameZh: string; nameEn: string; abbreviation: string;
+  targetProtein: string; interpretation: string;
+  positiveResult: string; negativeResult: string;
+}
+
+function SpecialStainsTab({ profile }: { profile: StainProfileItem[] }) {
+  const [refStains, setRefStains] = useState<SpecialStainRef[]>([]);
+  const [showRef, setShowRef] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/special-stains')
+      .then(r => r.json())
+      .then(setRefStains)
+      .catch(() => {});
+  }, []);
+
+  return (
+    <div className="space-y-6">
+      {/* Disease-specific stain profile table (same structure as IHC tab) */}
+      {profile.length > 0 ? (
+        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr style={{ background: 'var(--card-hover)' }}>
+                <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--fg)' }}>染色方法</th>
+                <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--fg)' }}>结果</th>
+                <th className="text-left px-4 py-3 font-semibold hidden sm:table-cell" style={{ color: 'var(--fg)' }}>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              {profile.map((s, i) => {
+                const isPositive = s.result.includes('阳') || s.result.includes('+') || s.result.includes('蓝') || s.result.includes('红') || s.result.includes('黑');
+                const slug = stainSlug(s.stain);
+                return (
+                  <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                    <td className="px-4 py-3 font-mono font-semibold">
+                      <Link
+                        href={`/markers/${slug}`}
+                        className="inline-flex items-center gap-1.5 transition-colors"
+                        style={{ color: 'var(--accent)', textDecoration: 'none' }}
+                      >
+                        {s.stain}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span
+                        className="px-2 py-0.5 rounded text-xs font-medium"
+                        style={{
+                          background: isPositive ? 'rgba(34,197,94,0.12)' : 'rgba(239,68,68,0.12)',
+                          color: isPositive ? '#22c55e' : '#ef4444',
+                        }}
+                      >
+                        {s.result}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-xs hidden sm:table-cell" style={{ color: 'var(--fg-muted)' }}>
+                      {s.note}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无该疾病的特殊染色数据</p>
+      )}
+
+      {/* Collapsible reference of all stains */}
+      {refStains.length > 0 && (
+        <div>
+          <button
+            onClick={() => setShowRef(v => !v)}
+            className="text-xs font-medium cursor-pointer flex items-center gap-1"
+            style={{ color: 'var(--accent)', background: 'none', border: 'none' }}
+          >
+            <span>{showRef ? '收起' : '展开'}特殊染色参考手册 ({refStains.length})</span>
+            <span style={{ transform: showRef ? 'rotate(180deg)' : '', transition: 'transform 0.2s' }}>▼</span>
+          </button>
+          {showRef && (
+            <div className="grid gap-3 sm:grid-cols-2 mt-3">
+              {refStains.map(s => (
+                <Link
+                  key={s.id}
+                  href={`/markers/${s.id}`}
+                  className="p-4 rounded-lg block transition-colors"
+                  style={{ background: 'var(--card)', border: '1px solid var(--border)', textDecoration: 'none' }}
+                >
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="font-mono font-semibold text-sm" style={{ color: 'var(--accent)' }}>{s.abbreviation}</span>
+                    <span className="text-sm" style={{ color: 'var(--fg)' }}>{s.nameZh}</span>
+                  </div>
+                  <div className="text-xs space-y-1" style={{ color: 'var(--fg-muted)' }}>
+                    <div><strong style={{ color: 'var(--fg)' }}>检测：</strong>{s.targetProtein}</div>
+                    <div><strong style={{ color: '#22c55e' }}>阳性：</strong>{s.positiveResult}</div>
+                    <div><strong style={{ color: '#ef4444' }}>阴性：</strong>{s.negativeResult}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

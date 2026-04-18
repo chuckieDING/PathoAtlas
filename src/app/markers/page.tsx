@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { IconFlask, IconSearch, IconX, IconBookOpen, IconArrowRight } from '@/components/Icon';
 import { OrganIcon } from '@/components/OrganIcon';
-import { getMarkerDiagram, MARKERS_WITH_DIAGRAM } from '@/lib/markerDiagrams';
+import { getMarkerDiagram } from '@/lib/markerDiagrams';
 
 interface Marker {
   id: string; nameZh: string; nameEn: string; abbreviation: string; category: string;
@@ -18,6 +18,8 @@ interface Marker {
 
 interface Organ { id: string; nameZh: string; nameEn: string; color: string }
 
+type PageMode = 'ihc' | 'special-stains';
+
 const CATEGORIES: { key: string; label: string }[] = [
   { key: 'all', label: '全部' },
   { key: '上皮标记', label: '上皮' },
@@ -30,34 +32,50 @@ const CATEGORIES: { key: string; label: string }[] = [
   { key: '其他', label: '其他' },
 ];
 
+const STAIN_CATEGORIES: { key: string; label: string }[] = [
+  { key: 'all', label: '全部' },
+  { key: '多糖染色', label: '多糖' },
+  { key: '结缔组织染色', label: '结缔组织' },
+  { key: '微生物染色', label: '微生物' },
+  { key: '矿物质染色', label: '矿物质' },
+  { key: '蛋白质染色', label: '蛋白质' },
+  { key: '脂质染色', label: '脂质' },
+];
+
 export default function MarkersPage() {
   const [markers, setMarkers] = useState<Marker[]>([]);
+  const [stains, setStains] = useState<Marker[]>([]);
   const [organs, setOrgans] = useState<Organ[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mode, setMode] = useState<PageMode>('ihc');
   const [filter, setFilter] = useState('all');
   const [organFilter, setOrganFilter] = useState<string>('all');
   const [search, setSearch] = useState('');
-  const [onlyWithDiagram, setOnlyWithDiagram] = useState(false);
+  const [organExpanded, setOrganExpanded] = useState(false);
 
   useEffect(() => {
     Promise.all([
       fetch('/api/markers').then(r => r.json()),
       fetch('/api/organs').then(r => r.json()),
+      fetch('/api/special-stains').then(r => r.json()),
     ])
-      .then(([m, o]) => {
+      .then(([m, o, s]) => {
         setMarkers(Array.isArray(m) ? m : []);
         setOrgans(Array.isArray(o) ? o : []);
+        setStains(Array.isArray(s) ? s : []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
 
+  const activeItems = mode === 'ihc' ? markers : stains;
+  const activeCategories = mode === 'ihc' ? CATEGORIES : STAIN_CATEGORIES;
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    return markers.filter(m => {
+    return activeItems.filter(m => {
       if (filter !== 'all' && m.category !== filter) return false;
-      if (organFilter !== 'all' && !(m.organs || []).includes(organFilter)) return false;
-      if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
+      if (mode === 'ihc' && organFilter !== 'all' && !(m.organs || []).includes(organFilter)) return false;
       if (!q) return true;
       return (
         m.nameZh.includes(q) ||
@@ -67,14 +85,13 @@ export default function MarkersPage() {
         m.positiveIn.some(p => p.toLowerCase().includes(q))
       );
     });
-  }, [markers, filter, organFilter, search, onlyWithDiagram]);
+  }, [activeItems, filter, organFilter, search, mode]);
 
   // Category counts that honor the organ filter + search chain so chip
   // counts stay in sync with the visible results.
   const counts = useMemo(() => {
-    const base = markers.filter(m => {
-      if (organFilter !== 'all' && !(m.organs || []).includes(organFilter)) return false;
-      if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
+    const base = activeItems.filter(m => {
+      if (mode === 'ihc' && organFilter !== 'all' && !(m.organs || []).includes(organFilter)) return false;
       const q = search.trim().toLowerCase();
       if (!q) return true;
       return m.nameZh.includes(q) || m.nameEn.toLowerCase().includes(q) || m.abbreviation.toLowerCase().includes(q);
@@ -82,12 +99,11 @@ export default function MarkersPage() {
     const map: Record<string, number> = { all: base.length };
     for (const m of base) map[m.category] = (map[m.category] || 0) + 1;
     return map;
-  }, [markers, search, organFilter, onlyWithDiagram]);
+  }, [activeItems, search, organFilter, mode]);
 
   const organCounts = useMemo(() => {
-    const base = markers.filter(m => {
+    const base = activeItems.filter(m => {
       if (filter !== 'all' && m.category !== filter) return false;
-      if (onlyWithDiagram && !getMarkerDiagram(m.id)) return false;
       const q = search.trim().toLowerCase();
       if (!q) return true;
       return m.nameZh.includes(q) || m.nameEn.toLowerCase().includes(q) || m.abbreviation.toLowerCase().includes(q);
@@ -95,7 +111,7 @@ export default function MarkersPage() {
     const map: Record<string, number> = { all: base.length };
     for (const m of base) for (const o of m.organs || []) map[o] = (map[o] || 0) + 1;
     return map;
-  }, [markers, filter, search, onlyWithDiagram]);
+  }, [activeItems, filter, search]);
 
   // Preserve the grouped-by-category layout so the catalog still reads like
   // a reference index; each group renders as a responsive card grid.
@@ -105,11 +121,11 @@ export default function MarkersPage() {
       const cat = m.category || '其他';
       (byCat[cat] ||= []).push(m);
     }
-    return CATEGORIES
+    return activeCategories
       .map(c => c.key)
       .filter(k => k !== 'all' && byCat[k]?.length)
-      .map(k => ({ key: k, label: CATEGORIES.find(c => c.key === k)!.label, items: byCat[k] }));
-  }, [filtered]);
+      .map(k => ({ key: k, label: activeCategories.find(c => c.key === k)!.label, items: byCat[k] }));
+  }, [filtered, activeCategories]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
@@ -117,11 +133,34 @@ export default function MarkersPage() {
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-1 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
           <IconFlask size={24} style={{ color: '#22c55e' }} />
-          <span>免疫组化标记物目录</span>
+          <span>{mode === 'ihc' ? '免疫组化标记物' : '特殊染色'}目录</span>
         </h1>
         <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-          {markers.length} 个常用标记物 · <span style={{ color: 'var(--accent)' }}>{MARKERS_WITH_DIAGRAM}</span> 个附机制概念图 · 点击卡片查看详情
+          {mode === 'ihc'
+            ? `${markers.length} 个常用标记物 · 点击卡片查看详情`
+            : `${stains.length} 种特殊染色方法 · 点击卡片查看详情`
+          }
         </p>
+      </div>
+
+      {/* Mode toggle: IHC / Special Stains */}
+      <div className="flex gap-1 mb-4" style={{ borderBottom: '1px solid var(--border)' }}>
+        {([['ihc', '免疫组化'], ['special-stains', '特殊染色']] as const).map(([key, label]) => (
+          <button
+            key={key}
+            onClick={() => { setMode(key); setFilter('all'); setOrganFilter('all'); setSearch(''); setOrganExpanded(false); }}
+            className="px-4 py-2.5 text-sm font-medium border-b-2 transition-colors"
+            style={{
+              borderBottomColor: mode === key ? 'var(--accent)' : 'transparent',
+              color: mode === key ? 'var(--fg)' : 'var(--fg-muted)',
+            }}
+          >
+            {label}
+            <span className="ml-1.5 text-xs tabular-nums" style={{ opacity: 0.6 }}>
+              {key === 'ihc' ? markers.length : stains.length}
+            </span>
+          </button>
+        ))}
       </div>
 
       {/* Sticky search + filters */}
@@ -132,14 +171,14 @@ export default function MarkersPage() {
           backdropFilter: 'blur(6px)',
         }}
       >
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex gap-2 items-center">
           <div className="relative flex-1 max-w-md">
             <div className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--fg-muted)' }}>
               <IconSearch size={16} />
             </div>
             <input
               type="text"
-              placeholder="搜索：CK7 / 雌激素受体 / 乳腺癌…"
+              placeholder={mode === 'ihc' ? '搜索：CK7 / 雌激素受体 / 乳腺癌…' : '搜索：PAS / Masson / 刚果红 / 纤维化…'}
               value={search}
               onChange={e => setSearch(e.target.value)}
               className="w-full pl-9 pr-9 py-2.5 rounded-lg text-sm outline-none transition-colors"
@@ -156,25 +195,11 @@ export default function MarkersPage() {
               </button>
             )}
           </div>
-
-          <button
-            onClick={() => setOnlyWithDiagram(v => !v)}
-            className="px-3 py-2 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap"
-            style={{
-              background: onlyWithDiagram ? 'var(--accent)' : 'var(--card)',
-              color: onlyWithDiagram ? '#fff' : 'var(--fg-muted)',
-              border: '1px solid var(--border)',
-            }}
-            aria-pressed={onlyWithDiagram}
-          >
-            <IconBookOpen size={14} />
-            <span>仅看带机制图</span>
-          </button>
         </div>
 
         {/* Category chips */}
         <div className="flex gap-1.5 overflow-x-auto pb-1 mt-3 -mx-1 px-1">
-          {CATEGORIES.map(c => {
+          {activeCategories.map(c => {
             const n = counts[c.key] || 0;
             const active = filter === c.key;
             return (
@@ -206,32 +231,30 @@ export default function MarkersPage() {
           })}
         </div>
 
-        {/* Organ chips */}
-        {organs.length > 0 && (
-          <div className="flex gap-1.5 overflow-x-auto pb-1 mt-2 -mx-1 px-1 items-center">
-            <span className="text-[10px] font-semibold uppercase tracking-wider flex-shrink-0 pl-1 pr-1" style={{ color: 'var(--fg-muted)' }}>
-              器官
-            </span>
+        {/* Organ filter (only for IHC mode, collapsed by default) */}
+        {mode === 'ihc' && organs.length > 0 && (
+          <div className="mt-2 flex items-center gap-2 flex-wrap">
             <button
-              onClick={() => setOrganFilter('all')}
-              className="px-2.5 py-1 rounded-full text-xs font-medium transition-colors flex-shrink-0 flex items-center gap-1.5"
-              style={{
-                background: organFilter === 'all' ? 'var(--accent)' : 'var(--card)',
-                color: organFilter === 'all' ? '#fff' : 'var(--fg-muted)',
-                border: `1px solid ${organFilter === 'all' ? 'var(--accent)' : 'var(--border)'}`,
-              }}
+              onClick={() => setOrganExpanded(v => !v)}
+              className="text-xs flex items-center gap-1 transition-colors"
+              style={{ color: organFilter !== 'all' ? 'var(--accent)' : 'var(--fg-muted)', background: 'none', border: 'none', cursor: 'pointer' }}
             >
-              <span>全部</span>
-              <span
-                className="tabular-nums text-[10px] px-1.5 py-px rounded-full"
-                style={{
-                  background: organFilter === 'all' ? 'rgba(255,255,255,0.22)' : 'var(--card-hover)',
-                  color: organFilter === 'all' ? '#fff' : 'var(--fg-muted)',
-                }}
-              >
-                {organCounts.all || 0}
-              </span>
+              <span>按器官筛选{organFilter !== 'all' ? `：${organs.find(o => o.id === organFilter)?.nameZh || ''}` : ''}</span>
+              <span style={{ transform: organExpanded ? 'rotate(180deg)' : '', transition: 'transform 0.2s' }}>▼</span>
             </button>
+            {organFilter !== 'all' && (
+              <button
+                onClick={() => setOrganFilter('all')}
+                className="text-xs underline"
+                style={{ color: 'var(--fg-muted)', background: 'none', border: 'none', cursor: 'pointer' }}
+              >
+                清除
+              </button>
+            )}
+          </div>
+        )}
+        {mode === 'ihc' && organExpanded && (
+          <div className="flex gap-1.5 overflow-x-auto pb-1 mt-2 -mx-1 px-1">
             {organs.map(o => {
               const n = organCounts[o.id] || 0;
               const active = organFilter === o.id;
@@ -280,7 +303,7 @@ export default function MarkersPage() {
           </div>
           <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>未找到匹配的标记物</p>
           <button
-            onClick={() => { setSearch(''); setFilter('all'); setOrganFilter('all'); setOnlyWithDiagram(false); }}
+            onClick={() => { setSearch(''); setFilter('all'); setOrganFilter('all'); }}
             className="mt-4 text-xs underline"
             style={{ color: 'var(--accent)' }}
           >

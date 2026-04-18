@@ -2,14 +2,13 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { IconStar, IconX } from '@/components/Icon';
-
-const FAV_KEY = 'pathoatlas-favorites';
-const NOTES_KEY = 'pathoatlas-notes';
+import { loadFavorites, saveFavorites, loadNotes, saveNotes, type FavoritesData, type NotesMap } from '@/lib/userDataClient';
 
 interface Props {
   entityType: 'disease' | 'marker';
   entityId: string;
   entityName: string;
+  entityHref: string;
 }
 
 /** Pencil icon (inline to avoid adding to Icon.tsx) */
@@ -31,62 +30,62 @@ function PencilIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-export default function NotesAndFavorites({ entityType, entityId, entityName }: Props) {
+export default function NotesAndFavorites({ entityType, entityId, entityName, entityHref }: Props) {
   const storageKey = `${entityType}:${entityId}`;
   const [isFav, setIsFav] = useState(false);
   const [noteOpen, setNoteOpen] = useState(false);
   const [noteText, setNoteText] = useState('');
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [mounted, setMounted] = useState(false);
+  const favDataRef = useRef<FavoritesData>({ keys: [], meta: {} });
+  const notesDataRef = useRef<NotesMap>({});
 
-  // Read initial state from localStorage
+  // Load initial state from server
   useEffect(() => {
-    try {
-      const favRaw = localStorage.getItem(FAV_KEY);
-      const favs: string[] = favRaw ? JSON.parse(favRaw) : [];
-      setIsFav(favs.includes(storageKey));
-    } catch { /* empty */ }
-
-    try {
-      const notesRaw = localStorage.getItem(NOTES_KEY);
-      const notes = notesRaw ? JSON.parse(notesRaw) : {};
-      if (notes[storageKey]) {
-        setNoteText(notes[storageKey].text || '');
+    let cancelled = false;
+    Promise.all([loadFavorites(), loadNotes()]).then(([favData, notesData]) => {
+      if (cancelled) return;
+      favDataRef.current = favData;
+      notesDataRef.current = notesData;
+      setIsFav(favData.keys.includes(storageKey));
+      if (notesData[storageKey]) {
+        setNoteText(notesData[storageKey].text || '');
       }
-    } catch { /* empty */ }
-
-    setMounted(true);
+      setMounted(true);
+    });
+    return () => { cancelled = true; };
   }, [storageKey]);
 
   const toggleFav = useCallback(() => {
     setIsFav((prev) => {
       const next = !prev;
-      try {
-        const favRaw = localStorage.getItem(FAV_KEY);
-        let favs: string[] = favRaw ? JSON.parse(favRaw) : [];
-        if (next) {
-          if (!favs.includes(storageKey)) favs.push(storageKey);
-        } else {
-          favs = favs.filter((f) => f !== storageKey);
+      const favData = { ...favDataRef.current };
+      if (next) {
+        if (!favData.keys.includes(storageKey)) {
+          favData.keys = [...favData.keys, storageKey];
         }
-        localStorage.setItem(FAV_KEY, JSON.stringify(favs));
-      } catch { /* empty */ }
+        favData.meta = { ...favData.meta, [storageKey]: { name: entityName, href: entityHref } };
+      } else {
+        favData.keys = favData.keys.filter((f) => f !== storageKey);
+        const { [storageKey]: _, ...restMeta } = favData.meta;
+        favData.meta = restMeta;
+      }
+      favDataRef.current = favData;
+      saveFavorites(favData);
       return next;
     });
-  }, [storageKey]);
+  }, [storageKey, entityName, entityHref]);
 
-  const saveNote = useCallback(
+  const persistNote = useCallback(
     (text: string) => {
-      try {
-        const notesRaw = localStorage.getItem(NOTES_KEY);
-        const notes = notesRaw ? JSON.parse(notesRaw) : {};
-        if (text.trim()) {
-          notes[storageKey] = { text, updatedAt: new Date().toISOString() };
-        } else {
-          delete notes[storageKey];
-        }
-        localStorage.setItem(NOTES_KEY, JSON.stringify(notes));
-      } catch { /* empty */ }
+      const notes = { ...notesDataRef.current };
+      if (text.trim()) {
+        notes[storageKey] = { text, updatedAt: new Date().toISOString() };
+      } else {
+        delete notes[storageKey];
+      }
+      notesDataRef.current = notes;
+      saveNotes(notes);
     },
     [storageKey],
   );
@@ -95,9 +94,9 @@ export default function NotesAndFavorites({ entityType, entityId, entityName }: 
     (text: string) => {
       setNoteText(text);
       if (debounceRef.current) clearTimeout(debounceRef.current);
-      debounceRef.current = setTimeout(() => saveNote(text), 500);
+      debounceRef.current = setTimeout(() => persistNote(text), 500);
     },
-    [saveNote],
+    [persistNote],
   );
 
   if (!mounted) return null;
@@ -108,10 +107,10 @@ export default function NotesAndFavorites({ entityType, entityId, entityName }: 
       <div
         className="flex flex-col gap-2"
         style={{
-          position: 'absolute',
-          bottom: 16,
-          right: 16,
-          zIndex: 20,
+          position: 'fixed',
+          bottom: 24,
+          right: 24,
+          zIndex: 30,
         }}
       >
         <button
@@ -143,78 +142,42 @@ export default function NotesAndFavorites({ entityType, entityId, entityName }: 
       {/* Slide-in note panel */}
       {noteOpen && (
         <>
-          {/* Overlay */}
           <div
-            style={{
-              position: 'fixed',
-              inset: 0,
-              background: 'rgba(0,0,0,0.3)',
-              zIndex: 40,
-            }}
+            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.3)', zIndex: 40 }}
             onClick={() => setNoteOpen(false)}
           />
-          {/* Panel */}
           <div
             style={{
-              position: 'fixed',
-              top: 0,
-              right: 0,
-              bottom: 0,
-              width: '100%',
-              maxWidth: 400,
-              background: 'var(--card)',
-              borderLeft: '1px solid var(--border)',
-              zIndex: 50,
-              display: 'flex',
-              flexDirection: 'column',
+              position: 'fixed', top: 0, right: 0, bottom: 0,
+              width: '100%', maxWidth: 400,
+              background: 'var(--card)', borderLeft: '1px solid var(--border)',
+              zIndex: 50, display: 'flex', flexDirection: 'column',
               boxShadow: '-4px 0 24px rgba(0,0,0,0.1)',
             }}
           >
-            {/* Panel header */}
-            <div
-              className="flex items-center justify-between px-5 py-4"
-              style={{ borderBottom: '1px solid var(--border)' }}
-            >
+            <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: '1px solid var(--border)' }}>
               <div>
-                <div className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>
-                  {entityName}
-                </div>
+                <div className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>{entityName}</div>
                 <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>
                   {entityType === 'marker' ? '标记物笔记' : '疾病笔记'}
                 </div>
               </div>
-              <button
-                onClick={() => setNoteOpen(false)}
-                className="p-1.5 rounded-lg cursor-pointer"
-                style={{ color: 'var(--fg-muted)' }}
-              >
+              <button onClick={() => setNoteOpen(false)} className="p-1.5 rounded-lg cursor-pointer" style={{ color: 'var(--fg-muted)' }}>
                 <IconX size={18} />
               </button>
             </div>
-
-            {/* Textarea */}
             <div className="flex-1 p-5">
               <textarea
                 value={noteText}
                 onChange={(e) => handleNoteChange(e.target.value)}
                 placeholder="在此输入学习笔记..."
                 className="w-full h-full rounded-xl border px-4 py-3 text-sm resize-none"
-                style={{
-                  background: 'var(--card)',
-                  borderColor: 'var(--border)',
-                  color: 'var(--fg)',
-                  outline: 'none',
-                }}
+                style={{ background: 'var(--card)', borderColor: 'var(--border)', color: 'var(--fg)', outline: 'none' }}
                 onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
                 onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
               />
             </div>
-
-            {/* Footer */}
-            <div
-              className="px-5 py-3 text-xs"
-              style={{ borderTop: '1px solid var(--border)', color: 'var(--fg-muted)' }}
-            >
+            <div className="px-5 py-3 text-xs" style={{ borderTop: '1px solid var(--border)', color: 'var(--fg-muted)' }}>
               自动保存
             </div>
           </div>

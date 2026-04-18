@@ -45,6 +45,50 @@ function nodeCenter(n: FlowchartNode): { cx: number; cy: number } {
   return { cx: n.x, cy: n.y + nodeHeight(n.type) / 2 };
 }
 
+/** Minimum horizontal gap between adjacent nodes (px) */
+const MIN_GAP = 20;
+
+/** Effective half-width of a node (diamonds are wider) */
+function nodeHalfWidth(type: FlowchartNode['type']): number {
+  return type === 'decision' ? NODE_W / 2 + 8 : NODE_W / 2;
+}
+
+/** Resolve horizontal overlaps within each row of nodes (mutates array in place) */
+function resolveOverlaps(nodes: FlowchartNode[]): void {
+  // Group nodes by y coordinate (same row)
+  const rows = new Map<number, FlowchartNode[]>();
+  for (const n of nodes) {
+    const row = rows.get(n.y) || [];
+    row.push(n);
+    rows.set(n.y, row);
+  }
+
+  for (const row of rows.values()) {
+    if (row.length < 2) continue;
+    row.sort((a, b) => a.x - b.x);
+
+    // Capture original center before any adjustments
+    const origCenter = (row[0].x + row[row.length - 1].x) / 2;
+
+    // Push nodes right when they overlap the previous one
+    for (let i = 1; i < row.length; i++) {
+      const prev = row[i - 1];
+      const curr = row[i];
+      const minDist = nodeHalfWidth(prev.type) + nodeHalfWidth(curr.type) + MIN_GAP;
+      if (curr.x - prev.x < minDist) {
+        curr.x = prev.x + minDist;
+      }
+    }
+
+    // Re-center the row around its original midpoint
+    const newCenter = (row[0].x + row[row.length - 1].x) / 2;
+    const shift = origCenter - newCenter;
+    if (Math.abs(shift) > 1) {
+      for (const n of row) n.x += shift;
+    }
+  }
+}
+
 /** Compute the SVG viewBox to fit all nodes with padding */
 function computeViewBox(nodes: FlowchartNode[]): { minX: number; minY: number; width: number; height: number } {
   const pad = 30;
@@ -278,7 +322,11 @@ export default function FlowchartRenderer({ data }: { data: FlowchartData }) {
     return () => ro.disconnect();
   }, []);
 
-  const vb = computeViewBox(data.nodes);
+  // Deep-clone nodes so we don't mutate the prop, then resolve overlaps
+  const nodes = data.nodes.map(n => ({ ...n }));
+  resolveOverlaps(nodes);
+
+  const vb = computeViewBox(nodes);
 
   return (
     <div ref={containerRef} className="w-full overflow-x-auto">
@@ -321,12 +369,12 @@ export default function FlowchartRenderer({ data }: { data: FlowchartData }) {
             from={e.from}
             to={e.to}
             label={e.label}
-            nodes={data.nodes}
+            nodes={nodes}
           />
         ))}
 
         {/* Nodes */}
-        {data.nodes.map(n => {
+        {nodes.map(n => {
           const isHovered = hovered === n.id;
           const props = { node: n, hovered: isHovered, onHover: setHovered };
           switch (n.type) {

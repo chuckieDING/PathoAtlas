@@ -10,8 +10,10 @@ interface FrozenSection {
   indication: string;
   clinicalScenario: string;
   intraoperativeApproach: string[];
-  diagnosticTrap: string[];
-  typicalErrors: string[];
+  diagnosticTrap?: string[];
+  diagnosticTraps?: string[];
+  typicalErrors?: string[];
+  commonErrors?: string[];
   reportingTemplate: string;
 }
 
@@ -68,7 +70,7 @@ export default function FrozenSectionPage() {
             <IconSnowflake size={32} style={{ color: 'var(--accent)' }} />
             <h1 className="text-3xl font-bold" style={{ color: 'var(--fg)' }}>术中冰冻切片</h1>
           </div>
-          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>Intraoperative Frozen Section Consultation</p>
+          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>术中冰冻切片快速诊断咨询</p>
         </div>
 
         {/* Main Layout */}
@@ -162,7 +164,7 @@ export default function FrozenSectionPage() {
                     诊断陷阱
                   </h3>
                   <ul className="space-y-2">
-                    {selectedSection.diagnosticTrap.map((item, idx) => (
+                    {(selectedSection.diagnosticTraps || selectedSection.diagnosticTrap || []).map((item, idx) => (
                       <li key={idx} className="text-sm leading-relaxed pl-4" style={{ color: 'var(--fg)', borderLeft: '2px solid rgba(239,68,68,0.4)' }}>
                         {item}
                       </li>
@@ -176,7 +178,7 @@ export default function FrozenSectionPage() {
                     常见错误
                   </h3>
                   <ul className="space-y-2">
-                    {selectedSection.typicalErrors.map((item, idx) => (
+                    {(selectedSection.commonErrors || selectedSection.typicalErrors || []).map((item, idx) => (
                       <li key={idx} className="text-sm leading-relaxed pl-4" style={{ color: 'var(--fg)', borderLeft: '2px solid rgba(245,158,11,0.4)' }}>
                         {item}
                       </li>
