@@ -468,6 +468,30 @@ function statusPillColor(status?: string): { bg: string; color: string } {
   return { bg: 'var(--card-hover)', color: 'var(--fg-muted)' };
 }
 
+function StatusLegend() {
+  const entries: { status: string; desc: string }[] = [
+    { status: 'FDA+NMPA', desc: '美国 FDA + 中国 NMPA 双批准' },
+    { status: 'FDA', desc: '仅 FDA 批准' },
+    { status: 'NMPA', desc: '仅 NMPA 批准' },
+    { status: '实验性', desc: '临床试验阶段' },
+  ];
+  return (
+    <div className="flex flex-wrap gap-2 text-[10px] mb-2">
+      {entries.map(e => {
+        const c = statusPillColor(e.status);
+        return (
+          <span key={e.status} className="inline-flex items-center gap-1">
+            <span className="px-1.5 py-0.5 rounded" style={{ background: c.bg, color: c.color }}>
+              {e.status}
+            </span>
+            <span style={{ color: 'var(--fg-muted)' }}>{e.desc}</span>
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
 function CompanionDiagnosticsTable({ items }: { items: CompanionDiagnostic[] }) {
   return (
     <div>
@@ -477,6 +501,7 @@ function CompanionDiagnosticsTable({ items }: { items: CompanionDiagnostic[] }) 
           {items.length} 条
         </span>
       </div>
+      <StatusLegend />
       <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
         <table className="w-full text-xs">
           <thead>

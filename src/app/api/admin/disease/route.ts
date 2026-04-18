@@ -44,7 +44,7 @@ const EDITABLE_FIELDS = [
   'nameZh', 'nameEn', 'aliases', 'category',
   'epidemiology', 'clinicalFeatures',
   'grossPathology', 'grossDescription', 'microscopy',
-  'keyFeatures', 'ihcProfile', 'molecularFeatures',
+  'keyFeatures', 'ihcProfile', 'specialStainProfile', 'molecularFeatures',
   'differentialDiagnosis',
   'differentialDiagnosisNotes',
   'grading', 'staging', 'prognosis', 'treatment',

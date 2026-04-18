@@ -43,6 +43,7 @@ interface LiteratureItem {
   viewUrl?: string;
 }
 interface IhcRow { marker: string; result: string; note: string }
+interface StainRow { stain: string; result: string; note: string }
 interface DiseaseLike {
   id: string;
   nameZh: string;
@@ -57,6 +58,7 @@ interface DiseaseLike {
   microscopy?: string;
   keyFeatures?: string[];
   ihcProfile?: IhcRow[];
+  specialStainProfile?: StainRow[];
   molecularFeatures?: string;
   differentialDiagnosis?: string[];
   differentialDiagnosisNotes?: string;
@@ -77,6 +79,16 @@ interface StainingGroup {
   description?: string;
   images: DiseaseImage[];
 }
+interface CompanionDiagnostic {
+  drug: string;
+  indication: string;
+  positivityCriterion?: string;
+  regulatoryStatus?: string;
+  line?: string;
+  clone?: string;
+  note?: string;
+}
+
 interface MarkerLike {
   id: string;
   nameZh: string;
@@ -93,6 +105,7 @@ interface MarkerLike {
   positiveIn?: string[];
   negativeIn?: string[];
   relatedDrugs?: string[];
+  companionDiagnostics?: CompanionDiagnostic[];
   pitfalls?: string;
   references?: string[];
   expertConsensus?: ConsensusItem[];
@@ -156,6 +169,7 @@ function blankDiseaseDraft(defaultOrgan: string): DiseaseLike {
     microscopy: '',
     keyFeatures: [],
     ihcProfile: [],
+    specialStainProfile: [],
     molecularFeatures: '',
     differentialDiagnosis: [],
     differentialDiagnosisNotes: '',
@@ -189,6 +203,7 @@ function blankMarkerDraft(): MarkerLike {
     positiveIn: [],
     negativeIn: [],
     relatedDrugs: [],
+    companionDiagnostics: [],
     pitfalls: '',
     references: [],
     expertConsensus: [],
@@ -764,6 +779,7 @@ function DiseaseEditor({
     microscopy: d.microscopy || '',
     keyFeatures: d.keyFeatures || [],
     ihcProfile: d.ihcProfile || [],
+    specialStainProfile: d.specialStainProfile || [],
     molecularFeatures: d.molecularFeatures || '',
     differentialDiagnosis: d.differentialDiagnosis || [],
     differentialDiagnosisNotes: d.differentialDiagnosisNotes || '',
@@ -963,6 +979,10 @@ function DiseaseEditor({
           items={draft.ihcProfile || []}
           onChange={v => patch('ihcProfile', v)}
         />
+        <SpecialStainProfileEditor
+          items={draft.specialStainProfile || []}
+          onChange={v => patch('specialStainProfile', v)}
+        />
         <StringArrayEditor
           label="鉴别诊断 (disease ID)"
           items={draft.differentialDiagnosis || []}
@@ -1080,6 +1100,7 @@ function MarkerEditor({
     positiveIn: m.positiveIn || [],
     negativeIn: m.negativeIn || [],
     relatedDrugs: m.relatedDrugs || [],
+    companionDiagnostics: m.companionDiagnostics || [],
     pitfalls: m.pitfalls || '',
     references: m.references || [],
     expertConsensus: m.expertConsensus || [],
@@ -1257,6 +1278,11 @@ function MarkerEditor({
         <StringArrayEditor label="阴性表达 (negativeIn)" items={draft.negativeIn || []} onChange={v => patch('negativeIn', v)} />
         <StringArrayEditor label="相关靶向药 (relatedDrugs)" items={draft.relatedDrugs || []} onChange={v => patch('relatedDrugs', v)} />
       </section>
+
+      <CompanionDiagnosticsEditor
+        items={draft.companionDiagnostics || []}
+        onChange={v => patch('companionDiagnostics', v)}
+      />
 
       <section className="rounded-lg p-4" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
         <h3 className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>参考来源</h3>
@@ -1949,6 +1975,120 @@ function SelectField({
 }
 
 /**
+ * CompanionDiagnostics editor — row-based form for clinical CDx entries.
+ * Each row: drug / indication / positivityCriterion / regulatoryStatus / line / clone / note.
+ */
+function CompanionDiagnosticsEditor({
+  items,
+  onChange,
+}: {
+  items: CompanionDiagnostic[];
+  onChange: (next: CompanionDiagnostic[]) => void;
+}) {
+  const updateRow = (i: number, patch: Partial<CompanionDiagnostic>) => {
+    onChange(items.map((r, idx) => (idx === i ? { ...r, ...patch } : r)));
+  };
+  const removeRow = (i: number) => onChange(items.filter((_, idx) => idx !== i));
+  const addRow = () => onChange([...items, { drug: '', indication: '' }]);
+  const moveRow = (i: number, dir: -1 | 1) => {
+    const next = [...items];
+    const t = i + dir;
+    if (t < 0 || t >= next.length) return;
+    [next[i], next[t]] = [next[t], next[i]];
+    onChange(next);
+  };
+
+  const STATUS_OPTIONS = ['FDA+NMPA', 'FDA', 'NMPA', 'EMA', '实验性', ''];
+  const LINE_OPTIONS = ['一线', '二线', '三线', '二/三线', '辅助', '新辅助', '辅助/新辅助', '维持', '挽救', ''];
+
+  return (
+    <section className="rounded-lg p-4 space-y-3" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+      <div className="flex items-center justify-between">
+        <h3 className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
+          伴随诊断 (Companion Diagnostics) · {items.length} 条
+        </h3>
+        <button
+          onClick={addRow}
+          className="text-xs px-2 py-1 rounded-md cursor-pointer"
+          style={{ background: 'var(--accent)', color: '#fff' }}
+        >
+          + 新增一条
+        </button>
+      </div>
+      {items.length === 0 ? (
+        <p className="text-[11px] text-center py-3" style={{ color: 'var(--fg-muted)' }}>暂无 CDx 条目，点击上方按钮新增</p>
+      ) : (
+        <div className="space-y-2">
+          {items.map((row, i) => (
+            <div
+              key={i}
+              className="rounded-lg p-3"
+              style={{ background: 'var(--bg)', border: '1px solid var(--border)' }}
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-semibold" style={{ color: 'var(--fg-muted)' }}>#{i + 1}</span>
+                <div className="flex gap-0.5">
+                  <button onClick={() => moveRow(i, -1)} disabled={i === 0} className="px-1.5 py-0.5 rounded text-[10px] cursor-pointer"
+                    style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)', border: '1px solid var(--border)', opacity: i === 0 ? 0.4 : 1 }}>↑</button>
+                  <button onClick={() => moveRow(i, 1)} disabled={i === items.length - 1} className="px-1.5 py-0.5 rounded text-[10px] cursor-pointer"
+                    style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)', border: '1px solid var(--border)', opacity: i === items.length - 1 ? 0.4 : 1 }}>↓</button>
+                  <button onClick={() => removeRow(i)} className="px-2 py-0.5 rounded text-[10px] cursor-pointer"
+                    style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)' }}>删除</button>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <CdxField label="药物 *" value={row.drug} onChange={v => updateRow(i, { drug: v })} placeholder="曲妥珠单抗 (Trastuzumab)" />
+                <CdxField label="适应证 *" value={row.indication} onChange={v => updateRow(i, { indication: v })} placeholder="HER2+ 乳腺癌 / 胃癌" />
+                <CdxField label="阳性判读标准" value={row.positivityCriterion || ''} onChange={v => updateRow(i, { positivityCriterion: v })} placeholder="IHC 3+ 或 FISH 扩增" />
+                <CdxField label="IHC 克隆号（可选）" value={row.clone || ''} onChange={v => updateRow(i, { clone: v })} placeholder="22C3 / SP142 / SP263" />
+                <CdxSelect label="监管状态" value={row.regulatoryStatus || ''} onChange={v => updateRow(i, { regulatoryStatus: v })} options={STATUS_OPTIONS} />
+                <CdxSelect label="治疗线" value={row.line || ''} onChange={v => updateRow(i, { line: v })} options={LINE_OPTIONS} />
+                <div className="sm:col-span-2">
+                  <CdxField label="备注" value={row.note || ''} onChange={v => updateRow(i, { note: v })} placeholder="补充说明" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function CdxField({ label, value, onChange, placeholder }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string }) {
+  return (
+    <div>
+      <label className="block text-[10px] mb-0.5" style={{ color: 'var(--fg-muted)' }}>{label}</label>
+      <input
+        type="text"
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="w-full px-2 py-1.5 rounded text-xs outline-none"
+        style={{ background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+      />
+    </div>
+  );
+}
+
+function CdxSelect({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: string[] }) {
+  return (
+    <div>
+      <label className="block text-[10px] mb-0.5" style={{ color: 'var(--fg-muted)' }}>{label}</label>
+      <select
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        className="w-full px-2 py-1.5 rounded text-xs outline-none"
+        style={{ background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+      >
+        <option value="">-- 选择 --</option>
+        {options.filter(o => o).map(o => <option key={o} value={o}>{o}</option>)}
+      </select>
+    </div>
+  );
+}
+
+/**
  * Generic editor for a simple array of strings — rendered as chips with an
  * inline "add" input. Used for aliases, keyFeatures, differentialDiagnosis,
  * positiveIn, negativeIn, relatedDrugs, and references.
@@ -2065,6 +2205,77 @@ function IhcProfileEditor({
               value={r.result}
               onChange={e => update(i, { result: e.target.value })}
               placeholder="结果 (阳性/阴性/1+)"
+              className="px-2 py-1 rounded text-[11px] outline-none"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <input
+              value={r.note}
+              onChange={e => update(i, { note: e.target.value })}
+              placeholder="备注"
+              className="px-2 py-1 rounded text-[11px] outline-none"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <button
+              onClick={() => remove(i)}
+              className="text-[10px] px-1.5 py-1 rounded"
+              style={{ color: '#ef4444', border: '1px solid rgba(239,68,68,0.4)' }}
+            >
+              删除
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Structured editor for disease.specialStainProfile — same shape as IHC but
+ * field is `stain` instead of `marker`.
+ */
+function SpecialStainProfileEditor({
+  items,
+  onChange,
+}: {
+  items: StainRow[];
+  onChange: (next: StainRow[]) => void;
+}) {
+  const update = (idx: number, patch: Partial<StainRow>) => {
+    onChange(items.map((r, i) => i === idx ? { ...r, ...patch } : r));
+  };
+  const remove = (idx: number) => onChange(items.filter((_, i) => i !== idx));
+  const add = () => onChange([...items, { stain: '', result: '', note: '' }]);
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-1.5">
+        <div className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>
+          特殊染色谱 (stain / result / note)
+        </div>
+        <button
+          onClick={add}
+          className="text-[10px] px-2 py-1 rounded"
+          style={{ background: 'var(--card-hover)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+        >
+          + 新增一行
+        </button>
+      </div>
+      <div className="space-y-1.5">
+        {items.length === 0 && (
+          <p className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>暂无，可点击右上角添加</p>
+        )}
+        {items.map((r, i) => (
+          <div key={i} className="grid grid-cols-[1fr_1fr_2fr_auto] gap-1.5 items-center">
+            <input
+              value={r.stain}
+              onChange={e => update(i, { stain: e.target.value })}
+              placeholder="染色方法 (e.g. PAS / Masson)"
+              className="px-2 py-1 rounded text-[11px] outline-none font-mono"
+              style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
+            />
+            <input
+              value={r.result}
+              onChange={e => update(i, { result: e.target.value })}
+              placeholder="结果 (阳性/蓝染/...)"
               className="px-2 py-1 rounded text-[11px] outline-none"
               style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
             />
