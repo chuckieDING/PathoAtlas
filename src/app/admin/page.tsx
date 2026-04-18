@@ -129,7 +129,14 @@ const MARKER_CATEGORIES = [
   '增殖标记', '神经标记', '分子标记', '其他',
 ];
 
-type EntityKind = 'disease' | 'marker' | 'content';
+type EntityKind =
+  | 'disease'
+  | 'marker'
+  | 'basic-dict'          // 基础字典维护：器官系统 / 术语词汇表
+  | 'differentials-group' // 鉴别诊断：鉴别场景 / 鉴别流程图
+  | 'specialty-dx'        // 专科诊断：细胞病理学 / 分子病理 / 冰冻切片 / 取材规范
+  | 'grading-reports'     // 分级与报告：分级分期系统 / CAP 报告模板
+  | 'learning-tools';     // 学习工具：虚拟病例
 
 /** Non-disease/non-marker modules managed via the generic content API */
 export const CONTENT_MODULES = [
@@ -148,6 +155,15 @@ export const CONTENT_MODULES = [
 ] as const;
 
 export type ContentModule = (typeof CONTENT_MODULES)[number]['key'];
+
+/** Top-level kind → allowed modules + default module */
+const CONTENT_CATEGORY_MAP: Record<string, { label: string; modules: readonly ContentModule[] }> = {
+  'basic-dict':          { label: '基础字典维护', modules: ['organs', 'glossary'] },
+  'differentials-group': { label: '鉴别诊断',     modules: ['differentials', 'flowcharts'] },
+  'specialty-dx':        { label: '专科诊断',     modules: ['cytology', 'molecular', 'frozen-sections', 'grossing'] },
+  'grading-reports':     { label: '分级与报告',   modules: ['staging', 'reports'] },
+  'learning-tools':      { label: '学习工具',     modules: ['cases'] },
+};
 
 // ── Page ───────────────────────────────────────────────────────────
 
@@ -491,32 +507,37 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         </div>
       </div>
 
-      {/* Entity-kind switch */}
-      <div className="flex gap-1 mb-4" style={{ borderBottom: '1px solid var(--border)' }}>
-        {(['disease', 'marker', 'content'] as EntityKind[]).map(k => (
-          <button
-            key={k}
-            onClick={() => {
-              setKind(k);
-              setSelected(null);
-              setSearch('');
-              setFilterOrgan('');
-              setFilterCategory('');
-              setFilterMarkerCategory('');
-            }}
-            className="px-4 py-2.5 text-sm font-medium border-b-2 transition-colors"
-            style={{
-              borderBottomColor: kind === k ? 'var(--accent)' : 'transparent',
-              color: kind === k ? 'var(--fg)' : 'var(--fg-muted)',
-            }}
-          >
-            {k === 'disease' ? `疾病 (${diseases.length})` : k === 'marker' ? `标记物 (${markers.length})` : '其他模块'}
-          </button>
-        ))}
+      {/* Entity-kind switch (7 top-level categories) */}
+      <div className="flex gap-1 mb-4 overflow-x-auto" style={{ borderBottom: '1px solid var(--border)' }}>
+        {(['disease', 'marker', 'basic-dict', 'differentials-group', 'specialty-dx', 'grading-reports', 'learning-tools'] as EntityKind[]).map(k => {
+          const label = k === 'disease' ? `疾病 (${diseases.length})`
+            : k === 'marker' ? `标记物 (${markers.length})`
+            : CONTENT_CATEGORY_MAP[k]?.label || k;
+          return (
+            <button
+              key={k}
+              onClick={() => {
+                setKind(k);
+                setSelected(null);
+                setSearch('');
+                setFilterOrgan('');
+                setFilterCategory('');
+                setFilterMarkerCategory('');
+              }}
+              className="px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap flex-shrink-0"
+              style={{
+                borderBottomColor: kind === k ? 'var(--accent)' : 'transparent',
+                color: kind === k ? 'var(--fg)' : 'var(--fg-muted)',
+              }}
+            >
+              {label}
+            </button>
+          );
+        })}
       </div>
 
-      {kind === 'content' && (
-        <ContentManager showToast={showToast} />
+      {CONTENT_CATEGORY_MAP[kind] && (
+        <ContentManager showToast={showToast} allowedModules={CONTENT_CATEGORY_MAP[kind].modules} />
       )}
 
       {/* Marker sub-category: IHC / Special stains */}
@@ -538,7 +559,7 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
         </div>
       )}
 
-      {kind !== 'content' && (
+      {(kind === 'disease' || kind === 'marker') && (
       <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4 items-start">
         {/* List panel */}
         <aside
@@ -2304,8 +2325,27 @@ function SpecialStainProfileEditor({
 
 // ── ContentManager: generic admin UI for non-disease/non-marker modules ──
 
-function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
-  const [module, setModule] = useState<ContentModule>('organs');
+function ContentManager({
+  showToast,
+  allowedModules,
+}: {
+  showToast: (msg: string) => void;
+  allowedModules?: readonly ContentModule[];
+}) {
+  const filteredModules = useMemo(
+    () => (allowedModules ? CONTENT_MODULES.filter(m => allowedModules.includes(m.key)) : CONTENT_MODULES),
+    [allowedModules],
+  );
+  const defaultModule = filteredModules[0]?.key || 'organs';
+  const [module, setModule] = useState<ContentModule>(defaultModule);
+
+  // If allowedModules changes (category switch at parent), reset to first allowed
+  useEffect(() => {
+    if (allowedModules && !allowedModules.includes(module)) {
+      setModule(defaultModule);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allowedModules]);
   const [entries, setEntries] = useState<Record<string, unknown>[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -2468,9 +2508,10 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
 
   return (
     <div>
-      {/* Module selector */}
+      {/* Module selector (hidden when category has only 1 module) */}
+      {filteredModules.length > 1 && (
       <div className="flex gap-1.5 overflow-x-auto pb-1 mb-4 -mx-1 px-1">
-        {CONTENT_MODULES.map(m => (
+        {filteredModules.map(m => (
           <button
             key={m.key}
             onClick={() => setModule(m.key)}
@@ -2490,6 +2531,7 @@ function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
           </button>
         ))}
       </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-4 items-start">
         {/* Left: entry list */}
