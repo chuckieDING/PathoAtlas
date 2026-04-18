@@ -30,6 +30,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# runtime data (seeded from data/ on first run, preserved across deployments)
+/data-runtime
+# per-user data should never be committed
+/data/users
+# audit log is runtime-generated
+/data/audit-log.jsonl
+
 # env files (can opt-in for committing if needed)
 .env*
 

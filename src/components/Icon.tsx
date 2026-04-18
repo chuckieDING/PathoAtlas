@@ -260,6 +260,76 @@ export const IconGithub = ({ size, ...p }: IconProps) => (
   </svg>
 );
 
+export const IconLayers = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg>
+);
+
+export const IconMap = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+    <line x1="8" y1="2" x2="8" y2="18"/>
+    <line x1="16" y1="6" x2="16" y2="22"/>
+  </svg>
+);
+
+export const IconFileText = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <polyline points="10 9 9 9 8 9"/>
+  </svg>
+);
+
+export const IconHeart = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+);
+
+export const IconPencil = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+  </svg>
+);
+
+export const IconSnowflake = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/>
+    <path d="m9 3 3 3 3-3M9 21l3-3 3 3M3 9l3 3-3 3M21 9l-3 3 3 3"/>
+  </svg>
+);
+
+export const IconScissors = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <circle cx="6" cy="6" r="3"/>
+    <circle cx="6" cy="18" r="3"/>
+    <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+    <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+    <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+  </svg>
+);
+
+export const IconClipboard = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+    <path d="M9 14h6M9 18h6M9 10h6"/>
+  </svg>
+);
+
+export const IconTrendingUp = ({ size, ...p }: IconProps) => (
+  <svg {...baseProps(size)} {...p}>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+    <polyline points="16 7 22 7 22 13"/>
+  </svg>
+);
+
 // ── Organ icons (anatomical, stylised) ─────────────────────
 // Each is a stroke-based 24×24 SVG representing the organ.
 

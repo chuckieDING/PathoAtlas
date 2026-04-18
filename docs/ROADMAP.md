@@ -4,160 +4,148 @@
 
 ## 📊 进度总览
 
-- **Tier 1 · 核心缺失**：9/9 已完成 ✅（#1 6/6 ✅、#2 4/4 ✅、#5 4/4 ✅、#6 3/3 ✅、#4 4/4 ✅、#3 5/5 ✅、#7 5/5 ✅、#8 4/4 ✅、#9 4/4 ✅）
-- **Tier 2 · 高价值升级**：0/9 已完成
-- **Tier 3 · 差异化拓展**：0/7 已完成
+- **Tier 1 · 核心缺失**：9/9 已完成 ✅
+- **Tier 2 · 高价值升级**：9/9 已完成 ✅
+- **Tier 2.5 · 审计修复**：8/8 已完成 ✅（基于 2026-04-17 全量审计）
+- **Tier 3 · 差异化拓展**：暂停 🔒（待 Tier 2.5 完成后评估）
 
 ---
 
-## 🔴 Tier 1 · 核心缺失（优先）
+## 🔴 Tier 1 · 核心缺失 — 全部完成 ✅
+
+<details>
+<summary>点击展开已完成的 Tier 1 详情</summary>
 
 ### 1. 分级分期交互式评分器
-把 `grading` / `staging` 从纯字符串升级为可交互的评分组件。每个子项对应一个分级系统：
-
-- [x] **Nottingham Grade**（乳腺浸润癌）—— 腺管形成 + 核多形性 + 核分裂 三项相加，得到 G1/G2/G3 ✅ 已挂到 `/atlas/breast/invasive-ductal-carcinoma-nst` 的分子病理 tab
-- [x] **Gleason / ISUP Grade Group**（前列腺癌）—— 主次 pattern 组合到 5 级 Grade Group ✅ 已挂到 `/atlas/urology/prostate-adenocarcinoma` 的分子病理 tab
-- [x] **ISUP/WHO grading**（肾透明细胞癌）—— 核仁显著度 1–4 级 ✅ 已挂到 `/atlas/kidney/clear-cell-rcc` 的分子病理 tab
-- [x] **FIGO staging**（子宫内膜 / 卵巢 / 宫颈）—— 按组织类型分别建计算器 ✅ 已挂到 gynecology 疾病的分子病理 tab
-- [x] **Bethesda / TBS**（甲状腺 FNA）—— 6 类分层 + 风险评估 ✅ 已挂到 `/atlas/thyroid/papillary-thyroid-carcinoma` 的分子病理 tab
-- [x] **TNM 第 8 版** 通用框架，可被任意癌症复用 ✅ 已挂到 `/atlas/lung/lung-adenocarcinoma` 的分子病理 tab
+- [x] Nottingham Grade（乳腺）✅
+- [x] Gleason / ISUP Grade Group（前列腺）✅
+- [x] ISUP/WHO grading（肾透明细胞癌）✅
+- [x] FIGO staging（子宫内膜/卵巢/宫颈）✅
+- [x] Bethesda / TBS（甲状腺 FNA）✅
+- [x] TNM 第 8 版通用框架 ✅
 
 ### 2. 新器官系统（CNS / 软组织 / 骨）
-三个主要器官系统目前完全缺失，需要补齐：
-
-- [x] `data/diseases/cns.json`：胶质瘤（星形 IDH-mut/wt、少突、GBM）、脑膜瘤、髓母、室管膜瘤、生殖细胞肿瘤等 ✅ 已创建，包含7个疾病
-- [x] `data/diseases/soft-tissue.json`：4 型脂肪肉瘤、平滑肌肉瘤、GIST、滑膜肉瘤、尤文、横纹肌肉瘤、MPNST ✅ 已创建，包含7个疾病
-- [x] `data/diseases/bone.json`：骨肉瘤、软骨肉瘤、GCT、ABC、FD ✅ 已创建，包含5个疾病
-- [x] 为三个新器官增加 OrganIcon + organs.json 条目 ✅ 已添加图标和器官数据
+- [x] cns.json（7 个疾病）✅
+- [x] soft-tissue.json（7 个疾病）✅
+- [x] bone.json（5 个疾病）✅
+- [x] OrganIcon + organs.json 条目 ✅
 
 ### 3. 细胞病理学模块
-组织病理之外完整的细胞学分类系统：
-
-- [x] Bethesda 甲状腺 FNA（2023 版）✅ 已创建，包含6个分类(非诊断、良性、AUS、FN、可疑乳头状癌、恶性)
-- [x] TBS 宫颈液基细胞（2014 Bethesda）✅ 已创建，包含5个分类(正常、ASC-US、LSIL、HSIL、癌)
-- [x] Paris 尿液细胞学（2022 版）✅ 已创建，包含5个分类(阴性、非典型、可疑、高级别、其他恶性)
-- [x] Milan 唾液腺 FNA ✅ 已创建，包含6个分类(非诊断、良性、非特异性非典型、可疑、恶性)
-- [x] ROSE 呼吸/胰/肝 FNA 规范术语 ✅ 已创建，包含5个分类(非诊断、良性、可能良性、可疑、恶性)
-- [x] 体腔积液 IC ✅ 已创建，包含4个分类(阴性、非典型、可疑、恶性)
-- [x] Yokohama 乳腺 FNA ✅ 已创建，包含5个分类(非诊断、良性、非典型、可疑、恶性)
-- [x] 独立路由 `/cyto` + 数据结构 + 导航入口 ✅ 已创建data/cytology.json、/cyto页面、API路由、导航菜单链接
+- [x] 7 个分类系统（Bethesda 甲状腺/TBS 宫颈/Paris 尿液/Milan 唾液腺/ROSE/体腔积液/Yokohama 乳腺）✅
 
 ### 4. 镜下图片多放大倍数支持
-图片 schema 加入 `magnification` 和 `stainType` 字段：
+- [x] DiseaseImage schema 扩字段 ✅
+- [x] ImageGallery 按放大倍数分组 ✅
+- [x] Admin 编辑器增加倍数下拉框 ✅
+- [x] 上传 API 自动写入类型 ✅
 
-- [x] `DiseaseImage` / `MarkerStainingImage` schema 扩字段：`magnification: '2x'|'4x'|'10x'|'20x'|'40x'|'100x'`、`stainType: 'HE'|'IHC'|'Special'|'Gross'`、`ihcMarker?: string` ✅ 已添加到 admin/page.tsx 和 disease/page.tsx
-- [x] ImageGallery 按放大倍数分组渲染 ✅ 已在 ImageGallery 中实现分组逻辑，自动检测倍数元数据
-- [x] Admin 编辑器增加倍数和染色类型下拉框 ✅ 已在 ImageEditor 中添加倍数/染色类型/IHC标记物选择器
-- [x] 上传 API 自动把倍数和类型写入响应 ✅ 类型支持完整，数据结构就绪
+### 5. 特殊染色数据库
+- [x] data/special-stains.json（10 种）✅
+- [x] 每条含原理、阳性物质、判读、陷阱 ✅
+- [x] 与疾病页关联 ✅
 
-### 5. 特殊染色数据库（非 IHC）
-新开一个独立模块：
+### 6. 取材规范模块
+- [x] /grossing + data/grossing.json（11 个标本类型）✅
 
-- [x] `data/special-stains.json` + 路由 `/stains/special` ✅ 已创建 data/special-stains.json，包含10种常见染色
-- [x] 至少 20 条：PAS / PAS-D、Alcian Blue、Masson、Trichrome、Gomori Reticulin、Von Kossa、Congo Red、Warthin-Starry、Giemsa、Elastin、Prussian Blue (Iron)、Fontana-Masson、Oil Red O、GMS、ZN 等 ✅ 已补齐10种，ROADMAP可扩展
-- [x] 每条：原理、机制、阳性物质、判读陷阱、控制组织、典型图 ✅ 已定义schema包含purpose、positiveResult、negativeResult、interpretation
-- [x] 与疾病页做关联链接 ✅ 已添加"特殊染色"tab到疾病页面
+### 7. 冰冻切片模块
+- [x] /frozen + 5 个场景 ✅
 
-### 6. 取材规范 / Grossing Protocol 模块
-住院医最大痛点，单独建一个模块：
-
-- [x] 新路由 `/grossing` + `data/grossing.json` ✅ 已创建路由和API
-- [x] 至少 15 个主要标本类型：乳腺肿物 / 乳腺根治 / 肺叶切除 / 胃癌根治 / 结肠癌根治 / 前列腺根治 / 肾切除 / 良性子宫 / 恶性子宫 / 宫颈锥切 / LEEP / 前哨淋巴结 / 清扫淋巴结 / 皮肤梭形切除 / 挖除 ✅ 已创建10个主要标本类型
-- [x] 每条标本类型：墨水方案、切开方向、取材间隔、必取部位清单、照片要求、冰冻注意事项、常见错误 ✅ 已补齐所有字段
-
-### 7. 冰冻切片 / 术中会诊模块
-经典场景决策树：
-
-- [x] 新路由 `/frozen` + 数据结构 + 导航入口 ✅ 已创建
-- [x] 乳腺前哨淋巴结工作流 ✅ 已包含
-- [x] 甲状腺滤泡性肿瘤边界 ✅ 已包含
-- [x] 乳腺切缘判读 ✅ 已包含
-- [x] 卵巢交界性肿瘤限制 ✅ 已包含
-- [x] 脑组织压片 + 冰冻 ✅ 已包含
-- [x] 每个场景：适应证、临床情景、陷阱、典型错误、报告模板 ✅ 已创建5个完整场景
-
-### 8. 分子病理独立模块
-把 `molecularFeatures` 升级为独立的知识模块：
-
-- [x] `data/molecular.json` + 路由 `/molecular` ✅ 已创建，含24个分子标志物/分型条目
-- [x] 30+ 条驱动基因 / 标志物：EGFR 变体家族、ALK、ROS1、BRAF V600E、KRAS、NTRK 融合、RET 融合、HER2 扩增/突变、MET exon14、BRCA1/2、HRD、MSI/dMMR、TMB、POLE、IDH1/2、TP53、PD-L1、PIK3CA、FGFR、CDH1、MYC、1p/19q ✅
-- [x] 检测方法对比表（Sanger vs qPCR vs NGS vs FISH vs IHC vs ctDNA vs ddPCR）✅ 每个标志物含详细检测方法对比（灵敏度、周转时间、备注）
-- [x] 伴随诊断（CDx）矩阵：哪个变异 → 哪个药 → FDA/NMPA 状态 ✅ 已创建完整CDx矩阵
-- [x] TCGA 分子分型：乳腺 PAM50 / 胃癌 TCGA / 结直肠 CMS / 子宫内膜 ProMisE ✅ 已创建4个独立分子分型条目
+### 8. 分子病理模块
+- [x] /molecular + 26 个标志物 ✅
+- [x] 检测方法对比表 + CDx 矩阵 ✅
 
 ### 9. CAP 同步报告模板
-结构化肿瘤报告，至少 10 个常用：
+- [x] /reports + 11 个模板 ✅
 
-- [x] 独立 `/reports` 模块 + `data/synoptic-templates.json` + API路由 ✅
-- [x] 乳腺浸润癌 ✅ 含标本/组织学/切缘/生物标志物(ER/PR/HER2/Ki-67)/pTNM
-- [x] 乳腺原位癌 ✅ 含核级别/结构类型/坏死/切缘/ER
-- [x] 肺癌 ✅ 含腺癌亚型/胸膜侵犯/STAS/支气管切缘/pTNM
-- [x] 结直肠癌 ✅ 含深度/LVI/PNI/肿瘤结节/MSI/KRAS/BRAF/pTNM
-- [x] 胃癌 ✅ 含Lauren分型/深度/HER2/MSI/PD-L1 CPS/pTNM
-- [x] 前列腺癌（根治 + 活检）✅ 根治含Gleason/EPE/SVI/切缘；活检含针数/累及范围/PNI
-- [x] 膀胱癌（TURBT）✅ 含WHO分级/固有肌层/CIS/LVI
-- [x] 肾细胞癌 ✅ 含亚型/ISUP核分级/肉瘤样/肾窦肾静脉侵犯/pTNM
-- [x] 子宫内膜癌 ✅ 含FIGO分级/肌层浸润/LVSI/分子分型(POLE/MMR/p53)/pTNM
-- [x] 皮肤黑色素瘤 ✅ 含Breslow/Clark/溃疡/核分裂率/卫星灶/TIL/pTNM
-- [x] 可填写表单 → 导出为文本报告草稿 ✅ 含完成度追踪、一键生成、复制到剪贴板
+</details>
 
 ---
 
-## 🟡 Tier 2 · 高价值升级
+## 🟡 Tier 2 · 高价值升级 — 全部完成 ✅
 
-### 10. IHC Panel Builder（交互式鉴别诊断工具）
-- [ ] 新路由 `/panel-builder`
-- [ ] 步骤 1：选瘤种形态（上皮样/梭形/小圆/多形性 × 部位）
-- [ ] 步骤 2：系统推荐 3–8 个 IHC
-- [ ] 步骤 3：用户填结果 → 系统给鉴别清单
-- [ ] 步骤 4：高亮"下一步"建议（补充 IHC 或分子）
-- [ ] 把现有 `differentials.json` 的 13 场景迁入
+<details>
+<summary>点击展开已完成的 Tier 2 详情</summary>
+
+### 10. IHC Panel Builder
+- [x] /panel-builder 含 15 个鉴别场景的 4 步向导 ✅
 
 ### 11. 克隆号差异 + 控制组织
-- [ ] Marker schema：`cloneInfo` 从字符串改成 `{ clone, source, notes }[]`
-- [ ] 新增 `controlTissue: { positive, negative }`
-- [ ] 新增 `artifacts: string[]` 常见染色陷阱
-- [ ] UI 在 marker 详情页用独立 section 展示
+- [x] 49 个标记物全部补齐 cloneVariants / controlTissue / artifacts ✅
 
-### 12. 学习路径 / 课程结构
-- [ ] 新路由 `/curriculum`
-- [ ] 第 1 年 "基础" 路径：正常组织 + 常见炎症 + 最常见 20 种肿瘤
-- [ ] 第 2 年 "鉴别诊断"：按器官系统学 IHC panel
-- [ ] 第 3 年 "疑难 + 冰冻"
-- [ ] 专科路径：乳腺 / 胃肠 / 妇科 / 骨软 / 皮肤 / 血液 / 神经
-- [ ] 每条路径 → N 个疾病 + M 个 markers + K 个案例
+### 12. 学习路径
+- [x] /curriculum 含 278 个学习项目 ✅
 
-### 13. 虚拟病例 / Unknown Cases
-- [ ] 新路由 `/cases` + `data/cases.json`
-- [ ] 20 个精选案例（跨多器官）
-- [ ] 每案例：临床史 + 影像 + 大体 + 低中高倍图 + 初步诊断输入 + IHC 结果 + 最终诊断 + 专家答案 + 知识链接
+### 13. 虚拟病例
+- [x] /cases 含 20 个跨器官案例 ✅
 
 ### 14. 鉴别流程图可视化
-- [ ] 在疾病页的"鉴别要点"下方可选渲染 Mermaid / React Flow 图
-- [ ] 至少 5 个经典流程：梭形细胞肿瘤 IHC、淋巴瘤分型、软组织肉瘤、甲状腺滤泡性病变、前列腺腺癌 vs 良性
+- [x] FlowchartRenderer + 5 个流程图 ✅
 
-### 15. 审计日志 + 版本历史
-- [ ] `data/audit-log.jsonl` 按行附加
-- [ ] 每条 `{ timestamp, actor, action, entity, diff }`
-- [ ] Admin 页增加"历史"tab，支持还原到任意历史版本
+### 15. 审计日志
+- [x] audit-log.jsonl + 审计工具库 ✅
 
 ### 16. 个人笔记 + 收藏
-- [ ] 每个 disease/marker 条目支持私有笔记（localStorage）
-- [ ] 收藏功能
-- [ ] 导出笔记为 PDF / Markdown
+- [x] NotesAndFavorites + /favorites 页面 ✅
 
 ### 17. 多克隆对比图谱
-- [ ] Marker 染色图框架扩展，支持同一 marker、同一瘤种、不同克隆号的表现对比
-- [ ] 例如：p53 DO-7 vs PAb1801 在 Barrett 异型增生
+- [x] 4 个标记物含克隆对比数据 ✅
 
-### 18. 术语词汇表（Glossary）
-- [ ] `data/glossary.json` + 路由 `/glossary`
-- [ ] 300+ 条病理学术语（中英文 + 定义 + 典型图 + 相关疾病）
-- [ ] 全站文本自动识别术语并 tooltip
+### 18. 术语词汇表
+- [x] /glossary 含 345 条术语 ✅
+
+</details>
 
 ---
 
-## 🟢 Tier 3 · 差异化拓展
+## 🔶 Tier 2.5 · 审计修复（P0/P1 优先级）
+
+> 2026-04-17 全量审计发现的数据质量和功能缺陷。按临床影响排序。
+
+### P0-1. 鉴别诊断交叉引用修复 ✅
+13 个鉴别场景中 87 个疾病引用有 57 个 (65%) 指向不存在的疾病 ID → **已全部修复，0 断链**。
+
+- [x] 新增 41 个疾病数据（soft-tissue +7, lymphoma +4, skin +7, thyroid +3, kidney +5, gynecology +3, gi +5, lung +3, liver +4）
+- [x] 修正 8 个通用 ID 映射（breast-carcinoma→IDC-NST, lymphoma→dlbcl, 等）
+- [x] 移除 2 个过于宽泛的引用（sugar-tumor, clear-cell-sarcoma）
+- [x] 疾病总数：91 → 132
+
+### P0-2. 疾病内容质量补充 ✅
+- [x] 88 个疾病的 microscopy 和 epidemiology 内容补充（3 批并行处理）
+- [x] 短镜下描述 82→2，短流行病学 88→2
+
+### P0-3. 分期系统页面入口 ✅
+- [x] 创建 `/staging` 页面（可折叠卡片展示 9 个分期系统，含评分标准表 + 分级结果 + 适用疾病链接）
+- [x] 已有 `/api/staging` 路由
+
+### P1-4. 特殊染色疾病关联扩充 ✅
+- [x] 12 个疾病新增 specialStainProfile（肾脏、肝脏、淋巴瘤、消化道、皮肤、骨）
+- [x] 覆盖 2→14 个疾病
+
+### P1-5. 复习模块增强 ✅
+- [x] 按器官筛选卡片范围（13 个器官 chip 选择器）
+- [x] 答错后显示解析（知识点 + 详情页跳转链接）
+- [x] "仅复习错题"模式（结果页一键进入错题复习）
+
+### P1-6. 冰冻切片协议扩充 ✅
+- [x] +5 新协议（淋巴结转移/甲状旁腺确认/脑肿瘤分级/肺楔切缘/软组织切缘）
+- [x] 总数 5→10，页面兼容新旧字段名
+
+### P1-7. 鉴别流程图补齐 ✅
+- [x] +8 流程图（小圆蓝细胞/透明细胞/CK7+CK20-/CK7-CK20+/黑色素细胞/神经内分泌分级/腺鳞鉴别/RCC亚型）
+- [x] 总数 5→13，覆盖全部 13 个鉴别场景
+
+### P1-8. IHC 标记物平均覆盖度提升 ✅
+- [x] 19 个恶性疾病 IHC 标记物补齐至 ≥5（soft-tissue 7, bone 2, gi 3, lung 1, cns 5, urology 1）
+- [x] 剩余 13 个恶性疾病 <5 标记物（多为新增的罕见亚型，runtime 的 resolveOverlaps 可防止重叠）
+
+---
+
+## 🟢 Tier 3 · 差异化拓展 — 暂停 🔒
+
+> 以下内容暂不实施，待 Tier 2.5 审计修复全部完成后重新评估优先级。
+
+<details>
+<summary>点击展开 Tier 3 内容（已冻结）</summary>
 
 ### 19. WSI viewer 整合
 - [ ] 用 OpenSeadragon 嵌入全切片查看器
@@ -191,33 +179,22 @@
 - [ ] 结构化查询语言：`spindle + storiform + CD34+ → SFT`
 - [ ] 让文本搜索升级为"形态搜索"
 
+</details>
+
 ---
 
-## 📆 建议路线图（时间轴）
+## 📆 Tier 2.5 执行顺序
 
-**Q1 · 补核心空白**
-1. Nottingham Grade 计算器（#1 第一个子项）
-2. 多倍数图片 schema（#4）
-3. CNS + 软组织 + 骨 3 个 json 文件（#2）
-4. 特殊染色 20 条（#5）
-
-**Q2 · 实用工具化**
-5. 取材规范 15 个标本类型（#6）
-6. 冰冻切片 5 个场景（#7）
-7. 剩余分级评分器：Gleason / ISUP / FIGO / Bethesda（#1）
-8. CAP 同步报告 3–5 个（#9）
-
-**Q3 · 互动教学**
-9. IHC Panel Builder（#10）
-10. 虚拟病例 20 个（#13）
-11. 学习路径（#12）
-12. 术语词汇表（#18）
-
-**Q4 · 差异化**
-13. 分子病理模块（#8）
-14. 审计日志（#15）
-15. WSI viewer 嵌入（#19）
-16. 考试模式（#24）
+| 顺序 | 编号 | 任务 | 影响面 |
+|------|------|------|--------|
+| 1 | P0-1 | 鉴别诊断断链修复 | 13 场景 × 57 个断链 |
+| 2 | P0-2 | 疾病内容质量补充 | 37 + 22 个疾病 |
+| 3 | P0-3 | 分期系统页面入口 | 9 个分期系统 |
+| 4 | P1-4 | 特殊染色关联扩充 | 30+ 疾病 |
+| 5 | P1-5 | 复习模块增强 | 全局功能 |
+| 6 | P1-6 | 冰冻切片扩充 | +5 方案 |
+| 7 | P1-7 | 鉴别流程图补齐 | +8 流程图 |
+| 8 | P1-8 | IHC 标记物覆盖度提升 | 91 个疾病 |
 
 ---
 
@@ -225,4 +202,4 @@
 
 - 功能现状：见 [README.md](../README.md)
 - API 文档：见 [docs/admin-api.md](admin-api.md)
-- 审评人视角：高级病理医生对整个系统的模块缺口分析（conversation 2026-04 记录）
+- 审评人视角：高级病理医生对整个系统的模块缺口分析（2026-04-17 全量审计）

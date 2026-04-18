@@ -1,8 +1,816 @@
 [
-  {"id":"melanoma","nameZh":"黑色素瘤","nameEn":"Melanoma","aliases":["恶性黑色素瘤","MM"],"organ":"skin","category":"malignant","epidemiology":"皮肤最致命的恶性肿瘤。紫外线暴露是主要危险因素。白种人高发。","clinicalFeatures":"ABCDE法则：不对称(Asymmetry)、边界不规则(Border)、颜色不均(Color)、直径>6mm(Diameter)、进展(Evolution)。","grossPathology":"色素不均的不规则斑片或结节，可伴溃疡。颜色从棕色到黑色不等。","microscopy":"非典型黑色素细胞在表皮内和/或真皮内浸润性生长。细胞可为上皮样或梭形。常见核仁显著、核分裂象。","keyFeatures":["非典型黑色素细胞浸润","HMB45/Melan-A/SOX10/S-100阳性","Breslow厚度是最重要预后因素","BRAF V600E突变(50%)指导靶向治疗"],"ihcProfile":[{"marker":"S-100","result":"阳性(>95%)","note":"最敏感但不特异"},{"marker":"HMB45","result":"阳性","note":"成熟黑色素体标记"},{"marker":"Melan-A","result":"阳性","note":"也称MART-1"},{"marker":"SOX10","result":"阳性","note":"核标记，敏感"}],"molecularFeatures":"BRAF V600E突变约50%，NRAS突变约20%，KIT突变(肢端/黏膜型)。PD-L1表达指导免疫治疗。","differentialDiagnosis":["basal-cell-carcinoma","seborrheic-keratosis"],"grading":"Breslow厚度(mm) + Clark分级(I-V级)","staging":"AJCC TNM第8版","prognosis":"Breslow<1mm预后好(>95%生存)；>4mm预后差。转移性黑色素瘤免疫和靶向治疗显著改善预后。","treatment":"手术切除(安全切缘)。III期辅助免疫(纳武利尤单抗)/靶向(达拉非尼+曲美替尼)。IV期免疫(PD-1/CTLA-4)和/或靶向治疗。","images":[{"url":"/diagrams/pagetoid.svg","caption":"Pagetoid 扩散：非典型黑色素细胞从基底层向上穿越整个表皮"}],"references":["WHO Classification of Skin Tumours, 5th Edition, 2023"]},
-  {"id":"basal-cell-carcinoma","nameZh":"基底细胞癌","nameEn":"Basal Cell Carcinoma","aliases":["BCC","基底细胞上皮瘤"],"organ":"skin","category":"malignant","epidemiology":"最常见的皮肤恶性肿瘤，也是人类最常见的癌症。紫外线暴露是主要因素。面部好发。","clinicalFeatures":"珍珠样结节，中央溃疡，边缘卷起。生长缓慢，极少转移。","grossPathology":"珍珠样或蜡样结节，可见毛细血管扩张，边缘卷起。","microscopy":"基底样细胞巢团，周边细胞呈栅栏状排列。巢团与间质之间可见收缩间隙。分为结节型、浅表型、硬化型(高危)等。","keyFeatures":["基底样细胞周边栅栏状排列","巢团-间质收缩间隙","BerEP4阳性，EMA阴性","极少转移，局部侵袭为主"],"ihcProfile":[{"marker":"BerEP4","result":"阳性","note":"BCC标记"},{"marker":"BCL2","result":"弥漫阳性","note":""},{"marker":"EMA","result":"阴性","note":"区别于SCC"},{"marker":"p63","result":"阳性","note":""}],"molecularFeatures":"Hedgehog信号通路激活：PTCH1失活突变(70-80%)或SMO激活突变(10-20%)。","differentialDiagnosis":["cutaneous-scc","melanoma"],"grading":"不常规分级，但硬化型/浸润型为高危亚型","staging":"AJCC TNM","prognosis":"预后极好，转移率<0.1%。局部复发率取决于亚型和切缘。","treatment":"手术切除(Mohs手术)。晚期/不可手术者可用vismodegib/sonidegib(Hedgehog抑制剂)。","images":[],"references":["WHO Classification of Skin Tumours, 5th Edition, 2023"]},
-  {"id":"cutaneous-scc","nameZh":"皮肤鳞状细胞癌","nameEn":"Cutaneous Squamous Cell Carcinoma","aliases":["皮肤SCC","鳞癌"],"organ":"skin","category":"malignant","epidemiology":"第二常见的皮肤恶性肿瘤。紫外线、免疫抑制、慢性伤口是危险因素。","clinicalFeatures":"角化性结节或溃疡，好发于日光暴露部位。可来源于光化性角化病。","grossPathology":"角化性结节或火山口样溃疡，可见角化物。","microscopy":"鳞状上皮异型增生浸润真皮，可见角化珠和细胞间桥。分化程度不等。","keyFeatures":["鳞状分化(角化珠/细胞间桥)","p40+/p63+/CK5/6+","从光化性角化病-原位癌-浸润癌的进展","可区域淋巴结转移"],"ihcProfile":[{"marker":"p40","result":"阳性","note":"鳞状标记"},{"marker":"CK5/6","result":"阳性","note":""},{"marker":"EMA","result":"阳性","note":"区别于BCC"},{"marker":"S-100","result":"阴性","note":"排除黑色素瘤"}],"molecularFeatures":"TP53突变(紫外线损伤)、NOTCH1/2突变、CDKN2A缺失。","differentialDiagnosis":["basal-cell-carcinoma","melanoma"],"grading":"高分化/中分化/低分化","staging":"AJCC TNM","prognosis":"总体预后好，5年生存率>95%。高危(>2cm、低分化、神经侵犯)者转移风险增加。","treatment":"手术切除。高危者辅助放疗。免疫抑制患者和转移性可用免疫治疗(cemiplimab)。","images":[{"url":"/diagrams/keratin-pearl.svg","caption":"皮肤 SCC 的角化珠是鳞状分化的形态学标志"}],"references":["WHO Classification of Skin Tumours, 5th Edition, 2023"]},
-  {"id":"seborrheic-keratosis","nameZh":"脂溢性角化病","nameEn":"Seborrheic Keratosis","aliases":["老年疣","SK"],"organ":"skin","category":"benign","epidemiology":"最常见的良性皮肤肿瘤，老年人多见。","clinicalFeatures":"褐色或黑色疣状斑块，有'粘贴样'外观，好发于面部、躯干、上肢。","grossPathology":"棕褐色至黑色的隆起性斑块或丘疹，表面粗糙，边界清楚。","microscopy":"表皮向外增生形成角化过度、棘层肥厚的斑块。可见基底样细胞、角化囊肿(假角质囊肿)和漩涡状角化。","keyFeatures":["外生性增生，向上生长","角化过度+棘层肥厚","角化囊肿(角质珠)","良性，与黑色素瘤鉴别"],"ihcProfile":[{"marker":"CK5/6","result":"阳性","note":"上皮标记"},{"marker":"S-100","result":"阴性","note":"排除黑色素瘤"},{"marker":"HMB45","result":"阴性","note":"排除黑色素瘤"}],"molecularFeatures":"FGFR3和PIK3CA激活突变常见。","differentialDiagnosis":["melanoma","basal-cell-carcinoma"],"grading":"不适用","staging":"不适用","prognosis":"良性，无恶变风险。","treatment":"无需治疗。美观原因可冷冻、电灼或刮除。","images":[],"references":["WHO Classification of Skin Tumours, 5th Edition, 2023"]},
-  {"id":"merkel-cell-carcinoma","nameZh":"Merkel 细胞癌","nameEn":"Merkel Cell Carcinoma","aliases":["MCC","皮肤神经内分泌癌"],"organ":"skin","category":"malignant","epidemiology":"罕见但高度侵袭，老年、慢性日晒、免疫抑制患者多见；约 80% 与 Merkel 细胞多瘤病毒（MCPyV）相关。","clinicalFeatures":"迅速生长的无痛性红紫色结节（AEIOU：无症状、扩张性、免疫抑制、年龄 > 50、紫外线暴露部位）。","grossPathology":"真皮或皮下界清红紫色结节，切面灰白色，常累及表皮。","microscopy":"均匀小-中等蓝色圆细胞呈小梁、巢状或弥漫性浸润真皮，胞浆稀少，染色质细腻&quot;胡椒盐&quot;状，核分裂活跃。","keyFeatures":["CK20 核旁点状（perinuclear dot）阳性是诊断特征","神经内分泌标记（Syn、CgA、INSM1）阳性","TTF-1 阴性（区别于 SCLC 转移）","MCPyV 阳性或紫外线驱动型两条通路","PD-1/PD-L1 抑制剂有显著疗效"],"ihcProfile":[{"marker":"CK20","result":"核旁点状阳性","note":"最具特征"},{"marker":"Synaptophysin","result":"阳性","note":""},{"marker":"Chromogranin A","result":"阳性","note":""},{"marker":"TTF-1","result":"阴性","note":"与 SCLC 转移鉴别"},{"marker":"Ki-67","result":">50%","note":""}],"molecularFeatures":"两条发病通路：MCPyV 整合（病毒 T 抗原驱动）和紫外线诱导的高突变负荷（TP53 / RB1 突变）。","differentialDiagnosis":["small-cell-lung-carcinoma","basal-cell-carcinoma","cutaneous-scc"],"grading":"不分级，均为高级别","staging":"AJCC TNM 第 8 版","prognosis":"预后差，5 年生存随分期 IA 约 65%、IV 约 14%；免疫治疗时代有改善。","treatment":"广泛切除 + 前哨淋巴结活检 ± 辅助放疗；晚期首选免疫治疗（avelumab、pembrolizumab）。","images":[],"references":["WHO Classification of Skin Tumours, 5th Edition, 2023"]},
-  {"id":"dysplastic-nevus","nameZh":"发育不良痣","nameEn":"Dysplastic Nevus","aliases":["Clark 痣","非典型黑色素细胞痣"],"organ":"skin","category":"precancerous","epidemiology":"常见，常多发，家族性非典型多痣黑色素瘤综合征（FAMMM）患者显著增多。","clinicalFeatures":"直径 &gt; 5 mm，边界模糊，颜色不均的扁平或稍隆起色素性皮损。需与早期黑色素瘤鉴别。","grossPathology":"扁平或略隆起的色素斑块，边界不规则但未及黑色素瘤程度。","microscopy":"交界部黑色素细胞巢变大、桥连相邻乳头、&quot;shouldering&quot;（交界成分超过真皮成分的边缘）、梭形黑色素细胞、轻-中度核异型、板层状纤维化与淋巴细胞&quot;带&quot;。","keyFeatures":["桥连的交界巢（bridging nests）","板层状纤维化（lamellar fibrosis）","&quot;shouldering&quot; 现象","核非典型分级为轻 / 中 / 重","重度非典型视为原位黑色素瘤的前驱"],"ihcProfile":[{"marker":"Melan-A","result":"阳性","note":""},{"marker":"HMB45","result":"分带表达","note":"向下&quot;成熟&quot;减弱"},{"marker":"Ki-67","result":"低","note":"帮助与黑色素瘤鉴别"}],"molecularFeatures":"常见 BRAF 或 NRAS 突变，TERT 启动子突变罕见。","differentialDiagnosis":["melanoma"],"grading":"轻 / 中 / 重度非典型","staging":"不适用","prognosis":"单个发育不良痣恶变率低，但整体反映个体黑色素瘤风险","treatment":"观察随访；重度非典型或可疑者完整切除。","images":[{"url":"/diagrams/pagetoid.svg","caption":"发育不良痣无显著 Pagetoid 扩散；与早期黑色素瘤的关键区别之一"}],"references":["WHO Classification of Skin Tumours, 5th Edition, 2023"]}
+  {
+    "id": "melanoma",
+    "nameZh": "黑色素瘤",
+    "nameEn": "Melanoma",
+    "aliases": [
+      "恶性黑色素瘤",
+      "MM"
+    ],
+    "organ": "skin",
+    "category": "malignant",
+    "epidemiology": "皮肤最致命的恶性肿瘤，全球发病率持续上升。白种人发病率最高（澳大利亚达50-60/10万/年），中位发病年龄约60岁，男女比约1.5:1。紫外线暴露（间歇性强烈暴晒）是最主要的环境危险因素，其他危险因素包括多发痣、家族史、免疫抑制及CDKN2A胚系突变。",
+    "clinicalFeatures": "ABCDE法则：不对称(Asymmetry)、边界不规则(Border)、颜色不均(Color)、直径>6mm(Diameter)、进展(Evolution)。",
+    "grossPathology": "色素不均的不规则斑片或结节，可伴溃疡。颜色从棕色到黑色不等。",
+    "microscopy": "非典型黑色素细胞在表皮内和/或真皮内呈不对称浸润性生长，Pagetoid扩散（肿瘤细胞向表皮上层播散）是重要特征。细胞形态多样，可为上皮样（胞浆丰富嗜酸性，核大圆形）、梭形或小细胞型。核仁显著嗜酸性，核染色质不规则，常见病理性核分裂象。真皮内肿瘤细胞缺乏成熟现象（深层细胞不变小），可见血管和神经侵犯。间质常伴淋巴细胞反应和含黑色素的巨噬细胞。溃疡和坏死提示不良预后。",
+    "keyFeatures": [
+      "非典型黑色素细胞浸润",
+      "HMB45/Melan-A/SOX10/S-100阳性",
+      "Breslow厚度是最重要预后因素",
+      "BRAF V600E突变(50%)指导靶向治疗"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "阳性(>95%)",
+        "note": "最敏感但不特异"
+      },
+      {
+        "marker": "HMB45",
+        "result": "阳性",
+        "note": "成熟黑色素体标记"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": "也称MART-1"
+      },
+      {
+        "marker": "SOX10",
+        "result": "阳性",
+        "note": "核标记，敏感"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Masson-Fontana",
+        "result": "黑色素确认",
+        "note": "确认胞浆内黑色素颗粒"
+      },
+      {
+        "stain": "刚果红",
+        "result": "排除淀粉样",
+        "note": "排除淀粉样变性病变"
+      }
+    ],
+    "molecularFeatures": "BRAF V600E突变约50%，NRAS突变约20%，KIT突变(肢端/黏膜型)。PD-L1表达指导免疫治疗。",
+    "differentialDiagnosis": [
+      "basal-cell-carcinoma",
+      "seborrheic-keratosis"
+    ],
+    "grading": "Breslow厚度(mm) + Clark分级(I-V级)",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "Breslow<1mm预后好(>95%生存)；>4mm预后差。转移性黑色素瘤免疫和靶向治疗显著改善预后。",
+    "treatment": "手术切除(安全切缘)。III期辅助免疫(纳武利尤单抗)/靶向(达拉非尼+曲美替尼)。IV期免疫(PD-1/CTLA-4)和/或靶向治疗。",
+    "images": [
+      {
+        "url": "/diagrams/pagetoid.svg",
+        "caption": "Pagetoid 扩散：非典型黑色素细胞从基底层向上穿越整个表皮"
+      }
+    ],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "basal-cell-carcinoma",
+    "nameZh": "基底细胞癌",
+    "nameEn": "Basal Cell Carcinoma",
+    "aliases": [
+      "BCC",
+      "基底细胞上皮瘤"
+    ],
+    "organ": "skin",
+    "category": "malignant",
+    "epidemiology": "最常见的皮肤恶性肿瘤，也是人类最常见的癌症。全球发病率持续上升，白种人年发病率可达300/10万以上。好发于中老年，中位年龄约65岁，男性略多于女性。累积性紫外线暴露是最主要危险因素，面部（特别是鼻部）最好发。Gorlin综合征（PTCH1胚系突变）患者可出现多发性BCC。",
+    "clinicalFeatures": "珍珠样结节，中央溃疡，边缘卷起。生长缓慢，极少转移。",
+    "grossPathology": "珍珠样或蜡样结节，可见毛细血管扩张，边缘卷起。",
+    "microscopy": "由基底样细胞（核深染、胞浆少、细胞边界不清）组成的巢团或条索浸润真皮。巢团周边细胞呈特征性栅栏状排列（核长轴平行于巢团边缘）。巢团与间质之间常见收缩间隙（固定伪影但具诊断意义）。间质黏液样变。组织学亚型包括：结节型（大的基底样细胞巢团）、浅表型（自表皮基底层向下出芽的小巢团）、硬化型/浸润型（纤维化间质中细的基底样细胞条索浸润，边界不清，属高危亚型）。核分裂象可见但不显著。",
+    "keyFeatures": [
+      "基底样细胞周边栅栏状排列",
+      "巢团-间质收缩间隙",
+      "BerEP4阳性，EMA阴性",
+      "极少转移，局部侵袭为主"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "BerEP4",
+        "result": "阳性",
+        "note": "BCC标记"
+      },
+      {
+        "marker": "BCL2",
+        "result": "弥漫阳性",
+        "note": ""
+      },
+      {
+        "marker": "EMA",
+        "result": "阴性",
+        "note": "区别于SCC"
+      },
+      {
+        "marker": "p63",
+        "result": "阳性",
+        "note": ""
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "PAS",
+        "result": "基底膜",
+        "note": "显示肿瘤巢团与间质之间的基底膜"
+      }
+    ],
+    "molecularFeatures": "Hedgehog信号通路激活：PTCH1失活突变(70-80%)或SMO激活突变(10-20%)。",
+    "differentialDiagnosis": [
+      "cutaneous-scc",
+      "melanoma"
+    ],
+    "grading": "不常规分级，但硬化型/浸润型为高危亚型",
+    "staging": "AJCC TNM",
+    "prognosis": "预后极好，转移率<0.1%。局部复发率取决于亚型和切缘。",
+    "treatment": "手术切除(Mohs手术)。晚期/不可手术者可用vismodegib/sonidegib(Hedgehog抑制剂)。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "cutaneous-scc",
+    "nameZh": "皮肤鳞状细胞癌",
+    "nameEn": "Cutaneous Squamous Cell Carcinoma",
+    "aliases": [
+      "皮肤SCC",
+      "鳞癌"
+    ],
+    "organ": "skin",
+    "category": "malignant",
+    "epidemiology": "第二常见的皮肤恶性肿瘤，全球年发病率约15-35/10万（白种人更高）。好发于中老年人，中位年龄约70岁，男性多于女性（约2:1）。累积性紫外线暴露是最主要危险因素，其他包括免疫抑制（器官移植受者风险增加65-250倍）、慢性伤口/瘢痕和砷暴露。",
+    "clinicalFeatures": "角化性结节或溃疡，好发于日光暴露部位。可来源于光化性角化病。",
+    "grossPathology": "角化性结节或火山口样溃疡，可见角化物。",
+    "microscopy": "异型鳞状上皮细胞突破基底膜浸润真皮及皮下组织，呈巢状、条索状或片状生长。高分化者可见角化珠（同心层状角化物）和细胞间桥，细胞多角形，胞浆丰富嗜酸性。低分化者角化少见，核多形性显著，核分裂象增多，包括病理性核分裂。间质常见促纤维增生反应及淋巴细胞浸润。需评估神经周围侵犯和淋巴血管侵犯，这些是高危特征。可见从正常表皮→光化性角化病→原位癌→浸润癌的渐进过程。",
+    "keyFeatures": [
+      "鳞状分化(角化珠/细胞间桥)",
+      "p40+/p63+/CK5/6+",
+      "从光化性角化病-原位癌-浸润癌的进展",
+      "可区域淋巴结转移"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "p40",
+        "result": "阳性",
+        "note": "鳞状标记"
+      },
+      {
+        "marker": "CK5/6",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "EMA",
+        "result": "阳性",
+        "note": "区别于BCC"
+      },
+      {
+        "marker": "S-100",
+        "result": "阴性",
+        "note": "排除黑色素瘤"
+      }
+    ],
+    "molecularFeatures": "TP53突变(紫外线损伤)、NOTCH1/2突变、CDKN2A缺失。",
+    "differentialDiagnosis": [
+      "basal-cell-carcinoma",
+      "melanoma"
+    ],
+    "grading": "高分化/中分化/低分化",
+    "staging": "AJCC TNM",
+    "prognosis": "总体预后好，5年生存率>95%。高危(>2cm、低分化、神经侵犯)者转移风险增加。",
+    "treatment": "手术切除。高危者辅助放疗。免疫抑制患者和转移性可用免疫治疗(cemiplimab)。",
+    "images": [
+      {
+        "url": "/diagrams/keratin-pearl.svg",
+        "caption": "皮肤 SCC 的角化珠是鳞状分化的形态学标志"
+      }
+    ],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "seborrheic-keratosis",
+    "nameZh": "脂溢性角化病",
+    "nameEn": "Seborrheic Keratosis",
+    "aliases": [
+      "老年疣",
+      "SK"
+    ],
+    "organ": "skin",
+    "category": "benign",
+    "epidemiology": "最常见的良性皮肤肿瘤，几乎所有老年人均可见。发病率随年龄增加，50岁以上人群中超过80%至少有一个SK。无明显性别差异，所有人种均可发生。紫外线暴露和遗传易感性是主要因素，多发者常有家族倾向。",
+    "clinicalFeatures": "褐色或黑色疣状斑块，有'粘贴样'外观，好发于面部、躯干、上肢。",
+    "grossPathology": "棕褐色至黑色的隆起性斑块或丘疹，表面粗糙，边界清楚。",
+    "microscopy": "表皮呈外生性增生（向上生长而非向真皮侵入），表现为角化过度和棘层肥厚，基底部形成平直的底线。增生的上皮由均匀温和的基底样细胞和鳞状细胞组成，无核异型和核分裂象。特征性表现包括角化囊肿（假角质囊肿，即陷入增生上皮内的角化物填充的囊腔）和漩涡状角化（squamous eddies）。组织学亚型多样：棘层肥厚型、过度角化型、腺样/网状型、刺激型（假癌性）和克隆型等。色素型可含大量黑色素。",
+    "keyFeatures": [
+      "外生性增生，向上生长",
+      "角化过度+棘层肥厚",
+      "角化囊肿(角质珠)",
+      "良性，与黑色素瘤鉴别"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK5/6",
+        "result": "阳性",
+        "note": "上皮标记"
+      },
+      {
+        "marker": "S-100",
+        "result": "阴性",
+        "note": "排除黑色素瘤"
+      },
+      {
+        "marker": "HMB45",
+        "result": "阴性",
+        "note": "排除黑色素瘤"
+      }
+    ],
+    "molecularFeatures": "FGFR3和PIK3CA激活突变常见。",
+    "differentialDiagnosis": [
+      "melanoma",
+      "basal-cell-carcinoma"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "良性，无恶变风险。",
+    "treatment": "无需治疗。美观原因可冷冻、电灼或刮除。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "merkel-cell-carcinoma",
+    "nameZh": "Merkel 细胞癌",
+    "nameEn": "Merkel Cell Carcinoma",
+    "aliases": [
+      "MCC",
+      "皮肤神经内分泌癌"
+    ],
+    "organ": "skin",
+    "category": "malignant",
+    "epidemiology": "罕见但高度侵袭，老年、慢性日晒、免疫抑制患者多见；约 80% 与 Merkel 细胞多瘤病毒（MCPyV）相关。",
+    "clinicalFeatures": "迅速生长的无痛性红紫色结节（AEIOU：无症状、扩张性、免疫抑制、年龄 > 50、紫外线暴露部位）。",
+    "grossPathology": "真皮或皮下界清红紫色结节，切面灰白色，常累及表皮。",
+    "microscopy": "均匀的小至中等大小蓝色圆细胞浸润真皮及皮下组织，呈小梁状、巢状、弥漫片状或器官样排列。肿瘤细胞胞浆极少，核圆形，染色质细腻呈特征性'胡椒盐'状（神经内分泌型染色质），核仁不明显。核分裂象极为活跃，凋亡小体常见。核模（nuclear molding，相邻细胞核相互挤压变形）是重要形态学特征。间质纤细血管丰富，常见地图样坏死。肿瘤通常不累及表皮（Grenz zone保存）。需与转移性小细胞肺癌、淋巴瘤和Ewing肉瘤鉴别。",
+    "keyFeatures": [
+      "CK20 核旁点状（perinuclear dot）阳性是诊断特征",
+      "神经内分泌标记（Syn、CgA、INSM1）阳性",
+      "TTF-1 阴性（区别于 SCLC 转移）",
+      "MCPyV 阳性或紫外线驱动型两条通路",
+      "PD-1/PD-L1 抑制剂有显著疗效"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK20",
+        "result": "核旁点状阳性",
+        "note": "最具特征"
+      },
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阴性",
+        "note": "与 SCLC 转移鉴别"
+      },
+      {
+        "marker": "Ki-67",
+        "result": ">50%",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "两条发病通路：MCPyV 整合（病毒 T 抗原驱动）和紫外线诱导的高突变负荷（TP53 / RB1 突变）。",
+    "differentialDiagnosis": [
+      "small-cell-lung-carcinoma",
+      "basal-cell-carcinoma",
+      "cutaneous-scc"
+    ],
+    "grading": "不分级，均为高级别",
+    "staging": "AJCC TNM 第 8 版",
+    "prognosis": "预后差，5 年生存随分期 IA 约 65%、IV 约 14%；免疫治疗时代有改善。",
+    "treatment": "广泛切除 + 前哨淋巴结活检 ± 辅助放疗；晚期首选免疫治疗（avelumab、pembrolizumab）。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "dysplastic-nevus",
+    "nameZh": "发育不良痣",
+    "nameEn": "Dysplastic Nevus",
+    "aliases": [
+      "Clark 痣",
+      "非典型黑色素细胞痣"
+    ],
+    "organ": "skin",
+    "category": "precancerous",
+    "epidemiology": "常见的黑色素细胞病变，白种人中约2-8%有发育不良痣，常多发。好发于青年至中年人，无明显性别差异。家族性非典型多痣黑色素瘤综合征（FAMMM/CDKN2A胚系突变）患者可有数十至上百个发育不良痣，终生黑色素瘤风险极高。紫外线暴露和浅肤色是危险因素。",
+    "clinicalFeatures": "直径 &gt; 5 mm，边界模糊，颜色不均的扁平或稍隆起色素性皮损。需与早期黑色素瘤鉴别。",
+    "grossPathology": "扁平或略隆起的色素斑块，边界不规则但未及黑色素瘤程度。",
+    "microscopy": "交界部黑色素细胞巢增大，形态不规则，可桥连相邻真皮乳头。特征性'shouldering'现象（表皮内交界成分超出真皮成分边缘延伸）。肿瘤细胞以梭形黑色素细胞为主，核轻至中度异型，核仁小，胞浆含不等量黑色素。真皮浅层可见板层状纤维化（lamellar fibroplasia，围绕表皮突的同心层状嗜酸性纤维）和淋巴细胞带状浸润。无Pagetoid扩散（与黑色素瘤的关键鉴别点），深部细胞保留成熟现象，核分裂象罕见。",
+    "keyFeatures": [
+      "桥连的交界巢（bridging nests）",
+      "板层状纤维化（lamellar fibrosis）",
+      "&quot;shouldering&quot; 现象",
+      "核非典型分级为轻 / 中 / 重",
+      "重度非典型视为原位黑色素瘤的前驱"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "HMB45",
+        "result": "分带表达",
+        "note": "向下&quot;成熟&quot;减弱"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低",
+        "note": "帮助与黑色素瘤鉴别"
+      }
+    ],
+    "molecularFeatures": "常见 BRAF 或 NRAS 突变，TERT 启动子突变罕见。",
+    "differentialDiagnosis": [
+      "melanoma"
+    ],
+    "grading": "轻 / 中 / 重度非典型",
+    "staging": "不适用",
+    "prognosis": "单个发育不良痣恶变率低，但整体反映个体黑色素瘤风险",
+    "treatment": "观察随访；重度非典型或可疑者完整切除。",
+    "images": [
+      {
+        "url": "/diagrams/pagetoid.svg",
+        "caption": "发育不良痣无显著 Pagetoid 扩散；与早期黑色素瘤的关键区别之一"
+      }
+    ],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "common-melanocytic-nevus",
+    "nameZh": "普通黑色素细胞痣",
+    "nameEn": "Common Melanocytic Nevus",
+    "aliases": [
+      "普通痣",
+      "色素痣",
+      "黑痣"
+    ],
+    "organ": "skin",
+    "category": "benign",
+    "epidemiology": "极为常见的良性黑色素细胞增生，几乎所有成年人均有。白种人平均每人20-40个，青春期前后数量达高峰，之后随年龄增长可逐渐消退。",
+    "clinicalFeatures": "小的（通常<6mm）、圆形或椭圆形、边界清楚、颜色均匀的棕褐色丘疹或斑片。根据位置分为交界痣、复合痣和皮内痣。",
+    "grossPathology": "扁平至半球形丘疹，颜色均匀，棕褐色至深褐色，表面光滑，边界清楚。",
+    "microscopy": "良性黑色素细胞在表皮-真皮交界处和/或真皮内呈巢状排列。交界痣位于基底层，复合痣兼有交界和真皮成分，皮内痣仅在真皮内。特征性表现为从浅层到深层的\"成熟现象\"：浅层细胞较大、含色素、呈上皮样，深层细胞变小、色素减少、呈淋巴细胞样或神经样。无明显核异型，核分裂象罕见。",
+    "keyFeatures": [
+      "从浅到深的\"成熟现象\"（maturation）是良性最重要证据",
+      "交界巢大小均匀，对称分布",
+      "无Pagetoid扩散",
+      "无显著核异型和核分裂象",
+      "HMB-45成熟递减（浅层阳性、深层阴性）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "阳性",
+        "note": "黑色素细胞标记"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": "也称MART-1"
+      },
+      {
+        "marker": "HMB-45",
+        "result": "成熟递减",
+        "note": "浅层阳性、深层逐渐阴性，是良性的重要特征"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "<5%",
+        "note": "增殖指数低"
+      },
+      {
+        "marker": "p16",
+        "result": "阳性",
+        "note": "良性痣中保留表达，与Spitz痣/黑色素瘤鉴别有帮助"
+      }
+    ],
+    "molecularFeatures": "BRAF V600E突变常见（约80%的获得性普通痣），但这是早期事件，单独不足以导致恶变（癌基因诱导的衰老）。NRAS突变见于部分先天性痣。",
+    "differentialDiagnosis": [
+      "dysplastic-nevus",
+      "melanoma",
+      "spitz-nevus"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "良性，极少恶变。无需治疗，但应注意临床随访观察形态变化。",
+    "treatment": "通常无需治疗。因美观或临床怀疑可完整切除。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "spitz-nevus",
+    "nameZh": "Spitz痣",
+    "nameEn": "Spitz Nevus",
+    "aliases": [
+      "梭形和上皮样细胞痣",
+      "良性幼年黑色素瘤"
+    ],
+    "organ": "skin",
+    "category": "benign",
+    "epidemiology": "多见于儿童和青少年，也可见于成人。约占儿童黑色素细胞肿瘤的1%。女性稍多见，好发于面部（儿童）和下肢（成人）。",
+    "clinicalFeatures": "快速生长的粉红色至红褐色圆顶状丘疹或结节，通常<1cm，好发于面部（儿童）和下肢（成人）。临床常误诊为血管瘤或黑色素瘤。",
+    "grossPathology": "界限清楚的圆顶状丘疹或小结节，粉红色至红褐色，表面光滑，直径多<1cm。",
+    "microscopy": "对称、界限清楚的黑色素细胞肿瘤，由大的梭形和/或上皮样黑色素细胞组成。细胞胞浆丰富、嗜酸性，核大但核仁不显著。表皮-真皮交界处可见特征性的Kamino小体（嗜酸性玻璃样小球，为基底膜物质聚集）。细胞从浅层到深层呈成熟递减趋势。可见\"雨淋样\"（raining down）分布模式。核分裂象可见但无病理性核分裂。",
+    "keyFeatures": [
+      "大的梭形和/或上皮样黑色素细胞",
+      "Kamino小体（嗜酸性玻璃样球）",
+      "对称、界限清楚",
+      "成熟现象存在",
+      "儿童和青少年好发"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "阳性",
+        "note": "黑色素细胞标记"
+      },
+      {
+        "marker": "HMB-45",
+        "result": "阳性",
+        "note": "可弥漫阳性，不像普通痣那样成熟递减"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低（<5%）",
+        "note": "增殖活性低"
+      },
+      {
+        "marker": "p16",
+        "result": "阳性（保留表达）",
+        "note": "缺失提示恶性转化"
+      },
+      {
+        "marker": "ALK",
+        "result": "部分阳性",
+        "note": "ALK融合见于部分Spitz肿瘤；BRAF V600E通常阴性"
+      }
+    ],
+    "molecularFeatures": "约50%的Spitz肿瘤携带激酶融合（HRAS 11p15激活突变、ALK/ROS1/NTRK1/NTRK3/MET/RET/BRAF融合），BRAF V600E通常阴性（与普通痣不同）。TERT启动子突变的出现提示恶性潜能。",
+    "differentialDiagnosis": [
+      "melanoma",
+      "dysplastic-nevus",
+      "common-melanocytic-nevus"
+    ],
+    "grading": "不适用（注意非典型Spitz肿瘤为中间类别）",
+    "staging": "不适用",
+    "prognosis": "经典Spitz痣预后极好。非典型Spitz肿瘤（生物学行为不确定）偶有前哨淋巴结阳性，但远处转移极罕见。",
+    "treatment": "完整切除。非典型Spitz肿瘤建议完整切除并密切随访。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "blue-nevus",
+    "nameZh": "蓝痣",
+    "nameEn": "Blue Nevus",
+    "aliases": [
+      "普通蓝痣",
+      "细胞性蓝痣"
+    ],
+    "organ": "skin",
+    "category": "benign",
+    "epidemiology": "较常见的良性黑色素细胞肿瘤，可发生于任何年龄，以年轻成人多见。好发于手背、足背、面部和头皮。女性略多见。",
+    "clinicalFeatures": "蓝色至蓝灰色的小丘疹或结节，通常<1cm，质地硬，边界清楚。蓝色是由于真皮深层含色素的黑色素细胞散射光线所致（Tyndall效应）。",
+    "grossPathology": "蓝色至蓝黑色的小结节，切面灰蓝色，边界清楚。细胞性蓝痣体积可较大（1-3cm）。",
+    "microscopy": "普通蓝痣由散在的树突状黑色素细胞分布于真皮网状层的胶原束之间，细胞呈长梭形，胞浆内含有大量黑色素颗粒，伴有噬黑色素细胞。细胞性蓝痣在普通蓝痣的基础上混有密集的椭圆形或梭形淡染细胞岛，胞浆较少色素，可形成束状或巢团状排列。两型均无核异型或核分裂象。",
+    "keyFeatures": [
+      "真皮深层树突状含色素的黑色素细胞",
+      "细胞分布于胶原束之间",
+      "噬黑色素细胞常伴随",
+      "无核异型和核分裂象",
+      "临床蓝色源于Tyndall效应"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "阳性",
+        "note": "黑色素细胞标记"
+      },
+      {
+        "marker": "HMB-45",
+        "result": "阳性",
+        "note": "树突状细胞阳性"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": "黑色素细胞标记"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "<1%",
+        "note": "增殖活性极低"
+      }
+    ],
+    "molecularFeatures": "GNAQ或GNA11激活突变见于约80%的蓝痣（与BRAF/NRAS突变的普通痣不同）。恶性蓝痣可伴有额外的BAP1缺失、SF3B1突变或EIF1AX突变。",
+    "differentialDiagnosis": [
+      "melanoma",
+      "common-melanocytic-nevus"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "良性，预后极好。细胞性蓝痣罕见恶变为恶性蓝痣。",
+    "treatment": "无需治疗。诊断不确定或临床怀疑恶变时完整切除。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "melanoma-in-situ",
+    "nameZh": "原位黑色素瘤",
+    "nameEn": "Melanoma in Situ",
+    "aliases": [
+      "MIS",
+      "表皮内黑色素瘤"
+    ],
+    "organ": "skin",
+    "category": "precancerous",
+    "epidemiology": "黑色素瘤的最早期阶段（Breslow厚度为0），发病率持续上升。紫外线暴露是主要危险因素。日光性雀斑样痣型是头颈部老年人慢性日光损伤皮肤最常见的亚型。",
+    "clinicalFeatures": "不规则色素性斑片，边界模糊，颜色不均匀（棕色、黑色、灰色混杂），逐渐扩大。皮肤镜可见非典型色素网络、不规则条纹和不对称结构。",
+    "grossPathology": "不规则的色素性扁平斑片，边界不清，颜色不均匀，可从数毫米到数厘米不等。",
+    "microscopy": "非典型黑色素细胞局限于表皮内，沿基底层呈单个或巢状增生，可见Pagetoid扩散（非典型黑色素细胞向表皮上层播散）。细胞呈上皮样或梭形，核增大、深染、核仁明显。非典型黑色素细胞在基底层连续性增生，可取代正常基底层角质形成细胞。日光性雀斑样痣型（恶性雀斑）中非典型细胞沿萎缩的表皮基底层散在分布，并沿毛囊外根鞘下延。关键是未突破基底膜，无真皮侵犯。",
+    "keyFeatures": [
+      "非典型黑色素细胞局限于表皮内",
+      "Pagetoid扩散",
+      "核异型明显但无真皮侵犯",
+      "日光性雀斑样痣型是头颈部最常见亚型",
+      "完整切除后几乎可治愈"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "阳性",
+        "note": "最敏感的黑色素细胞标记"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": "有助于评估表皮内非典型细胞分布范围"
+      },
+      {
+        "marker": "HMB-45",
+        "result": "阳性",
+        "note": "表皮内非典型细胞阳性"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "增高",
+        "note": "较良性痣明显增高"
+      },
+      {
+        "marker": "SOX10",
+        "result": "阳性",
+        "note": "核标记，评估切缘时非常有用"
+      }
+    ],
+    "molecularFeatures": "BRAF V600E突变约见于50%（浅表扩散型），NRAS突变约见于20%。日光性雀斑样痣型常见KIT突变。TERT启动子突变可帮助与良性痣鉴别。",
+    "differentialDiagnosis": [
+      "dysplastic-nevus",
+      "melanoma",
+      "common-melanocytic-nevus"
+    ],
+    "grading": "不适用（均为Tis期）",
+    "staging": "AJCC TNM pTis",
+    "prognosis": "完整切除后预后极好，几乎100%治愈。但切缘阳性的复发率较高，需注意充分切除。",
+    "treatment": "手术切除，推荐5-10mm安全切缘。日光性雀斑样痣型因边界不清可能需要更宽切缘或Mohs手术。不需要前哨淋巴结活检。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "invasive-melanoma",
+    "nameZh": "侵袭性黑色素瘤",
+    "nameEn": "Invasive Melanoma",
+    "aliases": [
+      "浸润性黑色素瘤",
+      "恶性黑色素瘤"
+    ],
+    "organ": "skin",
+    "category": "malignant",
+    "epidemiology": "皮肤最致命的恶性肿瘤之一，全球发病率持续上升。白种人发病率最高（澳大利亚最高），紫外线暴露是最重要的环境危险因素。中位发病年龄约60岁。",
+    "clinicalFeatures": "符合ABCDE法则的色素性皮损：不对称、边界不规则、颜色不均、直径>6mm、进展变化。临床亚型包括浅表扩散型（最常见，约70%）、结节型（预后最差）、肢端雀斑样痣型和日光性雀斑样痣型。",
+    "grossPathology": "不规则色素性斑片、斑块或结节，颜色从棕、黑到蓝灰不等，可伴溃疡、出血。结节型可呈隆起性结节。",
+    "microscopy": "非典型黑色素细胞突破基底膜侵入真皮和/或皮下组织。细胞可呈上皮样、梭形或小细胞形态，核大、核仁显著、染色质不规则。常见Pagetoid扩散、核分裂象（包括病理性核分裂）、肿瘤浸润淋巴细胞反应。浅表扩散型以表皮内水平生长期为主；结节型以垂直生长期为主，缺乏明显的径向生长期。可见血管和/或神经侵犯。微卫星灶和在途转移提示不良预后。",
+    "keyFeatures": [
+      "Breslow厚度是最重要的预后因素",
+      "溃疡、核分裂率、淋巴血管侵犯影响分期",
+      "BRAF V600E突变约50%指导靶向治疗",
+      "PD-L1表达和TMB指导免疫治疗",
+      "前哨淋巴结活检适用于Breslow>0.8mm"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "阳性（>95%）",
+        "note": "最敏感但特异性较低"
+      },
+      {
+        "marker": "SOX10",
+        "result": "阳性",
+        "note": "核标记，敏感且特异"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": "也称MART-1，敏感"
+      },
+      {
+        "marker": "HMB-45",
+        "result": "阳性",
+        "note": "较特异但敏感性稍低"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "高（常>20%）",
+        "note": "增殖活性高，与预后相关"
+      },
+      {
+        "marker": "BRAF V600E",
+        "result": "约50%阳性",
+        "note": "免疫组化VE1克隆可检测突变蛋白"
+      }
+    ],
+    "molecularFeatures": "BRAF V600E突变约50%（浅表扩散型和结节型），NRAS突变约20%，NF1突变约15%，KIT突变/扩增（肢端型和黏膜型）。TERT启动子突变是重要的恶性标记。PD-L1表达和肿瘤突变负荷(TMB)指导免疫治疗选择。",
+    "differentialDiagnosis": [
+      "dysplastic-nevus",
+      "melanoma-in-situ",
+      "spitz-nevus",
+      "blue-nevus"
+    ],
+    "grading": "Breslow厚度(mm) + Clark分级(I-V) + 核分裂率(/mm2)",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "Breslow<0.8mm且无溃疡：>99%的5年生存率；Breslow>4mm伴溃疡：5年生存率约50%；远处转移（IV期）：免疫/靶向治疗时代5年生存率提升至约30-40%。",
+    "treatment": "手术切除（切缘根据Breslow厚度决定：0.8-2mm切缘1cm，>2mm切缘2cm）+ 前哨淋巴结活检。III期辅助治疗：纳武利尤单抗或达拉非尼+曲美替尼。IV期：免疫治疗（纳武利尤单抗+伊匹木单抗联合或PD-1单药）和/或BRAF/MEK靶向治疗。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "desmoplastic-melanoma",
+    "nameZh": "促纤维增生性黑色素瘤",
+    "nameEn": "Desmoplastic Melanoma",
+    "aliases": [
+      "硬化性黑色素瘤",
+      "DM"
+    ],
+    "organ": "skin",
+    "category": "malignant",
+    "epidemiology": "罕见的黑色素瘤亚型，约占所有皮肤黑色素瘤的1-4%。好发于老年人（中位年龄约65岁），男性稍多见。头颈部慢性日光损伤皮肤好发。",
+    "clinicalFeatures": "通常表现为无色素或少色素的硬性结节或斑块，常位于头颈部。因缺乏典型色素和ABCDE特征，临床诊断困难，常被误诊为瘢痕、纤维瘤或基底细胞癌，导致诊断延迟。",
+    "grossPathology": "皮肤色至淡粉色的硬性结节或斑块，通常无明显色素沉着。切面灰白色，质地硬，类似瘢痕组织。",
+    "microscopy": "梭形肿瘤细胞在致密的胶原基质中呈束状或席纹状排列，细胞核不典型但常较温和，胞浆少。肿瘤细胞周围有丰富的纤维增生性间质（促纤维增生反应）。常见神经周围侵犯（neurotropism），这是该亚型的重要特征。通常缺乏色素，表皮上方可有日光性雀斑样痣型原位成分。淋巴细胞聚集常见，特别是在\"纯型\"促纤维增生性黑色素瘤中。\"混合型\"含有传统的非促纤维增生性成分。",
+    "keyFeatures": [
+      "梭形细胞在致密胶原基质中浸润",
+      "神经周围侵犯（neurotropism）是重要特征",
+      "Melan-A和HMB-45常阴性，S-100和SOX10是主要诊断标记",
+      "纯型预后较混合型好",
+      "高突变负荷，对免疫治疗反应好"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "阳性（>95%）",
+        "note": "最重要的诊断标记"
+      },
+      {
+        "marker": "SOX10",
+        "result": "阳性",
+        "note": "核标记，敏感"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "常阴性",
+        "note": "促纤维增生性成分通常不表达"
+      },
+      {
+        "marker": "HMB-45",
+        "result": "常阴性",
+        "note": "促纤维增生性成分通常不表达"
+      },
+      {
+        "marker": "p75NTR",
+        "result": "阳性",
+        "note": "神经嵴标记，在促纤维增生性黑色素瘤中有诊断辅助价值"
+      }
+    ],
+    "molecularFeatures": "NF1突变最常见（约50%），BRAF V600E和NRAS突变罕见（与传统黑色素瘤不同）。紫外线突变特征显著，突变负荷高。高TMB使其对免疫检查点抑制剂反应良好。",
+    "differentialDiagnosis": [
+      "invasive-melanoma",
+      "cutaneous-scc",
+      "basal-cell-carcinoma"
+    ],
+    "grading": "Breslow厚度（通常较厚，因诊断延迟）",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "局部复发率较高（尤其有神经周围侵犯者），但纯型的区域淋巴结转移率和远处转移率低于其他同等厚度的黑色素瘤。5年总体生存率约75%。混合型预后较差。",
+    "treatment": "广泛切除（切缘至少2cm）。辅助放疗对减少局部复发有益，尤其有神经周围侵犯或切缘阳性者。前哨淋巴结活检对纯型获益有限但混合型仍推荐。晚期对免疫治疗（PD-1抑制剂）反应良好。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  },
+  {
+    "id": "sebaceous-carcinoma",
+    "nameZh": "皮脂腺癌",
+    "nameEn": "Sebaceous Carcinoma",
+    "aliases": [
+      "睑板腺癌",
+      "Meibomian腺癌"
+    ],
+    "organ": "skin",
+    "category": "malignant",
+    "epidemiology": "罕见的皮肤附属器恶性肿瘤，眼睑是最常见部位（约75%），来源于睑板腺（Meibomian腺）或Zeis腺。亚洲人群中相对多见。好发于老年女性。Muir-Torre综合征（Lynch综合征相关）患者皮脂腺肿瘤风险显著增高。",
+    "clinicalFeatures": "眼睑型表现为缓慢生长的无痛性眼睑结节，常被误诊为霰粒肿或慢性眼睑炎。可出现Pagetoid扩散至结膜和皮肤。眼睑外型可发生于头面部或躯干任何有皮脂腺的部位。",
+    "grossPathology": "黄白色至灰白色结节或肿块，质地中等，切面可见黄色区域（对应皮脂腺分化区域）。眼睑型常累及睑板。",
+    "microscopy": "不规则的细胞巢团和小叶浸润真皮和皮下组织。肿瘤细胞形态多样，从高分化（胞浆含丰富空泡状脂质，呈\"泡沫样\"或\"桑葚样\"）到低分化（基底样或鳞状样，脂质含量少）。特征性表现为巢团内从周边基底样细胞向中央成熟皮脂腺细胞过渡的\"成熟梯度\"。核异型和核分裂象明显。Pagetoid扩散至表皮（特别是结膜上皮）是重要的组织学特征，需与Paget病鉴别。",
+    "keyFeatures": [
+      "眼睑最常见，易误诊为霰粒肿",
+      "胞浆内脂质空泡（皮脂腺分化）",
+      "Pagetoid扩散至结膜/表皮",
+      "Muir-Torre综合征需筛查（MMR蛋白检测）",
+      "adipophilin染色辅助诊断脂质分化"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "EMA",
+        "result": "阳性",
+        "note": "上皮标记"
+      },
+      {
+        "marker": "BerEP4",
+        "result": "阳性",
+        "note": "与BCC重叠但模式不同"
+      },
+      {
+        "marker": "AR",
+        "result": "阳性",
+        "note": "雄激素受体，皮脂腺分化标记"
+      },
+      {
+        "marker": "adipophilin",
+        "result": "阳性",
+        "note": "脂质小滴标记，确认皮脂腺分化最敏感"
+      },
+      {
+        "marker": "CK7",
+        "result": "灶状阳性",
+        "note": "可辅助诊断"
+      },
+      {
+        "marker": "p63",
+        "result": "阴性",
+        "note": "与鳞状细胞癌鉴别"
+      }
+    ],
+    "molecularFeatures": "Muir-Torre综合征相关者可见微卫星不稳定（MSI）和错配修复蛋白（MMR: MLH1/MSH2/MSH6/PMS2）缺失。散发性可见TP53、RB1突变。所有皮脂腺癌均应行MMR免疫组化筛查。",
+    "differentialDiagnosis": [
+      "basal-cell-carcinoma",
+      "cutaneous-scc",
+      "melanoma"
+    ],
+    "grading": "高分化/中分化/低分化",
+    "staging": "AJCC TNM（眼睑癌分期）",
+    "prognosis": "眼睑型5年生存率约70-80%。Pagetoid扩散、低分化、肿瘤>2cm、眼睑外部位、淋巴结转移是不良预后因素。Muir-Torre相关者需监测内脏肿瘤。",
+    "treatment": "广泛切除或Mohs手术。眼睑型需评估Pagetoid扩散范围（结膜map biopsy）。晚期或不可手术者可考虑放疗。Muir-Torre综合征者需筛查结直肠癌等内脏肿瘤。免疫治疗（PD-1抑制剂）对MMR缺失型有潜在疗效。",
+    "images": [],
+    "references": [
+      "WHO Classification of Skin Tumours, 5th Edition, 2023"
+    ]
+  }
 ]

@@ -1,9 +1,17 @@
-import { getDifferentials } from '@/lib/data';
+import { getDifferentials, getAllDiseases } from '@/lib/data';
 import Link from 'next/link';
 import { IconScale } from '@/components/Icon';
+import { DifferentialFlowcharts } from './flowcharts';
 
 export default function DifferentialsPage() {
   const diffs = getDifferentials();
+  const diseases = getAllDiseases();
+  const diseaseMap = new Map(diseases.map(d => [d.id, { nameZh: d.nameZh, organ: d.organ }]));
+  const getName = (id: string) => diseaseMap.get(id)?.nameZh || id;
+  const getHref = (id: string) => {
+    const d = diseaseMap.get(id);
+    return d ? `/atlas/${d.organ}/${id}` : `/search?q=${encodeURIComponent(id)}`;
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
@@ -29,8 +37,7 @@ export default function DifferentialsPage() {
               </div>
 
               <div className="px-6 py-5 space-y-4">
-                {/* Key markers — dedupe defensively so a data typo can't
-                    explode the render with duplicate React keys. */}
+                {/* Key markers */}
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--fg-muted)' }}>关键标记物</div>
                   <div className="flex flex-wrap gap-2">
@@ -56,12 +63,22 @@ export default function DifferentialsPage() {
                   </div>
                 </div>
 
+                {/* Flowchart */}
+                <DifferentialFlowcharts differentialId={d.id} />
+
                 {/* Related diseases */}
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--fg-muted)' }}>涉及疾病</div>
                   <div className="flex flex-wrap gap-1.5">
                     {Array.from(new Set(d.diseases)).map(id => (
-                      <span key={id} className="text-xs px-2.5 py-1 rounded-full" style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}>{id}</span>
+                      <Link
+                        key={id}
+                        href={getHref(id)}
+                        className="text-xs px-2.5 py-1 rounded-full transition-colors"
+                        style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)', textDecoration: 'none' }}
+                      >
+                        {getName(id)}
+                      </Link>
                     ))}
                   </div>
                 </div>

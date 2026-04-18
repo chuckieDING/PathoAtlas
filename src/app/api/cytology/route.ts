@@ -1,5 +1,6 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+import { getDataDir } from '@/lib/dataDir';
 
 interface CytologySystem {
   id: string;
@@ -22,7 +23,7 @@ let cachedSystems: CytologySystem[] | null = null;
 export async function GET() {
   try {
     if (!cachedSystems) {
-      const filePath = join(process.cwd(), 'data', 'cytology.json');
+      const filePath = join(getDataDir(), 'cytology.json');
       const data = await readFile(filePath, 'utf-8');
       cachedSystems = JSON.parse(data);
     }

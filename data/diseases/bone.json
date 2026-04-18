@@ -3,121 +3,255 @@
     "id": "osteosarcoma",
     "nameZh": "骨肉瘤",
     "nameEn": "Osteosarcoma",
-    "aliases": ["骨肉瘤"],
+    "aliases": [
+      "骨肉瘤"
+    ],
     "organ": "bone",
     "category": "malignant",
-    "epidemiology": "最常见的原发性骨恶性肿瘤。",
+    "epidemiology": "最常见的原发性骨恶性肿瘤，占原发骨肿瘤的约20%。好发于10-25岁青少年（第一高峰）和60岁以上老年人（第二高峰，继发于Paget病或放疗后）。男性略多见（男女比约1.5:1）。长骨干骺端最常见（股骨远端、胫骨近端、肱骨近端）。",
     "clinicalFeatures": "疼痛，青少年常见。",
     "grossPathology": "骨破坏，软组织肿块。",
-    "microscopy": "肿瘤细胞产生骨样组织。",
-    "keyFeatures": ["骨样组织", "梭形细胞", "异型性"],
+    "microscopy": "诊断的关键是确认肿瘤细胞直接产生骨样基质（osteoid）——由恶性梭形或多形性细胞直接分泌的嗜酸性无定形/蕾丝样基质。肿瘤细胞高度异型，核大深染多形性，核分裂象极活跃（包括病理性核分裂）。根据主要基质和细胞类型分为骨母细胞型（成骨为主）、软骨母细胞型（软骨基质为主）和纤维母细胞型（梭形细胞鲱鱼骨样排列为主）。可见多核巨细胞、坏死和出血。毛细血管翳状肿瘤新生血管丰富。",
+    "keyFeatures": [
+      "骨样组织",
+      "梭形细胞",
+      "异型性"
+    ],
     "ihcProfile": [
-      {"marker": "S-100", "result": "阴性", "note": ""},
-      {"marker": "Vimentin", "result": "阳性", "note": ""}
+      {
+        "marker": "S-100",
+        "result": "阴性",
+        "note": ""
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "SATB2",
+        "result": "阳性",
+        "note": "成骨分化标记"
+      },
+      {
+        "marker": "CD99",
+        "result": "灶状阳性",
+        "note": "排除Ewing肉瘤需结合FISH"
+      },
+      {
+        "marker": "MDM2",
+        "result": "阴性",
+        "note": "排除低级别骨肉瘤（旁皮质型）"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Masson",
+        "result": "骨样基质vs胶原",
+        "note": "鉴别肿瘤性骨样基质与纤维胶原间质"
+      }
     ],
     "molecularFeatures": "复杂核型。",
-    "differentialDiagnosis": ["ewing-sarcoma", "chondrosarcoma"],
+    "differentialDiagnosis": [
+      "ewing-sarcoma",
+      "chondrosarcoma"
+    ],
     "grading": "不分级",
     "staging": "AJCC",
     "prognosis": "化疗有效。",
     "treatment": "化疗+手术。",
     "images": [],
-    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Bone Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "chondrosarcoma",
     "nameZh": "软骨肉瘤",
     "nameEn": "Chondrosarcoma",
-    "aliases": ["软骨肉瘤"],
+    "aliases": [
+      "软骨肉瘤"
+    ],
     "organ": "bone",
     "category": "malignant",
-    "epidemiology": "成人常见。",
+    "epidemiology": "第二常见的原发性骨恶性肿瘤，好发于40-70岁中老年成人，男性略多见。常见于骨盆、股骨近端、肱骨近端和肋骨等中轴骨和长骨近端。继发性软骨肉瘤可由骨软骨瘤或内生软骨瘤恶变而来。IDH1/2突变见于约50%的中央型。",
     "clinicalFeatures": "疼痛。",
     "grossPathology": "软骨样肿块。",
-    "microscopy": "软骨细胞异型性。",
-    "keyFeatures": ["软骨细胞", "S-100+", "分级1-3级"],
+    "microscopy": "肿瘤由异型软骨细胞在蓝色透明软骨样基质中形成分叶状结构组成。1级（低级别）：细胞密度中等，核小规则，双核细胞偶见，基质丰富，类似细胞丰富的内生软骨瘤但可见骨皮质浸润和骨髓腔渗透。2级：细胞密度增加，核增大异型，黏液样变性明显，核分裂象可见。3级（高级别）：高度细胞密集，核大深染多形性，核分裂象活跃，梭形细胞区域可出现，黏液样基质替代透明软骨基质。可见钙化和骨化。",
+    "keyFeatures": [
+      "软骨细胞",
+      "S-100+",
+      "分级1-3级"
+    ],
     "ihcProfile": [
-      {"marker": "S-100", "result": "阳性", "note": ""}
+      {
+        "marker": "S-100",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "IDH1 R132H",
+        "result": "约50%阳性",
+        "note": "中央型常见"
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阳性",
+        "note": "间叶标记"
+      },
+      {
+        "marker": "SOX9",
+        "result": "阳性",
+        "note": "软骨分化转录因子"
+      },
+      {
+        "marker": "D2-40",
+        "result": "阳性",
+        "note": "软骨肉瘤中表达"
+      }
     ],
     "molecularFeatures": "IDH1/2突变。",
-    "differentialDiagnosis": ["enchondroma", "osteochondroma"],
+    "differentialDiagnosis": [],
     "grading": "1-3级",
     "staging": "AJCC",
     "prognosis": "取决于分级。",
     "treatment": "手术。",
     "images": [],
-    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Bone Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "giant-cell-tumor",
     "nameZh": "巨细胞瘤",
     "nameEn": "Giant Cell Tumor",
-    "aliases": ["GCT"],
+    "aliases": [
+      "GCT"
+    ],
     "organ": "bone",
     "category": "benign",
-    "epidemiology": "成人常见。",
+    "epidemiology": "中间型（局部侵袭性，偶可转移）骨肿瘤，好发于20-45岁青中年成人，女性略多见。最常见于长骨骨端（股骨远端、胫骨近端、桡骨远端），累及骨骺闭合后的骨端是特征性分布。约占原发骨肿瘤的5%，极少发生于骨骺未闭合的儿童。",
     "clinicalFeatures": "疼痛。",
     "grossPathology": "溶骨性病变。",
-    "microscopy": "多核巨细胞+梭形细胞。",
-    "keyFeatures": ["多核巨细胞", "CD68+", "H3F3A突变"],
+    "microscopy": "肿瘤由两种主要细胞成分组成：大量均匀分布的破骨细胞样多核巨细胞和单核基质细胞（真正的肿瘤细胞）。多核巨细胞体积巨大，含数十个甚至上百个核，核与基质细胞核形态相似（圆至卵圆形，核仁可见）。基质细胞密集排列，呈圆至短梭形，核异型性轻微。两种细胞均匀混合分布是诊断要点，区别于其他含巨细胞的骨病变。间质血管丰富，可见出血、含铁血黄素沉积和反应性新骨形成。H3F3A G34W突变（约95%）通过免疫组化检测H3.3 G34W是重要辅助诊断。",
+    "keyFeatures": [
+      "多核巨细胞",
+      "CD68+",
+      "H3F3A突变"
+    ],
     "ihcProfile": [
-      {"marker": "CD68", "result": "阳性", "note": ""}
+      {
+        "marker": "CD68",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "H3.3 G34W",
+        "result": "阳性",
+        "note": "H3F3A G34W突变特异标记(~95%)"
+      },
+      {
+        "marker": "p63",
+        "result": "阳性",
+        "note": "基质细胞核阳性"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Reticulin",
+        "result": "网架",
+        "note": "评估肿瘤内网架结构"
+      },
+      {
+        "stain": "PAS",
+        "result": "骨巨细胞",
+        "note": "显示巨细胞胞浆糖原成分"
+      }
     ],
     "molecularFeatures": "H3F3A突变。",
-    "differentialDiagnosis": ["aneurysmal-bone-cyst", "chondroblastoma"],
+    "differentialDiagnosis": [
+      "aneurysmal-bone-cyst"
+    ],
     "grading": "不分级",
     "staging": "不适用",
     "prognosis": "良性，但可复发。",
     "treatment": "刮除+骨水泥。",
     "images": [],
-    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Bone Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "aneurysmal-bone-cyst",
     "nameZh": "动脉瘤样骨囊肿",
     "nameEn": "Aneurysmal Bone Cyst",
-    "aliases": ["ABC"],
+    "aliases": [
+      "ABC"
+    ],
     "organ": "bone",
     "category": "benign",
-    "epidemiology": "青少年常见。",
+    "epidemiology": "好发于10-20岁青少年和年轻成人，占良性骨肿瘤的约9%。最常见于长骨干骺端（股骨、胫骨、肱骨），脊柱后方附件也常受累。男女比约1:1，约30%为继发性ABC（继发于巨细胞瘤、成骨细胞瘤等其他骨病变）。",
     "clinicalFeatures": "疼痛，肿胀。",
     "grossPathology": "囊性，血性内容物。",
-    "microscopy": "血腔+梭形细胞。",
-    "keyFeatures": ["血腔", "梭形细胞", "USP6融合"],
+    "microscopy": "特征性的多发血液充盈的囊腔，囊壁由纤维结缔组织构成，衬覆扁平或立方形细胞但无真性内皮衬覆。囊壁间隔内含有增生的纤维母细胞/肌纤维母细胞样梭形细胞、散在的破骨细胞样多核巨细胞、反应性编织骨（不规则骨小梁）、含铁血黄素沉积和慢性炎症细胞。梭形细胞无明显异型性，核分裂象可见但无病理性核分裂。实性区域（约5-10%）富含梭形细胞和巨细胞。需排除毛细血管扩张型骨肉瘤。",
+    "keyFeatures": [
+      "血腔",
+      "梭形细胞",
+      "USP6融合"
+    ],
     "ihcProfile": [
-      {"marker": "CD31", "result": "阳性", "note": "内皮细胞"}
+      {
+        "marker": "CD31",
+        "result": "阳性",
+        "note": "内皮细胞"
+      }
     ],
     "molecularFeatures": "USP6融合。",
-    "differentialDiagnosis": ["giant-cell-tumor", "telangiectatic-osteosarcoma"],
+    "differentialDiagnosis": [
+      "giant-cell-tumor"
+    ],
     "grading": "不分级",
     "staging": "不适用",
     "prognosis": "良性。",
     "treatment": "手术。",
     "images": [],
-    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Bone Tumours, 5th Ed, 2020"
+    ]
   },
   {
     "id": "fibrous-dysplasia",
     "nameZh": "纤维发育不良",
     "nameEn": "Fibrous Dysplasia",
-    "aliases": ["FD"],
+    "aliases": [
+      "FD"
+    ],
     "organ": "bone",
     "category": "benign",
-    "epidemiology": "儿童常见。",
+    "epidemiology": "最常见的骨纤维性病变，多在儿童和青少年期发现（5-15岁），骨骼成熟后通常停止进展。单骨型占70-80%，多骨型占20-30%（可伴McCune-Albright综合征：皮肤咖啡斑+性早熟+多骨纤维发育不良）。无明显性别差异。",
     "clinicalFeatures": "畸形。",
     "grossPathology": "纤维组织替代骨。",
-    "microscopy": "梭形细胞+不成熟骨小梁。",
-    "keyFeatures": ["不成熟骨小梁", "GNAS突变"],
+    "microscopy": "病变由温和的纤维母细胞样梭形细胞在纤维性基质中增生构成，间杂不规则的编织骨小梁（不成熟骨）。骨小梁呈特征性的\"中文字样\"或\"C/Y型\"弯曲形态，无骨母细胞镶边（这一特征区别于骨化性纤维瘤和骨纤维发育不良）。梭形细胞核均匀温和，无异型性，核分裂罕见。间质可见黏液样变性区域、含铁血黄素沉积、囊性变和软骨岛（尤其颅面骨）。病变与周围正常骨松质逐渐移行，无清晰界限。",
+    "keyFeatures": [
+      "不成熟骨小梁",
+      "GNAS突变"
+    ],
     "ihcProfile": [
-      {"marker": "SMA", "result": "阳性", "note": ""}
+      {
+        "marker": "SMA",
+        "result": "阳性",
+        "note": ""
+      }
     ],
     "molecularFeatures": "GNAS突变。",
-    "differentialDiagnosis": ["fibrous-cortical-defect", "osteofibrous-dysplasia"],
+    "differentialDiagnosis": [],
     "grading": "不分级",
     "staging": "不适用",
     "prognosis": "良性。",
     "treatment": "观察。",
     "images": [],
-    "references": ["WHO Bone Tumours, 5th Ed, 2020"]
+    "references": [
+      "WHO Bone Tumours, 5th Ed, 2020"
+    ]
   }
 ]

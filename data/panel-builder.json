@@ -1,0 +1,993 @@
+{
+  "morphologyPatterns": [
+    {
+      "id": "spindle",
+      "nameZh": "梭形细胞",
+      "nameEn": "Spindle Cell",
+      "icon": "spindle",
+      "description": "以梭形细胞为主的肿瘤，常见于软组织、消化道和腹膜后"
+    },
+    {
+      "id": "small-round",
+      "nameZh": "小圆蓝细胞",
+      "nameEn": "Small Round Blue Cell",
+      "icon": "round",
+      "description": "由小而圆、胞质少、深染的细胞组成，常见于儿童和青少年"
+    },
+    {
+      "id": "epithelioid",
+      "nameZh": "上皮样",
+      "nameEn": "Epithelioid",
+      "icon": "epithelioid",
+      "description": "细胞呈上皮样排列，常需鉴别癌、黑色素瘤和上皮样间叶肿瘤"
+    },
+    {
+      "id": "pleomorphic",
+      "nameZh": "多形性",
+      "nameEn": "Pleomorphic",
+      "icon": "pleomorphic",
+      "description": "高度异型性、细胞形态多变的高级别肿瘤"
+    },
+    {
+      "id": "papillary",
+      "nameZh": "乳头状",
+      "nameEn": "Papillary",
+      "icon": "papillary",
+      "description": "以乳头状结构为特征的病变，常见于甲状腺、卵巢、肾等部位"
+    },
+    {
+      "id": "clear-cell",
+      "nameZh": "透明细胞",
+      "nameEn": "Clear Cell",
+      "icon": "clear",
+      "description": "以透明/空亮胞质为特征的肿瘤，可见于多个器官系统"
+    },
+    {
+      "id": "glandular",
+      "nameZh": "腺样/腺癌",
+      "nameEn": "Glandular / Adenocarcinoma",
+      "icon": "glandular",
+      "description": "以腺体结构为主的肿瘤，需判断分化方向和原发部位"
+    },
+    {
+      "id": "neuroendocrine",
+      "nameZh": "神经内分泌",
+      "nameEn": "Neuroendocrine",
+      "icon": "neuroendocrine",
+      "description": "具有神经内分泌分化特征的肿瘤，需WHO分级和亚型分类"
+    },
+    {
+      "id": "lymphoid",
+      "nameZh": "淋巴组织",
+      "nameEn": "Lymphoid",
+      "icon": "lymphoid",
+      "description": "淋巴细胞来源的肿瘤，需B/T细胞分型及亚型诊断"
+    },
+    {
+      "id": "melanocytic",
+      "nameZh": "黑色素细胞",
+      "nameEn": "Melanocytic",
+      "icon": "melanocytic",
+      "description": "从良性痣到恶性黑色素瘤的谱系鉴别"
+    }
+  ],
+  "anatomicSites": [
+    { "id": "gi", "nameZh": "消化道", "nameEn": "GI Tract" },
+    { "id": "liver", "nameZh": "肝脏", "nameEn": "Liver" },
+    { "id": "lung", "nameZh": "肺", "nameEn": "Lung" },
+    { "id": "kidney", "nameZh": "肾脏", "nameEn": "Kidney" },
+    { "id": "thyroid", "nameZh": "甲状腺", "nameEn": "Thyroid" },
+    { "id": "breast", "nameZh": "乳腺", "nameEn": "Breast" },
+    { "id": "gynecology", "nameZh": "妇科", "nameEn": "Gynecology" },
+    { "id": "soft-tissue", "nameZh": "软组织", "nameEn": "Soft Tissue" },
+    { "id": "lymph-node", "nameZh": "淋巴结", "nameEn": "Lymph Node" },
+    { "id": "skin", "nameZh": "皮肤", "nameEn": "Skin" },
+    { "id": "head-neck", "nameZh": "头颈", "nameEn": "Head & Neck" },
+    { "id": "bone", "nameZh": "骨", "nameEn": "Bone" },
+    { "id": "cns", "nameZh": "中枢神经", "nameEn": "CNS" },
+    { "id": "urology", "nameZh": "泌尿", "nameEn": "Urology" },
+    { "id": "any", "nameZh": "不限部位", "nameEn": "Any Site" }
+  ],
+  "scenarios": [
+    {
+      "id": "spindle-cell-tumors",
+      "sourceId": "spindle-cell-tumors",
+      "morphology": "spindle",
+      "sites": ["gi", "soft-tissue", "any"],
+      "titleZh": "梭形细胞肿瘤鉴别",
+      "titleEn": "Spindle Cell Tumor Differentials",
+      "firstLineMarkers": ["CD117", "DOG1", "SMA", "Desmin", "S-100", "CD34"],
+      "secondLineMarkers": ["STAT6", "beta-catenin", "ALK", "TLE1", "h-Caldesmon", "EMA"],
+      "rules": [
+        {
+          "diagnosis": "胃肠道间质瘤 (GIST)",
+          "diseaseId": "gist",
+          "requiredPositive": ["CD117", "DOG1"],
+          "requiredNegative": [],
+          "supportingPositive": [],
+          "supportingNegative": ["SMA", "S-100", "Desmin"],
+          "confidence": "high",
+          "nextSteps": ["KIT/PDGFRA基因突变检测以指导靶向治疗"]
+        },
+        {
+          "diagnosis": "平滑肌肿瘤",
+          "diseaseId": "leiomyosarcoma",
+          "requiredPositive": ["SMA", "Desmin"],
+          "requiredNegative": ["CD117", "DOG1"],
+          "supportingPositive": ["h-Caldesmon"],
+          "supportingNegative": ["S-100", "CD34"],
+          "confidence": "high",
+          "nextSteps": ["h-Caldesmon确认平滑肌分化", "Ki-67评估增殖活性以区分良恶性"]
+        },
+        {
+          "diagnosis": "神经鞘瘤 (Schwannoma)",
+          "diseaseId": "schwannoma",
+          "requiredPositive": ["S-100"],
+          "requiredNegative": ["CD117", "SMA"],
+          "supportingPositive": [],
+          "supportingNegative": ["Desmin", "CD34"],
+          "confidence": "high",
+          "nextSteps": ["SOX10进一步确认神经鞘分化"]
+        },
+        {
+          "diagnosis": "孤立性纤维性肿瘤 (SFT)",
+          "diseaseId": "solitary-fibrous-tumor",
+          "requiredPositive": ["CD34", "STAT6"],
+          "requiredNegative": ["CD117"],
+          "supportingPositive": [],
+          "supportingNegative": ["SMA", "Desmin", "S-100"],
+          "confidence": "high",
+          "nextSteps": ["STAT6核阳性是SFT最特异的标记物，确认NAB2-STAT6融合"]
+        },
+        {
+          "diagnosis": "韧带样纤维瘤病 (Desmoid)",
+          "diseaseId": "desmoid-fibromatosis",
+          "requiredPositive": ["beta-catenin"],
+          "requiredNegative": ["CD117", "DOG1", "CD34"],
+          "supportingPositive": ["SMA"],
+          "supportingNegative": ["Desmin", "S-100"],
+          "confidence": "high",
+          "nextSteps": ["beta-catenin核阳性支持诊断", "CTNNB1突变检测"]
+        },
+        {
+          "diagnosis": "炎性肌纤维母细胞瘤 (IMT)",
+          "diseaseId": "inflammatory-myofibroblastic-tumor",
+          "requiredPositive": ["ALK"],
+          "requiredNegative": ["CD117", "DOG1"],
+          "supportingPositive": ["SMA"],
+          "supportingNegative": ["S-100", "CD34"],
+          "confidence": "high",
+          "nextSteps": ["ALK FISH确认ALK重排", "约50%IMT为ALK阳性"]
+        },
+        {
+          "diagnosis": "滑膜肉瘤",
+          "diseaseId": "synovial-sarcoma",
+          "requiredPositive": ["TLE1"],
+          "requiredNegative": ["CD117", "DOG1", "S-100"],
+          "supportingPositive": ["EMA"],
+          "supportingNegative": ["CD34", "Desmin"],
+          "confidence": "medium",
+          "nextSteps": ["SS18-SSX融合基因检测（确诊必需）", "EMA灶性阳性支持诊断"]
+        }
+      ]
+    },
+    {
+      "id": "small-round-blue-cell-tumors",
+      "sourceId": "small-round-blue-cell-tumors",
+      "morphology": "small-round",
+      "sites": ["bone", "soft-tissue", "any"],
+      "titleZh": "小圆蓝细胞肿瘤鉴别",
+      "titleEn": "Small Round Blue Cell Tumor Differentials",
+      "firstLineMarkers": ["CD99", "Desmin", "Myogenin", "CD45", "Syn", "CgA"],
+      "secondLineMarkers": ["NKX2.2", "FLI-1", "MyoD1", "CD20", "CD3", "CK20", "WT1", "PHOX2B", "NeuN", "TdT"],
+      "rules": [
+        {
+          "diagnosis": "Ewing肉瘤",
+          "diseaseId": "ewing-sarcoma",
+          "requiredPositive": ["CD99"],
+          "requiredNegative": ["CD45", "Desmin", "Myogenin"],
+          "supportingPositive": ["NKX2.2", "FLI-1"],
+          "supportingNegative": ["Syn", "CgA"],
+          "confidence": "medium",
+          "nextSteps": ["EWSR1融合FISH确认（确诊必需）", "NKX2.2核阳性提高特异性"]
+        },
+        {
+          "diagnosis": "横纹肌肉瘤",
+          "diseaseId": "rhabdomyosarcoma",
+          "requiredPositive": ["Desmin", "Myogenin"],
+          "requiredNegative": ["CD99", "CD45"],
+          "supportingPositive": ["MyoD1"],
+          "supportingNegative": ["Syn", "CgA"],
+          "confidence": "high",
+          "nextSteps": ["区分胚胎型(Myogenin散在+)与腺泡型(Myogenin弥漫+)", "腺泡型需FOXO1融合检测"]
+        },
+        {
+          "diagnosis": "淋巴瘤",
+          "diseaseId": "lymphoma",
+          "requiredPositive": ["CD45"],
+          "requiredNegative": ["Desmin", "Myogenin", "CD99"],
+          "supportingPositive": ["CD20", "CD3"],
+          "supportingNegative": ["Syn", "CgA"],
+          "confidence": "high",
+          "nextSteps": ["CD20+→B细胞淋巴瘤，CD3+→T细胞淋巴瘤", "进一步亚型分型"]
+        },
+        {
+          "diagnosis": "小细胞癌/神经内分泌癌",
+          "diseaseId": "small-cell-carcinoma",
+          "requiredPositive": ["Syn", "CgA"],
+          "requiredNegative": ["CD45", "Desmin"],
+          "supportingPositive": [],
+          "supportingNegative": ["CD99"],
+          "confidence": "high",
+          "nextSteps": ["TTF-1判断肺来源", "Rb和P53表达状态辅助分型"]
+        },
+        {
+          "diagnosis": "神经母细胞瘤",
+          "diseaseId": "neuroblastoma",
+          "requiredPositive": ["Syn"],
+          "requiredNegative": ["CD45", "Desmin", "CD99"],
+          "supportingPositive": ["PHOX2B", "NeuN"],
+          "supportingNegative": ["CgA"],
+          "confidence": "medium",
+          "nextSteps": ["PHOX2B核阳性高度特异", "MYCN扩增检测评估预后"]
+        },
+        {
+          "diagnosis": "促结缔组织增生性小圆细胞肿瘤 (DSRCT)",
+          "diseaseId": "desmoplastic-small-round-cell-tumor",
+          "requiredPositive": ["Desmin", "WT1"],
+          "requiredNegative": ["CD45"],
+          "supportingPositive": ["CD99"],
+          "supportingNegative": ["Myogenin"],
+          "confidence": "medium",
+          "nextSteps": ["EWSR1-WT1融合基因检测（确诊必需）", "Desmin核旁点状阳性特征性"]
+        },
+        {
+          "diagnosis": "Merkel细胞癌",
+          "diseaseId": "merkel-cell-carcinoma",
+          "requiredPositive": ["CK20", "Syn"],
+          "requiredNegative": ["CD45", "Desmin"],
+          "supportingPositive": ["CgA"],
+          "supportingNegative": ["CD99"],
+          "confidence": "high",
+          "nextSteps": ["CK20核旁点状阳性特征性", "TTF-1阴性排除小细胞肺癌"]
+        }
+      ]
+    },
+    {
+      "id": "clear-cell-tumors",
+      "sourceId": "clear-cell-tumors",
+      "morphology": "clear-cell",
+      "sites": ["kidney", "gynecology", "soft-tissue", "any"],
+      "titleZh": "透明细胞肿瘤鉴别",
+      "titleEn": "Clear Cell Tumor Differentials",
+      "firstLineMarkers": ["PAX8", "CA-IX", "CD10", "Inhibin", "S-100", "HMB-45"],
+      "secondLineMarkers": ["Napsin A", "HNF-1β", "Melan-A", "SF-1", "SOX10", "SMA", "EMA"],
+      "rules": [
+        {
+          "diagnosis": "肾透明细胞癌",
+          "diseaseId": "clear-cell-rcc",
+          "requiredPositive": ["PAX8", "CA-IX"],
+          "requiredNegative": ["Inhibin"],
+          "supportingPositive": ["CD10"],
+          "supportingNegative": ["S-100", "HMB-45"],
+          "confidence": "high",
+          "nextSteps": ["VHL基因突变/3p缺失检测", "CA-IX弥漫膜阳性(box pattern)特征性"]
+        },
+        {
+          "diagnosis": "卵巢/子宫内膜透明细胞癌",
+          "diseaseId": "clear-cell-ovarian-carcinoma",
+          "requiredPositive": ["PAX8"],
+          "requiredNegative": ["CA-IX", "Inhibin"],
+          "supportingPositive": ["Napsin A", "HNF-1β"],
+          "supportingNegative": ["S-100", "CD10"],
+          "confidence": "high",
+          "nextSteps": ["HNF-1β核阳性和Napsin A阳性支持透明细胞癌"]
+        },
+        {
+          "diagnosis": "肾上腺皮质肿瘤",
+          "diseaseId": "adrenocortical-tumor",
+          "requiredPositive": ["Inhibin"],
+          "requiredNegative": ["PAX8"],
+          "supportingPositive": ["Melan-A", "SF-1"],
+          "supportingNegative": ["CA-IX", "S-100"],
+          "confidence": "high",
+          "nextSteps": ["SF-1核阳性最特异", "Weiss评分系统判断良恶性"]
+        },
+        {
+          "diagnosis": "透明细胞肉瘤/黑色素瘤",
+          "diseaseId": "clear-cell-sarcoma",
+          "requiredPositive": ["S-100", "HMB-45"],
+          "requiredNegative": ["PAX8", "Inhibin"],
+          "supportingPositive": ["SOX10"],
+          "supportingNegative": ["CA-IX"],
+          "confidence": "medium",
+          "nextSteps": ["EWSR1-ATF1/CREB1融合检测鉴别透明细胞肉瘤与黑色素瘤", "年轻患者+肢端深部软组织→倾向透明细胞肉瘤"]
+        },
+        {
+          "diagnosis": "PEComa/血管周上皮样细胞肿瘤",
+          "diseaseId": "sugar-tumor",
+          "requiredPositive": ["HMB-45"],
+          "requiredNegative": ["PAX8", "Inhibin"],
+          "supportingPositive": ["SMA", "Melan-A"],
+          "supportingNegative": ["S-100", "CA-IX"],
+          "confidence": "medium",
+          "nextSteps": ["HMB-45+SMA双阳性特征性", "TFE3检测排除TFE3重排型PEComa"]
+        }
+      ]
+    },
+    {
+      "id": "papillary-thyroid-lesions",
+      "sourceId": "papillary-thyroid-vs-others",
+      "morphology": "papillary",
+      "sites": ["thyroid"],
+      "titleZh": "甲状腺乳头状结构病变鉴别",
+      "titleEn": "Papillary Lesions of the Thyroid",
+      "firstLineMarkers": ["CK19", "Galectin-3", "HBME-1", "CD56", "TTF-1"],
+      "secondLineMarkers": ["Thyroglobulin", "BRAF-V600E", "RAS"],
+      "rules": [
+        {
+          "diagnosis": "甲状腺乳头状癌 (PTC)",
+          "diseaseId": "papillary-thyroid-carcinoma",
+          "requiredPositive": ["CK19", "HBME-1"],
+          "requiredNegative": [],
+          "supportingPositive": ["Galectin-3", "BRAF-V600E"],
+          "supportingNegative": ["CD56"],
+          "confidence": "high",
+          "nextSteps": ["BRAF V600E突变检测", "经典核特征（核沟+核内假包涵体+毛玻璃样核）"]
+        },
+        {
+          "diagnosis": "NIFTP",
+          "diseaseId": "noninvasive-follicular-thyroid-neoplasm-with-papillary-like-nuclear-features",
+          "requiredPositive": ["CK19"],
+          "requiredNegative": ["BRAF-V600E"],
+          "supportingPositive": ["Galectin-3"],
+          "supportingNegative": [],
+          "confidence": "medium",
+          "nextSteps": ["完整包膜取材排除浸润", "RAS突变检测", "BRAF V600E阴性支持NIFTP"]
+        },
+        {
+          "diagnosis": "良性滤泡性病变",
+          "diseaseId": "follicular-adenoma",
+          "requiredPositive": ["CD56"],
+          "requiredNegative": ["CK19", "Galectin-3", "HBME-1"],
+          "supportingPositive": ["TTF-1", "Thyroglobulin"],
+          "supportingNegative": ["BRAF-V600E"],
+          "confidence": "high",
+          "nextSteps": ["CD56阳性且CK19/Galectin-3/HBME-1阴性倾向良性"]
+        }
+      ]
+    },
+    {
+      "id": "ck7-pos-ck20-neg-adenocarcinoma",
+      "sourceId": "ck7-pos-ck20-neg-tumors",
+      "morphology": "glandular",
+      "sites": ["lung", "breast", "gynecology", "any"],
+      "titleZh": "CK7+/CK20- 腺癌原发部位判断",
+      "titleEn": "CK7+/CK20- Adenocarcinoma Site of Origin",
+      "firstLineMarkers": ["CK7", "CK20", "TTF-1", "Napsin A", "GATA3", "PAX8"],
+      "secondLineMarkers": ["Mammaglobin", "ER", "PR", "WT1", "CA125", "Calretinin", "D2-40", "Thyroglobulin"],
+      "rules": [
+        {
+          "diagnosis": "肺腺癌",
+          "diseaseId": "lung-adenocarcinoma",
+          "requiredPositive": ["CK7", "TTF-1"],
+          "requiredNegative": ["CK20"],
+          "supportingPositive": ["Napsin A"],
+          "supportingNegative": ["GATA3", "PAX8"],
+          "confidence": "high",
+          "nextSteps": ["EGFR/ALK/ROS1等驱动基因检测指导靶向治疗", "PD-L1表达检测"]
+        },
+        {
+          "diagnosis": "乳腺癌",
+          "diseaseId": "breast-carcinoma",
+          "requiredPositive": ["CK7", "GATA3"],
+          "requiredNegative": ["CK20", "TTF-1"],
+          "supportingPositive": ["Mammaglobin", "ER"],
+          "supportingNegative": ["PAX8"],
+          "confidence": "high",
+          "nextSteps": ["ER/PR/HER2状态评估", "Ki-67增殖指数"]
+        },
+        {
+          "diagnosis": "子宫内膜癌",
+          "diseaseId": "endometrial-carcinoma",
+          "requiredPositive": ["CK7", "PAX8"],
+          "requiredNegative": ["CK20", "TTF-1"],
+          "supportingPositive": ["ER"],
+          "supportingNegative": ["GATA3", "WT1"],
+          "confidence": "high",
+          "nextSteps": ["MMR蛋白/MSI检测", "p53表达判断分子分型"]
+        },
+        {
+          "diagnosis": "卵巢高级别浆液性癌",
+          "diseaseId": "ovarian-serous-carcinoma",
+          "requiredPositive": ["CK7", "PAX8", "WT1"],
+          "requiredNegative": ["CK20"],
+          "supportingPositive": ["CA125"],
+          "supportingNegative": ["TTF-1", "GATA3"],
+          "confidence": "high",
+          "nextSteps": ["p53表达（通常异常表达）", "BRCA1/2基因检测"]
+        },
+        {
+          "diagnosis": "恶性间皮瘤",
+          "diseaseId": "mesothelioma",
+          "requiredPositive": ["CK7", "Calretinin", "D2-40"],
+          "requiredNegative": ["CK20", "TTF-1"],
+          "supportingPositive": ["WT1"],
+          "supportingNegative": ["GATA3", "PAX8"],
+          "confidence": "high",
+          "nextSteps": ["加做CEA/MOC31/BerEP4/Claudin-4排除腺癌", "BAP1缺失支持恶性间皮瘤"]
+        }
+      ]
+    },
+    {
+      "id": "ck7-neg-ck20-pos-tumors",
+      "sourceId": "ck7-neg-ck20-pos-tumors",
+      "morphology": "glandular",
+      "sites": ["gi", "skin", "any"],
+      "titleZh": "CK7-/CK20+ 肿瘤鉴别",
+      "titleEn": "CK7-/CK20+ Tumor Differentials",
+      "firstLineMarkers": ["CK7", "CK20", "CDX2", "SATB2", "Syn", "CgA"],
+      "secondLineMarkers": ["Villin", "PAX5", "MLH1", "MSH2", "MSH6", "PMS2"],
+      "rules": [
+        {
+          "diagnosis": "结直肠腺癌",
+          "diseaseId": "colorectal-adenocarcinoma",
+          "requiredPositive": ["CK20", "CDX2"],
+          "requiredNegative": ["CK7"],
+          "supportingPositive": ["SATB2", "Villin"],
+          "supportingNegative": ["Syn", "CgA"],
+          "confidence": "high",
+          "nextSteps": ["MMR蛋白(MLH1/MSH2/MSH6/PMS2)检测", "KRAS/NRAS/BRAF突变检测"]
+        },
+        {
+          "diagnosis": "Merkel细胞癌",
+          "diseaseId": "merkel-cell-carcinoma",
+          "requiredPositive": ["CK20", "Syn"],
+          "requiredNegative": ["CK7", "CDX2"],
+          "supportingPositive": ["CgA"],
+          "supportingNegative": ["SATB2"],
+          "confidence": "high",
+          "nextSteps": ["CK20核旁点状阳性特征性", "TTF-1阴性排除小细胞肺癌", "MCPyV检测"]
+        }
+      ]
+    },
+    {
+      "id": "tnbc-differentials",
+      "sourceId": "tnbc-vs-metastases",
+      "morphology": "epithelioid",
+      "sites": ["breast", "any"],
+      "titleZh": "三阴性乳腺癌与转移癌鉴别",
+      "titleEn": "Triple Negative Breast Cancer vs Metastases",
+      "firstLineMarkers": ["GATA3", "Mammaglobin", "SOX10", "TTF-1", "PAX8", "S-100"],
+      "secondLineMarkers": ["GCDFP-15", "CK5/6", "EGFR", "WT1", "Uroplakin", "P40"],
+      "rules": [
+        {
+          "diagnosis": "三阴性乳腺癌",
+          "diseaseId": "triple-negative-breast-carcinoma",
+          "requiredPositive": ["GATA3"],
+          "requiredNegative": ["TTF-1", "PAX8"],
+          "supportingPositive": ["Mammaglobin", "SOX10"],
+          "supportingNegative": ["S-100"],
+          "confidence": "high",
+          "nextSteps": ["约60-70%三阴性乳腺癌GATA3阳性", "PD-L1检测指导免疫治疗"]
+        },
+        {
+          "diagnosis": "肺腺癌转移",
+          "diseaseId": "lung-adenocarcinoma",
+          "requiredPositive": ["TTF-1"],
+          "requiredNegative": ["GATA3", "PAX8"],
+          "supportingPositive": [],
+          "supportingNegative": ["SOX10", "S-100"],
+          "confidence": "high",
+          "nextSteps": ["Napsin A进一步确认", "驱动基因检测"]
+        },
+        {
+          "diagnosis": "卵巢浆液性癌转移",
+          "diseaseId": "high-grade-serous-ovarian-carcinoma",
+          "requiredPositive": ["PAX8"],
+          "requiredNegative": ["GATA3", "TTF-1"],
+          "supportingPositive": ["WT1"],
+          "supportingNegative": ["SOX10"],
+          "confidence": "high",
+          "nextSteps": ["WT1阳性进一步支持卵巢来源"]
+        },
+        {
+          "diagnosis": "黑色素瘤",
+          "diseaseId": "melanoma",
+          "requiredPositive": ["S-100", "SOX10"],
+          "requiredNegative": ["GATA3", "TTF-1", "PAX8"],
+          "supportingPositive": [],
+          "supportingNegative": ["Mammaglobin"],
+          "confidence": "high",
+          "nextSteps": ["HMB-45/Melan-A确认黑色素瘤", "注意SOX10也可见于基底样乳腺癌但CK+"]
+        }
+      ]
+    },
+    {
+      "id": "hcc-vs-cholangiocarcinoma",
+      "sourceId": "hcc-vs-cholangiocarcinoma",
+      "morphology": "epithelioid",
+      "sites": ["liver"],
+      "titleZh": "肝细胞癌与胆管细胞癌鉴别",
+      "titleEn": "HCC vs Cholangiocarcinoma",
+      "firstLineMarkers": ["Hepatocyte(HepPar-1)", "Arginase-1", "GPC-3", "CK7", "CK19", "MOC31"],
+      "secondLineMarkers": ["AFP", "CD34", "Reticulin", "CK20", "EpCAM", "mCEA(pCEA)", "CD10", "MUC1"],
+      "rules": [
+        {
+          "diagnosis": "肝细胞癌 (HCC)",
+          "diseaseId": "hepatocellular-carcinoma",
+          "requiredPositive": ["Arginase-1"],
+          "requiredNegative": ["CK7", "CK19"],
+          "supportingPositive": ["Hepatocyte(HepPar-1)", "GPC-3"],
+          "supportingNegative": ["MOC31"],
+          "confidence": "high",
+          "nextSteps": ["CD34弥漫窦内皮阳性辅助诊断", "Reticulin网架减少/消失", "AFP若阳性支持HCC"]
+        },
+        {
+          "diagnosis": "肝内胆管癌",
+          "diseaseId": "intrahepatic-cholangiocarcinoma",
+          "requiredPositive": ["CK7", "CK19"],
+          "requiredNegative": ["Arginase-1", "Hepatocyte(HepPar-1)"],
+          "supportingPositive": ["MOC31", "MUC1"],
+          "supportingNegative": ["GPC-3"],
+          "confidence": "high",
+          "nextSteps": ["IDH1/2突变检测", "FGFR2融合检测指导靶向治疗"]
+        },
+        {
+          "diagnosis": "混合型肝癌-胆管癌 (cHCC-CCA)",
+          "diseaseId": "combined-hcc-cca",
+          "requiredPositive": ["Arginase-1", "CK7"],
+          "requiredNegative": [],
+          "supportingPositive": ["Hepatocyte(HepPar-1)", "CK19"],
+          "supportingNegative": [],
+          "confidence": "medium",
+          "nextSteps": ["两种成分需分别确认", "EpCAM表达于干细胞表型区域"]
+        },
+        {
+          "diagnosis": "转移性腺癌",
+          "diseaseId": "metastatic-adenocarcinoma",
+          "requiredPositive": ["MOC31"],
+          "requiredNegative": ["Arginase-1", "Hepatocyte(HepPar-1)", "GPC-3"],
+          "supportingPositive": ["CK7"],
+          "supportingNegative": [],
+          "confidence": "medium",
+          "nextSteps": ["根据CK7/CK20/CDX2/TTF-1等判断原发部位", "结合临床病史"]
+        }
+      ]
+    },
+    {
+      "id": "b-vs-t-cell-lymphoma",
+      "sourceId": "b-vs-t-cell-lymphoma",
+      "morphology": "lymphoid",
+      "sites": ["lymph-node", "any"],
+      "titleZh": "B细胞与T细胞淋巴瘤亚型分型",
+      "titleEn": "B-cell vs T-cell Lymphoma Subtyping",
+      "firstLineMarkers": ["CD20", "CD3", "CD5", "CD10", "BCL-2", "Ki-67"],
+      "secondLineMarkers": ["CD23", "BCL-6", "MUM1", "Cyclin D1", "SOX11", "CD30", "ALK", "CXCL13", "PD-1", "CD56", "EBER", "TdT"],
+      "rules": [
+        {
+          "diagnosis": "滤泡性淋巴瘤",
+          "diseaseId": "follicular-lymphoma",
+          "requiredPositive": ["CD20", "CD10", "BCL-2"],
+          "requiredNegative": ["CD3", "CD5"],
+          "supportingPositive": ["BCL-6"],
+          "supportingNegative": ["Cyclin D1"],
+          "confidence": "high",
+          "nextSteps": ["BCL2重排FISH", "分级(1-3级)根据中心母细胞比例"]
+        },
+        {
+          "diagnosis": "套细胞淋巴瘤",
+          "diseaseId": "mantle-cell-lymphoma",
+          "requiredPositive": ["CD20", "CD5", "Cyclin D1"],
+          "requiredNegative": ["CD3", "CD10", "CD23"],
+          "supportingPositive": ["SOX11"],
+          "supportingNegative": [],
+          "confidence": "high",
+          "nextSteps": ["CCND1/IGH易位FISH确认", "Ki-67评估增殖活性(母细胞型Ki-67高)"]
+        },
+        {
+          "diagnosis": "弥漫大B细胞淋巴瘤 (DLBCL)",
+          "diseaseId": "dlbcl",
+          "requiredPositive": ["CD20"],
+          "requiredNegative": ["CD3"],
+          "supportingPositive": ["BCL-6", "MUM1"],
+          "supportingNegative": ["Cyclin D1"],
+          "confidence": "medium",
+          "nextSteps": ["Hans分型: CD10/BCL-6/MUM1 → GCB vs non-GCB亚型", "MYC/BCL2/BCL6重排(双/三打击)"]
+        },
+        {
+          "diagnosis": "Burkitt淋巴瘤",
+          "diseaseId": "burkitt-lymphoma",
+          "requiredPositive": ["CD20", "CD10", "Ki-67"],
+          "requiredNegative": ["CD3", "BCL-2"],
+          "supportingPositive": ["BCL-6"],
+          "supportingNegative": ["MUM1"],
+          "confidence": "high",
+          "nextSteps": ["Ki-67需近100%", "MYC重排FISH确认", "星空现象特征性"]
+        },
+        {
+          "diagnosis": "ALK阳性间变大细胞淋巴瘤",
+          "diseaseId": "alcl",
+          "requiredPositive": ["CD30", "ALK"],
+          "requiredNegative": ["CD20"],
+          "supportingPositive": ["CD3"],
+          "supportingNegative": ["BCL-2"],
+          "confidence": "high",
+          "nextSteps": ["ALK融合FISH确认", "ALK阳性预后优于ALK阴性"]
+        },
+        {
+          "diagnosis": "血管免疫母细胞性T细胞淋巴瘤 (AITL)",
+          "diseaseId": "aitl",
+          "requiredPositive": ["CD3", "CXCL13", "PD-1"],
+          "requiredNegative": ["CD20"],
+          "supportingPositive": ["CD10"],
+          "supportingNegative": ["ALK"],
+          "confidence": "high",
+          "nextSteps": ["TET2/RHOA/IDH2突变检测", "EBV+B细胞增生常伴随出现"]
+        },
+        {
+          "diagnosis": "结外NK/T细胞淋巴瘤",
+          "diseaseId": "nk-t-cell-lymphoma",
+          "requiredPositive": ["CD56", "EBER"],
+          "requiredNegative": ["CD20"],
+          "supportingPositive": ["CD3"],
+          "supportingNegative": ["ALK"],
+          "confidence": "high",
+          "nextSteps": ["EBER原位杂交确认EBV感染", "PD-L1检测指导免疫治疗"]
+        }
+      ]
+    },
+    {
+      "id": "neuroendocrine-tumors",
+      "sourceId": "neuroendocrine-tumors",
+      "morphology": "neuroendocrine",
+      "sites": ["gi", "lung", "any"],
+      "titleZh": "神经内分泌肿瘤分级与鉴别",
+      "titleEn": "Neuroendocrine Tumor Grading and Differentials",
+      "firstLineMarkers": ["Syn", "CgA", "INSM1", "Ki-67", "Rb", "P53"],
+      "secondLineMarkers": ["CD56", "TTF-1", "CDX2", "PAX8", "SSTR2A", "ATRX", "DAXX"],
+      "rules": [
+        {
+          "diagnosis": "神经内分泌瘤 G1 (NET G1)",
+          "diseaseId": "well-differentiated-net-g1",
+          "requiredPositive": ["Syn", "CgA"],
+          "requiredNegative": [],
+          "supportingPositive": ["INSM1", "SSTR2A"],
+          "supportingNegative": [],
+          "confidence": "high",
+          "nextSteps": ["Ki-67 <3% 确认G1", "SSTR2A阳性提示生长抑素类似物治疗可能有效"]
+        },
+        {
+          "diagnosis": "神经内分泌瘤 G2 (NET G2)",
+          "diseaseId": "well-differentiated-net-g2",
+          "requiredPositive": ["Syn", "CgA"],
+          "requiredNegative": [],
+          "supportingPositive": ["INSM1"],
+          "supportingNegative": [],
+          "confidence": "high",
+          "nextSteps": ["Ki-67 3-20% 确认G2", "形态学高分化"]
+        },
+        {
+          "diagnosis": "神经内分泌瘤 G3 (NET G3)",
+          "diseaseId": "well-differentiated-net-g3",
+          "requiredPositive": ["Syn", "CgA", "Rb"],
+          "requiredNegative": [],
+          "supportingPositive": ["ATRX", "DAXX"],
+          "supportingNegative": [],
+          "confidence": "medium",
+          "nextSteps": ["Ki-67 >20% 但形态高分化", "Rb和P53表达正常区别于NEC", "ATRX/DAXX保留支持NET G3"]
+        },
+        {
+          "diagnosis": "神经内分泌癌 (NEC)",
+          "diseaseId": "small-cell-nec",
+          "requiredPositive": ["Syn", "Ki-67"],
+          "requiredNegative": ["Rb"],
+          "supportingPositive": ["INSM1"],
+          "supportingNegative": ["ATRX", "DAXX", "SSTR2A"],
+          "confidence": "high",
+          "nextSteps": ["Ki-67通常>50%", "Rb缺失和/或P53异常表达", "分为小细胞型和大细胞型", "治疗方案与NET G3不同"]
+        }
+      ]
+    },
+    {
+      "id": "glandular-vs-squamous",
+      "sourceId": "glandular-vs-squamous",
+      "morphology": "glandular",
+      "sites": ["lung", "head-neck", "any"],
+      "titleZh": "腺癌与鳞状细胞癌鉴别",
+      "titleEn": "Glandular vs Squamous Differentiation",
+      "firstLineMarkers": ["TTF-1", "Napsin A", "CK7", "P40", "CK5/6"],
+      "secondLineMarkers": ["P63", "Desmoglein-3", "SOX2", "Syn", "CgA", "INSM1"],
+      "rules": [
+        {
+          "diagnosis": "腺癌 (肺腺癌)",
+          "diseaseId": "adenocarcinoma-nos",
+          "requiredPositive": ["TTF-1"],
+          "requiredNegative": ["P40", "CK5/6"],
+          "supportingPositive": ["Napsin A", "CK7"],
+          "supportingNegative": [],
+          "confidence": "high",
+          "nextSteps": ["EGFR/ALK/ROS1/BRAF等驱动基因检测", "PD-L1表达检测"]
+        },
+        {
+          "diagnosis": "鳞状细胞癌",
+          "diseaseId": "squamous-cell-carcinoma",
+          "requiredPositive": ["P40", "CK5/6"],
+          "requiredNegative": ["TTF-1", "Napsin A"],
+          "supportingPositive": [],
+          "supportingNegative": ["CK7"],
+          "confidence": "high",
+          "nextSteps": ["P40是鳞状分化的金标准标记物", "PD-L1检测指导免疫治疗"]
+        },
+        {
+          "diagnosis": "腺鳞癌",
+          "diseaseId": "adenosquamous-carcinoma",
+          "requiredPositive": ["TTF-1", "P40"],
+          "requiredNegative": [],
+          "supportingPositive": ["Napsin A", "CK5/6"],
+          "supportingNegative": [],
+          "confidence": "medium",
+          "nextSteps": ["两种成分各占≥10%", "同时具有腺和鳞标记物阳性"]
+        },
+        {
+          "diagnosis": "神经内分泌癌",
+          "diseaseId": "neuroendocrine-carcinoma",
+          "requiredPositive": ["Syn"],
+          "requiredNegative": ["TTF-1", "P40"],
+          "supportingPositive": ["CgA", "INSM1"],
+          "supportingNegative": ["Napsin A", "CK5/6"],
+          "confidence": "high",
+          "nextSteps": ["Ki-67增殖指数", "Rb和P53表达状态"]
+        }
+      ]
+    },
+    {
+      "id": "melanocytic-lesions",
+      "sourceId": "melanocytic-lesions",
+      "morphology": "melanocytic",
+      "sites": ["skin", "any"],
+      "titleZh": "黑色素细胞病变鉴别",
+      "titleEn": "Melanocytic Lesion Differentials",
+      "firstLineMarkers": ["S-100", "SOX10", "Melan-A", "HMB-45", "PRAME", "Ki-67"],
+      "secondLineMarkers": ["MITF", "P16", "BRAF-V600E", "BAP1", "Cyclin D1", "P53"],
+      "rules": [
+        {
+          "diagnosis": "恶性黑色素瘤",
+          "diseaseId": "invasive-melanoma",
+          "requiredPositive": ["S-100", "SOX10", "PRAME"],
+          "requiredNegative": [],
+          "supportingPositive": ["HMB-45", "Ki-67"],
+          "supportingNegative": ["P16"],
+          "confidence": "high",
+          "nextSteps": ["PRAME弥漫阳性支持恶性", "BRAF V600E突变检测指导靶向治疗", "HMB-45深层仍阳性(缺乏成熟)"]
+        },
+        {
+          "diagnosis": "良性黑色素细胞痣",
+          "diseaseId": "common-melanocytic-nevus",
+          "requiredPositive": ["S-100", "SOX10"],
+          "requiredNegative": ["PRAME"],
+          "supportingPositive": ["P16", "Melan-A"],
+          "supportingNegative": ["Ki-67"],
+          "confidence": "high",
+          "nextSteps": ["PRAME阴性支持良性", "HMB-45表层阳性深层消失(正常成熟)", "Ki-67低"]
+        },
+        {
+          "diagnosis": "促纤维增生性黑色素瘤",
+          "diseaseId": "desmoplastic-melanoma",
+          "requiredPositive": ["S-100", "SOX10"],
+          "requiredNegative": [],
+          "supportingPositive": ["PRAME"],
+          "supportingNegative": ["Melan-A", "HMB-45"],
+          "confidence": "medium",
+          "nextSteps": ["S-100+/SOX10+但Melan-A常阴性是特征", "需与梭形细胞肿瘤鉴别"]
+        }
+      ]
+    },
+    {
+      "id": "renal-cell-carcinoma-subtypes",
+      "sourceId": "renal-cell-carcinoma-subtypes",
+      "morphology": "clear-cell",
+      "sites": ["kidney"],
+      "titleZh": "肾细胞癌亚型鉴别",
+      "titleEn": "Renal Cell Carcinoma Subtype Differentials",
+      "firstLineMarkers": ["PAX8", "CA-IX", "CD10", "CK7", "AMACR", "CD117"],
+      "secondLineMarkers": ["Ksp-cadherin", "TFE3", "TFEB", "FH", "2SC", "SDHB", "Vimentin"],
+      "rules": [
+        {
+          "diagnosis": "透明细胞型肾细胞癌",
+          "diseaseId": "clear-cell-rcc",
+          "requiredPositive": ["PAX8", "CA-IX"],
+          "requiredNegative": ["CK7"],
+          "supportingPositive": ["CD10", "Vimentin"],
+          "supportingNegative": ["AMACR"],
+          "confidence": "high",
+          "nextSteps": ["CA-IX弥漫膜阳性(box pattern)", "VHL基因/3p缺失检测"]
+        },
+        {
+          "diagnosis": "乳头状肾细胞癌",
+          "diseaseId": "papillary-rcc-type1",
+          "requiredPositive": ["PAX8", "CK7", "AMACR"],
+          "requiredNegative": ["CA-IX"],
+          "supportingPositive": ["CD10"],
+          "supportingNegative": ["CD117"],
+          "confidence": "high",
+          "nextSteps": ["1型:薄乳头/泡沫巨噬细胞; 2型:假复层/嗜酸", "MET突变检测(1型)"]
+        },
+        {
+          "diagnosis": "嫌色细胞肾细胞癌",
+          "diseaseId": "chromophobe-rcc",
+          "requiredPositive": ["PAX8", "CK7", "CD117"],
+          "requiredNegative": ["CA-IX", "AMACR"],
+          "supportingPositive": ["Ksp-cadherin"],
+          "supportingNegative": ["Vimentin"],
+          "confidence": "high",
+          "nextSteps": ["Hale胶体铁弥漫阳性", "需与嗜酸细胞瘤鉴别"]
+        },
+        {
+          "diagnosis": "嗜酸细胞瘤 (良性)",
+          "diseaseId": "oncocytoma",
+          "requiredPositive": ["PAX8", "CD117"],
+          "requiredNegative": ["CK7", "CA-IX", "AMACR"],
+          "supportingPositive": [],
+          "supportingNegative": ["Vimentin"],
+          "confidence": "medium",
+          "nextSteps": ["Hale胶体铁灶性阳性(非弥漫)", "需与嫌色细胞癌嗜酸亚型鉴别"]
+        },
+        {
+          "diagnosis": "MiTF易位型肾细胞癌",
+          "diseaseId": "translocation-rcc",
+          "requiredPositive": ["PAX8", "TFE3"],
+          "requiredNegative": ["CK7"],
+          "supportingPositive": [],
+          "supportingNegative": ["CA-IX"],
+          "confidence": "medium",
+          "nextSteps": ["TFE3核强阳性", "TFE3 FISH确认易位", "好发于年轻患者"]
+        },
+        {
+          "diagnosis": "FH缺陷型肾细胞癌",
+          "diseaseId": "fumarate-hydratase-deficient-rcc",
+          "requiredPositive": ["PAX8", "2SC"],
+          "requiredNegative": ["FH"],
+          "supportingPositive": [],
+          "supportingNegative": ["CA-IX"],
+          "confidence": "high",
+          "nextSteps": ["FH缺失+2SC阳性确诊", "遗传咨询(HLRCC综合征)", "高度侵袭性需积极治疗"]
+        }
+      ]
+    },
+    {
+      "id": "pleomorphic-sarcoma",
+      "sourceId": null,
+      "morphology": "pleomorphic",
+      "sites": ["soft-tissue", "any"],
+      "titleZh": "多形性肉瘤鉴别",
+      "titleEn": "Pleomorphic Sarcoma Differentials",
+      "firstLineMarkers": ["SMA", "Desmin", "S-100", "CK", "CD34", "MDM2"],
+      "secondLineMarkers": ["Myogenin", "MyoD1", "SOX10", "ERG", "CDK4", "STAT6", "P63", "h-Caldesmon"],
+      "rules": [
+        {
+          "diagnosis": "未分化多形性肉瘤 (UPS)",
+          "diseaseId": "undifferentiated-pleomorphic-sarcoma",
+          "requiredPositive": [],
+          "requiredNegative": ["SMA", "Desmin", "S-100", "CK", "MDM2"],
+          "supportingPositive": ["CD34"],
+          "supportingNegative": ["Myogenin", "SOX10"],
+          "confidence": "medium",
+          "nextSteps": ["排除性诊断：需排除其他可辨认谱系的肉瘤", "MDM2/CDK4阴性排除去分化脂肪肉瘤"]
+        },
+        {
+          "diagnosis": "去分化脂肪肉瘤",
+          "diseaseId": "dedifferentiated-liposarcoma",
+          "requiredPositive": ["MDM2"],
+          "requiredNegative": [],
+          "supportingPositive": ["CDK4"],
+          "supportingNegative": ["Desmin", "Myogenin"],
+          "confidence": "high",
+          "nextSteps": ["MDM2扩增FISH确认", "CDK4核阳性支持诊断", "好发于腹膜后"]
+        },
+        {
+          "diagnosis": "多形性横纹肌肉瘤",
+          "diseaseId": "pleomorphic-rhabdomyosarcoma",
+          "requiredPositive": ["Desmin", "Myogenin"],
+          "requiredNegative": ["MDM2"],
+          "supportingPositive": ["MyoD1"],
+          "supportingNegative": ["S-100", "CK"],
+          "confidence": "high",
+          "nextSteps": ["成人型横纹肌肉瘤", "高度恶性，预后差"]
+        },
+        {
+          "diagnosis": "多形性平滑肌肉瘤",
+          "diseaseId": "pleomorphic-leiomyosarcoma",
+          "requiredPositive": ["SMA", "Desmin"],
+          "requiredNegative": ["Myogenin", "MDM2"],
+          "supportingPositive": ["h-Caldesmon"],
+          "supportingNegative": ["S-100", "CD34"],
+          "confidence": "high",
+          "nextSteps": ["h-Caldesmon阳性确认平滑肌分化", "好发于腹膜后和子宫"]
+        },
+        {
+          "diagnosis": "肉瘤样癌 (去分化癌)",
+          "diseaseId": "sarcomatoid-carcinoma",
+          "requiredPositive": ["CK"],
+          "requiredNegative": ["MDM2"],
+          "supportingPositive": ["P63"],
+          "supportingNegative": ["Desmin", "S-100"],
+          "confidence": "medium",
+          "nextSteps": ["广谱CK(AE1/AE3)灶性阳性即有意义", "需排除真性肉瘤", "p63阳性提示鳞状分化"]
+        }
+      ]
+    },
+    {
+      "id": "metastatic-cup",
+      "sourceId": null,
+      "morphology": "epithelioid",
+      "sites": ["any"],
+      "titleZh": "原发不明转移癌 (CUP) 溯源",
+      "titleEn": "Carcinoma of Unknown Primary (CUP)",
+      "firstLineMarkers": ["CK7", "CK20", "TTF-1", "GATA3", "PAX8", "CDX2"],
+      "secondLineMarkers": ["Napsin A", "ER", "Mammaglobin", "WT1", "SATB2", "Uroplakin", "Hepatocyte(HepPar-1)", "PSA", "NKX3.1", "Thyroglobulin", "Calretinin"],
+      "rules": [
+        {
+          "diagnosis": "肺来源",
+          "diseaseId": "lung-adenocarcinoma",
+          "requiredPositive": ["CK7", "TTF-1"],
+          "requiredNegative": ["CK20", "CDX2"],
+          "supportingPositive": ["Napsin A"],
+          "supportingNegative": ["GATA3", "PAX8"],
+          "confidence": "high",
+          "nextSteps": ["驱动基因全面检测", "PD-L1表达检测"]
+        },
+        {
+          "diagnosis": "乳腺来源",
+          "diseaseId": "breast-carcinoma",
+          "requiredPositive": ["CK7", "GATA3"],
+          "requiredNegative": ["CK20", "TTF-1", "CDX2"],
+          "supportingPositive": ["Mammaglobin", "ER"],
+          "supportingNegative": ["PAX8"],
+          "confidence": "high",
+          "nextSteps": ["ER/PR/HER2状态完善", "乳腺影像学检查"]
+        },
+        {
+          "diagnosis": "结直肠来源",
+          "diseaseId": "colorectal-adenocarcinoma",
+          "requiredPositive": ["CK20", "CDX2"],
+          "requiredNegative": ["CK7"],
+          "supportingPositive": ["SATB2"],
+          "supportingNegative": ["TTF-1", "GATA3"],
+          "confidence": "high",
+          "nextSteps": ["KRAS/NRAS/BRAF突变检测", "MMR蛋白检测", "肠镜检查"]
+        },
+        {
+          "diagnosis": "妇科来源 (卵巢/子宫内膜)",
+          "diseaseId": "ovarian-serous-carcinoma",
+          "requiredPositive": ["CK7", "PAX8"],
+          "requiredNegative": ["CK20", "CDX2", "TTF-1"],
+          "supportingPositive": ["WT1", "ER"],
+          "supportingNegative": ["GATA3"],
+          "confidence": "high",
+          "nextSteps": ["WT1+→卵巢浆液性癌; WT1-/ER+→子宫内膜癌", "妇科超声/CT检查"]
+        },
+        {
+          "diagnosis": "泌尿系来源 (前列腺/尿路上皮)",
+          "diseaseId": "urothelial-carcinoma",
+          "requiredPositive": ["GATA3"],
+          "requiredNegative": ["TTF-1", "CDX2"],
+          "supportingPositive": ["Uroplakin", "CK7"],
+          "supportingNegative": ["CK20", "PAX8"],
+          "confidence": "medium",
+          "nextSteps": ["GATA3+/Uroplakin+→尿路上皮癌", "PSA+/NKX3.1+→前列腺癌", "注意GATA3也见于乳腺癌"]
+        },
+        {
+          "diagnosis": "肝来源",
+          "diseaseId": "hepatocellular-carcinoma",
+          "requiredPositive": ["Hepatocyte(HepPar-1)"],
+          "requiredNegative": ["CK7", "CK20", "CDX2"],
+          "supportingPositive": [],
+          "supportingNegative": ["TTF-1", "GATA3"],
+          "confidence": "high",
+          "nextSteps": ["Arginase-1和GPC-3进一步确认", "AFP检测"]
+        }
+      ]
+    }
+  ]
+}

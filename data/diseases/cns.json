@@ -3,183 +3,395 @@
     "id": "glioblastoma-multiforme",
     "nameZh": "多形性胶质母细胞瘤",
     "nameEn": "Glioblastoma Multiforme",
-    "aliases": ["GBM", "胶质母细胞瘤"],
+    "aliases": [
+      "GBM",
+      "胶质母细胞瘤"
+    ],
     "organ": "cns",
     "category": "malignant",
-    "epidemiology": "最常见的原发性脑肿瘤，占成人脑肿瘤的15-20%，发病高峰50-70岁。",
+    "epidemiology": "最常见的原发性恶性脑肿瘤，占成人脑肿瘤的15-20%及所有胶质瘤的约50%。发病高峰50-70岁，男性稍多见（男女比约1.6:1）。年发病率约3-4/10万，白种人高于其他种族。既往放疗史是已知危险因素。",
     "clinicalFeatures": "进展迅速，症状包括头痛、癫痫、神经功能缺损。",
     "grossPathology": "灰白色肿块，边界不清，常伴坏死和出血。",
     "grossDescription": "**典型大体形态**：\n\n- **部位**：多位于大脑半球，颞叶和额叶最常见\n- **大小**：直径 3–6 cm 不等\n- **切面**：灰白至黄色，质地软，常见中央坏死（地图样或蛇形）、出血和囊性变\n- **边界**：侵袭性强，边界不清，常沿白质纤维束浸润\n- **水肿**：周围脑组织明显水肿，压迫脑室系统\n- **卫星结节**：可见多灶性病灶",
-    "microscopy": "高度异型性肿瘤细胞，包括星形细胞、梭形细胞和多形性细胞；核分裂活跃；血管增生和坏死是特征性。",
-    "keyFeatures": ["高度异型性", "血管增生", "假菊形团", "坏死", "GFAP+", "IDH野生型"],
+    "microscopy": "肿瘤细胞高度异型，形态多变，包括星形细胞样、梭形细胞样、多形性巨细胞和小细胞等多种形态共存。核深染多形性，核分裂象活跃（包括病理性核分裂）。两个WHO 4级的诊断性特征为：微血管增生（肾小球样血管球形成，内皮细胞多层增殖）和栅栏状坏死（假栅栏样排列的肿瘤细胞围绕蛇行坏死灶）。胶质纤维酸性蛋白（GFAP）阳性，间质可见血栓形成和出血。",
+    "keyFeatures": [
+      "高度异型性",
+      "血管增生",
+      "假菊形团",
+      "坏死",
+      "GFAP+",
+      "IDH野生型"
+    ],
     "ihcProfile": [
-      {"marker": "GFAP", "result": "阳性", "note": "胶质细胞标记"},
-      {"marker": "IDH1", "result": "阴性", "note": "GBM多为野生型"},
-      {"marker": "ATRX", "result": "阴性", "note": "缺失常见"},
-      {"marker": "P53", "result": "阳性", "note": "突变常见"},
-      {"marker": "Ki-67", "result": "高(>20%)", "note": "增殖活跃"}
+      {
+        "marker": "GFAP",
+        "result": "阳性",
+        "note": "胶质细胞标记"
+      },
+      {
+        "marker": "IDH1",
+        "result": "阴性",
+        "note": "GBM多为野生型"
+      },
+      {
+        "marker": "ATRX",
+        "result": "阴性",
+        "note": "缺失常见"
+      },
+      {
+        "marker": "P53",
+        "result": "阳性",
+        "note": "突变常见"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "高(>20%)",
+        "note": "增殖活跃"
+      }
     ],
     "molecularFeatures": "IDH野生型，TERT启动子突变，EGFR扩增，PTEN缺失。",
-    "differentialDiagnosis": ["anaplastic-astrocytoma", "metastatic-carcinoma"],
+    "differentialDiagnosis": [],
     "grading": "WHO 4级",
     "staging": "不适用",
     "prognosis": "预后极差，中位生存12-15月。",
     "treatment": "手术+放疗+替莫唑胺化疗。",
     "images": [],
-    "references": ["WHO CNS Tumours, 5th Ed, 2021"]
+    "references": [
+      "WHO CNS Tumours, 5th Ed, 2021"
+    ]
   },
   {
     "id": "diffuse-astrocytoma-idh-mutant",
     "nameZh": "弥漫性星形细胞瘤 IDH突变",
     "nameEn": "Diffuse Astrocytoma IDH-Mutant",
-    "aliases": ["星形细胞瘤"],
+    "aliases": [
+      "星形细胞瘤"
+    ],
     "organ": "cns",
     "category": "malignant",
-    "epidemiology": "成人常见低级别胶质瘤，占胶质瘤的25%。",
+    "epidemiology": "成人常见低级别胶质瘤，占成人弥漫性胶质瘤的约10-15%。好发于20-45岁青年成人，男性略多见。WHO第5版要求IDH突变和ATRX/TP53改变共存，1p/19q完整以区别于少突胶质瘤。",
     "clinicalFeatures": "癫痫是最常见症状。",
     "grossPathology": "边界不清的灰白色肿块。",
-    "microscopy": "细胞密度增加，核异型性轻至中度，无坏死或血管增生。",
-    "keyFeatures": ["弥漫浸润", "GFAP+", "IDH1+", "ATRX+", "1p/19q完整"],
+    "microscopy": "弥漫浸润性生长的星形细胞肿瘤，细胞密度较正常脑组织中度增加。肿瘤细胞核呈椭圆形或不规则形，染色质细颗粒状，核异型性轻至中度，核分裂象少见。胞浆稀少，突起纤细，GFAP阳性。背景可见微囊形成和黏液样变性。弥漫浸润周围脑实质，形成继发性结构如卫星样围绕神经元和血管周围聚集。无微血管增生和坏死（有则升级为WHO 3-4级）。",
+    "keyFeatures": [
+      "弥漫浸润",
+      "GFAP+",
+      "IDH1+",
+      "ATRX+",
+      "1p/19q完整"
+    ],
     "ihcProfile": [
-      {"marker": "GFAP", "result": "阳性", "note": ""},
-      {"marker": "IDH1", "result": "阳性", "note": "突变型"},
-      {"marker": "ATRX", "result": "阳性", "note": "保留表达"},
-      {"marker": "P53", "result": "阴性", "note": "野生型"}
+      {
+        "marker": "GFAP",
+        "result": "阳性",
+        "note": "胶质分化标记"
+      },
+      {
+        "marker": "IDH1",
+        "result": "阳性",
+        "note": "R132H突变型特异抗体"
+      },
+      {
+        "marker": "ATRX",
+        "result": "保留表达",
+        "note": "星形细胞瘤常丢失"
+      },
+      {
+        "marker": "P53",
+        "result": "可过表达",
+        "note": "TP53突变常见"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低(<5%)",
+        "note": "WHO 2级增殖指数低"
+      }
     ],
     "molecularFeatures": "IDH1/2突变，ATRX突变，TP53野生型。",
-    "differentialDiagnosis": ["oligodendroglioma", "reactive-astrocytosis"],
+    "differentialDiagnosis": [],
     "grading": "WHO 2级",
     "staging": "不适用",
     "prognosis": "中位生存8-10年。",
     "treatment": "手术+放疗。",
     "images": [],
-    "references": ["WHO CNS Tumours, 5th Ed, 2021"]
+    "references": [
+      "WHO CNS Tumours, 5th Ed, 2021"
+    ]
   },
   {
     "id": "oligodendroglioma-idh-mutant",
     "nameZh": "少突胶质细胞瘤 IDH突变",
     "nameEn": "Oligodendroglioma IDH-Mutant",
-    "aliases": ["少突胶质瘤"],
+    "aliases": [
+      "少突胶质瘤"
+    ],
     "organ": "cns",
     "category": "malignant",
-    "epidemiology": "占成人胶质瘤的5-10%。",
+    "epidemiology": "占成人弥漫性胶质瘤的5-10%，好发于30-50岁成人，男性略多见。额叶最常累及。WHO第5版定义要求IDH突变+1p/19q共缺失，预后在弥漫性胶质瘤中最好。",
     "clinicalFeatures": "癫痫常见。",
     "grossPathology": "边界不清，灰白色。",
-    "microscopy": "圆形细胞核，鸡丝样血管，钙化常见。",
-    "keyFeatures": ["鸡丝样血管", "钙化", "IDH1+", "1p/19q共缺失"],
+    "microscopy": "肿瘤细胞均匀一致，核圆形居中，染色质细腻，核周空晕明显形成\"煎鸡蛋\"样外观（石蜡固定伪影但极具诊断价值）。排列在纤细分支状\"鸡丝样\"（chicken-wire）毛细血管网络中，此血管模式是重要的形态学线索。钙化灶常见，可为粗大斑块状。弥漫浸润脑皮质，可见神经元卫星现象和皮质下白质聚集。核分裂象少见（WHO 2级），出现活跃核分裂、微血管增生或坏死提示间变性（WHO 3级）。",
+    "keyFeatures": [
+      "鸡丝样血管",
+      "钙化",
+      "IDH1+",
+      "1p/19q共缺失"
+    ],
     "ihcProfile": [
-      {"marker": "IDH1", "result": "阳性", "note": ""},
-      {"marker": "ATRX", "result": "阴性", "note": "缺失"},
-      {"marker": "P53", "result": "阴性", "note": ""}
+      {
+        "marker": "IDH1",
+        "result": "阳性",
+        "note": "R132H突变型"
+      },
+      {
+        "marker": "ATRX",
+        "result": "保留表达",
+        "note": "与星形细胞瘤不同，保留表达"
+      },
+      {
+        "marker": "GFAP",
+        "result": "灶状阳性",
+        "note": "部分细胞表达"
+      },
+      {
+        "marker": "Olig2",
+        "result": "阳性",
+        "note": "少突胶质细胞分化标记"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低(<5%)",
+        "note": "WHO 2级增殖低"
+      }
     ],
     "molecularFeatures": "IDH1突变，1p/19q共缺失，TERT启动子突变。",
-    "differentialDiagnosis": ["diffuse-astrocytoma", "clear-cell-meningioma"],
+    "differentialDiagnosis": [],
     "grading": "WHO 2级",
     "staging": "不适用",
     "prognosis": "中位生存10年以上。",
     "treatment": "手术+放疗±化疗。",
     "images": [],
-    "references": ["WHO CNS Tumours, 5th Ed, 2021"]
+    "references": [
+      "WHO CNS Tumours, 5th Ed, 2021"
+    ]
   },
   {
     "id": "medulloblastoma",
     "nameZh": "髓母细胞瘤",
     "nameEn": "Medulloblastoma",
-    "aliases": ["髓母瘤"],
+    "aliases": [
+      "髓母瘤"
+    ],
     "organ": "cns",
     "category": "malignant",
-    "epidemiology": "儿童最常见的恶性脑肿瘤。",
+    "epidemiology": "儿童最常见的恶性脑肿瘤，占儿童CNS肿瘤的15-20%。发病高峰3-8岁，男孩略多见（男女比约1.5:1）。成人罕见。分为WNT、SHH、Group 3和Group 4四种分子亚型，预后差异显著。",
     "clinicalFeatures": "小脑症状，颅内压增高。",
     "grossPathology": "小脑蚓部灰白色软肿块。",
-    "microscopy": "高度细胞性，Homer Wright菊形团。",
-    "keyFeatures": ["Homer Wright菊形团", "Syn+", "Ki-67高"],
+    "microscopy": "肿瘤高度细胞密集，由密集排列的小圆蓝细胞组成，胞浆极少，核深染，核质比极高，核分裂象活跃。经典型可见Homer-Wright菊形团（肿瘤细胞围绕嗜酸性纤维轴心排列）。促纤维增生/结节型（预后较好）可见无细胞结节（苍白岛）散在于密集细胞间。大细胞/间变型核增大、核仁显著、频繁核分裂，预后最差。广泛型可见细胞多形性。间质血管丰富，可见凋亡小体和坏死灶。",
+    "keyFeatures": [
+      "Homer Wright菊形团",
+      "Syn+",
+      "Ki-67高"
+    ],
     "ihcProfile": [
-      {"marker": "Synaptophysin", "result": "阳性", "note": ""},
-      {"marker": "Ki-67", "result": "高", "note": ""}
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": "神经分化标记"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "高(>40%)",
+        "note": "增殖活跃"
+      },
+      {
+        "marker": "INI1",
+        "result": "保留表达",
+        "note": "排除ATRT(INI1丢失)"
+      },
+      {
+        "marker": "β-catenin",
+        "result": "WNT型核阳性",
+        "note": "WNT通路激活标记"
+      },
+      {
+        "marker": "GAB1/YAP1",
+        "result": "SHH型阳性",
+        "note": "SHH通路标记"
+      }
     ],
     "molecularFeatures": "WNT, SHH, Group 3, Group 4亚型。",
-    "differentialDiagnosis": ["pineoblastoma", "ependymoma"],
+    "differentialDiagnosis": [
+      "ependymoma"
+    ],
     "grading": "WHO 4级",
     "staging": "不适用",
     "prognosis": "预后差异大，WNT亚型最好。",
     "treatment": "手术+放疗+化疗。",
     "images": [],
-    "references": ["WHO CNS Tumours, 5th Ed, 2021"]
+    "references": [
+      "WHO CNS Tumours, 5th Ed, 2021"
+    ]
   },
   {
     "id": "meningioma",
     "nameZh": "脑膜瘤",
     "nameEn": "Meningioma",
-    "aliases": ["脑膜瘤"],
+    "aliases": [
+      "脑膜瘤"
+    ],
     "organ": "cns",
     "category": "benign",
-    "epidemiology": "最常见的颅内肿瘤，女性多见。",
+    "epidemiology": "最常见的颅内原发肿瘤，占所有CNS肿瘤的约37%。好发于40-70岁成人，女性明显多见（女男比约2:1），提示激素相关性。多发性脑膜瘤与NF2型神经纤维瘤病相关。既往放疗史增加风险。",
     "clinicalFeatures": "癫痫、神经功能缺损。",
     "grossPathology": "边界清楚，硬韧肿块。",
-    "microscopy": "纺锤细胞，漩涡状排列。",
-    "keyFeatures": ["漩涡状结构", "EMA+", "SSTR2A+"],
+    "microscopy": "肿瘤由均匀一致的脑膜上皮细胞（蛛网膜帽细胞）组成，排列成典型的漩涡状或同心圆状结构。漩涡中央可发生钙化形成砂粒体。肿瘤细胞呈梭形或卵圆形，核呈椭圆形，可见核内假包涵体（胞浆内陷入核内）和核沟。胞浆丰富嗜酸性，细胞边界不清晰。WHO 1级（典型）无明显异型和核分裂。非典型脑膜瘤（WHO 2级）核分裂4-19/10HPF，可见脑浸润、小细胞化或片状坏死。",
+    "keyFeatures": [
+      "漩涡状结构",
+      "EMA+",
+      "SSTR2A+"
+    ],
     "ihcProfile": [
-      {"marker": "EMA", "result": "阳性", "note": ""},
-      {"marker": "SSTR2A", "result": "阳性", "note": ""},
-      {"marker": "Ki-67", "result": "低", "note": ""}
+      {
+        "marker": "EMA",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "SSTR2A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低",
+        "note": ""
+      }
     ],
     "molecularFeatures": "NF2突变常见。",
-    "differentialDiagnosis": ["fibrous-meningioma", "hemangiopericytoma"],
+    "differentialDiagnosis": [],
     "grading": "WHO 1-3级",
     "staging": "不适用",
     "prognosis": "良性，手术可治愈。",
     "treatment": "手术切除。",
     "images": [],
-    "references": ["WHO CNS Tumours, 5th Ed, 2021"]
+    "references": [
+      "WHO CNS Tumours, 5th Ed, 2021"
+    ]
   },
   {
     "id": "ependymoma",
     "nameZh": "室管膜瘤",
     "nameEn": "Ependymoma",
-    "aliases": ["室管瘤"],
+    "aliases": [
+      "室管瘤"
+    ],
     "organ": "cns",
     "category": "malignant",
-    "epidemiology": "儿童常见。",
+    "epidemiology": "占儿童颅内肿瘤的6-10%，是儿童第三常见的CNS肿瘤。好发于0-5岁幼儿（幕下）和30-40岁成人（脊髓）。男女比约1:1。后颅窝（第四脑室）和脊髓是最常见部位，幕上室管膜瘤与RELA/ZFTA融合相关。",
     "clinicalFeatures": "颅内压增高。",
     "grossPathology": "第四脑室肿块。",
-    "microscopy": "室管膜菊形团。",
-    "keyFeatures": ["室管膜菊形团", "GFAP+", "EMA+"],
+    "microscopy": "肿瘤细胞围绕血管或形成管腔样结构排列，形成两种特征性菊形团：真性室管膜菊形团（肿瘤细胞围绕中央管腔排列，腔面有纤毛和微绒毛）和血管周围假菊形团（肿瘤细胞围绕血管排列，细胞突起延伸至血管壁形成无核区）。细胞形态均匀，核圆至卵圆形，染色质细腻颗粒状，核分裂象少见。间质可有黏液样变性和钙化。GFAP阳性，EMA呈特征性点状或环状（dot-like/ring-like）阳性。",
+    "keyFeatures": [
+      "室管膜菊形团",
+      "GFAP+",
+      "EMA+"
+    ],
     "ihcProfile": [
-      {"marker": "GFAP", "result": "阳性", "note": ""},
-      {"marker": "EMA", "result": "阳性", "note": "dot-like"}
+      {
+        "marker": "GFAP",
+        "result": "阳性",
+        "note": "胶质分化标记"
+      },
+      {
+        "marker": "EMA",
+        "result": "阳性",
+        "note": "特征性点状/环状(dot-like/ring-like)"
+      },
+      {
+        "marker": "L1CAM",
+        "result": "RELA融合型阳性",
+        "note": "幕上RELA融合型特异标记"
+      },
+      {
+        "marker": "H3K27me3",
+        "result": "后颅窝A型丢失",
+        "note": "PFA型室管膜瘤特征"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "可变",
+        "note": "间变型增高"
+      }
     ],
     "molecularFeatures": "RELA融合等。",
-    "differentialDiagnosis": ["medulloblastoma", "choroid-plexus-papilloma"],
+    "differentialDiagnosis": [
+      "medulloblastoma"
+    ],
     "grading": "WHO 2-3级",
     "staging": "不适用",
     "prognosis": "中位生存5-10年。",
     "treatment": "手术+放疗。",
     "images": [],
-    "references": ["WHO CNS Tumours, 5th Ed, 2021"]
+    "references": [
+      "WHO CNS Tumours, 5th Ed, 2021"
+    ]
   },
   {
     "id": "germ-cell-tumor",
     "nameZh": "生殖细胞肿瘤",
     "nameEn": "Germ Cell Tumor",
-    "aliases": ["生殖细胞瘤"],
+    "aliases": [
+      "生殖细胞瘤"
+    ],
     "organ": "cns",
     "category": "malignant",
-    "epidemiology": "儿童和青年常见。",
+    "epidemiology": "占颅内肿瘤的0.5-3%，东亚地区发病率较高。好发于10-25岁儿童和青年，男性明显多见（男女比约2-3:1）。最常发生于松果体区和鞍上区（下丘脑-垂体区）。纯生殖细胞瘤（germinoma）最常见，占CNS生殖细胞肿瘤的60-70%。",
     "clinicalFeatures": "内分泌症状。",
     "grossPathology": "松果体区肿块。",
-    "microscopy": "根据亚型不同。",
-    "keyFeatures": ["PLAP+", "OCT4+", "AFP+", "HCG+"],
+    "microscopy": "纯生殖细胞瘤（最常见亚型）由大的圆形肿瘤细胞组成，胞浆透明丰富（富含糖原），核大圆形居中，核仁显著，排列成实性片状或巢状结构，间质伴有丰富的淋巴细胞浸润（两种细胞成分的双相模式是重要诊断线索）。可见肉芽肿样反应。OCT4和PLAP弥漫膜/胞浆阳性。卵黄囊瘤呈Schiller-Duval小体（肾小球样结构），AFP阳性。畸胎瘤含三胚层分化成分。绒毛膜癌可见合体滋养层和细胞滋养层，HCG阳性。",
+    "keyFeatures": [
+      "PLAP+",
+      "OCT4+",
+      "AFP+",
+      "HCG+"
+    ],
     "ihcProfile": [
-      {"marker": "PLAP", "result": "阳性", "note": ""},
-      {"marker": "OCT4", "result": "阳性", "note": ""}
+      {
+        "marker": "PLAP",
+        "result": "阳性",
+        "note": "膜/胞浆阳性"
+      },
+      {
+        "marker": "OCT4",
+        "result": "阳性",
+        "note": "核阳性，生殖细胞瘤特异"
+      },
+      {
+        "marker": "CD117",
+        "result": "阳性",
+        "note": "生殖细胞瘤膜阳性"
+      },
+      {
+        "marker": "D2-40",
+        "result": "阳性",
+        "note": "生殖细胞瘤表达"
+      },
+      {
+        "marker": "AFP",
+        "result": "卵黄囊瘤阳性",
+        "note": "生殖细胞瘤阴性"
+      }
     ],
     "molecularFeatures": "i(12p)常见。",
-    "differentialDiagnosis": ["pineal-parenchymal-tumor", "teratoma"],
+    "differentialDiagnosis": [],
     "grading": "WHO 1-4级",
     "staging": "不适用",
     "prognosis": "预后良好。",
     "treatment": "化疗+放疗。",
     "images": [],
-    "references": ["WHO CNS Tumours, 5th Ed, 2021"]
+    "references": [
+      "WHO CNS Tumours, 5th Ed, 2021"
+    ]
   }
 ]

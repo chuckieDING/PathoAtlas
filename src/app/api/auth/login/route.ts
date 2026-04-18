@@ -15,7 +15,7 @@ export async function GET(request: Request) {
   }
 
   const { searchParams, origin } = new URL(request.url);
-  const returnTo = searchParams.get('returnTo') || '/admin';
+  const returnTo = searchParams.get('returnTo') || '/';
 
   // State = random nonce + base64url(returnTo). The callback verifies the
   // nonce against a cookie to block CSRF-based login fixation, then decodes

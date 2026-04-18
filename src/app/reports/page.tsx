@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { IconBookOpen, IconSearch } from '@/components/Icon';
+import { IconClipboard, IconSearch } from '@/components/Icon';
 
 interface FieldOption { value: string; label: string }
 interface TemplateField {
@@ -119,7 +119,7 @@ export default function ReportsPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <IconBookOpen size={32} style={{ color: 'var(--accent)' }} />
+          <IconClipboard size={32} style={{ color: 'var(--accent)' }} />
           <h1 className="text-3xl font-bold" style={{ color: 'var(--fg)' }}>CAP 同步报告</h1>
         </div>
         <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
@@ -137,7 +137,7 @@ export default function ReportsPage() {
               onClick={() => setSelectedId(t.id)}
               className="w-full text-left px-3 py-2.5 rounded-lg transition-colors"
               style={{
-                background: selectedId === t.id ? 'var(--card-hover)' : 'transparent',
+                background: selectedId === t.id ? 'rgba(99,102,241,0.15)' : 'transparent',
                 border: selectedId === t.id ? '1px solid var(--accent)' : '1px solid transparent',
               }}
             >

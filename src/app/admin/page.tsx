@@ -1,8 +1,13 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { IconBookOpen, IconSearch } from '@/components/Icon';
+import { OrganIcon } from '@/components/OrganIcon';
+import { CONTENT_SCHEMAS } from './contentSchemas';
+import { FormRenderer } from './FormRenderer';
+import { FlowchartEditor } from './FlowchartEditor';
+import { ReportTemplateEditor } from './ReportTemplateEditor';
 
 // ── Types ──────────────────────────────────────────────────────────
 
@@ -110,7 +115,25 @@ const MARKER_CATEGORIES = [
   '增殖标记', '神经标记', '分子标记', '其他',
 ];
 
-type EntityKind = 'disease' | 'marker';
+type EntityKind = 'disease' | 'marker' | 'content';
+
+/** Non-disease/non-marker modules managed via the generic content API */
+export const CONTENT_MODULES = [
+  { key: 'organs', label: '器官系统' },
+  { key: 'differentials', label: '鉴别场景' },
+  { key: 'flowcharts', label: '鉴别流程图' },
+  { key: 'staging', label: '分级分期系统' },
+  { key: 'cases', label: '虚拟病例' },
+  { key: 'cytology', label: '细胞病理学' },
+  { key: 'frozen-sections', label: '冰冻切片' },
+  { key: 'glossary', label: '术语词汇表' },
+  { key: 'grossing', label: '取材规范' },
+  { key: 'molecular', label: '分子病理' },
+  { key: 'reports', label: 'CAP 报告模板' },
+  // 'special-stains' is now managed under the marker tab as a sub-category
+] as const;
+
+export type ContentModule = (typeof CONTENT_MODULES)[number]['key'];
 
 // ── Page ───────────────────────────────────────────────────────────
 
@@ -323,21 +346,37 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
   const [filterCategory, setFilterCategory] = useState('');
   // 标记物筛选
   const [filterMarkerCategory, setFilterMarkerCategory] = useState('');
+  // Marker sub-category: IHC markers vs special stains (both are marker-like)
+  const [markerSubtype, setMarkerSubtype] = useState<'ihc' | 'special-stain'>('ihc');
+  const [specialStains, setSpecialStains] = useState<Record<string, unknown>[]>([]);
+  const [stainFormValue, setStainFormValue] = useState<Record<string, unknown>>({});
+  const [stainEditMode, setStainEditMode] = useState<'form' | 'json'>('form');
+  const [stainJsonText, setStainJsonText] = useState('');
+  const [stainError, setStainError] = useState<string | null>(null);
 
   useEffect(() => {
     Promise.all([
       fetch('/api/all-diseases').then(r => r.json()),
       fetch('/api/markers').then(r => r.json()),
       fetch('/api/organs').then(r => r.json()),
-    ]).then(([d, m, o]) => {
+      fetch('/api/special-stains').then(r => r.json()),
+    ]).then(([d, m, o, s]) => {
       setDiseases(Array.isArray(d) ? d : []);
       setMarkers(Array.isArray(m) ? m : []);
       setOrgans(Array.isArray(o) ? o : []);
+      setSpecialStains(Array.isArray(s) ? s : []);
       setLoading(false);
     }).catch(() => setLoading(false));
   }, []);
 
-  const list = kind === 'disease' ? diseases : markers;
+  const refreshSpecialStains = useCallback(async () => {
+    const fresh = await fetch('/api/admin/content/special-stains', { cache: 'no-store' }).then(r => r.json());
+    setSpecialStains(Array.isArray(fresh) ? fresh : []);
+  }, []);
+
+  const list = kind === 'disease' ? diseases
+    : kind === 'marker' && markerSubtype === 'special-stain' ? (specialStains as unknown as MarkerLike[])
+    : markers;
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -438,10 +477,10 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
 
       {/* Entity-kind switch */}
       <div className="flex gap-1 mb-4" style={{ borderBottom: '1px solid var(--border)' }}>
-        {(['disease', 'marker'] as EntityKind[]).map(k => (
+        {(['disease', 'marker', 'content'] as EntityKind[]).map(k => (
           <button
             key={k}
-            onClick={() => { 
+            onClick={() => {
               setKind(k);
               setSelected(null);
               setSearch('');
@@ -455,14 +494,41 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
               color: kind === k ? 'var(--fg)' : 'var(--fg-muted)',
             }}
           >
-            {k === 'disease' ? `疾病 (${diseases.length})` : `标记物 (${markers.length})`}
+            {k === 'disease' ? `疾病 (${diseases.length})` : k === 'marker' ? `标记物 (${markers.length})` : '其他模块'}
           </button>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4">
+      {kind === 'content' && (
+        <ContentManager showToast={showToast} />
+      )}
+
+      {/* Marker sub-category: IHC / Special stains */}
+      {kind === 'marker' && (
+        <div className="flex gap-1 mb-4" style={{ borderBottom: '1px solid var(--border)' }}>
+          {(['ihc', 'special-stain'] as const).map(s => (
+            <button
+              key={s}
+              onClick={() => { setMarkerSubtype(s); setSelected(null); setStainFormValue({}); setStainError(null); }}
+              className="px-4 py-2 text-xs font-medium border-b-2 transition-colors cursor-pointer"
+              style={{
+                borderBottomColor: markerSubtype === s ? 'var(--accent)' : 'transparent',
+                color: markerSubtype === s ? 'var(--fg)' : 'var(--fg-muted)',
+              }}
+            >
+              {s === 'ihc' ? `免疫组化 (${markers.length})` : `特殊染色 (${specialStains.length})`}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {kind !== 'content' && (
+      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-4 items-start">
         {/* List panel */}
-        <aside className="rounded-xl p-3" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+        <aside
+          className="rounded-xl p-3 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto"
+          style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+        >
           <button
             onClick={() => setSelected(NEW_SENTINEL)}
             className="w-full text-xs font-medium px-3 py-2 rounded-md mb-3"
@@ -583,7 +649,7 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
               }}
             />
           )}
-          {kind === 'marker' && selectedMarker && (
+          {kind === 'marker' && markerSubtype === 'ihc' && selectedMarker && (
             <MarkerEditor
               key={selected || 'new-marker'}
               marker={selectedMarker}
@@ -603,8 +669,38 @@ function AdminInner({ currentEmail, onLogout }: { currentEmail: string | null; o
               }}
             />
           )}
+          {kind === 'marker' && markerSubtype === 'special-stain' && selected && (
+            <SpecialStainEditor
+              key={selected}
+              stainId={selected === NEW_SENTINEL ? '' : selected}
+              isNew={isCreating}
+              existing={selected === NEW_SENTINEL ? null : specialStains.find(s => s.id === selected) || null}
+              formValue={stainFormValue}
+              setFormValue={setStainFormValue}
+              editMode={stainEditMode}
+              setEditMode={setStainEditMode}
+              jsonText={stainJsonText}
+              setJsonText={setStainJsonText}
+              error={stainError}
+              setError={setStainError}
+              onSaved={async (msg) => {
+                await refreshSpecialStains();
+                showToast(msg);
+              }}
+              onCreated={async (id) => {
+                await refreshSpecialStains();
+                setSelected(id);
+                showToast(`已创建：${id}`);
+              }}
+              onDeleted={async () => {
+                await refreshSpecialStains();
+                setSelected(null);
+              }}
+            />
+          )}
         </main>
       </div>
+      )}
 
       {/* Toast */}
       {toast && (
@@ -1989,6 +2085,627 @@ function IhcProfileEditor({
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+// ── ContentManager: generic admin UI for non-disease/non-marker modules ──
+
+function ContentManager({ showToast }: { showToast: (msg: string) => void }) {
+  const [module, setModule] = useState<ContentModule>('organs');
+  const [entries, setEntries] = useState<Record<string, unknown>[]>([]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [editText, setEditText] = useState('');
+  const [editError, setEditError] = useState<string | null>(null);
+  const [newId, setNewId] = useState('');
+  const [editMode, setEditMode] = useState<'form' | 'json'>('form');
+  const [formValue, setFormValue] = useState<Record<string, unknown>>({});
+  const schema = CONTENT_SCHEMAS[module];
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    try {
+      const data = await fetch(`/api/admin/content/${module}`, { cache: 'no-store' }).then(r => r.json());
+      setEntries(Array.isArray(data) ? data : []);
+    } catch {
+      setEntries([]);
+    } finally {
+      setLoading(false);
+    }
+  }, [module]);
+
+  useEffect(() => {
+    load();
+    setSelectedId(null);
+    setEditText('');
+    setEditError(null);
+  }, [load]);
+
+  const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return entries;
+    return entries.filter(e => {
+      const id = String(e.id || '');
+      const name = String(e.nameZh || e.titleZh || e.titleEn || e.nameEn || '');
+      return id.toLowerCase().includes(q) || name.toLowerCase().includes(q);
+    });
+  }, [entries, search]);
+
+  const selectEntry = (id: string) => {
+    const entry = entries.find(e => e.id === id);
+    if (entry) {
+      setSelectedId(id);
+      setEditText(JSON.stringify(entry, null, 2));
+      setFormValue({ ...entry });
+      setEditError(null);
+    }
+  };
+
+  const switchMode = (next: 'form' | 'json') => {
+    if (next === editMode) return;
+    if (next === 'json') {
+      // form → json: serialize current form value
+      setEditText(JSON.stringify({ ...formValue, id: selectedId }, null, 2));
+    } else {
+      // json → form: parse current text
+      try {
+        const parsed = JSON.parse(editText);
+        setFormValue(parsed);
+        setEditError(null);
+      } catch {
+        setEditError('当前 JSON 不合法，无法切换到表单模式');
+        return;
+      }
+    }
+    setEditMode(next);
+  };
+
+  const saveEntry = async () => {
+    if (!selectedId) return;
+    let parsed: Record<string, unknown>;
+    if (editMode === 'form') {
+      parsed = { ...formValue, id: selectedId };
+    } else {
+      try {
+        parsed = JSON.parse(editText);
+      } catch (e) {
+        setEditError(`JSON 解析失败：${e instanceof Error ? e.message : '未知错误'}`);
+        return;
+      }
+      if (!parsed.id || parsed.id !== selectedId) {
+        setEditError(`id 不可修改（必须为 "${selectedId}"）`);
+        return;
+      }
+    }
+    try {
+      const res = await fetch(`/api/admin/content/${module}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: selectedId, updates: parsed }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        setEditError(err.error || '保存失败');
+        return;
+      }
+      await load();
+      showToast(`已保存：${selectedId}`);
+      setEditError(null);
+    } catch (e) {
+      setEditError(e instanceof Error ? e.message : '保存出错');
+    }
+  };
+
+  const deleteEntry = async () => {
+    if (!selectedId) return;
+    if (!confirm(`确定删除 "${selectedId}"？此操作无法撤销。`)) return;
+    try {
+      const res = await fetch(`/api/admin/content/${module}?id=${encodeURIComponent(selectedId)}`, {
+        method: 'DELETE',
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        showToast(err.error || '删除失败');
+        return;
+      }
+      await load();
+      setSelectedId(null);
+      setEditText('');
+      showToast(`已删除：${selectedId}`);
+    } catch (e) {
+      showToast(e instanceof Error ? e.message : '删除出错');
+    }
+  };
+
+  const createEntry = async () => {
+    const id = newId.trim();
+    if (!id) return;
+    if (!/^[a-z0-9][a-z0-9-]*$/i.test(id)) {
+      showToast('id 格式非法：仅允许字母数字和连字符');
+      return;
+    }
+    if (entries.some(e => e.id === id)) {
+      showToast(`id 已存在：${id}`);
+      return;
+    }
+    try {
+      const res = await fetch(`/api/admin/content/${module}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entry: { id } }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        showToast(err.error || '创建失败');
+        return;
+      }
+      await load();
+      setNewId('');
+      showToast(`已创建：${id}`);
+      // Auto-select the new entry for editing
+      setTimeout(() => selectEntry(id), 100);
+    } catch (e) {
+      showToast(e instanceof Error ? e.message : '创建出错');
+    }
+  };
+
+  const selectedEntry = selectedId ? entries.find(e => e.id === selectedId) : null;
+
+  return (
+    <div>
+      {/* Module selector */}
+      <div className="flex gap-1.5 overflow-x-auto pb-1 mb-4 -mx-1 px-1">
+        {CONTENT_MODULES.map(m => (
+          <button
+            key={m.key}
+            onClick={() => setModule(m.key)}
+            className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors flex-shrink-0 flex items-center gap-1.5"
+            style={{
+              background: module === m.key ? 'var(--accent)' : 'var(--card)',
+              color: module === m.key ? '#fff' : 'var(--fg-muted)',
+              border: `1px solid ${module === m.key ? 'var(--accent)' : 'var(--border)'}`,
+            }}
+          >
+            <span>{m.label}</span>
+            {module === m.key && (
+              <span className="tabular-nums text-[10px] px-1.5 py-px rounded-full" style={{ background: 'rgba(255,255,255,0.22)' }}>
+                {entries.length}
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-4 items-start">
+        {/* Left: entry list */}
+        <aside
+          className="rounded-xl p-3 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto"
+          style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+        >
+          {/* Create new */}
+          <div className="flex gap-1 mb-3">
+            <input
+              type="text"
+              placeholder="新 ID（如：new-item）"
+              value={newId}
+              onChange={e => setNewId(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') createEntry(); }}
+              className="flex-1 px-2 py-1.5 rounded text-xs outline-none"
+              style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+            />
+            <button
+              onClick={createEntry}
+              disabled={!newId.trim()}
+              className="px-3 py-1.5 rounded text-xs font-medium cursor-pointer"
+              style={{ background: 'var(--accent)', color: '#fff', opacity: newId.trim() ? 1 : 0.4 }}
+            >
+              + 新增
+            </button>
+          </div>
+
+          <input
+            type="text"
+            placeholder="搜索..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="w-full px-2 py-1.5 rounded text-xs outline-none mb-2"
+            style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+          />
+
+          {loading ? (
+            <p className="text-xs text-center py-4" style={{ color: 'var(--fg-muted)' }}>加载中...</p>
+          ) : filtered.length === 0 ? (
+            <p className="text-xs text-center py-4" style={{ color: 'var(--fg-muted)' }}>
+              {entries.length === 0 ? '暂无条目' : '无匹配结果'}
+            </p>
+          ) : (
+            <ul className="max-h-[500px] overflow-y-auto space-y-0.5">
+              {filtered.map(e => {
+                const id = String(e.id);
+                const name = String(e.nameZh || e.titleZh || e.nameEn || e.titleEn || id);
+                const organColor = module === 'organs' ? String(e.color || 'var(--accent)') : undefined;
+                return (
+                  <li key={id}>
+                    <button
+                      onClick={() => selectEntry(id)}
+                      className="w-full text-left px-2 py-1.5 rounded text-xs transition-colors flex items-center gap-2"
+                      style={{
+                        background: selectedId === id ? 'var(--accent)' : 'transparent',
+                        color: selectedId === id ? '#fff' : 'var(--fg)',
+                      }}
+                    >
+                      {module === 'organs' && (
+                        <OrganIcon organId={id} size={20} color={selectedId === id ? '#fff' : organColor} />
+                      )}
+                      <div className="min-w-0 flex-1">
+                        <div className="font-medium truncate">{name}</div>
+                        <div className="font-mono text-[10px] truncate" style={{ opacity: 0.7 }}>{id}</div>
+                      </div>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </aside>
+
+        {/* Right: JSON editor */}
+        <main className="rounded-xl p-4" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+          {!selectedEntry ? (
+            <div className="text-center py-16" style={{ color: 'var(--fg-muted)' }}>
+              <p className="text-sm mb-2">选择左侧条目以编辑</p>
+              <p className="text-xs">或输入新 ID 创建条目</p>
+            </div>
+          ) : (
+            <div>
+              <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+                <div className="flex items-center gap-3">
+                  {module === 'organs' && (
+                    <OrganIcon
+                      organId={String(selectedEntry.id)}
+                      size={32}
+                      color={String(selectedEntry.color || 'var(--accent)')}
+                    />
+                  )}
+                  <div>
+                    <div className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>
+                      {String(selectedEntry.nameZh || selectedEntry.titleZh || selectedEntry.id)}
+                    </div>
+                    <code className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{String(selectedEntry.id)}</code>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={saveEntry}
+                    className="px-3 py-1.5 rounded text-xs font-medium cursor-pointer"
+                    style={{ background: 'var(--accent)', color: '#fff' }}
+                  >
+                    保存
+                  </button>
+                  <button
+                    onClick={deleteEntry}
+                    className="px-3 py-1.5 rounded text-xs font-medium cursor-pointer"
+                    style={{ background: 'rgba(239,68,68,0.12)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)' }}
+                  >
+                    删除
+                  </button>
+                </div>
+              </div>
+
+              {editError && (
+                <div className="rounded-lg p-2.5 mb-2 text-xs" style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.25)' }}>
+                  {editError}
+                </div>
+              )}
+
+              {/* Edit mode toggle */}
+              <div className="flex gap-1 mb-3" style={{ borderBottom: '1px solid var(--border)' }}>
+                {(['form', 'json'] as const).map(m => (
+                  <button
+                    key={m}
+                    onClick={() => switchMode(m)}
+                    disabled={m === 'form' && !schema}
+                    className="px-3 py-1.5 text-xs font-medium border-b-2 transition-colors cursor-pointer"
+                    style={{
+                      borderBottomColor: editMode === m ? 'var(--accent)' : 'transparent',
+                      color: editMode === m ? 'var(--fg)' : 'var(--fg-muted)',
+                      opacity: m === 'form' && !schema ? 0.4 : 1,
+                    }}
+                  >
+                    {m === 'form' ? '表单编辑' : 'JSON 原始'}
+                  </button>
+                ))}
+              </div>
+
+              {editMode === 'form' && schema ? (
+                module === 'flowcharts' ? (
+                  <div>
+                    {/* Title + related id editing before visual canvas */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                      <div>
+                        <label className="block text-xs font-medium mb-1" style={{ color: 'var(--fg)' }}>标题</label>
+                        <input
+                          type="text"
+                          value={(formValue.titleZh as string) || ''}
+                          onChange={e => setFormValue({ ...formValue, titleZh: e.target.value })}
+                          className="w-full px-3 py-2 rounded-lg text-sm outline-none"
+                          style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-medium mb-1" style={{ color: 'var(--fg)' }}>关联鉴别场景 ID</label>
+                        <input
+                          type="text"
+                          value={(formValue.relatedDifferentialId as string) || ''}
+                          onChange={e => setFormValue({ ...formValue, relatedDifferentialId: e.target.value })}
+                          placeholder="引用 differentials.json 中的 id"
+                          className="w-full px-3 py-2 rounded-lg text-sm outline-none"
+                          style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--fg)' }}
+                        />
+                      </div>
+                    </div>
+                    <FlowchartEditor
+                      value={formValue as { nodes: any[]; edges: any[]; [k: string]: unknown }}
+                      onChange={(v) => setFormValue({ ...formValue, nodes: v.nodes, edges: v.edges })}
+                    />
+                  </div>
+                ) : module === 'reports' ? (
+                  <ReportTemplateEditor
+                    value={formValue as { id: string; sections: any[]; [k: string]: unknown }}
+                    onChange={setFormValue}
+                  />
+                ) : (
+                  <FormRenderer schema={schema} value={formValue} onChange={setFormValue} />
+                )
+              ) : (
+                <textarea
+                  value={editText}
+                  onChange={e => setEditText(e.target.value)}
+                  className="w-full rounded-lg p-3 text-xs font-mono outline-none"
+                  style={{
+                    background: 'var(--bg)',
+                    border: '1px solid var(--border)',
+                    color: 'var(--fg)',
+                    minHeight: 500,
+                    resize: 'vertical',
+                    tabSize: 2,
+                  }}
+                  spellCheck={false}
+                />
+              )}
+
+              <p className="text-[10px] mt-2" style={{ color: 'var(--fg-muted)' }}>
+                {editMode === 'form' ? '表单模式：按字段编辑。' : '原始模式：直接编辑 JSON。'}id 字段不可修改。保存后将触发页面缓存刷新。
+              </p>
+            </div>
+          )}
+        </main>
+      </div>
+    </div>
+  );
+}
+
+// ── SpecialStainEditor: form + staining images for special stains ──
+
+function SpecialStainEditor({
+  stainId, isNew, existing,
+  formValue, setFormValue,
+  editMode, setEditMode,
+  jsonText, setJsonText,
+  error, setError,
+  onSaved, onCreated, onDeleted,
+}: {
+  stainId: string;
+  isNew: boolean;
+  existing: Record<string, unknown> | null;
+  formValue: Record<string, unknown>;
+  setFormValue: (v: Record<string, unknown>) => void;
+  editMode: 'form' | 'json';
+  setEditMode: (m: 'form' | 'json') => void;
+  jsonText: string;
+  setJsonText: (s: string) => void;
+  error: string | null;
+  setError: (s: string | null) => void;
+  onSaved: (msg: string) => Promise<void>;
+  onCreated: (id: string) => Promise<void>;
+  onDeleted: () => Promise<void>;
+}) {
+  const schema = CONTENT_SCHEMAS['special-stains'];
+  const [newIdDraft, setNewIdDraft] = useState('');
+  const [busy, setBusy] = useState(false);
+
+  // Initialize form value on mount or when existing changes
+  useEffect(() => {
+    if (existing) {
+      setFormValue({ ...existing });
+      setJsonText(JSON.stringify(existing, null, 2));
+    } else if (isNew) {
+      setFormValue({ id: '', nameZh: '', nameEn: '', abbreviation: '', category: '', stainingImages: [] });
+      setJsonText(JSON.stringify({ id: '', nameZh: '', nameEn: '' }, null, 2));
+    }
+    setError(null);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [existing?.id, isNew]);
+
+  const switchMode = (next: 'form' | 'json') => {
+    if (next === editMode) return;
+    if (next === 'json') {
+      setJsonText(JSON.stringify(formValue, null, 2));
+    } else {
+      try {
+        setFormValue(JSON.parse(jsonText));
+        setError(null);
+      } catch {
+        setError('JSON 不合法');
+        return;
+      }
+    }
+    setEditMode(next);
+  };
+
+  const buildPayload = (): Record<string, unknown> | null => {
+    if (editMode === 'form') return formValue;
+    try {
+      return JSON.parse(jsonText);
+    } catch (e) {
+      setError(`JSON 解析失败：${e instanceof Error ? e.message : '未知错误'}`);
+      return null;
+    }
+  };
+
+  const create = async () => {
+    const id = newIdDraft.trim();
+    if (!id || !/^[a-z0-9][a-z0-9-]*$/i.test(id)) {
+      setError('ID 格式非法：仅允许字母数字和连字符');
+      return;
+    }
+    setBusy(true);
+    try {
+      const payload = buildPayload();
+      if (!payload) return;
+      const entry = { ...payload, id };
+      const res = await fetch('/api/admin/content/special-stains', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entry }),
+      });
+      const j = await res.json();
+      if (!res.ok) { setError(j.error || '创建失败'); return; }
+      await onCreated(id);
+      setError(null);
+    } finally { setBusy(false); }
+  };
+
+  const save = async (updates?: Record<string, unknown>, msg = '已保存') => {
+    if (!stainId) return;
+    const payload = updates || buildPayload();
+    if (!payload) return;
+    setBusy(true);
+    try {
+      const res = await fetch('/api/admin/content/special-stains', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: stainId, updates: payload }),
+      });
+      const j = await res.json();
+      if (!res.ok) { setError(j.error || '保存失败'); return; }
+      await onSaved(msg);
+      setError(null);
+    } finally { setBusy(false); }
+  };
+
+  const remove = async () => {
+    if (!stainId) return;
+    if (!confirm(`确定删除 "${stainId}"？`)) return;
+    setBusy(true);
+    try {
+      const res = await fetch(`/api/admin/content/special-stains?id=${encodeURIComponent(stainId)}`, { method: 'DELETE' });
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        setError(j.error || '删除失败');
+        return;
+      }
+      await onDeleted();
+    } finally { setBusy(false); }
+  };
+
+  const patch = (key: string, value: unknown) => {
+    setFormValue({ ...formValue, [key]: value });
+  };
+
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <div className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>
+            {isNew ? '新建特殊染色' : String(formValue.nameZh || stainId)}
+          </div>
+          {!isNew && <code className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{stainId}</code>}
+        </div>
+        <div className="flex gap-2">
+          {isNew ? (
+            <>
+              <input
+                type="text"
+                placeholder="ID（如：gram-stain）"
+                value={newIdDraft}
+                onChange={e => setNewIdDraft(e.target.value)}
+                className="px-2 py-1 rounded text-xs outline-none font-mono"
+                style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--fg)', minWidth: 160 }}
+              />
+              <button
+                onClick={create}
+                disabled={busy || !newIdDraft.trim()}
+                className="px-3 py-1.5 rounded text-xs font-medium cursor-pointer"
+                style={{ background: 'var(--accent)', color: '#fff', opacity: newIdDraft.trim() && !busy ? 1 : 0.4 }}
+              >
+                创建
+              </button>
+            </>
+          ) : (
+            <>
+              <button onClick={() => save()} disabled={busy} className="px-3 py-1.5 rounded text-xs font-medium cursor-pointer" style={{ background: 'var(--accent)', color: '#fff' }}>
+                保存
+              </button>
+              <button onClick={remove} disabled={busy} className="px-3 py-1.5 rounded text-xs font-medium cursor-pointer"
+                style={{ background: 'rgba(239,68,68,0.12)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)' }}>
+                删除
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
+      {error && (
+        <div className="rounded-lg p-2.5 mb-3 text-xs" style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.25)' }}>
+          {error}
+        </div>
+      )}
+
+      {/* Mode toggle */}
+      <div className="flex gap-1 mb-3" style={{ borderBottom: '1px solid var(--border)' }}>
+        {(['form', 'json'] as const).map(m => (
+          <button
+            key={m}
+            onClick={() => switchMode(m)}
+            className="px-3 py-1.5 text-xs font-medium border-b-2 transition-colors cursor-pointer"
+            style={{
+              borderBottomColor: editMode === m ? 'var(--accent)' : 'transparent',
+              color: editMode === m ? 'var(--fg)' : 'var(--fg-muted)',
+            }}
+          >
+            {m === 'form' ? '表单编辑' : 'JSON 原始'}
+          </button>
+        ))}
+      </div>
+
+      {editMode === 'form' ? (
+        <FormRenderer schema={schema} value={formValue} onChange={setFormValue} />
+      ) : (
+        <textarea
+          value={jsonText}
+          onChange={e => setJsonText(e.target.value)}
+          className="w-full rounded-lg p-3 text-xs font-mono outline-none"
+          style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--fg)', minHeight: 500, resize: 'vertical' }}
+          spellCheck={false}
+        />
+      )}
+
+      {/* Staining images — only in form mode, only when editing existing */}
+      {!isNew && editMode === 'form' && (
+        <div className="mt-6 pt-4" style={{ borderTop: '1px solid var(--border)' }}>
+          <h3 className="text-sm font-semibold mb-3" style={{ color: 'var(--fg)' }}>染色图库</h3>
+          <StainingGroupsEditor
+            markerId={`stains/${stainId}`}
+            groups={(formValue.stainingImages as StainingGroup[]) || []}
+            onChange={v => patch('stainingImages', v)}
+            onSave={() => save({ stainingImages: (formValue.stainingImages as StainingGroup[]) || [] }, '染色图已保存')}
+            busy={busy}
+          />
+        </div>
+      )}
     </div>
   );
 }

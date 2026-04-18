@@ -1,12 +1,13 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+import { getDataDir } from '@/lib/dataDir';
 
 let cachedTemplates: unknown[] | null = null;
 
 export async function GET() {
   try {
     if (!cachedTemplates) {
-      const filePath = join(process.cwd(), 'data', 'synoptic-templates.json');
+      const filePath = join(getDataDir(), 'synoptic-templates.json');
       const data = await readFile(filePath, 'utf-8');
       cachedTemplates = JSON.parse(data);
     }

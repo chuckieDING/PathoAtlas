@@ -1,5 +1,6 @@
 import { join } from 'path';
 import { readFile } from 'fs/promises';
+import { getDataDir } from '@/lib/dataDir';
 
 interface FrozenSection {
   id: string;
@@ -18,7 +19,7 @@ let cachedFrozen: FrozenSection[] | null = null;
 export async function GET() {
   try {
     if (!cachedFrozen) {
-      const filePath = join(process.cwd(), 'data', 'frozen-sections.json');
+      const filePath = join(getDataDir(), 'frozen-sections.json');
       const data = await readFile(filePath, 'utf-8');
       cachedFrozen = JSON.parse(data);
     }

@@ -58,6 +58,22 @@ export function ImageLightbox({
     reset();
   }, [image.url]);
 
+  // Lock body scroll while lightbox is open, prevent background scroll
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
+    const prevPaddingRight = document.body.style.paddingRight;
+    // Compensate for scrollbar disappearance to prevent layout shift
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = 'hidden';
+    if (scrollBarWidth > 0) {
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
+    }
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.body.style.paddingRight = prevPaddingRight;
+    };
+  }, []);
+
   // Keyboard shortcuts.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -80,13 +96,21 @@ export function ImageLightbox({
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
-  // Mouse wheel → zoom. Uses deltaY sign so both wheel and touchpad
-  // pinch-to-scroll behave consistently.
-  const onWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? -STEP : STEP;
-    setScale((s) => clamp(s + delta));
-  };
+  // Non-passive wheel listener so preventDefault works.
+  // React's onWheel prop is passive in React 17+, which means
+  // e.preventDefault() is a no-op and the page scrolls behind the lightbox.
+  const wheelContainerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = wheelContainerRef.current;
+    if (!el) return;
+    const handler = (e: WheelEvent) => {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -STEP : STEP;
+      setScale((s) => clamp(s + delta));
+    };
+    el.addEventListener('wheel', handler, { passive: false });
+    return () => el.removeEventListener('wheel', handler);
+  }, []);
 
   // Click & drag to pan — only active when zoomed in.
   const onMouseDown = (e: React.MouseEvent) => {
@@ -181,8 +205,8 @@ export function ImageLightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="overflow-hidden"
-          onWheel={onWheel}
+          ref={wheelContainerRef}
+          className="flex items-center justify-center"
           onMouseDown={onMouseDown}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
@@ -190,14 +214,22 @@ export function ImageLightbox({
           style={{
             cursor: scale > 1 ? (dragging ? 'grabbing' : 'grab') : 'zoom-in',
             touchAction: 'none',
+            width: '92vw',
+            height: '78vh',
+            overflow: 'hidden',
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={image.url}
             alt={image.caption}
-            className="max-w-[92vw] max-h-[78vh] object-contain select-none rounded-lg"
+            className="select-none rounded-lg"
             style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              width: 'auto',
+              height: 'auto',
+              objectFit: 'contain',
               transform: `translate(${tx}px, ${ty}px) scale(${scale})`,
               transformOrigin: 'center center',
               transition: dragging ? 'none' : 'transform 0.15s ease-out',
@@ -205,6 +237,11 @@ export function ImageLightbox({
             }}
             draggable={false}
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              const img = e.currentTarget;
+              img.style.minWidth = '300px';
+              img.style.minHeight = '200px';
+            }}
           />
         </div>
         <figcaption className="mt-3 text-center text-sm max-w-[92vw] px-4" style={{ color: '#e4e4e7' }}>

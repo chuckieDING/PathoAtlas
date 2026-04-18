@@ -120,7 +120,7 @@ export function NottinghamGrade() {
             </div>
           </div>
           <div className="text-right">
-            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>Nottingham Grade</div>
+            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>Nottingham 分级</div>
             <div className="text-base font-bold" style={{ color: result.color }}>
               {result.label}
             </div>

@@ -105,7 +105,7 @@ export function BethesdaThyroid() {
       >
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
-            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>Bethesda Category</div>
+            <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>Bethesda 分类</div>
             <div className="text-2xl font-bold tabular-nums" style={{ color: 'var(--fg)' }}>
               {result.roman}
             </div>

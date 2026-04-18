@@ -1,21 +1,20 @@
 import { NextResponse } from 'next/server';
-import { signSession, getAdminEmails, SESSION_COOKIE_NAME, OAUTH_STATE_COOKIE } from '@/lib/auth';
+import {
+  signSession, signUserSession, getAdminEmails, isAdmin,
+  SESSION_COOKIE_NAME, USER_SESSION_COOKIE_NAME, OAUTH_STATE_COOKIE,
+} from '@/lib/auth';
+import { initUserOnLogin } from '@/lib/userStorage';
 
 /**
- * Handles the Google OAuth redirect. Verifies the CSRF state, swaps the
- * authorization code for tokens at Google's endpoint, decodes the
- * id_token to pull out the user's email, enforces the admin allow-list,
- * and finally sets a signed session cookie before bouncing back to the
- * originally requested URL.
- *
- * All failure modes redirect back to /admin with an `auth_error` query
- * so the admin UI can render a human-friendly message.
+ * Handles the Google OAuth redirect. Any verified Google user gets a
+ * user-session cookie. Users on the ADMIN_EMAILS list additionally
+ * get an admin-session cookie.
  */
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const failureRedirect = (reason: string, extra?: string) =>
     NextResponse.redirect(
-      `${origin}/admin?auth_error=${encodeURIComponent(reason)}${extra ? `&email=${encodeURIComponent(extra)}` : ''}`,
+      `${origin}/login?auth_error=${encodeURIComponent(reason)}${extra ? `&email=${encodeURIComponent(extra)}` : ''}`,
     );
 
   const code = searchParams.get('code');
@@ -24,7 +23,7 @@ export async function GET(request: Request) {
   if (err) return failureRedirect(err);
   if (!code || !state) return failureRedirect('missing_code_or_state');
 
-  // CSRF check: cookie-held state must equal the one Google echoed back.
+  // CSRF check
   const stateCookie = request.headers
     .get('cookie')
     ?.split(';')
@@ -35,17 +34,15 @@ export async function GET(request: Request) {
     return failureRedirect('state_mismatch');
   }
 
-  // Recover the original returnTo path that was packed into state.
-  let returnTo = '/admin';
+  // Recover returnTo
+  let returnTo = '/';
   try {
     const encoded = state.split(':')[1];
     const decoded = Buffer.from(encoded, 'base64url').toString();
     if (decoded.startsWith('/')) returnTo = decoded;
-  } catch {
-    /* ignore and fall back */
-  }
+  } catch { /* fallback to / */ }
 
-  // Exchange code for tokens against Google's token endpoint.
+  // Exchange code for tokens
   const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -61,41 +58,45 @@ export async function GET(request: Request) {
   const tokens = (await tokenRes.json()) as { id_token?: string };
   if (!tokens.id_token) return failureRedirect('no_id_token');
 
-  // Decode the id_token payload. We trust Google since we hit their HTTPS
-  // token endpoint directly with our client secret — no signature check
-  // needed for this trust flow.
+  // Decode id_token payload
   let email: string | undefined;
+  let name = '';
+  let picture = '';
   try {
     const payloadB64 = tokens.id_token.split('.')[1];
     const payload = JSON.parse(
       Buffer.from(payloadB64.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString(),
-    ) as { email?: string; email_verified?: boolean };
+    ) as { email?: string; email_verified?: boolean; name?: string; picture?: string };
     if (payload.email_verified === false) return failureRedirect('email_not_verified');
     email = payload.email;
+    name = payload.name || '';
+    picture = payload.picture || '';
   } catch {
     return failureRedirect('invalid_id_token');
   }
   if (!email) return failureRedirect('no_email');
 
-  // Enforce the admin allow-list. If no list is configured we refuse
-  // sign-in entirely — without an allow-list, enabling OAuth would
-  // paradoxically open the admin to any Google user.
-  const allowed = getAdminEmails();
-  if (allowed.length === 0) return failureRedirect('no_admin_emails_configured');
-  if (!allowed.includes(email.toLowerCase())) {
-    return failureRedirect('not_authorized', email);
-  }
+  // Initialize user storage on the server
+  await initUserOnLogin(email, name, picture);
 
-  const session = signSession(email);
+  // Set user session cookie (for all Google users)
+  const userSession = await signUserSession(email, name, picture);
   const res = NextResponse.redirect(`${origin}${returnTo}`);
-  res.cookies.set(SESSION_COOKIE_NAME, session, {
+  const cookieOpts = {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
+    sameSite: 'lax' as const,
     path: '/',
-    maxAge: 60 * 60 * 24 * 7, // 7 days
-  });
-  // One-shot state cookie is consumed — clear it.
+    maxAge: 60 * 60 * 24 * 7,
+  };
+  res.cookies.set(USER_SESSION_COOKIE_NAME, userSession, cookieOpts);
+
+  // Additionally set admin session if user is on the admin allow-list
+  if (isAdmin(email)) {
+    const adminSession = await signSession(email);
+    res.cookies.set(SESSION_COOKIE_NAME, adminSession, cookieOpts);
+  }
+
   res.cookies.delete(OAUTH_STATE_COOKIE);
   return res;
 }

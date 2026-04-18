@@ -181,7 +181,7 @@ export default function MolecularPage() {
                 onClick={() => setSelectedId(m.id)}
                 className="w-full text-left px-3 py-2.5 rounded-lg transition-colors"
                 style={{
-                  background: selectedId === m.id ? 'var(--card-hover)' : 'transparent',
+                  background: selectedId === m.id ? 'rgba(99,102,241,0.15)' : 'transparent',
                   border: selectedId === m.id ? '1px solid var(--accent)' : '1px solid transparent',
                 }}
               >

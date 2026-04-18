@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { getDataDir } from './dataDir';
 
 // ── Types ─────────────────────────────────────────────────────────
 
@@ -76,6 +77,7 @@ export interface Disease {
   microscopy: string;
   keyFeatures: string[];
   ihcProfile: { marker: string; result: string; note: string }[];
+  specialStainProfile?: { stain: string; result: string; note: string }[];
   molecularFeatures: string;
   differentialDiagnosis: string[];
   /** Markdown 鉴别要点：哪些形态/免疫组化/分子线索可用于把本病和 differentialDiagnosis 里的条目区分开 */
@@ -160,7 +162,7 @@ export interface DifferentialScenario {
 
 // ── Data Loading ──────────────────────────────────────────────────
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+const DATA_DIR = getDataDir();
 
 // Tiny in-process cache so each JSON file is parsed at most once per Node worker.
 // The data is mostly static, so this is safe and significantly reduces repeated

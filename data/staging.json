@@ -77,7 +77,7 @@
     "id": "thyroid-bethesda",
     "nameZh": "Bethesda甲状腺细针穿刺细胞学报告系统",
     "nameEn": "The Bethesda System for Reporting Thyroid Cytopathology",
-    "applicableTo": ["thyroid-fna"],
+    "applicableTo": ["papillary-thyroid-carcinoma", "follicular-adenoma", "follicular-thyroid-carcinoma"],
     "description": "甲状腺细针穿刺活检(FNA)的标准化报告系统，2023年第三版更新，指导临床处理决策",
     "criteria": [
       { "parameter": "标本量", "description": "至少6组甲状腺滤泡细胞，每组至少10个细胞" },
@@ -97,7 +97,7 @@
     "id": "lymphoma-ann-arbor",
     "nameZh": "Ann Arbor分期（Lugano修订版）",
     "nameEn": "Ann Arbor Staging (Lugano Modification)",
-    "applicableTo": ["hodgkin-lymphoma", "non-hodgkin-lymphoma"],
+    "applicableTo": ["classical-hodgkin-lymphoma", "dlbcl", "follicular-lymphoma", "mantle-cell-lymphoma"],
     "description": "淋巴瘤最常用的临床分期系统，2014年Lugano分类对其进行了修订。结合影像学和病理学评估",
     "criteria": [
       { "parameter": "淋巴结区域", "description": "评估受累淋巴结区域的数量及分布" },
@@ -117,7 +117,7 @@
     "id": "cervix-cin",
     "nameZh": "宫颈上皮内瘤变(CIN)/鳞状上皮内病变(SIL)分级",
     "nameEn": "Cervical Intraepithelial Neoplasia (CIN) / SIL Grading",
-    "applicableTo": ["cervical-squamous-lesions"],
+    "applicableTo": ["cin", "cervical-scc"],
     "description": "宫颈鳞状上皮癌前病变的分级系统，CIN三级分类与SIL二级分类并行使用。P16和Ki-67免疫组化有助于分级",
     "criteria": [
       { "parameter": "异型细胞累及范围", "description": "不成熟/异型细胞自基底层向上累及上皮的比例" },
@@ -136,7 +136,7 @@
     "id": "melanoma-breslow-clark",
     "nameZh": "黑色素瘤Breslow厚度与Clark水平",
     "nameEn": "Breslow Thickness and Clark Level for Melanoma",
-    "applicableTo": ["cutaneous-melanoma"],
+    "applicableTo": ["melanoma", "invasive-melanoma", "melanoma-in-situ"],
     "description": "皮肤黑色素瘤最重要的预后指标。Breslow厚度是AJCC第8版T分期的主要依据，Clark水平已不再作为独立分期标准但仍有参考价值",
     "criteria": [
       { "parameter": "Breslow厚度", "description": "从颗粒层顶部（或溃疡基底）到肿瘤最深处的垂直距离，以mm为单位" },

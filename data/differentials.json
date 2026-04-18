@@ -13,7 +13,7 @@
     "titleZh": "小圆蓝细胞肿瘤鉴别",
     "titleEn": "Small Round Blue Cell Tumor Differentials",
     "description": "由小而圆、胞质少、深染的细胞组成的肿瘤群，常见于儿童和青少年，鉴别诊断需要免疫组化和分子检测",
-    "diseases": ["ewing-sarcoma", "neuroblastoma", "rhabdomyosarcoma", "lymphoma", "small-cell-carcinoma", "wilms-tumor", "desmoplastic-small-round-cell-tumor", "merkel-cell-carcinoma"],
+    "diseases": ["ewing-sarcoma", "neuroblastoma", "rhabdomyosarcoma", "dlbcl", "small-cell-carcinoma", "wilms-tumor", "desmoplastic-small-round-cell-tumor", "merkel-cell-carcinoma"],
     "keyMarkers": ["CD99", "NKX2.2", "FLI-1", "Desmin", "Myogenin", "MyoD1", "CD45", "CD20", "CD3", "Syn", "CgA", "NSE", "WT1", "CK20", "NeuN", "PHOX2B"],
     "algorithm": "CD99膜+/NKX2.2+ → Ewing肉瘤（需EWSR1融合确认）；Desmin+/Myogenin+/MyoD1+ → 横纹肌肉瘤；CD45+ → 淋巴瘤（进一步分型）；Syn+/CgA+/CK+ → 小细胞癌/神经内分泌癌；PHOX2B+/NB84+ → 神经母细胞瘤；WT1核+/Desmin+/CK+ → 促结缔组织增生性小圆细胞肿瘤（DSRCT，需EWSR1-WT1融合确认）；CK20核旁点状+/Syn+ → Merkel细胞癌"
   },
@@ -22,7 +22,7 @@
     "titleZh": "透明细胞肿瘤鉴别",
     "titleEn": "Clear Cell Tumor Differentials",
     "description": "以透明/空亮胞质为特征的肿瘤群，可见于多个器官系统，需结合部位和免疫组化综合判断",
-    "diseases": ["clear-cell-rcc", "clear-cell-ovarian-carcinoma", "clear-cell-endometrial-carcinoma", "adrenocortical-tumor", "clear-cell-sarcoma", "melanoma", "sebaceous-carcinoma", "sugar-tumor"],
+    "diseases": ["clear-cell-rcc", "clear-cell-ovarian-carcinoma", "clear-cell-endometrial-carcinoma", "adrenocortical-tumor", "melanoma", "sebaceous-carcinoma"],
     "keyMarkers": ["PAX8", "CA-IX", "CD10", "Napsin A", "HNF-1β", "Inhibin", "Melan-A", "SF-1", "S-100", "SOX10", "HMB-45", "EMA", "AR"],
     "algorithm": "PAX8+/CA-IX弥漫膜+/CD10+ → 肾透明细胞癌（VHL基因改变）；PAX8+/Napsin A+/HNF-1β+ → 卵巢/子宫内膜透明细胞癌；Inhibin+/Melan-A+/SF-1+ → 肾上腺皮质肿瘤；S-100+/SOX10+/HMB-45灶+ → 透明细胞肉瘤（需EWSR1-ATF1融合确认）或黑色素瘤；HMB-45+/SMA+/Melan-A+ → PEComa/血管周上皮样细胞肿瘤（糖瘤）"
   },
@@ -40,7 +40,7 @@
     "titleZh": "CK7+/CK20-肿瘤鉴别",
     "titleEn": "CK7+/CK20- Tumor Differentials",
     "description": "CK7阳性而CK20阴性的腺癌鉴别，该免疫表型常见于多种原发部位的肿瘤",
-    "diseases": ["lung-adenocarcinoma", "breast-carcinoma", "endometrial-carcinoma", "ovarian-serous-carcinoma", "cholangiocarcinoma", "thyroid-carcinoma", "mesothelioma", "salivary-gland-tumor"],
+    "diseases": ["lung-adenocarcinoma", "invasive-ductal-carcinoma-nst", "endometrial-adenocarcinoma", "ovarian-serous-carcinoma", "cholangiocarcinoma", "papillary-thyroid-carcinoma", "mesothelioma", "lung-adenocarcinoma"],
     "keyMarkers": ["CK7", "CK20", "TTF-1", "Napsin A", "GATA3", "Mammaglobin", "ER", "PR", "PAX8", "WT1", "CA125", "Calretinin", "D2-40", "Thyroglobulin"],
     "algorithm": "TTF-1+/Napsin A+ → 肺腺癌；GATA3+/Mammaglobin+/ER+ → 乳腺癌；PAX8+/ER+/Vimentin+ → 子宫内膜癌；PAX8+/WT1+ → 卵巢高级别浆液性癌；CK7+/CA19-9+/MUC1+ → 胆管癌；Calretinin+/D2-40+/WT1+ → 恶性间皮瘤（需排除腺癌转移，加做CEA/MOC31/BerEP4/Claudin-4）"
   },
@@ -58,7 +58,7 @@
     "titleZh": "三阴性乳腺癌与转移癌鉴别",
     "titleEn": "Triple Negative Breast Cancer vs Metastases",
     "description": "ER/PR/HER2均阴性的乳腺癌需与非乳腺来源的转移癌及其他原发性肿瘤鉴别",
-    "diseases": ["triple-negative-breast-carcinoma", "high-grade-serous-ovarian-carcinoma", "lung-adenocarcinoma", "urothelial-carcinoma", "squamous-cell-carcinoma", "melanoma"],
+    "diseases": ["triple-negative-breast-cancer", "high-grade-serous-ovarian-carcinoma", "lung-adenocarcinoma", "urothelial-carcinoma", "squamous-cell-carcinoma", "melanoma"],
     "keyMarkers": ["GATA3", "Mammaglobin", "GCDFP-15", "SOX10", "CK5/6", "EGFR", "TTF-1", "PAX8", "WT1", "Uroplakin", "P40", "S-100"],
     "algorithm": "GATA3+（约60-70%三阴性乳腺癌阳性）最为可靠；Mammaglobin+/GCDFP-15+支持乳腺来源但敏感性较低；SOX10+常见于基底样三阴性乳腺癌（需排除黑色素瘤：乳腺癌CK+/S-100通常-）；注意GATA3也可阳性于尿路上皮癌，需结合临床和其他标记物；TTF-1+/Napsin A+排除乳腺来源指向肺；PAX8+/WT1+指向卵巢浆液性癌"
   },
@@ -67,7 +67,7 @@
     "titleZh": "肝细胞癌与胆管细胞癌鉴别",
     "titleEn": "Hepatocellular Carcinoma vs Cholangiocarcinoma",
     "description": "肝脏两大原发恶性肿瘤的鉴别诊断，以及与转移性腺癌和混合型肝癌的区分",
-    "diseases": ["hepatocellular-carcinoma", "intrahepatic-cholangiocarcinoma", "combined-hcc-cca", "metastatic-adenocarcinoma"],
+    "diseases": ["hepatocellular-carcinoma", "cholangiocarcinoma", "combined-hcc-cca", "cholangiocarcinoma"],
     "keyMarkers": ["Hepatocyte(HepPar-1)", "Arginase-1", "GPC-3", "AFP", "CD34", "Reticulin", "CK7", "CK19", "CK20", "MOC31", "EpCAM", "mCEA(pCEA)", "CD10"],
     "algorithm": "HepPar-1+/Arginase-1+/GPC-3+ → 肝细胞癌（Reticulin网架减少/消失，CD34弥漫窦内皮阳性为辅助诊断特征）；CK7+/CK19+/MUC1+/HepPar-1- → 肝内胆管癌；两种成分混合存在 → 混合型肝癌-胆管癌（cHCC-CCA）；Arginase-1是肝细胞分化最敏感和特异的标记物（优于HepPar-1）；mCEA小管样阳性和CD10小管样阳性支持肝细胞癌"
   },
@@ -85,7 +85,7 @@
     "titleZh": "神经内分泌肿瘤分级与鉴别",
     "titleEn": "Neuroendocrine Tumor Grading and Differentials",
     "description": "不同器官系统神经内分泌肿瘤的WHO分级标准及鉴别诊断",
-    "diseases": ["well-differentiated-net-g1", "well-differentiated-net-g2", "well-differentiated-net-g3", "small-cell-nec", "large-cell-nec", "mixed-neuroendocrine-non-neuroendocrine-neoplasm"],
+    "diseases": ["well-differentiated-net-g1", "well-differentiated-net-g2", "well-differentiated-net-g3", "small-cell-carcinoma", "large-cell-nec", "mixed-neuroendocrine-non-neuroendocrine-neoplasm"],
     "keyMarkers": ["Syn", "CgA", "INSM1", "CD56", "Ki-67", "TTF-1", "CDX2", "PAX8", "SSTR2A", "ATRX", "DAXX", "Rb", "P53"],
     "algorithm": "Syn+/CgA+/INSM1+确认神经内分泌分化 → Ki-67指数分级：Ki-67<3% → NET G1；Ki-67 3-20% → NET G2；Ki-67>20%但分化好 → NET G3（Rb和P53表达正常）；低分化+Ki-67通常>50% → 神经内分泌癌NEC（Rb缺失和/或P53异常表达）；分为小细胞型和大细胞型 | 注意：高分化NET G3与低分化NEC的鉴别至关重要（治疗方案不同）：NET G3保留ATRX/DAXX和Rb表达，NEC则Rb缺失/P53异常"
   },
@@ -94,7 +94,7 @@
     "titleZh": "腺癌与鳞状细胞癌的鉴别",
     "titleEn": "Glandular vs Squamous Differentiation",
     "description": "低分化癌中腺分化与鳞状分化的免疫组化鉴别，对治疗方案选择有重要意义（如肺癌）",
-    "diseases": ["adenocarcinoma-nos", "squamous-cell-carcinoma", "adenosquamous-carcinoma", "undifferentiated-carcinoma", "neuroendocrine-carcinoma"],
+    "diseases": ["lung-adenocarcinoma", "squamous-cell-carcinoma", "adenosquamous-carcinoma", "large-cell-nec", "small-cell-carcinoma"],
     "keyMarkers": ["CK7", "TTF-1", "Napsin A", "CK5/6", "P40", "P63", "Desmoglein-3", "SOX2", "CK20", "CDX2", "Syn", "CgA"],
     "algorithm": "TTF-1+/Napsin A+/CK7+ → 腺分化（肺腺癌）；P40+/CK5/6+ → 鳞状分化（P40特异性优于P63，P63在部分腺癌中可弱阳性）；两者均阳性 → 考虑腺鳞癌（需两种成分各占≥10%）；两者均阴性 → 考虑未分化癌或神经内分泌癌（加做Syn/CgA/INSM1）| 注意：在肺癌中腺鳞鉴别直接影响靶向治疗策略；P40是鳞状分化的金标准标记物"
   },
@@ -103,7 +103,7 @@
     "titleZh": "黑色素细胞病变鉴别",
     "titleEn": "Melanocytic Lesion Differentials",
     "description": "从良性痣到恶性黑色素瘤的谱系鉴别，以及黑色素瘤与其他肿瘤的鉴别",
-    "diseases": ["common-melanocytic-nevus", "dysplastic-nevus", "spitz-nevus", "blue-nevus", "melanoma-in-situ", "invasive-melanoma", "desmoplastic-melanoma", "nevoid-melanoma"],
+    "diseases": ["common-melanocytic-nevus", "dysplastic-nevus", "spitz-nevus", "blue-nevus", "melanoma-in-situ", "invasive-melanoma", "desmoplastic-melanoma", "invasive-melanoma"],
     "keyMarkers": ["S-100", "SOX10", "Melan-A", "HMB-45", "MITF", "Ki-67", "P16", "PRAME", "BRAF-V600E", "BAP1", "Cyclin D1", "P53"],
     "algorithm": "良性痣特征：对称性、成熟现象（深层细胞变小）、HMB-45表层阳性深层消失、Ki-67低、PRAME阴性；恶性黑色素瘤特征：不对称、缺乏成熟、Pagetoid扩散、核分裂象多、HMB-45深层仍阳性、Ki-67增高、PRAME弥漫阳性 | PRAME是近年来最有价值的恶性标记物（在大多数黑色素瘤中弥漫强阳性，良性痣中阴性）；Spitz痣需排除Spitz黑色素瘤（FISH和分子检测辅助鉴别）；促纤维增生性黑色素瘤S-100+/SOX10+但Melan-A常阴性"
   },

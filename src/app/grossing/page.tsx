@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect, useMemo } from 'react';
-import { IconSearch, IconBookOpen } from '@/components/Icon';
+import { IconSearch, IconScissors } from '@/components/Icon';
 
 interface GrossingProtocol {
   id: string;
@@ -56,7 +56,7 @@ export default function GrossingPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <IconBookOpen size={32} style={{ color: '#3b82f6' }} />
+          <IconScissors size={32} style={{ color: '#3b82f6' }} />
           <h1 className="text-3xl font-bold">取材规范 (Grossing Protocol)</h1>
         </div>
         <p style={{ color: 'var(--fg-muted)', marginTop: '0.5rem' }}>
@@ -100,8 +100,8 @@ export default function GrossingPage() {
                 onClick={() => setSelectedId(p.id)}
                 className="w-full text-left px-4 py-3 rounded-lg transition-colors"
                 style={{
-                  background: selectedId === p.id ? 'var(--accent)' : 'var(--card)',
-                  color: selectedId === p.id ? 'white' : 'var(--fg)',
+                  background: selectedId === p.id ? 'rgba(99,102,241,0.15)' : 'var(--card)',
+                  color: selectedId === p.id ? 'var(--fg)' : 'var(--fg-muted)',
                   border: `1px solid ${selectedId === p.id ? 'var(--accent)' : 'var(--border)'}`
                 }}
               >

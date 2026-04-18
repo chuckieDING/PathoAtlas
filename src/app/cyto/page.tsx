@@ -110,7 +110,7 @@ export default function CytologyPage() {
                     }}
                     className="w-full text-left px-3 py-2 rounded-md text-xs transition-colors"
                     style={{
-                      background: selectedSystemId === sys.id ? 'var(--card-hover)' : 'transparent',
+                      background: selectedSystemId === sys.id ? 'rgba(99,102,241,0.15)' : 'transparent',
                       color: selectedSystemId === sys.id ? 'var(--fg)' : 'var(--fg-muted)',
                       border: selectedSystemId === sys.id ? '1px solid var(--accent)' : '1px solid transparent',
                     }}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
-import { IconBrain, IconSearch } from '@/components/Icon';
+import { IconSnowflake, IconSearch } from '@/components/Icon';
 
 interface FrozenSection {
   id: string;
@@ -10,8 +10,10 @@ interface FrozenSection {
   indication: string;
   clinicalScenario: string;
   intraoperativeApproach: string[];
-  diagnosticTrap: string[];
-  typicalErrors: string[];
+  diagnosticTrap?: string[];
+  diagnosticTraps?: string[];
+  typicalErrors?: string[];
+  commonErrors?: string[];
   reportingTemplate: string;
 }
 
@@ -53,23 +55,22 @@ export default function FrozenSectionPage() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
-          <p className="mt-4 text-fg-muted">加载中...</p>
+          <div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-card">
+    <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <IconBrain size={32} style={{ color: 'var(--accent)' }} />
-            <h1 className="text-4xl font-bold text-fg">术中冻存切片</h1>
+            <IconSnowflake size={32} style={{ color: 'var(--accent)' }} />
+            <h1 className="text-3xl font-bold" style={{ color: 'var(--fg)' }}>术中冰冻切片</h1>
           </div>
-          <p className="text-fg-muted">Intraoperative Frozen Section Consultation</p>
+          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>术中冰冻切片快速诊断咨询</p>
         </div>
 
         {/* Main Layout */}
@@ -78,35 +79,42 @@ export default function FrozenSectionPage() {
           <div className="space-y-4">
             {/* Search */}
             <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--fg-muted)' }}>
+                <IconSearch size={14} />
+              </span>
               <input
                 type="text"
                 placeholder="搜索..."
-                aria-label="搜索冻存切片"
+                aria-label="搜索冰冻切片"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-2 bg-white border border-border rounded-lg text-fg placeholder-fg-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full text-xs pl-9 pr-3 py-2 rounded-lg outline-none"
+                style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}
               />
-              <IconSearch size={20} style={{ position: 'absolute', right: 12, top: 10, color: 'var(--fg-muted)' }} />
             </div>
 
             {/* Sections List */}
             <div className="space-y-2 max-h-[600px] overflow-y-auto">
-              {filteredSections.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => setSelectedId(section.id)}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
-                    selectedId === section.id
-                      ? 'bg-accent text-white'
-                      : 'bg-white text-fg hover:bg-gray-100 border border-border'
-                  }`}
-                >
-                  <div className="font-semibold text-sm">{section.nameZh}</div>
-                  <div className={`text-xs mt-1 ${selectedId === section.id ? 'text-white/80' : 'text-fg-muted'}`}>
-                    {section.nameEn}
-                  </div>
-                </button>
-              ))}
+              {filteredSections.map((section) => {
+                const active = selectedId === section.id;
+                return (
+                  <button
+                    key={section.id}
+                    onClick={() => setSelectedId(section.id)}
+                    className="w-full text-left px-4 py-3 rounded-lg transition-colors"
+                    style={{
+                      background: active ? 'rgba(99,102,241,0.15)' : 'var(--card)',
+                      color: active ? 'var(--fg)' : 'var(--fg-muted)',
+                      border: active ? '1px solid var(--accent)' : '1px solid var(--border)',
+                    }}
+                  >
+                    <div className="font-semibold text-sm">{section.nameZh}</div>
+                    <div className="text-xs mt-1" style={{ color: 'var(--fg-muted)', opacity: active ? 0.85 : 0.7 }}>
+                      {section.nameEn}
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -115,35 +123,35 @@ export default function FrozenSectionPage() {
             {selectedSection ? (
               <>
                 {/* Title */}
-                <div className="border-b border-border pb-4">
-                  <h2 className="text-2xl font-bold text-fg mb-2">{selectedSection.nameZh}</h2>
-                  <p className="text-fg-muted text-sm">{selectedSection.nameEn}</p>
+                <div className="pb-4" style={{ borderBottom: '1px solid var(--border)' }}>
+                  <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--fg)' }}>{selectedSection.nameZh}</h2>
+                  <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>{selectedSection.nameEn}</p>
                 </div>
 
                 {/* Indication */}
-                <div className="bg-white rounded-lg border border-border p-4">
-                  <h3 className="font-bold text-fg mb-2 flex items-center gap-2">
-                    <span className="text-accent">📋</span> 适应证
+                <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+                  <h3 className="font-bold text-sm mb-2 flex items-center gap-2" style={{ color: 'var(--accent)' }}>
+                    适应证
                   </h3>
-                  <p className="text-fg-muted text-sm leading-relaxed">{selectedSection.indication}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{selectedSection.indication}</p>
                 </div>
 
                 {/* Clinical Scenario */}
-                <div className="bg-white rounded-lg border border-border p-4">
-                  <h3 className="font-bold text-fg mb-2 flex items-center gap-2">
-                    <span className="text-blue-500">🏥</span> 临床情景
+                <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+                  <h3 className="font-bold text-sm mb-2 flex items-center gap-2" style={{ color: 'var(--accent)' }}>
+                    临床情景
                   </h3>
-                  <p className="text-fg-muted text-sm leading-relaxed">{selectedSection.clinicalScenario}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{selectedSection.clinicalScenario}</p>
                 </div>
 
                 {/* Intraoperative Approach */}
-                <div className="bg-white rounded-lg border border-border p-4">
-                  <h3 className="font-bold text-fg mb-3 flex items-center gap-2">
-                    <span className="text-green-500">✓</span> 术中处理方案
+                <div className="rounded-xl p-5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
+                  <h3 className="font-bold text-sm mb-3 flex items-center gap-2" style={{ color: '#22c55e' }}>
+                    术中处理方案
                   </h3>
                   <ul className="space-y-2">
                     {selectedSection.intraoperativeApproach.map((item, idx) => (
-                      <li key={idx} className="text-fg-muted text-sm leading-relaxed pl-4 border-l-2 border-accent/30">
+                      <li key={idx} className="text-sm leading-relaxed pl-4" style={{ color: 'var(--fg-muted)', borderLeft: '2px solid rgba(34,197,94,0.3)' }}>
                         {item}
                       </li>
                     ))}
@@ -151,13 +159,13 @@ export default function FrozenSectionPage() {
                 </div>
 
                 {/* Diagnostic Trap */}
-                <div className="bg-red-50 rounded-lg border border-red-200 p-4">
-                  <h3 className="font-bold text-red-900 mb-3 flex items-center gap-2">
-                    <span className="text-red-500">⚠️</span> 诊断陷阱
+                <div className="rounded-xl p-5" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.2)' }}>
+                  <h3 className="font-bold text-sm mb-3 flex items-center gap-2" style={{ color: '#ef4444' }}>
+                    诊断陷阱
                   </h3>
                   <ul className="space-y-2">
-                    {selectedSection.diagnosticTrap.map((item, idx) => (
-                      <li key={idx} className="text-red-800 text-sm leading-relaxed pl-4 border-l-2 border-red-300">
+                    {(selectedSection.diagnosticTraps || selectedSection.diagnosticTrap || []).map((item, idx) => (
+                      <li key={idx} className="text-sm leading-relaxed pl-4" style={{ color: 'var(--fg)', borderLeft: '2px solid rgba(239,68,68,0.4)' }}>
                         {item}
                       </li>
                     ))}
@@ -165,13 +173,13 @@ export default function FrozenSectionPage() {
                 </div>
 
                 {/* Typical Errors */}
-                <div className="bg-yellow-50 rounded-lg border border-yellow-200 p-4">
-                  <h3 className="font-bold text-yellow-900 mb-3 flex items-center gap-2">
-                    <span className="text-yellow-600">❌</span> 常见错误
+                <div className="rounded-xl p-5" style={{ background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.2)' }}>
+                  <h3 className="font-bold text-sm mb-3 flex items-center gap-2" style={{ color: '#f59e0b' }}>
+                    常见错误
                   </h3>
                   <ul className="space-y-2">
-                    {selectedSection.typicalErrors.map((item, idx) => (
-                      <li key={idx} className="text-yellow-800 text-sm leading-relaxed pl-4 border-l-2 border-yellow-300">
+                    {(selectedSection.commonErrors || selectedSection.typicalErrors || []).map((item, idx) => (
+                      <li key={idx} className="text-sm leading-relaxed pl-4" style={{ color: 'var(--fg)', borderLeft: '2px solid rgba(245,158,11,0.4)' }}>
                         {item}
                       </li>
                     ))}
@@ -179,18 +187,18 @@ export default function FrozenSectionPage() {
                 </div>
 
                 {/* Reporting Template */}
-                <div className="bg-blue-50 rounded-lg border border-blue-200 p-4">
-                  <h3 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
-                    <span className="text-blue-500">📝</span> 报告模板
+                <div className="rounded-xl p-5" style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.2)' }}>
+                  <h3 className="font-bold text-sm mb-3 flex items-center gap-2" style={{ color: 'var(--accent)' }}>
+                    报告模板
                   </h3>
-                  <pre className="text-blue-800 text-xs whitespace-pre-wrap font-mono leading-relaxed p-3 bg-white rounded border border-blue-200">
+                  <pre className="text-xs whitespace-pre-wrap font-mono leading-relaxed p-3 rounded-lg" style={{ background: 'var(--card)', color: 'var(--fg)', border: '1px solid var(--border)' }}>
                     {selectedSection.reportingTemplate}
                   </pre>
                 </div>
               </>
             ) : (
               <div className="flex items-center justify-center h-96">
-                <p className="text-fg-muted">请选择一个冻存切片场景</p>
+                <p style={{ color: 'var(--fg-muted)' }}>请选择一个冰冻切片场景</p>
               </div>
             )}
           </div>
