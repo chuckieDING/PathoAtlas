@@ -130,7 +130,7 @@ async function hmacVerify(data: string, signature: string): Promise<boolean> {
     false,
     ['verify'],
   );
-  return crypto.subtle.verify('HMAC', key, fromBase64url(signature), encoder.encode(data));
+  return crypto.subtle.verify('HMAC', key, fromBase64url(signature) as unknown as BufferSource, encoder.encode(data));
 }
 
 /** Constant-time string comparison. */
