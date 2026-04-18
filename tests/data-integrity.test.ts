@@ -283,6 +283,21 @@ describe('cross-references', () => {
     }
   });
 
+  it('no duplicate entries in differentials.diseases / staging.applicableTo / disease.differentialDiagnosis', () => {
+    const checkDup = (arr: string[], label: string) => {
+      const seen = new Set<string>();
+      for (const id of arr) {
+        expect(seen.has(id), `${label} contains duplicate: ${id}`).toBe(false);
+        seen.add(id);
+      }
+    };
+    const diffs = loadJson<any[]>('differentials.json');
+    for (const d of diffs) checkDup(d.diseases || [], `differentials/${d.id}.diseases`);
+    const staging = loadJson<any[]>('staging.json');
+    for (const s of staging) checkDup(s.applicableTo || [], `staging/${s.id}.applicableTo`);
+    for (const d of allDiseases) checkDup(d.differentialDiagnosis || [], `${d.id}.differentialDiagnosis`);
+  });
+
   it('markers referenced in differentials.keyMarkers have reasonable format', () => {
     const diffs = loadJson<any[]>('differentials.json');
     for (const diff of diffs) {

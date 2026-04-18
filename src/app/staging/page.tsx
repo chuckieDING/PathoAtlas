@@ -106,7 +106,7 @@ export default function StagingPage() {
                     <div className="text-xs mt-1" style={{ color: 'var(--fg-muted)' }}>{sys.description}</div>
                     {sys.applicableTo.length > 0 && (
                       <div className="flex flex-wrap gap-1 mt-2">
-                        {sys.applicableTo.map(id => (
+                        {Array.from(new Set(sys.applicableTo)).map(id => (
                           <span key={id} className="text-[10px] px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(99,102,241,0.1)', color: 'var(--accent)' }}>
                             {getName(id)}
                           </span>
@@ -194,7 +194,7 @@ export default function StagingPage() {
                       <div className="pt-2" style={{ borderTop: '1px solid var(--border)' }}>
                         <span className="text-xs" style={{ color: 'var(--fg-muted)' }}>适用于：</span>
                         <div className="flex flex-wrap gap-1.5 mt-1">
-                          {sys.applicableTo.map(id => (
+                          {Array.from(new Set(sys.applicableTo)).map(id => (
                             <Link
                               key={id}
                               href={getHref(id)}
