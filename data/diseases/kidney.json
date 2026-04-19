@@ -1,15 +1,1083 @@
 [
-  {"id":"clear-cell-rcc","nameZh":"透明细胞肾细胞癌","nameEn":"Clear Cell Renal Cell Carcinoma","aliases":["ccRCC"],"organ":"kidney","category":"malignant","epidemiology":"最常见的肾细胞癌亚型，约占所有肾癌的70-80%。发病高峰50-70岁，男女比约2:1。危险因素包括吸烟、肥胖、高血压及VHL综合征。全球年发病率约6-8/10万。","clinicalFeatures":"经典三联征(血尿、腰痛、腹部肿块)少见，多偶然发现。","grossPathology":"金黄色肿物(富含脂质和糖原)，常有出血和囊性变。","microscopy":"肿瘤细胞排列成实性巢状、腺泡状或管状结构，胞浆丰富透明（因富含脂质和糖原，常规处理后被溶解），细胞边界清晰。间质有丰富的薄壁窦样血管网呈\"鸡笼样\"包绕肿瘤细胞巢。WHO/ISUP核分级1-4级，低级别者核小规则，高级别者核增大、核仁显著甚至出现横纹肌样或肉瘤样去分化。可伴出血、坏死、囊性变及含铁血黄素沉积。","keyFeatures":["透明胞浆+丰富窦样血管网","VHL基因失活(3p25缺失)","CA9弥漫膜阳性","WHO/ISUP核分级1-4级"],"ihcProfile":[{"marker":"CA9","result":"弥漫膜阳性","note":"最敏感标记(>95%)"},{"marker":"PAX8","result":"阳性","note":"肾源标记"},{"marker":"CD10","result":"阳性","note":""},{"marker":"CK7","result":"通常阴性","note":"区别于乳头状RCC"}],"specialStainProfile":[{"stain":"PAS","result":"基底膜增厚阳性","note":"肾小球和管状基底膜评估"},{"stain":"Masson","result":"间质纤维化","note":"纤维化程度评估"},{"stain":"油红O","result":"脂质证实","note":"冰冻切片证实透明细胞内脂质成分"}],"molecularFeatures":"VHL失活导致HIF通路激活和VEGF过表达。","differentialDiagnosis":["papillary-rcc","chromophobe-rcc","oncocytoma"],"grading":"WHO/ISUP核分级1-4级","staging":"AJCC TNM第8版","prognosis":"局限性5年生存率>90%，转移性约20%。","treatment":"局限性手术切除。转移性用靶向(TKI)+免疫治疗。","images":[{"url":"/diagrams/clear-cell.svg","caption":"透明细胞 RCC 典型结构：透明胞浆细胞巢 + 丰富的&quot;鸡笼样&quot;窦样血管网"}],"references":["WHO Classification, 5th Edition, 2022"]},
-  {"id":"papillary-rcc","nameZh":"乳头状肾细胞癌","nameEn":"Papillary Renal Cell Carcinoma","aliases":["pRCC"],"organ":"kidney","category":"malignant","epidemiology":"第二常见的肾细胞癌亚型，约占所有肾癌的10-15%。好发于50-70岁，男性多见（男女比约3:1）。可为散发性或遗传性（MET或FH胚系突变），常为多灶性或双侧性。","clinicalFeatures":"与ccRCC相似，可为双侧多灶性。","grossPathology":"灰黄色或棕色，常伴出血坏死。","microscopy":"肿瘤以纤维血管轴心为支架形成乳头状和管状结构。1型：纤细乳头表面覆盖单层小立方形细胞，胞浆稀少嗜碱性，核小排列整齐，WHO/ISUP核级低，乳头轴心内常见泡沫状巨噬细胞和砂粒体，含铁血黄素沉积常见。2型：宽大乳头覆假复层高柱状嗜酸性大细胞，核大、核仁明显、核级高，泡沫巨噬细胞相对少见，坏死较多。","keyFeatures":["乳头状和管状结构","CK7+/AMACR+","7号和17号染色体三体","1型预后好，2型预后差"],"ihcProfile":[{"marker":"CK7","result":"阳性","note":"区别于ccRCC"},{"marker":"AMACR","result":"阳性","note":""},{"marker":"PAX8","result":"阳性","note":""}],"specialStainProfile":[{"stain":"PAS","result":"乳头基底膜","note":"显示乳头纤维血管轴心基底膜"},{"stain":"普鲁士蓝","result":"含铁血黄素沉积","note":"乳头间质含铁血黄素沉积常见"}],"molecularFeatures":"1型MET突变，2型CDKN2A缺失。","differentialDiagnosis":["clear-cell-rcc","oncocytoma"],"grading":"WHO/ISUP核分级","staging":"AJCC TNM","prognosis":"1型预后较好。","treatment":"手术为主，晚期可用MET抑制剂。","images":[{"url":"/diagrams/papillary.svg","caption":"乳头状 RCC：纤维血管轴心表面覆盖单层或多层肿瘤上皮"}],"references":["WHO Classification, 5th Edition, 2022"]},
-  {"id":"chromophobe-rcc","nameZh":"嫌色性肾细胞癌","nameEn":"Chromophobe RCC","aliases":["chRCC"],"organ":"kidney","category":"malignant","epidemiology":"约占肾细胞癌的5%，好发于50-60岁成人，男女比约1:1。偶与Birt-Hogg-Dubé综合征（FLCN基因突变）相关，此时可为多灶性或双侧。","clinicalFeatures":"预后总体较好。","grossPathology":"棕褐色均匀肿块。","microscopy":"肿瘤由大的多角形细胞组成，排列成实性片状结构，细胞边界非常清晰呈\"植物细胞样\"。胞浆丰富淡染，呈细网状或絮状（因丰富的微泡而半透明），部分细胞胞浆嗜酸性颗粒状。核皱缩呈\"葡萄干样\"，核周空晕明显，双核细胞常见。Hale胶体铁染色弥漫阳性（蓝色），区别于嗜酸细胞腺瘤。间质血管丰富但不如透明细胞RCC的窦样血管网显著。","keyFeatures":["大细胞、胞膜清晰、核皱缩","Hale胶体铁弥漫阳性","CK7+/CD117+","需与嗜酸细胞腺瘤鉴别"],"ihcProfile":[{"marker":"CK7","result":"弥漫阳性","note":""},{"marker":"CD117","result":"阳性","note":""},{"marker":"CA9","result":"阴性","note":"区别于ccRCC"}],"molecularFeatures":"多条染色体缺失，线粒体DNA突变。","differentialDiagnosis":["oncocytoma","clear-cell-rcc"],"grading":"意义有限","staging":"AJCC TNM","prognosis":"5年生存率>90%。","treatment":"手术切除。","images":[],"references":["WHO Classification, 5th Edition, 2022"]},
-  {"id":"oncocytoma","nameZh":"肾嗜酸细胞腺瘤","nameEn":"Renal Oncocytoma","aliases":["嗜酸细胞瘤"],"organ":"kidney","category":"benign","epidemiology":"约占肾肿瘤的3-7%，好发于50-70岁成人，男女比约2:1。多为散发性单发，偶与Birt-Hogg-Dubé综合征相关时可多灶性。术前影像学常难以与肾癌鉴别。","clinicalFeatures":"多无症状偶然发现。","grossPathology":"棕红色均匀肿块，中央星状瘢痕。","microscopy":"肿瘤由大量均匀一致的嗜酸性细胞组成，排列成实性巢状、管状或微囊状结构。胞浆丰富嗜酸性颗粒状（电镜下富含肿胀的线粒体），细胞边界清晰。核圆形居中，大小均匀，核仁不明显，无明显异型性和核分裂象。间质疏松水肿样或黏液样，可见灶性出血。中央星状瘢痕区可见纤维化和退变。无坏死和血管侵犯。","keyFeatures":["均匀嗜酸性细胞","中央星状瘢痕","CK7阴性或散在(区别于chRCC)","良性"],"ihcProfile":[{"marker":"CK7","result":"阴性或散在","note":"chRCC弥漫阳性"},{"marker":"CD117","result":"阳性","note":""}],"molecularFeatures":"CCND1重排。","differentialDiagnosis":["chromophobe-rcc"],"grading":"不适用","staging":"不适用","prognosis":"良性，预后极好。","treatment":"手术或积极监测。","images":[],"references":["WHO Classification, 5th Edition, 2022"]},
-  {"id":"wilms-tumor","nameZh":"肾母细胞瘤","nameEn":"Wilms Tumor","aliases":["肾胚胎瘤","Nephroblastoma"],"organ":"kidney","category":"malignant","epidemiology":"儿童最常见的肾脏恶性肿瘤，高峰年龄 2–5 岁。约 5% 为双侧。","clinicalFeatures":"无症状性腹部肿块（家长洗澡时发现）、偶尔血尿、高血压。可伴先天异常（WAGR、Beckwith-Wiedemann、Denys-Drash 综合征）。","grossPathology":"单发大的圆形肿块，切面灰白至灰红色，常有出血、坏死和囊性变。","microscopy":"经典三相型：\n- **胚芽成分**（小蓝圆细胞）\n- **间叶成分**（幼稚梭形细胞）\n- **上皮成分**（原始肾小管或肾小球样结构）\n\n存在退行变（弥漫性/局灶性）时预后差。","keyFeatures":["典型三相型结构（胚芽 + 上皮 + 间叶）","WT1 阳性是重要免疫标记","NWTS / SIOP 分期系统","退行变是预后关键不良因素","多学科联合治疗效果好，总体生存率 > 90%"],"ihcProfile":[{"marker":"WT1","result":"胚芽阳性","note":""},{"marker":"PAX8","result":"阳性","note":""},{"marker":"CD56","result":"阳性","note":""},{"marker":"Desmin","result":"间叶可阳性","note":""}],"molecularFeatures":"WT1、CTNNB1、WTX 突变；少数与遗传综合征相关。","differentialDiagnosis":["clear-cell-rcc"],"grading":"有无退行变（预后分层）","staging":"NWTS 分期 I–V","prognosis":"总体 5 年生存率 > 90%，伴退行变者明显降低。","treatment":"手术 + 化疗（长春新碱、放线菌素 D、阿霉素）± 放疗，美国 NWTS 与欧洲 SIOP 方案略有差异。","images":[],"references":["WHO Classification, 5th Edition, 2022"]},
-  {"id":"angiomyolipoma","nameZh":"肾血管平滑肌脂肪瘤","nameEn":"Angiomyolipoma","aliases":["AML","PEComa"],"organ":"kidney","category":"benign","epidemiology":"最常见的肾脏良性间叶性肿瘤，女性多见。常偶发；20% 与结节性硬化（TSC）相关，常为多发双侧。","clinicalFeatures":"多无症状，较大者可破裂出血（Wunderlich 综合征）。","grossPathology":"边界清楚的黄色-灰红色肿物，脂肪成分多者切面像脂肪瘤。","microscopy":"三种成分混合：厚壁畸形血管 + 梭形 / 上皮样平滑肌 + 成熟脂肪。比例可变，罕见情况下几乎完全由上皮样 PEC 细胞构成（上皮样 AML，有潜在恶性）。","keyFeatures":["典型三成分：异常血管 + 平滑肌 + 脂肪","HMB-45 / Melan-A / SMA 共表达","属于 PEComa 家族","与结节性硬化（TSC1/TSC2）相关","上皮样 AML 具有恶性潜能"],"ihcProfile":[{"marker":"HMB-45","result":"阳性","note":"PEComa 标志"},{"marker":"Melan-A","result":"阳性","note":""},{"marker":"SMA","result":"阳性","note":"平滑肌成分"},{"marker":"S-100","result":"可阳性","note":"脂肪成分"},{"marker":"CK","result":"阴性","note":"区别于肾癌"}],"molecularFeatures":"TSC1/TSC2 失活导致 mTOR 通路激活，是靶向治疗（依维莫司）的基础。","differentialDiagnosis":["clear-cell-rcc","oncocytoma"],"grading":"不分级","staging":"不适用","prognosis":"绝大多数良性，上皮样 AML 可有转移。","treatment":"< 4 cm 无症状者可随访；较大或 TSC 相关者可用依维莫司缩小瘤体；出血风险者介入栓塞或手术。","images":[],"references":["WHO Classification, 5th Edition, 2022"]},
-  {"id":"papillary-rcc-type1","nameZh":"乳头状肾细胞癌1型","nameEn":"Papillary Renal Cell Carcinoma Type 1","aliases":["pRCC type 1"],"organ":"kidney","category":"malignant","epidemiology":"占乳头状肾细胞癌的60-70%，好发于50-70岁男性，男女比约5:1，常为多灶性和双侧性，散发或遗传性（MET胚系突变相关遗传性乳头状肾癌综合征）。","clinicalFeatures":"多数偶然发现，部分患者出现血尿、腰痛或腹部肿块，肿瘤常较小且低分期。","grossPathology":"灰黄至棕褐色界限清楚的肿块，常伴出血和囊性变，可见纤维假包膜。","microscopy":"以纤细的乳头状和管状结构为主，乳头表面覆盖单层小立方形细胞，胞浆稀少呈嗜碱性，核小且排列整齐，核级多为WHO/ISUP 1-2级。乳头轴心内常见泡沫状巨噬细胞聚集和砂粒体形成，间质可见含铁血黄素沉积。肿瘤边界清楚，常有纤维性假包膜。","keyFeatures":["纤细乳头覆单层小立方细胞","乳头轴心内泡沫巨噬细胞和砂粒体","CK7弥漫阳性/AMACR强阳性","MET基因突变（7号染色体三体/MET点突变）","预后优于2型"],"ihcProfile":[{"marker":"CK7","result":"弥漫阳性","note":"与2型CK7阴性形成鲜明对比"},{"marker":"AMACR","result":"强阳性","note":"乳头状RCC的敏感标记"},{"marker":"Vimentin","result":"阳性","note":"间叶标记共表达"},{"marker":"CD10","result":"灶状阳性","note":"不如透明细胞RCC弥漫"},{"marker":"CA-IX","result":"阴性","note":"区别于透明细胞RCC"},{"marker":"BRAF","result":"阴性","note":"V600E突变不常见"}],"molecularFeatures":"7号和17号染色体三体，MET基因（7q31）激活突变或扩增，Y染色体缺失。遗传性乳头状肾癌综合征（HPRC）由MET胚系突变引起。","differentialDiagnosis":["papillary-rcc-type2","clear-cell-rcc","papillary-rcc"],"grading":"WHO/ISUP核分级1-4级，1型多为低级别（1-2级）","staging":"AJCC TNM第8版","prognosis":"预后优于2型和透明细胞RCC，局限性5年生存率>90%，远处转移少见。","treatment":"局限性手术切除（保留肾单位手术适用于小肿瘤），晚期可用MET抑制剂（卡博替尼、savolitinib）和免疫检查点抑制剂联合治疗。","images":[],"references":["WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022"]},
-  {"id":"papillary-rcc-type2","nameZh":"乳头状肾细胞癌2型","nameEn":"Papillary Renal Cell Carcinoma Type 2","aliases":["pRCC type 2"],"organ":"kidney","category":"malignant","epidemiology":"占乳头状肾细胞癌的30-40%，好发于40-70岁成人，与遗传性平滑肌瘤病伴肾细胞癌综合征（HLRCC，FH胚系突变）有关，散发病例也常见。","clinicalFeatures":"多表现为单发较大肿块，分期常较1型高，更易出现局部侵犯和远处转移，症状包括血尿、腰痛和腹部肿块。","grossPathology":"较大的灰黄至棕红色肿块，出血坏死明显，界限相对不清，可浸润肾周脂肪。","microscopy":"宽大的乳头状结构覆盖假复层高柱状嗜酸性大细胞，胞浆丰富嗜酸性颗粒状，核大且具有明显核仁，WHO/ISUP核级多为3-4级。核排列不整齐呈假复层，可见明显的核沟和包涵体。与1型不同，泡沫巨噬细胞和砂粒体相对少见，坏死较多。部分病例可见透明细胞区域或肉瘤样去分化成分。","keyFeatures":["宽大乳头覆假复层嗜酸性大细胞","核大、核仁明显、核级高","CK7常阴性/AMACR阳性","CDKN2A缺失常见","预后差于1型，侵袭性更强"],"ihcProfile":[{"marker":"CK7","result":"阴性或灶状弱阳性","note":"与1型弥漫阳性截然不同"},{"marker":"AMACR","result":"阳性","note":"乳头状RCC共有标记"},{"marker":"Vimentin","result":"阳性","note":""},{"marker":"CDKN2A","result":"蛋白表达丢失","note":"CDKN2A基因纯合缺失常见"},{"marker":"FH","result":"保留表达","note":"散发型FH保留；HLRCC相关者FH丢失"}],"molecularFeatures":"CDKN2A纯合缺失、SETD2突变、NRF2通路激活常见。与HLRCC综合征相关时伴FH胚系突变导致延胡索酸蓄积和HIF通路异常激活。8号染色体获得。","differentialDiagnosis":["papillary-rcc-type1","clear-cell-rcc","fumarate-hydratase-deficient-rcc","papillary-rcc"],"grading":"WHO/ISUP核分级1-4级，2型多为高级别（3-4级）","staging":"AJCC TNM第8版","prognosis":"预后较1型差，局部复发和远处转移率更高，5年生存率约60-70%。","treatment":"手术切除为主，晚期可用卡博替尼等多靶点TKI、免疫检查点抑制剂（纳武利尤单抗+卡博替尼），HLRCC相关者需遗传咨询和家族筛查。","images":[],"references":["WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022"]},
-  {"id":"translocation-rcc","nameZh":"TFE3易位性肾细胞癌","nameEn":"TFE3-Rearranged Renal Cell Carcinoma","aliases":["Xp11易位性肾癌","MiT家族易位性RCC"],"organ":"kidney","category":"malignant","epidemiology":"占儿童肾细胞癌约40%，成人中占1-5%，好发于青少年和年轻成人，女性稍多见。部分患者有既往化疗史（尤其含烷化剂方案），是MiT家族易位性肾细胞癌的主要亚型之一。","clinicalFeatures":"儿童和年轻成人出现血尿和腹部肿块，可表现为较高分期但临床进展相对缓慢，部分患者以淋巴结转移为首发表现。","grossPathology":"灰黄至棕褐色肿块，切面常见出血和坏死区域，部分病例呈囊实性，可见钙化。","microscopy":"经典形态为乳头状结构覆盖透明至嗜酸性大细胞，胞浆丰富透明或嗜酸性颗粒状，细胞体积大，核大圆形伴明显核仁。乳头轴心纤维血管丰富，可见砂粒体样钙化。部分病例呈巢状、腺泡状或实性排列，模拟透明细胞RCC或上皮样血管平滑肌脂肪瘤。典型特征为胞浆内含丰富嗜酸性颗粒（溶酶体），偶可见黑色素。","keyFeatures":["乳头状透明-嗜酸性大细胞","TFE3核强阳性（break-apart FISH确认）","好发青少年和年轻成人","CK常阴性，区别于其他肾癌","与既往化疗暴露有关"],"ihcProfile":[{"marker":"TFE3","result":"核强阳性","note":"诊断金标准，需FISH证实易位"},{"marker":"PAX8","result":"阳性","note":"肾源标记保留"},{"marker":"Cathepsin K","result":"阳性","note":"溶酶体蛋白酶标记"},{"marker":"Melan-A","result":"灶状阳性","note":"黑色素分化标记，部分病例表达"},{"marker":"CK","result":"阴性或灶状弱阳性","note":"与经典肾癌不同，CK常阴性"},{"marker":"CD10","result":"阴性或弱阳性","note":"不如透明细胞RCC弥漫"}],"molecularFeatures":"Xp11.2易位导致TFE3基因与多种伴侣基因融合（ASPSCR1-TFE3、PRCC-TFE3、SFPQ-TFE3等），激活MiT/TFE转录因子家族下游靶基因。","differentialDiagnosis":["clear-cell-rcc","papillary-rcc","angiomyolipoma"],"grading":"WHO/ISUP核分级可用但预后预测价值有限","staging":"AJCC TNM第8版","prognosis":"儿童预后较好，即使伴淋巴结转移仍有较长生存；成人预后较差，转移性病例进展较快，5年生存率约50-60%。","treatment":"手术切除为主要治疗。晚期/转移性病例可用VEGF-TKI（卡博替尼、舒尼替尼）和免疫检查点抑制剂，但疗效不如透明细胞RCC。","images":[],"references":["WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022"]},
-  {"id":"succinate-dehydrogenase-deficient-rcc","nameZh":"琥珀酸脱氢酶缺陷型肾细胞癌","nameEn":"Succinate Dehydrogenase-Deficient Renal Cell Carcinoma","aliases":["SDH缺陷型RCC","SDHB缺陷型肾癌"],"organ":"kidney","category":"malignant","epidemiology":"极为罕见，占肾细胞癌不足0.5%，好发于年轻成人（中位年龄约35-40岁），几乎均与SDH亚基（SDHB、SDHC、SDHD）胚系突变相关，属于遗传性副神经节瘤-嗜铬细胞瘤综合征谱系。","clinicalFeatures":"年轻患者出现偶然发现的肾脏肿块，需筛查副神经节瘤、嗜铬细胞瘤和胃肠道间质瘤（GIST）等SDH缺陷相关肿瘤，部分患者有家族史。","grossPathology":"边界清楚的实性棕红色肿块，切面均匀，常较小（多<5cm），出血和坏死少见。","microscopy":"肿瘤由均匀的嗜酸性细胞组成，排列成实性巢状或管状结构，胞浆嗜酸性至空泡状，含有特征性的胞浆内绒毛状包涵体（代表扩张的线粒体嵴）。细胞核圆形，核仁不明显，核分裂象罕见。间质纤细血管丰富，肿瘤边界清楚。低级别形态为主，但高级别转化（核增大、坏死、肉瘤样）提示侵袭性行为和转移风险。","keyFeatures":["SDHB免疫组化表达丢失是诊断标准","特征性胞浆内绒毛状包涵体","年轻患者肾脏肿块需考虑","与遗传性副神经节瘤综合征相关","低级别但有转移潜能"],"ihcProfile":[{"marker":"SDHB","result":"阴性（表达丢失）","note":"诊断金标准，任何SDH亚基突变均导致SDHB丢失"},{"marker":"PAX8","result":"阳性","note":"保留肾源表达"},{"marker":"CK","result":"灶状弱阳性","note":"表达减弱但可灶状存在"},{"marker":"CA-IX","result":"阴性","note":"区别于透明细胞RCC"},{"marker":"Vimentin","result":"阴性","note":"区别于其他肾癌亚型"}],"molecularFeatures":"SDHB/SDHC/SDHD胚系突变导致琥珀酸脱氢酶复合物功能丧失，琥珀酸蓄积抑制α-酮戊二酸依赖的双加氧酶，导致DNA和组蛋白高甲基化（假性缺氧表型）。","differentialDiagnosis":["oncocytoma","chromophobe-rcc","clear-cell-rcc"],"grading":"低级别为主，高级别转化少见但预后差","staging":"AJCC TNM第8版","prognosis":"多数低级别者预后较好，但具有转移潜能（约10-15%发生转移），高级别转化者预后差，需长期随访。","treatment":"手术切除（保留肾单位手术适合小肿瘤），基因检测和遗传咨询必须进行，需终身监测副神经节瘤和其他SDH缺陷相关肿瘤，转移性病例治疗方案有限。","images":[],"references":["WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022"]},
-  {"id":"fumarate-hydratase-deficient-rcc","nameZh":"延胡索酸水化酶缺陷型肾细胞癌","nameEn":"Fumarate Hydratase-Deficient Renal Cell Carcinoma","aliases":["FH缺陷型RCC","HLRCC相关肾癌"],"organ":"kidney","category":"malignant","epidemiology":"罕见但高度侵袭性的肾癌亚型，与遗传性平滑肌瘤病伴肾细胞癌综合征（HLRCC）密切相关，由FH胚系突变引起。好发于20-50岁成人，男女比约1:1，可散发或遗传性。","clinicalFeatures":"患者常以单发侵袭性肾脏肿块就诊，可伴皮肤平滑肌瘤和子宫平滑肌瘤（HLRCC三联征），即使肿瘤较小也可出现早期转移，需高度警惕。","grossPathology":"灰白至棕色肿块，切面常伴显著出血和坏死，界限不清，可浸润肾周脂肪和肾静脉，囊性和实性区域混合。","microscopy":"形态多样，最具特征性的表现为嗜酸性大核仁伴核仁周围空晕（所谓的\"病毒包涵体样\"核仁），这是FH缺陷型RCC最重要的形态学线索。肿瘤细胞可呈乳头状、管状、囊状、实性或筛状排列，胞浆丰富嗜酸性。可见高级别核异型、多形性和频繁核分裂象。部分病例可出现横纹肌样或肉瘤样去分化成分，提示更差的预后。","keyFeatures":["特征性嗜酸性大核仁伴核仁周围空晕","FH免疫组化丢失+2SC（琥珀酰半胱氨酸）阳性","高度侵袭性，即使小肿瘤也可早期转移","与HLRCC综合征相关（皮肤/子宫平滑肌瘤+肾癌）","避免监测等待，应积极手术"],"ihcProfile":[{"marker":"FH","result":"阴性（表达丢失）","note":"诊断关键，双等位基因FH失活"},{"marker":"2SC","result":"阳性（弥漫胞浆/核阳性）","note":"延胡索酸蓄积导致蛋白琥珀酰化的标记"},{"marker":"PAX8","result":"阳性","note":"保留肾源表达"},{"marker":"CK","result":"灶状阳性","note":"表达可不均匀"},{"marker":"CA-IX","result":"阴性","note":"尽管假性缺氧表型但CA-IX不表达"}],"molecularFeatures":"FH胚系突变导致延胡索酸水化酶功能丧失，延胡索酸蓄积抑制α-酮戊二酸依赖的双加氧酶（包括PHD、TET、KDM），导致HIF通路假性激活和全基因组DNA高甲基化。NRF2-ARE抗氧化通路异常激活。","differentialDiagnosis":["papillary-rcc-type2","collecting-duct-carcinoma","clear-cell-rcc"],"grading":"几乎均为高级别","staging":"AJCC TNM第8版","prognosis":"预后差，高度侵袭性，5年生存率约20-40%。即使肿瘤较小也可出现早期淋巴结和远处转移，需积极治疗。","treatment":"积极根治性手术切除（不推荐主动监测或保留肾单位手术），晚期可用贝伐珠单抗联合厄洛替尼方案或免疫检查点抑制剂联合TKI。FH胚系突变确认后需终身监测和家族遗传咨询。","images":[],"references":["WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022"]},
-  {"id":"collecting-duct-carcinoma","nameZh":"集合管癌","nameEn":"Collecting Duct Carcinoma","aliases":["Bellini管癌","CDC"],"organ":"kidney","category":"malignant","epidemiology":"极为罕见的肾癌亚型，占肾细胞癌不足1%，好发于40-70岁成人，男性稍多见（男女比约2:1），无明确危险因素。","clinicalFeatures":"多数患者就诊时已为晚期，表现为腰痛、血尿、腹部肿块、体重减轻。约1/3患者初诊时已有远处转移（肺、骨、肝）。常位于肾髓质/肾盂区域。","grossPathology":"肿瘤位于肾髓质中央区域，灰白色硬性肿块，边界不清，常浸润肾盂和肾窦脂肪，伴坏死和出血。","microscopy":"肿瘤由不规则的管状、管乳头状或筛状腺样结构浸润于促结缔组织增生性间质中，类似胆管癌或尿路上皮癌的形态。肿瘤细胞呈靴钉样突入腺腔（hobnail pattern），核大、核仁显著、核级高。常见明显的促纤维增生反应。周围集合管上皮可见异型增生（原位改变），支持集合管起源。可见淋巴管和血管侵犯。","keyFeatures":["肾髓质中央区高级别腺管状癌伴促纤维增生间质","靴钉样细胞和筛状结构","CK7+/PAX8+/INI1保留/SMARCB1保留","CD10−/CA-IX−区别于透明细胞RCC","预后极差，需排除肾盂尿路上皮癌和肾髓质癌"],"ihcProfile":[{"marker":"CK7","result":"阳性","note":"高分子量角蛋白表达"},{"marker":"PAX8","result":"阳性","note":"保留肾源表达"},{"marker":"INI1","result":"保留表达","note":"区别于肾髓质癌（INI1丢失）"},{"marker":"SMARCB1","result":"保留表达","note":"区别于肾髓质癌"},{"marker":"CD10","result":"阴性","note":"区别于透明细胞RCC"},{"marker":"CA-IX","result":"阴性","note":"区别于透明细胞RCC"},{"marker":"CK34βE12","result":"阳性","note":"高分子量角蛋白"}],"molecularFeatures":"NF2突变、SMARCB1缺失（少数）、CDKN2A缺失、1q缺失等。基因组不稳定性高，无特征性驱动突变。需与肾髓质癌（SMARCB1/INI1丢失）鉴别。","differentialDiagnosis":["fumarate-hydratase-deficient-rcc","papillary-rcc-type2","clear-cell-rcc"],"grading":"几乎均为高级别（WHO/ISUP 3-4级）","staging":"AJCC TNM第8版","prognosis":"预后极差，是肾细胞癌中预后最差的亚型之一。中位生存约12-30个月，2年生存率约30-50%。多数患者在2年内死于疾病进展。","treatment":"根治性肾切除术。对化疗和靶向治疗反应差。免疫检查点抑制剂（纳武利尤单抗±伊匹木单抗）可考虑尝试。含吉西他滨/顺铂方案曾有个案报告有效。","images":[],"references":["WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022"]},
-  {"id":"adrenocortical-tumor","nameZh":"肾上腺皮质肿瘤","nameEn":"Adrenocortical Tumor","aliases":["肾上腺皮质腺瘤","肾上腺皮质癌","ACC"],"organ":"kidney","category":"other","epidemiology":"肾上腺皮质腺瘤极为常见（尸检发现率3-10%），多为无功能性偶发瘤。肾上腺皮质癌罕见（发病率约0.5-2/百万/年），双峰分布（儿童和40-50岁成人），女性稍多。","clinicalFeatures":"功能性肿瘤可引起Cushing综合征（皮质醇过多）、Conn综合征（醛固酮过多）、男性化或女性化。非功能性腺瘤多为影像学偶然发现。皮质癌常较大（>6cm），可有腹痛、腰痛和可扪及包块。","grossPathology":"腺瘤通常<5cm，金黄色至棕褐色，有包膜，切面均匀。皮质癌多>6cm，切面灰黄至棕色，伴出血、坏死和囊性变，可浸润周围组织和静脉。","microscopy":"肾上腺皮质细胞呈透明至嗜酸性胞浆，排列成巢状、梁状或弥漫片状。腺瘤细胞形态温和，核分裂罕见。皮质癌诊断采用Weiss评分系统（≥3/9项为恶性），评估项目包括：核级、核分裂>5/50HPF、非典型核分裂、透明细胞≤25%、弥漫结构、坏死、静脉侵犯、窦样结构侵犯和包膜侵犯。可见宽条索样和弥漫片状生长模式。","keyFeatures":["Inhibin+/Melan-A+/SF-1+/Calretinin+是皮质分化的核心标记组合","CK−/EMA−区别于肾癌和转移癌","Weiss评分系统（≥3分为恶性）用于良恶性鉴别","Ki-67>5%和/或Ki-67热点>20%提示恶性","功能性肿瘤可引起多种内分泌综合征"],"ihcProfile":[{"marker":"Inhibin","result":"阳性","note":"肾上腺皮质分化标记"},{"marker":"Melan-A","result":"阳性","note":"也称A103，皮质和性腺间质标记"},{"marker":"SF-1","result":"阳性（核）","note":"类固醇激素生成因子1，最特异的皮质标记"},{"marker":"Calretinin","result":"阳性","note":"皮质分化辅助标记"},{"marker":"CK","result":"阴性","note":"排除肾癌和转移性癌"},{"marker":"EMA","result":"阴性","note":"排除上皮性肿瘤"},{"marker":"Ki-67","result":"腺瘤<5%；癌>5%","note":"良恶性鉴别的重要辅助指标"}],"molecularFeatures":"皮质癌常见TP53突变（尤其Li-Fraumeni综合征）、CTNNB1突变（Wnt/β-catenin通路激活）、IGF2过表达（11p15印记丢失）、ZNRF3和DAXX突变。儿童ACC与Beckwith-Wiedemann综合征和Li-Fraumeni综合征相关。","differentialDiagnosis":["clear-cell-rcc","hepatocellular-carcinoma","angiomyolipoma"],"grading":"Weiss评分系统（0-9分，≥3分为恶性）；Helsinki评分用于肾上腺皮质肿瘤分级","staging":"ENSAT分期系统（I-IV期）","prognosis":"腺瘤预后极好，手术切除后治愈。皮质癌预后差，总体5年生存率约35-60%，IV期<15%。完整切除（R0）是最重要的预后因素。","treatment":"腺瘤：功能性者手术切除（腹腔镜），非功能性<4cm可随访。皮质癌：根治性手术切除+术后米托坦（Mitotane）辅助治疗。晚期化疗方案为EDP-M（依托泊苷+阿霉素+顺铂+米托坦）。","images":[],"references":["WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022","WHO Classification of Endocrine Tumours, 5th Edition"]}
+  {
+    "id": "clear-cell-rcc",
+    "nameZh": "透明细胞肾细胞癌",
+    "nameEn": "Clear Cell Renal Cell Carcinoma",
+    "aliases": [
+      "ccRCC"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "最常见的肾细胞癌亚型，约占所有肾癌的70-80%。发病高峰50-70岁，男女比约2:1。危险因素包括吸烟、肥胖、高血压及VHL综合征。全球年发病率约6-8/10万。",
+    "clinicalFeatures": "经典三联征(血尿、腰痛、腹部肿块)少见，多偶然发现。",
+    "grossPathology": "金黄色肿物(富含脂质和糖原)，常有出血和囊性变。",
+    "microscopy": "低倍镜下，肿瘤呈膨胀性生长，边界清楚，常有纤维性假包膜。肿瘤组织被丰富而纤细的分支状血管网分隔成巢状、腺泡状或实性片状结构，此特征性的”鸡笼样”（chicken-wire）血管网是诊断的重要线索。部分区域可见小管状、囊状或微囊状排列，囊腔内含淡嗜酸性浆液或陈旧性出血。肿瘤常见坏死、出血、囊性变及胆固醇结晶沉积，间质可见泡沫状巨噬细胞、含铁血黄素及砂粒体样钙化。中倍镜下，肿瘤细胞呈多边形或圆形，大小较一致，胞膜清晰，胞浆丰富、透明或呈空泡状，这是由于糖原和脂质在常规制片过程中被溶解所致；部分细胞胞浆可呈细颗粒状嗜酸性，多见于高级别区域或近坏死灶周围。高倍镜下，细胞核位于中央，圆形或卵圆形，染色质分布及核仁显著程度是 WHO/ISUP 核分级的关键依据：G1 核仁在 400× 下不可见或不明显；G2 在 400× 下可见小核仁，染色质细颗粒状；G3 在 100× 下即可清晰辨认嗜酸性大核仁；G4 则出现显著核多形性、瘤巨细胞、横纹肌样或肉瘤样分化。可见核分裂象但通常不多，病理性核分裂提示高级别。免疫组化 PAX8、CAIX（膜弥漫盒状阳性）、CD10、Vimentin 阳性，CK7 多为阴性或局灶阳性，AMACR 弱阳性，支持诊断。**鉴别诊断要点**：①乳头状肾细胞癌——以真性纤维血管轴心的乳头结构为主，CK7 弥漫强阳性、AMACR 强阳性、CAIX 阴性或仅局灶阳性；②透明细胞乳头状肾细胞肿瘤（低度恶性潜能）——细胞核呈线性排列远离基底膜（“杯口征”），CK7 弥漫阳性、CAIX 呈杯状阳性而非盒状，生物学行为惰性。",
+    "keyFeatures": [
+      "透明胞浆+丰富窦样血管网",
+      "VHL基因失活(3p25缺失)",
+      "CA9弥漫膜阳性",
+      "WHO/ISUP核分级1-4级"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CA9",
+        "result": "弥漫膜阳性",
+        "note": "最敏感标记(>95%)"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "肾源标记"
+      },
+      {
+        "marker": "CD10",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK7",
+        "result": "通常阴性",
+        "note": "区别于乳头状RCC"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "PAS",
+        "result": "基底膜增厚阳性",
+        "note": "肾小球和管状基底膜评估"
+      },
+      {
+        "stain": "Masson",
+        "result": "间质纤维化",
+        "note": "纤维化程度评估"
+      },
+      {
+        "stain": "油红O",
+        "result": "脂质证实",
+        "note": "冰冻切片证实透明细胞内脂质成分"
+      }
+    ],
+    "molecularFeatures": "VHL失活导致HIF通路激活和VEGF过表达。",
+    "differentialDiagnosis": [
+      "papillary-rcc",
+      "chromophobe-rcc",
+      "oncocytoma"
+    ],
+    "grading": "WHO/ISUP核分级1-4级",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "局限性5年生存率>90%，转移性约20%。",
+    "treatment": "局限性手术切除。转移性用靶向(TKI)+免疫治疗。",
+    "images": [
+      {
+        "url": "/diagrams/clear-cell.svg",
+        "caption": "透明细胞 RCC 典型结构：透明胞浆细胞巢 + 丰富的&quot;鸡笼样&quot;窦样血管网"
+      },
+      {
+        "url": "/diagrams/ccrcc-gross.svg",
+        "caption": "大体：肾皮质内类圆形肿物，切面金黄色伴灶性出血、坏死及囊性变，边界清楚呈假包膜"
+      },
+      {
+        "url": "/diagrams/ccrcc-low-power-he.svg",
+        "caption": "低倍（HE）：肿瘤呈实性巢状及腺泡状排列，被纤细的分支状薄壁血管网分隔，构成特征性的鸡笼样结构"
+      },
+      {
+        "url": "/diagrams/ccrcc-high-power-he.svg",
+        "caption": "高倍（HE）：肿瘤细胞胞质透明富含糖原和脂质，细胞膜清晰，核圆形居中（示 WHO/ISUP 2 级核）"
+      },
+      {
+        "url": "/diagrams/ccrcc-ihc-caix.svg",
+        "caption": "IHC（CAIX）：肿瘤细胞膜呈弥漫强阳性（盒状着色），支持透明细胞肾细胞癌诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国泌尿外科和男科疾病诊断治疗指南（2022 版）—肾细胞癌诊断治疗指南 (中华医学会泌尿外科学分会, 2022)",
+      "[国内共识] 肾细胞癌诊疗指南 2023 (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国肾癌早期筛查及病理诊断专家共识 (中国抗癌协会泌尿男生殖系肿瘤专业委员会（CACA）, 2022)"
+    ]
+  },
+  {
+    "id": "papillary-rcc",
+    "nameZh": "乳头状肾细胞癌",
+    "nameEn": "Papillary Renal Cell Carcinoma",
+    "aliases": [
+      "pRCC"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "第二常见的肾细胞癌亚型，约占所有肾癌的10-15%。好发于50-70岁，男性多见（男女比约3:1）。可为散发性或遗传性（MET或FH胚系突变），常为多灶性或双侧性。",
+    "clinicalFeatures": "与ccRCC相似，可为双侧多灶性。",
+    "grossPathology": "灰黄色或棕色，常伴出血坏死。",
+    "microscopy": "乳头状肾细胞癌（Papillary Renal Cell Carcinoma, PRCC）镜下以乳头状和/或小管-乳头状结构为主要特征，乳头轴心由纤细的纤维血管构成，常见轴心内泡沫样巨噬细胞聚集及胆固醇结晶、含铁血黄素沉积，部分病例可见砂粒体形成。肿瘤细胞沿乳头轴心呈单层或假复层排列，亦可融合形成实性片状或腺管状区域。依据 WHO 2022（第5版）泌尿与男性生殖系统肿瘤分类，传统上分为 1 型与 2 型两种形态学模式，但新版分类已弱化亚型划分，强调形态谱系及分子分层。1 型常由单层立方或低柱状细胞覆盖乳头，胞浆稀少呈嗜碱性或嫌色，核小而一致，核仁不明显（WHO/ISUP 核分级 1–2 级），间质泡沫细胞丰富；2 型由假复层排列的高柱状细胞构成，胞浆丰富嗜酸，核大、核仁显著嗜酸（WHO/ISUP 3–4 级），核分裂象增多，常伴坏死及高级别核异型。部分病例可见嗜酸细胞型（oncocytic-like）及 Warthin 样亚型。间质可见水肿、出血、含铁血黄素沉积及钙化。免疫组化多表达 CK7（1 型弥漫强阳性更具提示性）、AMACR（P504S）、Vimentin、PAX8、CD10，CAIX 通常阴性或弱阳性。分级采用 WHO/ISUP 核分级系统。鉴别诊断要点：①透明细胞乳头状肾细胞肿瘤——细胞核远离基底膜呈线性排列（“杯口状”），CK7 弥漫阳性，CAIX 杯口状阳性，AMACR 阴性；②MiT 家族易位性 RCC——细胞胞浆透明或嗜酸，砂粒体常见，TFE3/TFEB 核阳性而 CK7 阴性，可资鉴别。",
+    "keyFeatures": [
+      "乳头状和管状结构",
+      "CK7+/AMACR+",
+      "7号和17号染色体三体",
+      "1型预后好，2型预后差"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "阳性",
+        "note": "区别于ccRCC"
+      },
+      {
+        "marker": "AMACR",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": ""
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "PAS",
+        "result": "乳头基底膜",
+        "note": "显示乳头纤维血管轴心基底膜"
+      },
+      {
+        "stain": "普鲁士蓝",
+        "result": "含铁血黄素沉积",
+        "note": "乳头间质含铁血黄素沉积常见"
+      }
+    ],
+    "molecularFeatures": "1型MET突变，2型CDKN2A缺失。",
+    "differentialDiagnosis": [
+      "clear-cell-rcc",
+      "oncocytoma"
+    ],
+    "grading": "WHO/ISUP核分级",
+    "staging": "AJCC TNM",
+    "prognosis": "1型预后较好。",
+    "treatment": "手术为主，晚期可用MET抑制剂。",
+    "images": [
+      {
+        "url": "/diagrams/papillary.svg",
+        "caption": "乳头状 RCC：纤维血管轴心表面覆盖单层或多层肿瘤上皮"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-low-power.svg",
+        "caption": "低倍（HE）：肿瘤呈境界清楚的结节状生长，由纤细的纤维血管轴心构成乳头状结构，乳头相互吻合，部分区域呈管状-乳头状排列"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-foamy-macrophages.svg",
+        "caption": "中倍（HE）：乳头轴心内可见大量泡沫样巨噬细胞聚集，伴散在砂粒体，为乳头状肾细胞癌的特征性表现"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-type1-vs-type2.svg",
+        "caption": "高倍（HE）：1 型乳头被覆单层立方上皮，胞浆稀少嗜碱，核小而一致，核级低；2 型乳头被覆假复层柱状上皮，胞浆丰富嗜酸，核大、核仁明显（WHO/ISUP 3 级及以上）"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-ihc.svg",
+        "caption": "IHC：肿瘤细胞 CK7 弥漫阳性（胞浆），AMACR/P504S 阳性（胞浆颗粒状），Vimentin 阳性，CD10 可灶性阳性，支持乳头状肾细胞癌诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国泌尿外科和男科疾病诊断治疗指南（2022 版）——肾细胞癌诊断治疗指南 (中华医学会泌尿外科学分会, 2022)",
+      "[国内共识] 肾细胞癌诊疗指南 2023 (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国肾癌精准诊疗白皮书（2021） (中国抗癌协会泌尿男生殖系肿瘤专业委员会, 2021)"
+    ]
+  },
+  {
+    "id": "chromophobe-rcc",
+    "nameZh": "嫌色性肾细胞癌",
+    "nameEn": "Chromophobe RCC",
+    "aliases": [
+      "chRCC"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "约占肾细胞癌的5%，好发于50-60岁成人，男女比约1:1。偶与Birt-Hogg-Dubé综合征（FLCN基因突变）相关，此时可为多灶性或双侧。",
+    "clinicalFeatures": "预后总体较好。",
+    "grossPathology": "棕褐色均匀肿块。",
+    "microscopy": "嫌色性肾细胞癌（Chromophobe Renal Cell Carcinoma, chRCC）镜下多呈实性、巢状或片状生长，可见厚纤维血管间隔将肿瘤分隔成大小不等的细胞巢或小梁，间隔内常见中等口径、偏心性、厚壁的血管，并可伴玻璃样变。肿瘤边界相对清楚，一般缺乏明显的肾小管或乳头状结构。细胞呈两种形态混合：一种为体积较大的'植物细胞样'（plant-like）细胞，胞膜厚而清晰，似细胞植物细胞壁；胞浆丰富、透明至淡染或呈网状、絮状，具特征性的核周空晕（perinuclear halo）；另一种为嗜酸细胞，胞浆丰富、细颗粒状、嗜酸性，类似嗜酸细胞瘤细胞。二者常相互过渡，嗜酸亚型（eosinophilic variant）则以后者为主。核形态颇具特征：核皱缩、不规则，呈'葡萄干样'（raisinoid）外观，核膜厚而锐利，可见双核及核周透明晕，染色质较粗糙，核仁通常不明显。可见不同程度的核多形性，但真正核分裂象罕见。肿瘤性坏死及血管侵犯少见。Hale 胶体铁染色胞浆呈弥漫性蓝色阳性，是经典辅助特征。免疫表型典型为 CK7 弥漫阳性、E-cadherin 阳性、CD117/KIT 膜阳性，而 Vimentin、CA-IX 通常阴性。分级采用专用的 Paner / WHO 嫌色细胞癌核分级，而非传统的 ISUP/WHO 分级。鉴别诊断：①肾嗜酸细胞瘤（oncocytoma）——呈巢团或器官样排列，胞浆均匀嗜酸颗粒状，核圆规则、核仁居中，无葡萄干样核及核周空晕，CK7 仅局灶阳性，Hale 胶体铁阴性或仅管腔阳性；②透明细胞性肾细胞癌——具丰富富血窦的'鸡笼样'毛细血管网，胞浆真正透明（富含糖原/脂质），CA-IX 膜弥漫阳性、CK7 阴性，缺乏厚细胞膜及核周晕；③ MiT 家族易位性 RCC 及 SDH 缺陷型 RCC 需结合相应免疫组化与分子检测排除。",
+    "keyFeatures": [
+      "大细胞、胞膜清晰、核皱缩",
+      "Hale胶体铁弥漫阳性",
+      "CK7+/CD117+",
+      "需与嗜酸细胞腺瘤鉴别"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "弥漫阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD117",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CA9",
+        "result": "阴性",
+        "note": "区别于ccRCC"
+      }
+    ],
+    "molecularFeatures": "多条染色体缺失，线粒体DNA突变。",
+    "differentialDiagnosis": [
+      "oncocytoma",
+      "clear-cell-rcc"
+    ],
+    "grading": "意义有限",
+    "staging": "AJCC TNM",
+    "prognosis": "5年生存率>90%。",
+    "treatment": "手术切除。",
+    "images": [
+      {
+        "url": "/diagrams/chromophobe-rcc-gross.svg",
+        "caption": "大体：肾实质内边界清楚的实性肿物，切面呈均匀的棕褐色至浅黄褐色，无明显出血坏死，可见纤维性假包膜"
+      },
+      {
+        "url": "/diagrams/chromophobe-rcc-low-power-he.svg",
+        "caption": "低倍（HE）：肿瘤呈实性片状及巢状结构，由不完整的纤细血管分隔成大小不等的细胞巢，周边可见纤维假包膜"
+      },
+      {
+        "url": "/diagrams/chromophobe-rcc-high-power-he.svg",
+        "caption": "高倍（HE）：肿瘤细胞有两种，经典型大而多边形细胞胞质淡染网状并见明显细胞膜（植物细胞样），嗜酸型细胞胞质嗜酸性颗粒状；核皱缩呈葡萄干样，核周空晕明显"
+      },
+      {
+        "url": "/diagrams/chromophobe-rcc-hale-stain.svg",
+        "caption": "特殊染色（Hale 胶体铁）：肿瘤细胞胞质弥漫弥散性蓝染，为嫌色性肾细胞癌特征性表现，用于与嗜酸细胞腺瘤鉴别"
+      },
+      {
+        "url": "/diagrams/chromophobe-rcc-ihc-ckit.svg",
+        "caption": "IHC（CD117/KIT）：肿瘤细胞胞膜弥漫强阳性表达；联合 CK7 弥漫阳性及 Vimentin 阴性支持嫌色性肾细胞癌诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国肾癌诊疗指南（2022年版） (国家卫健委, 2022)",
+      "[国内共识] 肾细胞癌诊疗指南 2023 (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国肾癌规范化病理诊断专家共识 (中华医学会病理学分会泌尿与男性生殖系统疾病学组, 2021)"
+    ]
+  },
+  {
+    "id": "oncocytoma",
+    "nameZh": "肾嗜酸细胞腺瘤",
+    "nameEn": "Renal Oncocytoma",
+    "aliases": [
+      "嗜酸细胞瘤"
+    ],
+    "organ": "kidney",
+    "category": "benign",
+    "epidemiology": "约占肾肿瘤的3-7%，好发于50-70岁成人，男女比约2:1。多为散发性单发，偶与Birt-Hogg-Dubé综合征相关时可多灶性。术前影像学常难以与肾癌鉴别。",
+    "clinicalFeatures": "多无症状偶然发现。",
+    "grossPathology": "棕红色均匀肿块，中央星状瘢痕。",
+    "microscopy": "肾嗜酸细胞腺瘤的镜下形态以特征性的嗜酸性上皮细胞构成的良性肿瘤性增生为核心表现。低倍镜下，肿瘤边界清楚，无真正包膜，呈膨胀性生长，常可见中央星状瘢痕样纤维化区，内含疏松水肿性或透明变性的纤维结缔组织及散在小血管。肿瘤细胞排列呈特征性的实性巢状、腺泡状、管状或微囊状结构，巢团之间被纤细的纤维血管间质分隔，可见肿瘤细胞簇状漂浮于水肿性或黏液样间质内，形成'岛屿样'（islands/nests in edematous stroma）外观，是本病的重要诊断线索。细胞特征方面，肿瘤细胞呈圆形或多边形，体积中等偏大，细胞边界清楚，胞浆丰富，呈均匀的深嗜酸性细颗粒状，反映胞浆内密集的线粒体聚集；可见少量散在的所谓'oncoblast'（小细胞变异），胞浆嗜酸性较弱而核浆比略高。核特征为圆形、居中，大小较一致，染色质细腻，核仁小而居中或不明显（WHO/ISUP 核分级多为 1–2 级）；可出现散在的'退变性核异型'（degenerative atypia），表现为孤立的大深染核或多核巨细胞，但不伴核分裂增多，此为良性特征。核分裂象罕见或缺如，无病理性核分裂，无凝固性坏死，无血管侵犯。免疫组化：CK7 阴性或仅散在个别细胞阳性（'scattered pattern'），CD117 阳性，E-cadherin、EMA 阳性，vimentin 阴性，胶体铁（Hale 染色）阴性或仅腔面弱阳性。鉴别要点：①嫌色细胞癌嗜酸变异型——细胞膜呈植物细胞样增厚（raisinoid/葡萄干核），核周空晕明显，CK7 弥漫阳性，胶体铁弥漫胞浆阳性；②琥珀酸脱氢酶（SDH）缺陷型 RCC——胞浆呈絮状淡染嗜酸性并含絮状包涵体，SDHB 免疫组化失表达；③上皮样血管平滑肌脂肪瘤——HMB45/Melan-A/SMA 阳性，CK 阴性。",
+    "keyFeatures": [
+      "均匀嗜酸性细胞",
+      "中央星状瘢痕",
+      "CK7阴性或散在(区别于chRCC)",
+      "良性"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "阴性或散在",
+        "note": "chRCC弥漫阳性"
+      },
+      {
+        "marker": "CD117",
+        "result": "阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "CCND1重排。",
+    "differentialDiagnosis": [
+      "chromophobe-rcc"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "良性，预后极好。",
+    "treatment": "手术或积极监测。",
+    "images": [
+      {
+        "url": "/diagrams/oncocytoma-gross.svg",
+        "caption": "大体：肾实质内境界清楚的红棕色至桃红色实性结节，中央可见星状纤维瘢痕，无出血坏死"
+      },
+      {
+        "url": "/diagrams/oncocytoma-low-power.svg",
+        "caption": "低倍（HE）：肿瘤呈巢状、腺泡状或小管状排列，间质疏松水肿伴中央瘢痕形成，边界清楚无包膜侵犯"
+      },
+      {
+        "url": "/diagrams/oncocytoma-high-power.svg",
+        "caption": "高倍（HE）：肿瘤细胞圆形至多角形，胞浆丰富强嗜酸性颗粒状（富含线粒体），核圆形居中、染色质均匀，核仁不明显，核异型性轻微"
+      },
+      {
+        "url": "/diagrams/oncocytoma-ihc-ck7.svg",
+        "caption": "IHC（CK7）：肿瘤细胞仅散在少数细胞弱阳性（<5%），有助于与嫌色细胞癌弥漫阳性鉴别"
+      }
+    ],
+    "references": [
+      "WHO Classification, 5th Edition, 2022"
+    ]
+  },
+  {
+    "id": "wilms-tumor",
+    "nameZh": "肾母细胞瘤",
+    "nameEn": "Wilms Tumor",
+    "aliases": [
+      "肾胚胎瘤",
+      "Nephroblastoma"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "儿童最常见的肾脏恶性肿瘤，高峰年龄 2–5 岁。约 5% 为双侧。",
+    "clinicalFeatures": "无症状性腹部肿块（家长洗澡时发现）、偶尔血尿、高血压。可伴先天异常（WAGR、Beckwith-Wiedemann、Denys-Drash 综合征）。",
+    "grossPathology": "单发大的圆形肿块，切面灰白至灰红色，常有出血、坏死和囊性变。",
+    "microscopy": "肾母细胞瘤典型呈现经典三相性组织学构象，由胚芽、上皮和间叶三种成分以不同比例混合构成，成分比例及分化程度直接影响组织学分型与危险度分层。低倍镜下肿瘤界限相对清楚，常可见纤维性假包膜，呈推挤性生长并压迫周围肾实质，形成受压的肾小球及萎缩的肾小管。胚芽成分由密集排列的蓝染小圆细胞构成，呈弥漫片状、结节状、蛇形（serpentine）或基底样排列，胞浆稀少，核卵圆形或短梭形，染色质细颗粒状，核仁不明显，核分裂象活跃。上皮成分常形成原始小管或菊形团样结构，亦可见类似肾小球样的肾小体样结构（glomeruloid bodies），被覆立方至柱状细胞，核极性尚存，偶见鳞状或黏液柱状上皮分化。间叶成分疏松，由星状或梭形细胞在黏液样基质中稀疏分布，可出现横纹肌样、平滑肌、软骨、骨、脂肪或神经胶质等异源性分化。间质内常见灶状坏死及化疗后改变（如含铁血黄素沉积、泡沫样组织细胞聚集、纤维化）。判断间变（anaplasia）需满足三项条件：出现直径≥正常细胞核三倍的增大多形核、染色质深染（hyperchromasia）以及多极性或异常核分裂象，间变可呈灶性或弥漫性，后者预示高危。肾源性残余（nephrogenic rests）可位于肾叶内或肾叶周，提示前驱病变。鉴别诊断需警惕：①神经母细胞瘤，Homer-Wright 菊形团伴神经毡背景，WT1 阴性而 PHOX2B、Syn 弥漫阳性；②透明细胞肉瘤，呈分枝状纤细血管网间隔的巢状结构，核染色质空泡状、核仁明显，BCOR-ITD 或 YWHAE 融合，WT1 阴性；③肾横纹肌样瘤则以偏位核、显著嗜酸性核仁及胞浆内包涵体为特征，INI1（SMARCB1）表达缺失。",
+    "keyFeatures": [
+      "典型三相型结构（胚芽 + 上皮 + 间叶）",
+      "WT1 阳性是重要免疫标记",
+      "NWTS / SIOP 分期系统",
+      "退行变是预后关键不良因素",
+      "多学科联合治疗效果好，总体生存率 > 90%"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "WT1",
+        "result": "胚芽阳性",
+        "note": ""
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD56",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Desmin",
+        "result": "间叶可阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "WT1、CTNNB1、WTX 突变；少数与遗传综合征相关。",
+    "differentialDiagnosis": [
+      "clear-cell-rcc"
+    ],
+    "grading": "有无退行变（预后分层）",
+    "staging": "NWTS 分期 I–V",
+    "prognosis": "总体 5 年生存率 > 90%，伴退行变者明显降低。",
+    "treatment": "手术 + 化疗（长春新碱、放线菌素 D、阿霉素）± 放疗，美国 NWTS 与欧洲 SIOP 方案略有差异。",
+    "images": [
+      {
+        "url": "/diagrams/wilms-triphasic-pattern.svg",
+        "caption": "低倍（HE）：肾母细胞瘤经典三相结构示意，可见胚芽成分、上皮成分（原始小管/肾小球样结构）与间叶成分（疏松黏液样间质）相互交织"
+      },
+      {
+        "url": "/diagrams/wilms-blastemal-component.svg",
+        "caption": "高倍（HE）：胚芽成分，由小圆蓝染细胞密集排列，核质比高、染色质细腻、核分裂象易见，呈弥漫、结节状或蛇形生长"
+      },
+      {
+        "url": "/diagrams/wilms-epithelial-tubules.svg",
+        "caption": "高倍（HE）：上皮成分，可见原始肾小管及类肾小球样（glomeruloid）结构，重现后肾发育过程"
+      },
+      {
+        "url": "/diagrams/wilms-wt1-ihc.svg",
+        "caption": "IHC（WT1）：胚芽及上皮成分核阳性，间叶成分多为阴性，支持肾母细胞瘤诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification, 5th Edition, 2022",
+      "[国内指南] 儿童肾母细胞瘤诊疗规范（2019年版） (国家卫健委, 2019)",
+      "[国内共识] 儿童肾母细胞瘤诊疗专家共识 (中国抗癌协会小儿肿瘤专业委员会, 2022)"
+    ]
+  },
+  {
+    "id": "angiomyolipoma",
+    "nameZh": "肾血管平滑肌脂肪瘤",
+    "nameEn": "Angiomyolipoma",
+    "aliases": [
+      "AML",
+      "PEComa"
+    ],
+    "organ": "kidney",
+    "category": "benign",
+    "epidemiology": "最常见的肾脏良性间叶性肿瘤，女性多见。常偶发；20% 与结节性硬化（TSC）相关，常为多发双侧。",
+    "clinicalFeatures": "多无症状，较大者可破裂出血（Wunderlich 综合征）。",
+    "grossPathology": "边界清楚的黄色-灰红色肿物，脂肪成分多者切面像脂肪瘤。",
+    "microscopy": "镜下由成熟脂肪组织、迂曲厚壁血管及束状增生的平滑肌三种成分以不同比例构成，是诊断肾血管平滑肌脂肪瘤（Angiomyolipoma, AML）的经典三联征。低倍镜下可见肿瘤边界尚清但无真正包膜，与邻近肾实质呈推挤性或指状穿插性分界；脂肪成分为成熟白色脂肪细胞，大小较一致，偶见散在脂母细胞样细胞但无核异型。血管成分特征性表现为管壁厚薄不均、弹力层缺失或不完整的畸形血管，常呈偏心性增厚，血管壁平滑肌向外呈放射状”喷出”至周围间质，构成所谓”血管周围袖套”样结构。平滑肌成分由梭形至上皮样细胞束状、编织状排列而成，胞浆嗜酸至透明，可见核周空晕；在上皮样型（Epithelioid AML）中，瘤细胞呈多边形，胞浆丰富嗜酸或呈颗粒状，核圆形至卵圆形，染色质细颗粒状，核仁可较明显，可见多核瘤巨细胞与核分裂象，偶见坏死，提示潜在恶性。核分级线索包括：核异型程度、核分裂计数（>2/10 HPF）、非典型核分裂、凝固性坏死及血管侵犯，四项中具备三项以上提示恶性潜能。免疫组化平滑肌与上皮样成分共同表达 HMB45、Melan-A、MiTF、Cathepsin K 及 SMA/Desmin，呈”黑色素细胞标记+肌源性标记”双阳性，为 PEComa 家族的特征性表型，CK、EMA 及 S-100 多为阴性。鉴别诊断：①肾透明细胞癌（ccRCC）——亦可富含透明胞浆与丰富血管，但呈腺泡/巢状排列，PAX8、CA-IX 阳性，HMB45 阴性；②平滑肌肉瘤——缺乏脂肪与畸形厚壁血管，HMB45/Melan-A 阴性，Desmin/SMA 弥漫阳性；上皮样 AML 亦需与肉瘤样 RCC 鉴别，后者 PAX8 阳性而黑色素标记阴性。",
+    "keyFeatures": [
+      "典型三成分：异常血管 + 平滑肌 + 脂肪",
+      "HMB-45 / Melan-A / SMA 共表达",
+      "属于 PEComa 家族",
+      "与结节性硬化（TSC1/TSC2）相关",
+      "上皮样 AML 具有恶性潜能"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "HMB-45",
+        "result": "阳性",
+        "note": "PEComa 标志"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "SMA",
+        "result": "阳性",
+        "note": "平滑肌成分"
+      },
+      {
+        "marker": "S-100",
+        "result": "可阳性",
+        "note": "脂肪成分"
+      },
+      {
+        "marker": "CK",
+        "result": "阴性",
+        "note": "区别于肾癌"
+      }
+    ],
+    "molecularFeatures": "TSC1/TSC2 失活导致 mTOR 通路激活，是靶向治疗（依维莫司）的基础。",
+    "differentialDiagnosis": [
+      "clear-cell-rcc",
+      "oncocytoma"
+    ],
+    "grading": "不分级",
+    "staging": "不适用",
+    "prognosis": "绝大多数良性，上皮样 AML 可有转移。",
+    "treatment": "< 4 cm 无症状者可随访；较大或 TSC 相关者可用依维莫司缩小瘤体；出血风险者介入栓塞或手术。",
+    "images": [
+      {
+        "url": "/diagrams/aml-gross.svg",
+        "caption": "大体：肾皮质内边界清楚的黄褐色混合性肿物，切面可见黄色脂肪区与灰红色软组织区交错，无真性包膜"
+      },
+      {
+        "url": "/diagrams/aml-triphasic-low.svg",
+        "caption": "低倍（HE）：三相性结构，成熟脂肪组织、厚壁畸形血管（管壁肌化、缺乏弹力层）与梭形/上皮样平滑肌束以不同比例混杂分布"
+      },
+      {
+        "url": "/diagrams/aml-perivascular-hp.svg",
+        "caption": "高倍（HE）：畸形血管周围呈放射状排列的HMB45阳性平滑肌细胞（血管周上皮样细胞），胞浆嗜酸性，核轻度异型"
+      },
+      {
+        "url": "/diagrams/aml-hmb45-ihc.svg",
+        "caption": "IHC（HMB45）：血管周平滑肌样细胞胞浆弥漫强阳性，Melan-A及SMA亦共表达，支持PEComa家族诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification, 5th Edition, 2022"
+    ]
+  },
+  {
+    "id": "papillary-rcc-type1",
+    "nameZh": "乳头状肾细胞癌1型",
+    "nameEn": "Papillary Renal Cell Carcinoma Type 1",
+    "aliases": [
+      "pRCC type 1"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "占乳头状肾细胞癌的60-70%，好发于50-70岁男性，男女比约5:1，常为多灶性和双侧性，散发或遗传性（MET胚系突变相关遗传性乳头状肾癌综合征）。",
+    "clinicalFeatures": "多数偶然发现，部分患者出现血尿、腰痛或腹部肿块，肿瘤常较小且低分期。",
+    "grossPathology": "灰黄至棕褐色界限清楚的肿块，常伴出血和囊性变，可见纤维假包膜。",
+    "microscopy": "低倍镜下肿瘤呈典型乳头状结构，乳头轴心纤细，由单层或假复层上皮被覆，常见分支状纤维血管轴心。乳头之间可见裂隙样腔隙，部分区域乳头可融合形成小管-乳头状或实性巢状结构，但乳头轴心的纤维血管核心仍为诊断关键。肿瘤常有完整或不完整的纤维性假包膜，周边可见卫星结节。乳头轴心内泡沫样巨噬细胞聚集是1型最具提示意义的特征之一，约见于 60%–80% 的病例；砂粒体样钙化、胆固醇结晶及含铁血黄素沉积亦较常见。高倍镜下，肿瘤细胞呈立方状或低柱状，胞体较小，胞浆稀少至中等量，呈嗜碱性或双嗜性，胞界欠清。细胞核较小且大小较一致，圆形或卵圆形，沿基底排列，核染色质细腻均匀，核仁不明显或仅见小核仁（对应 WHO/ISUP 核分级 1–2 级），核分裂象罕见。坏死少见，脉管内癌栓及肉瘤样转化亦不常见，若出现提示预后较差或需考虑其他分型。免疫组化上肿瘤细胞弥漫表达 CK7、AMACR（P504S）、Vimentin、PAX8 及 CD10，多数 1 型 CK7 强而弥漫阳性，是与 2 型鉴别的重要线索。鉴别诊断：① 乳头状肾细胞癌 2 型——肿瘤细胞体积大，胞浆丰富嗜酸，核大、假复层、核仁显著（WHO/ISUP 3 级），CK7 常阴性或弱表达；② 透明细胞乳头状肾细胞肿瘤——核远离基底膜呈极向倒置，CK7 弥漫阳性但 AMACR 阴性、CA-IX 呈杯口样阳性，可资区别。",
+    "keyFeatures": [
+      "纤细乳头覆单层小立方细胞",
+      "乳头轴心内泡沫巨噬细胞和砂粒体",
+      "CK7弥漫阳性/AMACR强阳性",
+      "MET基因突变（7号染色体三体/MET点突变）",
+      "预后优于2型"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "弥漫阳性",
+        "note": "与2型CK7阴性形成鲜明对比"
+      },
+      {
+        "marker": "AMACR",
+        "result": "强阳性",
+        "note": "乳头状RCC的敏感标记"
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阳性",
+        "note": "间叶标记共表达"
+      },
+      {
+        "marker": "CD10",
+        "result": "灶状阳性",
+        "note": "不如透明细胞RCC弥漫"
+      },
+      {
+        "marker": "CA-IX",
+        "result": "阴性",
+        "note": "区别于透明细胞RCC"
+      },
+      {
+        "marker": "BRAF",
+        "result": "阴性",
+        "note": "V600E突变不常见"
+      }
+    ],
+    "molecularFeatures": "7号和17号染色体三体，MET基因（7q31）激活突变或扩增，Y染色体缺失。遗传性乳头状肾癌综合征（HPRC）由MET胚系突变引起。",
+    "differentialDiagnosis": [
+      "papillary-rcc-type2",
+      "clear-cell-rcc",
+      "papillary-rcc"
+    ],
+    "grading": "WHO/ISUP核分级1-4级，1型多为低级别（1-2级）",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "预后优于2型和透明细胞RCC，局限性5年生存率>90%，远处转移少见。",
+    "treatment": "局限性手术切除（保留肾单位手术适用于小肿瘤），晚期可用MET抑制剂（卡博替尼、savolitinib）和免疫检查点抑制剂联合治疗。",
+    "images": [
+      {
+        "url": "/diagrams/papillary-rcc-type1-low-power.svg",
+        "caption": "低倍（HE）：肿瘤呈境界清楚的结节状生长，内部可见密集排列的乳头状结构，乳头轴心纤细，背景可见灶性出血及胆固醇结晶裂隙"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-type1-high-power.svg",
+        "caption": "高倍（HE）：乳头表面被覆单层立方至低柱状上皮，胞浆稀少嗜碱性，核小而一致，核级 WHO/ISUP 1–2 级，乳头轴心内可见大量泡沫样巨噬细胞聚集"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-type1-psammoma.svg",
+        "caption": "高倍（HE）：乳头轴心及间质内可见砂砾体（钙化同心圆层状结构），为 1 型乳头状肾细胞癌常见特征"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-type1-ihc-ck7.svg",
+        "caption": "IHC（CK7）：肿瘤细胞胞浆/胞膜弥漫强阳性表达，是 1 型乳头状肾细胞癌区别于 2 型（常局灶或阴性）的重要辅助指标"
+      }
+    ],
+    "references": [
+      "WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国泌尿外科和男科疾病诊断治疗指南（肾细胞癌诊断治疗指南）2022 版 (中华医学会泌尿外科学分会, 2022)",
+      "[国内共识] 肾细胞癌诊疗指南（2023） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国肾肿瘤病理诊断共识 (中华医学会病理学分会泌尿与男性生殖系统疾病学组, 2021)"
+    ]
+  },
+  {
+    "id": "papillary-rcc-type2",
+    "nameZh": "乳头状肾细胞癌2型",
+    "nameEn": "Papillary Renal Cell Carcinoma Type 2",
+    "aliases": [
+      "pRCC type 2"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "占乳头状肾细胞癌的30-40%，好发于40-70岁成人，与遗传性平滑肌瘤病伴肾细胞癌综合征（HLRCC，FH胚系突变）有关，散发病例也常见。",
+    "clinicalFeatures": "多表现为单发较大肿块，分期常较1型高，更易出现局部侵犯和远处转移，症状包括血尿、腰痛和腹部肿块。",
+    "grossPathology": "较大的灰黄至棕红色肿块，出血坏死明显，界限相对不清，可浸润肾周脂肪。",
+    "microscopy": "肿瘤呈界限相对清楚的结节状生长，常见纤维性假包膜，切面可见出血、坏死及囊性变。低倍镜下以乳头状及管乳头状结构为主导，乳头轴心纤细或增宽，可见纤维血管轴心水肿、玻璃样变及局灶性钙化（砂粒体较1型少见）。乳头表面被覆单层至假复层柱状上皮，细胞排列拥挤、重叠，部分区域呈实性片状或管状生长。肿瘤细胞体积较大，胞界清楚，胞浆丰富，呈嗜酸性或双嗜性细颗粒状，部分病例可见胞浆内嗜酸性小球。细胞核圆形至卵圆形，核膜不规则，染色质粗糙、深染，核仁明显嗜酸性（相当于ISUP/WHO核分级3级或更高），常可见核假包涵体及核沟。核分裂象较易见，偶见病理性核分裂。乳头轴心内泡沫样巨噬细胞聚集及含铁血黄素沉积较1型相对少见，但并非缺如；间质可见淋巴细胞、浆细胞浸润及局灶坏死。免疫组化典型表达CK7（较1型弱或局灶阳性）、AMACR（P504S）弥漫强阳性、Vimentin阳性，CD10常阳性，而TFE3、HMB-45阴性有助于排除MiT家族易位性RCC。鉴别诊断需注意：（1）遗传性平滑肌瘤病肾细胞癌（HLRCC相关RCC），后者核仁极度显著伴核周空晕，FH表达缺失、2SC阳性；（2）MiT家族易位性肾细胞癌，瘤细胞胞浆透亮或嗜酸，砂粒体多见，TFE3/TFEB核阳性可资鉴别。",
+    "keyFeatures": [
+      "宽大乳头覆假复层嗜酸性大细胞",
+      "核大、核仁明显、核级高",
+      "CK7常阴性/AMACR阳性",
+      "CDKN2A缺失常见",
+      "预后差于1型，侵袭性更强"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "阴性或灶状弱阳性",
+        "note": "与1型弥漫阳性截然不同"
+      },
+      {
+        "marker": "AMACR",
+        "result": "阳性",
+        "note": "乳头状RCC共有标记"
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CDKN2A",
+        "result": "蛋白表达丢失",
+        "note": "CDKN2A基因纯合缺失常见"
+      },
+      {
+        "marker": "FH",
+        "result": "保留表达",
+        "note": "散发型FH保留；HLRCC相关者FH丢失"
+      }
+    ],
+    "molecularFeatures": "CDKN2A纯合缺失、SETD2突变、NRF2通路激活常见。与HLRCC综合征相关时伴FH胚系突变导致延胡索酸蓄积和HIF通路异常激活。8号染色体获得。",
+    "differentialDiagnosis": [
+      "papillary-rcc-type1",
+      "clear-cell-rcc",
+      "fumarate-hydratase-deficient-rcc",
+      "papillary-rcc"
+    ],
+    "grading": "WHO/ISUP核分级1-4级，2型多为高级别（3-4级）",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "预后较1型差，局部复发和远处转移率更高，5年生存率约60-70%。",
+    "treatment": "手术切除为主，晚期可用卡博替尼等多靶点TKI、免疫检查点抑制剂（纳武利尤单抗+卡博替尼），HLRCC相关者需遗传咨询和家族筛查。",
+    "images": [
+      {
+        "url": "/diagrams/papillary-rcc-type2-low.svg",
+        "caption": "低倍（HE）：肿瘤呈乳头状及管状乳头状结构，纤维血管轴心被覆单层或假复层肿瘤细胞，乳头内可见泡沫样巨噬细胞聚集"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-type2-high.svg",
+        "caption": "高倍（HE）：乳头被覆假复层嗜酸性胞浆细胞，细胞核大、呈椭圆形，核仁明显（WHO/ISUP 3 级及以上），可见核分裂象"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-type2-ihc-ck7.svg",
+        "caption": "IHC（CK7）：2 型病例中 CK7 多为局灶阳性或阴性，可辅助与 1 型（弥漫强阳性）鉴别"
+      },
+      {
+        "url": "/diagrams/papillary-rcc-type2-ihc-amacr.svg",
+        "caption": "IHC（AMACR/P504S）：肿瘤细胞胞浆弥漫强阳性，支持乳头状肾细胞癌诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国抗癌协会肾癌整合诊治指南（CACA） (中国抗癌协会, 2022)",
+      "[国内共识] 肾细胞癌诊疗指南（2023版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国肾癌整合诊治指南（CACA Guidelines） (中国抗癌协会（CACA）, 2022)"
+    ]
+  },
+  {
+    "id": "translocation-rcc",
+    "nameZh": "TFE3易位性肾细胞癌",
+    "nameEn": "TFE3-Rearranged Renal Cell Carcinoma",
+    "aliases": [
+      "Xp11易位性肾癌",
+      "MiT家族易位性RCC"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "占儿童肾细胞癌约40%，成人中占1-5%，好发于青少年和年轻成人，女性稍多见。部分患者有既往化疗史（尤其含烷化剂方案），是MiT家族易位性肾细胞癌的主要亚型之一。",
+    "clinicalFeatures": "儿童和年轻成人出现血尿和腹部肿块，可表现为较高分期但临床进展相对缓慢，部分患者以淋巴结转移为首发表现。",
+    "grossPathology": "灰黄至棕褐色肿块，切面常见出血和坏死区域，部分病例呈囊实性，可见钙化。",
+    "microscopy": "低倍镜下肿瘤呈境界较清楚的膨胀性生长，多有纤维性假包膜，切面可见出血及坏死灶。组织结构以乳头状及巢状/腺泡状为主，常见两种结构混合存在：乳头轴心纤细而分支，表面被覆单层或复层上皮；巢状区域由纤细的纤维血管间隔分隔，形成腺泡样或实性片状排列，部分区域可见假乳头、管状或囊性结构。间质内常见砂砾体样钙化（psammoma bodies）及含铁血黄素沉积，此为本病较具提示性的线索。高倍镜下肿瘤细胞体积较大，胞浆丰富，呈透明至嗜酸性颗粒状，部分细胞胞浆透亮似透明细胞癌，但细胞膜较厚而清晰；可见特征性的胞浆内及细胞外嗜酸性透明小体（hyaline nodules/globules）。核圆形至卵圆形，大小中等至偏大，染色质细颗粒状、分布较均匀，核仁明显，多呈嗜酸性、相当于 ISUP/WHO 3 级；核分裂象数量不等，高级别病例可出现多形性核、瘤巨细胞及坏死。免疫组化 TFE3 核阳性具有高度提示意义（需注意判读阈值，弱阳性易出现假阳性），Cathepsin K、Melan-A、HMB45 常灶性阳性，PAX8 阳性，而广谱 CK、EMA 常弱阳或灶阳，Vimentin 阳性。鉴别诊断：①透明细胞性肾细胞癌——后者胞浆呈完全透明、富含糖原与脂质，呈”鸡笼状”血管网，CA9 弥漫膜阳、TFE3 阴性；②乳头状肾细胞癌——经典型乳头内可见泡沫样巨噬细胞，CK7 弥漫阳性而 TFE3、Cathepsin K 阴性；必要时行 TFE3 FISH 分离探针检测确认 Xp11.2 易位以确诊。",
+    "keyFeatures": [
+      "乳头状透明-嗜酸性大细胞",
+      "TFE3核强阳性（break-apart FISH确认）",
+      "好发青少年和年轻成人",
+      "CK常阴性，区别于其他肾癌",
+      "与既往化疗暴露有关"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TFE3",
+        "result": "核强阳性",
+        "note": "诊断金标准，需FISH证实易位"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "肾源标记保留"
+      },
+      {
+        "marker": "Cathepsin K",
+        "result": "阳性",
+        "note": "溶酶体蛋白酶标记"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "灶状阳性",
+        "note": "黑色素分化标记，部分病例表达"
+      },
+      {
+        "marker": "CK",
+        "result": "阴性或灶状弱阳性",
+        "note": "与经典肾癌不同，CK常阴性"
+      },
+      {
+        "marker": "CD10",
+        "result": "阴性或弱阳性",
+        "note": "不如透明细胞RCC弥漫"
+      }
+    ],
+    "molecularFeatures": "Xp11.2易位导致TFE3基因与多种伴侣基因融合（ASPSCR1-TFE3、PRCC-TFE3、SFPQ-TFE3等），激活MiT/TFE转录因子家族下游靶基因。",
+    "differentialDiagnosis": [
+      "clear-cell-rcc",
+      "papillary-rcc",
+      "angiomyolipoma"
+    ],
+    "grading": "WHO/ISUP核分级可用但预后预测价值有限",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "儿童预后较好，即使伴淋巴结转移仍有较长生存；成人预后较差，转移性病例进展较快，5年生存率约50-60%。",
+    "treatment": "手术切除为主要治疗。晚期/转移性病例可用VEGF-TKI（卡博替尼、舒尼替尼）和免疫检查点抑制剂，但疗效不如透明细胞RCC。",
+    "images": [
+      {
+        "url": "/diagrams/translocation-rcc-low-power.svg",
+        "caption": "低倍（HE）：肿瘤呈巢状及乳头状结构，间质见假包膜，可见灶状砂粒体"
+      },
+      {
+        "url": "/diagrams/translocation-rcc-high-power.svg",
+        "caption": "高倍（HE）：肿瘤细胞胞浆丰富透明至嗜酸性，核圆形、核仁明显，乳头轴心可见巨噬细胞聚集及砂粒体"
+      },
+      {
+        "url": "/diagrams/translocation-rcc-tfe3-ihc.svg",
+        "caption": "IHC（TFE3）：肿瘤细胞核强阳性弥漫表达，为本肿瘤的标志性免疫表型"
+      },
+      {
+        "url": "/diagrams/translocation-rcc-fish.svg",
+        "caption": "FISH 示意图：TFE3 分离探针显示红绿信号分离，提示 Xp11.2 位点 TFE3 基因易位重排"
+      }
+    ],
+    "references": [
+      "WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)"
+    ]
+  },
+  {
+    "id": "succinate-dehydrogenase-deficient-rcc",
+    "nameZh": "琥珀酸脱氢酶缺陷型肾细胞癌",
+    "nameEn": "Succinate Dehydrogenase-Deficient Renal Cell Carcinoma",
+    "aliases": [
+      "SDH缺陷型RCC",
+      "SDHB缺陷型肾癌"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "极为罕见，占肾细胞癌不足0.5%，好发于年轻成人（中位年龄约35-40岁），几乎均与SDH亚基（SDHB、SDHC、SDHD）胚系突变相关，属于遗传性副神经节瘤-嗜铬细胞瘤综合征谱系。",
+    "clinicalFeatures": "年轻患者出现偶然发现的肾脏肿块，需筛查副神经节瘤、嗜铬细胞瘤和胃肠道间质瘤（GIST）等SDH缺陷相关肿瘤，部分患者有家族史。",
+    "grossPathology": "边界清楚的实性棕红色肿块，切面均匀，常较小（多<5cm），出血和坏死少见。",
+    "microscopy": "低倍镜下，肿瘤多呈境界相对清楚、部分可见假包膜的实性结节状生长，切面呈黄褐色或红褐色。典型的组织结构为实性-腺泡状或巢团状排列，常可见扩张的小管状或微囊性结构，腔内可含淡嗜酸性分泌物；部分病例可见局灶性透明细胞区域或肉瘤样分化。间质血管丰富，可见纤细的窦隙样血管网，部分病例间质可出现玻璃样变性或黏液样改变。高倍镜下，肿瘤细胞呈立方形至多边形，大小较一致，胞浆丰富，呈特征性的羽毛状、絮状或空泡状嗜酸性胞浆，内含散在的胞浆内空泡或嗜酸性颗粒样包涵体，这是本病最具诊断提示意义的形态学线索。胞膜界限清楚，偶见胞浆内”气球样”透明包涵体。细胞核多位于中央或稍偏位，呈圆形至卵圆形，染色质呈细颗粒状且分布均匀，核膜光滑，核仁多不明显或相当于 WHO/ISUP 1–2 级；部分病例可出现 3–4 级核级伴核增大、核仁显著及肉瘤样或横纹肌样分化，此类病例常提示侵袭性生物学行为。核分裂象多稀少，坏死少见。免疫组化 SDHB 胞浆颗粒状染色完全缺失（与内对照内皮细胞或淋巴细胞阳性对比）是确诊的关键依据，PAX8 阳性，CK 可弱阳性或阴性，CD117、CK7 通常阴性。鉴别诊断需与嗜酸细胞腺瘤（SDHB 阳性，胞浆细颗粒状而无空泡）及嫌色细胞癌（细胞膜清晰呈”植物细胞”样，核皱褶呈葡萄干样，CK7 弥漫阳性，SDHB 保留）相区别，后两者均不出现胞浆内絮状空泡及 SDHB 缺失。",
+    "keyFeatures": [
+      "SDHB免疫组化表达丢失是诊断标准",
+      "特征性胞浆内绒毛状包涵体",
+      "年轻患者肾脏肿块需考虑",
+      "与遗传性副神经节瘤综合征相关",
+      "低级别但有转移潜能"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "SDHB",
+        "result": "阴性（表达丢失）",
+        "note": "诊断金标准，任何SDH亚基突变均导致SDHB丢失"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "保留肾源表达"
+      },
+      {
+        "marker": "CK",
+        "result": "灶状弱阳性",
+        "note": "表达减弱但可灶状存在"
+      },
+      {
+        "marker": "CA-IX",
+        "result": "阴性",
+        "note": "区别于透明细胞RCC"
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阴性",
+        "note": "区别于其他肾癌亚型"
+      }
+    ],
+    "molecularFeatures": "SDHB/SDHC/SDHD胚系突变导致琥珀酸脱氢酶复合物功能丧失，琥珀酸蓄积抑制α-酮戊二酸依赖的双加氧酶，导致DNA和组蛋白高甲基化（假性缺氧表型）。",
+    "differentialDiagnosis": [
+      "oncocytoma",
+      "chromophobe-rcc",
+      "clear-cell-rcc"
+    ],
+    "grading": "低级别为主，高级别转化少见但预后差",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "多数低级别者预后较好，但具有转移潜能（约10-15%发生转移），高级别转化者预后差，需长期随访。",
+    "treatment": "手术切除（保留肾单位手术适合小肿瘤），基因检测和遗传咨询必须进行，需终身监测副神经节瘤和其他SDH缺陷相关肿瘤，转移性病例治疗方案有限。",
+    "images": [
+      {
+        "url": "/diagrams/sdh-deficient-rcc-low-power.svg",
+        "caption": "低倍（HE）：肿瘤呈实性、巢状或腺泡状排列，边界相对清楚，周围可见纤维性假包膜，间质内可见扩张的血管腔隙"
+      },
+      {
+        "url": "/diagrams/sdh-deficient-rcc-high-power.svg",
+        "caption": "高倍（HE）：肿瘤细胞呈立方或多边形，胞浆嗜酸性呈絮状或空泡状，内含特征性的胞浆包涵体（淡嗜酸性/嗜碱性絮状小体），核圆形、核仁不明显，核级别较低"
+      },
+      {
+        "url": "/diagrams/sdh-deficient-rcc-ihc-sdhb-loss.svg",
+        "caption": "IHC（SDHB）：肿瘤细胞胞浆 SDHB 表达完全缺失，周围血管内皮及间质细胞呈阳性内对照，为本瘤种确诊的关键免疫组化标志"
+      },
+      {
+        "url": "/diagrams/sdh-deficient-rcc-cytoplasmic-inclusion.svg",
+        "caption": "高倍（HE）：示意细胞浆内絮状嗜酸性包涵体（flocculent eosinophilic inclusions），对应超微结构下异常线粒体聚集，是 SDH 缺陷型 RCC 的形态学线索"
+      }
+    ],
+    "references": [
+      "WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)"
+    ]
+  },
+  {
+    "id": "fumarate-hydratase-deficient-rcc",
+    "nameZh": "延胡索酸水化酶缺陷型肾细胞癌",
+    "nameEn": "Fumarate Hydratase-Deficient Renal Cell Carcinoma",
+    "aliases": [
+      "FH缺陷型RCC",
+      "HLRCC相关肾癌"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "罕见但高度侵袭性的肾癌亚型，与遗传性平滑肌瘤病伴肾细胞癌综合征（HLRCC）密切相关，由FH胚系突变引起。好发于20-50岁成人，男女比约1:1，可散发或遗传性。",
+    "clinicalFeatures": "患者常以单发侵袭性肾脏肿块就诊，可伴皮肤平滑肌瘤和子宫平滑肌瘤（HLRCC三联征），即使肿瘤较小也可出现早期转移，需高度警惕。",
+    "grossPathology": "灰白至棕色肿块，切面常伴显著出血和坏死，界限不清，可浸润肾周脂肪和肾静脉，囊性和实性区域混合。",
+    "microscopy": "肿瘤呈多种结构混合性生长，常见乳头状、管状-囊性、筛状、实性及肉瘤样结构，多种结构往往在同一肿瘤内并存，是本病的重要镜下提示。乳头结构可粗大伴水肿性轴心，被覆单层至假复层立方或柱状上皮；管状-囊性区域常衬覆扁平至立方上皮，囊腔内可见嗜酸性分泌物。瘤细胞胞体较大，胞浆中等至丰富，多呈嗜酸性细颗粒状，部分病例可见透明胞浆。最具特征性的核形态为：核增大、染色质空泡状或开放，核仁显著嗜酸性、大而醒目，周围常有明显的核仁周空晕（perinucleolar halo），形态类似巨细胞病毒包涵体或2型乳头状肾细胞癌的高级别核（WHO/ISUP 3–4级）。核分裂象易见，可见非典型核分裂。间质内可见炎细胞浸润、灶性坏死及砂粒体样钙化。免疫组化提示性特征：FH（延胡索酸水化酶）表达完全缺失，2SC（S-(2-succino)-cysteine）弥漫强阳性，是确诊的关键证据；PAX8、CK7（局灶）阳性，CD10、AMACR可阳性，TFE3、HMB-45阴性。【鉴别要点】①2型乳头状肾细胞癌：核仁可显著但缺乏核仁周空晕，FH保留、2SC阴性；②集合管癌及肾髓质癌：浸润性管状结构伴促结缔组织增生明显，SMARCB1(INI-1)在髓质癌中缺失，FH表达保留；③SDH缺陷型肾细胞癌：胞浆呈絮状、含空泡样包涵体，SDHB免疫组化缺失而FH保留。结合形态学、IHC（FH-/2SC+）及胚系FH突变检测可明确诊断。",
+    "keyFeatures": [
+      "特征性嗜酸性大核仁伴核仁周围空晕",
+      "FH免疫组化丢失+2SC（琥珀酰半胱氨酸）阳性",
+      "高度侵袭性，即使小肿瘤也可早期转移",
+      "与HLRCC综合征相关（皮肤/子宫平滑肌瘤+肾癌）",
+      "避免监测等待，应积极手术"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "FH",
+        "result": "阴性（表达丢失）",
+        "note": "诊断关键，双等位基因FH失活"
+      },
+      {
+        "marker": "2SC",
+        "result": "阳性（弥漫胞浆/核阳性）",
+        "note": "延胡索酸蓄积导致蛋白琥珀酰化的标记"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "保留肾源表达"
+      },
+      {
+        "marker": "CK",
+        "result": "灶状阳性",
+        "note": "表达可不均匀"
+      },
+      {
+        "marker": "CA-IX",
+        "result": "阴性",
+        "note": "尽管假性缺氧表型但CA-IX不表达"
+      }
+    ],
+    "molecularFeatures": "FH胚系突变导致延胡索酸水化酶功能丧失，延胡索酸蓄积抑制α-酮戊二酸依赖的双加氧酶（包括PHD、TET、KDM），导致HIF通路假性激活和全基因组DNA高甲基化。NRF2-ARE抗氧化通路异常激活。",
+    "differentialDiagnosis": [
+      "papillary-rcc-type2",
+      "collecting-duct-carcinoma",
+      "clear-cell-rcc"
+    ],
+    "grading": "几乎均为高级别",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "预后差，高度侵袭性，5年生存率约20-40%。即使肿瘤较小也可出现早期淋巴结和远处转移，需积极治疗。",
+    "treatment": "积极根治性手术切除（不推荐主动监测或保留肾单位手术），晚期可用贝伐珠单抗联合厄洛替尼方案或免疫检查点抑制剂联合TKI。FH胚系突变确认后需终身监测和家族遗传咨询。",
+    "images": [
+      {
+        "url": "/diagrams/fh-rcc-low-power.svg",
+        "caption": "低倍（HE）：肿瘤呈多种结构混合生长，可见乳头状、管状囊状及实性区域交替分布，肿瘤细胞间可见水肿样间质"
+      },
+      {
+        "url": "/diagrams/fh-rcc-high-power.svg",
+        "caption": "高倍（HE）：肿瘤细胞核大、核仁显著嗜酸呈病毒包涵体样（viral inclusion-like），周围常见透亮空晕，为 FH 缺陷型 RCC 的特征性形态"
+      },
+      {
+        "url": "/diagrams/fh-rcc-ihc-fh-loss.svg",
+        "caption": "IHC（FH）：肿瘤细胞 FH 表达完全缺失（阴性），周围间质与血管内皮作为内对照呈阳性表达"
+      },
+      {
+        "url": "/diagrams/fh-rcc-ihc-2sc.svg",
+        "caption": "IHC（2SC）：肿瘤细胞核及胞浆弥漫强阳性，提示延胡索酸异常蓄积所致的半胱氨酸巯基琥珀酰化，支持 FH 缺陷诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内共识] CSCO 肾癌诊疗指南（2023 版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 遗传性肾癌诊治专家共识（2021 版） (中国抗癌协会泌尿男生殖系肿瘤专业委员会, 2021)"
+    ]
+  },
+  {
+    "id": "collecting-duct-carcinoma",
+    "nameZh": "集合管癌",
+    "nameEn": "Collecting Duct Carcinoma",
+    "aliases": [
+      "Bellini管癌",
+      "CDC"
+    ],
+    "organ": "kidney",
+    "category": "malignant",
+    "epidemiology": "极为罕见的肾癌亚型，占肾细胞癌不足1%，好发于40-70岁成人，男性稍多见（男女比约2:1），无明确危险因素。",
+    "clinicalFeatures": "多数患者就诊时已为晚期，表现为腰痛、血尿、腹部肿块、体重减轻。约1/3患者初诊时已有远处转移（肺、骨、肝）。常位于肾髓质/肾盂区域。",
+    "grossPathology": "肿瘤位于肾髓质中央区域，灰白色硬性肿块，边界不清，常浸润肾盂和肾窦脂肪，伴坏死和出血。",
+    "microscopy": "集合管癌（Collecting Duct Carcinoma, CDC），亦称 Bellini 管癌，起源于肾髓质集合管上皮，肿瘤多位于肾髓质中央并向皮质浸润。低倍镜下组织结构呈显著异质性，可见不规则管状、小管乳头状、管状筛状及实性巢状结构混合分布，常伴有明显的促结缔组织增生性间质反应（desmoplastic stroma），肿瘤性腺管于增生致密的胶原性间质中呈浸润性生长，边界不清，常累及肾盂黏膜及肾周脂肪。间质内可见较多中性粒细胞及淋巴细胞浸润，局部可见微脓肿形成。肿瘤常见地图样坏死及血管淋巴管侵犯，神经周围侵犯亦不少见。高倍镜下瘤细胞呈柱状、立方状或鞋钉样（hobnail）排列，胞浆中等量，嗜双色性或嗜酸性，部分胞浆呈微空泡状；细胞核显著异型，体积增大，核膜不规则增厚，染色质粗块状分布，核仁明显嗜酸性，常呈 Fuhrman/WHO-ISUP 3–4 级；核分裂象易见，包括病理性核分裂。管腔内及胞浆内常见黏液分泌，黏液卡红及 Alcian blue 染色阳性。免疫表型方面，肿瘤细胞对高分子量细胞角蛋白（34βE12）、CK7、CK19、PAX8、EMA 及 vimentin 阳性，凝集素 Ulex europaeus agglutinin-1（UEA-1）常阳性，而 CD10、RCC 抗原、GATA3、p63 多为阴性，可与尿路上皮癌及其他肾细胞癌鉴别。鉴别诊断要点：①肾髓质癌（Renal Medullary Carcinoma）：好发于镰状细胞血红蛋白病青年患者，SMARCB1/INI1 表达缺失，而 CDC 保留 INI1 表达；②浸润高级别尿路上皮癌累及肾实质：GATA3、p63、S100P 阳性，PAX8 阴性，且常伴原位癌，缺乏典型管状乳头状结构及腔内黏液，可资鉴别。",
+    "keyFeatures": [
+      "肾髓质中央区高级别腺管状癌伴促纤维增生间质",
+      "靴钉样细胞和筛状结构",
+      "CK7+/PAX8+/INI1保留/SMARCB1保留",
+      "CD10−/CA-IX−区别于透明细胞RCC",
+      "预后极差，需排除肾盂尿路上皮癌和肾髓质癌"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "阳性",
+        "note": "高分子量角蛋白表达"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "保留肾源表达"
+      },
+      {
+        "marker": "INI1",
+        "result": "保留表达",
+        "note": "区别于肾髓质癌（INI1丢失）"
+      },
+      {
+        "marker": "SMARCB1",
+        "result": "保留表达",
+        "note": "区别于肾髓质癌"
+      },
+      {
+        "marker": "CD10",
+        "result": "阴性",
+        "note": "区别于透明细胞RCC"
+      },
+      {
+        "marker": "CA-IX",
+        "result": "阴性",
+        "note": "区别于透明细胞RCC"
+      },
+      {
+        "marker": "CK34βE12",
+        "result": "阳性",
+        "note": "高分子量角蛋白"
+      }
+    ],
+    "molecularFeatures": "NF2突变、SMARCB1缺失（少数）、CDKN2A缺失、1q缺失等。基因组不稳定性高，无特征性驱动突变。需与肾髓质癌（SMARCB1/INI1丢失）鉴别。",
+    "differentialDiagnosis": [
+      "fumarate-hydratase-deficient-rcc",
+      "papillary-rcc-type2",
+      "clear-cell-rcc"
+    ],
+    "grading": "几乎均为高级别（WHO/ISUP 3-4级）",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "预后极差，是肾细胞癌中预后最差的亚型之一。中位生存约12-30个月，2年生存率约30-50%。多数患者在2年内死于疾病进展。",
+    "treatment": "根治性肾切除术。对化疗和靶向治疗反应差。免疫检查点抑制剂（纳武利尤单抗±伊匹木单抗）可考虑尝试。含吉西他滨/顺铂方案曾有个案报告有效。",
+    "images": [
+      {
+        "url": "/diagrams/collecting-duct-carcinoma-gross.svg",
+        "caption": "大体：肿瘤位于肾髓质中央区域，灰白色实性，边界不清，呈浸润性生长，常累及肾盂和肾皮质"
+      },
+      {
+        "url": "/diagrams/collecting-duct-carcinoma-lp-he.svg",
+        "caption": "低倍（HE）：髓质为中心的浸润性腺管状和小管状结构，伴显著促纤维增生性间质反应及周围肾实质破坏"
+      },
+      {
+        "url": "/diagrams/collecting-duct-carcinoma-hp-he.svg",
+        "caption": "高倍（HE）：高级别异型上皮细胞排列成不规则腺管状/乳头状，胞核大而深染、核仁明显，可见鞋钉样细胞及核分裂象，间质致密纤维化伴中性粒细胞浸润"
+      },
+      {
+        "url": "/diagrams/collecting-duct-carcinoma-ihc-pax8.svg",
+        "caption": "IHC（PAX8/CK7）：肿瘤细胞 PAX8 核阳性、CK7 胞浆阳性，支持肾集合管来源；同时 CK20 与 GATA3 多为阴性，用于与尿路上皮癌鉴别"
+      }
+    ],
+    "references": [
+      "WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 肾癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国泌尿外科疾病诊断治疗指南（2019 版）肾细胞癌 (中华医学会泌尿外科分会, 2019)"
+    ]
+  },
+  {
+    "id": "adrenocortical-tumor",
+    "nameZh": "肾上腺皮质肿瘤",
+    "nameEn": "Adrenocortical Tumor",
+    "aliases": [
+      "肾上腺皮质腺瘤",
+      "肾上腺皮质癌",
+      "ACC"
+    ],
+    "organ": "kidney",
+    "category": "other",
+    "epidemiology": "肾上腺皮质腺瘤极为常见（尸检发现率3-10%），多为无功能性偶发瘤。肾上腺皮质癌罕见（发病率约0.5-2/百万/年），双峰分布（儿童和40-50岁成人），女性稍多。",
+    "clinicalFeatures": "功能性肿瘤可引起Cushing综合征（皮质醇过多）、Conn综合征（醛固酮过多）、男性化或女性化。非功能性腺瘤多为影像学偶然发现。皮质癌常较大（>6cm），可有腹痛、腰痛和可扪及包块。",
+    "grossPathology": "腺瘤通常<5cm，金黄色至棕褐色，有包膜，切面均匀。皮质癌多>6cm，切面灰黄至棕色，伴出血、坏死和囊性变，可浸润周围组织和静脉。",
+    "microscopy": "肾上腺皮质肿瘤镜下形态呈现谱系性改变，需结合组织结构、细胞学特征及核分级综合判断良恶性。\n\n组织结构方面：肾上腺皮质腺瘤多呈膨胀性生长，周围可见受压的残存肾上腺皮质，肿瘤由巢状、梁索状或腺泡状排列的皮质细胞构成，间质富含薄壁血窦，可见纤维性假包膜；无坏死、无血管侵犯及包膜浸润。肾上腺皮质癌则常见弥漫片状生长模式（超过肿瘤体积 33%）、宽纤维束分隔、地图样凝固性坏死、肿瘤性血管及包膜侵犯，可见窦样血管浸润和神经周侵犯。\n\n细胞特征方面：肿瘤细胞通常为多边形，胞界清楚，胞浆可呈透明（富含脂质，类似球状带/束状带细胞）、嗜酸性（富含线粒体，类似网状带细胞）或两者混合。嗜酸细胞性（Oncocytic）亚型胞浆深嗜酸细颗粒状；黏液样和肉瘤样亚型提示恶性。脂褐素颗粒在网状带来源细胞中常见。\n\n核特征方面：腺瘤核圆至卵圆形，染色质均匀细颗粒状，核仁不明显至小；可见散在”内分泌非典型”即孤立性核增大、深染而无其他恶性特征。皮质癌则核呈 Fuhrman Ⅲ–Ⅳ 级，核仁嗜酸性、明显、易见，核分裂象＞5/50 HPF，可见非典型核分裂象、多核瘤巨细胞。\n\n分级线索：Weiss 评分（≥3 项提示恶性）、改良 Weiss、Helsinki 评分及 Lin–Weiss–Bisceglia（嗜酸细胞型专用）系统；关键参数包括高核级、核分裂象计数、非典型核分裂、透明细胞＜25%、弥漫生长、坏死、静脉/窦状/包膜侵犯。Ki-67 指数＞5% 倾向恶性，＞20% 提示预后差。\n\n鉴别要点：①与嗜铬细胞瘤鉴别——后者呈 Zellballen 结构，Syn/CgA/GATA3 强阳性，S-100 支持细胞围绕，皮质标记 SF-1、Melan-A、Inhibin-α、Calretinin 阴性；②与转移性透明细胞肾细胞癌鉴别——RCC 表达 PAX8、CA-IX、CD10、EMA，而肾上腺皮质肿瘤 SF-1、Inhibin-α、Melan-A 阳性、EMA 及 CK 多阴性或弱阳性。",
+    "keyFeatures": [
+      "Inhibin+/Melan-A+/SF-1+/Calretinin+是皮质分化的核心标记组合",
+      "CK−/EMA−区别于肾癌和转移癌",
+      "Weiss评分系统（≥3分为恶性）用于良恶性鉴别",
+      "Ki-67>5%和/或Ki-67热点>20%提示恶性",
+      "功能性肿瘤可引起多种内分泌综合征"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Inhibin",
+        "result": "阳性",
+        "note": "肾上腺皮质分化标记"
+      },
+      {
+        "marker": "Melan-A",
+        "result": "阳性",
+        "note": "也称A103，皮质和性腺间质标记"
+      },
+      {
+        "marker": "SF-1",
+        "result": "阳性（核）",
+        "note": "类固醇激素生成因子1，最特异的皮质标记"
+      },
+      {
+        "marker": "Calretinin",
+        "result": "阳性",
+        "note": "皮质分化辅助标记"
+      },
+      {
+        "marker": "CK",
+        "result": "阴性",
+        "note": "排除肾癌和转移性癌"
+      },
+      {
+        "marker": "EMA",
+        "result": "阴性",
+        "note": "排除上皮性肿瘤"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "腺瘤<5%；癌>5%",
+        "note": "良恶性鉴别的重要辅助指标"
+      }
+    ],
+    "molecularFeatures": "皮质癌常见TP53突变（尤其Li-Fraumeni综合征）、CTNNB1突变（Wnt/β-catenin通路激活）、IGF2过表达（11p15印记丢失）、ZNRF3和DAXX突变。儿童ACC与Beckwith-Wiedemann综合征和Li-Fraumeni综合征相关。",
+    "differentialDiagnosis": [
+      "clear-cell-rcc",
+      "hepatocellular-carcinoma",
+      "angiomyolipoma"
+    ],
+    "grading": "Weiss评分系统（0-9分，≥3分为恶性）；Helsinki评分用于肾上腺皮质肿瘤分级",
+    "staging": "ENSAT分期系统（I-IV期）",
+    "prognosis": "腺瘤预后极好，手术切除后治愈。皮质癌预后差，总体5年生存率约35-60%，IV期<15%。完整切除（R0）是最重要的预后因素。",
+    "treatment": "腺瘤：功能性者手术切除（腹腔镜），非功能性<4cm可随访。皮质癌：根治性手术切除+术后米托坦（Mitotane）辅助治疗。晚期化疗方案为EDP-M（依托泊苷+阿霉素+顺铂+米托坦）。",
+    "images": [
+      {
+        "url": "/diagrams/adrenocortical-gross.svg",
+        "caption": "大体：肾上腺皮质肿物切面呈金黄色至棕黄色，边界清楚；腺瘤多较小且包膜完整，皮质癌体积较大（常>5cm）并可见出血、坏死及周围组织浸润"
+      },
+      {
+        "url": "/diagrams/adrenocortical-adenoma-lp.svg",
+        "caption": "低倍（HE）：肾上腺皮质腺瘤，肿瘤由富含脂质的透明细胞与嗜酸性细胞排列成巢状或短索状结构，周围可见菲薄纤维性假包膜，无坏死"
+      },
+      {
+        "url": "/diagrams/adrenocortical-carcinoma-hp.svg",
+        "caption": "高倍（HE）：肾上腺皮质癌，细胞异型性明显，核分裂象增多（>5/50HPF），可见非典型核分裂、弥漫性生长模式及肿瘤性坏死，符合 Weiss 评分标准"
+      },
+      {
+        "url": "/diagrams/adrenocortical-ihc-sf1.svg",
+        "caption": "IHC（SF-1）：肿瘤细胞核弥漫强阳性，支持肾上腺皮质起源；常联合 Melan-A、Inhibin-α、Calretinin 阳性，而 Chromogranin A 阴性以鉴别嗜铬细胞瘤"
+      }
+    ],
+    "references": [
+      "WHO Classification of Urinary and Male Genital Tumours, 5th Edition, 2022",
+      "WHO Classification of Endocrine Tumours, 5th Edition"
+    ]
+  }
 ]

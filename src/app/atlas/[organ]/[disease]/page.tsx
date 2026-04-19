@@ -13,6 +13,11 @@ import { ImageLightbox } from '@/components/ImageLightbox';
 import NotesAndFavorites from '@/components/NotesAndFavorites';
 import { NottinghamGrade } from '@/components/calculators/NottinghamGrade';
 import { GleasonGrade } from '@/components/calculators/GleasonGrade';
+import {
+  type ConsensusSource,
+  classifyConsensusSource,
+  lookupOrgUrl,
+} from '@/lib/consensusSource';
 import { ISUPGrade } from '@/components/calculators/ISUPGrade';
 import { FIGOCervical } from '@/components/calculators/FIGOCervical';
 import { FIGOEndometrial } from '@/components/calculators/FIGOEndometrial';
@@ -149,7 +154,12 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
   if (loading) return <div className="flex items-center justify-center h-96"><div className="animate-pulse" style={{ color: 'var(--fg-muted)' }}>加载中...</div></div>;
   if (!d) return <div className="text-center py-16"><div className="flex justify-center mb-4" style={{ color: 'var(--fg-muted)' }}><IconSearch size={36} /></div><p style={{ color: 'var(--fg-muted)' }}>疾病未找到</p><Link href="/atlas" style={{ color: 'var(--accent)' }}>返回图谱</Link></div>;
 
-  const consensusCount = d.expertConsensus?.length || 0;
+  const groupedConsensus = groupConsensusBySource(
+    d.expertConsensus || [],
+    d.references || []
+  );
+  const consensusCount =
+    groupedConsensus.who.length + groupedConsensus.us.length + groupedConsensus.cn.length;
   const literatureCount = d.literature?.length || 0;
 
   const tabs: { id: Tab; label: string }[] = [
@@ -160,7 +170,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
     { id: 'molecular', label: '分子病理' },
     { id: 'special-stains', label: `特殊染色${d.specialStainProfile?.length ? ` (${d.specialStainProfile.length})` : ''}` },
     { id: 'differential', label: `鉴别诊断 (${d.differentialDiagnosis.length})` },
-    { id: 'consensus', label: `专家共识${consensusCount ? ` (${consensusCount})` : ''}` },
+    { id: 'consensus', label: `共识/指南${consensusCount ? ` (${consensusCount})` : ''}` },
     { id: 'literature', label: `文献参考${literatureCount ? ` (${literatureCount})` : ''}` },
     { id: 'clinical', label: '临床' },
   ];
@@ -418,7 +428,7 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
       )}
 
       {tab === 'consensus' && (
-        <ConsensusList items={d.expertConsensus || []} />
+        <GroupedConsensus grouped={groupedConsensus} />
       )}
 
       {tab === 'literature' && (
@@ -427,6 +437,9 @@ export default function DiseasePage({ params }: { params: Promise<{ organ: strin
 
       {tab === 'clinical' && (
         <div className="space-y-6">
+          <Section title="临床表现" content={d.clinicalFeatures} />
+          <Section title="分期" content={d.staging} />
+          <Section title="分级" content={d.grading} />
           <Section title="治疗" content={d.treatment} />
           <Section title="预后" content={d.prognosis} />
           {d.references.length > 0 && (
@@ -613,14 +626,101 @@ function groupImagesByMagnification(images: DiseaseImage[]): Record<string, Dise
   return grouped;
 }
 
-function ConsensusList({ items }: { items: ConsensusItem[] }) {
-  if (items.length === 0) {
+interface GroupedConsensus {
+  who: ConsensusItem[];
+  us: ConsensusItem[];
+  cn: ConsensusItem[];
+}
+
+/** Convert a `[国内指南] xxx (org, year)` reference string into a
+ *  ConsensusItem. Returns null if the string isn't a recognized prefix. */
+function parsePrefixedReference(ref: string, idx: number): ConsensusItem | null {
+  const m = /^\[(国内指南|国内共识)\]\s*(.+)$/.exec(ref);
+  if (!m) return null;
+  const isGuideline = m[1] === '国内指南';
+  // Try to split title and "(org, year)" tail
+  const tail = /^(.+?)\s*\(([^()]+),\s*(\d{4})\)\s*$/.exec(m[2]);
+  let title = m[2];
+  let organization: string | undefined;
+  let year: number | undefined;
+  if (tail) {
+    title = tail[1].trim();
+    organization = tail[2].trim();
+    year = parseInt(tail[3], 10);
+  }
+  return {
+    id: `ref-${idx}`,
+    title,
+    summary: isGuideline ? '国内权威诊疗指南' : '国内专家共识',
+    organization,
+    year,
+    sourceUrl: lookupOrgUrl(organization),  // org homepage when known
+  };
+}
+
+function groupConsensusBySource(
+  expertItems: ConsensusItem[],
+  references: string[]
+): GroupedConsensus {
+  const out: GroupedConsensus = { who: [], us: [], cn: [] };
+
+  // 1. Classify pre-existing expertConsensus items
+  for (const c of expertItems) {
+    out[classifyConsensusSource(c.organization, c.title)].push(c);
+  }
+
+  // 2. Pull `[国内指南]` / `[国内共识]` strings out of references[]
+  //    and add them to the CN bucket (deduped by title)
+  references.forEach((ref, i) => {
+    const parsed = parsePrefixedReference(ref, i);
+    if (!parsed) return;
+    if (out.cn.some((x) => x.title === parsed.title)) return;
+    out.cn.push(parsed);
+  });
+
+  return out;
+}
+
+function GroupedConsensus({ grouped }: { grouped: GroupedConsensus }) {
+  const total = grouped.who.length + grouped.us.length + grouped.cn.length;
+  if (total === 0) {
     return (
       <div className="rounded-xl p-8 text-center" style={{ background: 'var(--card)', border: '1px dashed var(--border)' }}>
-        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无专家共识数据</p>
+        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>暂无共识/指南数据</p>
       </div>
     );
   }
+  const sections: { id: ConsensusSource; label: string; emoji: string; items: ConsensusItem[] }[] = [
+    { id: 'who', label: 'WHO 国际分类', emoji: '🌐', items: grouped.who },
+    { id: 'us',  label: '美国 (NCCN / CAP / AJCC)', emoji: '🇺🇸', items: grouped.us },
+    { id: 'cn',  label: '国内 (CSCO / CACA / 中华医学会)', emoji: '🇨🇳', items: grouped.cn },
+  ];
+  return (
+    <div className="space-y-6">
+      {sections.map((sec) => (
+        <section key={sec.id}>
+          <div className="flex items-center gap-2 mb-2">
+            <span aria-hidden>{sec.emoji}</span>
+            <h2 className="text-sm font-semibold" style={{ color: 'var(--fg)' }}>{sec.label}</h2>
+            <span className="text-[10px] tabular-nums px-1.5 py-0.5 rounded" style={{ background: 'var(--card-hover)', color: 'var(--fg-muted)' }}>
+              {sec.items.length}
+            </span>
+          </div>
+          {sec.items.length === 0 ? (
+            <p className="text-xs px-3 py-2 rounded-lg" style={{ background: 'var(--card)', border: '1px dashed var(--border)', color: 'var(--fg-muted)' }}>
+              暂无该来源条目
+            </p>
+          ) : (
+            <ConsensusList items={sec.items} />
+          )}
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function ConsensusList({ items }: { items: ConsensusItem[] }) {
+  if (items.length === 0) return null;
   return (
     <div className="space-y-3">
       {items.map((c) => (
@@ -680,41 +780,79 @@ function LiteratureList({ items }: { items: LiteratureItem[] }) {
   );
 }
 
-function ResourceLinks({ sourceUrl, viewUrl }: { sourceUrl?: string; viewUrl?: string }) {
-  if (!sourceUrl && !viewUrl) return null;
-  // PDF detection: extension or admin-uploaded path. Browsers render PDFs
-  // natively in a new tab so we don't need a custom viewer component here.
+function ResourceLinks({
+  sourceUrl,
+  viewUrl,
+}: { sourceUrl?: string; viewUrl?: string }) {
+  // Always render both buttons. Empty URLs render as disabled placeholders so
+  // reviewers see exactly which links still need backfill. Browser opens
+  // PDFs natively when viewUrl points to one.
   const isPdf = !!viewUrl && /\.pdf(\?|$)/i.test(viewUrl);
   return (
-    <div className="flex items-center gap-2 mt-3">
-      {sourceUrl && (
-        <a
-          href={sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-[11px] px-2.5 py-1 rounded-md transition-colors"
-          style={{ background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)', textDecoration: 'none' }}
-        >
-          源地址 ↗
-        </a>
-      )}
-      {viewUrl && (
-        <a
-          href={viewUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-[11px] px-2.5 py-1 rounded-md transition-colors inline-flex items-center gap-1"
-          style={{ background: 'var(--accent)', color: '#fff', textDecoration: 'none' }}
-        >
-          {isPdf && (
-            <span className="text-[9px] font-bold px-1 rounded" style={{ background: 'rgba(255,255,255,0.25)' }}>
-              PDF
-            </span>
-          )}
-          在线阅览
-        </a>
-      )}
+    <div className="flex items-center gap-2 mt-3 flex-wrap">
+      <ActionButton
+        href={sourceUrl}
+        label="源地址 ↗"
+        emptyTooltip="源链接待补充"
+        variant="outline"
+      />
+      <ActionButton
+        href={viewUrl}
+        label={isPdf ? 'PDF 在线阅览' : '在线阅览'}
+        emptyTooltip="文件待补充"
+        variant="primary"
+      />
     </div>
+  );
+}
+
+function ActionButton({
+  href,
+  label,
+  emptyTooltip,
+  variant,
+}: {
+  href?: string;
+  label: string;
+  emptyTooltip: string;
+  variant: 'outline' | 'primary';
+}) {
+  const enabledStyle =
+    variant === 'primary'
+      ? { background: 'var(--accent)', color: '#fff', border: '1px solid var(--accent)' }
+      : { background: 'var(--card-hover)', color: 'var(--fg)', border: '1px solid var(--border)' };
+
+  const disabledStyle = {
+    background: 'transparent',
+    color: 'var(--fg-muted)',
+    border: '1px dashed var(--border)',
+    opacity: 0.55,
+    cursor: 'not-allowed',
+  } as const;
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="text-[11px] px-2.5 py-1 rounded-md transition-colors"
+        style={{ ...enabledStyle, textDecoration: 'none' }}
+      >
+        {label}
+      </a>
+    );
+  }
+  return (
+    <span
+      role="button"
+      aria-disabled="true"
+      title={emptyTooltip}
+      className="text-[11px] px-2.5 py-1 rounded-md select-none"
+      style={disabledStyle}
+    >
+      {label}
+    </span>
   );
 }
 
@@ -728,6 +866,11 @@ interface SpecialStainRef {
   id: string; nameZh: string; nameEn: string; abbreviation: string;
   targetProtein: string; interpretation: string;
   positiveResult: string; negativeResult: string;
+  /** Set by enhancement pipeline. Per-state example images + 国内常用试剂厂家. */
+  _enhance_special_stain_images?: {
+    images?: Array<{ stateId?: string; url?: string; caption: string }>;
+    cnReagentVendors?: string[];
+  };
 }
 
 function SpecialStainsTab({ profile }: { profile: StainProfileItem[] }) {
@@ -821,6 +964,17 @@ function SpecialStainsTab({ profile }: { profile: StainProfileItem[] }) {
                     <div><strong style={{ color: 'var(--fg)' }}>检测：</strong>{s.targetProtein}</div>
                     <div><strong style={{ color: '#22c55e' }}>阳性：</strong>{s.positiveResult}</div>
                     <div><strong style={{ color: '#ef4444' }}>阴性：</strong>{s.negativeResult}</div>
+                    {s._enhance_special_stain_images?.cnReagentVendors && s._enhance_special_stain_images.cnReagentVendors.length > 0 && (
+                      <div className="pt-1 mt-1" style={{ borderTop: '1px dashed var(--border)' }}>
+                        <strong style={{ color: '#10b981' }}>🇨🇳 国内试剂：</strong>
+                        {s._enhance_special_stain_images.cnReagentVendors.join('、')}
+                      </div>
+                    )}
+                    {s._enhance_special_stain_images?.images && s._enhance_special_stain_images.images.length > 0 && (
+                      <div className="text-[10px]" style={{ color: 'var(--fg-muted)', opacity: 0.6 }}>
+                        含 {s._enhance_special_stain_images.images.length} 张样图建议（待补充原图）
+                      </div>
+                    )}
                   </div>
                 </Link>
               ))}

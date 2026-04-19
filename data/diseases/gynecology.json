@@ -1,11 +1,655 @@
 [
-  {"id":"cervical-scc","nameZh":"宫颈鳞状细胞癌","nameEn":"Cervical Squamous Cell Carcinoma","aliases":["宫颈癌","宫颈SCC"],"organ":"gynecology","category":"malignant","epidemiology":"全球女性第四大常见癌症。几乎均与高危型HPV(16/18型为主)持续感染有关。筛查大幅降低了发达国家的发病率。","clinicalFeatures":"早期常无症状，进展后出现阴道不规则出血、接触性出血、白带增多。","grossPathology":"外生菜花型或内生浸润型，累及宫颈管。","microscopy":"浸润性鳞状细胞癌表现为异型鳞状上皮巢团突破基底膜浸润宫颈间质，引起促纤维增生反应。角化型可见细胞内角化和角化珠形成，细胞间桥可辨认，核大深染多形性。非角化型（更常见）缺乏角化，细胞排列成实性巢团，核分裂象活跃。癌旁CIN区域常可见koilocytes（空穴细胞），核周空晕和核皱缩是HPV感染的形态学标志。间质可见淋巴细胞浸润和脉管侵犯。","keyFeatures":["HPV相关(16/18型为主)","p16弥漫块状阳性(HPV相关标记)","CIN I→CIN II→CIN III→浸润癌的进展","筛查(HPV+TCT)和疫苗可预防"],"ihcProfile":[{"marker":"p16","result":"弥漫块状阳性","note":"HPV致癌蛋白标记，E7灭活Rb导致p16过表达"},{"marker":"p63","result":"阳性","note":"鳞状分化"},{"marker":"CK5/6","result":"阳性","note":""},{"marker":"Ki-67","result":"弥漫阳性","note":"高增殖"}],"molecularFeatures":"HPV E6蛋白降解p53，E7蛋白灭活Rb。高危型HPV整合入宿主基因组。","differentialDiagnosis":["endometrial-adenocarcinoma"],"grading":"高分化/中分化/低分化 或 CIN分级(癌前)","staging":"FIGO分期(2018修订版)","prognosis":"早期(I-IIA)5年生存率80-90%，晚期(III-IV)约30-50%。","treatment":"早期手术(根治性子宫切除)±放化疗。局部晚期同步放化疗(顺冒增敏)。复发/转移可用pembrolizumab+化疗+贝伐珠单抗。","images":[{"url":"/diagrams/keratin-pearl.svg","caption":"鳞状分化的角化珠是角化型宫颈鳞癌的形态学依据"}],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]},
-  {"id":"endometrial-adenocarcinoma","nameZh":"子宫内膜腺癌","nameEn":"Endometrial Adenocarcinoma","aliases":["子宫体癌","子宫内膜癌"],"organ":"gynecology","category":"malignant","epidemiology":"最常见的女性生殖系统恶性肿瘤（发达国家），全球年新发约42万例。好发于55-65岁绝经后女性。危险因素包括肥胖（BMI>30风险增加3倍）、糖尿病、长期无对抗雌激素暴露、他莫昔芬使用及Lynch综合征（约3-5%）。发病率在发达国家呈上升趋势。","clinicalFeatures":"绝经后阴道出血是最常见症状。绝经前女性可有月经异常。","grossPathology":"宫腔内息肉样或弥漫增厚的肿物，可浸润肌层。","microscopy":"子宫内膜样腺癌（最常见，约80%）：由异型增生的子宫内膜腺体组成，腺管密集排列呈背靠背或筛状结构，融合性生长浸润肌层。腺上皮核复层化，核增大深染，核分裂象增多，可伴鳞状分化（鳞化/桑葚体）。FIGO 1级实性成分<5%，2级5-50%，3级>50%。浆液性癌（约10%）：高级别乳头状结构，细胞高度异型，核大多形性伴显著核仁，几乎100%存在TP53突变，生物学行为侵袭性强。","keyFeatures":["子宫内膜样(I型，雌激素依赖，预后好) vs 浆液性(II型，TP53突变，预后差)","分子分型(TCGA)：POLE超突变/MSI/低拷贝数/高拷贝数","MMR/MSI检测筛查Lynch综合征","ER/PR表达与预后和内分泌治疗相关"],"ihcProfile":[{"marker":"ER","result":"子宫内膜样型阳性","note":"I型常阳性"},{"marker":"PR","result":"子宫内膜样型阳性","note":""},{"marker":"p53","result":"子宫内膜样型野生型","note":"浆液性癌突变型(弥漫强阳或完全缺失)"},{"marker":"Vimentin","result":"阳性","note":"子宫内膜标记"},{"marker":"PAX8","result":"阳性","note":"苗勒管源标记"}],"molecularFeatures":"TCGA分子分型：1) POLE超突变型(预后最好)；2) MSI-H/dMMR型；3) 无特异分子特征型(NSMP)；4) p53异常型(预后最差)。","differentialDiagnosis":["cervical-scc","ovarian-serous-carcinoma"],"grading":"FIGO分级(1-3级，基于实性成分比例)","staging":"FIGO分期","prognosis":"I期5年生存率>90%。POLE超突变型预后极好，p53异常型预后差。","treatment":"手术(全子宫切除+双侧附件切除±淋巴结评估)。高危因素辅助放疗±化疗。晚期/复发可用仑伐替尼+pembrolizumab(特别是dMMR者)。","images":[],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]},
-  {"id":"ovarian-serous-carcinoma","nameZh":"卵巢高级别浆液性癌","nameEn":"High-Grade Serous Ovarian Carcinoma","aliases":["HGSOC","卵巢浆液性癌"],"organ":"gynecology","category":"malignant","epidemiology":"最常见且致死率最高的卵巢上皮性恶性肿瘤，约占卵巢癌的70%。好发于50-70岁绝经后女性，多数确诊时已为III-IV期（>75%）。BRCA1突变者终身风险40-60%，BRCA2突变者10-30%。全球年新发约31万例。","clinicalFeatures":"腹胀、盆腔包块、腹水、CA125升高。多数确诊时已为III-IV期。","grossPathology":"双侧卵巢和输卵管累及，可伴广泛腹膜种植。实性-囊性，伴出血坏死。","microscopy":"肿瘤细胞呈高级别核异型性，排列成复杂的乳头状、实性片状、筛状和裂隙样结构。乳头表面覆多层高度异型的上皮细胞，核大深染多形性，核仁显著，核分裂象极多（常>12个/10HPF），病理性核分裂易见。间质可见砂粒体（同心圆状层状钙化）。实性区域可见大片凝固性坏死。SET模式（实性、子宫内膜样、移行细胞样）是需注意的形态学变异。","keyFeatures":["高级别核异型性+乳头状/实性结构","TP53突变(几乎100%)","BRCA1/2突变(约25%)指导PARP抑制剂治疗","WT1+/PAX8+/p53突变型","可能起源于输卵管伞端(STIC)"],"ihcProfile":[{"marker":"WT1","result":"阳性","note":"浆液性分化标记"},{"marker":"PAX8","result":"阳性","note":"苗勒管标记"},{"marker":"p53","result":"突变型(弥漫强阳或完全缺失)","note":"几乎100%异常"},{"marker":"ER","result":"常阳性","note":""},{"marker":"Ki-67","result":"高(>50%)","note":""}],"molecularFeatures":"TP53突变几乎100%。BRCA1/2胚系突变约15-20%，体细胞突变约5%。同源重组修复缺陷(HRD)约50%。","differentialDiagnosis":["endometrial-adenocarcinoma"],"grading":"高级别(占绝大多数)","staging":"FIGO分期","prognosis":"5年生存率III期约40%，IV期约20%。BRCA突变者对铂类化疗反应好，预后相对较好。","treatment":"手术减灭+紫杉醇/卡铂化疗。BRCA突变/HRD阳性维持治疗用PARP抑制剂(奥拉帕利/尼拉帕利)。贝伐珠单抗也用于维持治疗。","images":[{"url":"/diagrams/papillary.svg","caption":"乳头状结构是高级别浆液性癌的典型生长模式"},{"url":"/diagrams/psammoma-body.svg","caption":"砂粒体：同心圆状钙化，HGSOC 中常见"}],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]},
-  {"id":"cin","nameZh":"宫颈上皮内瘤变","nameEn":"Cervical Intraepithelial Neoplasia","aliases":["CIN","SIL","HSIL","LSIL"],"organ":"gynecology","category":"precancerous","epidemiology":"HPV相关宫颈癌的癌前病变，全球通过宫颈筛查（HPV+细胞学）广泛检出。好发于25-35岁性活跃女性，高危型HPV（16、18、31、33型等）持续感染是主要病因。HPV疫苗接种可显著降低发病率。","clinicalFeatures":"多无症状，通过 TCT + HPV 筛查及阴道镜活检发现；醋白试验 + 碘不着色是阴道镜可疑区域。","grossPathology":"肉眼无明显肿块，为黏膜/上皮内病变。","microscopy":"根据异型细胞累及上皮层次分级：\n\n- **CIN1 / LSIL**：异型细胞限于下 1/3，可伴&quot;koilocytes&quot;（空穴细胞）\n- **CIN2 / HSIL**：异型细胞占中 1/3 至 2/3，核异型明显\n- **CIN3 / HSIL**：几乎累及上皮全层，细胞丧失分化成熟\n\np16 弥漫块状阳性 + Ki-67 中上层广泛增殖是 HSIL 的客观依据。","keyFeatures":["LAST 项目将 CIN1 归为 LSIL，CIN2/3 归为 HSIL","高危 HPV 持续感染是原因","p16 弥漫块状 + Ki-67 中上层增殖提示 HSIL","LEEP / 锥切对 HSIL 是治疗兼诊断","HPV 疫苗可一级预防"],"ihcProfile":[{"marker":"p16","result":"弥漫块状阳性（HSIL）","note":"HPV E7 → Rb 失活 → p16 代偿升高"},{"marker":"Ki-67","result":"中上层广泛阳性（HSIL）","note":""}],"molecularFeatures":"高危型 HPV（16、18、31、33 等）E6/E7 癌基因蛋白分别降解 p53、灭活 Rb。","differentialDiagnosis":["cervical-scc"],"grading":"LSIL vs HSIL（CIN1/2/3）","staging":"不适用","prognosis":"LSIL 大多可自行消退；HSIL 未治疗 10 年进展为浸润癌约 30%。","treatment":"LSIL 多观察随访；HSIL 需 LEEP 或冷刀锥切。","images":[],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020","LAST Project Recommendations"]},
-  {"id":"endometrial-hyperplasia","nameZh":"子宫内膜增生","nameEn":"Endometrial Hyperplasia","aliases":["EH","EIN"],"organ":"gynecology","category":"precancerous","epidemiology":"雌激素无对抗刺激所致的子宫内膜增殖性病变，常见于围绝经期（40-55岁）。高危因素包括肥胖、多囊卵巢综合征（PCOS）、单用雌激素替代治疗、无排卵性月经及他莫昔芬使用。非典型增生（EIN）约30-40%进展为子宫内膜样癌。","clinicalFeatures":"异常子宫出血（月经过多、绝经后出血）为主要表现；超声示内膜增厚。","grossPathology":"子宫内膜弥漫或局灶增厚。","microscopy":"**无非典型增生**：腺体形状多样、腺体/间质比轻度升高、腺上皮柱状无显著异型。\n\n**非典型增生（EIN）**：腺体拥挤（腺体/间质 &gt; 1）、腺腔变形、核增大、染色质空泡状伴显著核仁，是子宫内膜样癌的直接前驱病变。","keyFeatures":["以&quot;非典型&quot;与&quot;无非典型&quot;为核心分类","非典型增生（EIN）恶变率 30–40%","PTEN、PAX2 蛋白局灶缺失帮助识别 EIN","雌激素孤立暴露是主要危险因素","绝经后出血需活检排查"],"ihcProfile":[{"marker":"PTEN","result":"EIN 灶内缺失","note":"克隆性改变"},{"marker":"PAX2","result":"EIN 灶内缺失","note":""},{"marker":"ER","result":"阳性","note":""}],"molecularFeatures":"PTEN、PIK3CA、KRAS 突变常见，与子宫内膜样癌分子谱一致。","differentialDiagnosis":["endometrial-adenocarcinoma"],"grading":"无非典型增生 / 非典型增生（EIN）","staging":"不适用","prognosis":"无非典型者多可药物逆转；非典型增生约 30–40% 同时或后续发生子宫内膜样癌。","treatment":"无非典型者孕激素治疗（LNG-IUS / 口服）；有生育要求的非典型者高剂量孕激素 + 严密随访；无生育要求者全子宫切除。","images":[],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]},
-  {"id":"uterine-leiomyoma","nameZh":"子宫平滑肌瘤","nameEn":"Uterine Leiomyoma","aliases":["子宫肌瘤","fibroid"],"organ":"gynecology","category":"benign","epidemiology":"最常见的妇科良性肿瘤，育龄女性临床发病率约20-40%，尸检发现率可达70-80%。好发于30-50岁，非裔女性发病率更高且发病更早。雌激素和孕激素依赖性生长，绝经后常萎缩。","clinicalFeatures":"经量增多、盆腔压迫、不孕、自然流产；大部分无症状。","grossPathology":"圆形、有完整假包膜的实性肿物，切面灰白漩涡状。可分黏膜下、肌壁间和浆膜下。","microscopy":"肿瘤由成熟平滑肌细胞组成，排列成相互交织的长束状结构，与正常子宫肌层结构相似但更致密。细胞核呈雪茄样钝圆形，大小均匀，染色质均匀，无明显异型性，核分裂象稀少（&lt; 5/10 HPF）。胞浆丰富嗜酸性纤维状。间质可见玻璃样变性（最常见的退行性改变）、红色变性（妊娠期，因血管栓塞导致）、黏液样变性、钙化及脂肪变性。无凝固性坏死，此点是与平滑肌肉瘤鉴别的关键。","keyFeatures":["交织束状成熟平滑肌","核分裂 &lt; 5/10 HPF、无异型、无坏死","特殊亚型：细胞性、非典型、奇异型需注意","Desmin / SMA / Caldesmon 阳性","与平滑肌肉瘤的鉴别看坏死 + 核异型 + 核分裂"],"ihcProfile":[{"marker":"Desmin","result":"阳性","note":""},{"marker":"SMA","result":"阳性","note":""},{"marker":"Caldesmon","result":"阳性","note":""},{"marker":"ER","result":"阳性","note":"雌激素依赖"}],"molecularFeatures":"MED12 突变约 70%，其他可见 HMGA2 重排、FH 胚系缺失（遗传性平滑肌瘤病伴肾细胞癌，HLRCC）。","differentialDiagnosis":["endometrial-adenocarcinoma"],"grading":"不分级","staging":"不适用","prognosis":"良性，不恶变","treatment":"无症状者观察；有症状者可用 GnRH 激动剂、UAE 栓塞、肌瘤剔除或子宫切除。","images":[],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]},
-  {"id":"clear-cell-ovarian-carcinoma","nameZh":"卵巢透明细胞癌","nameEn":"Clear Cell Ovarian Carcinoma","aliases":["卵巢CCC","OCCC"],"organ":"gynecology","category":"malignant","epidemiology":"占卵巢上皮性癌约5-10%（亚洲地区高达25%），与子宫内膜异位症密切相关（约50-70%伴有），好发于围绝经期女性，是子宫内膜异位症相关卵巢癌中最常见的类型。","clinicalFeatures":"盆腔包块、腹胀，常合并子宫内膜异位症病史，可出现高钙血症和血栓栓塞事件（副肿瘤综合征），CA125升高程度不如浆液性癌。","grossPathology":"单侧为主的囊实性肿块，囊壁可见实性结节突入囊腔，囊液可为巧克力色（子宫内膜异位症背景），切面灰黄至灰白色。","microscopy":"肿瘤由透明细胞和鞋钉样细胞（hobnail cell）组成，排列成管囊状、乳头状和实性结构。透明细胞胞浆丰富透明（富含糖原），鞋钉样细胞核突出于细胞表面凸入管腔。间质可见透明变性，乳头状区域可见透明化纤维血管轴心。常可见与子宫内膜异位症的移行区域。核异型明显，核分裂象数量不等。","keyFeatures":["透明细胞+鞋钉样细胞是形态学标志","HNF1β弥漫阳性是最敏感标记","与子宫内膜异位症密切相关","对铂类化疗相对耐药","ARID1A突变常见（约50%）"],"ihcProfile":[{"marker":"HNF1β","result":"弥漫阳性","note":"最敏感的透明细胞癌标记"},{"marker":"Napsin A","result":"阳性","note":"天冬氨酸蛋白酶，透明细胞癌特征性表达"},{"marker":"ER","result":"阴性","note":"区别于子宫内膜样和浆液性癌"},{"marker":"PR","result":"阴性","note":""},{"marker":"WT1","result":"阴性","note":"区别于高级别浆液性癌"},{"marker":"PAX8","result":"阳性","note":"苗勒管来源标记保留"},{"marker":"ARID1A","result":"表达丢失（约50%）","note":"BAF染色质重塑复合物亚基缺失"}],"molecularFeatures":"ARID1A突变约50%，PIK3CA突变约40%，TERT启动子突变，TP53突变少见（区别于高级别浆液性癌）。PI3K/AKT/mTOR通路激活。","differentialDiagnosis":["ovarian-serous-carcinoma","endometrial-adenocarcinoma","clear-cell-endometrial-carcinoma"],"grading":"单一高级别（不分级）","staging":"FIGO分期","prognosis":"I期预后与浆液性癌相当（5年生存率约80%），但晚期预后明显差于浆液性癌（对铂类化疗反应差），总体5年生存率约55-60%。","treatment":"手术减灭+化疗（紫杉醇/卡铂），对铂类耐药率高。免疫检查点抑制剂和靶向PI3K/mTOR通路的药物正在临床试验中。合并子宫内膜异位症者需完整切除。","images":[],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]},
-  {"id":"clear-cell-endometrial-carcinoma","nameZh":"子宫内膜透明细胞癌","nameEn":"Clear Cell Endometrial Carcinoma","aliases":["子宫内膜CCC"],"organ":"gynecology","category":"malignant","epidemiology":"占子宫内膜癌约1-6%，好发于老年绝经后女性（中位年龄约67岁），属于II型子宫内膜癌（非雌激素依赖型），与萎缩性子宫内膜背景相关，不伴内膜增生前驱病变。","clinicalFeatures":"绝经后阴道出血是最常见症状，诊断时分期可较高，可伴腹水和子宫外播散。","grossPathology":"宫腔内息肉样或弥漫浸润性肿块，切面灰白至灰黄色，质脆，常伴出血坏死。","microscopy":"肿瘤由透明细胞和鞋钉样细胞组成，排列成乳头状、管囊状、实性和混合结构。透明细胞胞浆丰富透明（PAS阳性、淀粉酶消化后阴性，证实为糖原）。鞋钉样细胞核圆形深染突出于管腔面。乳头轴心纤维血管透明化，可见嗜酸性分泌物充填管腔。核异型明显但核分裂象可不多，间质可呈透明变性。需注意与分泌型子宫内膜样癌和浆液性癌的鉴别。","keyFeatures":["透明细胞+鞋钉样细胞+管囊状/乳头状结构","HNF1β和Napsin A阳性是诊断关键","属于II型子宫内膜癌（非雌激素依赖）","ER/PR阴性","p53多为野生型模式（区别于浆液性癌）"],"ihcProfile":[{"marker":"HNF1β","result":"弥漫阳性","note":"透明细胞癌最敏感标记"},{"marker":"Napsin A","result":"阳性","note":""},{"marker":"ER","result":"阴性","note":"非雌激素依赖型"},{"marker":"PR","result":"阴性","note":""},{"marker":"p53","result":"多为野生型模式","note":"区别于浆液性癌的突变型模式"},{"marker":"PAX8","result":"阳性","note":"苗勒管来源标记"}],"molecularFeatures":"ARID1A突变、PIK3CA突变、TERT启动子突变常见，TP53突变频率低于浆液性癌。TCGA分子分型中多归入NSMP或MSI亚型。","differentialDiagnosis":["endometrial-adenocarcinoma","clear-cell-ovarian-carcinoma","ovarian-serous-carcinoma"],"grading":"单一高级别（WHO不再分级）","staging":"FIGO分期","prognosis":"预后较子宫内膜样癌差，I期5年生存率约75-80%，晚期预后不良。","treatment":"手术（全子宫切除+双侧附件切除+全面分期手术）+辅助化疗（紫杉醇/卡铂）±放疗。晚期可考虑免疫治疗（尤其dMMR/MSI-H者）。","images":[],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]},
-  {"id":"high-grade-serous-ovarian-carcinoma","nameZh":"高级别浆液性卵巢癌","nameEn":"High-Grade Serous Ovarian Carcinoma","aliases":["HGSOC"],"organ":"gynecology","category":"malignant","epidemiology":"最常见且致死率最高的卵巢恶性肿瘤，占卵巢上皮性癌约70%。好发于50-70岁绝经后女性。BRCA1/2胚系突变携带者终身风险显著升高（BRCA1约40-60%，BRCA2约10-30%），Lynch综合征也增加风险。","clinicalFeatures":"起病隐匿，多数确诊时已为III-IV期（>75%）。常见症状包括腹胀、腹水、盆腔/腹部包块、腹痛、早饱、尿频。CA-125显著升高（>90%病例），HE4也可升高。","grossPathology":"双侧卵巢和输卵管累及为主，常伴广泛腹膜和大网膜种植（\"饼状\"大网膜），腹水量多。卵巢肿块呈实性-囊性，切面灰白灰黄色，伴显著出血和坏死。近年研究表明许多HGSOC起源于输卵管伞端的浆液性输卵管上皮内癌（STIC）。","microscopy":"高级别核异型性是最突出特征，肿瘤细胞排列成乳头状、实性片状、筛状和裂隙样结构。乳头表面覆多层异型细胞，核大深染多形性，核分裂象极多（常>12个/10HPF），病理性核分裂易见。砂粒体（同心圆状层状钙化）为特征性表现。实性区域可见大片坏死。SET模式（实性、内膜样、移行细胞样）的HGSOC形态学变异需注意，可能被误诊。免疫表型上TP53几乎100%异常（弥漫强阳性过表达或完全缺失/无义突变模式）。","keyFeatures":["TP53几乎100%突变（弥漫强阳或完全缺失）","WT1+/PAX8+确认浆液性和苗勒管来源","BRCA1/2突变约25%，指导PARP抑制剂治疗","可能起源于输卵管伞端（STIC）","砂粒体和高级别核异型是形态学线索"],"ihcProfile":[{"marker":"WT1","result":"弥漫阳性","note":"浆液性分化标记"},{"marker":"PAX8","result":"弥漫阳性","note":"苗勒管来源标记"},{"marker":"p53","result":"异常模式（弥漫强阳或完全缺失）","note":"几乎100%TP53突变"},{"marker":"ER","result":"阳性（约80%）","note":"浆液性癌常表达"},{"marker":"CK7","result":"弥漫阳性","note":"上皮标记"},{"marker":"CA-125","result":"阳性","note":"血清学和组织学均阳性"}],"molecularFeatures":"TP53突变几乎100%。BRCA1/2胚系突变约15-20%，体细胞突变约5-7%。同源重组修复缺陷（HRD）约50%（包括BRCA和非BRCA HRD基因如RAD51C、PALB2等）。基因组高度不稳定，拷贝数变异显著。NF1、RB1、CDK12改变也可见。","differentialDiagnosis":["endometrial-adenocarcinoma","clear-cell-ovarian-carcinoma","ovarian-serous-carcinoma"],"grading":"高级别（单一级别，不分级）","staging":"FIGO分期（2014修订版）","prognosis":"总体5年生存率约40-50%。III期约40%，IV期约20%。BRCA突变者对铂类化疗反应好且对PARP抑制剂有效，预后相对较好。完全减灭手术（R0）是最重要的预后因素。","treatment":"初始治疗为手术减灭（目标R0切除）+紫杉醇/卡铂化疗6周期。BRCA突变/HRD阳性者维持治疗用PARP抑制剂（奥拉帕利、尼拉帕利、鲁卡帕利）。贝伐珠单抗可用于一线和维持治疗。复发性铂敏感者可再次铂类化疗+PARP抑制剂维持。","images":[],"references":["WHO Classification of Female Genital Tumours, 5th Edition, 2020"]}
+  {
+    "id": "cervical-scc",
+    "nameZh": "宫颈鳞状细胞癌",
+    "nameEn": "Cervical Squamous Cell Carcinoma",
+    "aliases": [
+      "宫颈癌",
+      "宫颈SCC"
+    ],
+    "organ": "gynecology",
+    "category": "malignant",
+    "epidemiology": "全球女性第四大常见癌症。几乎均与高危型HPV(16/18型为主)持续感染有关。筛查大幅降低了发达国家的发病率。",
+    "clinicalFeatures": "早期常无症状，进展后出现阴道不规则出血、接触性出血、白带增多。",
+    "grossPathology": "外生菜花型或内生浸润型，累及宫颈管。",
+    "microscopy": "宫颈鳞状细胞癌镜下多呈浸润性生长，肿瘤突破基底膜侵入间质，排列为不规则巢状、条索状或片状结构，部分可见舌状或指状突起伸入宫颈间质。肿瘤巢周边常见促纤维组织增生性间质反应，伴淋巴细胞、浆细胞浸润。根据分化程度分为角化型与非角化型：角化型鳞癌可见明显的角化珠形成、细胞间桥及单个细胞角化（细胞质嗜酸性、透明角质颗粒），细胞呈多边形，胞浆丰富嗜酸；非角化型鳞癌则由多边形或卵圆形细胞构成，胞浆较少，缺乏明显角化珠，但仍可见局灶细胞间桥或单个细胞角化。细胞特征方面，肿瘤细胞体积增大，呈多边形或梭形，胞界尚清，胞浆嗜酸或双嗜性。核特征显示细胞核增大、深染，核浆比增高，染色质粗颗粒状或呈泡状分布，核仁明显且常嗜酸性，核分裂象易见，并可见病理性核分裂。高分化者细胞异型性相对较轻，角化显著；低分化者细胞异型性明显，核多形性突出，角化减少或缺失。常见肿瘤坏死、脉管内癌栓及神经周围侵犯，有助于判断预后。背景常伴高级别鳞状上皮内病变（HSIL/CIN3），p16 弥漫强阳性支持 HPV 相关性病变。鉴别诊断方面：（1）与鳞状上皮内病变（HSIL）鉴别，关键在于是否突破基底膜出现间质浸润，伴促纤维性间质反应；（2）与宫颈腺鳞癌鉴别，后者除鳞状成分外同时存在明确腺样分化，黏液染色或 CK7 有助识别腺性成分。",
+    "keyFeatures": [
+      "HPV相关(16/18型为主)",
+      "p16弥漫块状阳性(HPV相关标记)",
+      "CIN I→CIN II→CIN III→浸润癌的进展",
+      "筛查(HPV+TCT)和疫苗可预防"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "p16",
+        "result": "弥漫块状阳性",
+        "note": "HPV致癌蛋白标记，E7灭活Rb导致p16过表达"
+      },
+      {
+        "marker": "p63",
+        "result": "阳性",
+        "note": "鳞状分化"
+      },
+      {
+        "marker": "CK5/6",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "弥漫阳性",
+        "note": "高增殖"
+      }
+    ],
+    "molecularFeatures": "HPV E6蛋白降解p53，E7蛋白灭活Rb。高危型HPV整合入宿主基因组。",
+    "differentialDiagnosis": [
+      "endometrial-adenocarcinoma"
+    ],
+    "grading": "高分化/中分化/低分化 或 CIN分级(癌前)",
+    "staging": "FIGO分期(2018修订版)",
+    "prognosis": "早期(I-IIA)5年生存率80-90%，晚期(III-IV)约30-50%。",
+    "treatment": "早期手术(根治性子宫切除)±放化疗。局部晚期同步放化疗(顺冒增敏)。复发/转移可用pembrolizumab+化疗+贝伐珠单抗。",
+    "images": [
+      {
+        "url": "/diagrams/keratin-pearl.svg",
+        "caption": "鳞状分化的角化珠是角化型宫颈鳞癌的形态学依据"
+      },
+      {
+        "url": "/diagrams/cervical-scc-gross.svg",
+        "caption": "大体：宫颈外生型肿物，表面糜烂溃疡，质硬，切面灰白伴坏死，浸润宫颈间质"
+      },
+      {
+        "url": "/diagrams/cervical-scc-low-power.svg",
+        "caption": "低倍（HE）：鳞状上皮全层异型增生并突破基底膜，癌巢不规则浸润宫颈间质，伴促纤维增生反应"
+      },
+      {
+        "url": "/diagrams/cervical-scc-high-power.svg",
+        "caption": "高倍（HE）：癌细胞多边形，胞质嗜酸，可见角化珠及细胞间桥，核分裂象活跃，提示角化型鳞状细胞癌"
+      },
+      {
+        "url": "/diagrams/cervical-scc-p16-ihc.svg",
+        "caption": "IHC（p16）：肿瘤细胞核浆弥漫强阳性（block-positive），提示高危型 HPV 相关鳞状细胞癌"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "[国内指南] CSCO 宫颈癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 宫颈癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中国抗癌协会 宫颈癌整合诊治指南（2022） (中国抗癌协会, 2022)",
+      "[国内共识] 中国子宫颈癌筛查指南（一） (中华医学会妇产科学分会感染性疾病协作组, 2023)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）宫颈癌诊疗指南（2023版） (中国临床肿瘤学会, 2023)"
+    ]
+  },
+  {
+    "id": "endometrial-adenocarcinoma",
+    "nameZh": "子宫内膜腺癌",
+    "nameEn": "Endometrial Adenocarcinoma",
+    "aliases": [
+      "子宫体癌",
+      "子宫内膜癌"
+    ],
+    "organ": "gynecology",
+    "category": "malignant",
+    "epidemiology": "最常见的女性生殖系统恶性肿瘤（发达国家），全球年新发约42万例。好发于55-65岁绝经后女性。危险因素包括肥胖（BMI>30风险增加3倍）、糖尿病、长期无对抗雌激素暴露、他莫昔芬使用及Lynch综合征（约3-5%）。发病率在发达国家呈上升趋势。",
+    "clinicalFeatures": "绝经后阴道出血是最常见症状。绝经前女性可有月经异常。",
+    "grossPathology": "宫腔内息肉样或弥漫增厚的肿物，可浸润肌层。",
+    "microscopy": "子宫内膜样腺癌（endometrioid adenocarcinoma）为子宫内膜腺癌最常见的组织学类型。低倍镜下，肿瘤由密集排列的腺体构成，腺体形态呈管状、筛状或绒毛状腺管状，腺腔背靠背、共壁或融合成复杂分支结构，间质稀少甚至消失，此即'融合性腺体'或'筛状结构'，是区分非典型增生与高分化癌的关键线索。肿瘤常伴鳞状化生（桑葚样小体，morular metaplasia）、分泌性、黏液性或纤毛细胞分化。高倍镜下，肿瘤细胞呈柱状或立方形，胞浆中等量、嗜酸性或双嗜性；细胞核呈卵圆形，复层或假复层排列，极性不同程度紊乱。核特征随分级而变：FIGO 1 级核小、染色质细颗粒状、核仁不明显；2 级核增大、染色质粗糙、可见小核仁；3 级核明显异型、核大深染或呈空泡状，染色质块状聚集，核仁粗大嗜酸，核分裂象增多并可见病理性核分裂。FIGO 分级基于实性非鳞状生长比例（≤5% 为 1 级、6–50% 为 2 级、>50% 为 3 级），并结合核级别进行上调。肌层浸润区肿瘤腺体不规则穿插于平滑肌束间，常伴促结缔组织增生性间质反应、周围淋巴细胞浸润及腺体周围透明样变；MELF 型浸润（微囊性、伸长和碎裂腺体）提示脉管侵犯风险增高。鉴别诊断：①子宫内膜非典型增生/上皮内瘤变（EIN）——腺体拥挤但无融合、无间质消失、无促结缔组织增生反应；②浆液性癌——明显核多形性、'鞋钉样'细胞、裂隙样腺腔及弥漫 p53 异常表达、p16 弥漫阳性、ER/PR 常阴性，而子宫内膜样癌 p53 多为野生型、ER/PR 阳性、PTEN/MMR 常有丢失。",
+    "keyFeatures": [
+      "子宫内膜样(I型，雌激素依赖，预后好) vs 浆液性(II型，TP53突变，预后差)",
+      "分子分型(TCGA)：POLE超突变/MSI/低拷贝数/高拷贝数",
+      "MMR/MSI检测筛查Lynch综合征",
+      "ER/PR表达与预后和内分泌治疗相关"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "ER",
+        "result": "子宫内膜样型阳性",
+        "note": "I型常阳性"
+      },
+      {
+        "marker": "PR",
+        "result": "子宫内膜样型阳性",
+        "note": ""
+      },
+      {
+        "marker": "p53",
+        "result": "子宫内膜样型野生型",
+        "note": "浆液性癌突变型(弥漫强阳或完全缺失)"
+      },
+      {
+        "marker": "Vimentin",
+        "result": "阳性",
+        "note": "子宫内膜标记"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "苗勒管源标记"
+      }
+    ],
+    "molecularFeatures": "TCGA分子分型：1) POLE超突变型(预后最好)；2) MSI-H/dMMR型；3) 无特异分子特征型(NSMP)；4) p53异常型(预后最差)。",
+    "differentialDiagnosis": [
+      "cervical-scc",
+      "high-grade-serous-ovarian-carcinoma"
+    ],
+    "grading": "FIGO分级(1-3级，基于实性成分比例)",
+    "staging": "FIGO分期",
+    "prognosis": "I期5年生存率>90%。POLE超突变型预后极好，p53异常型预后差。",
+    "treatment": "手术(全子宫切除+双侧附件切除±淋巴结评估)。高危因素辅助放疗±化疗。晚期/复发可用仑伐替尼+pembrolizumab(特别是dMMR者)。",
+    "images": [
+      {
+        "url": "/diagrams/endometrioid-carcinoma-low-power.svg",
+        "caption": "低倍（HE）：子宫内膜样腺癌，可见背靠背、融合性腺体呈筛状及迷宫样结构，间质消失，背景见残留子宫内膜。"
+      },
+      {
+        "url": "/diagrams/endometrioid-carcinoma-high-power.svg",
+        "caption": "高倍（HE）：腺体由假复层柱状上皮构成，核呈卵圆形、轻-中度异型，核仁可见，可见核分裂象；部分区域可见鳞状分化（桑椹样化生）。"
+      },
+      {
+        "url": "/diagrams/endometrioid-myometrial-invasion.svg",
+        "caption": "低倍（HE）：肌层浸润示意，肿瘤性腺体突破内膜-肌层交界，呈不规则浸润性生长伴促纤维结缔组织反应，用于 FIGO 分期评估。"
+      },
+      {
+        "url": "/diagrams/endometrioid-ihc-panel.svg",
+        "caption": "IHC 组合示意：肿瘤细胞 ER/PR 核阳性、PAX8 核阳性、Vimentin 胞浆阳性、CK7 胞浆阳性；错配修复蛋白（MLH1/PMS2/MSH2/MSH6）用于 Lynch 综合征筛查及分子分型。"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "[国内指南] CSCO 子宫内膜癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 子宫内膜癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中国子宫内膜癌诊断与治疗指南（2022 年版） (中华医学会妇科肿瘤学分会, 2022)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）子宫内膜癌诊疗指南（2023版） (中国临床肿瘤学会, 2023)",
+      "[国内共识] 子宫内膜癌分子检测中国专家共识 (中华医学会病理学分会, 2021)"
+    ]
+  },
+  {
+    "id": "high-grade-serous-ovarian-carcinoma",
+    "nameZh": "卵巢高级别浆液性癌",
+    "nameEn": "High-Grade Serous Ovarian Carcinoma",
+    "aliases": [
+      "HGSOC",
+      "卵巢浆液性癌"
+    ],
+    "organ": "gynecology",
+    "category": "malignant",
+    "epidemiology": "最常见且致死率最高的卵巢上皮性恶性肿瘤，约占卵巢癌的70%。好发于50-70岁绝经后女性，多数确诊时已为III-IV期（>75%）。BRCA1突变者终身风险40-60%，BRCA2突变者10-30%。全球年新发约31万例。",
+    "clinicalFeatures": "起病隐匿，多数确诊时已为III-IV期（>75%）。常见症状包括腹胀、腹水、盆腔/腹部包块、腹痛、早饱、尿频。CA-125显著升高（>90%病例），HE4也可升高。",
+    "grossPathology": "双侧卵巢和输卵管累及为主，常伴广泛腹膜和大网膜种植（\"饼状\"大网膜），腹水量多。卵巢肿块呈实性-囊性，切面灰白灰黄色，伴显著出血和坏死。近年研究表明许多HGSOC起源于输卵管伞端的浆液性输卵管上皮内癌（STIC）。",
+    "microscopy": "卵巢高级别浆液性癌（HGSC）镜下呈现复杂多样的组织结构，最常见为乳头状、腺样、筛状、实性及裂隙样（slit-like）生长方式，常多种结构混合存在。乳头结构分支复杂，常见微乳头、搭桥及细胞簇脱落；实性区域肿瘤细胞排列密集，可见地图状坏死。肿瘤细胞通常为柱状或多边形，胞浆中等、嗜双色或嗜酸性，胞界欠清。细胞排列极性紊乱，层次增多，形成簇状突入腔内。核特征是诊断的核心线索：核显著增大，核大小差异常>3倍，呈现明显的多形性与异型性；核染色质粗颗粒状、分布不均，核膜厚而不规则，核仁大而嗜酸（常为樱桃红核仁）；核分裂象活跃，常>12个/10HPF，并可见病理性核分裂象。常见砂粒体沉积，但并非特异。间质可见反应性纤维增生、淋巴细胞浸润及坏死碎片，输卵管伞端常见浆液性输卵管上皮内癌（STIC）病灶，提示起源。免疫表型上肿瘤细胞弥漫强表达PAX8、WT1、ER，p53呈”异常表达模式”（弥漫强阳性或完全缺失，对应TP53错义或截断突变），p16弥漫块状阳性，Ki-67增殖指数常>50%。鉴别要点：（1）卵巢低级别浆液性癌——核一致、核分裂象<12个/10HPF、p53野生型、BRAF/KRAS突变；（2）子宫内膜样癌——腺样或绒毛腺样结构、常伴鳞化及分泌、ER/PAX8阳性但WT1多阴性、β-catenin核阳性有助区分；（3）透明细胞癌——鞋钉样细胞、透明或嗜酸胞浆、Napsin A及HNF1β阳性、WT1阴性、p53野生型，可资鉴别。",
+    "keyFeatures": [
+      "高级别核异型性+乳头状/实性结构",
+      "TP53突变(几乎100%)",
+      "BRCA1/2突变(约25%)指导PARP抑制剂治疗",
+      "WT1+/PAX8+/p53突变型",
+      "可能起源于输卵管伞端(STIC)",
+      "TP53几乎100%突变（弥漫强阳或完全缺失）",
+      "WT1+/PAX8+确认浆液性和苗勒管来源",
+      "BRCA1/2突变约25%，指导PARP抑制剂治疗",
+      "可能起源于输卵管伞端（STIC）",
+      "砂粒体和高级别核异型是形态学线索"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "WT1",
+        "result": "弥漫阳性",
+        "note": "浆液性分化标记"
+      },
+      {
+        "marker": "PAX8",
+        "result": "弥漫阳性",
+        "note": "苗勒管来源标记"
+      },
+      {
+        "marker": "p53",
+        "result": "异常模式（弥漫强阳或完全缺失）",
+        "note": "几乎100%TP53突变"
+      },
+      {
+        "marker": "ER",
+        "result": "阳性（约80%）",
+        "note": "浆液性癌常表达"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "高(>50%)",
+        "note": ""
+      },
+      {
+        "marker": "CK7",
+        "result": "弥漫阳性",
+        "note": "上皮标记"
+      },
+      {
+        "marker": "CA-125",
+        "result": "阳性",
+        "note": "血清学和组织学均阳性"
+      }
+    ],
+    "molecularFeatures": "TP53突变几乎100%。BRCA1/2胚系突变约15-20%，体细胞突变约5-7%。同源重组修复缺陷（HRD）约50%（包括BRCA和非BRCA HRD基因如RAD51C、PALB2等）。基因组高度不稳定，拷贝数变异显著。NF1、RB1、CDK12改变也可见。",
+    "differentialDiagnosis": [
+      "endometrial-adenocarcinoma",
+      "clear-cell-ovarian-carcinoma",
+      "high-grade-serous-ovarian-carcinoma"
+    ],
+    "grading": "高级别（单一级别，不分级）",
+    "staging": "FIGO分期（2014修订版）",
+    "prognosis": "总体5年生存率约40-50%。III期约40%，IV期约20%。BRCA突变者对铂类化疗反应好且对PARP抑制剂有效，预后相对较好。完全减灭手术（R0）是最重要的预后因素。",
+    "treatment": "初始治疗为手术减灭（目标R0切除）+紫杉醇/卡铂化疗6周期。BRCA突变/HRD阳性者维持治疗用PARP抑制剂（奥拉帕利、尼拉帕利、鲁卡帕利）。贝伐珠单抗可用于一线和维持治疗。复发性铂敏感者可再次铂类化疗+PARP抑制剂维持。",
+    "images": [
+      {
+        "url": "/diagrams/papillary.svg",
+        "caption": "乳头状结构是高级别浆液性癌的典型生长模式"
+      },
+      {
+        "url": "/diagrams/psammoma-body.svg",
+        "caption": "砂粒体：同心圆状钙化，HGSOC 中常见"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "[国内指南] CSCO 卵巢恶性肿瘤诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 卵巢癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中国抗癌协会卵巢癌诊治指南（2022 版） (CACA, 2022)",
+      "[国内共识] 卵巢上皮性肿瘤病理诊断规范 (中华医学会病理学分会, 2021)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）卵巢恶性肿瘤诊疗指南 2023 (中国临床肿瘤学会, 2023)"
+    ]
+  },
+  {
+    "id": "cin",
+    "nameZh": "宫颈上皮内瘤变",
+    "nameEn": "Cervical Intraepithelial Neoplasia",
+    "aliases": [
+      "CIN",
+      "SIL",
+      "HSIL",
+      "LSIL"
+    ],
+    "organ": "gynecology",
+    "category": "precancerous",
+    "epidemiology": "HPV相关宫颈癌的癌前病变，全球通过宫颈筛查（HPV+细胞学）广泛检出。好发于25-35岁性活跃女性，高危型HPV（16、18、31、33型等）持续感染是主要病因。HPV疫苗接种可显著降低发病率。",
+    "clinicalFeatures": "多无症状，通过 TCT + HPV 筛查及阴道镜活检发现；醋白试验 + 碘不着色是阴道镜可疑区域。",
+    "grossPathology": "肉眼无明显肿块，为黏膜/上皮内病变。",
+    "microscopy": "宫颈上皮内瘤变（CIN）的镜下改变以鳞状上皮异型增生及其累及层次为核心评估指标，依据 WHO 第 5 版女性生殖系统肿瘤分类采用二级分类法（LSIL/HSIL），并与传统 CIN1/2/3 对应。低级别鳞状上皮内病变（LSIL，对应 CIN1）：异型细胞局限于上皮下 1/3 层；基底及副基底层细胞轻度拥挤，核增大（较中间层细胞核增大 3 倍以上）、轻度深染、核膜轻微不规则；上皮中上层可见典型挖空细胞（koilocyte），表现为核周空晕、核皱缩呈葡萄干样、双核或多核，反映 HPV 活动性感染。高级别鳞状上皮内病变（HSIL）：CIN2 异型细胞累及上皮下 1/3–2/3，CIN3 累及 2/3 以上至全层。镜下见细胞极性紊乱，核质比显著增高，核大小形状不一、深染、染色质粗颗粒状，核仁多不明显；核分裂象增多并上移至上皮中上层，可见病理性核分裂（三极、环形）。上皮表面成熟分化丧失，CIN3 呈单一未分化基底样细胞全层取代，但基底膜完整、无间质浸润。病变常累及宫颈腺体（腺体受累），需与浸润癌鉴别——腺体轮廓光滑、基底膜连续、无间质促纤维结缔组织反应即支持原位病变。免疫组化 p16 呈弥漫强阳性（block-type 核浆着色）提示高危 HPV 转化性感染，Ki-67 阳性指数上移至上皮中上层，有助于 HSIL 诊断。鉴别要点：①不成熟鳞状化生——细胞形态温和、核质比接近正常、p16 阴性或斑片阳性、Ki-67 局限于基底层；②萎缩性改变（绝经后）——上皮变薄但无真正异型，核分裂罕见，p16 阴性；③早期浸润癌——出现间质反应、不规则出芽小巢及副基底样细胞极性完全丧失，需深切排除。",
+    "keyFeatures": [
+      "LAST 项目将 CIN1 归为 LSIL，CIN2/3 归为 HSIL",
+      "高危 HPV 持续感染是原因",
+      "p16 弥漫块状 + Ki-67 中上层增殖提示 HSIL",
+      "LEEP / 锥切对 HSIL 是治疗兼诊断",
+      "HPV 疫苗可一级预防"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "p16",
+        "result": "弥漫块状阳性（HSIL）",
+        "note": "HPV E7 → Rb 失活 → p16 代偿升高"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "中上层广泛阳性（HSIL）",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "高危型 HPV（16、18、31、33 等）E6/E7 癌基因蛋白分别降解 p53、灭活 Rb。",
+    "differentialDiagnosis": [
+      "cervical-scc"
+    ],
+    "grading": "LSIL vs HSIL（CIN1/2/3）",
+    "staging": "不适用",
+    "prognosis": "LSIL 大多可自行消退；HSIL 未治疗 10 年进展为浸润癌约 30%。",
+    "treatment": "LSIL 多观察随访；HSIL 需 LEEP 或冷刀锥切。",
+    "images": [
+      {
+        "url": "/diagrams/cin-low-power.svg",
+        "caption": "低倍（HE）：宫颈鳞状上皮全层结构示意，显示异型细胞由基底层向表层累及的不同层次，用于区分 LSIL（CIN1，累及下 1/3）与 HSIL（CIN2/3，累及中上 2/3 或全层）"
+      },
+      {
+        "url": "/diagrams/cin-high-power.svg",
+        "caption": "高倍（HE）：挖空细胞（koilocyte）特征示意，胞核增大、深染、核周空晕伴不规则核膜，提示 HPV 细胞病变效应，常见于 LSIL"
+      },
+      {
+        "url": "/diagrams/cin-hsil-morphology.svg",
+        "caption": "高倍（HE）：HSIL（CIN3）示意，上皮全层细胞极性消失、核质比升高、核分裂象增多并可见于上 1/3 层，基底膜完整无间质浸润"
+      },
+      {
+        "url": "/diagrams/cin-p16-ihc.svg",
+        "caption": "IHC（p16）：HSIL 呈弥漫连续块状强阳性（胞核+胞浆），累及上皮下 1/3 以上，提示高危型 HPV 整合；LSIL 多为斑驳阳性或阴性"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "LAST Project Recommendations",
+      "[国内指南] 中国子宫颈癌筛查及异常管理相关问题专家共识（一） (中国优生科学协会阴道镜和宫颈病理学分会, 2017)",
+      "[国内指南] 中国子宫颈癌筛查及异常管理相关问题专家共识（二） (中国优生科学协会阴道镜和宫颈病理学分会, 2017)",
+      "[国内指南] 子宫颈癌综合防控指南（第二版） (国家卫健委, 2023)",
+      "[国内共识] 子宫颈癌及癌前病变规范化诊疗指南（试行） (国家卫生健康委员会, 2023)",
+      "[国内共识] 子宫颈上皮内病变及早期浸润癌病理诊断规范化专家共识 (中华医学会病理学分会, 2022)"
+    ]
+  },
+  {
+    "id": "endometrial-hyperplasia",
+    "nameZh": "子宫内膜增生",
+    "nameEn": "Endometrial Hyperplasia",
+    "aliases": [
+      "EH",
+      "EIN"
+    ],
+    "organ": "gynecology",
+    "category": "precancerous",
+    "epidemiology": "雌激素无对抗刺激所致的子宫内膜增殖性病变，常见于围绝经期（40-55岁）。高危因素包括肥胖、多囊卵巢综合征（PCOS）、单用雌激素替代治疗、无排卵性月经及他莫昔芬使用。非典型增生（EIN）约30-40%进展为子宫内膜样癌。",
+    "clinicalFeatures": "异常子宫出血（月经过多、绝经后出血）为主要表现；超声示内膜增厚。",
+    "grossPathology": "子宫内膜弥漫或局灶增厚。",
+    "microscopy": "子宫内膜增生在低倍镜下以腺体结构异常增多、腺体与间质比例（G/S 比）失衡为核心特征。根据 WHO 女性生殖系统肿瘤分类第 5 版（2020），病变分为不伴非典型性的子宫内膜增生（EH without atypia，良性增生）与非典型增生/子宫内膜样上皮内瘤变（AH/EIN）两类。\n\n不伴非典型性的增生：腺体数量弥漫性增多，G/S 比轻度升高，但仍保留一定间质。腺体大小不一，形状多样，可见囊性扩张、出芽、分支及轻度不规则扩张，排列仍较松散。被覆上皮为假复层柱状上皮，细胞呈烟囱状或栅栏状排列，核呈卵圆形、长轴与基底膜垂直，染色质均匀细腻，核仁不明显，可见核分裂象但无病理性核分裂。间质由密集的梭形细胞组成，血管可见扩张。\n\n非典型增生/EIN：表现为病灶性腺体拥挤，G/S 比显著升高（腺体面积大于间质），腺体大小与形态差异更大，可见背靠背、共壁、乳头状内折及筛状结构。关键诊断要点在于细胞学非典型性——上皮细胞失去假复层的规整排列，极性紊乱，细胞核变圆、增大，核质比升高，染色质呈空泡状或粗颗粒状，核仁明显嗜酸性，常可见病理性核分裂。细胞胞浆常见嗜酸性化生、鳞状桑葚样化生或纤毛化生，此类化生本身不等于非典型性，但应警惕伴发病灶。\n\n分级线索：EIN 诊断需同时满足①病灶体积 >1 mm；②病变区 G/S>55%；③细胞学形态异于周围背景腺体；④排除化生与人工假象。\n\n鉴别要点：①与高分化子宫内膜样腺癌鉴别——后者出现间质浸润征象（共壁融合性腺体、筛状迷宫样结构、促纤维结缔组织反应或坏死碎屑），而 AH/EIN 间质保留；②与分泌期或紊乱性增生期内膜鉴别——后者腺体形态虽不规则但缺乏细胞学非典型性，且保持正常 G/S 比。免疫组化 PTEN、PAX2 表达缺失及 β-catenin 核表达有助于支持 EIN 诊断。",
+    "keyFeatures": [
+      "以&quot;非典型&quot;与&quot;无非典型&quot;为核心分类",
+      "非典型增生（EIN）恶变率 30–40%",
+      "PTEN、PAX2 蛋白局灶缺失帮助识别 EIN",
+      "雌激素孤立暴露是主要危险因素",
+      "绝经后出血需活检排查"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "PTEN",
+        "result": "EIN 灶内缺失",
+        "note": "克隆性改变"
+      },
+      {
+        "marker": "PAX2",
+        "result": "EIN 灶内缺失",
+        "note": ""
+      },
+      {
+        "marker": "ER",
+        "result": "阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "PTEN、PIK3CA、KRAS 突变常见，与子宫内膜样癌分子谱一致。",
+    "differentialDiagnosis": [
+      "endometrial-adenocarcinoma"
+    ],
+    "grading": "无非典型增生 / 非典型增生（EIN）",
+    "staging": "不适用",
+    "prognosis": "无非典型者多可药物逆转；非典型增生约 30–40% 同时或后续发生子宫内膜样癌。",
+    "treatment": "无非典型者孕激素治疗（LNG-IUS / 口服）；有生育要求的非典型者高剂量孕激素 + 严密随访；无生育要求者全子宫切除。",
+    "images": [
+      {
+        "url": "/diagrams/endometrial-hyperplasia-low-power.svg",
+        "caption": "低倍（HE）：子宫内膜腺体数量增多、腺体/间质比例增高（>1:1），腺体形状不规则但间质仍存，符合子宫内膜增生不伴非典型性（EH）模式图"
+      },
+      {
+        "url": "/diagrams/endometrial-hyperplasia-crowded-glands.svg",
+        "caption": "中倍（HE）：腺体拥挤、背靠背排列伴轻度管腔扩张及出芽、分支，间质减少但未见融合性结构，提示腺体拥挤型增生"
+      },
+      {
+        "url": "/diagrams/endometrial-atypical-hyperplasia-hp.svg",
+        "caption": "高倍（HE）：子宫内膜非典型增生/EIN，腺上皮细胞层次增多、极性紊乱，核增大呈圆形、核仁明显、染色质空泡状，与周围背景腺体对比明显"
+      },
+      {
+        "url": "/diagrams/endometrial-hyperplasia-ihc-pten.svg",
+        "caption": "IHC（PAX2/PTEN）：病灶区腺体 PAX2 或 PTEN 表达缺失，背景正常腺体表达保留，辅助识别 EIN/非典型增生克隆性病灶"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "[国内指南] 中国子宫内膜增生管理指南（2022） (中华医学会妇产科学分会绝经学组, 2022)",
+      "[国内共识] 子宫内膜病变病理诊断规范化的专家共识 (中华医学会病理学分会妇产疾病学组, 2017)"
+    ]
+  },
+  {
+    "id": "uterine-leiomyoma",
+    "nameZh": "子宫平滑肌瘤",
+    "nameEn": "Uterine Leiomyoma",
+    "aliases": [
+      "子宫肌瘤",
+      "fibroid"
+    ],
+    "organ": "gynecology",
+    "category": "benign",
+    "epidemiology": "最常见的妇科良性肿瘤，育龄女性临床发病率约20-40%，尸检发现率可达70-80%。好发于30-50岁，非裔女性发病率更高且发病更早。雌激素和孕激素依赖性生长，绝经后常萎缩。",
+    "clinicalFeatures": "经量增多、盆腔压迫、不孕、自然流产；大部分无症状。",
+    "grossPathology": "圆形、有完整假包膜的实性肿物，切面灰白漩涡状。可分黏膜下、肌壁间和浆膜下。",
+    "microscopy": "子宫平滑肌瘤（Uterine Leiomyoma）镜下呈边界清楚但无真性包膜的结节状病变，周围可见受压的子宫肌层纤维。低倍镜下肿瘤由梭形平滑肌细胞构成，细胞排列成相互交织的束状（fascicular）或漩涡状（whorled）结构，束间以不同比例的胶原纤维分隔，部分区域可见玻璃样变性或钙化灶。中倍镜下可见肿瘤细胞长轴彼此垂直交错，呈典型的”编织状”或”鱼骨样”排列。高倍镜下细胞呈长梭形，胞浆丰富、嗜酸性、呈均质细颗粒状，胞界不清；细胞核位于中央，呈长雪茄形（cigar-shaped）或钝端杆状（blunt-ended），染色质均匀细腻，核膜平滑，核仁不明显或小而不清，核极性保持良好。核分裂象通常罕见（普通型＜5/10 HPF，且无病理性核分裂），无肿瘤性凝固性坏死，无明显细胞异型性。血管壁多呈中等厚度的肌性动脉，部分病例可见扩张薄壁血管及小灶性出血。继发性改变常见，包括玻璃样变性、黏液样变性、水肿、脂肪化生、红色变性（妊娠期常见）、钙化及囊性变。特殊亚型如富于细胞性平滑肌瘤（cellular leiomyoma）细胞密度显著增高而无异型，奇异核平滑肌瘤（bizarre/symplastic leiomyoma）可见散在多核巨细胞及深染奇异核但无核分裂活性，均需与平滑肌肉瘤鉴别。\n\n鉴别要点：① 平滑肌肉瘤（Leiomyosarcoma）——具备弥漫中重度细胞异型性、核分裂象≥10/10 HPF、以及肿瘤性凝固性坏死（Stanford 三联征中任具备两项），边界常呈浸润性；② 恶性潜能未定的平滑肌肿瘤（STUMP）——特征介于二者之间，不足以诊断肉瘤但超出普通平滑肌瘤范畴；③ 子宫内膜间质肿瘤——由小圆形至短梭形细胞构成，血管呈特征性螺旋小动脉样，CD10 弥漫阳性而 desmin/h-caldesmon 常阴性，可资区分。",
+    "keyFeatures": [
+      "交织束状成熟平滑肌",
+      "核分裂 &lt; 5/10 HPF、无异型、无坏死",
+      "特殊亚型：细胞性、非典型、奇异型需注意",
+      "Desmin / SMA / Caldesmon 阳性",
+      "与平滑肌肉瘤的鉴别看坏死 + 核异型 + 核分裂"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Desmin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "SMA",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Caldesmon",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "ER",
+        "result": "阳性",
+        "note": "雌激素依赖"
+      }
+    ],
+    "molecularFeatures": "MED12 突变约 70%，其他可见 HMGA2 重排、FH 胚系缺失（遗传性平滑肌瘤病伴肾细胞癌，HLRCC）。",
+    "differentialDiagnosis": [
+      "endometrial-adenocarcinoma"
+    ],
+    "grading": "不分级",
+    "staging": "不适用",
+    "prognosis": "良性，不恶变",
+    "treatment": "无症状者观察；有症状者可用 GnRH 激动剂、UAE 栓塞、肌瘤剔除或子宫切除。",
+    "images": [
+      {
+        "url": "/diagrams/uterine-leiomyoma-gross.svg",
+        "caption": "大体：子宫肌壁间境界清楚的圆形结节，切面灰白、漩涡状编织结构，质韧，无出血坏死"
+      },
+      {
+        "url": "/diagrams/uterine-leiomyoma-low-power-he.svg",
+        "caption": "低倍（HE）：梭形平滑肌细胞束呈交织状、漩涡状排列，与周围肌层分界清楚，无浸润性边界"
+      },
+      {
+        "url": "/diagrams/uterine-leiomyoma-high-power-he.svg",
+        "caption": "高倍（HE）：瘤细胞呈梭形，胞浆嗜酸性纤维状，核呈雪茄样、两端钝圆，核分裂象罕见（<5/10HPF），无病理性核分裂及肿瘤性坏死"
+      },
+      {
+        "url": "/diagrams/uterine-leiomyoma-ihc-sma-desmin.svg",
+        "caption": "IHC（SMA/Desmin）：瘤细胞胞浆弥漫强阳性，支持平滑肌分化；Ki-67 增殖指数低（通常<5%）"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "[国内指南] 子宫肌瘤的诊治中国专家共识 (中华医学会妇产科学分会, 2017)"
+    ]
+  },
+  {
+    "id": "clear-cell-ovarian-carcinoma",
+    "nameZh": "卵巢透明细胞癌",
+    "nameEn": "Clear Cell Ovarian Carcinoma",
+    "aliases": [
+      "卵巢CCC",
+      "OCCC"
+    ],
+    "organ": "gynecology",
+    "category": "malignant",
+    "epidemiology": "占卵巢上皮性癌约5-10%（亚洲地区高达25%），与子宫内膜异位症密切相关（约50-70%伴有），好发于围绝经期女性，是子宫内膜异位症相关卵巢癌中最常见的类型。",
+    "clinicalFeatures": "盆腔包块、腹胀，常合并子宫内膜异位症病史，可出现高钙血症和血栓栓塞事件（副肿瘤综合征），CA125升高程度不如浆液性癌。",
+    "grossPathology": "单侧为主的囊实性肿块，囊壁可见实性结节突入囊腔，囊液可为巧克力色（子宫内膜异位症背景），切面灰黄至灰白色。",
+    "microscopy": "镜下形态学表现具有特征性组合，呈现多样化的组织结构模式，通常以管囊状、乳头状及实性三种结构混合存在。管囊状结构最为常见，由大小不等的腺管和囊腔构成，管腔内常可见嗜酸性分泌物或致密的嗜伊红胶样物质；乳头状结构的轴心常发生玻璃样变性，形成具有诊断价值的玻璃样变乳头轴心（hyalinized papillary cores），轴心内可见嗜酸性无定形基质沉积；实性结构区则由成片排列的多边形肿瘤细胞构成。肿瘤细胞具有丰富透明或嗜酸性胞浆，胞浆透明系因富含糖原所致，PAS 染色阳性并可被淀粉酶消化。特征性的”鞋钉样”细胞（hobnail cells）突入腺腔或囊腔，其核位于细胞顶端，胞浆稀少，为本病种重要形态学线索。细胞核呈圆形至不规则形，大小不一，核膜不规则，染色质呈粗颗粒状分布，核仁明显且嗜酸性，可见显著的核异型性。核分裂象数量一般较少（通常 <5/10 HPF），这与其高核级看似矛盾，属本病特征之一。本肿瘤按 FIGO 系统仅分为 1 级（因所有病例均视为高级别）。间质常伴玻璃样变，偶见砂粒体。合并子宫内膜异位症背景或非典型子宫内膜样囊肿是重要病因学线索。鉴别诊断要点：（1）与卵黄囊瘤鉴别——后者好发于年轻患者，AFP 阳性、SALL4 阳性、Napsin A 阴性，可见 Schiller-Duval 小体；（2）与高级别浆液性癌鉴别——后者呈弥漫 WT1 阳性、p53 异常表达（错义突变或完全缺失）、ER 阳性，而透明细胞癌典型免疫表型为 Napsin A(+)、HNF-1β(+)、WT1(-)、ER/PR(-)、p53 野生型。",
+    "keyFeatures": [
+      "透明细胞+鞋钉样细胞是形态学标志",
+      "HNF1β弥漫阳性是最敏感标记",
+      "与子宫内膜异位症密切相关",
+      "对铂类化疗相对耐药",
+      "ARID1A突变常见（约50%）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "HNF1β",
+        "result": "弥漫阳性",
+        "note": "最敏感的透明细胞癌标记"
+      },
+      {
+        "marker": "Napsin A",
+        "result": "阳性",
+        "note": "天冬氨酸蛋白酶，透明细胞癌特征性表达"
+      },
+      {
+        "marker": "ER",
+        "result": "阴性",
+        "note": "区别于子宫内膜样和浆液性癌"
+      },
+      {
+        "marker": "PR",
+        "result": "阴性",
+        "note": ""
+      },
+      {
+        "marker": "WT1",
+        "result": "阴性",
+        "note": "区别于高级别浆液性癌"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "苗勒管来源标记保留"
+      },
+      {
+        "marker": "ARID1A",
+        "result": "表达丢失（约50%）",
+        "note": "BAF染色质重塑复合物亚基缺失"
+      }
+    ],
+    "molecularFeatures": "ARID1A突变约50%，PIK3CA突变约40%，TERT启动子突变，TP53突变少见（区别于高级别浆液性癌）。PI3K/AKT/mTOR通路激活。",
+    "differentialDiagnosis": [
+      "high-grade-serous-ovarian-carcinoma",
+      "endometrial-adenocarcinoma",
+      "clear-cell-endometrial-carcinoma"
+    ],
+    "grading": "单一高级别（不分级）",
+    "staging": "FIGO分期",
+    "prognosis": "I期预后与浆液性癌相当（5年生存率约80%），但晚期预后明显差于浆液性癌（对铂类化疗反应差），总体5年生存率约55-60%。",
+    "treatment": "手术减灭+化疗（紫杉醇/卡铂），对铂类耐药率高。免疫检查点抑制剂和靶向PI3K/mTOR通路的药物正在临床试验中。合并子宫内膜异位症者需完整切除。",
+    "images": [
+      {
+        "url": "/diagrams/clear-cell-ovarian-gross.svg",
+        "caption": "大体：单侧卵巢囊实性肿物，囊腔内见壁结节样实性区，切面灰白至黄褐色，常伴子宫内膜异位囊肿背景"
+      },
+      {
+        "url": "/diagrams/clear-cell-ovarian-low-power-he.svg",
+        "caption": "低倍（HE）：肿瘤呈管囊状、乳头状及实性巢状混合结构，乳头轴心玻璃样变，间质可见嗜酸性玻璃样小球"
+      },
+      {
+        "url": "/diagrams/clear-cell-ovarian-high-power-he.svg",
+        "caption": "高倍（HE）：肿瘤细胞胞浆透明富含糖原，核偏位呈鞋钉样（hobnail）突向管腔，核仁明显，核分裂象少"
+      },
+      {
+        "url": "/diagrams/clear-cell-ovarian-ihc-napsin-a.svg",
+        "caption": "IHC（Napsin A）：肿瘤细胞胞浆颗粒状强阳性，联合 HNF1β 核阳性、WT1 阴性、ER/PR 阴性支持透明细胞癌诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "[国内指南] CSCO 卵巢恶性肿瘤诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国抗癌协会卵巢癌诊治指南（2022年版） (中国抗癌协会, 2022)",
+      "[国内共识] 卵巢恶性肿瘤诊疗指南（2023 版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国卵巢上皮性癌维持治疗专家共识（2022 年版） (中国抗癌协会妇科肿瘤专业委员会, 2022)"
+    ]
+  },
+  {
+    "id": "clear-cell-endometrial-carcinoma",
+    "nameZh": "子宫内膜透明细胞癌",
+    "nameEn": "Clear Cell Endometrial Carcinoma",
+    "aliases": [
+      "子宫内膜CCC"
+    ],
+    "organ": "gynecology",
+    "category": "malignant",
+    "epidemiology": "占子宫内膜癌约1-6%，好发于老年绝经后女性（中位年龄约67岁），属于II型子宫内膜癌（非雌激素依赖型），与萎缩性子宫内膜背景相关，不伴内膜增生前驱病变。",
+    "clinicalFeatures": "绝经后阴道出血是最常见症状，诊断时分期可较高，可伴腹水和子宫外播散。",
+    "grossPathology": "宫腔内息肉样或弥漫浸润性肿块，切面灰白至灰黄色，质脆，常伴出血坏死。",
+    "microscopy": "肿瘤呈多样化生长方式，常见实性巢状、乳头状、管状-囊状及混合性结构，多种结构常在同一肿瘤内并存。乳头轴心常为透明变性的嗜酸性基底膜样物质，呈玻璃样小球或条索状沉积，为本病特征性表现之一。管状-囊状结构内衬扁平至立方上皮，腔内可见嗜酸性分泌物，部分可见钙化小体（砂粒体）。肿瘤细胞呈多边形或靴钉样（hobnail）形态，靴钉细胞核突向腔面、胞浆窄缩于基底，是诊断的重要线索。胞浆丰富透明，富含糖原（PAS 阳性、淀粉酶消化后阴性），部分细胞胞浆呈嗜酸颗粒状，反映线粒体丰富。核特征为高级别：核中等至明显增大，核形不规则，染色质粗颗粒状或呈空泡状，核仁嗜酸性明显（相当于 FIGO 3 级核），核分裂象易见但通常不及浆液性癌密集，可见病理性核分裂及多核瘤巨细胞。间质常见显著玻璃样变及局灶性坏死，可见砂粒体。免疫表型：Napsin A、HNF-1β、AMACR 常阳性，ER/PR 多阴性或弱阳性，p53 多呈野生型模式（约 1/3 可呈突变型），p16 片状阳性，Ki-67 增殖指数中至高度，MMR 多保留表达。鉴别诊断：① 浆液性癌——结构更复杂的复层乳头，弥漫强 p53 突变型、WT-1 偶阳、Napsin A 阴性，缺乏靴钉细胞与玻璃样轴心；② 分泌型子宫内膜样癌——细胞核低级别、呈类似早分泌期形态，ER/PR 弥漫强阳，Napsin A/HNF-1β 阴性；③ Arias-Stella 反应——局限于增生腺体、核虽非典型但无浸润及核分裂活跃，临床与妊娠相关。",
+    "keyFeatures": [
+      "透明细胞+鞋钉样细胞+管囊状/乳头状结构",
+      "HNF1β和Napsin A阳性是诊断关键",
+      "属于II型子宫内膜癌（非雌激素依赖）",
+      "ER/PR阴性",
+      "p53多为野生型模式（区别于浆液性癌）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "HNF1β",
+        "result": "弥漫阳性",
+        "note": "透明细胞癌最敏感标记"
+      },
+      {
+        "marker": "Napsin A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "ER",
+        "result": "阴性",
+        "note": "非雌激素依赖型"
+      },
+      {
+        "marker": "PR",
+        "result": "阴性",
+        "note": ""
+      },
+      {
+        "marker": "p53",
+        "result": "多为野生型模式",
+        "note": "区别于浆液性癌的突变型模式"
+      },
+      {
+        "marker": "PAX8",
+        "result": "阳性",
+        "note": "苗勒管来源标记"
+      }
+    ],
+    "molecularFeatures": "ARID1A突变、PIK3CA突变、TERT启动子突变常见，TP53突变频率低于浆液性癌。TCGA分子分型中多归入NSMP或MSI亚型。",
+    "differentialDiagnosis": [
+      "endometrial-adenocarcinoma",
+      "clear-cell-ovarian-carcinoma",
+      "high-grade-serous-ovarian-carcinoma"
+    ],
+    "grading": "单一高级别（WHO不再分级）",
+    "staging": "FIGO分期",
+    "prognosis": "预后较子宫内膜样癌差，I期5年生存率约75-80%，晚期预后不良。",
+    "treatment": "手术（全子宫切除+双侧附件切除+全面分期手术）+辅助化疗（紫杉醇/卡铂）±放疗。晚期可考虑免疫治疗（尤其dMMR/MSI-H者）。",
+    "images": [
+      {
+        "url": "/diagrams/clear-cell-endometrial-low.svg",
+        "caption": "低倍（HE）：子宫内膜透明细胞癌呈乳头状、管囊状及实性混合性结构，肿瘤细胞胞质透明或嗜酸，间质玻璃样变性"
+      },
+      {
+        "url": "/diagrams/clear-cell-endometrial-hobnail.svg",
+        "caption": "高倍（HE）：特征性鞋钉样（hobnail）细胞突入腺腔，核大深染、核仁明显，核分级为 3 级"
+      },
+      {
+        "url": "/diagrams/clear-cell-endometrial-hyaline.svg",
+        "caption": "高倍（HE）：乳头轴心玻璃样变性小球（hyaline globules）伴胞质富含糖原的透明细胞，PAS 染色阳性、淀粉酶消化后消失"
+      },
+      {
+        "url": "/diagrams/clear-cell-endometrial-ihc.svg",
+        "caption": "IHC（Napsin A / HNF1β）：Napsin A 胞浆颗粒状阳性、HNF1β 核阳性，ER/PR 多为阴性或弱阳性，p53 呈野生型表达模式"
+      }
+    ],
+    "references": [
+      "WHO Classification of Female Genital Tumours, 5th Edition, 2020",
+      "[国内指南] CSCO 子宫内膜癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 子宫内膜癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内共识] 子宫内膜癌诊疗指南 2023 (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 子宫内膜癌分子检测中国专家共识（2021） (中华医学会病理学分会, 2021)"
+    ]
+  }
 ]

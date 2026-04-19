@@ -3441,8 +3441,13 @@
     "termEn": "Mohs Micrographic Surgery",
     "definition": "逐层切除皮肤肿瘤并即时进行全切缘冰冻检查的手术方式。确保完全切除同时最大限度保留正常组织。",
     "category": "解剖病理",
-    "relatedTerms": ["frozen-section", "surgical-margin"],
-    "synonyms": ["Mohs显微手术"]
+    "relatedTerms": [
+      "frozen-section",
+      "surgical-margin"
+    ],
+    "synonyms": [
+      "Mohs显微手术"
+    ]
   },
   {
     "id": "prostate-mapping",
@@ -3450,7 +3455,10 @@
     "termEn": "Prostate Mapping",
     "definition": "前列腺根治标本全部包埋切片的标准化方法。每个切面标注方位，完整评估肿瘤分布和切缘状态。",
     "category": "解剖病理",
-    "relatedTerms": ["total-sampling", "surgical-margin"],
+    "relatedTerms": [
+      "total-sampling",
+      "surgical-margin"
+    ],
     "synonyms": []
   },
   {
@@ -3459,7 +3467,11 @@
     "termEn": "Breast Specimen Handling",
     "definition": "乳腺手术标本的标准化处理流程。包括标本定向、涂墨、切面间隔切开、固定和系统取材。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "inking", "orientation"],
+    "relatedTerms": [
+      "grossing",
+      "inking",
+      "orientation"
+    ],
     "synonyms": []
   },
   {
@@ -3468,7 +3480,10 @@
     "termEn": "Gastrectomy Grossing",
     "definition": "胃手术标本的标准化处理。需沿大弯侧剪开，详细描述肿瘤大小、位置和浆膜面情况。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "lymph-node-dissection"],
+    "relatedTerms": [
+      "grossing",
+      "lymph-node-dissection"
+    ],
     "synonyms": []
   },
   {
@@ -3477,7 +3492,10 @@
     "termEn": "Colectomy Grossing",
     "definition": "结肠手术标本的标准化处理。需纵行剪开对侧肠壁，测量肿瘤距切缘距离，充分检索淋巴结。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "lymph-node-dissection"],
+    "relatedTerms": [
+      "grossing",
+      "lymph-node-dissection"
+    ],
     "synonyms": []
   },
   {
@@ -3486,7 +3504,10 @@
     "termEn": "Lung Resection Grossing",
     "definition": "肺切除标本的标准化处理。需经支气管注入福尔马林膨胀固定，评估肿瘤与支气管和胸膜的关系。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "surgical-margin"],
+    "relatedTerms": [
+      "grossing",
+      "surgical-margin"
+    ],
     "synonyms": []
   },
   {
@@ -3495,7 +3516,9 @@
     "termEn": "Macrodissection",
     "definition": "在切片上用手工方法刮取富含肿瘤细胞区域的操作。用于提高分子检测的肿瘤细胞纯度。",
     "category": "解剖病理",
-    "relatedTerms": ["microdissection"],
+    "relatedTerms": [
+      "microdissection"
+    ],
     "synonyms": []
   },
   {
@@ -3504,8 +3527,13 @@
     "termEn": "Microdissection",
     "definition": "在显微镜下精确分离特定细胞群的技术。激光捕获显微切割可获取纯净目标细胞用于分子分析。",
     "category": "解剖病理",
-    "relatedTerms": ["macrodissection", "ngs"],
-    "synonyms": ["LCM"]
+    "relatedTerms": [
+      "macrodissection",
+      "ngs"
+    ],
+    "synonyms": [
+      "LCM"
+    ]
   },
   {
     "id": "skin-ellipse-grossing",
@@ -3513,7 +3541,11 @@
     "termEn": "Skin Ellipse Grossing",
     "definition": "皮肤梭形切除标本的标准化处理。需涂墨标记切缘，垂直切面或面包切片法取材。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "surgical-margin", "inking"],
+    "relatedTerms": [
+      "grossing",
+      "surgical-margin",
+      "inking"
+    ],
     "synonyms": []
   },
   {
@@ -3522,7 +3554,10 @@
     "termEn": "Nephrectomy Grossing",
     "definition": "肾脏手术标本的标准化处理。需检查肾被膜和肾窦脂肪，评估肿瘤侵犯范围和肾静脉癌栓。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "surgical-margin"],
+    "relatedTerms": [
+      "grossing",
+      "surgical-margin"
+    ],
     "synonyms": []
   },
   {
@@ -3531,7 +3566,10 @@
     "termEn": "Urine Cytology",
     "definition": "对尿液中脱落细胞进行形态学检查。主要用于检测高级别尿路上皮癌，对低级别肿瘤灵敏度较低。",
     "category": "细胞病理",
-    "relatedTerms": ["paris-system", "exfoliative-cytology"],
+    "relatedTerms": [
+      "paris-system",
+      "exfoliative-cytology"
+    ],
     "synonyms": []
   },
   {
@@ -3540,7 +3578,10 @@
     "termEn": "Thyroid FNA",
     "definition": "超声引导下对甲状腺结节进行细针穿刺抽吸的首选诊断方法。按Bethesda六级分类报告。",
     "category": "细胞病理",
-    "relatedTerms": ["fine-needle-aspiration", "thyroid-bethesda"],
+    "relatedTerms": [
+      "fine-needle-aspiration",
+      "thyroid-bethesda"
+    ],
     "synonyms": []
   },
   {
@@ -3549,7 +3590,10 @@
     "termEn": "Cerebrospinal Fluid Cytology",
     "definition": "对脑脊液中细胞进行形态学检查。用于检测中枢神经系统肿瘤播散、白血病累及和感染性疾病。",
     "category": "细胞病理",
-    "relatedTerms": ["cytology", "cell-block"],
+    "relatedTerms": [
+      "cytology",
+      "cell-block"
+    ],
     "synonyms": []
   },
   {
@@ -3558,7 +3602,10 @@
     "termEn": "Ascitic Fluid Cytology",
     "definition": "对腹腔积液中细胞进行形态学检查。主要用于检测腹膜转移性肿瘤和原发性腹膜恶性间皮瘤。",
     "category": "细胞病理",
-    "relatedTerms": ["serous-effusion-cytology", "cell-block"],
+    "relatedTerms": [
+      "serous-effusion-cytology",
+      "cell-block"
+    ],
     "synonyms": []
   },
   {
@@ -3567,7 +3614,10 @@
     "termEn": "Pleural Fluid Cytology",
     "definition": "对胸腔积液中细胞进行形态学检查。可检测转移性癌、恶性间皮瘤和淋巴瘤等恶性肿瘤。",
     "category": "细胞病理",
-    "relatedTerms": ["serous-effusion-cytology", "cell-block"],
+    "relatedTerms": [
+      "serous-effusion-cytology",
+      "cell-block"
+    ],
     "synonyms": []
   },
   {
@@ -3576,8 +3626,13 @@
     "termEn": "Atypical Glandular Cells",
     "definition": "TBS分类中腺细胞异常的诊断类别。需进一步评估排除子宫内膜和宫颈腺体病变。",
     "category": "细胞病理",
-    "relatedTerms": ["tbs", "cytology"],
-    "synonyms": ["AGC"]
+    "relatedTerms": [
+      "tbs",
+      "cytology"
+    ],
+    "synonyms": [
+      "AGC"
+    ]
   },
   {
     "id": "nipple-discharge-cytology",
@@ -3585,7 +3640,9 @@
     "termEn": "Nipple Discharge Cytology",
     "definition": "对乳头溢液进行细胞学检查。用于筛查乳管内病变，如导管内乳头状瘤和导管原位癌。",
     "category": "细胞病理",
-    "relatedTerms": ["exfoliative-cytology"],
+    "relatedTerms": [
+      "exfoliative-cytology"
+    ],
     "synonyms": []
   },
   {
@@ -3594,7 +3651,9 @@
     "termEn": "Gram Stain",
     "definition": "鉴别细菌的经典染色方法。革兰阳性菌染紫色，革兰阴性菌染红色。可在组织切片上检测细菌感染。",
     "category": "组织学技术",
-    "relatedTerms": ["special-stain"],
+    "relatedTerms": [
+      "special-stain"
+    ],
     "synonyms": []
   },
   {
@@ -3603,7 +3662,10 @@
     "termEn": "Warthin-Starry Stain",
     "definition": "银染色方法，用于显示幽门螺杆菌和巴尔通体等微小细菌。细菌染成黑色。",
     "category": "组织学技术",
-    "relatedTerms": ["silver-stain", "special-stain"],
+    "relatedTerms": [
+      "silver-stain",
+      "special-stain"
+    ],
     "synonyms": []
   },
   {
@@ -3612,7 +3674,10 @@
     "termEn": "Von Kossa Stain",
     "definition": "检测组织中钙盐沉积的银染色方法。钙沉积呈黑色，用于评估钙化病变。",
     "category": "组织学技术",
-    "relatedTerms": ["calcification", "special-stain"],
+    "relatedTerms": [
+      "calcification",
+      "special-stain"
+    ],
     "synonyms": []
   },
   {
@@ -3621,7 +3686,10 @@
     "termEn": "Orcein Stain",
     "definition": "显示弹力纤维和乙型肝炎表面抗原的特殊染色。弹力纤维染棕红色。",
     "category": "组织学技术",
-    "relatedTerms": ["elastic-stain", "special-stain"],
+    "relatedTerms": [
+      "elastic-stain",
+      "special-stain"
+    ],
     "synonyms": []
   },
   {
@@ -3630,7 +3698,10 @@
     "termEn": "Colloidal Iron Stain",
     "definition": "显示酸性黏多糖呈蓝色的特殊染色。可帮助鉴别肾细胞癌亚型等。",
     "category": "组织学技术",
-    "relatedTerms": ["alcian-blue", "special-stain"],
+    "relatedTerms": [
+      "alcian-blue",
+      "special-stain"
+    ],
     "synonyms": []
   },
   {
@@ -3639,7 +3710,9 @@
     "termEn": "Toluidine Blue Stain",
     "definition": "碱性染料，显示肥大细胞颗粒的异染性（紫红色）。也用于半薄切片染色和术中冰冻切片。",
     "category": "组织学技术",
-    "relatedTerms": ["special-stain"],
+    "relatedTerms": [
+      "special-stain"
+    ],
     "synonyms": []
   },
   {
@@ -3648,7 +3721,10 @@
     "termEn": "Sirius Red Stain",
     "definition": "显示胶原纤维的特殊染色方法。偏振光下可区分I型（红/黄）和III型（绿）胶原，用于评估纤维化程度。",
     "category": "组织学技术",
-    "relatedTerms": ["masson-trichrome", "fibrosis"],
+    "relatedTerms": [
+      "masson-trichrome",
+      "fibrosis"
+    ],
     "synonyms": []
   },
   {
@@ -3657,7 +3733,10 @@
     "termEn": "NGS Library Preparation",
     "definition": "将提取的核酸制备为适合测序仪上机的DNA片段文库的过程。包括片段化、接头连接和扩增富集等步骤。",
     "category": "分子病理",
-    "relatedTerms": ["ngs", "targeted-sequencing"],
+    "relatedTerms": [
+      "ngs",
+      "targeted-sequencing"
+    ],
     "synonyms": []
   },
   {
@@ -3666,7 +3745,10 @@
     "termEn": "Bioinformatics Pipeline",
     "definition": "对NGS原始数据进行自动化处理和分析的计算流程。包括序列比对、变异检测、注释和过滤等步骤。",
     "category": "分子病理",
-    "relatedTerms": ["ngs", "variant-allele-frequency"],
+    "relatedTerms": [
+      "ngs",
+      "variant-allele-frequency"
+    ],
     "synonyms": []
   },
   {
@@ -3675,8 +3757,13 @@
     "termEn": "Tumor Purity",
     "definition": "送检标本中肿瘤细胞占总细胞的比例。分子检测通常要求肿瘤纯度≥20%以确保检测灵敏度。",
     "category": "分子病理",
-    "relatedTerms": ["macrodissection", "variant-allele-frequency"],
-    "synonyms": ["肿瘤细胞比例"]
+    "relatedTerms": [
+      "macrodissection",
+      "variant-allele-frequency"
+    ],
+    "synonyms": [
+      "肿瘤细胞比例"
+    ]
   },
   {
     "id": "nccn-guidelines",
@@ -3684,7 +3771,9 @@
     "termEn": "National Comprehensive Cancer Network Guidelines",
     "definition": "美国国立综合癌症网络发布的循证临床实践指南。涵盖各类肿瘤的诊断、治疗和随访规范，定期更新。",
     "category": "临床病理相关",
-    "relatedTerms": ["multidisciplinary-team"],
+    "relatedTerms": [
+      "multidisciplinary-team"
+    ],
     "synonyms": []
   },
   {
@@ -3693,7 +3782,10 @@
     "termEn": "Frozen Section Indication",
     "definition": "术中冰冻切片的合理使用范围。主要适应证包括判断病变性质、评估切缘和确认取材组织的代表性。",
     "category": "临床病理相关",
-    "relatedTerms": ["frozen-section", "intraoperative-consultation"],
+    "relatedTerms": [
+      "frozen-section",
+      "intraoperative-consultation"
+    ],
     "synonyms": []
   },
   {
@@ -3702,7 +3794,12 @@
     "termEn": "Breast Cancer Molecular Subtype",
     "definition": "根据ER、PR、HER2和Ki-67将乳腺癌分为Luminal A、Luminal B、HER2过表达和三阴性四种亚型。指导治疗方案选择。",
     "category": "免疫组化",
-    "relatedTerms": ["er", "pr", "her2", "ki67"],
+    "relatedTerms": [
+      "er",
+      "pr",
+      "her2",
+      "ki67"
+    ],
     "synonyms": []
   },
   {
@@ -3711,7 +3808,10 @@
     "termEn": "Calretinin",
     "definition": "钙结合蛋白，是间皮细胞的标记物。用于恶性间皮瘤与肺腺癌的鉴别诊断。",
     "category": "免疫组化",
-    "relatedTerms": ["immunohistochemistry", "wt1"],
+    "relatedTerms": [
+      "immunohistochemistry",
+      "wt1"
+    ],
     "synonyms": []
   },
   {
@@ -3720,7 +3820,10 @@
     "termEn": "Wilms Tumor 1",
     "definition": "Wilms瘤基因编码的转录因子。在间皮瘤和浆液性卵巢癌中阳性，用于肿瘤鉴别诊断。",
     "category": "免疫组化",
-    "relatedTerms": ["calretinin", "immunohistochemistry"],
+    "relatedTerms": [
+      "calretinin",
+      "immunohistochemistry"
+    ],
     "synonyms": []
   },
   {
@@ -3729,7 +3832,10 @@
     "termEn": "Napsin A",
     "definition": "天冬氨酸蛋白酶，表达于II型肺泡上皮细胞。与TTF-1联合使用是诊断肺腺癌的重要标记物组合。",
     "category": "免疫组化",
-    "relatedTerms": ["ttf1", "lung-adenocarcinoma"],
+    "relatedTerms": [
+      "ttf1",
+      "lung-adenocarcinoma"
+    ],
     "synonyms": []
   },
   {
@@ -3738,7 +3844,10 @@
     "termEn": "SOX10",
     "definition": "神经嵴来源细胞的核转录因子。对黑色素瘤和神经鞘瘤具有高灵敏度和特异度。",
     "category": "免疫组化",
-    "relatedTerms": ["s100", "melanoma"],
+    "relatedTerms": [
+      "s100",
+      "melanoma"
+    ],
     "synonyms": []
   },
   {
@@ -3747,8 +3856,13 @@
     "termEn": "Melan-A",
     "definition": "黑色素细胞分化抗原。在黑色素瘤中阳性，与HMB-45和SOX10联合使用提高诊断准确性。",
     "category": "免疫组化",
-    "relatedTerms": ["melanoma", "sox10"],
-    "synonyms": ["MART-1"]
+    "relatedTerms": [
+      "melanoma",
+      "sox10"
+    ],
+    "synonyms": [
+      "MART-1"
+    ]
   },
   {
     "id": "hmb45",
@@ -3756,7 +3870,10 @@
     "termEn": "HMB-45",
     "definition": "识别黑色素体相关蛋白gp100的单克隆抗体。在黑色素瘤和PEComa中阳性。",
     "category": "免疫组化",
-    "relatedTerms": ["melan-a", "melanoma"],
+    "relatedTerms": [
+      "melan-a",
+      "melanoma"
+    ],
     "synonyms": []
   },
   {
@@ -3765,8 +3882,14 @@
     "termEn": "Epithelial Membrane Antigen",
     "definition": "糖蛋白MUC1，广泛表达于多种上皮和部分非上皮肿瘤。用于鉴别诊断，在脑膜瘤和浆细胞瘤中阳性。",
     "category": "免疫组化",
-    "relatedTerms": ["cytokeratin", "immunohistochemistry"],
-    "synonyms": ["EMA", "MUC1"]
+    "relatedTerms": [
+      "cytokeratin",
+      "immunohistochemistry"
+    ],
+    "synonyms": [
+      "EMA",
+      "MUC1"
+    ]
   },
   {
     "id": "podoplanin",
@@ -3774,8 +3897,13 @@
     "termEn": "Podoplanin",
     "definition": "淋巴管内皮标记物，也称D2-40。用于检测淋巴管侵犯和鉴别淋巴管与血管。在间皮瘤中也阳性。",
     "category": "免疫组化",
-    "relatedTerms": ["lymphovascular-invasion", "cd34"],
-    "synonyms": ["D2-40"]
+    "relatedTerms": [
+      "lymphovascular-invasion",
+      "cd34"
+    ],
+    "synonyms": [
+      "D2-40"
+    ]
   },
   {
     "id": "specimen-photography",
@@ -3783,7 +3911,9 @@
     "termEn": "Specimen Photography",
     "definition": "对手术标本大体特征进行标准化照片记录的操作。需包含标尺和标签，用于病理存档和教学。",
     "category": "解剖病理",
-    "relatedTerms": ["gross-examination"],
+    "relatedTerms": [
+      "gross-examination"
+    ],
     "synonyms": []
   },
   {
@@ -3792,7 +3922,10 @@
     "termEn": "Hysterectomy Grossing",
     "definition": "子宫切除标本的标准化处理。需测量子宫和附件大小，切开宫腔评估肌层浸润深度和宫旁组织累及情况。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "surgical-margin"],
+    "relatedTerms": [
+      "grossing",
+      "surgical-margin"
+    ],
     "synonyms": []
   },
   {
@@ -3801,7 +3934,251 @@
     "termEn": "Head and Neck Dissection Grossing",
     "definition": "头颈部手术标本的标准化处理。需定向标本，评估肿瘤大小和浸润范围，系统分组检索淋巴结。",
     "category": "解剖病理",
-    "relatedTerms": ["grossing", "lymph-node-dissection"],
+    "relatedTerms": [
+      "grossing",
+      "lymph-node-dissection"
+    ],
     "synonyms": []
+  },
+  {
+    "id": "mesenchymal-chondrosarcoma",
+    "termZh": "间叶性软骨肉瘤",
+    "termEn": "Mesenchymal Chondrosarcoma",
+    "definition": "一种罕见的高级别恶性软骨源性肿瘤，特征为双相性形态：由分化差的小圆细胞/短梭形细胞构成的未分化细胞成分与分化较好的透明软骨岛两种成分突兀并存。肿瘤可发生于骨（以颌面骨、肋骨、脊柱、髂骨多见）或骨外软组织（如脑膜、四肢软组织），好发于青年人。分子特征为特征性的 HEY1::NCOA2 融合基因，少数病例为 IRF2BP2::CDX1 融合。免疫组化小圆细胞成分 SOX9、CD99、NKX2-2、S-100 常阳性，软骨成分 S-100 和 SOX9 阳性。预后较差，易发生晚期转移。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "chondrosarcoma",
+      "conventional-chondrosarcoma",
+      "dedifferentiated-chondrosarcoma",
+      "hey1-ncoa2-fusion",
+      "sox9"
+    ],
+    "synonyms": [
+      "Mesenchymal Chondrosarcoma, MC",
+      "间质性软骨肉瘤"
+    ]
+  },
+  {
+    "id": "smarca4-deficient-tumor",
+    "termZh": "SMARCA4 缺陷性肿瘤",
+    "termEn": "SMARCA4-deficient Tumor",
+    "definition": "一组由 SMARCA4（BRG1）基因失活突变或缺失导致的侵袭性肿瘤，以 SWI/SNF 染色质重塑复合物功能丧失为分子特征。形态学多呈未分化或横纹肌样（rhabdoid）细胞，片状或弥漫生长，可见明显核仁、嗜酸性胞质及核偏位；常见于胸部（SMARCA4 缺陷性未分化胸部肿瘤 SMARCA4-UT）、肺（SMARCA4 缺陷性非小细胞肺癌）、鼻窦、子宫（卵巢小细胞癌高钙血症型 SCCOHT，现归入此谱系）等部位。诊断依赖 IHC：BRG1（SMARCA4）核表达完全缺失，INI1（SMARCA2/BRM）常同时丢失，Claudin-4、广谱 CK 弱阳/阴性，SALL4、SOX2 可阳性。临床预后差，部分病例对 EZH2 抑制剂或免疫治疗有反应。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "swi-snf-complex",
+      "smarcb1-deficient-tumor",
+      "sccoht",
+      "rhabdoid-tumor",
+      "undifferentiated-carcinoma"
+    ],
+    "synonyms": [
+      "BRG1 缺陷性肿瘤",
+      "SMARCA4-deficient Undifferentiated Tumor",
+      "SMARCA4-UT"
+    ]
+  },
+  {
+    "id": "bcor-sarcoma",
+    "termZh": "BCOR 重排肉瘤",
+    "termEn": "Sarcoma with BCOR Genetic Alterations",
+    "definition": "一组由 BCOR 基因改变（包括 BCOR-CCNB3 融合、BCOR 内部串联重复 BCOR-ITD、BCOR-MAML3/ZC3H7B-BCOR 融合等）驱动的未分化圆形/梭形细胞肉瘤，WHO 软组织肿瘤分类第 5 版独立列出。镜下多呈单形性圆形至短梭形细胞弥漫增生，间质富于纤细分支状血管网及黏液样变；免疫组化 BCOR（核）、CCNB3（在 BCOR-CCNB3 亚型）、SATB2、TLE1 常阳性，CD99 可弱阳性但不具特异性；确诊依赖 FISH 或 RNA 测序检出特征性 BCOR 基因改变。多见于儿童及青少年骨及软组织，亦见于婴儿肾脏（原未分化肾肉瘤）和子宫高级别内膜间质肉瘤（HG-ESS）。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "cic-dux4-sarcoma",
+      "ewing-sarcoma",
+      "undifferentiated-round-cell-sarcoma",
+      "high-grade-endometrial-stromal-sarcoma"
+    ],
+    "synonyms": [
+      "BCOR-rearranged Sarcoma",
+      "BCOR-CCNB3 Sarcoma",
+      "Sarcoma with BCOR Alterations",
+      "BCOR 基因改变肉瘤"
+    ]
+  },
+  {
+    "id": "ccnb3-sarcoma",
+    "termZh": "CCNB3 肉瘤",
+    "termEn": "BCOR::CCNB3 Sarcoma",
+    "definition": "由 BCOR 与 CCNB3 基因 X 染色体内倒位融合（BCOR::CCNB3）驱动的未分化圆形/梭形细胞肉瘤，好发于儿童及青少年男性，常累及骨与软组织。组织学表现为单形性小圆形至短梭形细胞弥漫性或束状排列，间质富含分支状毛细血管网，核分裂活跃，伴黏液样基质。免疫组化 BCOR、CCNB3、SATB2、TLE1 核阳性，CD99 可呈局灶膜阳性；分子检测 BCOR::CCNB3 融合或 BCOR 内部串联重复（ITD）为诊断金标准。WHO 2020 软组织与骨肿瘤分类（第 5 版）将其列入'伴 BCOR 基因改变的圆形细胞肉瘤'独立实体，与 Ewing 肉瘤、CIC 重排肉瘤相鉴别。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "bcor-rearranged-sarcoma",
+      "ewing-sarcoma",
+      "cic-dux4-sarcoma",
+      "undifferentiated-round-cell-sarcoma"
+    ],
+    "synonyms": [
+      "BCOR-CCNB3 Sarcoma",
+      "Sarcoma with BCOR Genetic Alterations",
+      "BCOR 重排肉瘤（CCNB3 融合型）"
+    ]
+  },
+  {
+    "id": "nut-carcinoma",
+    "termZh": "NUT 癌",
+    "termEn": "NUT Carcinoma",
+    "definition": "由 15 号染色体上 NUTM1 基因重排（最常见 t(15;19) 形成 BRD4-NUTM1 融合，少数为 BRD3-NUTM1 或 NSD3-NUTM1）驱动的侵袭性低分化癌，好发于中线部位（头颈、鼻窦、纵隔、肺），青少年及年轻成人多见。组织学表现为单一形态的小至中等大小未分化癌细胞呈巢状、片状或弥漫性生长，核染色质粗糙、核仁明显，常见核分裂象及广泛坏死，特征性表现为突然出现的角化性鳞状分化灶（abrupt squamous differentiation）。免疫组化 NUT（单克隆抗体 C52B1）核呈弥漫斑点状阳性（>50% 肿瘤细胞核）是诊断金标准，FISH 或 RT-PCR 检测 NUTM1 重排可确诊。预后极差，中位生存期仅约 6–9 个月。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "sinonasal-undifferentiated-carcinoma",
+      "squamous-cell-carcinoma",
+      "poorly-differentiated-carcinoma",
+      "brd4-nutm1-fusion"
+    ],
+    "synonyms": [
+      "NUT 中线癌",
+      "Midline Carcinoma",
+      "NUT Midline Carcinoma",
+      "Carcinoma with t(15;19) translocation"
+    ]
+  },
+  {
+    "id": "sinonasal-undifferentiated-carcinoma",
+    "termZh": "鼻窦未分化癌",
+    "termEn": "Sinonasal Undifferentiated Carcinoma",
+    "definition": "鼻腔鼻窦未分化癌（SNUC）是发生于鼻腔和鼻旁窦的高度侵袭性上皮性恶性肿瘤，由无鳞状或腺样分化的未分化细胞构成，需排除其他具有特异形态或分子特征的实体（如 NUT 癌、SMARCB1/INI1 缺陷癌、SMARCA4 缺陷癌、嗅神经母细胞瘤、淋巴瘤等）。镜下示中等至大的多形性细胞呈巢状、小梁状或片状排列，核分裂活跃，常伴广泛坏死和血管/神经侵犯；IHC 表达广谱 CK（AE1/AE3、CK8）及 CK7，可灶性表达 p16，NUT、SMARCB1(INI1)、SMARCA4(BRG1) 保留表达，神经内分泌标志物（Syn、CgA）多为阴性或局灶阳性。WHO 5th 版将 IDH2 突变型鼻窦未分化癌列为其分子亚型。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "nut-carcinoma",
+      "smarcb1-deficient-sinonasal-carcinoma",
+      "olfactory-neuroblastoma",
+      "idh2-mutation"
+    ],
+    "synonyms": [
+      "SNUC",
+      "Sinonasal Undifferentiated Carcinoma, NOS",
+      "鼻腔鼻窦未分化癌"
+    ]
+  },
+  {
+    "id": "dicer1-associated-tumor",
+    "termZh": "DICER1 相关肿瘤",
+    "termEn": "DICER1-Associated Tumor",
+    "definition": "由 DICER1 基因胚系或体细胞突变所驱动的一组异质性肿瘤谱系，属 DICER1 肿瘤易感综合征相关病变。DICER1 编码的 RNase III 内切酶参与 miRNA 成熟，其失活（常为'双打击'：一个等位基因截断突变 + 另一等位基因 RNase IIIb 结构域热点错义突变，如 E1705/D1709/G1809/E1813）导致 5p miRNA 生成障碍。谱系涵盖胸膜肺母细胞瘤（PPB）、卵巢 Sertoli-Leydig 细胞瘤、囊性肾瘤、分化型甲状腺癌、鼻软骨间叶性错构瘤、睫状体髓上皮瘤、胚胎性横纹肌肉瘤（宫颈/肾等部位）、垂体母细胞瘤及 DICER1 相关中枢神经系统肉瘤等。组织学常见原始间叶成分、异源性分化与囊性结构；诊断依赖形态 + DICER1 基因检测。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "pleuropulmonary-blastoma",
+      "sertoli-leydig-cell-tumor",
+      "cystic-nephroma",
+      "pituitary-blastoma",
+      "embryonal-rhabdomyosarcoma"
+    ],
+    "synonyms": [
+      "DICER1 综合征相关肿瘤",
+      "DICER1 Syndrome-Associated Neoplasm",
+      "DICER1 Tumor Predisposition Syndrome-Related Tumor"
+    ]
+  },
+  {
+    "id": "enteropathy-associated-tcell-lymphoma",
+    "termZh": "肠病相关性 T 细胞淋巴瘤",
+    "termEn": "Enteropathy-Associated T-Cell Lymphoma",
+    "definition": "一种起源于小肠上皮内 T 细胞的侵袭性原发肠道外周 T 细胞淋巴瘤，与乳糜泻（麸质敏感性肠病）密切相关，好发于空肠。肿瘤细胞中等至大细胞，胞浆透亮或嗜双色，核多形，常伴坏死及邻近黏膜绒毛萎缩、上皮内淋巴细胞增多等乳糜泻背景改变。免疫表型 CD3+、CD7+、CD5-、CD4-、CD8-/+、CD56-、CD30 常阳性，细胞毒标志（TIA-1、Granzyme B、Perforin）阳性；常携带 HLA-DQ2/DQ8 及 JAK-STAT 通路（STAT5B、JAK1）、SETD2 突变。WHO 5th 将其与单形性嗜上皮性肠 T 细胞淋巴瘤（MEITL，原 EATL type II）明确区分。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "monomorphic-epitheliotropic-intestinal-tcell-lymphoma",
+      "celiac-disease",
+      "peripheral-tcell-lymphoma-nos",
+      "intestinal-tcell-lymphoma-nos"
+    ],
+    "synonyms": [
+      "EATL",
+      "EATL type I",
+      "Enteropathy-Type Intestinal T-Cell Lymphoma",
+      "肠病型肠道 T 细胞淋巴瘤"
+    ]
+  },
+  {
+    "id": "monomorphic-epitheliotropic-itcl",
+    "termZh": "单形性亲上皮性肠道T细胞淋巴瘤",
+    "termEn": "Monomorphic Epitheliotropic Intestinal T-Cell Lymphoma",
+    "definition": "一种原发于肠道的侵袭性外周T细胞淋巴瘤，WHO 5th 版确立的独立实体（原称肠病相关T细胞淋巴瘤Ⅱ型，EATL type II）。好发于东亚人群，与乳糜泻无明确关联。组织学表现为小到中等大小单形性肿瘤细胞弥漫浸润小肠（尤其空肠）黏膜，显著亲上皮现象（细胞侵入肠上皮内）是其特征；免疫表型常为 CD3+、CD8+、CD56+、TIA-1+、MATK+，多数病例存在 SETD2 失活突变及 STAT5B 突变。临床进展迅速，预后差。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "eatl",
+      "enteropathy-associated-t-cell-lymphoma",
+      "peripheral-t-cell-lymphoma",
+      "intestinal-t-cell-lymphoma"
+    ],
+    "synonyms": [
+      "MEITL",
+      "EATL type II",
+      "肠病相关T细胞淋巴瘤Ⅱ型",
+      "单形性亲上皮性肠T细胞淋巴瘤"
+    ]
+  },
+  {
+    "id": "high-grade-b-cell-lymphoma-11q",
+    "termZh": "高级别 B 细胞淋巴瘤伴 11q 畸变",
+    "termEn": "High-Grade B-Cell Lymphoma with 11q Aberrations",
+    "definition": "WHO 第 5 版造血与淋巴组织肿瘤分类中新确立的独立实体，形态学与 Burkitt 淋巴瘤相似（中等大小单一形态瘤细胞、弥漫浸润、高增殖、星空现象），但缺乏 MYC 重排，具有特征性的 11q 近端获得/远端缺失（proximal gains / telomeric losses of 11q）。免疫表型为生发中心 B 细胞型（CD20+、CD10+、BCL6+、BCL2−/弱+、Ki-67 常 >90%），较 Burkitt 淋巴瘤更常见核多形性、较低的 MYC 蛋白表达及较多反应性成分；FISH/CMA 检测 11q 畸变是诊断关键。既往名称为 Burkitt-like lymphoma with 11q aberration。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "burkitt-lymphoma",
+      "diffuse-large-b-cell-lymphoma-nos",
+      "high-grade-b-cell-lymphoma-nos"
+    ],
+    "synonyms": [
+      "Burkitt-like Lymphoma with 11q Aberration",
+      "HGBCL-11q",
+      "伯基特样淋巴瘤伴 11q 畸变"
+    ]
+  },
+  {
+    "id": "mitf-family-translocation-rcc",
+    "termZh": "MiT 家族易位性肾细胞癌",
+    "termEn": "MiT Family Translocation Renal Cell Carcinoma",
+    "definition": "WHO 5th 版泌尿与男性生殖系统肿瘤分类中新设立的一组肾细胞癌，由 MiT（Microphthalmia-associated Transcription factor）家族基因易位引起，主要包括 TFE3 重排性肾细胞癌（Xp11.2 易位，涉及 ASPSCR1、PRCC、SFPQ、NONO 等多种融合伙伴）与 TFEB 改变性肾细胞癌（t(6;11) 易位 MALAT1-TFEB 融合或 TFEB 扩增）。形态学呈乳头状、巢状或肺泡状结构，胞浆透明至嗜酸性，可见砂砾体（TFE3 型）或双相性上皮样与小细胞围绕透明基底膜样物质（TFEB 型）；IHC 特征性表现为 TFE3 或 TFEB 核强阳性，PAX8 阳性，Cathepsin K 常阳性（尤其 TFEB 型），广谱 CK 与 EMA 表达可较弱。好发于儿童及青年成人，但任何年龄均可发生，部分病例具有侵袭性生物学行为。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "tfe3-rearranged-rcc",
+      "tfeb-altered-rcc",
+      "esc-rcc",
+      "sdh-deficient-rcc",
+      "fh-deficient-rcc"
+    ],
+    "synonyms": [
+      "MiT Family Translocation Renal Cell Carcinoma",
+      "Xp11 易位性肾细胞癌",
+      "t(6;11) 肾细胞癌",
+      "MiT 家族易位 RCC"
+    ]
+  },
+  {
+    "id": "eosinophilic-solid-cystic-rcc",
+    "termZh": "嗜酸性实性囊性肾细胞癌",
+    "termEn": "Eosinophilic Solid and Cystic Renal Cell Carcinoma",
+    "definition": "WHO 第 5 版泌尿及男性生殖系统肿瘤分类（2022）新独立列出的肾细胞癌亚型，好发于成年女性，多为散发，亦可见于结节性硬化症（TSC）患者。大体呈实性与囊性混合结构；镜下肿瘤细胞胞质富含嗜酸性颗粒（内含粗大嗜碱性颗粒/点彩状结构），排列呈实性巢状、腺泡状及微囊/大囊状。免疫组化特征为 CK20 弥漫阳性、CK7 多为阴性或灶性阳性，常表达 PAX8、CD10，不同程度表达 CathepsinK；分子层面常见 TSC1/TSC2 双等位基因失活，mTOR 通路激活。多数病例预后良好，少数可出现转移。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "renal-cell-carcinoma",
+      "mit-family-translocation-rcc",
+      "tuberous-sclerosis-complex",
+      "chromophobe-rcc"
+    ],
+    "synonyms": [
+      "ESC RCC",
+      "Eosinophilic Solid Cystic RCC"
+    ]
+  },
+  {
+    "id": "elongated-spindle-cell-sft",
+    "termZh": "长梭形细胞型孤立性纤维性肿瘤",
+    "termEn": "Elongated Spindle Cell Solitary Fibrous Tumor",
+    "definition": "孤立性纤维性肿瘤（SFT）的一种形态学表现模式，以大量细长、波浪状或束状排列的梭形细胞为主，细胞核狭长、染色质细腻、胞浆稀少，间质内可见特征性的'鹿角状'（staghorn / hemangiopericytoma-like）分支血管及不等量的绳索样胶原。与经典'无模式样结构'（patternless pattern）相比，长梭形细胞型在局部区域可呈席纹状或鱼骨样排列，易与纤维肉瘤、单相性滑膜肉瘤、恶性外周神经鞘膜瘤等鉴别。分子特征与经典 SFT 相同，均存在 NAB2-STAT6 基因融合；免疫组化 STAT6 核阳性、CD34 多阳性、bcl-2 及 CD99 常阳性，是诊断金标准。恶性潜能评估仍需参考 WHO 5th 孤立性纤维性肿瘤风险分层模型（年龄、肿瘤大小、核分裂数、坏死）。",
+    "category": "肿瘤分类",
+    "relatedTerms": [
+      "solitary-fibrous-tumor",
+      "nab2-stat6-fusion",
+      "stat6-ihc",
+      "hemangiopericytoma-like-vasculature",
+      "cd34"
+    ],
+    "synonyms": [
+      "Spindle Cell Variant of Solitary Fibrous Tumor",
+      "梭形细胞型 SFT",
+      "细长梭形细胞型孤立性纤维性肿瘤"
+    ]
   }
 ]

@@ -59,7 +59,57 @@
         "management": "推荐全甲状腺切除。中央和侧方淋巴结清扫决定于肿瘤类型和超声所见。放射性碘治疗常需进行(乳头状癌)。分子检测指导个性化治疗。",
         "notes": "占FNA的3-5%。需要手术、核医学和肿瘤科多学科管理。"
       }
-    ]
+    ],
+    "_enhance_cytology_category_images": {
+      "categoryImages": [
+        {
+          "categoryId": "nondiagnostic",
+          "url": "/cyto/bethesda-thyroid/i-nondiagnostic.svg",
+          "caption": "Bethesda I（标本无法诊断/不满意）：滤泡细胞少于6组（每组≥10个细胞），或仅见大量血液、囊液成分及胶质背景，缺乏可评估的滤泡上皮细胞"
+        },
+        {
+          "categoryId": "benign",
+          "url": "/cyto/bethesda-thyroid/ii-benign.svg",
+          "caption": "Bethesda II（良性）：滤泡上皮细胞呈单层蜂窝状或片状排列，核小而圆、染色质细腻，背景见丰富胶质；常见于结节性甲状腺肿、桥本甲状腺炎、亚急性甲状腺炎"
+        },
+        {
+          "categoryId": "aus",
+          "url": "/cyto/bethesda-thyroid/iii-aus.svg",
+          "caption": "Bethesda III（意义不明确的非典型病变，AUS）：少量滤泡细胞呈微滤泡结构或灶性核轻度增大、核重叠、染色质轻度异常，但量及质均不足以诊断FN或可疑恶性；2023版细分为伴细胞核非典型与其他类型"
+        },
+        {
+          "categoryId": "fn",
+          "url": "/cyto/bethesda-thyroid/iv-fn.svg",
+          "caption": "Bethesda IV（滤泡性肿瘤/可疑滤泡性肿瘤，FN/SFN）：细胞量丰富，呈显著微滤泡结构或拥挤的合体样片状排列，胶质稀少，核轻度增大但缺乏典型PTC核特征；2023版可加注\"伴嗜酸细胞特征\"取代既往Hürthle细胞肿瘤亚类"
+        },
+        {
+          "categoryId": "suspicious-malignancy",
+          "url": "/cyto/bethesda-thyroid/v-suspicious.svg",
+          "caption": "Bethesda V（可疑恶性）：具备PTC等恶性肿瘤的部分但非全部细胞学特征，如局灶核沟、核内假包涵体或核增大苍白，但数量或典型程度不足以确诊"
+        },
+        {
+          "categoryId": "malignant",
+          "url": "/cyto/bethesda-thyroid/vi-malignant.svg",
+          "caption": "Bethesda VI（恶性）：具备明确恶性细胞学特征，如PTC的乳头状结构、毛玻璃样核、核沟与核内假包涵体；亦包括髓样癌（散在浆细胞样细胞+淀粉样物）、低分化/未分化癌及转移性恶性肿瘤"
+        }
+      ]
+    },
+    "_enhance_cytology_cn_consensus": {
+      "cnConsensus": [
+        {
+          "title": "甲状腺细针穿刺细胞病理学诊断规范",
+          "org": "中华医学会病理学分会",
+          "year": 2023,
+          "summary": "在 Bethesda 系统（TBSRTC）框架基础上，结合中国临床实践制定的甲状腺 FNA 细胞学诊断规范，明确六类诊断术语（无法诊断/良性/意义不明确的细胞非典型性或滤泡性病变 AUS/FLUS、滤泡性肿瘤、可疑恶性、恶性）的中文表述、报告要点及相应风险度和处理建议，并纳入 BRAF V600E 等分子检测推荐。"
+        },
+        {
+          "title": "甲状腺细针穿刺检查专家共识",
+          "org": "中国抗癌协会甲状腺癌专业委员会",
+          "year": 2018,
+          "summary": "规范甲状腺结节 FNA 的适应证、操作流程、标本处理及细胞学报告术语，推荐采用 Bethesda 报告系统并对各诊断类别的处理给出共识建议，作为国内开展甲状腺细胞学诊断的重要参照文件。"
+        }
+      ]
+    }
   },
   {
     "id": "tbs-cervical",
@@ -112,7 +162,73 @@
         "management": "立即妇科/肿瘤科转诊。进行全面临床评估、分期、组织病理诊断和治疗计划(手术、放疗、化疗)。",
         "notes": "占Pap检查的0.1-0.2%。预后取决于肿瘤分期和类型。"
       }
-    ]
+    ],
+    "_enhance_cytology_category_images": {
+      "categoryImages": [
+        {
+          "categoryId": "nilm",
+          "url": "/cyto/tbs/nilm.svg",
+          "caption": "NILM（未见上皮内病变或恶性细胞）：鳞状上皮细胞核质比正常，核小而圆，染色质细腻均匀；背景可见乳酸杆菌或少量中性粒细胞"
+        },
+        {
+          "categoryId": "ascus",
+          "url": "/cyto/tbs/ascus.svg",
+          "caption": "ASC-US（意义不明的非典型鳞状细胞）：成熟中表层鳞状细胞核轻度增大（约为正常中层细胞核的 2.5–3 倍），核质比略升高，染色质轻度深染但分布均匀，异型性不足以诊断 LSIL"
+        },
+        {
+          "categoryId": "asc-h",
+          "url": "/cyto/tbs/asc-h.svg",
+          "caption": "ASC-H（不能排除高级别的非典型鳞状细胞）：少量未成熟化生样小细胞，核质比明显升高，核深染但数量稀少，难以明确诊断 HSIL"
+        },
+        {
+          "categoryId": "lsil",
+          "url": "/cyto/tbs/lsil.svg",
+          "caption": "LSIL（低级别鳞状上皮内病变）：成熟鳞状细胞胞质内出现核周空晕（挖空细胞，koilocyte），核增大、深染、轮廓不规则，可见双核或多核"
+        },
+        {
+          "categoryId": "hsil",
+          "url": "/cyto/tbs/hsil.svg",
+          "caption": "HSIL（高级别鳞状上皮内病变）：未成熟基底/副基底样细胞散在或合体样排列，核质比显著升高，核深染、染色质粗颗粒状、核膜不规则"
+        },
+        {
+          "categoryId": "scc",
+          "url": "/cyto/tbs/scc.svg",
+          "caption": "鳞状细胞癌：显著异型的鳞状细胞伴角化（蝌蚪细胞、纤维细胞样），核深染呈墨染状，染色质粗糙，背景可见肿瘤素质（坏死碎片、陈旧性出血）"
+        },
+        {
+          "categoryId": "agc",
+          "url": "/cyto/tbs/agc.svg",
+          "caption": "AGC（非典型腺细胞）：颈管或子宫内膜来源的腺细胞呈拥挤三维团、羽毛状或菊形团排列，核增大、轻度深染，核质比升高但不足以诊断腺癌"
+        },
+        {
+          "categoryId": "ais",
+          "url": "/cyto/tbs/ais.svg",
+          "caption": "AIS（颈管原位腺癌）：柱状腺细胞呈假复层栅栏状、菊形团或羽毛状排列，核拉长深染，染色质粗糙，可见核分裂与凋亡小体，背景相对干净"
+        },
+        {
+          "categoryId": "adenocarcinoma",
+          "url": "/cyto/tbs/adenocarcinoma.svg",
+          "caption": "腺癌：三维立体细胞团或单个散在的异型腺细胞，核明显增大、核仁突出，染色质粗糙不均，可见肿瘤素质；子宫内膜来源者细胞团较小、胞质内可见中性粒细胞"
+        }
+      ]
+    },
+    "_enhance_cytology_cn_consensus": {
+      "cnConsensus": [
+        {
+          "title": "子宫颈细胞学巴氏检查规范化的中国专家共识",
+          "org": "中国抗癌协会妇科肿瘤专业委员会",
+          "year": 2016,
+          "summary": "针对 TBS 报告系统在中国宫颈细胞学筛查中的规范化应用提出专家共识，涵盖标本采集、判读标准、质量控制及与 HPV 检测联合筛查策略，推荐采用 2014 版 Bethesda 系统进行统一报告。",
+          "_low_confidence": true
+        },
+        {
+          "title": "中国子宫颈癌筛查指南（一）",
+          "org": "中华预防医学会妇女保健分会",
+          "year": 2023,
+          "summary": "更新宫颈癌筛查策略，明确细胞学报告沿用 2014 版 TBS 系统，规范 ASC-US、ASC-H、LSIL、HSIL、AGC 等各类诊断的后续管理路径，并提出基于 HPV 初筛+细胞学分流的中国本土化方案。"
+        }
+      ]
+    }
   },
   {
     "id": "paris-urine",
@@ -165,7 +281,57 @@
         "management": "组织学确认、影像学评估、肿瘤科转诊。治疗方案取决于肿瘤类型和分期。",
         "notes": "占尿液细胞学的<1%。需要多学科管理。"
       }
-    ]
+    ],
+    "_enhance_cytology_category_images": {
+      "categoryImages": [
+        {
+          "categoryId": "adequacy",
+          "url": "/cyto/paris/adequacy.svg",
+          "caption": "标本满意度：自排尿标本需≥30ml且≥3张涂片观察到足够尿路上皮细胞，腔内冲洗/导尿标本细胞量要求可放宽；背景清晰无大量血液或炎症遮蔽"
+        },
+        {
+          "categoryId": "negative",
+          "url": "/cyto/paris/negative.svg",
+          "caption": "Negative for HGUC（NHGUC）：尿路上皮细胞核浆比＜0.5，核膜光滑，染色质均匀；可见伞细胞、鳞状细胞、退变细胞及多核巨细胞，背景干净"
+        },
+        {
+          "categoryId": "auc",
+          "url": "/cyto/paris/auc.svg",
+          "caption": "Atypical Urothelial Cells（AUC）：非表浅尿路上皮细胞核浆比≥0.5，且仅具备以下次要标准之一——核深染、核膜不规则或染色质粗颗粒；不足以诊断SHGUC"
+        },
+        {
+          "categoryId": "shguc",
+          "url": "/cyto/paris/shguc.svg",
+          "caption": "Suspicious for HGUC（SHGUC）：≥5–10个异型细胞核浆比≥0.5，核深染并具备核膜不规则或染色质粗颗粒；细胞数量或异型程度尚不足以确诊HGUC"
+        },
+        {
+          "categoryId": "hguc",
+          "url": "/cyto/paris/hguc.svg",
+          "caption": "High-Grade Urothelial Carcinoma（HGUC）：≥5–10个恶性细胞，核浆比≥0.5~0.7，显著核深染、核膜明显不规则、粗颗粒状染色质；背景可见肿瘤素质"
+        },
+        {
+          "categoryId": "lgun",
+          "url": "/cyto/paris/lgun.svg",
+          "caption": "Low-Grade Urothelial Neoplasm（LGUN）：乳头状结构伴纤维血管轴心，细胞核温和、核浆比轻度升高；细胞学对低级别病变敏感度低，多需结合膀胱镜活检"
+        },
+        {
+          "categoryId": "other-malignancy",
+          "url": "/cyto/paris/other-malignancy.svg",
+          "caption": "Other Malignancies（primary & metastatic）：如尿路鳞癌、腺癌、小细胞癌及前列腺、结直肠、乳腺等转移癌；需结合免疫细胞化学（GATA3、p40、CDX2、PSA等）鉴别"
+        }
+      ]
+    },
+    "_enhance_cytology_cn_consensus": {
+      "cnConsensus": [
+        {
+          "title": "尿液细胞学 Paris 系统中国应用专家共识",
+          "org": "中华医学会病理学分会",
+          "year": 2021,
+          "summary": "针对 Paris 系统在中国尿液细胞学实践中的应用，规范标本采集与处理、诊断分类（阴性、非典型尿路上皮细胞 AUC、可疑高级别尿路上皮癌 SHGUC、高级别尿路上皮癌 HGUC、低级别尿路上皮肿瘤 LGUN）、报告术语及与临床随访衔接，强调以 HGUC 检出为核心的风险分层。",
+          "_low_confidence": true
+        }
+      ]
+    }
   },
   {
     "id": "milan-salivary",
@@ -218,7 +384,50 @@
         "management": "立即头颈部肿瘤科转诊。进行完整分期(影像学、生物标志物)、广泛手术切除(包括受侵犯的邻近结构) ± 颈部淋巴结清扫 ± 辅助治疗(放疗/化疗)。",
         "notes": "占唾液腺FNA的5-10%。预后取决于组织学类型、分级和分期。"
       }
-    ]
+    ],
+    "_enhance_cytology_category_images": {
+      "categoryImages": [
+        {
+          "categoryId": "non-diagnostic",
+          "url": "/cyto/milan/non-diagnostic.svg",
+          "caption": "Milan I（非诊断性）：涂片细胞量不足（黏液样/囊液背景，滤泡上皮<60个），缺乏可判读的上皮成分"
+        },
+        {
+          "categoryId": "non-neoplastic",
+          "url": "/cyto/milan/non-neoplastic.svg",
+          "caption": "Milan II（非肿瘤性）：成熟腺泡细胞成片排列，夹杂导管上皮及慢性炎症细胞，背景见唾液"
+        },
+        {
+          "categoryId": "aus",
+          "url": "/cyto/milan/aus.svg",
+          "caption": "Milan III（意义不明确的非典型，AUS）：少量导管上皮轻度核增大、核仁可见，细胞量少或制片欠佳，难以归入明确类别"
+        },
+        {
+          "categoryId": "benign-neoplasm",
+          "url": "/cyto/milan/benign-neoplasm.svg",
+          "caption": "Milan IVA（良性肿瘤）：多形性腺瘤典型表现——纤维黏液样基质（品红色、纤维状）中嵌入上皮-肌上皮细胞条索"
+        },
+        {
+          "categoryId": "sump",
+          "url": "/cyto/milan/sump.svg",
+          "caption": "Milan IVB（恶性潜能未定的唾液腺肿瘤，SUMP）：基底样细胞团或嗜酸细胞团伴轻度非典型，无法区分良恶性（如基底细胞腺瘤 vs 腺样囊性癌）"
+        },
+        {
+          "categoryId": "suspicious-malignancy",
+          "url": "/cyto/milan/suspicious-malignancy.svg",
+          "caption": "Milan V（可疑恶性）：可见核增大、核仁显著、染色质粗糙等恶性特征，但细胞量或形态不足以确诊"
+        },
+        {
+          "categoryId": "malignant",
+          "url": "/cyto/milan/malignant.svg",
+          "caption": "Milan VI（恶性）：明确恶性肿瘤特征，如黏液表皮样癌示中间型细胞+表皮样细胞+黏液细胞三联征，背景黏液明显"
+        }
+      ]
+    },
+    "_enhance_cytology_cn_consensus": {
+      "cnConsensus": [],
+      "_low_confidence": true
+    }
   },
   {
     "id": "rose-fna",
@@ -271,7 +480,46 @@
         "management": "术中确认诊断后立即通知临床医生。可进行额外穿刺用于流式细胞仪(淋巴瘤)或分子检测。完成EUS检查并进行临床分期。肿瘤科多学科评估。",
         "notes": "ROSE诊断恶性肿瘤改变患者管理：从诊断性穿刺转向治疗策略讨论。"
       }
-    ]
+    ],
+    "_enhance_cytology_category_images": {
+      "categoryImages": [
+        {
+          "categoryId": "adequate-benign",
+          "url": "/cyto/rose/adequate-benign.svg",
+          "caption": "标本满意-良性：可见足量目标组织细胞（如肺泡巨噬细胞、支气管上皮、肝细胞或胰腺腺泡细胞），细胞核形态温和，无异型，背景清洁或见少量炎细胞"
+        },
+        {
+          "categoryId": "adequate-atypical",
+          "url": "/cyto/rose/adequate-atypical.svg",
+          "caption": "标本满意-非典型：细胞数量充足，可见核增大、轻度核仁突出或核质比升高等非典型改变，但不足以诊断恶性，需进一步常规涂片/细胞蜡块及免疫细胞化学辅助判读"
+        },
+        {
+          "categoryId": "adequate-suspicious",
+          "url": "/cyto/rose/adequate-suspicious.svg",
+          "caption": "标本满意-可疑恶性：可见显著核异型、核膜不规则、染色质粗颗粒及病理性核分裂，但细胞数量或形态特征尚不足以确诊恶性，建议追加穿刺并送检细胞蜡块"
+        },
+        {
+          "categoryId": "adequate-malignant",
+          "url": "/cyto/rose/adequate-malignant.svg",
+          "caption": "标本满意-恶性：可见明确恶性细胞团（如肺腺癌的腺泡/乳头状簇、肝细胞癌的小梁状排列伴增宽肝板、胰腺导管腺癌的核拥挤重叠及核大小差异>4倍），背景常见坏死或肿瘤性素质"
+        },
+        {
+          "categoryId": "inadequate",
+          "url": "/cyto/rose/inadequate.svg",
+          "caption": "标本不满意：细胞数量过少、仅见血液/黏液/坏死物，或目标器官细胞缺失（如肺穿刺仅见支气管上皮污染而无病变细胞），需重新穿刺取材"
+        },
+        {
+          "categoryId": "non-diagnostic-contaminant",
+          "url": "/cyto/rose/non-diagnostic-contaminant.svg",
+          "caption": "非诊断性-污染成分：仅见穿刺路径污染细胞（如经胃EUS-FNA中见胃黏膜上皮、经支气管TBNA中见纤毛柱状上皮），不能代表靶病灶，应调整穿刺路径后重取",
+          "_low_confidence": true
+        }
+      ]
+    },
+    "_enhance_cytology_cn_consensus": {
+      "cnConsensus": [],
+      "_low_confidence": true
+    }
   },
   {
     "id": "body-cavity-ic",
@@ -315,7 +563,40 @@
         "management": "立即肿瘤科转诊。进行完整的肿瘤分期(影像学、肿瘤标志物、分子检测)。确定原发灶(如未知)。进行治疗分层(化疗、放疗、靶向、免疫治疗)。",
         "notes": "占体腔液的3-8%。恶性体腔液通常提示转移性肿瘤或原发性浆膜肿瘤，预后取决于原发灶。"
       }
-    ]
+    ],
+    "_enhance_cytology_category_images": {
+      "categoryImages": [
+        {
+          "categoryId": "nfm",
+          "url": "/cyto/ic/nfm.svg",
+          "caption": "IC 1（非诊断性/材料不满意 ND/UFS）：细胞数量极少或保存不佳，背景模糊，无法做出可靠判读"
+        },
+        {
+          "categoryId": "benign",
+          "url": "/cyto/ic/benign.svg",
+          "caption": "IC 2（良性/阴性 NFM）：单层间皮细胞呈蜂窝状或窗孔样排列，核浆比低，核染色质细腻，背景可见淋巴细胞与组织细胞"
+        },
+        {
+          "categoryId": "aus",
+          "url": "/cyto/ic/aus.svg",
+          "caption": "IC 3（意义不明确的非典型 AUS）：少量细胞呈轻度核增大、核浆比升高，形态介于反应性间皮与肿瘤之间，证据不足以判定为肿瘤性"
+        },
+        {
+          "categoryId": "smp",
+          "url": "/cyto/ic/smp.svg",
+          "caption": "IC 4（可疑恶性 SFM）：出现三维细胞团、核异型及核仁明显，但细胞数量少或形态不典型，尚不足以明确诊断恶性"
+        },
+        {
+          "categoryId": "mal",
+          "url": "/cyto/ic/mal.svg",
+          "caption": "IC 5（恶性 MAL）：可见明确的异型细胞团（腺样、乳头状或单个散在），核浆比显著升高、核仁明显、染色质粗糙，常伴第二群细胞（two-cell population），免疫细胞化学可辅助判定原发部位"
+        }
+      ]
+    },
+    "_enhance_cytology_cn_consensus": {
+      "cnConsensus": [],
+      "_low_confidence": true
+    }
   },
   {
     "id": "yokohama-breast",
@@ -367,6 +648,121 @@
         "malignancyRisk": "95-100%",
         "management": "立即外科肿瘤科转诊。进行完整临床分期(乳房影像学、腋窝评估、全身分期)。分子分型(ER/PR/HER2)。进行手术治疗 ± 辅助治疗(放疗/化疗/内分泌治疗/靶向治疗)。",
         "notes": "占乳腺FNA的3-8%。需要多学科肿瘤管理。预后取决于分级、分期和分子分型。"
+      }
+    ],
+    "_enhance_cytology_category_images": {
+      "categoryImages": [
+        {
+          "categoryId": "unsatisfactory",
+          "url": "/cyto/yokohama/unsatisfactory.svg",
+          "caption": "C1 标本不满意：上皮细胞数量不足（<5 簇）或涂片制作质量差，仅见血液、蛋白背景或挤压变形细胞，无法判读"
+        },
+        {
+          "categoryId": "benign",
+          "url": "/cyto/yokohama/benign.svg",
+          "caption": "C2 良性：双相性细胞群，上皮细胞呈蜂窝状/鹿角状平铺排列，核大小一致、极向保留，背景可见裸核肌上皮细胞及间质碎片，提示纤维腺瘤或纤维囊性改变"
+        },
+        {
+          "categoryId": "atypical",
+          "url": "/cyto/yokohama/atypical.svg",
+          "caption": "C3 非典型（可能良性）：以良性改变为主，但出现轻度核增大、核重叠、黏附性稍降低或少量孤立上皮细胞，肌上皮仍可辨认，常见于增生性病变或乳头状病变"
+        },
+        {
+          "categoryId": "suspicious",
+          "url": "/cyto/yokohama/suspicious.svg",
+          "caption": "C4 可疑恶性：细胞量较多，显示核异型、极向丧失、黏附性下降及肌上皮减少，但异型程度或细胞量不足以确诊恶性，需组织学证实"
+        },
+        {
+          "categoryId": "malignant",
+          "url": "/cyto/yokohama/malignant.svg",
+          "caption": "C5 恶性：细胞丰富，明显黏附性丧失，孤立异型细胞伴核增大、核仁突出、染色质粗颗粒，肌上皮缺失，背景可见坏死或肿瘤素质，符合癌"
+        }
+      ]
+    },
+    "_enhance_cytology_cn_consensus": {
+      "cnConsensus": [],
+      "_low_confidence": true
+    }
+  },
+  {
+    "id": "ios-serous",
+    "nameZh": "浆膜腔积液细胞病理学国际报告系统",
+    "nameEn": "The International System for Reporting Serous Fluid Cytopathology",
+    "description": "由国际细胞学会（IAC）与美国细胞病理学会（ASC）联合发布（2020 年），用于胸腔、腹腔及心包腔积液细胞学的标准化报告。共分 5 个诊断类别，每一类别提供恶性风险（ROM）估计与处理建议，旨在统一术语并指导后续临床决策。",
+    "categories": [
+      {
+        "id": "nd",
+        "nameZh": "标本无法诊断（ND）",
+        "riskOfMalignancy": "17-26%",
+        "management": "结合临床重新送检或行进一步影像学/活检评估"
+      },
+      {
+        "id": "nfm",
+        "nameZh": "未见恶性细胞（NFM）",
+        "riskOfMalignancy": "21%",
+        "management": "结合临床随访；高度怀疑恶性时建议重复穿刺或影像学复查"
+      },
+      {
+        "id": "aus",
+        "nameZh": "非典型细胞（AUS）",
+        "riskOfMalignancy": "66%",
+        "management": "建议重复穿刺、辅助免疫组化/分子检测或多学科评估"
+      },
+      {
+        "id": "sfm",
+        "nameZh": "可疑恶性（SFM）",
+        "riskOfMalignancy": "82%",
+        "management": "结合临床与影像，必要时行组织活检确诊后按恶性处理"
+      },
+      {
+        "id": "mal",
+        "nameZh": "恶性（MAL）",
+        "riskOfMalignancy": "99%",
+        "management": "按相应原发肿瘤分期与治疗方案处理；建议行免疫组化/分子检测明确来源与治疗靶点"
+      }
+    ]
+  },
+  {
+    "id": "papsociety-resp",
+    "nameZh": "呼吸道细胞学 PSC 报告系统",
+    "nameEn": "The Papanicolaou Society of Cytopathology System for Reporting Respiratory Cytology",
+    "description": "由国际细胞学会 Papanicolaou Society of Cytopathology（PSC）发布的呼吸道（痰液、支气管刷检/灌洗、经支气管针吸 TBNA 及 EBUS-TBNA）细胞学标准化报告系统，将呼吸道细胞学结果分为 6 个类别，明确各类别的恶性风险（ROM）及对应的临床处理建议。",
+    "categories": [
+      {
+        "id": "nondiagnostic",
+        "nameZh": "无法诊断",
+        "riskOfMalignancy": "43-53%",
+        "management": "结合临床与影像重新取材（重复支气管镜/EBUS-TBNA 或其他活检方式）"
+      },
+      {
+        "id": "negative",
+        "nameZh": "阴性（良性）",
+        "riskOfMalignancy": "19-29%",
+        "management": "结合影像学临床随访；高危病灶者建议再次取材或活检"
+      },
+      {
+        "id": "atypical",
+        "nameZh": "非典型",
+        "riskOfMalignancy": "46-55%",
+        "management": "结合临床影像综合评估，多数建议重复取样或进一步活检"
+      },
+      {
+        "id": "neoplastic",
+        "nameZh": "肿瘤性：良性或低度恶性潜能",
+        "riskOfMalignancy": "25-65%",
+        "management": "依据具体病变（如类癌、低级别涎腺型肿瘤）选择手术切除或随访"
+      },
+      {
+        "id": "suspicious",
+        "nameZh": "可疑恶性",
+        "riskOfMalignancy": "75-88%",
+        "management": "多学科讨论，一般按恶性处理或组织学确诊后治疗"
+      },
+      {
+        "id": "malignant",
+        "nameZh": "恶性",
+        "riskOfMalignancy": "87-100%",
+        "management": "按肿瘤类型（NSCLC/SCLC/转移癌等）分型分期并启动规范化治疗"
       }
     ]
   }

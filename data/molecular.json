@@ -7,29 +7,139 @@
     "category": "tyrosine-kinase",
     "description": "表皮生长因子受体酪氨酸激酶域突变，是非小细胞肺癌（NSCLC）最重要的驱动基因。东亚人群突变率约50%，非吸烟腺癌尤高。常见突变包括19外显子缺失（最常见，约45%）和21外显子L858R点突变（约40%）。",
     "variants": [
-      { "name": "Exon 19 deletion", "nameZh": "19外显子缺失", "frequency": "~45% of EGFR mutations", "significance": "对TKI敏感，预后优于L858R" },
-      { "name": "L858R (Exon 21)", "nameZh": "21外显子L858R", "frequency": "~40% of EGFR mutations", "significance": "对TKI敏感" },
-      { "name": "T790M (Exon 20)", "nameZh": "20外显子T790M", "frequency": "~50% of acquired resistance", "significance": "一/二代TKI耐药突变，三代TKI (奥希替尼) 有效" },
-      { "name": "Exon 20 insertion", "nameZh": "20外显子插入", "frequency": "~4-10%", "significance": "对经典TKI耐药，amivantamab/mobocertinib可用" },
-      { "name": "C797S", "nameZh": "C797S突变", "frequency": "acquired resistance", "significance": "三代TKI耐药" }
+      {
+        "name": "Exon 19 deletion",
+        "nameZh": "19外显子缺失",
+        "frequency": "~45% of EGFR mutations",
+        "significance": "对TKI敏感，预后优于L858R"
+      },
+      {
+        "name": "L858R (Exon 21)",
+        "nameZh": "21外显子L858R",
+        "frequency": "~40% of EGFR mutations",
+        "significance": "对TKI敏感"
+      },
+      {
+        "name": "T790M (Exon 20)",
+        "nameZh": "20外显子T790M",
+        "frequency": "~50% of acquired resistance",
+        "significance": "一/二代TKI耐药突变，三代TKI (奥希替尼) 有效"
+      },
+      {
+        "name": "Exon 20 insertion",
+        "nameZh": "20外显子插入",
+        "frequency": "~4-10%",
+        "significance": "对经典TKI耐药，amivantamab/mobocertinib可用"
+      },
+      {
+        "name": "C797S",
+        "nameZh": "C797S突变",
+        "frequency": "acquired resistance",
+        "significance": "三代TKI耐药"
+      }
     ],
-    "associatedTumors": ["非小细胞肺癌（腺癌）", "胶质母细胞瘤（EGFRvIII）", "结直肠癌（野生型预测抗EGFR疗效）"],
+    "associatedTumors": [
+      "非小细胞肺癌（腺癌）",
+      "胶质母细胞瘤（EGFRvIII）",
+      "结直肠癌（野生型预测抗EGFR疗效）"
+    ],
     "detectionMethods": [
-      { "method": "NGS", "sensitivity": "高（可检出低至1-5%等位基因频率）", "turnaround": "7-14天", "notes": "推荐首选，可同时检测多基因" },
-      { "method": "qPCR (ARMS)", "sensitivity": "中高（约1%）", "turnaround": "1-3天", "notes": "快速，常用于中国临床" },
-      { "method": "Sanger测序", "sensitivity": "低（需>15-20%突变频率）", "turnaround": "3-5天", "notes": "金标准但灵敏度低，不推荐常规使用" },
-      { "method": "ctDNA液体活检", "sensitivity": "中（取决于肿瘤负荷）", "turnaround": "7-10天", "notes": "无创，适合组织不可得时" }
+      {
+        "method": "NGS",
+        "sensitivity": "高（可检出低至1-5%等位基因频率）",
+        "turnaround": "7-14天",
+        "notes": "推荐首选，可同时检测多基因"
+      },
+      {
+        "method": "qPCR (ARMS)",
+        "sensitivity": "中高（约1%）",
+        "turnaround": "1-3天",
+        "notes": "快速，常用于中国临床"
+      },
+      {
+        "method": "Sanger测序",
+        "sensitivity": "低（需>15-20%突变频率）",
+        "turnaround": "3-5天",
+        "notes": "金标准但灵敏度低，不推荐常规使用"
+      },
+      {
+        "method": "ctDNA液体活检",
+        "sensitivity": "中（取决于肿瘤负荷）",
+        "turnaround": "7-10天",
+        "notes": "无创，适合组织不可得时"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "吉非替尼 (Gefitinib)", "indication": "EGFR敏感突变NSCLC一线", "regulatoryStatus": "FDA+NMPA", "line": "一线" },
-      { "drug": "厄洛替尼 (Erlotinib)", "indication": "EGFR敏感突变NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "一线" },
-      { "drug": "阿法替尼 (Afatinib)", "indication": "EGFR敏感突变NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "一线" },
-      { "drug": "奥希替尼 (Osimertinib)", "indication": "EGFR突变NSCLC一线/T790M耐药", "regulatoryStatus": "FDA+NMPA", "line": "一线/二线" },
-      { "drug": "Amivantamab", "indication": "EGFR Exon20ins NSCLC", "regulatoryStatus": "FDA", "line": "二线" }
+      {
+        "drug": "吉非替尼 (Gefitinib)",
+        "indication": "EGFR敏感突变NSCLC一线",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "厄洛替尼 (Erlotinib)",
+        "indication": "EGFR敏感突变NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "阿法替尼 (Afatinib)",
+        "indication": "EGFR敏感突变NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "奥希替尼 (Osimertinib)",
+        "indication": "EGFR突变NSCLC一线/T790M耐药",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/二线"
+      },
+      {
+        "drug": "Amivantamab",
+        "indication": "EGFR Exon20ins NSCLC",
+        "regulatoryStatus": "FDA",
+        "line": "二线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "EGFR突变是NSCLC最重要的可靶向驱动基因。突变阳性患者使用TKI的中位PFS约10-19个月，显著优于化疗。",
-    "references": ["NCCN NSCLC Guidelines v4.2025", "Mok TS et al. NEJM 2009;361:947-57"]
+    "references": [
+      "NCCN NSCLC Guidelines v4.2025",
+      "Mok TS et al. NEJM 2009;361:947-57"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 ADx-ARMS EGFR 突变检测试剂盒",
+          "platform": "ARMS-qPCR",
+          "nmpaApprovalYear": 2015
+        },
+        {
+          "brand": "罗氏 cobas EGFR Mutation Test v2",
+          "platform": "Real-time PCR",
+          "nmpaApprovalYear": 2017
+        },
+        {
+          "brand": "厦门艾德 Super-ARMS EGFR 突变检测试剂盒",
+          "platform": "Super-ARMS PCR",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "凯杰 therascreen EGFR RGQ PCR Kit",
+          "platform": "Real-time PCR",
+          "nmpaApprovalYear": 2017
+        },
+        {
+          "brand": "燃石医学 人 EGFR/ALK/BRAF/KRAS 基因突变联合检测试剂盒",
+          "platform": "半导体测序 NGS",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      }
+    }
   },
   {
     "id": "alk-fusion",
@@ -39,25 +149,116 @@
     "category": "fusion",
     "description": "间变性淋巴瘤激酶基因融合，最常见的融合伴侣为EML4。主要见于年轻、不吸烟的肺腺癌患者，约占NSCLC的3-7%。也是间变性大细胞淋巴瘤(ALCL)的特征性改变。",
     "variants": [
-      { "name": "EML4-ALK (multiple variants)", "nameZh": "EML4-ALK融合", "frequency": "~3-7% of NSCLC", "significance": "ALK-TKI高度敏感" },
-      { "name": "NPM1-ALK", "nameZh": "NPM1-ALK融合", "frequency": "ALCL common", "significance": "ALCL标志性融合" }
+      {
+        "name": "EML4-ALK (multiple variants)",
+        "nameZh": "EML4-ALK融合",
+        "frequency": "~3-7% of NSCLC",
+        "significance": "ALK-TKI高度敏感"
+      },
+      {
+        "name": "NPM1-ALK",
+        "nameZh": "NPM1-ALK融合",
+        "frequency": "ALCL common",
+        "significance": "ALCL标志性融合"
+      }
     ],
-    "associatedTumors": ["非小细胞肺癌", "间变性大细胞淋巴瘤", "炎性肌纤维母细胞瘤", "神经母细胞瘤"],
+    "associatedTumors": [
+      "非小细胞肺癌",
+      "间变性大细胞淋巴瘤",
+      "炎性肌纤维母细胞瘤",
+      "神经母细胞瘤"
+    ],
     "detectionMethods": [
-      { "method": "FISH", "sensitivity": "高", "turnaround": "2-5天", "notes": "传统金标准，ALK break-apart探针" },
-      { "method": "IHC (D5F3/Ventana)", "sensitivity": "高（敏感度>95%）", "turnaround": "1-2天", "notes": "FDA批准的伴随诊断，可替代FISH" },
-      { "method": "NGS (DNA/RNA)", "sensitivity": "高", "turnaround": "7-14天", "notes": "RNA-based NGS更准确检测融合" },
-      { "method": "RT-PCR", "sensitivity": "中高", "turnaround": "2-3天", "notes": "仅检测已知融合变体" }
+      {
+        "method": "FISH",
+        "sensitivity": "高",
+        "turnaround": "2-5天",
+        "notes": "传统金标准，ALK break-apart探针"
+      },
+      {
+        "method": "IHC (D5F3/Ventana)",
+        "sensitivity": "高（敏感度>95%）",
+        "turnaround": "1-2天",
+        "notes": "FDA批准的伴随诊断，可替代FISH"
+      },
+      {
+        "method": "NGS (DNA/RNA)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "RNA-based NGS更准确检测融合"
+      },
+      {
+        "method": "RT-PCR",
+        "sensitivity": "中高",
+        "turnaround": "2-3天",
+        "notes": "仅检测已知融合变体"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "克唑替尼 (Crizotinib)", "indication": "ALK+ NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "一线（已非首选）" },
-      { "drug": "阿来替尼 (Alectinib)", "indication": "ALK+ NSCLC一线", "regulatoryStatus": "FDA+NMPA", "line": "一线首选" },
-      { "drug": "布格替尼 (Brigatinib)", "indication": "ALK+ NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "一线/二线" },
-      { "drug": "洛拉替尼 (Lorlatinib)", "indication": "ALK+ NSCLC（含耐药）", "regulatoryStatus": "FDA+NMPA", "line": "一线/后线" }
+      {
+        "drug": "克唑替尼 (Crizotinib)",
+        "indication": "ALK+ NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线（已非首选）"
+      },
+      {
+        "drug": "阿来替尼 (Alectinib)",
+        "indication": "ALK+ NSCLC一线",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线首选"
+      },
+      {
+        "drug": "布格替尼 (Brigatinib)",
+        "indication": "ALK+ NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/二线"
+      },
+      {
+        "drug": "洛拉替尼 (Lorlatinib)",
+        "indication": "ALK+ NSCLC（含耐药）",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/后线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "ALK融合阳性NSCLC对ALK-TKI高度敏感，一线使用阿来替尼中位PFS可达34.8个月。需关注耐药突变（如G1202R）。",
-    "references": ["Solomon BJ et al. NEJM 2014;371:2167-77", "Peters S et al. NEJM 2017;377:829-38"]
+    "references": [
+      "Solomon BJ et al. NEJM 2014;371:2167-77",
+      "Peters S et al. NEJM 2017;377:829-38"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 ALK 融合基因检测试剂盒（ARMS 法）",
+          "platform": "ARMS-qPCR",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "艾德生物 人 EGFR/ALK/BRAF/KRAS/HER2/ROS1 基因突变联合检测试剂盒（可逆末端终止测序法）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "罗氏 VENTANA ALK (D5F3) CDx Assay",
+          "platform": "IHC",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "雅培 Vysis ALK Break Apart FISH Probe Kit",
+          "platform": "FISH",
+          "nmpaApprovalYear": 2017
+        },
+        {
+          "brand": "燃石医学 人 EGFR/ALK/BRAF/KRAS/HER2/ROS1 基因突变联合检测试剂盒（半导体测序法）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      }
+    }
   },
   {
     "id": "ros1-fusion",
@@ -67,23 +268,94 @@
     "category": "fusion",
     "description": "ROS1基因融合，与ALK结构相似，约占NSCLC的1-2%。多见于年轻不吸烟女性腺癌。融合伴侣包括CD74、SLC34A2、SDC4等。",
     "variants": [
-      { "name": "CD74-ROS1", "nameZh": "CD74-ROS1融合", "frequency": "most common partner", "significance": "克唑替尼敏感" },
-      { "name": "SLC34A2-ROS1", "nameZh": "SLC34A2-ROS1融合", "frequency": "common", "significance": "克唑替尼敏感" }
+      {
+        "name": "CD74-ROS1",
+        "nameZh": "CD74-ROS1融合",
+        "frequency": "most common partner",
+        "significance": "克唑替尼敏感"
+      },
+      {
+        "name": "SLC34A2-ROS1",
+        "nameZh": "SLC34A2-ROS1融合",
+        "frequency": "common",
+        "significance": "克唑替尼敏感"
+      }
     ],
-    "associatedTumors": ["非小细胞肺癌", "胶质母细胞瘤", "胆管癌"],
+    "associatedTumors": [
+      "非小细胞肺癌",
+      "胶质母细胞瘤",
+      "胆管癌"
+    ],
     "detectionMethods": [
-      { "method": "FISH", "sensitivity": "高", "turnaround": "2-5天", "notes": "ROS1 break-apart探针" },
-      { "method": "IHC (D4D6)", "sensitivity": "筛查用（敏感度高但特异性低）", "turnaround": "1-2天", "notes": "IHC阳性需FISH/NGS确认" },
-      { "method": "NGS (RNA-based)", "sensitivity": "高", "turnaround": "7-14天", "notes": "推荐，可同时覆盖ALK/RET/NTRK" }
+      {
+        "method": "FISH",
+        "sensitivity": "高",
+        "turnaround": "2-5天",
+        "notes": "ROS1 break-apart探针"
+      },
+      {
+        "method": "IHC (D4D6)",
+        "sensitivity": "筛查用（敏感度高但特异性低）",
+        "turnaround": "1-2天",
+        "notes": "IHC阳性需FISH/NGS确认"
+      },
+      {
+        "method": "NGS (RNA-based)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "推荐，可同时覆盖ALK/RET/NTRK"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "克唑替尼 (Crizotinib)", "indication": "ROS1+ NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "一线" },
-      { "drug": "恩曲替尼 (Entrectinib)", "indication": "ROS1+ NSCLC", "regulatoryStatus": "FDA", "line": "一线" },
-      { "drug": "瑞普替尼 (Repotrectinib)", "indication": "ROS1+ NSCLC", "regulatoryStatus": "FDA", "line": "一线/后线" }
+      {
+        "drug": "克唑替尼 (Crizotinib)",
+        "indication": "ROS1+ NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "恩曲替尼 (Entrectinib)",
+        "indication": "ROS1+ NSCLC",
+        "regulatoryStatus": "FDA",
+        "line": "一线"
+      },
+      {
+        "drug": "瑞普替尼 (Repotrectinib)",
+        "indication": "ROS1+ NSCLC",
+        "regulatoryStatus": "FDA",
+        "line": "一线/后线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "ROS1融合对克唑替尼/恩曲替尼高度敏感，ORR约70%。瑞普替尼对克唑替尼耐药后仍有效。",
-    "references": ["Shaw AT et al. NEJM 2014;371:1963-71"]
+    "references": [
+      "Shaw AT et al. NEJM 2014;371:1963-71"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 人类 ROS1 基因融合检测试剂盒",
+          "platform": "ARMS-qPCR",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "艾德生物 人类 EGFR/ALK/BRAF/KRAS/HER2 基因突变及 ROS1 融合联合检测试剂盒（Super-ARMS / NGS）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "燃石医学 人 EGFR/ALK/BRAF/KRAS/HER2/ROS1 基因突变联合检测试剂盒",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "ROS1 融合 CDx 试剂盒具体品牌与 NMPA 批准年份记忆不完全确定，已仅列高置信度条目；CSCO 非小细胞肺癌指南 2024 版将 ROS1 融合检测列为 Ⅰ 级推荐（用于晚期 NSCLC 一线治疗决策）。"
+    }
   },
   {
     "id": "braf-v600e",
@@ -93,25 +365,106 @@
     "category": "point-mutation",
     "description": "BRAF V600E是最常见的BRAF激活突变，导致MAPK通路持续激活。在黑色素瘤（约50%）、甲状腺乳头状癌（约45%）、毛细胞白血病（>95%）、结直肠癌（约10%）中常见。在肺癌中约占1-2%。",
     "variants": [
-      { "name": "V600E", "nameZh": "V600E点突变", "frequency": "最常见BRAF突变（>90%）", "significance": "BRAF+MEK抑制剂敏感" },
-      { "name": "V600K", "nameZh": "V600K点突变", "frequency": "黑色素瘤中约5-6%", "significance": "BRAF抑制剂敏感" },
-      { "name": "Non-V600 (Class II/III)", "nameZh": "非V600突变", "frequency": "varies", "significance": "对V600特异性抑制剂不敏感" }
+      {
+        "name": "V600E",
+        "nameZh": "V600E点突变",
+        "frequency": "最常见BRAF突变（>90%）",
+        "significance": "BRAF+MEK抑制剂敏感"
+      },
+      {
+        "name": "V600K",
+        "nameZh": "V600K点突变",
+        "frequency": "黑色素瘤中约5-6%",
+        "significance": "BRAF抑制剂敏感"
+      },
+      {
+        "name": "Non-V600 (Class II/III)",
+        "nameZh": "非V600突变",
+        "frequency": "varies",
+        "significance": "对V600特异性抑制剂不敏感"
+      }
     ],
-    "associatedTumors": ["黑色素瘤", "甲状腺乳头状癌", "结直肠癌", "非小细胞肺癌", "毛细胞白血病", "Langerhans细胞组织细胞增生症", "Erdheim-Chester病"],
+    "associatedTumors": [
+      "黑色素瘤",
+      "甲状腺乳头状癌",
+      "结直肠癌",
+      "非小细胞肺癌",
+      "毛细胞白血病",
+      "Langerhans细胞组织细胞增生症",
+      "Erdheim-Chester病"
+    ],
     "detectionMethods": [
-      { "method": "IHC (VE1)", "sensitivity": "高（V600E特异）", "turnaround": "1-2天", "notes": "仅检测V600E，简便快速" },
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "可检测所有BRAF变异" },
-      { "method": "qPCR (Cobas)", "sensitivity": "高", "turnaround": "1-3天", "notes": "FDA批准的伴随诊断" },
-      { "method": "Sanger测序", "sensitivity": "低", "turnaround": "3-5天", "notes": "灵敏度不足" }
+      {
+        "method": "IHC (VE1)",
+        "sensitivity": "高（V600E特异）",
+        "turnaround": "1-2天",
+        "notes": "仅检测V600E，简便快速"
+      },
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "可检测所有BRAF变异"
+      },
+      {
+        "method": "qPCR (Cobas)",
+        "sensitivity": "高",
+        "turnaround": "1-3天",
+        "notes": "FDA批准的伴随诊断"
+      },
+      {
+        "method": "Sanger测序",
+        "sensitivity": "低",
+        "turnaround": "3-5天",
+        "notes": "灵敏度不足"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "达拉非尼+曲美替尼 (D+T)", "indication": "BRAF V600E黑色素瘤/NSCLC/甲状腺癌", "regulatoryStatus": "FDA+NMPA", "line": "一线" },
-      { "drug": "维莫非尼 (Vemurafenib)", "indication": "BRAF V600E黑色素瘤", "regulatoryStatus": "FDA+NMPA", "line": "一线（联合cobimetinib）" },
-      { "drug": "恩考芬尼+比美替尼+西妥昔单抗", "indication": "BRAF V600E结直肠癌", "regulatoryStatus": "FDA", "line": "二/三线" }
+      {
+        "drug": "达拉非尼+曲美替尼 (D+T)",
+        "indication": "BRAF V600E黑色素瘤/NSCLC/甲状腺癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "维莫非尼 (Vemurafenib)",
+        "indication": "BRAF V600E黑色素瘤",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线（联合cobimetinib）"
+      },
+      {
+        "drug": "恩考芬尼+比美替尼+西妥昔单抗",
+        "indication": "BRAF V600E结直肠癌",
+        "regulatoryStatus": "FDA",
+        "line": "二/三线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "BRAF V600E是泛癌种可靶向突变。黑色素瘤中D+T的ORR约65%。结直肠癌中BRAF V600E提示预后差（MSS型）。甲状腺乳头状癌中与侵袭性行为相关。",
-    "references": ["Flaherty KT et al. NEJM 2012;367:1694-703", "Kopetz S et al. NEJM 2019;381:1632-43"]
+    "references": [
+      "Flaherty KT et al. NEJM 2012;367:1694-703",
+      "Kopetz S et al. NEJM 2019;381:1632-43"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 Super-ARMS BRAF V600E 突变检测试剂盒",
+          "platform": "ARMS-qPCR",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "罗氏 cobas 4800 BRAF V600 Mutation Test",
+          "platform": "Real-time PCR",
+          "nmpaApprovalYear": 2017
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "艾德生物 BRAF V600E 试剂盒与罗氏 cobas BRAF 试剂盒在中国获批具体年份把握不足，需核对 NMPA 数据库；CSCO 推荐等级按结直肠癌/黑色素瘤中 BRAF V600E 检测的普遍推荐表述，不同瘤种具体等级可能存在差异。"
+    }
   },
   {
     "id": "kras-mutations",
@@ -121,24 +474,102 @@
     "category": "point-mutation",
     "description": "KRAS是最常见的RAS家族致癌突变，长期被认为不可成药。G12C突变的靶向药物突破使其成为热点。KRAS突变见于约30%肺腺癌、45%结直肠癌、>90%胰腺导管腺癌。",
     "variants": [
-      { "name": "G12C", "nameZh": "G12C突变", "frequency": "NSCLC ~13%, CRC ~3%", "significance": "索托拉西布/阿达格拉西布靶向" },
-      { "name": "G12D", "nameZh": "G12D突变", "frequency": "胰腺癌最常见", "significance": "新药研发中" },
-      { "name": "G12V", "nameZh": "G12V突变", "frequency": "多癌种常见", "significance": "目前无靶向药" },
-      { "name": "G13D", "nameZh": "G13D突变", "frequency": "CRC ~7%", "significance": "可能对西妥昔单抗部分敏感（有争议）" }
+      {
+        "name": "G12C",
+        "nameZh": "G12C突变",
+        "frequency": "NSCLC ~13%, CRC ~3%",
+        "significance": "索托拉西布/阿达格拉西布靶向"
+      },
+      {
+        "name": "G12D",
+        "nameZh": "G12D突变",
+        "frequency": "胰腺癌最常见",
+        "significance": "新药研发中"
+      },
+      {
+        "name": "G12V",
+        "nameZh": "G12V突变",
+        "frequency": "多癌种常见",
+        "significance": "目前无靶向药"
+      },
+      {
+        "name": "G13D",
+        "nameZh": "G13D突变",
+        "frequency": "CRC ~7%",
+        "significance": "可能对西妥昔单抗部分敏感（有争议）"
+      }
     ],
-    "associatedTumors": ["非小细胞肺癌", "结直肠癌", "胰腺导管腺癌", "子宫内膜癌"],
+    "associatedTumors": [
+      "非小细胞肺癌",
+      "结直肠癌",
+      "胰腺导管腺癌",
+      "子宫内膜癌"
+    ],
     "detectionMethods": [
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "推荐，可检测全部KRAS位点" },
-      { "method": "qPCR", "sensitivity": "中高", "turnaround": "1-3天", "notes": "常用于CRC的RAS检测" },
-      { "method": "数字PCR (ddPCR)", "sensitivity": "极高（0.01%）", "turnaround": "2-3天", "notes": "适合ctDNA检测" }
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "推荐，可检测全部KRAS位点"
+      },
+      {
+        "method": "qPCR",
+        "sensitivity": "中高",
+        "turnaround": "1-3天",
+        "notes": "常用于CRC的RAS检测"
+      },
+      {
+        "method": "数字PCR (ddPCR)",
+        "sensitivity": "极高（0.01%）",
+        "turnaround": "2-3天",
+        "notes": "适合ctDNA检测"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "索托拉西布 (Sotorasib)", "indication": "KRAS G12C NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "二线" },
-      { "drug": "阿达格拉西布 (Adagrasib)", "indication": "KRAS G12C NSCLC", "regulatoryStatus": "FDA", "line": "二线" }
+      {
+        "drug": "索托拉西布 (Sotorasib)",
+        "indication": "KRAS G12C NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线"
+      },
+      {
+        "drug": "阿达格拉西布 (Adagrasib)",
+        "indication": "KRAS G12C NSCLC",
+        "regulatoryStatus": "FDA",
+        "line": "二线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "KRAS突变（除G12C外）仍缺乏直接靶向药。KRAS突变是抗EGFR单抗（西妥昔单抗/帕尼单抗）的负向预测因子，结直肠癌患者必检。",
-    "references": ["Skoulidis F et al. NEJM 2021;384:2371-81", "NCCN CRC Guidelines v1.2025"]
+    "references": [
+      "Skoulidis F et al. NEJM 2021;384:2371-81",
+      "NCCN CRC Guidelines v1.2025"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 Super-ARMS KRAS 基因突变检测试剂盒",
+          "platform": "Super-ARMS PCR",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "艾德生物人类 EGFR/KRAS/BRAF/PIK3CA/ALK/ROS1 基因突变联合检测试剂盒",
+          "platform": "ARMS-qPCR",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "凯杰 therascreen KRAS RGQ PCR Kit",
+          "platform": "Real-time PCR",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "KRAS G12C 靶向 CDx（如与 adagrasib/sotorasib 配套的 NGS 试剂盒）在中国的具体获批信息把握有限；所列试剂盒品牌与平台为较确信的历史获批条目，但具体批准年份可能存在偏差，建议人工核对 NMPA 数据库。"
+    }
   },
   {
     "id": "ntrk-fusion",
@@ -148,22 +579,77 @@
     "category": "fusion",
     "description": "神经营养因子受体酪氨酸激酶家族（NTRK1/2/3）融合是一种罕见但泛癌种的驱动事件。在分泌性乳腺癌（>90%）、婴儿纤维肉瘤（>90%）中极高频，在常见癌种中频率<1%但绝对数量可观。",
     "variants": [
-      { "name": "ETV6-NTRK3", "nameZh": "ETV6-NTRK3融合", "frequency": "分泌性癌/婴儿纤维肉瘤特征", "significance": "拉罗替尼/恩曲替尼高度敏感" },
-      { "name": "Various NTRK1/2 fusions", "nameZh": "多种NTRK1/2融合", "frequency": "稀少", "significance": "泛癌种靶向" }
+      {
+        "name": "ETV6-NTRK3",
+        "nameZh": "ETV6-NTRK3融合",
+        "frequency": "分泌性癌/婴儿纤维肉瘤特征",
+        "significance": "拉罗替尼/恩曲替尼高度敏感"
+      },
+      {
+        "name": "Various NTRK1/2 fusions",
+        "nameZh": "多种NTRK1/2融合",
+        "frequency": "稀少",
+        "significance": "泛癌种靶向"
+      }
     ],
-    "associatedTumors": ["分泌性乳腺癌", "婴儿纤维肉瘤", "非小细胞肺癌", "甲状腺癌", "结直肠癌", "胶质瘤", "唾液腺癌"],
+    "associatedTumors": [
+      "分泌性乳腺癌",
+      "婴儿纤维肉瘤",
+      "非小细胞肺癌",
+      "甲状腺癌",
+      "结直肠癌",
+      "胶质瘤",
+      "唾液腺癌"
+    ],
     "detectionMethods": [
-      { "method": "IHC (pan-TRK EPR17341)", "sensitivity": "筛查用（敏感度>95%）", "turnaround": "1-2天", "notes": "推荐作为初筛，阳性需确认" },
-      { "method": "FISH", "sensitivity": "高", "turnaround": "2-5天", "notes": "需3个不同探针（NTRK1/2/3）" },
-      { "method": "NGS (RNA-based)", "sensitivity": "高", "turnaround": "7-14天", "notes": "首选确认方法" }
+      {
+        "method": "IHC (pan-TRK EPR17341)",
+        "sensitivity": "筛查用（敏感度>95%）",
+        "turnaround": "1-2天",
+        "notes": "推荐作为初筛，阳性需确认"
+      },
+      {
+        "method": "FISH",
+        "sensitivity": "高",
+        "turnaround": "2-5天",
+        "notes": "需3个不同探针（NTRK1/2/3）"
+      },
+      {
+        "method": "NGS (RNA-based)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "首选确认方法"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "拉罗替尼 (Larotrectinib)", "indication": "NTRK融合实体瘤（泛癌种）", "regulatoryStatus": "FDA+NMPA", "line": "不限线" },
-      { "drug": "恩曲替尼 (Entrectinib)", "indication": "NTRK融合实体瘤（泛癌种）", "regulatoryStatus": "FDA+NMPA", "line": "不限线" }
+      {
+        "drug": "拉罗替尼 (Larotrectinib)",
+        "indication": "NTRK融合实体瘤（泛癌种）",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "不限线"
+      },
+      {
+        "drug": "恩曲替尼 (Entrectinib)",
+        "indication": "NTRK融合实体瘤（泛癌种）",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "不限线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "NTRK融合是首个获批泛癌种适应症的靶点。拉罗替尼在NTRK融合肿瘤中ORR约75%，持久缓解。建议常规筛查（尤其分泌性癌、婴儿纤维肉瘤）。",
-    "references": ["Drilon A et al. NEJM 2018;378:731-9", "Hong DS et al. Lancet Oncol 2020;21:531-40"]
+    "references": [
+      "Drilon A et al. NEJM 2018;378:731-9",
+      "Hong DS et al. Lancet Oncol 2020;21:531-40"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅱ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "截至知识截止，尚未确认有 NMPA 正式批准的 NTRK 融合伴随诊断试剂盒（NTRK 检测多以 IHC 初筛 + FISH/NGS 确认的 LDT 形式开展）；CSCO 多瘤种指南（如 NSCLC、结直肠癌、甲状腺癌、软组织肉瘤）在 NTRK 融合阳性患者中推荐拉罗替尼/恩曲替尼，但具体推荐级别因瘤种而异，此处给出的 Ⅱ 级推荐为综合概括，需按具体瘤种人工复核。"
+    }
   },
   {
     "id": "ret-fusion",
@@ -173,23 +659,90 @@
     "category": "fusion",
     "description": "RET基因异常包括融合（NSCLC约1-2%、甲状腺乳头状癌约10-20%）和点突变（甲状腺髓样癌MTC约60%遗传性、15%散发性）。选择性RET抑制剂已改变治疗格局。",
     "variants": [
-      { "name": "KIF5B-RET", "nameZh": "KIF5B-RET融合", "frequency": "NSCLC中最常见伴侣", "significance": "RET抑制剂敏感" },
-      { "name": "CCDC6-RET (RET/PTC1)", "nameZh": "CCDC6-RET融合", "frequency": "PTC中最常见", "significance": "RET抑制剂敏感" },
-      { "name": "M918T", "nameZh": "M918T点突变", "frequency": "MEN2B/散发MTC", "significance": "RET抑制剂敏感" }
+      {
+        "name": "KIF5B-RET",
+        "nameZh": "KIF5B-RET融合",
+        "frequency": "NSCLC中最常见伴侣",
+        "significance": "RET抑制剂敏感"
+      },
+      {
+        "name": "CCDC6-RET (RET/PTC1)",
+        "nameZh": "CCDC6-RET融合",
+        "frequency": "PTC中最常见",
+        "significance": "RET抑制剂敏感"
+      },
+      {
+        "name": "M918T",
+        "nameZh": "M918T点突变",
+        "frequency": "MEN2B/散发MTC",
+        "significance": "RET抑制剂敏感"
+      }
     ],
-    "associatedTumors": ["非小细胞肺癌", "甲状腺乳头状癌", "甲状腺髓样癌"],
+    "associatedTumors": [
+      "非小细胞肺癌",
+      "甲状腺乳头状癌",
+      "甲状腺髓样癌"
+    ],
     "detectionMethods": [
-      { "method": "NGS (DNA+RNA)", "sensitivity": "高", "turnaround": "7-14天", "notes": "推荐首选" },
-      { "method": "FISH", "sensitivity": "高", "turnaround": "2-5天", "notes": "仅检测融合" },
-      { "method": "IHC", "sensitivity": "低", "turnaround": "1-2天", "notes": "不推荐用于RET筛查" }
+      {
+        "method": "NGS (DNA+RNA)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "推荐首选"
+      },
+      {
+        "method": "FISH",
+        "sensitivity": "高",
+        "turnaround": "2-5天",
+        "notes": "仅检测融合"
+      },
+      {
+        "method": "IHC",
+        "sensitivity": "低",
+        "turnaround": "1-2天",
+        "notes": "不推荐用于RET筛查"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "塞尔帕替尼 (Selpercatinib)", "indication": "RET融合NSCLC/甲状腺癌；RET突变MTC", "regulatoryStatus": "FDA+NMPA", "line": "一线/后线" },
-      { "drug": "普拉替尼 (Pralsetinib)", "indication": "RET融合NSCLC/甲状腺癌", "regulatoryStatus": "FDA+NMPA", "line": "一线/后线" }
+      {
+        "drug": "塞尔帕替尼 (Selpercatinib)",
+        "indication": "RET融合NSCLC/甲状腺癌；RET突变MTC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/后线"
+      },
+      {
+        "drug": "普拉替尼 (Pralsetinib)",
+        "indication": "RET融合NSCLC/甲状腺癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/后线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "选择性RET抑制剂在RET改变肿瘤中ORR约60-85%。MTC患者应常规检测RET突变（遗传咨询）。",
-    "references": ["Drilon A et al. NEJM 2020;383:813-24", "Subbiah V et al. JCO 2021;39:3391-402"]
+    "references": [
+      "Drilon A et al. NEJM 2020;383:813-24",
+      "Subbiah V et al. JCO 2021;39:3391-402"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 人类 EGFR/ALK/BRAF/KRAS/PIK3CA/ROS1/RET 基因突变联合检测试剂盒",
+          "platform": "ARMS-qPCR + 多重荧光PCR",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "燃石医学 人 EGFR/ALK/ROS1/KRAS/BRAF/HER2/RET/MET 基因突变检测试剂盒（可逆末端终止测序法）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "RET 融合/突变目前在国内尚无单靶点 NMPA 批准的 CDx，上述试剂盒均为多基因联合检测试剂盒并覆盖 RET，具体获批覆盖范围与年份建议人工核对 NMPA 公示；CSCO 推荐等级基于 NSCLC、甲状腺癌指南中对 RET 检测的综合判断，不同瘤种等级可能不同。"
+    }
   },
   {
     "id": "her2-amplification",
@@ -199,24 +752,111 @@
     "category": "amplification",
     "description": "HER2基因扩增或过表达是乳腺癌（约15-20%）和胃癌（约15-20%）的重要治疗靶点。HER2突变（非扩增）在NSCLC中约2-4%，也成为新靶点。",
     "variants": [
-      { "name": "HER2 amplification", "nameZh": "HER2基因扩增", "frequency": "乳腺癌15-20%, 胃癌15-20%", "significance": "抗HER2治疗靶标" },
-      { "name": "HER2 Exon 20 insertion", "nameZh": "HER2 20外显子插入突变", "frequency": "NSCLC ~2-4%", "significance": "T-DXd有效" }
+      {
+        "name": "HER2 amplification",
+        "nameZh": "HER2基因扩增",
+        "frequency": "乳腺癌15-20%, 胃癌15-20%",
+        "significance": "抗HER2治疗靶标"
+      },
+      {
+        "name": "HER2 Exon 20 insertion",
+        "nameZh": "HER2 20外显子插入突变",
+        "frequency": "NSCLC ~2-4%",
+        "significance": "T-DXd有效"
+      }
     ],
-    "associatedTumors": ["乳腺癌", "胃癌/胃食管结合部腺癌", "非小细胞肺癌", "结直肠癌", "子宫内膜癌", "胆道癌"],
+    "associatedTumors": [
+      "乳腺癌",
+      "胃癌/胃食管结合部腺癌",
+      "非小细胞肺癌",
+      "结直肠癌",
+      "子宫内膜癌",
+      "胆道癌"
+    ],
     "detectionMethods": [
-      { "method": "IHC", "sensitivity": "筛查标准", "turnaround": "1-2天", "notes": "0/1+/2+/3+半定量评分；2+需FISH确认" },
-      { "method": "FISH/CISH", "sensitivity": "金标准", "turnaround": "2-5天", "notes": "HER2/CEP17比值≥2.0或HER2拷贝数≥6为扩增" },
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "可检测扩增和突变" }
+      {
+        "method": "IHC",
+        "sensitivity": "筛查标准",
+        "turnaround": "1-2天",
+        "notes": "0/1+/2+/3+半定量评分；2+需FISH确认"
+      },
+      {
+        "method": "FISH/CISH",
+        "sensitivity": "金标准",
+        "turnaround": "2-5天",
+        "notes": "HER2/CEP17比值≥2.0或HER2拷贝数≥6为扩增"
+      },
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "可检测扩增和突变"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "曲妥珠单抗 (Trastuzumab)", "indication": "HER2+乳腺癌/胃癌", "regulatoryStatus": "FDA+NMPA", "line": "一线" },
-      { "drug": "帕妥珠单抗 (Pertuzumab)", "indication": "HER2+乳腺癌（联合曲妥珠单抗）", "regulatoryStatus": "FDA+NMPA", "line": "一线" },
-      { "drug": "T-DXd (Trastuzumab deruxtecan)", "indication": "HER2+/HER2-low乳腺癌；HER2+胃癌；HER2突变NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "二/三线" },
-      { "drug": "T-DM1 (Ado-trastuzumab emtansine)", "indication": "HER2+乳腺癌", "regulatoryStatus": "FDA+NMPA", "line": "二线" }
+      {
+        "drug": "曲妥珠单抗 (Trastuzumab)",
+        "indication": "HER2+乳腺癌/胃癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "帕妥珠单抗 (Pertuzumab)",
+        "indication": "HER2+乳腺癌（联合曲妥珠单抗）",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线"
+      },
+      {
+        "drug": "T-DXd (Trastuzumab deruxtecan)",
+        "indication": "HER2+/HER2-low乳腺癌；HER2+胃癌；HER2突变NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二/三线"
+      },
+      {
+        "drug": "T-DM1 (Ado-trastuzumab emtansine)",
+        "indication": "HER2+乳腺癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线"
+      }
     ],
-    "tcgaSubtypes": ["HER2-enriched (乳腺癌PAM50分型)"],
+    "tcgaSubtypes": [
+      "HER2-enriched (乳腺癌PAM50分型)"
+    ],
     "clinicalSignificance": "HER2靶向治疗彻底改变了HER2+乳腺癌预后。T-DXd将疗效扩展至HER2-low人群。胃癌中HER2检测为一线治疗标配。",
-    "references": ["Slamon DJ et al. NEJM 2001;344:783-92", "Modi S et al. NEJM 2022;387:9-20"]
+    "references": [
+      "Slamon DJ et al. NEJM 2001;344:783-92",
+      "Modi S et al. NEJM 2022;387:9-20"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "罗氏 PATHWAY anti-HER-2/neu (4B5) 兔单克隆抗体",
+          "platform": "IHC",
+          "nmpaApprovalYear": 2013
+        },
+        {
+          "brand": "雅培 PathVysion HER-2 DNA 探针试剂盒",
+          "platform": "FISH",
+          "nmpaApprovalYear": 2012
+        },
+        {
+          "brand": "安必平 HER2 基因扩增检测试剂盒",
+          "platform": "FISH",
+          "nmpaApprovalYear": 2016
+        },
+        {
+          "brand": "艾德生物 HER2 基因扩增检测试剂盒",
+          "platform": "FISH",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "乳腺癌/胃癌 HER2 IHC 与 FISH 检测试剂为 NMPA 批准的伴随/辅助诊断产品，具体试剂盒的确切 NMPA 批准年份存在不确定性；HER2 突变（如 NSCLC ERBB2 20ins）目前在国内尚无专一 CDx 试剂盒单独获批，主要依赖 NGS 大 panel 检测。"
+    }
   },
   {
     "id": "met-exon14",
@@ -226,24 +866,95 @@
     "category": "splice-site",
     "description": "MET 14外显子跳跃突变导致MET蛋白降解减少和持续激活，约占NSCLC的3-4%，多见于老年患者和肉瘤样癌。MET扩增可作为EGFR-TKI耐药机制。",
     "variants": [
-      { "name": "MET Exon 14 skipping", "nameZh": "MET 14外显子跳跃", "frequency": "NSCLC ~3-4%", "significance": "MET抑制剂靶点" },
-      { "name": "MET amplification", "nameZh": "MET基因扩增", "frequency": "NSCLC ~2-4%", "significance": "EGFR-TKI耐药机制；高拷贝数对MET-TKI敏感" }
+      {
+        "name": "MET Exon 14 skipping",
+        "nameZh": "MET 14外显子跳跃",
+        "frequency": "NSCLC ~3-4%",
+        "significance": "MET抑制剂靶点"
+      },
+      {
+        "name": "MET amplification",
+        "nameZh": "MET基因扩增",
+        "frequency": "NSCLC ~2-4%",
+        "significance": "EGFR-TKI耐药机制；高拷贝数对MET-TKI敏感"
+      }
     ],
-    "associatedTumors": ["非小细胞肺癌（尤其肉瘤样癌）", "肾乳头状细胞癌"],
+    "associatedTumors": [
+      "非小细胞肺癌（尤其肉瘤样癌）",
+      "肾乳头状细胞癌"
+    ],
     "detectionMethods": [
-      { "method": "NGS (RNA-based)", "sensitivity": "高", "turnaround": "7-14天", "notes": "推荐首选，DNA-based NGS可能漏检部分跳跃" },
-      { "method": "RT-PCR", "sensitivity": "高", "turnaround": "2-3天", "notes": "检测外显子跳跃" },
-      { "method": "FISH", "sensitivity": "高", "turnaround": "2-5天", "notes": "检测MET扩增（MET/CEN7≥5）" },
-      { "method": "IHC", "sensitivity": "筛查用", "turnaround": "1-2天", "notes": "MET过表达提示需分子确认" }
+      {
+        "method": "NGS (RNA-based)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "推荐首选，DNA-based NGS可能漏检部分跳跃"
+      },
+      {
+        "method": "RT-PCR",
+        "sensitivity": "高",
+        "turnaround": "2-3天",
+        "notes": "检测外显子跳跃"
+      },
+      {
+        "method": "FISH",
+        "sensitivity": "高",
+        "turnaround": "2-5天",
+        "notes": "检测MET扩增（MET/CEN7≥5）"
+      },
+      {
+        "method": "IHC",
+        "sensitivity": "筛查用",
+        "turnaround": "1-2天",
+        "notes": "MET过表达提示需分子确认"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "卡马替尼 (Capmatinib)", "indication": "MET Exon14跳跃NSCLC", "regulatoryStatus": "FDA", "line": "一线/后线" },
-      { "drug": "特泊替尼 (Tepotinib)", "indication": "MET Exon14跳跃NSCLC", "regulatoryStatus": "FDA+NMPA", "line": "一线/后线" },
-      { "drug": "赛沃替尼 (Savolitinib)", "indication": "MET Exon14跳跃NSCLC", "regulatoryStatus": "NMPA", "line": "后线" }
+      {
+        "drug": "卡马替尼 (Capmatinib)",
+        "indication": "MET Exon14跳跃NSCLC",
+        "regulatoryStatus": "FDA",
+        "line": "一线/后线"
+      },
+      {
+        "drug": "特泊替尼 (Tepotinib)",
+        "indication": "MET Exon14跳跃NSCLC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/后线"
+      },
+      {
+        "drug": "赛沃替尼 (Savolitinib)",
+        "indication": "MET Exon14跳跃NSCLC",
+        "regulatoryStatus": "NMPA",
+        "line": "后线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "MET exon14跳跃是独立的驱动事件，MET-TKI的ORR约40-70%。RNA-based检测优于DNA-based（剪接位点突变多样）。",
-    "references": ["Wolf J et al. NEJM 2020;383:944-57", "Paik PK et al. NEJM 2020;383:931-43"]
+    "references": [
+      "Wolf J et al. NEJM 2020;383:944-57",
+      "Paik PK et al. NEJM 2020;383:931-43"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 人类 EGFR/ALK/BRAF/KRAS/NRAS/HER2/ROS1/RET/MET 基因突变联合检测试剂盒（可逆末端终止测序法）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "燃石医学 人 EGFR/ALK/BRAF/KRAS/HER2/ROS1/RET/MET 基因突变联合检测试剂盒（半导体测序法）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "MET 14 外显子跳跃突变目前在国内主要通过已获批的多基因 NGS 联检试剂盒检测，尚不确定是否存在专门针对 MET exon14 的单项 NMPA CDx 试剂盒；所列联检试剂盒的具体获批年份与适应证覆盖范围需人工核对 NMPA 数据库确认。CSCO NSCLC 2024 指南中 MET exon14 跳跃突变检测为 Ⅰ 级推荐，但部分版本将其列入 II 级推荐，需核对最新版本。"
+    }
   },
   {
     "id": "brca1-2",
@@ -253,24 +964,106 @@
     "category": "tumor-suppressor",
     "description": "BRCA1/2是同源重组修复（HRR）关键基因。胚系突变携带者乳腺癌和卵巢癌终生风险显著增高。体系突变也见于前列腺癌、胰腺癌等。PARP抑制剂对BRCA突变肿瘤具有合成致死效应。",
     "variants": [
-      { "name": "BRCA1 germline mutations", "nameZh": "BRCA1胚系突变", "frequency": "卵巢癌~15%, 乳腺癌~5%", "significance": "PARP抑制剂+铂类敏感" },
-      { "name": "BRCA2 germline mutations", "nameZh": "BRCA2胚系突变", "frequency": "乳腺癌~5%, 前列腺癌~5%", "significance": "PARP抑制剂+铂类敏感" },
-      { "name": "Somatic BRCA mutations", "nameZh": "体系BRCA突变", "frequency": "varies", "significance": "也可从PARP抑制剂获益" }
+      {
+        "name": "BRCA1 germline mutations",
+        "nameZh": "BRCA1胚系突变",
+        "frequency": "卵巢癌~15%, 乳腺癌~5%",
+        "significance": "PARP抑制剂+铂类敏感"
+      },
+      {
+        "name": "BRCA2 germline mutations",
+        "nameZh": "BRCA2胚系突变",
+        "frequency": "乳腺癌~5%, 前列腺癌~5%",
+        "significance": "PARP抑制剂+铂类敏感"
+      },
+      {
+        "name": "Somatic BRCA mutations",
+        "nameZh": "体系BRCA突变",
+        "frequency": "varies",
+        "significance": "也可从PARP抑制剂获益"
+      }
     ],
-    "associatedTumors": ["乳腺癌（三阴性多见）", "卵巢癌（高级别浆液性）", "前列腺癌", "胰腺癌"],
+    "associatedTumors": [
+      "乳腺癌（三阴性多见）",
+      "卵巢癌（高级别浆液性）",
+      "前列腺癌",
+      "胰腺癌"
+    ],
     "detectionMethods": [
-      { "method": "NGS (胚系+体系)", "sensitivity": "高", "turnaround": "7-21天", "notes": "推荐同时检测胚系和体系；胚系需血液/唾液标本" },
-      { "method": "MLPA", "sensitivity": "高（检测大片段缺失）", "turnaround": "5-7天", "notes": "补充NGS检测大片段重排" }
+      {
+        "method": "NGS (胚系+体系)",
+        "sensitivity": "高",
+        "turnaround": "7-21天",
+        "notes": "推荐同时检测胚系和体系；胚系需血液/唾液标本"
+      },
+      {
+        "method": "MLPA",
+        "sensitivity": "高（检测大片段缺失）",
+        "turnaround": "5-7天",
+        "notes": "补充NGS检测大片段重排"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "奥拉帕利 (Olaparib)", "indication": "BRCA突变卵巢癌/乳腺癌/前列腺癌/胰腺癌", "regulatoryStatus": "FDA+NMPA", "line": "维持/后线" },
-      { "drug": "尼拉帕利 (Niraparib)", "indication": "卵巢癌维持", "regulatoryStatus": "FDA+NMPA", "line": "维持" },
-      { "drug": "鲁卡帕利 (Rucaparib)", "indication": "BRCA突变卵巢癌/前列腺癌", "regulatoryStatus": "FDA", "line": "维持/后线" },
-      { "drug": "他拉唑帕利 (Talazoparib)", "indication": "gBRCA+HER2-乳腺癌", "regulatoryStatus": "FDA+NMPA", "line": "后线" }
+      {
+        "drug": "奥拉帕利 (Olaparib)",
+        "indication": "BRCA突变卵巢癌/乳腺癌/前列腺癌/胰腺癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "维持/后线"
+      },
+      {
+        "drug": "尼拉帕利 (Niraparib)",
+        "indication": "卵巢癌维持",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "维持"
+      },
+      {
+        "drug": "鲁卡帕利 (Rucaparib)",
+        "indication": "BRCA突变卵巢癌/前列腺癌",
+        "regulatoryStatus": "FDA",
+        "line": "维持/后线"
+      },
+      {
+        "drug": "他拉唑帕利 (Talazoparib)",
+        "indication": "gBRCA+HER2-乳腺癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "后线"
+      }
     ],
-    "tcgaSubtypes": ["Basal-like (乳腺癌，BRCA1突变相关)"],
+    "tcgaSubtypes": [
+      "Basal-like (乳腺癌，BRCA1突变相关)"
+    ],
     "clinicalSignificance": "BRCA突变检测对遗传咨询和治疗决策均有重大意义。HRD评分可扩展PARP抑制剂获益人群。所有高级别浆液性卵巢癌和年轻三阴性乳腺癌应常规检测。",
-    "references": ["Moore K et al. NEJM 2018;379:2495-505", "Robson M et al. NEJM 2017;377:523-33"]
+    "references": [
+      "Moore K et al. NEJM 2018;379:2495-505",
+      "Robson M et al. NEJM 2017;377:523-33"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 BRCA1/2 基因突变检测试剂盒（可逆末端终止测序法）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "阿斯利康 BRACAnalysis CDx（Myriad）",
+          "platform": "Sanger 测序 + MLPA",
+          "nmpaApprovalYear": 2022,
+          "_low_confidence": true,
+          "_reason": "该试剂盒在 FDA 获批明确，NMPA 进口注册年份记忆不确定"
+        },
+        {
+          "brand": "燃石医学 BRCA1/2 基因突变检测试剂盒（半导体测序法）",
+          "platform": "NGS",
+          "nmpaApprovalYear": 2020,
+          "_low_confidence": true,
+          "_reason": "NMPA 获批具体年份记忆不完全确定"
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      }
+    }
   },
   {
     "id": "msi-dmmr",
@@ -280,23 +1073,96 @@
     "category": "biomarker",
     "description": "微卫星不稳定（MSI-H）/错配修复缺陷（dMMR）是免疫检查点抑制剂的泛癌种预测标志物。见于约15%结直肠癌（Lynch综合征或MLH1甲基化）、约30%子宫内膜癌。也是Lynch综合征的筛查标志。",
     "variants": [
-      { "name": "MLH1 loss (methylation)", "nameZh": "MLH1甲基化导致缺失", "frequency": "散发性CRC/子宫内膜癌", "significance": "排除Lynch后不需遗传咨询" },
-      { "name": "MLH1/MSH2/MSH6/PMS2 germline", "nameZh": "MMR基因胚系突变", "frequency": "Lynch综合征", "significance": "终生多癌种风险，需遗传咨询" }
+      {
+        "name": "MLH1 loss (methylation)",
+        "nameZh": "MLH1甲基化导致缺失",
+        "frequency": "散发性CRC/子宫内膜癌",
+        "significance": "排除Lynch后不需遗传咨询"
+      },
+      {
+        "name": "MLH1/MSH2/MSH6/PMS2 germline",
+        "nameZh": "MMR基因胚系突变",
+        "frequency": "Lynch综合征",
+        "significance": "终生多癌种风险，需遗传咨询"
+      }
     ],
-    "associatedTumors": ["结直肠癌", "子宫内膜癌", "胃癌", "卵巢癌", "尿路上皮癌", "小肠癌"],
+    "associatedTumors": [
+      "结直肠癌",
+      "子宫内膜癌",
+      "胃癌",
+      "卵巢癌",
+      "尿路上皮癌",
+      "小肠癌"
+    ],
     "detectionMethods": [
-      { "method": "IHC (MMR四蛋白)", "sensitivity": "高（>95%一致性）", "turnaround": "1-2天", "notes": "MLH1+PMS2+MSH2+MSH6；推荐CRC和子宫内膜癌常规筛查" },
-      { "method": "PCR (MSI检测)", "sensitivity": "高", "turnaround": "2-3天", "notes": "Bethesda/Promega panel；MSI-H = ≥2/5位点不稳定" },
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "可同时评估MSI状态和TMB" }
+      {
+        "method": "IHC (MMR四蛋白)",
+        "sensitivity": "高（>95%一致性）",
+        "turnaround": "1-2天",
+        "notes": "MLH1+PMS2+MSH2+MSH6；推荐CRC和子宫内膜癌常规筛查"
+      },
+      {
+        "method": "PCR (MSI检测)",
+        "sensitivity": "高",
+        "turnaround": "2-3天",
+        "notes": "Bethesda/Promega panel；MSI-H = ≥2/5位点不稳定"
+      },
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "可同时评估MSI状态和TMB"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "帕博利珠单抗 (Pembrolizumab)", "indication": "MSI-H/dMMR实体瘤（泛癌种）", "regulatoryStatus": "FDA+NMPA", "line": "后线/一线（CRC）" },
-      { "drug": "纳武利尤单抗 (Nivolumab)", "indication": "MSI-H/dMMR结直肠癌", "regulatoryStatus": "FDA+NMPA", "line": "一线（联合ipilimumab）" },
-      { "drug": "多塔利单抗 (Dostarlimab)", "indication": "dMMR实体瘤", "regulatoryStatus": "FDA", "line": "后线" }
+      {
+        "drug": "帕博利珠单抗 (Pembrolizumab)",
+        "indication": "MSI-H/dMMR实体瘤（泛癌种）",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "后线/一线（CRC）"
+      },
+      {
+        "drug": "纳武利尤单抗 (Nivolumab)",
+        "indication": "MSI-H/dMMR结直肠癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线（联合ipilimumab）"
+      },
+      {
+        "drug": "多塔利单抗 (Dostarlimab)",
+        "indication": "dMMR实体瘤",
+        "regulatoryStatus": "FDA",
+        "line": "后线"
+      }
     ],
-    "tcgaSubtypes": ["MSI (结直肠癌分子分型)", "POLE/MSI (子宫内膜癌分子分型)"],
+    "tcgaSubtypes": [
+      "MSI (结直肠癌分子分型)",
+      "POLE/MSI (子宫内膜癌分子分型)"
+    ],
     "clinicalSignificance": "MSI-H/dMMR肿瘤对免疫治疗反应率约40-60%。是首个获批泛癌种适应症的生物标志物。结直肠癌中MSI-H患者免疫治疗一线优于化疗。所有CRC应常规检测。",
-    "references": ["Le DT et al. NEJM 2015;372:2509-20", "André T et al. NEJM 2020;383:2207-18"]
+    "references": [
+      "Le DT et al. NEJM 2015;372:2509-20",
+      "André T et al. NEJM 2020;383:2207-18"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物人类微卫星不稳定性（MSI）基因检测试剂盒",
+          "platform": "多重荧光 PCR 毛细管电泳",
+          "nmpaApprovalYear": 2020
+        },
+        {
+          "brand": "厦门飞朔人类 5 个微卫星位点基因检测试剂盒",
+          "platform": "多重荧光 PCR 毛细管电泳",
+          "nmpaApprovalYear": 2021
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "艾德生物 MSI PCR 试剂盒与飞朔 MSI 试剂盒确有 NMPA 获批，但具体获批年份凭记忆可能存在 ±1 年误差；MMR IHC 不属于 CDx 试剂盒范畴未列入；CSCO 结直肠癌指南将 MSI/MMR 检测列为 Ⅰ 级推荐，版本年份按 2024 版填写。"
+    }
   },
   {
     "id": "tmb",
@@ -306,19 +1172,57 @@
     "category": "biomarker",
     "description": "肿瘤突变负荷（TMB）定义为肿瘤基因组中体系突变的总数，通常以mut/Mb表示。TMB-H（≥10 mut/Mb）是免疫治疗的泛癌种预测标志物，与新抗原产生和免疫应答相关。",
     "variants": [
-      { "name": "TMB-High (≥10 mut/Mb)", "nameZh": "TMB高（≥10 mut/Mb）", "frequency": "varies by tumor type", "significance": "免疫治疗获益预测" }
+      {
+        "name": "TMB-High (≥10 mut/Mb)",
+        "nameZh": "TMB高（≥10 mut/Mb）",
+        "frequency": "varies by tumor type",
+        "significance": "免疫治疗获益预测"
+      }
     ],
-    "associatedTumors": ["黑色素瘤", "非小细胞肺癌", "膀胱癌", "头颈鳞癌", "子宫内膜癌", "任何实体瘤（泛癌种适应症）"],
+    "associatedTumors": [
+      "黑色素瘤",
+      "非小细胞肺癌",
+      "膀胱癌",
+      "头颈鳞癌",
+      "子宫内膜癌",
+      "任何实体瘤（泛癌种适应症）"
+    ],
     "detectionMethods": [
-      { "method": "NGS (大panel, ≥300基因)", "sensitivity": "高", "turnaround": "7-14天", "notes": "FoundationOne CDx 是FDA批准的伴随诊断" },
-      { "method": "WES (全外显子测序)", "sensitivity": "金标准", "turnaround": "14-21天", "notes": "研究级别，临床不常规使用" }
+      {
+        "method": "NGS (大panel, ≥300基因)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "FoundationOne CDx 是FDA批准的伴随诊断"
+      },
+      {
+        "method": "WES (全外显子测序)",
+        "sensitivity": "金标准",
+        "turnaround": "14-21天",
+        "notes": "研究级别，临床不常规使用"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "帕博利珠单抗 (Pembrolizumab)", "indication": "TMB-H (≥10 mut/Mb) 实体瘤", "regulatoryStatus": "FDA", "line": "后线" }
+      {
+        "drug": "帕博利珠单抗 (Pembrolizumab)",
+        "indication": "TMB-H (≥10 mut/Mb) 实体瘤",
+        "regulatoryStatus": "FDA",
+        "line": "后线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "TMB-H预测免疫治疗获益，但与PD-L1和MSI有部分重叠。Panel-based TMB与WES-based TMB有一定偏差。临床实用性仍有争议。",
-    "references": ["Marabelle A et al. Ann Oncol 2020;31:1084-91"]
+    "references": [
+      "Marabelle A et al. Ann Oncol 2020;31:1084-91"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅲ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "截至目前，NMPA 尚未正式批准以 TMB 为独立伴随诊断适应证的试剂盒（部分大 panel NGS 试剂盒获批，但 TMB 多以'检测功能'而非 CDx 适应证标注），因此 nmpaCdxKits 留空以避免伪造；CSCO 指南中 TMB 作为免疫治疗疗效预测生物标志物证据级别较低，多在 NSCLC 指南中以 Ⅲ 级推荐或专家共识形式列出，具体等级请按最新版 CSCO 指南核对"
+    }
   },
   {
     "id": "pole-mutations",
@@ -328,18 +1232,55 @@
     "category": "biomarker",
     "description": "DNA聚合酶epsilon催化亚基的核酸外切酶域突变（EDM）导致超高突变表型（TMB通常>100 mut/Mb）。在子宫内膜癌（约7-12%）中最常见，也见于结直肠癌（约1-3%）。POLE突变型子宫内膜癌预后极好。",
     "variants": [
-      { "name": "P286R", "nameZh": "P286R热点突变", "frequency": "子宫内膜癌最常见", "significance": "超高突变，预后极好" },
-      { "name": "V411L", "nameZh": "V411L热点突变", "frequency": "常见", "significance": "超高突变" }
+      {
+        "name": "P286R",
+        "nameZh": "P286R热点突变",
+        "frequency": "子宫内膜癌最常见",
+        "significance": "超高突变，预后极好"
+      },
+      {
+        "name": "V411L",
+        "nameZh": "V411L热点突变",
+        "frequency": "常见",
+        "significance": "超高突变"
+      }
     ],
-    "associatedTumors": ["子宫内膜癌", "结直肠癌"],
+    "associatedTumors": [
+      "子宫内膜癌",
+      "结直肠癌"
+    ],
     "detectionMethods": [
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "推荐，同时评估TMB" },
-      { "method": "Sanger测序", "sensitivity": "中", "turnaround": "3-5天", "notes": "仅检测已知热点" }
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "推荐，同时评估TMB"
+      },
+      {
+        "method": "Sanger测序",
+        "sensitivity": "中",
+        "turnaround": "3-5天",
+        "notes": "仅检测已知热点"
+      }
     ],
     "companionDiagnostics": [],
-    "tcgaSubtypes": ["POLE ultramutated (子宫内膜癌分子分型 — 预后最好的亚型)"],
+    "tcgaSubtypes": [
+      "POLE ultramutated (子宫内膜癌分子分型 — 预后最好的亚型)"
+    ],
     "clinicalSignificance": "POLE EDM是子宫内膜癌分子分型的最佳预后亚型（2023 FIGO已纳入）。即使高级别、高分期，POLE突变型预后仍好，可能降级治疗。",
-    "references": ["Church DN et al. J Pathol 2015;237:15-25", "León-Castillo A et al. JCO 2020;38:29-39"]
+    "references": [
+      "Church DN et al. J Pathol 2015;237:15-25",
+      "León-Castillo A et al. JCO 2020;38:29-39"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅱ 级推荐",
+        "year": 2023
+      },
+      "_low_confidence": true,
+      "_reason": "截至目前 NMPA 尚无专门针对 POLE 核酸外切酶域突变的获批 CDx 试剂盒，POLE 检测多通过 NGS panel（LDT）完成；CSCO 子宫内膜癌诊疗指南（2023）将 POLE 超突变型作为分子分型之一纳入推荐，具体推荐等级与年份需人工核对 CSCO 子宫内膜癌指南原文确认。"
+    }
   },
   {
     "id": "idh1-2",
@@ -349,24 +1290,88 @@
     "category": "point-mutation",
     "description": "异柠檬酸脱氢酶1/2突变产生致癌代谢物2-HG，导致表观遗传学改变。是弥漫性胶质瘤（WHO 2021分类核心标志物）和急性髓系白血病（AML，约15-20%）的重要驱动事件。",
     "variants": [
-      { "name": "IDH1 R132H", "nameZh": "IDH1 R132H", "frequency": "胶质瘤中最常见（~90% of IDH1 mut）", "significance": "IHC可检测（H09抗体）" },
-      { "name": "IDH2 R172K", "nameZh": "IDH2 R172K", "frequency": "AML中常见", "significance": "恩西地平靶点" },
-      { "name": "IDH2 R140Q", "nameZh": "IDH2 R140Q", "frequency": "AML中常见", "significance": "恩西地平靶点" }
+      {
+        "name": "IDH1 R132H",
+        "nameZh": "IDH1 R132H",
+        "frequency": "胶质瘤中最常见（~90% of IDH1 mut）",
+        "significance": "IHC可检测（H09抗体）"
+      },
+      {
+        "name": "IDH2 R172K",
+        "nameZh": "IDH2 R172K",
+        "frequency": "AML中常见",
+        "significance": "恩西地平靶点"
+      },
+      {
+        "name": "IDH2 R140Q",
+        "nameZh": "IDH2 R140Q",
+        "frequency": "AML中常见",
+        "significance": "恩西地平靶点"
+      }
     ],
-    "associatedTumors": ["弥漫性胶质瘤（星形细胞瘤/少突胶质细胞瘤）", "急性髓系白血病", "胆管癌", "软骨肉瘤"],
+    "associatedTumors": [
+      "弥漫性胶质瘤（星形细胞瘤/少突胶质细胞瘤）",
+      "急性髓系白血病",
+      "胆管癌",
+      "软骨肉瘤"
+    ],
     "detectionMethods": [
-      { "method": "IHC (IDH1 R132H, H09)", "sensitivity": "高（仅R132H）", "turnaround": "1-2天", "notes": "胶质瘤首选筛查；阴性需测序排除非R132H突变" },
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "检测所有IDH1/2变异" },
-      { "method": "Sanger测序", "sensitivity": "中", "turnaround": "3-5天", "notes": "针对已知热点" }
+      {
+        "method": "IHC (IDH1 R132H, H09)",
+        "sensitivity": "高（仅R132H）",
+        "turnaround": "1-2天",
+        "notes": "胶质瘤首选筛查；阴性需测序排除非R132H突变"
+      },
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "检测所有IDH1/2变异"
+      },
+      {
+        "method": "Sanger测序",
+        "sensitivity": "中",
+        "turnaround": "3-5天",
+        "notes": "针对已知热点"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "艾伏尼布 (Ivosidenib)", "indication": "IDH1突变AML/胆管癌/胶质瘤", "regulatoryStatus": "FDA", "line": "后线" },
-      { "drug": "恩西地平 (Enasidenib)", "indication": "IDH2突变AML", "regulatoryStatus": "FDA", "line": "后线" },
-      { "drug": "Vorasidenib", "indication": "IDH突变低级别胶质瘤", "regulatoryStatus": "FDA", "line": "术后" }
+      {
+        "drug": "艾伏尼布 (Ivosidenib)",
+        "indication": "IDH1突变AML/胆管癌/胶质瘤",
+        "regulatoryStatus": "FDA",
+        "line": "后线"
+      },
+      {
+        "drug": "恩西地平 (Enasidenib)",
+        "indication": "IDH2突变AML",
+        "regulatoryStatus": "FDA",
+        "line": "后线"
+      },
+      {
+        "drug": "Vorasidenib",
+        "indication": "IDH突变低级别胶质瘤",
+        "regulatoryStatus": "FDA",
+        "line": "术后"
+      }
     ],
-    "tcgaSubtypes": ["IDH-mutant (WHO 2021 CNS分类核心标准)"],
+    "tcgaSubtypes": [
+      "IDH-mutant (WHO 2021 CNS分类核心标准)"
+    ],
     "clinicalSignificance": "IDH突变是弥漫性胶质瘤分类的基石（WHO 2021）。IDH突变型星形细胞瘤预后显著优于IDH野生型GBM。AML中IDH突变提示特异靶向治疗选择。",
-    "references": ["Yan H et al. NEJM 2009;360:765-73", "Mellinghoff IK et al. NEJM 2023;389:589-601"]
+    "references": [
+      "Yan H et al. NEJM 2009;360:765-73",
+      "Mellinghoff IK et al. NEJM 2023;389:589-601"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2022
+      },
+      "_low_confidence": true,
+      "_reason": "IDH1/2 突变检测在 CSCO 胶质瘤诊疗指南（2022）中作为分子分型的必检项目（Ⅰ 级推荐），属整合诊断必需；但截至目前国内尚无专门针对 IDH1/2 突变的 NMPA 伴随诊断试剂盒高置信度获批记录，多以 NGS 多基因 panel 或 LDT Sanger/ARMS 检测方式进行，未单独作为 CDx 列出；具体试剂盒 NMPA 批准年份不确定，故返回空数组避免编造。"
+    }
   },
   {
     "id": "tp53-mutations",
@@ -376,19 +1381,61 @@
     "category": "tumor-suppressor",
     "description": "TP53是人类肿瘤中最常突变的基因（约50%的所有癌症）。功能缺失突变导致基因组不稳定。热点错义突变（如R175H、R248W、R273H）可产生显性负效应和功能获得（gain-of-function）。IHC可间接反映突变状态。",
     "variants": [
-      { "name": "Missense (hotspot)", "nameZh": "热点错义突变", "frequency": "最常见类型", "significance": "IHC弥漫强阳性" },
-      { "name": "Truncating/deletion", "nameZh": "截断/缺失突变", "frequency": "常见", "significance": "IHC完全阴性（null pattern）" },
-      { "name": "Li-Fraumeni germline", "nameZh": "Li-Fraumeni综合征胚系突变", "frequency": "罕见", "significance": "终生多癌种风险，需遗传咨询" }
+      {
+        "name": "Missense (hotspot)",
+        "nameZh": "热点错义突变",
+        "frequency": "最常见类型",
+        "significance": "IHC弥漫强阳性"
+      },
+      {
+        "name": "Truncating/deletion",
+        "nameZh": "截断/缺失突变",
+        "frequency": "常见",
+        "significance": "IHC完全阴性（null pattern）"
+      },
+      {
+        "name": "Li-Fraumeni germline",
+        "nameZh": "Li-Fraumeni综合征胚系突变",
+        "frequency": "罕见",
+        "significance": "终生多癌种风险，需遗传咨询"
+      }
     ],
-    "associatedTumors": ["几乎所有癌种", "高级别浆液性卵巢癌（>96%）", "三阴性乳腺癌", "结直肠癌", "食管鳞癌"],
+    "associatedTumors": [
+      "几乎所有癌种",
+      "高级别浆液性卵巢癌（>96%）",
+      "三阴性乳腺癌",
+      "结直肠癌",
+      "食管鳞癌"
+    ],
     "detectionMethods": [
-      { "method": "IHC (DO-7)", "sensitivity": "中高（~80%一致性）", "turnaround": "1-2天", "notes": "异常模式：弥漫强阳性（错义）或完全阴性（截断）均提示突变" },
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "金标准" }
+      {
+        "method": "IHC (DO-7)",
+        "sensitivity": "中高（~80%一致性）",
+        "turnaround": "1-2天",
+        "notes": "异常模式：弥漫强阳性（错义）或完全阴性（截断）均提示突变"
+      },
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "金标准"
+      }
     ],
     "companionDiagnostics": [],
-    "tcgaSubtypes": ["p53 abnormal (子宫内膜癌分子分型 — 预后最差的亚型)", "TP53 mutant (卵巢癌几乎全部为此型)"],
+    "tcgaSubtypes": [
+      "p53 abnormal (子宫内膜癌分子分型 — 预后最差的亚型)",
+      "TP53 mutant (卵巢癌几乎全部为此型)"
+    ],
     "clinicalSignificance": "TP53突变是子宫内膜癌分子分型中预后最差的亚型（2023 FIGO已纳入）。高级别浆液性卵巢癌几乎100% TP53突变。目前无直接靶向药，但影响预后分层和治疗强度决策。",
-    "references": ["Kandoth C et al. Nature 2013;502:333-9"]
+    "references": [
+      "Kandoth C et al. Nature 2013;502:333-9"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": null,
+      "_low_confidence": true,
+      "_reason": "截至目前，NMPA 尚未批准专门针对 TP53 突变的单基因伴随诊断（CDx）试剂盒；TP53 通常作为多基因 NGS panel 的组成部分进行检测，不作为独立 CDx 靶点。CSCO 各瘤种指南中 TP53 突变检测多为预后/分层参考，未作为独立靶点给出单独推荐等级，故不编造具体级别与年份。"
+    }
   },
   {
     "id": "pd-l1",
@@ -398,26 +1445,121 @@
     "category": "biomarker",
     "description": "程序性死亡配体1（PD-L1）表达是免疫检查点抑制剂的重要预测标志物。不同癌种和药物使用不同的评分系统（TPS、CPS、IC评分）和阳性阈值，增加了检测的复杂性。",
     "variants": [
-      { "name": "TPS (Tumor Proportion Score)", "nameZh": "肿瘤细胞阳性比例评分", "frequency": "用于NSCLC", "significance": "TPS≥50%：一线单药免疫；TPS≥1%：免疫+化疗" },
-      { "name": "CPS (Combined Positive Score)", "nameZh": "联合阳性评分", "frequency": "用于胃癌/头颈/宫颈/尿路上皮", "significance": "阈值因癌种而异（≥1/≥5/≥10）" },
-      { "name": "IC (Immune Cell) Score", "nameZh": "免疫细胞评分", "frequency": "用于尿路上皮癌（atezolizumab）", "significance": "IC≥5%为PD-L1阳性" }
+      {
+        "name": "TPS (Tumor Proportion Score)",
+        "nameZh": "肿瘤细胞阳性比例评分",
+        "frequency": "用于NSCLC",
+        "significance": "TPS≥50%：一线单药免疫；TPS≥1%：免疫+化疗"
+      },
+      {
+        "name": "CPS (Combined Positive Score)",
+        "nameZh": "联合阳性评分",
+        "frequency": "用于胃癌/头颈/宫颈/尿路上皮",
+        "significance": "阈值因癌种而异（≥1/≥5/≥10）"
+      },
+      {
+        "name": "IC (Immune Cell) Score",
+        "nameZh": "免疫细胞评分",
+        "frequency": "用于尿路上皮癌（atezolizumab）",
+        "significance": "IC≥5%为PD-L1阳性"
+      }
     ],
-    "associatedTumors": ["非小细胞肺癌", "尿路上皮癌", "头颈鳞癌", "胃癌", "宫颈癌", "三阴性乳腺癌", "食管癌"],
+    "associatedTumors": [
+      "非小细胞肺癌",
+      "尿路上皮癌",
+      "头颈鳞癌",
+      "胃癌",
+      "宫颈癌",
+      "三阴性乳腺癌",
+      "食管癌"
+    ],
     "detectionMethods": [
-      { "method": "IHC (22C3 / Dako)", "sensitivity": "标准", "turnaround": "1-2天", "notes": "Pembrolizumab伴随诊断；TPS和CPS评分" },
-      { "method": "IHC (28-8 / Dako)", "sensitivity": "标准", "turnaround": "1-2天", "notes": "Nivolumab补充诊断" },
-      { "method": "IHC (SP142 / Ventana)", "sensitivity": "较严格", "turnaround": "1-2天", "notes": "Atezolizumab伴随诊断；IC评分" },
-      { "method": "IHC (SP263 / Ventana)", "sensitivity": "标准", "turnaround": "1-2天", "notes": "Durvalumab伴随诊断" }
+      {
+        "method": "IHC (22C3 / Dako)",
+        "sensitivity": "标准",
+        "turnaround": "1-2天",
+        "notes": "Pembrolizumab伴随诊断；TPS和CPS评分"
+      },
+      {
+        "method": "IHC (28-8 / Dako)",
+        "sensitivity": "标准",
+        "turnaround": "1-2天",
+        "notes": "Nivolumab补充诊断"
+      },
+      {
+        "method": "IHC (SP142 / Ventana)",
+        "sensitivity": "较严格",
+        "turnaround": "1-2天",
+        "notes": "Atezolizumab伴随诊断；IC评分"
+      },
+      {
+        "method": "IHC (SP263 / Ventana)",
+        "sensitivity": "标准",
+        "turnaround": "1-2天",
+        "notes": "Durvalumab伴随诊断"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "帕博利珠单抗 (Pembrolizumab)", "indication": "PD-L1+ 多癌种", "regulatoryStatus": "FDA+NMPA", "line": "一线/后线" },
-      { "drug": "纳武利尤单抗 (Nivolumab)", "indication": "多癌种", "regulatoryStatus": "FDA+NMPA", "line": "一线/后线" },
-      { "drug": "阿替利珠单抗 (Atezolizumab)", "indication": "PD-L1+ NSCLC/尿路上皮癌/TNBC", "regulatoryStatus": "FDA+NMPA", "line": "一线/后线" },
-      { "drug": "度伐利尤单抗 (Durvalumab)", "indication": "NSCLC/胆道癌/肝癌", "regulatoryStatus": "FDA+NMPA", "line": "一线/维持" }
+      {
+        "drug": "帕博利珠单抗 (Pembrolizumab)",
+        "indication": "PD-L1+ 多癌种",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/后线"
+      },
+      {
+        "drug": "纳武利尤单抗 (Nivolumab)",
+        "indication": "多癌种",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/后线"
+      },
+      {
+        "drug": "阿替利珠单抗 (Atezolizumab)",
+        "indication": "PD-L1+ NSCLC/尿路上皮癌/TNBC",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/后线"
+      },
+      {
+        "drug": "度伐利尤单抗 (Durvalumab)",
+        "indication": "NSCLC/胆道癌/肝癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线/维持"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "PD-L1检测对NSCLC一线治疗策略选择至关重要（TPS≥50%可单药免疫）。但PD-L1并非完美的预测标志物，与MSI-H和TMB有互补价值。注意不同检测平台和抗体的差异。",
-    "references": ["Reck M et al. NEJM 2016;375:1823-33"]
+    "references": [
+      "Reck M et al. NEJM 2016;375:1823-33"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "Dako PD-L1 IHC 22C3 pharmDx",
+          "platform": "IHC (Autostainer Link 48)",
+          "nmpaApprovalYear": 2018
+        },
+        {
+          "brand": "Ventana PD-L1 (SP263) Assay",
+          "platform": "IHC (BenchMark)",
+          "nmpaApprovalYear": 2019
+        },
+        {
+          "brand": "Ventana PD-L1 (SP142) Assay",
+          "platform": "IHC (BenchMark)",
+          "nmpaApprovalYear": 2019
+        },
+        {
+          "brand": "Dako PD-L1 IHC 28-8 pharmDx",
+          "platform": "IHC (Autostainer Link 48)",
+          "nmpaApprovalYear": 2019
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "PD-L1 涉及多瘤种（NSCLC、胃癌、食管癌、尿路上皮癌、头颈部、TNBC 等），不同克隆号在不同瘤种中的 CSCO 推荐等级不完全一致；此处给出 NSCLC 一线免疫治疗伴随诊断场景下 22C3 的 Ⅰ 级推荐。具体试剂盒 NMPA 批准年份可能与实际注册证发放时间存在偏差，建议人工核对 NMPA 数据库。"
+    }
   },
   {
     "id": "hrd",
@@ -427,22 +1569,73 @@
     "category": "biomarker",
     "description": "HRD是比BRCA突变更广泛的概念，包括BRCA1/2和其他HRR通路基因（如RAD51C、PALB2、ATM等）的异常，以及通过基因组不稳定评分（GIS/LOH/TAI/LST）来定义。HRD阳性预测PARP抑制剂获益。",
     "variants": [
-      { "name": "HRD-positive (GIS ≥42)", "nameZh": "HRD阳性（GIS≥42）", "frequency": "卵巢癌约50%", "significance": "PARP抑制剂获益" },
-      { "name": "HRR gene mutations", "nameZh": "HRR通路基因突变", "frequency": "varies", "significance": "BRCA/PALB2/RAD51C/ATM等" }
+      {
+        "name": "HRD-positive (GIS ≥42)",
+        "nameZh": "HRD阳性（GIS≥42）",
+        "frequency": "卵巢癌约50%",
+        "significance": "PARP抑制剂获益"
+      },
+      {
+        "name": "HRR gene mutations",
+        "nameZh": "HRR通路基因突变",
+        "frequency": "varies",
+        "significance": "BRCA/PALB2/RAD51C/ATM等"
+      }
     ],
-    "associatedTumors": ["卵巢癌", "乳腺癌", "前列腺癌", "胰腺癌"],
+    "associatedTumors": [
+      "卵巢癌",
+      "乳腺癌",
+      "前列腺癌",
+      "胰腺癌"
+    ],
     "detectionMethods": [
-      { "method": "Myriad myChoice CDx (GIS)", "sensitivity": "高", "turnaround": "14-21天", "notes": "FDA批准；GIS评分整合LOH+TAI+LST" },
-      { "method": "FoundationOne CDx", "sensitivity": "高", "turnaround": "14-21天", "notes": "同时检测HRR基因突变和LOH" },
-      { "method": "NGS panel (HRR基因)", "sensitivity": "中高", "turnaround": "7-14天", "notes": "仅检测基因突变，不评估GIS" }
+      {
+        "method": "Myriad myChoice CDx (GIS)",
+        "sensitivity": "高",
+        "turnaround": "14-21天",
+        "notes": "FDA批准；GIS评分整合LOH+TAI+LST"
+      },
+      {
+        "method": "FoundationOne CDx",
+        "sensitivity": "高",
+        "turnaround": "14-21天",
+        "notes": "同时检测HRR基因突变和LOH"
+      },
+      {
+        "method": "NGS panel (HRR基因)",
+        "sensitivity": "中高",
+        "turnaround": "7-14天",
+        "notes": "仅检测基因突变，不评估GIS"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "奥拉帕利+贝伐珠单抗", "indication": "HRD+ 卵巢癌一线维持", "regulatoryStatus": "FDA+NMPA", "line": "一线维持" },
-      { "drug": "尼拉帕利", "indication": "HRD+ 卵巢癌维持", "regulatoryStatus": "FDA+NMPA", "line": "维持" }
+      {
+        "drug": "奥拉帕利+贝伐珠单抗",
+        "indication": "HRD+ 卵巢癌一线维持",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "一线维持"
+      },
+      {
+        "drug": "尼拉帕利",
+        "indication": "HRD+ 卵巢癌维持",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "维持"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "HRD检测扩展了PARP抑制剂的获益人群（从BRCA突变到更广泛的HRD阳性）。卵巢癌一线维持治疗的分层依赖HRD状态。",
-    "references": ["González-Martín A et al. NEJM 2019;381:2391-402"]
+    "references": [
+      "González-Martín A et al. NEJM 2019;381:2391-402"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅱ 级推荐",
+        "year": 2023
+      },
+      "_low_confidence": true,
+      "_reason": "HRD 检测试剂盒在 NMPA 伴随诊断批准清单中的具体品牌、平台与获批年份缺乏高置信度记忆，为避免编造故留空数组待人工核实；CSCO 卵巢癌诊疗指南中将 HRD 检测作为 PARP 抑制剂用药选择的推荐检测，具体级别与年份建议按最新版指南核对。"
+    }
   },
   {
     "id": "pik3ca-mutations",
@@ -452,22 +1645,81 @@
     "category": "point-mutation",
     "description": "PIK3CA编码PI3K催化亚基p110α，是PI3K/AKT/mTOR通路的关键基因。常见热点突变包括E545K（螺旋域）和H1047R（激酶域）。约40%HR+乳腺癌存在PIK3CA突变。",
     "variants": [
-      { "name": "H1047R", "nameZh": "H1047R热点突变", "frequency": "最常见激酶域突变", "significance": "Alpelisib敏感" },
-      { "name": "E545K", "nameZh": "E545K热点突变", "frequency": "常见螺旋域突变", "significance": "Alpelisib敏感" },
-      { "name": "E542K", "nameZh": "E542K热点突变", "frequency": "常见", "significance": "Alpelisib敏感" }
+      {
+        "name": "H1047R",
+        "nameZh": "H1047R热点突变",
+        "frequency": "最常见激酶域突变",
+        "significance": "Alpelisib敏感"
+      },
+      {
+        "name": "E545K",
+        "nameZh": "E545K热点突变",
+        "frequency": "常见螺旋域突变",
+        "significance": "Alpelisib敏感"
+      },
+      {
+        "name": "E542K",
+        "nameZh": "E542K热点突变",
+        "frequency": "常见",
+        "significance": "Alpelisib敏感"
+      }
     ],
-    "associatedTumors": ["乳腺癌（HR+）", "子宫内膜癌", "宫颈鳞癌", "头颈鳞癌"],
+    "associatedTumors": [
+      "乳腺癌（HR+）",
+      "子宫内膜癌",
+      "宫颈鳞癌",
+      "头颈鳞癌"
+    ],
     "detectionMethods": [
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "推荐" },
-      { "method": "qPCR (therascreen)", "sensitivity": "高", "turnaround": "1-3天", "notes": "FDA批准的伴随诊断" },
-      { "method": "ctDNA液体活检", "sensitivity": "中", "turnaround": "7-10天", "notes": "可用于组织不可得时" }
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "推荐"
+      },
+      {
+        "method": "qPCR (therascreen)",
+        "sensitivity": "高",
+        "turnaround": "1-3天",
+        "notes": "FDA批准的伴随诊断"
+      },
+      {
+        "method": "ctDNA液体活检",
+        "sensitivity": "中",
+        "turnaround": "7-10天",
+        "notes": "可用于组织不可得时"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "Alpelisib + 氟维司群", "indication": "PIK3CA突变HR+/HER2-晚期乳腺癌", "regulatoryStatus": "FDA", "line": "二线" }
+      {
+        "drug": "Alpelisib + 氟维司群",
+        "indication": "PIK3CA突变HR+/HER2-晚期乳腺癌",
+        "regulatoryStatus": "FDA",
+        "line": "二线"
+      }
     ],
-    "tcgaSubtypes": ["Luminal A/B (乳腺癌PAM50分型中PIK3CA突变率高)"],
+    "tcgaSubtypes": [
+      "Luminal A/B (乳腺癌PAM50分型中PIK3CA突变率高)"
+    ],
     "clinicalSignificance": "PIK3CA突变检测是HR+晚期乳腺癌CDK4/6抑制剂耐药后二线治疗选择的关键。Alpelisib+氟维司群可延长PFS。",
-    "references": ["André F et al. NEJM 2019;380:1929-40"]
+    "references": [
+      "André F et al. NEJM 2019;380:1929-40"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [
+        {
+          "brand": "艾德生物 PIK3CA 基因突变检测试剂盒",
+          "platform": "ARMS-qPCR",
+          "nmpaApprovalYear": 2018
+        }
+      ],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "PIK3CA CDx 在国内获批情况有限，alpelisib（Piqray）于 2023 年 NMPA 获批 HR+/HER2- PIK3CA 突变乳腺癌适应证，配套 CDx 以 NGS 或 ARMS-qPCR 为主；具体试剂盒厂家与 NMPA 批准年份存在不确定性，需人工复核 NMPA 数据库确认。"
+    }
   },
   {
     "id": "fgfr-alterations",
@@ -477,23 +1729,79 @@
     "category": "fusion",
     "description": "成纤维细胞生长因子受体家族异常包括基因融合（胆管癌FGFR2融合约15%）、突变（膀胱癌FGFR3突变约15-20%）和扩增。选择性FGFR抑制剂已获批多个适应症。",
     "variants": [
-      { "name": "FGFR2 fusion", "nameZh": "FGFR2融合", "frequency": "胆管癌~15%", "significance": "FGFR抑制剂靶点" },
-      { "name": "FGFR3 mutation (S249C)", "nameZh": "FGFR3突变", "frequency": "膀胱癌~15-20%", "significance": "厄达替尼靶点" },
-      { "name": "FGFR1 amplification", "nameZh": "FGFR1扩增", "frequency": "肺鳞癌~15%", "significance": "临床意义待定" }
+      {
+        "name": "FGFR2 fusion",
+        "nameZh": "FGFR2融合",
+        "frequency": "胆管癌~15%",
+        "significance": "FGFR抑制剂靶点"
+      },
+      {
+        "name": "FGFR3 mutation (S249C)",
+        "nameZh": "FGFR3突变",
+        "frequency": "膀胱癌~15-20%",
+        "significance": "厄达替尼靶点"
+      },
+      {
+        "name": "FGFR1 amplification",
+        "nameZh": "FGFR1扩增",
+        "frequency": "肺鳞癌~15%",
+        "significance": "临床意义待定"
+      }
     ],
-    "associatedTumors": ["肝内胆管癌", "尿路上皮癌/膀胱癌", "子宫内膜癌", "肺鳞癌"],
+    "associatedTumors": [
+      "肝内胆管癌",
+      "尿路上皮癌/膀胱癌",
+      "子宫内膜癌",
+      "肺鳞癌"
+    ],
     "detectionMethods": [
-      { "method": "NGS (DNA+RNA)", "sensitivity": "高", "turnaround": "7-14天", "notes": "推荐，可检测融合+突变+扩增" },
-      { "method": "FISH", "sensitivity": "高", "turnaround": "2-5天", "notes": "检测融合和扩增" }
+      {
+        "method": "NGS (DNA+RNA)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "推荐，可检测融合+突变+扩增"
+      },
+      {
+        "method": "FISH",
+        "sensitivity": "高",
+        "turnaround": "2-5天",
+        "notes": "检测融合和扩增"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "培米替尼 (Pemigatinib)", "indication": "FGFR2融合/重排胆管癌", "regulatoryStatus": "FDA+NMPA", "line": "二线" },
-      { "drug": "福巴替尼 (Futibatinib)", "indication": "FGFR2改变胆管癌", "regulatoryStatus": "FDA", "line": "二线" },
-      { "drug": "厄达替尼 (Erdafitinib)", "indication": "FGFR3改变尿路上皮癌", "regulatoryStatus": "FDA", "line": "二线" }
+      {
+        "drug": "培米替尼 (Pemigatinib)",
+        "indication": "FGFR2融合/重排胆管癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "二线"
+      },
+      {
+        "drug": "福巴替尼 (Futibatinib)",
+        "indication": "FGFR2改变胆管癌",
+        "regulatoryStatus": "FDA",
+        "line": "二线"
+      },
+      {
+        "drug": "厄达替尼 (Erdafitinib)",
+        "indication": "FGFR3改变尿路上皮癌",
+        "regulatoryStatus": "FDA",
+        "line": "二线"
+      }
     ],
     "tcgaSubtypes": [],
     "clinicalSignificance": "FGFR2融合是胆管癌最重要的可靶向改变。所有肝内胆管癌应检测FGFR2融合。膀胱癌中FGFR3突变/融合预测厄达替尼疗效。",
-    "references": ["Abou-Alfa GK et al. NEJM 2020;382:2187-98"]
+    "references": [
+      "Abou-Alfa GK et al. NEJM 2020;382:2187-98"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅱ 级推荐",
+        "year": 2023
+      },
+      "_low_confidence": true,
+      "_reason": "截至知识截止日期，尚无确认获 NMPA 批准的 FGFR 基因异常伴随诊断试剂盒（厄达替尼等 FGFR 抑制剂在国内上市情况及配套 CDx 审批状态不确定）；CSCO 尿路上皮癌指南对 FGFR2/3 检测的具体推荐等级及年份需人工核验。"
+    }
   },
   {
     "id": "tcga-breast",
@@ -503,22 +1811,82 @@
     "category": "molecular-subtype",
     "description": "基于基因表达谱的乳腺癌分子分型（PAM50）将乳腺癌分为4个内在亚型，对预后和治疗选择有重要指导意义。临床上常用IHC替代分型（ER/PR/HER2/Ki-67）。",
     "variants": [
-      { "name": "Luminal A", "nameZh": "Luminal A型", "frequency": "~40%", "significance": "ER+/HER2-/Ki-67低；预后最好；内分泌治疗为主" },
-      { "name": "Luminal B", "nameZh": "Luminal B型", "frequency": "~20%", "significance": "ER+/HER2±/Ki-67高；预后中等；需化疗+内分泌" },
-      { "name": "HER2-enriched", "nameZh": "HER2富集型", "frequency": "~15%", "significance": "HER2过表达；抗HER2靶向治疗" },
-      { "name": "Basal-like/Triple-negative", "nameZh": "基底样/三阴型", "frequency": "~15%", "significance": "ER-/PR-/HER2-；预后差；化疗+免疫" }
+      {
+        "name": "Luminal A",
+        "nameZh": "Luminal A型",
+        "frequency": "~40%",
+        "significance": "ER+/HER2-/Ki-67低；预后最好；内分泌治疗为主"
+      },
+      {
+        "name": "Luminal B",
+        "nameZh": "Luminal B型",
+        "frequency": "~20%",
+        "significance": "ER+/HER2±/Ki-67高；预后中等；需化疗+内分泌"
+      },
+      {
+        "name": "HER2-enriched",
+        "nameZh": "HER2富集型",
+        "frequency": "~15%",
+        "significance": "HER2过表达；抗HER2靶向治疗"
+      },
+      {
+        "name": "Basal-like/Triple-negative",
+        "nameZh": "基底样/三阴型",
+        "frequency": "~15%",
+        "significance": "ER-/PR-/HER2-；预后差；化疗+免疫"
+      }
     ],
-    "associatedTumors": ["乳腺癌"],
+    "associatedTumors": [
+      "乳腺癌"
+    ],
     "detectionMethods": [
-      { "method": "IHC替代分型 (ER/PR/HER2/Ki-67)", "sensitivity": "中（约80%一致性）", "turnaround": "1-3天", "notes": "临床常规使用" },
-      { "method": "PAM50 基因表达 (Prosigna)", "sensitivity": "高", "turnaround": "7-14天", "notes": "50基因panel，可提供ROR风险评分" },
-      { "method": "Oncotype DX (21基因)", "sensitivity": "高", "turnaround": "7-14天", "notes": "预测ER+早期乳腺癌化疗获益" },
-      { "method": "MammaPrint (70基因)", "sensitivity": "高", "turnaround": "7-14天", "notes": "预测远处复发风险" }
+      {
+        "method": "IHC替代分型 (ER/PR/HER2/Ki-67)",
+        "sensitivity": "中（约80%一致性）",
+        "turnaround": "1-3天",
+        "notes": "临床常规使用"
+      },
+      {
+        "method": "PAM50 基因表达 (Prosigna)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "50基因panel，可提供ROR风险评分"
+      },
+      {
+        "method": "Oncotype DX (21基因)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "预测ER+早期乳腺癌化疗获益"
+      },
+      {
+        "method": "MammaPrint (70基因)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "预测远处复发风险"
+      }
     ],
     "companionDiagnostics": [],
-    "tcgaSubtypes": ["Luminal A", "Luminal B", "HER2-enriched", "Basal-like", "Normal-like"],
+    "tcgaSubtypes": [
+      "Luminal A",
+      "Luminal B",
+      "HER2-enriched",
+      "Basal-like",
+      "Normal-like"
+    ],
     "clinicalSignificance": "分子分型指导乳腺癌治疗决策。Luminal A型可能免化疗（参考Oncotype DX RS评分）。Basal-like型对铂类和免疫治疗相对敏感。多基因检测帮助精准化疗决策。",
-    "references": ["Perou CM et al. Nature 2000;406:747-52", "Sparano JA et al. NEJM 2018;379:111-21"]
+    "references": [
+      "Perou CM et al. Nature 2000;406:747-52",
+      "Sparano JA et al. NEJM 2018;379:111-21"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅲ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "PAM50 基因表达分型在国内并非传统伴随诊断靶点；截至本知识截止日期，未见明确 NMPA 批准的 PAM50 CDx 试剂盒（Prosigna/NanoString 在国内未见 NMPA CDx 批件）。CSCO 乳腺癌指南主要以 IHC (ER/PR/HER2/Ki-67) 做替代分型，对 PAM50 等多基因表达谱仅作为辅助工具（如有复发风险评估需要时可考虑），未列为Ⅰ/Ⅱ级推荐；此处填写Ⅲ级推荐属推断，建议人工核实 CSCO 2024 版原文。"
+    }
   },
   {
     "id": "tcga-crc",
@@ -528,20 +1896,68 @@
     "category": "molecular-subtype",
     "description": "结直肠癌共识分子亚型（CMS）基于基因表达谱将CRC分为4型。与传统组织学分型互补，对预后和治疗策略有指导意义。",
     "variants": [
-      { "name": "CMS1 (MSI-Immune)", "nameZh": "CMS1 微卫星不稳定/免疫型", "frequency": "~14%", "significance": "MSI-H, BRAF突变多见; 免疫治疗获益" },
-      { "name": "CMS2 (Canonical)", "nameZh": "CMS2 经典型", "frequency": "~37%", "significance": "WNT/MYC激活; 预后较好" },
-      { "name": "CMS3 (Metabolic)", "nameZh": "CMS3 代谢型", "frequency": "~13%", "significance": "KRAS突变多见; 代谢异常" },
-      { "name": "CMS4 (Mesenchymal)", "nameZh": "CMS4 间质型", "frequency": "~23%", "significance": "EMT/TGF-β; 预后最差; 化疗+贝伐珠单抗" }
+      {
+        "name": "CMS1 (MSI-Immune)",
+        "nameZh": "CMS1 微卫星不稳定/免疫型",
+        "frequency": "~14%",
+        "significance": "MSI-H, BRAF突变多见; 免疫治疗获益"
+      },
+      {
+        "name": "CMS2 (Canonical)",
+        "nameZh": "CMS2 经典型",
+        "frequency": "~37%",
+        "significance": "WNT/MYC激活; 预后较好"
+      },
+      {
+        "name": "CMS3 (Metabolic)",
+        "nameZh": "CMS3 代谢型",
+        "frequency": "~13%",
+        "significance": "KRAS突变多见; 代谢异常"
+      },
+      {
+        "name": "CMS4 (Mesenchymal)",
+        "nameZh": "CMS4 间质型",
+        "frequency": "~23%",
+        "significance": "EMT/TGF-β; 预后最差; 化疗+贝伐珠单抗"
+      }
     ],
-    "associatedTumors": ["结直肠癌"],
+    "associatedTumors": [
+      "结直肠癌"
+    ],
     "detectionMethods": [
-      { "method": "基因表达谱分析", "sensitivity": "金标准", "turnaround": "14-21天", "notes": "研究级别，临床不常规" },
-      { "method": "IHC + 分子标志物组合", "sensitivity": "替代方案", "turnaround": "3-7天", "notes": "MMR/BRAF/KRAS组合可近似分型" }
+      {
+        "method": "基因表达谱分析",
+        "sensitivity": "金标准",
+        "turnaround": "14-21天",
+        "notes": "研究级别，临床不常规"
+      },
+      {
+        "method": "IHC + 分子标志物组合",
+        "sensitivity": "替代方案",
+        "turnaround": "3-7天",
+        "notes": "MMR/BRAF/KRAS组合可近似分型"
+      }
     ],
     "companionDiagnostics": [],
-    "tcgaSubtypes": ["CMS1 (MSI-Immune)", "CMS2 (Canonical)", "CMS3 (Metabolic)", "CMS4 (Mesenchymal)"],
+    "tcgaSubtypes": [
+      "CMS1 (MSI-Immune)",
+      "CMS2 (Canonical)",
+      "CMS3 (Metabolic)",
+      "CMS4 (Mesenchymal)"
+    ],
     "clinicalSignificance": "CMS分型目前主要用于研究，但正在向临床转化。CMS1（MSI-H/BRAF突变）对免疫治疗最敏感。CMS4预后最差但可能从贝伐珠单抗获益。结合MSI/KRAS/BRAF检测可近似推断CMS分型。",
-    "references": ["Guinney J et al. Nat Med 2015;21:1350-6"]
+    "references": [
+      "Guinney J et al. Nat Med 2015;21:1350-6"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": null,
+        "year": null
+      },
+      "_low_confidence": true,
+      "_reason": "CMS/TCGA 分子分型为科研性综合分型体系（基于基因表达、拷贝数、甲基化、突变等多组学聚类），目前 NMPA 未批准用于 CMS/TCGA 整体分型判定的伴随诊断试剂盒；CSCO 结直肠癌诊疗指南（2024）中对 CMS 分型仅作背景性阐述，未给出明确的 Ⅰ/Ⅱ/Ⅲ 级推荐用于常规临床检测。与 CRC 治疗决策相关的 NMPA CDx（如 KRAS/NRAS/BRAF 突变、MSI/MMR、HER2、NTRK 融合等）应在对应的单基因/单标志物条目下补全，而非归入 CMS/TCGA 分型条目。"
+    }
   },
   {
     "id": "tcga-gastric",
@@ -551,21 +1967,75 @@
     "category": "molecular-subtype",
     "description": "TCGA将胃癌分为4个分子亚型。对治疗策略选择有指导意义，尤其是EBV阳性型和MSI型对免疫治疗敏感。",
     "variants": [
-      { "name": "EBV-positive", "nameZh": "EBV阳性型", "frequency": "~9%", "significance": "PIK3CA突变/PD-L1高表达; 免疫治疗敏感" },
-      { "name": "MSI", "nameZh": "微卫星不稳定型", "frequency": "~22%", "significance": "突变负荷高; 免疫治疗首选" },
-      { "name": "GS (Genomically Stable)", "nameZh": "基因组稳定型", "frequency": "~20%", "significance": "弥漫型胃癌多见; CDH1/RHOA突变; 预后差" },
-      { "name": "CIN (Chromosomal Instability)", "nameZh": "染色体不稳定型", "frequency": "~50%", "significance": "TP53突变/HER2扩增; 肠型胃癌多见" }
+      {
+        "name": "EBV-positive",
+        "nameZh": "EBV阳性型",
+        "frequency": "~9%",
+        "significance": "PIK3CA突变/PD-L1高表达; 免疫治疗敏感"
+      },
+      {
+        "name": "MSI",
+        "nameZh": "微卫星不稳定型",
+        "frequency": "~22%",
+        "significance": "突变负荷高; 免疫治疗首选"
+      },
+      {
+        "name": "GS (Genomically Stable)",
+        "nameZh": "基因组稳定型",
+        "frequency": "~20%",
+        "significance": "弥漫型胃癌多见; CDH1/RHOA突变; 预后差"
+      },
+      {
+        "name": "CIN (Chromosomal Instability)",
+        "nameZh": "染色体不稳定型",
+        "frequency": "~50%",
+        "significance": "TP53突变/HER2扩增; 肠型胃癌多见"
+      }
     ],
-    "associatedTumors": ["胃癌", "胃食管结合部腺癌"],
+    "associatedTumors": [
+      "胃癌",
+      "胃食管结合部腺癌"
+    ],
     "detectionMethods": [
-      { "method": "EBER ISH (EBV检测)", "sensitivity": "高", "turnaround": "1-2天", "notes": "EBV亚型筛查" },
-      { "method": "IHC (MMR/HER2/PD-L1)", "sensitivity": "高", "turnaround": "1-3天", "notes": "临床常规组合" },
-      { "method": "NGS", "sensitivity": "高", "turnaround": "7-14天", "notes": "综合分型" }
+      {
+        "method": "EBER ISH (EBV检测)",
+        "sensitivity": "高",
+        "turnaround": "1-2天",
+        "notes": "EBV亚型筛查"
+      },
+      {
+        "method": "IHC (MMR/HER2/PD-L1)",
+        "sensitivity": "高",
+        "turnaround": "1-3天",
+        "notes": "临床常规组合"
+      },
+      {
+        "method": "NGS",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "综合分型"
+      }
     ],
     "companionDiagnostics": [],
-    "tcgaSubtypes": ["EBV-positive", "MSI", "GS (Genomically Stable)", "CIN (Chromosomal Instability)"],
+    "tcgaSubtypes": [
+      "EBV-positive",
+      "MSI",
+      "GS (Genomically Stable)",
+      "CIN (Chromosomal Instability)"
+    ],
     "clinicalSignificance": "胃癌分子分型指导免疫治疗选择。EBV+和MSI型对免疫治疗最敏感。CIN型中HER2扩增可用抗HER2靶向。GS型（弥漫型）预后最差，CDH1胚系突变需遗传筛查。",
-    "references": ["Cancer Genome Atlas Research Network. Nature 2014;513:202-9"]
+    "references": [
+      "Cancer Genome Atlas Research Network. Nature 2014;513:202-9"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅱ 级推荐",
+        "year": 2023
+      },
+      "_low_confidence": true,
+      "_reason": "TCGA 胃癌分子分型（EBV / MSI / GS / CIN 四型）并非单一 NMPA 伴随诊断产品所覆盖的实体，目前 NMPA 未批准任何以”TCGA 分型”为适应证的 CDx 试剂盒；其组成要素（HER2、MSI/MMR、EBV、PD-L1 等）各自对应不同 CDx/检测试剂盒，不宜合并列入本条目。CSCO 胃癌诊疗指南（2023）在辅助检查与分子标志物章节提及可参考 TCGA/ACRG 分子分型辅助判断预后，但未作为必做项目，推荐等级按分子分型条目记为Ⅱ 级推荐；具体年份与措辞仍建议人工核对原文。"
+    }
   },
   {
     "id": "tcga-endometrial",
@@ -575,23 +2045,82 @@
     "category": "molecular-subtype",
     "description": "TCGA/ProMisE分子分型将子宫内膜癌分为4型，2023年FIGO分期已正式纳入分子分型。该分型对预后判断和治疗决策有革命性意义——可能改变传统基于组织学和分期的治疗方案。",
     "variants": [
-      { "name": "POLE ultramutated", "nameZh": "POLE超突变型", "frequency": "~7-12%", "significance": "预后极好（即使高级别）; 可能降级治疗" },
-      { "name": "MSI-H/dMMR", "nameZh": "微卫星不稳定型", "frequency": "~25-30%", "significance": "中等预后; 免疫治疗获益; 筛查Lynch综合征" },
-      { "name": "CN-low / NSMP", "nameZh": "低拷贝数/无特异分子谱型", "frequency": "~35-40%", "significance": "中等预后; 常规治疗" },
-      { "name": "CN-high / p53-abnormal", "nameZh": "高拷贝数/p53异常型", "frequency": "~15-20%", "significance": "预后最差; 需要积极治疗（化疗+放疗）" }
+      {
+        "name": "POLE ultramutated",
+        "nameZh": "POLE超突变型",
+        "frequency": "~7-12%",
+        "significance": "预后极好（即使高级别）; 可能降级治疗"
+      },
+      {
+        "name": "MSI-H/dMMR",
+        "nameZh": "微卫星不稳定型",
+        "frequency": "~25-30%",
+        "significance": "中等预后; 免疫治疗获益; 筛查Lynch综合征"
+      },
+      {
+        "name": "CN-low / NSMP",
+        "nameZh": "低拷贝数/无特异分子谱型",
+        "frequency": "~35-40%",
+        "significance": "中等预后; 常规治疗"
+      },
+      {
+        "name": "CN-high / p53-abnormal",
+        "nameZh": "高拷贝数/p53异常型",
+        "frequency": "~15-20%",
+        "significance": "预后最差; 需要积极治疗（化疗+放疗）"
+      }
     ],
-    "associatedTumors": ["子宫内膜癌"],
+    "associatedTumors": [
+      "子宫内膜癌"
+    ],
     "detectionMethods": [
-      { "method": "ProMisE算法 (IHC+测序)", "sensitivity": "高", "turnaround": "3-7天", "notes": "顺序检测：1.MMR IHC → 2.POLE测序 → 3.p53 IHC" },
-      { "method": "NGS综合panel", "sensitivity": "高", "turnaround": "7-14天", "notes": "一次检测覆盖所有标志物" }
+      {
+        "method": "ProMisE算法 (IHC+测序)",
+        "sensitivity": "高",
+        "turnaround": "3-7天",
+        "notes": "顺序检测：1.MMR IHC → 2.POLE测序 → 3.p53 IHC"
+      },
+      {
+        "method": "NGS综合panel",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "一次检测覆盖所有标志物"
+      }
     ],
     "companionDiagnostics": [
-      { "drug": "多塔利单抗 (Dostarlimab)", "indication": "dMMR子宫内膜癌", "regulatoryStatus": "FDA", "line": "一线联合化疗" },
-      { "drug": "帕博利珠单抗 (Pembrolizumab) + 仑伐替尼", "indication": "非dMMR晚期子宫内膜癌", "regulatoryStatus": "FDA+NMPA", "line": "后线" }
+      {
+        "drug": "多塔利单抗 (Dostarlimab)",
+        "indication": "dMMR子宫内膜癌",
+        "regulatoryStatus": "FDA",
+        "line": "一线联合化疗"
+      },
+      {
+        "drug": "帕博利珠单抗 (Pembrolizumab) + 仑伐替尼",
+        "indication": "非dMMR晚期子宫内膜癌",
+        "regulatoryStatus": "FDA+NMPA",
+        "line": "后线"
+      }
     ],
-    "tcgaSubtypes": ["POLE ultramutated", "MSI-H/hypermutated", "Copy-number low", "Copy-number high/serous-like"],
+    "tcgaSubtypes": [
+      "POLE ultramutated",
+      "MSI-H/hypermutated",
+      "Copy-number low",
+      "Copy-number high/serous-like"
+    ],
     "clinicalSignificance": "2023 FIGO已将分子分型纳入子宫内膜癌分期系统。POLE突变型即使是高级别也预后极好（可降级治疗）。p53异常型即使是低级别也预后差（需升级治疗）。所有子宫内膜癌应进行分子分型。",
-    "references": ["Stelloo E et al. Clin Cancer Res 2016;22:4215-24", "Concin N et al. Int J Gynaecol Obstet 2021;155:64-73"]
+    "references": [
+      "Stelloo E et al. Clin Cancer Res 2016;22:4215-24",
+      "Concin N et al. Int J Gynaecol Obstet 2021;155:64-73"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅱ 级推荐",
+        "year": 2023
+      },
+      "_low_confidence": true,
+      "_reason": "TCGA/ProMisE 分子分型为整合性分型体系（包含 POLE EDM 测序、MMR/MSI 检测、p53 IHC），并非单一分子标志物，目前 NMPA 尚无以 \"子宫内膜癌 TCGA 分子分型\" 为适应证批准的整合性伴随诊断试剂盒；其组成成分（如 MSI PCR、MMR IHC、POLE NGS）分散于不同注册证，无法准确对应列出。CSCO《子宫内膜癌诊疗指南 2023》已将分子分型纳入推荐，但具体等级标注（Ⅰ/Ⅱ 级）需核对原文确认，暂以 Ⅱ 级推荐标注待审稿复核。"
+    }
   },
   {
     "id": "cdh1-mutations",
@@ -601,18 +2130,52 @@
     "category": "tumor-suppressor",
     "description": "CDH1编码E-cadherin黏附蛋白。胚系突变导致遗传性弥漫型胃癌（HDGC）和小叶型乳腺癌。体系异常（突变/甲基化）是散发性弥漫型胃癌和浸润性小叶癌的特征。",
     "variants": [
-      { "name": "CDH1 germline truncating", "nameZh": "CDH1胚系截断突变", "frequency": "HDGC家系", "significance": "终生胃癌风险>70%; 预防性全胃切除" },
-      { "name": "CDH1 somatic loss", "nameZh": "CDH1体系缺失/甲基化", "frequency": "弥漫型胃癌/ILC常见", "significance": "E-cadherin IHC缺失" }
+      {
+        "name": "CDH1 germline truncating",
+        "nameZh": "CDH1胚系截断突变",
+        "frequency": "HDGC家系",
+        "significance": "终生胃癌风险>70%; 预防性全胃切除"
+      },
+      {
+        "name": "CDH1 somatic loss",
+        "nameZh": "CDH1体系缺失/甲基化",
+        "frequency": "弥漫型胃癌/ILC常见",
+        "significance": "E-cadherin IHC缺失"
+      }
     ],
-    "associatedTumors": ["弥漫型胃癌", "浸润性小叶乳腺癌", "遗传性弥漫型胃癌综合征"],
+    "associatedTumors": [
+      "弥漫型胃癌",
+      "浸润性小叶乳腺癌",
+      "遗传性弥漫型胃癌综合征"
+    ],
     "detectionMethods": [
-      { "method": "IHC (E-cadherin)", "sensitivity": "高", "turnaround": "1-2天", "notes": "膜染色缺失提示CDH1异常; 鉴别导管癌vs小叶癌" },
-      { "method": "NGS (胚系)", "sensitivity": "高", "turnaround": "14-21天", "notes": "HDGC家系筛查" }
+      {
+        "method": "IHC (E-cadherin)",
+        "sensitivity": "高",
+        "turnaround": "1-2天",
+        "notes": "膜染色缺失提示CDH1异常; 鉴别导管癌vs小叶癌"
+      },
+      {
+        "method": "NGS (胚系)",
+        "sensitivity": "高",
+        "turnaround": "14-21天",
+        "notes": "HDGC家系筛查"
+      }
     ],
     "companionDiagnostics": [],
-    "tcgaSubtypes": ["GS型胃癌（CDH1/RHOA突变富集）"],
+    "tcgaSubtypes": [
+      "GS型胃癌（CDH1/RHOA突变富集）"
+    ],
     "clinicalSignificance": "CDH1胚系突变携带者需考虑预防性全胃切除（终生胃癌风险>70%）。E-cadherin IHC是鉴别乳腺导管癌vs小叶癌的关键标志物。弥漫型胃癌预后差。",
-    "references": ["Blair VR et al. Gut 2020;69:2030-40"]
+    "references": [
+      "Blair VR et al. Gut 2020;69:2030-40"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": null,
+      "_low_confidence": true,
+      "_reason": "截至 2026 年 4 月，未检索到 NMPA 批准的 CDH1 突变专用伴随诊断试剂盒；CDH1 germline 检测多通过 NGS 多基因 panel 或 Sanger 测序完成，相关检测在 CSCO 胃癌诊疗指南中提示用于遗传性弥漫性胃癌（HDGC）筛查，但无法高置信度确认具体推荐等级与年份，建议人工复核 CSCO 胃癌诊疗指南（2023）遗传性胃癌章节及 CSCO 乳腺癌诊疗指南（2024）浸润性小叶癌相关内容。"
+    }
   },
   {
     "id": "myc-rearrangement",
@@ -622,19 +2185,59 @@
     "category": "fusion",
     "description": "MYC基因重排是Burkitt淋巴瘤的标志性改变，也是弥漫大B细胞淋巴瘤（DLBCL）中高危亚型（双打击/三打击淋巴瘤）的定义特征。MYC与BCL2和/或BCL6同时重排预后极差。",
     "variants": [
-      { "name": "MYC-IGH t(8;14)", "nameZh": "MYC-IGH易位", "frequency": "Burkitt ~100%", "significance": "Burkitt淋巴瘤标志" },
-      { "name": "MYC + BCL2 (Double-hit)", "nameZh": "MYC+BCL2双打击", "frequency": "DLBCL ~5-10%", "significance": "高级别B细胞淋巴瘤; 预后极差" },
-      { "name": "MYC + BCL2 + BCL6 (Triple-hit)", "nameZh": "MYC+BCL2+BCL6三打击", "frequency": "DLBCL ~2-3%", "significance": "预后极差" }
+      {
+        "name": "MYC-IGH t(8;14)",
+        "nameZh": "MYC-IGH易位",
+        "frequency": "Burkitt ~100%",
+        "significance": "Burkitt淋巴瘤标志"
+      },
+      {
+        "name": "MYC + BCL2 (Double-hit)",
+        "nameZh": "MYC+BCL2双打击",
+        "frequency": "DLBCL ~5-10%",
+        "significance": "高级别B细胞淋巴瘤; 预后极差"
+      },
+      {
+        "name": "MYC + BCL2 + BCL6 (Triple-hit)",
+        "nameZh": "MYC+BCL2+BCL6三打击",
+        "frequency": "DLBCL ~2-3%",
+        "significance": "预后极差"
+      }
     ],
-    "associatedTumors": ["Burkitt淋巴瘤", "弥漫大B细胞淋巴瘤", "高级别B细胞淋巴瘤"],
+    "associatedTumors": [
+      "Burkitt淋巴瘤",
+      "弥漫大B细胞淋巴瘤",
+      "高级别B细胞淋巴瘤"
+    ],
     "detectionMethods": [
-      { "method": "FISH (MYC break-apart)", "sensitivity": "金标准", "turnaround": "2-5天", "notes": "所有DLBCL必检; 阳性时追加BCL2/BCL6 FISH" },
-      { "method": "IHC (c-MYC + BCL2)", "sensitivity": "筛查用", "turnaround": "1-2天", "notes": "双表达(MYC≥40% + BCL2≥50%)提示需FISH确认" }
+      {
+        "method": "FISH (MYC break-apart)",
+        "sensitivity": "金标准",
+        "turnaround": "2-5天",
+        "notes": "所有DLBCL必检; 阳性时追加BCL2/BCL6 FISH"
+      },
+      {
+        "method": "IHC (c-MYC + BCL2)",
+        "sensitivity": "筛查用",
+        "turnaround": "1-2天",
+        "notes": "双表达(MYC≥40% + BCL2≥50%)提示需FISH确认"
+      }
     ],
     "companionDiagnostics": [],
     "tcgaSubtypes": [],
     "clinicalSignificance": "双打击/三打击淋巴瘤（HGBL-DH/TH）预后极差，标准R-CHOP疗效不佳，需强化方案（DA-EPOCH-R）。所有DLBCL应行MYC IHC筛查，双表达阳性者FISH确认。",
-    "references": ["Rosenwald A et al. JCO 2019;37:3272-83"]
+    "references": [
+      "Rosenwald A et al. JCO 2019;37:3272-83"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2024
+      },
+      "_low_confidence": true,
+      "_reason": "截至目前，NMPA 尚无专门针对 MYC 重排的获批伴随诊断试剂盒；MYC 重排临床检测主要依赖 FISH（LSI MYC break-apart probe，如 Abbott/Vysis、安必平、立迪等实验室自建项目），但这些属于通用 FISH 探针而非 NMPA 批准的 CDx。CSCO《恶性淋巴瘤诊疗指南 2024》对弥漫大 B 细胞淋巴瘤推荐常规检测 MYC、BCL2、BCL6 重排以识别高级别 B 细胞淋巴瘤（HGBL，双打击/三打击），推荐等级按指南表述列为 Ⅰ 级推荐，但具体等级标注需核对原文。"
+    }
   },
   {
     "id": "1p19q-codeletion",
@@ -644,17 +2247,819 @@
     "category": "biomarker",
     "description": "染色体1p和19q的联合缺失是少突胶质细胞瘤的定义性分子标志（WHO 2021分类必要条件）。仅在IDH突变的弥漫性胶质瘤中有诊断意义。1p/19q共缺失预后好，对PCV化疗和放疗敏感。",
     "variants": [
-      { "name": "Complete 1p/19q co-deletion", "nameZh": "完整1p/19q联合缺失", "frequency": "少突胶质细胞瘤 ~100%", "significance": "少突胶质细胞瘤定义标准" }
+      {
+        "name": "Complete 1p/19q co-deletion",
+        "nameZh": "完整1p/19q联合缺失",
+        "frequency": "少突胶质细胞瘤 ~100%",
+        "significance": "少突胶质细胞瘤定义标准"
+      }
     ],
-    "associatedTumors": ["少突胶质细胞瘤（IDH突变+1p/19q共缺失）"],
+    "associatedTumors": [
+      "少突胶质细胞瘤（IDH突变+1p/19q共缺失）"
+    ],
     "detectionMethods": [
-      { "method": "FISH", "sensitivity": "高", "turnaround": "2-5天", "notes": "1p36和19q13探针; 需注意多体性假阳性" },
-      { "method": "NGS (拷贝数分析)", "sensitivity": "高", "turnaround": "7-14天", "notes": "可同时评估全基因组拷贝数" },
-      { "method": "MLPA", "sensitivity": "高", "turnaround": "3-5天", "notes": "多位点检测，排除部分缺失" }
+      {
+        "method": "FISH",
+        "sensitivity": "高",
+        "turnaround": "2-5天",
+        "notes": "1p36和19q13探针; 需注意多体性假阳性"
+      },
+      {
+        "method": "NGS (拷贝数分析)",
+        "sensitivity": "高",
+        "turnaround": "7-14天",
+        "notes": "可同时评估全基因组拷贝数"
+      },
+      {
+        "method": "MLPA",
+        "sensitivity": "高",
+        "turnaround": "3-5天",
+        "notes": "多位点检测，排除部分缺失"
+      }
     ],
     "companionDiagnostics": [],
-    "tcgaSubtypes": ["Oligodendroglioma, IDH-mutant and 1p/19q-codeleted (WHO 2021)"],
+    "tcgaSubtypes": [
+      "Oligodendroglioma, IDH-mutant and 1p/19q-codeleted (WHO 2021)"
+    ],
     "clinicalSignificance": "1p/19q共缺失是WHO 2021胶质瘤分类的核心标志物。IDH突变+1p/19q共缺失 = 少突胶质细胞瘤（预后好，对PCV化疗+放疗高度敏感）。IDH突变但无1p/19q共缺失 = 星形细胞瘤。",
-    "references": ["Louis DN et al. Neuro Oncol 2021;23:1231-51", "Cairncross G et al. JCO 2013;31:344-50"]
+    "references": [
+      "Louis DN et al. Neuro Oncol 2021;23:1231-51",
+      "Cairncross G et al. JCO 2013;31:344-50"
+    ],
+    "_enhance_molecular_cn_cdx": {
+      "nmpaCdxKits": [],
+      "cscoRecommendation": {
+        "level": "Ⅰ 级推荐",
+        "year": 2022
+      },
+      "_low_confidence": true,
+      "_reason": "未能高置信度确认有 NMPA 批准专门用于 1p/19q 联合缺失检测的 CDx 试剂盒（临床实践中多采用 FISH 法，相关探针以 LDT 或 IVD 类别注册情况不明），故返回空数组；CSCO 胶质瘤诊疗指南 2022 版将 1p/19q 联合缺失作为少突胶质细胞瘤诊断的必检分子标志物（Ⅰ 级推荐），但具体等级表述以指南原文为准。"
+    }
+  },
+  {
+    "id": "nras-mutations",
+    "geneSymbol": "NRAS",
+    "nameZh": "NRAS 突变",
+    "nameEn": "NRAS Mutations",
+    "category": "gtpase",
+    "description": "NRAS（Neuroblastoma RAS viral oncogene homolog）编码小 GTP 酶家族成员，参与 RAS-RAF-MEK-ERK 及 PI3K-AKT 信号通路。NRAS 激活性突变主要发生在外显子 2（密码子 12/13）和外显子 3（密码子 61），其中 Q61R/Q61K 在皮肤黑色素瘤中最常见，G12D/G13D 多见于血液肿瘤与结直肠癌。NRAS 突变使 GTP 酶活性丧失，导致下游 MAPK 通路持续激活。",
+    "variants": [
+      {
+        "name": "Q61R",
+        "frequency": "皮肤黑色素瘤 ~15–20%",
+        "druggable": "无直接靶向药；MEK 抑制剂（比美替尼）可部分抑制下游"
+      },
+      {
+        "name": "Q61K",
+        "frequency": "皮肤黑色素瘤 ~10%",
+        "druggable": "MEK 抑制剂（研究性）"
+      },
+      {
+        "name": "Q61L/H",
+        "frequency": "黑色素瘤、甲状腺滤泡癌散见",
+        "druggable": "MEK 抑制剂（研究性）"
+      },
+      {
+        "name": "G12D",
+        "frequency": "AML、CMML、结直肠癌散见",
+        "druggable": "暂无特异性靶向药"
+      },
+      {
+        "name": "G13D/R",
+        "frequency": "结直肠癌 ~1–4%、AML",
+        "druggable": "暂无特异性靶向药"
+      }
+    ],
+    "associatedTumors": [
+      "皮肤黑色素瘤",
+      "结直肠癌",
+      "急性髓系白血病 (AML)",
+      "慢性粒单核细胞白血病 (CMML)",
+      "甲状腺滤泡癌/滤泡型乳头状癌",
+      "多发性骨髓瘤"
+    ],
+    "detectionMethods": [
+      "NGS（推荐，可同时检测 KRAS/NRAS/BRAF）",
+      "ARMS-qPCR（结直肠癌临床常用）",
+      "Sanger 测序（突变丰度 >20% 时适用）",
+      "数字 PCR（低丰度/ctDNA 检测）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "西妥昔单抗 (Cetuximab)",
+        "cdxKit": "NMPA 批准用于 RAS（KRAS/NRAS 外显子 2/3/4）野生型转移性结直肠癌患者筛选，如艾德生物人类 KRAS/NRAS/BRAF 基因突变联合检测试剂盒（荧光 PCR 法）"
+      },
+      {
+        "drug": "帕尼单抗 (Panitumumab)",
+        "cdxKit": "依据 RAS 野生型判定，沿用 KRAS/NRAS 联合检测试剂盒"
+      }
+    ],
+    "clinicalSignificance": "1) 结直肠癌：NRAS 外显子 2/3/4 突变是抗 EGFR 单抗（西妥昔单抗、帕尼单抗）的原发耐药标志物，NMPA 与 CSCO 指南均要求在 mCRC 一线治疗前检测 RAS（KRAS + NRAS）及 BRAF。2) 皮肤黑色素瘤：NRAS 突变（主要 Q61）提示预后较差，目前尚无 NMPA 批准的 NRAS 直接靶向药，MEK 抑制剂比美替尼在 NEMO 等国际临床试验中显示一定疗效，国内多纳入免疫检查点抑制剂联合方案。3) 髓系肿瘤：NRAS 突变在 AML/CMML/JMML 中常作为疾病进展或耐药相关事件，具预后分层意义。4) 与 KRAS、BRAF 突变通常互斥。"
+  },
+  {
+    "id": "idh1-idh2",
+    "geneSymbol": "IDH1/IDH2",
+    "nameZh": "异柠檬酸脱氢酶 1/2 突变",
+    "nameEn": "Isocitrate Dehydrogenase 1/2 Mutation",
+    "category": "metabolic_enzyme",
+    "description": "IDH1 与 IDH2 分别编码胞浆和线粒体内的异柠檬酸脱氢酶，催化异柠檬酸转化为 α-酮戊二酸（α-KG）。热点错义突变（IDH1 R132、IDH2 R140/R172）产生新的酶活性，将 α-KG 还原为致癌代谢物 2-羟基戊二酸（2-HG），竞争性抑制 α-KG 依赖的双加氧酶（TET2、KDM 组蛋白去甲基化酶等），导致 DNA/组蛋白高甲基化表型（G-CIMP），阻断细胞分化。是弥漫性胶质瘤（成人型）和急性髓系白血病的关键驱动事件，也见于肝内胆管癌和软骨肉瘤。",
+    "variants": [
+      {
+        "name": "IDH1 R132H",
+        "frequency": "成人弥漫性星形细胞瘤/少突胶质细胞瘤 ~90%（占 IDH1 突变的绝大多数）",
+        "druggable": "伏罗尼布（Vorasidenib，2024 FDA 获批用于 2 级 IDH 突变胶质瘤，国内 NMPA 尚未批准）"
+      },
+      {
+        "name": "IDH1 R132C",
+        "frequency": "软骨肉瘤 ~40%、肝内胆管癌 ~15%、AML 少见",
+        "druggable": "艾伏尼布（Ivosidenib）"
+      },
+      {
+        "name": "IDH1 R132G/L/S",
+        "frequency": "胶质瘤/AML 少见亚型",
+        "druggable": "艾伏尼布"
+      },
+      {
+        "name": "IDH2 R140Q",
+        "frequency": "AML 中 IDH2 突变占 ~8–15%，R140 最常见",
+        "druggable": "恩西地平（Enasidenib）"
+      },
+      {
+        "name": "IDH2 R172K",
+        "frequency": "AML 少见；肝内胆管癌和血管免疫母细胞性 T 细胞淋巴瘤可见",
+        "druggable": "恩西地平"
+      }
+    ],
+    "associatedTumors": [
+      "成人弥漫性星形细胞瘤（IDH 突变型）",
+      "少突胶质细胞瘤（IDH 突变伴 1p/19q 共缺失）",
+      "继发性胶质母细胞瘤（历史概念，WHO 5th 已并入星形细胞瘤 IDH 突变型 4 级）",
+      "急性髓系白血病（AML）",
+      "骨髓增生异常综合征（MDS）",
+      "肝内胆管癌（iCCA）",
+      "软骨肉瘤（中央型 / 去分化型）",
+      "血管免疫母细胞性 T 细胞淋巴瘤（AITL，仅 IDH2 R172）"
+    ],
+    "detectionMethods": [
+      "免疫组化（IDH1 R132H 特异性抗体，胶质瘤筛查首选，敏感度高但不能覆盖非 R132H 型）",
+      "Sanger 测序（IDH1 外显子 4 / IDH2 外显子 4，IHC 阴性胶质瘤需补做）",
+      "ARMS-qPCR（临床快速检测常用）",
+      "NGS（推荐，可同时检测 IDH1/IDH2 全部热点及伴随改变如 1p/19q、TERT、ATRX、MGMT）",
+      "2-HG 磁共振波谱（MRS，无创影像学辅助）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "艾伏尼布（Ivosidenib）",
+        "cdxKit": "用于 IDH1 突变型复发/难治 AML 及既往经治的局部晚期/转移性肝内胆管癌；国内 NMPA 尚未批准该药及配套 CDx，检测主要通过院内 LDT（NGS/Sanger）完成",
+        "_low_confidence": true
+      },
+      {
+        "drug": "恩西地平（Enasidenib）",
+        "cdxKit": "FDA 获批用于 IDH2 突变型复发/难治 AML，配套 Abbott RealTime IDH2 Assay；NMPA 未批准",
+        "_low_confidence": true
+      },
+      {
+        "drug": "伏罗尼布（Vorasidenib）",
+        "cdxKit": "2024 年 FDA 获批用于残留/复发的 2 级 IDH 突变弥漫性胶质瘤；NMPA 未批准，CDx 尚未在国内注册",
+        "_low_confidence": true
+      }
+    ],
+    "clinicalSignificance": "1）诊断与分类：IDH 突变是 WHO CNS5 成人弥漫性胶质瘤分型的核心分子标志，区分 IDH 突变型星形细胞瘤（1p/19q 完整、ATRX 丢失）与少突胶质细胞瘤（1p/19q 共缺失）以及 IDH 野生型胶质母细胞瘤；2）预后：胶质瘤中 IDH 突变提示预后显著优于野生型；AML 中 IDH 突变预后中等，需联合 FLT3/NPM1 综合判断；3）靶向治疗：艾伏尼布（IDH1）和恩西地平（IDH2）已在海外用于 R/R AML；艾伏尼布亦获批 IDH1 突变肝内胆管癌；伏罗尼布为首个脑渗透性 IDH1/2 抑制剂，用于低级别胶质瘤；4）国内现状：截至 2026 年 4 月，上述药物均未获 NMPA 批准，配套 CDx 试剂盒未在国内注册，临床检测多依赖院内 LDT 和获批 NGS 大 panel；5）微环境效应：2-HG 诱导的高甲基化表型与免疫”抑制”有关，或影响免疫治疗响应。"
+  },
+  {
+    "id": "ntrk-fusions",
+    "geneSymbol": "NTRK1/NTRK2/NTRK3",
+    "nameZh": "NTRK 基因融合",
+    "nameEn": "NTRK Gene Fusions",
+    "category": "receptor-tyrosine-kinase",
+    "description": "NTRK1、NTRK2、NTRK3 分别编码原肌球蛋白受体激酶 TrkA、TrkB、TrkC。染色体重排使 NTRK 3' 激酶结构域与上游伴侣基因 5' 区域融合，产生组成型激活的嵌合激酶，驱动 MAPK、PI3K-AKT 及 PLCγ 通路下游信号。NTRK 融合在婴儿型纤维肉瘤、分泌性乳腺癌、乳腺样分泌性癌（MASC）中高频发生（>90%），在常见实体瘤（肺腺癌、结直肠癌、甲状腺癌、胶质瘤等）中频率 <1%，属于经典的\"罕见但可成药\"靶点。",
+    "variants": [
+      {
+        "name": "ETV6-NTRK3",
+        "frequency": "婴儿型纤维肉瘤 / 先天性中胚层肾瘤细胞型 / 分泌性乳腺癌 / 乳腺样分泌性癌 >90%",
+        "druggable": "拉罗替尼 / 恩曲替尼"
+      },
+      {
+        "name": "TPM3-NTRK1",
+        "frequency": "甲状腺乳头状癌、结直肠癌少见",
+        "druggable": "拉罗替尼 / 恩曲替尼"
+      },
+      {
+        "name": "LMNA-NTRK1",
+        "frequency": "软组织肉瘤、结直肠癌罕见",
+        "druggable": "拉罗替尼 / 恩曲替尼"
+      },
+      {
+        "name": "TPR-NTRK1",
+        "frequency": "甲状腺乳头状癌、NSCLC 罕见",
+        "druggable": "拉罗替尼 / 恩曲替尼"
+      },
+      {
+        "name": "QKI-NTRK2",
+        "frequency": "高级别胶质瘤罕见",
+        "druggable": "拉罗替尼 / 恩曲替尼"
+      },
+      {
+        "name": "EML4-NTRK3",
+        "frequency": "NSCLC 罕见",
+        "druggable": "拉罗替尼 / 恩曲替尼"
+      }
+    ],
+    "associatedTumors": [
+      "婴儿型纤维肉瘤",
+      "先天性中胚层肾瘤（细胞型）",
+      "分泌性乳腺癌",
+      "涎腺乳腺样分泌性癌（MASC）",
+      "甲状腺乳头状癌",
+      "非小细胞肺癌",
+      "结直肠癌（常伴 MSI-H）",
+      "高级别胶质瘤 / 弥漫性儿童型高级别胶质瘤",
+      "胃肠道间质瘤（野生型 GIST）",
+      "唾液腺分泌性癌"
+    ],
+    "detectionMethods": [
+      "pan-TrkIHC 筛查（泛 Trk 抗体 EPR17341，胞浆/核/膜阳性提示融合，敏感性因融合伴侣不同而异，NTRK3 融合敏感性相对较低）",
+      "FISH（分离探针，可检测已知位点重排）",
+      "RT-PCR（需已知融合位点，易漏检新伴侣）",
+      "RNA-based NGS（推荐，可检测已知与未知伴侣，敏感性最高）",
+      "DNA-based NGS（内含子断点覆盖有限，对 NTRK2/NTRK3 大内含子检出率低于 RNA-NGS）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "拉罗替尼（Larotrectinib，拉罗曲替尼）",
+        "cdxKit": "NMPA 批准用于成人及儿童携带 NTRK 基因融合的局部晚期或转移性实体瘤；CDx 以 RNA-based NGS / FISH 检测 NTRK1/2/3 融合阳性为依据"
+      },
+      {
+        "drug": "恩曲替尼（Entrectinib）",
+        "cdxKit": "NMPA 批准用于 NTRK 融合阳性的成人及 ≥12 岁儿童局部晚期或转移性实体瘤，以及 ROS1 阳性 NSCLC；推荐 RNA-NGS 检测融合"
+      },
+      {
+        "drug": "瑞普替尼（Repotrectinib）",
+        "cdxKit": "第二代 TRK/ROS1 抑制剂，对 NTRK G595R / G623R 等耐药突变有效；FDA 已批准，NMPA 申报中",
+        "_low_confidence": true
+      }
+    ],
+    "clinicalSignificance": "NTRK 融合是跨瘤种（tumor-agnostic）靶向治疗的代表性生物标志物。第一代 TRK 抑制剂（拉罗替尼、恩曲替尼）在 NTRK 融合阳性实体瘤中客观缓解率 57%–75%，中位缓解持续时间超过 2 年，对儿童及成人均有效。临床建议：对罕见瘤种（婴儿型纤维肉瘤、分泌性乳腺癌、MASC、野生型 GIST、先天性中胚层肾瘤细胞型）常规检测 NTRK 融合；对常见瘤种（NSCLC、CRC、甲状腺癌）在常规驱动基因阴性后补充 NTRK 检测。检测策略推荐：pan-Trk IHC 先筛查，阳性者以 RNA-NGS 确认融合伴侣；晚期患者条件允许时直接采用大 panel RNA-NGS。耐药机制主要为 NTRK 激酶域获得性突变（G595R、G623R、G667C 等），可切换至第二代抑制剂（瑞普替尼、塞利替尼等）。CSCO 罕见肿瘤诊疗指南与《NTRK 基因融合检测及 NTRK 抑制剂临床应用中国专家共识》均推荐泛瘤种 NTRK 检测路径。"
+  },
+  {
+    "id": "ret-alterations",
+    "geneSymbol": "RET",
+    "nameZh": "RET 改变",
+    "nameEn": "RET Alterations",
+    "category": "receptor_tyrosine_kinase",
+    "description": "RET（Rearranged during Transfection）编码一种受体酪氨酸激酶，其配体为 GDNF 家族成员。RET 改变主要包括两种类型：融合（主要见于 NSCLC 和甲状腺乳头状癌）和激活性点突变（主要见于甲状腺髓样癌，包括遗传性 MEN2 综合征和散发性）。两类改变均导致 RET 激酶持续活化，驱动肿瘤发生。",
+    "variants": [
+      {
+        "name": "KIF5B-RET 融合",
+        "frequency": "NSCLC 中 RET 融合阳性者约 70%-90%",
+        "druggable": "塞普替尼（Selpercatinib）、普拉替尼（Pralsetinib）"
+      },
+      {
+        "name": "CCDC6-RET 融合",
+        "frequency": "甲状腺乳头状癌 RET 融合阳性者较常见；NSCLC 次常见",
+        "druggable": "塞普替尼、普拉替尼"
+      },
+      {
+        "name": "NCOA4-RET 融合",
+        "frequency": "甲状腺乳头状癌中较常见",
+        "druggable": "塞普替尼、普拉替尼"
+      },
+      {
+        "name": "M918T",
+        "frequency": "散发性甲状腺髓样癌约 40%-50%；MEN2B 几乎 100%",
+        "druggable": "塞普替尼、普拉替尼、凡德他尼、卡博替尼"
+      },
+      {
+        "name": "C634 系列（C634R/W/Y/F/G/S）",
+        "frequency": "MEN2A 最常见突变（约 85%）",
+        "druggable": "塞普替尼、普拉替尼、凡德他尼、卡博替尼"
+      },
+      {
+        "name": "V804M/L（守门员突变）",
+        "frequency": "可为原发或获得性耐药突变",
+        "druggable": "塞普替尼、普拉替尼（较一代 MKI 保留活性）"
+      }
+    ],
+    "associatedTumors": [
+      "非小细胞肺癌（RET 融合，约 1%-2%）",
+      "甲状腺乳头状癌（RET 融合，约 10%-20%）",
+      "甲状腺髓样癌（RET 点突变，散发性约 50%，遗传性近 100%）",
+      "多发性内分泌腺瘤病 2 型（MEN2A/2B）",
+      "少数结直肠癌、乳腺癌、唾液腺导管癌"
+    ],
+    "detectionMethods": [
+      "NGS（DNA + RNA 双建库推荐，可同时检出融合与点突变）",
+      "RNA 测序（融合检测敏感性最佳）",
+      "FISH（RET 断裂探针，用于融合筛查）",
+      "RT-PCR（已知融合伴侣）",
+      "Sanger 测序（甲状腺髓样癌胚系/体细胞点突变热点筛查）",
+      "IHC（RET 蛋白，特异性与敏感性均有限，不推荐作为确诊方法）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "塞普替尼（Selpercatinib / 赛普替尼）",
+        "cdxKit": "NMPA 已批准用于 RET 融合阳性 NSCLC 及 RET 突变/融合阳性甲状腺癌；配套可采用 NMPA 批准的 NGS 多基因检测试剂盒",
+        "_low_confidence": true
+      },
+      {
+        "drug": "普拉替尼（Pralsetinib）",
+        "cdxKit": "NMPA 已批准用于 RET 融合阳性 NSCLC；配套可采用 NMPA 批准的 NGS 多基因检测试剂盒",
+        "_low_confidence": true
+      }
+    ],
+    "clinicalSignificance": "RET 改变是重要的可靶向驱动事件。NSCLC 中 RET 融合阳性患者使用高选择性 RET 抑制剂（塞普替尼、普拉替尼）可获得显著且持久的客观缓解，疗效优于多激酶抑制剂（凡德他尼、卡博替尼）和免疫检查点抑制剂。甲状腺髓样癌中 RET 胚系突变检测对 MEN2 综合征筛查和预防性甲状腺切除时机判断至关重要，M918T 提示预后不良，需更早干预。V804M/L 守门员突变是一代 MKI 的耐药机制，高选择性 RET 抑制剂仍保留活性。CSCO 非小细胞肺癌诊疗指南（2024）及甲状腺癌诊疗指南（2023）均已将 RET 检测纳入推荐。"
+  },
+  {
+    "id": "ros1-fusions",
+    "geneSymbol": "ROS1",
+    "nameZh": "ROS1 融合",
+    "nameEn": "ROS1 Fusions",
+    "category": "receptor_tyrosine_kinase",
+    "description": "ROS1 是位于 6q22 的受体酪氨酸激酶基因，与 ALK 同属胰岛素受体超家族，激酶结构域同源性约 77%。染色体重排导致 ROS1 与多种伙伴基因（CD74、EZR、SDC4、SLC34A2、TPM3、GOPC 等）形成融合，融合蛋白通过伙伴基因介导的二聚化激活下游 JAK/STAT、PI3K/AKT、RAS/MAPK 通路，驱动肿瘤发生。在非小细胞肺癌（尤其腺癌、年轻、不吸烟/轻度吸烟人群）中阳性率约 1–2%，为 NCCN/CSCO 指南推荐的必检驱动基因之一。",
+    "variants": [
+      {
+        "name": "CD74-ROS1",
+        "frequency": "NSCLC ROS1 融合中约 38–44%",
+        "druggable": "克唑替尼 / 恩曲替尼 / 洛拉替尼 / 瑞普替尼"
+      },
+      {
+        "name": "EZR-ROS1",
+        "frequency": "NSCLC ROS1 融合中约 13–16%",
+        "druggable": "克唑替尼 / 恩曲替尼"
+      },
+      {
+        "name": "SDC4-ROS1",
+        "frequency": "NSCLC ROS1 融合中约 9–13%",
+        "druggable": "克唑替尼 / 恩曲替尼"
+      },
+      {
+        "name": "SLC34A2-ROS1",
+        "frequency": "NSCLC ROS1 融合中约 9–10%",
+        "druggable": "克唑替尼 / 恩曲替尼"
+      },
+      {
+        "name": "TPM3-ROS1",
+        "frequency": "少见（<5%）",
+        "druggable": "克唑替尼 / 恩曲替尼"
+      },
+      {
+        "name": "GOPC-ROS1",
+        "frequency": "胶质母细胞瘤、胆管癌少见",
+        "druggable": "恩曲替尼（NTRK/ROS1 泛瘤种）"
+      },
+      {
+        "name": "ROS1 G2032R",
+        "frequency": "获得性耐药突变（克唑替尼治疗后约 30–40%）",
+        "druggable": "瑞普替尼（repotrectinib）/ 洛拉替尼部分敏感"
+      },
+      {
+        "name": "ROS1 D2033N",
+        "frequency": "少见获得性耐药突变",
+        "druggable": "洛拉替尼"
+      },
+      {
+        "name": "ROS1 L2026M",
+        "frequency": "守门员突变（gatekeeper），少见",
+        "druggable": "瑞普替尼"
+      }
+    ],
+    "associatedTumors": [
+      "非小细胞肺癌（腺癌为主）",
+      "胶质母细胞瘤",
+      "胆管癌",
+      "炎性肌纤维母细胞瘤",
+      "胃癌（罕见）",
+      "结直肠癌（罕见）",
+      "卵巢癌（罕见）",
+      "脊索瘤（罕见）"
+    ],
+    "detectionMethods": [
+      "RNA-based NGS（推荐，可识别融合伙伴及新型融合）",
+      "DNA-based NGS（需覆盖内含子断裂区）",
+      "FISH（双色分离探针，金标准之一，阳性阈值 ≥15%）",
+      "IHC（D4D6 克隆，胞浆颗粒状阳性，作为筛查；阳性需 FISH/NGS 确认）",
+      "RT-PCR（已知融合形式检测，敏感但易漏检新融合）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "克唑替尼（Crizotinib，赛可瑞）",
+        "cdxKit": "NMPA 批准用于 ROS1 阳性局部晚期或转移性 NSCLC（2017 年获批适应症），FISH 与 RT-PCR 检测可作为伴随诊断"
+      },
+      {
+        "drug": "恩曲替尼（Entrectinib，罗圣全）",
+        "cdxKit": "NMPA 2022 年批准用于 ROS1 阳性局部晚期或转移性 NSCLC，对 CNS 转移有效；伴随 NGS 检测"
+      },
+      {
+        "drug": "洛拉替尼（Lorlatinib，立泺赛）",
+        "cdxKit": "NMPA 已批准 ALK 阳性 NSCLC 适应症，ROS1 阳性 NSCLC 在 NCCN/CSCO 指南推荐用于克唑替尼耐药后（中国适应症以最新批件为准）"
+      },
+      {
+        "drug": "瑞普替尼（Repotrectinib，TPX-0005）",
+        "cdxKit": "FDA 2024 年批准用于 ROS1 阳性 NSCLC（含初治及 TKI 经治），中国 NMPA 上市申请审评中（截至 2026-04，需以最新批件为准）",
+        "_low_confidence": true
+      }
+    ],
+    "clinicalSignificance": "ROS1 融合是 NSCLC 明确的驱动基因和 I 类靶向治疗靶点（CSCO NSCLC 诊疗指南 2024 推荐 IA 级证据）。一线推荐恩曲替尼或克唑替尼，恩曲替尼具更优颅内活性；克唑替尼治疗后常见 G2032R 等溶剂前沿耐药突变，二线可选用瑞普替尼或洛拉替尼。所有晚期非鳞 NSCLC 患者均应在初诊时常规检测 ROS1 状态，推荐与 EGFR/ALK/BRAF/KRAS/MET/RET/HER2/NTRK 等驱动基因联合 NGS 检测。ROS1 IHC（D4D6）可作为筛查手段，但阳性结果须经 FISH 或 NGS 确认方可指导用药。"
+  },
+  {
+    "id": "alk-fusions",
+    "geneSymbol": "ALK",
+    "nameZh": "ALK 融合",
+    "nameEn": "ALK Fusions",
+    "category": "receptor_tyrosine_kinase",
+    "description": "ALK（anaplastic lymphoma kinase）为受体酪氨酸激酶，位于染色体 2p23。ALK 基因发生染色体易位或倒位时与伙伴基因形成融合基因，产生持续活化的嵌合蛋白，驱动细胞增殖与存活。最常见融合发生于非小细胞肺癌（EML4-ALK，约占 NSCLC 的 3–7%），亦见于间变性大细胞淋巴瘤（NPM1-ALK 等）、炎性肌纤维母细胞瘤及部分儿童肿瘤。ALK 融合阳性 NSCLC 对 ALK 酪氨酸激酶抑制剂（TKI）高度敏感，被列为 NSCLC 必检驱动基因之一。",
+    "variants": [
+      {
+        "name": "EML4-ALK",
+        "frequency": "NSCLC ~3–7%（腺癌为主，年轻、不吸烟或轻度吸烟者富集）",
+        "druggable": "克唑替尼 / 塞瑞替尼 / 阿来替尼 / 布格替尼 / 洛拉替尼 / 恩沙替尼 / 伊鲁阿克"
+      },
+      {
+        "name": "NPM1-ALK",
+        "frequency": "ALCL 约 75–85%（ALK 阳性 ALCL）",
+        "druggable": "克唑替尼（复发/难治 ALCL）"
+      },
+      {
+        "name": "TPM3-ALK / TPM4-ALK",
+        "frequency": "炎性肌纤维母细胞瘤（IMT）约 50% ALK 阳性病例",
+        "druggable": "克唑替尼 / 色瑞替尼"
+      },
+      {
+        "name": "KIF5B-ALK / TFG-ALK / STRN-ALK",
+        "frequency": "NSCLC 少见融合伙伴（<1%）",
+        "druggable": "同 EML4-ALK 获批 TKI"
+      },
+      {
+        "name": "ALK 继发耐药突变（G1202R / L1196M / F1174 等）",
+        "frequency": "一/二代 TKI 获得性耐药中常见",
+        "druggable": "洛拉替尼（覆盖 G1202R）"
+      }
+    ],
+    "associatedTumors": [
+      "非小细胞肺癌（腺癌为主）",
+      "间变性大细胞淋巴瘤（ALK 阳性）",
+      "炎性肌纤维母细胞瘤",
+      "神经母细胞瘤（ALK 突变/扩增为主，少数融合）",
+      "肾髓质癌（罕见 VCL-ALK 融合）",
+      "弥漫大 B 细胞淋巴瘤 ALK 阳性（罕见）"
+    ],
+    "detectionMethods": [
+      "IHC（D5F3 克隆，Ventana 平台，国内 NMPA 批准可作为独立伴随诊断）",
+      "FISH（Vysis ALK Break Apart，经典金标准）",
+      "RT-PCR（扩增子法，检测已知融合转录本）",
+      "RNA-based NGS（推荐，可识别未知伙伴与罕见融合，敏感性优于 DNA-NGS）",
+      "DNA-based NGS（需覆盖内含子断裂点）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "克唑替尼（Crizotinib）",
+        "cdxKit": "Ventana ALK (D5F3) CDx 免疫组化检测试剂（NMPA 批准用于 NSCLC）；Vysis ALK Break Apart FISH Probe Kit"
+      },
+      {
+        "drug": "阿来替尼（Alectinib）",
+        "cdxKit": "Ventana ALK (D5F3) CDx（NMPA 批准伴随诊断）"
+      },
+      {
+        "drug": "塞瑞替尼（Ceritinib）",
+        "cdxKit": "Ventana ALK (D5F3) CDx / Vysis ALK Break Apart FISH"
+      },
+      {
+        "drug": "布格替尼（Brigatinib）",
+        "cdxKit": "Ventana ALK (D5F3) CDx"
+      },
+      {
+        "drug": "恩沙替尼（Ensartinib，国产一类新药）",
+        "cdxKit": "Ventana ALK (D5F3) CDx"
+      },
+      {
+        "drug": "洛拉替尼（Lorlatinib，三代 TKI）",
+        "cdxKit": "Ventana ALK (D5F3) CDx / RNA-NGS"
+      },
+      {
+        "drug": "伊鲁阿克（Iruplinalkib，国产二代 TKI）",
+        "cdxKit": "Ventana ALK (D5F3) CDx"
+      }
+    ],
+    "clinicalSignificance": "ALK 融合是 NSCLC 第二大可靶向驱动事件，CSCO 非小细胞肺癌诊疗指南推荐所有晚期非鳞 NSCLC（及部分鳞癌）常规检测 EGFR/ALK/ROS1/BRAF/RET/MET/KRAS/HER2/NTRK。ALK 阳性 NSCLC 对 ALK-TKI 应答率高、PFS 长，阿来替尼等二代 TKI 已取代克唑替尼成为一线标准治疗，对中枢神经系统转移控制优异。洛拉替尼作为三代 TKI 可克服多数耐药突变（含 G1202R）。国产药物恩沙替尼、伊鲁阿克已获 NMPA 批准。ALK 阳性 ALCL 预后优于 ALK 阴性，ALK-TKI 可用于复发难治病例。IMT 中 ALK 阳性病例对 TKI 反应良好。Ventana D5F3 IHC 检测在国内已获批作为独立伴随诊断，2+/3+ 视为阳性。"
+  },
+  {
+    "id": "brca1-brca2",
+    "geneSymbol": "BRCA1/BRCA2",
+    "nameZh": "BRCA1/2 突变与同源重组缺陷（HRD）",
+    "nameEn": "BRCA1/BRCA2 Mutations and Homologous Recombination Deficiency (HRD)",
+    "category": "dna_repair",
+    "description": "BRCA1（17q21.31）与 BRCA2（13q13.1）编码参与 DNA 双链断裂同源重组修复（HR）的关键蛋白。胚系或体细胞致病性变异导致同源重组修复功能缺陷（HRD），使肿瘤细胞依赖于替代性修复途径（如 PARP 介导的单链断裂修复），形成合成致死的治疗靶点。HRD 评分通常综合 BRCA1/2 突变状态与基因组不稳定性评分（GIS，包含 LOH、TAI、LST 三项）。",
+    "variants": [
+      {
+        "name": "BRCA1 致病性变异",
+        "frequency": "卵巢癌胚系 ~15%，三阴性乳腺癌胚系 ~10-20%",
+        "druggable": "奥拉帕利、尼拉帕利、氟唑帕利、帕米帕利"
+      },
+      {
+        "name": "BRCA2 致病性变异",
+        "frequency": "卵巢癌胚系 ~6-8%，前列腺癌 mCRPC ~5-8%，胰腺癌 ~4-7%",
+        "druggable": "奥拉帕利、尼拉帕利、他拉唑帕利、瑞卡帕利"
+      },
+      {
+        "name": "BRCA1/2 大片段重排（LGR）",
+        "frequency": "约占 BRCA 致病变异 5-10%",
+        "druggable": "同点突变，需 MLPA 或 NGS CNV 分析检出"
+      },
+      {
+        "name": "HRD 阳性（BRCA 野生型 + GIS 高）",
+        "frequency": "高级别浆液性卵巢癌约 50%（含 BRCA 突变）",
+        "druggable": "尼拉帕利一线维持（PRIMA 研究）"
+      }
+    ],
+    "associatedTumors": [
+      "高级别浆液性卵巢癌",
+      "三阴性乳腺癌",
+      "HER2 阴性乳腺癌（胚系突变）",
+      "转移性去势抵抗性前列腺癌（mCRPC）",
+      "胰腺导管腺癌",
+      "输卵管癌",
+      "原发性腹膜癌"
+    ],
+    "detectionMethods": [
+      "NGS（推荐，可同时检测点突变、小片段 indel 及 HRD 评分）",
+      "MLPA（大片段重排检测）",
+      "Sanger 测序（已知家族变异验证）",
+      "二代测序 + 基因组不稳定性评分（GIS/GSS，用于 HRD 判定）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "奥拉帕利（Olaparib，利普卓）",
+        "indication": "BRCA 突变卵巢癌维持治疗、HER2 阴性乳腺癌、mCRPC、胰腺癌维持",
+        "cdxKit": "NMPA 批准 BRCA1/2 基因突变检测试剂盒（燃石医学、艾德生物等多家 NGS 试剂盒获批）"
+      },
+      {
+        "drug": "尼拉帕利（Niraparib，则乐）",
+        "indication": "卵巢癌一线及复发维持治疗（无需 BRCA 状态分层，HRD 阳性获益更显著）",
+        "cdxKit": "NMPA 批准伴随诊断 HRD 检测（含 GIS 评分）试剂盒"
+      },
+      {
+        "drug": "氟唑帕利（Fuzuloparib，艾瑞颐）",
+        "indication": "铂敏感复发卵巢癌维持治疗（BRCA 突变或铂敏感复发）",
+        "cdxKit": "BRCA1/2 突变检测 NGS 试剂盒（NMPA 获批）"
+      },
+      {
+        "drug": "帕米帕利（Pamiparib，百汇泽）",
+        "indication": "既往治疗的胚系 BRCA 突变晚期卵巢癌",
+        "cdxKit": "胚系 BRCA1/2 检测（NMPA 批准 NGS 试剂盒）"
+      },
+      {
+        "drug": "他拉唑帕利（Talazoparib）",
+        "indication": "胚系 BRCA 突变 HER2 阴性局部晚期/转移性乳腺癌",
+        "cdxKit": "胚系 BRCA1/2 检测 NGS 试剂盒"
+      }
+    ],
+    "clinicalSignificance": "BRCA1/2 致病性变异是 PARP 抑制剂的核心疗效预测标志物，基于合成致死原理。临床意义包括：（1）预测 PARPi 疗效：BRCA 突变卵巢癌一线维持 PFS 显著延长（SOLO-1 研究）；（2）指导铂类化疗：BRCA 突变患者对铂类敏感性增加；（3）HRD 检测扩展获益人群：BRCA 野生型但 HRD 阳性的卵巢癌患者仍可从 PARPi 获益（PRIMA、PAOLA-1 研究）；（4）遗传咨询：胚系变异提示家族遗传性乳腺/卵巢癌综合征（HBOC），需对一级亲属进行遗传筛查及预防干预；（5）逆转突变（reversion mutation）是 PARPi 和铂类耐药的重要机制。国内 CSCO 卵巢癌、乳腺癌、前列腺癌诊疗指南均推荐所有相应患者进行 BRCA1/2 检测，高级别浆液性卵巢癌推荐进一步 HRD 评估。"
+  },
+  {
+    "id": "msi-mmr",
+    "geneSymbol": "MLH1/MSH2/MSH6/PMS2",
+    "nameZh": "微卫星不稳定性/错配修复缺陷",
+    "nameEn": "Microsatellite Instability / Mismatch Repair Deficiency (MSI/dMMR)",
+    "category": "dna-mismatch-repair",
+    "description": "DNA 错配修复（MMR）系统由 MLH1、MSH2、MSH6、PMS2 等核心蛋白组成，负责识别并修复 DNA 复制过程中产生的碱基错配和小的插入/缺失环。MMR 功能缺陷（dMMR）导致微卫星区域重复序列复制错误累积，表现为微卫星不稳定性（MSI）。dMMR/MSI-H 是 Lynch 综合征（遗传性非息肉病性结直肠癌）的分子基础，也见于散发性肿瘤（多因 MLH1 启动子甲基化所致）。MSI-H/dMMR 是多瘤种免疫检查点抑制剂治疗的泛瘤种生物标志物。",
+    "variants": [
+      {
+        "name": "MSI-H（高度微卫星不稳定）",
+        "frequency": "结直肠癌 ~15%（其中 Lynch 相关 ~3%）、子宫内膜癌 ~25-30%、胃癌 ~8-15%、小肠癌 ~20%",
+        "druggable": "帕博利珠单抗、纳武利尤单抗、替雷利珠单抗、恩沃利单抗（泛瘤种）"
+      },
+      {
+        "name": "MSI-L（低度微卫星不稳定）",
+        "frequency": "结直肠癌 ~5-10%",
+        "druggable": "临床意义有限，一般按 MSS 处理"
+      },
+      {
+        "name": "MSS（微卫星稳定）",
+        "frequency": "结直肠癌 ~85%",
+        "druggable": "免疫治疗获益有限"
+      },
+      {
+        "name": "MLH1 启动子甲基化伴 BRAF V600E",
+        "frequency": "散发性 dMMR 结直肠癌主要机制",
+        "druggable": "提示散发性而非 Lynch 综合征，需结合 BRAF 检测"
+      },
+      {
+        "name": "MLH1/MSH2/MSH6/PMS2 胚系突变",
+        "frequency": "Lynch 综合征患者",
+        "druggable": "需遗传咨询及家系筛查"
+      }
+    ],
+    "associatedTumors": [
+      "结直肠癌",
+      "子宫内膜癌",
+      "胃癌",
+      "小肠腺癌",
+      "卵巢癌（子宫内膜样型）",
+      "尿路上皮癌",
+      "胰腺癌",
+      "胆道癌",
+      "前列腺癌",
+      "皮脂腺肿瘤（Muir-Torre 综合征）"
+    ],
+    "detectionMethods": [
+      "免疫组化检测 MMR 四蛋白（MLH1/MSH2/MSH6/PMS2）表达（推荐首选，判读核表达缺失）",
+      "PCR 毛细管电泳检测微卫星位点（NCI 推荐五位点 Panel：BAT-25、BAT-26、NR-21、NR-24、MONO-27）",
+      "NGS 基于微卫星位点或肿瘤突变负荷推算 MSI 状态",
+      "MLH1 启动子甲基化检测（用于鉴别散发性 dMMR）",
+      "BRAF V600E 检测（辅助鉴别 Lynch 综合征）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "恩沃利单抗（Envafolimab，康宁杰瑞/先声）",
+        "cdxKit": "NMPA 批准用于既往标准治疗失败的 MSI-H/dMMR 晚期实体瘤（2021 年获批，国产首个 PD-L1 皮下制剂）",
+        "indication": "泛瘤种 MSI-H/dMMR 晚期实体瘤"
+      },
+      {
+        "drug": "帕博利珠单抗（Pembrolizumab，K 药）",
+        "cdxKit": "NMPA 批准用于 MSI-H/dMMR 既往治疗失败的晚期实体瘤及一线治疗 MSI-H/dMMR 转移性结直肠癌",
+        "indication": "MSI-H/dMMR 结直肠癌及泛瘤种"
+      },
+      {
+        "drug": "替雷利珠单抗（Tislelizumab，百济神州）",
+        "cdxKit": "NMPA 批准用于既往治疗失败的 MSI-H/dMMR 晚期实体瘤",
+        "indication": "MSI-H/dMMR 晚期实体瘤"
+      },
+      {
+        "drug": "斯鲁利单抗（Serplulimab，复宏汉霖）",
+        "cdxKit": "NMPA 批准用于既往标准治疗失败的 MSI-H 晚期实体瘤（2022 年获批）",
+        "indication": "MSI-H 晚期实体瘤"
+      }
+    ],
+    "clinicalSignificance": "MSI/dMMR 具有多重临床价值：①预后：Ⅱ 期结直肠癌 dMMR 预后较好，通常不推荐单药氟尿嘧啶辅助化疗；②预测免疫治疗疗效：MSI-H/dMMR 是泛瘤种 PD-1/PD-L1 抑制剂的强预测标志物，客观缓解率可达 30-50%；③Lynch 综合征筛查：建议对所有新诊断结直肠癌及子宫内膜癌行 MMR/MSI 普查（universal screening），阳性者结合 MLH1 甲基化及 BRAF V600E 检测，疑似 Lynch 者转诊遗传咨询行胚系检测；④子宫内膜癌分子分型（ProMisE/TCGA）四分型之一（MMR-d 型），指导治疗决策。中华医学会病理学分会《结直肠癌 HER2、MMR/MSI 及其他相关免疫组化、分子检测专家共识》及 CSCO 结直肠癌诊疗指南（2024）均推荐所有结直肠癌常规检测 MMR/MSI。"
+  },
+  {
+    "id": "hrd-score",
+    "geneSymbol": "HRD",
+    "nameZh": "同源重组缺陷",
+    "nameEn": "Homologous Recombination Deficiency",
+    "category": "dna_repair_deficiency",
+    "description": "同源重组修复（HRR）通路缺陷导致 DNA 双链断裂修复障碍，肿瘤基因组呈现特征性瘢痕。HRD 状态综合评估包括 BRCA1/2 胚系及体系突变、其他 HRR 基因变异（如 PALB2、RAD51C/D、BRIP1 等）以及基因组不稳定性评分（GIS），后者由 LOH、TAI、LST 三个维度加权构成。HRD 阳性提示肿瘤对铂类化疗及 PARP 抑制剂敏感。",
+    "variants": [
+      {
+        "name": "BRCA1/2 致病性突变",
+        "frequency": "高级别浆液性卵巢癌 ~20%（胚系+体系）；三阴性乳腺癌胚系 ~15%",
+        "druggable": "奥拉帕利 / 尼拉帕利 / 氟唑帕利 / 帕米帕利"
+      },
+      {
+        "name": "基因组不稳定性评分（GIS/GSS ≥ 42 或 ≥ 较高阈值）",
+        "frequency": "高级别浆液性卵巢癌约 50%（含 BRCA 突变）",
+        "druggable": "尼拉帕利一线维持治疗（不论 BRCA 状态，HRD 阳性获益更显著）"
+      },
+      {
+        "name": "非 BRCA HRR 基因突变（PALB2、RAD51C、RAD51D、BRIP1、ATM、CHEK2、FANCA 等）",
+        "frequency": "卵巢癌及乳腺癌约 5-10%",
+        "druggable": "PARP 抑制剂（部分获益，证据强度因基因而异）"
+      },
+      {
+        "name": "LOH 高（%LOH ≥ 16%，FoundationOne CDx 定义）",
+        "frequency": "卵巢癌、前列腺癌部分阳性",
+        "druggable": "PARP 抑制剂"
+      }
+    ],
+    "associatedTumors": [
+      "卵巢高级别浆液性癌",
+      "乳腺癌（三阴性及 HER2 阴性）",
+      "胰腺导管腺癌",
+      "转移性去势抵抗性前列腺癌（mCRPC）",
+      "子宫内膜浆液性癌"
+    ],
+    "detectionMethods": [
+      "NGS（推荐，同时检测 BRCA1/2 突变与基因组瘢痕评分）",
+      "基因组不稳定性评分（GIS/GSS）— 覆盖 LOH/TAI/LST",
+      "Sanger 测序（仅用于 BRCA 已知位点验证）",
+      "MLPA（检测 BRCA 大片段缺失/重复）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "尼拉帕利（卵巢癌一线维持）",
+        "cdxKit": "NMPA 已批准的 HRD 检测试剂盒（含 BRCA1/2 突变及基因组不稳定性评分），国内已有燃石、世和、求臻等企业获批 HRD 相关 CDx 或 LDT 备案_low_confidence"
+      },
+      {
+        "drug": "奥拉帕利（卵巢癌、乳腺癌、胰腺癌、前列腺癌适应证）",
+        "cdxKit": "NMPA 批准的 BRCA1/2 胚系/体系突变检测试剂盒（多家企业）"
+      },
+      {
+        "drug": "氟唑帕利（恒瑞，卵巢癌）",
+        "cdxKit": "BRCA1/2 突变检测（NMPA 批准配套检测）"
+      },
+      {
+        "drug": "帕米帕利（百济神州，既往治疗过的 BRCA 突变晚期卵巢癌）",
+        "cdxKit": "BRCA1/2 胚系突变检测"
+      }
+    ],
+    "clinicalSignificance": "HRD 是 PARP 抑制剂与铂类化疗疗效预测的核心生物标志物。卵巢高级别浆液性癌一线维持治疗推荐 HRD 全景检测（BRCA + GIS），HRD 阳性患者 PFS 获益显著（PRIMA、PAOLA-1 研究）。乳腺癌中 gBRCA1/2 突变是奥拉帕利、他拉唑帕利的伴随诊断依据；mCRPC 中 BRCA2 突变患者奥拉帕利获益最大（PROfound 研究）。中国《卵巢癌 PARP 抑制剂临床应用指南》及 CSCO 卵巢癌诊疗指南推荐在新诊断晚期卵巢癌中开展 HRD 检测。需注意 HRD 阴性不完全排除 PARP 抑制剂获益，且不同平台 GIS 阈值存在差异，结果解读应结合检测平台说明。",
+    "_low_confidence": true
+  },
+  {
+    "id": "pten-loss",
+    "geneSymbol": "PTEN",
+    "nameZh": "PTEN 缺失",
+    "nameEn": "PTEN Loss",
+    "category": "tumor_suppressor",
+    "description": "PTEN（Phosphatase and Tensin homolog，染色体 10q23.31）是经典的抑癌基因，编码具有脂质磷酸酶活性的蛋白，可将 PIP3 去磷酸化为 PIP2，从而负性调控 PI3K/AKT/mTOR 信号通路。PTEN 失活方式包括等位基因缺失、截断突变、错义突变、启动子甲基化及蛋白降解异常。PTEN 功能缺失导致 AKT 通路持续激活，促进肿瘤细胞增殖、存活、侵袭及治疗耐药。免疫组化 PTEN 蛋白表达缺失（内对照血管内皮或间质细胞阳性而肿瘤细胞阴性）是临床最常用的评估手段。",
+    "variants": [
+      {
+        "name": "大片段缺失 / 杂合性丢失（LOH）",
+        "frequency": "前列腺癌 ~40%，子宫内膜癌 ~40%，胶质母细胞瘤 ~30%",
+        "druggable": "PI3K/AKT/mTOR 通路抑制剂（卡匹色替 Capivasertib 等）"
+      },
+      {
+        "name": "截断突变（无义 / 移码）",
+        "frequency": "子宫内膜样癌 ~60%，Cowden 综合征胚系",
+        "druggable": "AKT 抑制剂、mTOR 抑制剂（依维莫司）"
+      },
+      {
+        "name": "错义突变（R130、R173、C124 等热点）",
+        "frequency": "多种实体瘤 5–15%",
+        "druggable": "AKT 抑制剂（卡匹色替）"
+      },
+      {
+        "name": "启动子高甲基化导致表达下调",
+        "frequency": "乳腺癌、黑色素瘤中占比不一",
+        "druggable": "尚无特异靶向药，可纳入 PI3K 通路抑制剂临床试验"
+      },
+      {
+        "name": "PTEN 蛋白表达缺失（IHC 定义）",
+        "frequency": "三阴性乳腺癌 ~30%，HR+/HER2- 乳腺癌 ~40%",
+        "druggable": "卡匹色替 + 氟维司群（CAPItello-291）"
+      }
+    ],
+    "associatedTumors": [
+      "前列腺癌",
+      "子宫内膜样癌",
+      "乳腺癌（HR+/HER2-、三阴性）",
+      "胶质母细胞瘤",
+      "黑色素瘤",
+      "肾细胞癌",
+      "Cowden 综合征 / PTEN 错构瘤综合征（胚系）"
+    ],
+    "detectionMethods": [
+      "免疫组化 IHC（推荐首选，评估蛋白表达缺失，需内对照）",
+      "NGS（推荐，可检出点突变、小片段插入缺失及拷贝数变异）",
+      "FISH（评估大片段缺失 / 杂合性丢失）",
+      "MLPA（用于胚系大片段缺失检测）",
+      "Sanger 测序（用于已知热点突变验证及胚系筛查）"
+    ],
+    "companionDiagnostics": [
+      {
+        "drug": "卡匹色替（Capivasertib，AKT 抑制剂）",
+        "cdxKit": "国内尚未获 NMPA CDx 批准；FDA 已基于 CAPItello-291 研究批准用于 HR+/HER2- 晚期乳腺癌伴 PIK3CA/AKT1/PTEN 改变，CDx 为 FoundationOne CDx",
+        "_low_confidence": true
+      },
+      {
+        "drug": "依维莫司（Everolimus，mTOR 抑制剂）",
+        "cdxKit": "国内未设置 PTEN 相关 CDx；临床经验性用于 PTEN 缺失驱动的子宫内膜癌、肾癌等",
+        "_low_confidence": true
+      }
+    ],
+    "clinicalSignificance": "PTEN 缺失是 PI3K/AKT/mTOR 通路异常激活的核心驱动事件之一。临床意义包括：(1) 预后标志——前列腺癌 PTEN 缺失提示去势抵抗风险高、生化复发早；子宫内膜癌中意义有分歧，新版分子分型（TCGA）将其纳入 copy-number low 组。(2) 疗效预测——HR+/HER2- 晚期乳腺癌中 PTEN 改变是卡匹color替联合氟维司群获益人群（CAPItello-291）；(3) 治疗耐药——PTEN 缺失与 HER2 靶向治疗（曲妥珠单抗）、EGFR-TKI 及免疫检查点抑制剂原发耐药相关；(4) 遗传咨询——胚系 PTEN 致病变异导致 Cowden 综合征及 PTEN 错构瘤肿瘤综合征，需多学科监测。国内《乳腺癌 HER2 检测指南》《子宫内膜癌诊疗指南》推荐在特定情境下开展 PTEN IHC 或 NGS 检测；CSCO 前列腺癌指南 2024 版建议在转移性去势抵抗性前列腺癌中进行包含 PTEN 的同源重组/PI3K 通路基因检测。"
+  },
+  {
+    "id": "tert-promoter",
+    "geneSymbol": "TERT",
+    "nameZh": "TERT 启动子突变",
+    "nameEn": "TERT Promoter Mutation",
+    "category": "telomerase_regulation",
+    "description": "TERT（端粒酶逆转录酶）启动子区域非编码突变可形成新的 ETS/TCF 转录因子结合位点，上调端粒酶表达，使肿瘤细胞获得无限增殖能力。最常见的热点突变为转录起始位点上游 -124 C>T（C228T）和 -146 C>T（C250T），两者互斥。TERT 启动子突变是多种恶性肿瘤中最常见的非编码区突变之一，尤其在胶质母细胞瘤、黑色素瘤、膀胱尿路上皮癌、肝细胞癌及甲状腺癌中频率较高，具有重要的诊断、分型与预后价值。",
+    "variants": [
+      {
+        "name": "C228T (-124 C>T)",
+        "frequency": "胶质母细胞瘤 ~70–80%；黑色素瘤 ~50–70%；膀胱尿路上皮癌 ~60–80%；肝细胞癌 ~40–60%",
+        "druggable": "目前无获批靶向药，端粒酶抑制剂（如 imetelstat）在研"
+      },
+      {
+        "name": "C250T (-146 C>T)",
+        "frequency": "较 C228T 少见，约为其 1/3–1/5；两位点互斥",
+        "druggable": "同上，无获批靶向药"
+      },
+      {
+        "name": "A161C / 其他罕见位点",
+        "frequency": "家族性黑色素瘤等罕见背景，<1%",
+        "druggable": "无"
+      }
+    ],
+    "associatedTumors": [
+      "胶质母细胞瘤（IDH 野生型）",
+      "少突胶质细胞瘤（IDH 突变伴 1p/19q 共缺失）",
+      "皮肤黑色素瘤",
+      "膀胱尿路上皮癌",
+      "肝细胞癌",
+      "甲状腺乳头状癌（高危亚型）",
+      "甲状腺未分化癌",
+      "基底细胞癌与皮肤鳞癌"
+    ],
+    "detectionMethods": [
+      "Sanger 测序（覆盖 TERT 启动子 -124/-146 热点，临床常用，需注意 GC 富集区测序难度）",
+      "ARMS-qPCR / ddPCR（灵敏度高，适用于低肿瘤细胞含量样本）",
+      "NGS（推荐 panel 设计时明确纳入 TERT 启动子非编码区，常规 exon-only panel 会漏检）",
+      "焦磷酸测序（Pyrosequencing，定量评估突变等位基因频率）"
+    ],
+    "companionDiagnostics": [],
+    "clinicalSignificance": "1) 分子分型：按 WHO CNS 第 5 版，TERT 启动子突变是成人型弥漫性胶质瘤分型的关键标志物之一——在 IDH 野生型弥漫性星形细胞肿瘤中，TERT 启动子突变可作为诊断胶质母细胞瘤（IDH-wildtype）的分子标准之一；与 IDH 突变及 1p/19q 共缺失联合出现则支持少突胶质细胞瘤。2) 预后判断：在 IDH 野生型低级别胶质瘤中 TERT 启动子突变提示预后不良；在甲状腺乳头状癌中，TERT 启动子突变（尤其与 BRAF V600E 共存）与高复发风险及肿瘤相关死亡显著相关；在肝细胞癌中常为早期事件但与不良预后相关。3) 鉴别诊断：有助于区分黑色素瘤与良性痣、尿路上皮癌与反应性改变。4) 伴随诊断：截至 2026 年 4 月，NMPA 尚未批准针对 TERT 启动子突变的靶向药物或伴随诊断试剂盒；端粒酶相关治疗策略仍处于临床研究阶段。_low_confidence: true（就 NMPA CDx 覆盖状态的时效性而言需人工复核）"
   }
 ]

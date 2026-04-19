@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { IconBookOpen, IconSearch } from '@/components/Icon';
+import EnhancementImageGallery from '@/components/EnhancementImageGallery';
 
 interface CytologyCategory {
   id: string;
@@ -14,12 +15,27 @@ interface CytologyCategory {
   notes: string;
 }
 
+interface CnConsensusItem {
+  title: string;
+  org: string;
+  year?: number;
+  summary?: string;
+}
+
 interface CytologySystem {
   id: string;
   nameZh: string;
   nameEn: string;
   description: string;
   categories: CytologyCategory[];
+  /** Set by enhancement pipeline. Domestic consensus matching this
+   *  cytology classification system (e.g., 中国版甲状腺 FNA / 宫颈 TBS 共识). */
+  _enhance_cytology_cn_consensus?: { cnConsensus?: CnConsensusItem[] };
+  /** Set by enhancement pipeline. Representative cytology images per category.
+   *  URLs are placeholders pending real artwork. */
+  _enhance_cytology_category_images?: {
+    categoryImages?: Array<{ categoryId?: string; url?: string; caption: string }>;
+  };
 }
 
 export default function CytologyPage() {
@@ -143,6 +159,43 @@ export default function CytologyPage() {
                     {selectedSystem.description}
                   </p>
                 </div>
+
+                {/* Per-category cytology images (enhancement, placeholder URLs) */}
+                {selectedSystem._enhance_cytology_category_images?.categoryImages && selectedSystem._enhance_cytology_category_images.categoryImages.length > 0 && (
+                  <EnhancementImageGallery
+                    title="分类代表图（待补充原图）"
+                    items={selectedSystem._enhance_cytology_category_images.categoryImages.map(img => ({
+                      url: img.url,
+                      caption: img.caption,
+                      badge: img.categoryId,
+                    }))}
+                    accent="#0ea5e9"
+                  />
+                )}
+
+                {/* China-version consensus matching this system (enhancement) */}
+                {selectedSystem._enhance_cytology_cn_consensus?.cnConsensus && selectedSystem._enhance_cytology_cn_consensus.cnConsensus.length > 0 && (
+                  <div className="rounded-xl p-5" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                    <h3 className="text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: '#10b981' }}>
+                      <span aria-hidden>🇨🇳</span> 国内对应共识/规范
+                    </h3>
+                    <ul className="space-y-3">
+                      {selectedSystem._enhance_cytology_cn_consensus.cnConsensus.map((c, i) => (
+                        <li key={i} className="text-sm">
+                          <div className="flex items-baseline gap-2 mb-1 flex-wrap">
+                            <span className="font-medium" style={{ color: 'var(--fg)' }}>{c.title}</span>
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: 'rgba(16,185,129,0.12)', color: '#10b981' }}>
+                              {c.org}{c.year ? ` · ${c.year}` : ''}
+                            </span>
+                          </div>
+                          {c.summary && (
+                            <p className="leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{c.summary}</p>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* Categories list */}
                 <div className="space-y-3">

@@ -12,6 +12,7 @@ import {
   IconStar,
   IconInfo,
 } from '@/components/Icon';
+import EnhancementImageGallery from '@/components/EnhancementImageGallery';
 
 /* ── Types ──────────────────────────────────────────────────── */
 
@@ -35,6 +36,13 @@ interface StepMarker {
 
 type CaseStep = StepMC | StepMarker;
 
+interface CnReferenceItem {
+  title: string;
+  org: string;
+  year?: number;
+  relevantPoint: string;
+}
+
 interface VirtualCase {
   id: string;
   titleZh: string;
@@ -49,6 +57,16 @@ interface VirtualCase {
   relatedDiseaseIds: string[];
   relatedMarkerIds: string[];
   expertCommentary: string;
+  /** Set by enhancement pipeline. Used as fallback when expertCommentary is empty. */
+  _enhance_case_expert_commentary?: { expertCommentary?: string };
+  /** Set by enhancement pipeline. Domestic guideline / consensus excerpts
+   *  most relevant to this case's final diagnosis. */
+  _enhance_case_cn_reference?: { cnReferences?: CnReferenceItem[] };
+  /** Set by enhancement pipeline. Suggested case images (gross/LP/HP/IHC)
+   *  with captions; URLs are placeholders pending real artwork. */
+  _enhance_case_images?: {
+    images?: Array<{ url?: string; caption: string; type?: 'gross' | 'LP' | 'HP' | 'IHC' }>;
+  };
 }
 
 /* ── Constants ──────────────────────────────────────────────── */
@@ -554,19 +572,64 @@ export default function CasesPage() {
                 </ul>
               </div>
 
-              {/* Expert Commentary */}
-              <div
-                className="rounded-2xl p-6 border"
-                style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
-              >
-                <h3 className="font-bold mb-3 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
-                  <IconBookOpen size={18} style={{ color: 'var(--accent)' }} />
-                  专家点评
-                </h3>
-                <p className="text-sm leading-relaxed italic" style={{ color: 'var(--fg-muted)' }}>
-                  {selectedCase.expertCommentary}
-                </p>
-              </div>
+              {/* Expert Commentary — falls back to enhancement data when native is empty */}
+              {(selectedCase.expertCommentary ||
+                selectedCase._enhance_case_expert_commentary?.expertCommentary) && (
+                <div
+                  className="rounded-2xl p-6 border"
+                  style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+                >
+                  <h3 className="font-bold mb-3 flex items-center gap-2" style={{ color: 'var(--fg)' }}>
+                    <IconBookOpen size={18} style={{ color: 'var(--accent)' }} />
+                    专家点评
+                  </h3>
+                  <p className="text-sm leading-relaxed italic" style={{ color: 'var(--fg-muted)' }}>
+                    {selectedCase.expertCommentary ||
+                      selectedCase._enhance_case_expert_commentary?.expertCommentary}
+                  </p>
+                </div>
+              )}
+
+              {/* Enhancement-pipeline images (placeholder URLs OK) */}
+              {selectedCase._enhance_case_images?.images && selectedCase._enhance_case_images.images.length > 0 && (
+                <EnhancementImageGallery
+                  title="教学图片建议（待补充原图）"
+                  items={selectedCase._enhance_case_images.images.map(img => ({
+                    url: img.url,
+                    caption: img.caption,
+                    badge: img.type,
+                  }))}
+                  accent="#3b82f6"
+                />
+              )}
+
+              {/* Domestic guideline/consensus references for this case (enhancement) */}
+              {selectedCase._enhance_case_cn_reference?.cnReferences && selectedCase._enhance_case_cn_reference.cnReferences.length > 0 && (
+                <div
+                  className="rounded-2xl p-6"
+                  style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}
+                >
+                  <h3 className="font-bold mb-3 flex items-center gap-2" style={{ color: '#10b981' }}>
+                    <span aria-hidden>🇨🇳</span>
+                    国内指南/共识相关要点
+                  </h3>
+                  <ul className="space-y-3">
+                    {selectedCase._enhance_case_cn_reference.cnReferences.map((ref, i) => (
+                      <li key={i} className="text-sm">
+                        <div className="flex items-baseline gap-2 mb-1 flex-wrap">
+                          <span className="font-medium" style={{ color: 'var(--fg)' }}>{ref.title}</span>
+                          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: 'rgba(16,185,129,0.12)', color: '#10b981' }}>
+                            {ref.org}{ref.year ? ` · ${ref.year}` : ''}
+                          </span>
+                        </div>
+                        <p className="leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                          {ref.relevantPoint}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* Related Links */}
               <div

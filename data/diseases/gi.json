@@ -1,16 +1,1155 @@
 [
-  {"id":"gastric-adenocarcinoma","nameZh":"胃腺癌","nameEn":"Gastric Adenocarcinoma","aliases":["胃癌"],"organ":"gi","category":"malignant","epidemiology":"全球癌症死亡第三位，东亚（日本、韩国、中国）高发，年发病率可达40-60/10万。幽门螺杆菌感染是最主要危险因素，其他包括高盐饮食、腌制食品、吸烟和家族史。男性发病率约为女性2倍，中位发病年龄约65-70岁，肠型多见于老年人。","clinicalFeatures":"早期多无症状，进展期出现上腹痛、纳差、消瘦、黑便。","grossPathology":"可呈溃疡型、隆起型或弥漫浸润型(革囊胃/皮革胃)。","microscopy":"Lauren分型指导组织学诊断：肠型表现为不规则腺管结构浸润胃壁各层，腺体由柱状上皮衬覆，可见明确管腔分化，常伴肠化生背景。弥漫型以低黏附性细胞（印戒细胞）散在浸润胃壁为特征，细胞胞浆内充满黏液将核推向一侧呈&quot;戒指&quot;状，细胞间缺乏黏附，弥漫浸润间质伴显著促纤维增生反应。WHO分型包括管状腺癌、乳头状腺癌、低黏附性癌（含印戒细胞癌）、黏液腺癌和混合型。核异型程度和核分裂象依分化级别而异，低分化者核深染多形、核分裂活跃。","keyFeatures":["Lauren分型：肠型 vs 弥漫型","HER2检测指导靶向治疗","MSI/MMR状态指导免疫治疗","印戒细胞癌预后差"],"ihcProfile":[{"marker":"HER2","result":"约20%过表达(肠型)","note":"胃特异性判读标准"},{"marker":"CDX2","result":"肠型阳性","note":"肠化标记"},{"marker":"MLH1","result":"部分缺失","note":"MSI-H/EBV相关"},{"marker":"PD-L1","result":"CPS评分指导免疫治疗","note":""},{"marker":"E-cadherin","result":"弥漫型丢失","note":"CDH1突变导致，弥漫型/印戒细胞癌特征"}],"molecularFeatures":"TCGA分为4个亚型：EBV阳性型、MSI型、基因组稳定型(GS)和染色体不稳定型(CIN)。","differentialDiagnosis":["colorectal-adenocarcinoma","gastric-lymphoma"],"grading":"高分化、中分化、低分化","staging":"AJCC TNM第8版","prognosis":"早期胃癌5年生存率>90%；进展期约30-40%。","treatment":"手术为主，辅以化疗。HER2阳性用曲妥珠单抗，MSI-H/PD-L1阳性可用免疫治疗。","images":[{"url":"/diagrams/signet-ring.svg","caption":"弥漫型（印戒细胞）胃腺癌：胞浆内黏液将核推向一侧"},{"url":"/diagrams/mucinous.svg","caption":"黏液腺癌：大量细胞外黏液湖中漂浮肿瘤细胞"}],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"colorectal-adenocarcinoma","nameZh":"结直肠腺癌","nameEn":"Colorectal Adenocarcinoma","aliases":["结直肠癌","大肠癌"],"organ":"gi","category":"malignant","epidemiology":"全球第三大常见癌症，年发病率约30-40/10万（西方国家）。男女比例相近，发病率随年龄增长显著升高（中位发病年龄约68岁）。危险因素包括红肉和加工肉类摄入、肥胖、吸烟、饮酒、家族史（一级亲属患病风险增加2-3倍）和炎症性肠病。约5%与遗传综合征相关（Lynch综合征、FAP）。","clinicalFeatures":"便血、排便习惯改变、腹痛、贫血、肠梗阻。右半结肠癌多贫血，左半和直肠癌多便血。","grossPathology":"息肉样、溃疡型或环形缩窄型。","microscopy":"肿瘤由不规则腺管和/或绒毛状腺体结构组成，浸润肠壁各层（黏膜层至浆膜层），破坏正常肠壁结构。分化好者形成明确腺管结构，衬覆高柱状上皮，核拉长、假复层排列，杯状细胞减少；低分化者呈实性巢团、条索或弥漫浸润。核增大深染，核仁明显，核分裂象多见。可伴黏液分化（>50%黏液成分定义为黏液腺癌）或印戒细胞成分。间质可见促纤维增生反应、炎细胞浸润和肿瘤出芽（budding）。脉管和神经侵犯是重要预后因素。肿瘤出芽（单细胞或<5细胞小簇浸润前沿）是独立不良预后指标。","keyFeatures":["CK20+/CDX2+/CK7- 经典表达谱","MMR/MSI检测指导治疗和Lynch筛查","KRAS/NRAS/BRAF突变检测指导靶向治疗","腺瘤-癌序列的经典进展模式"],"ihcProfile":[{"marker":"CK20","result":"阳性","note":"结直肠标记"},{"marker":"CDX2","result":"阳性","note":"肠道分化标记"},{"marker":"CK7","result":"通常阴性","note":"CK7-/CK20+模式"},{"marker":"SATB2","result":"阳性","note":"下消化道特异"},{"marker":"MLH1/MSH2/MSH6/PMS2","result":"需评估","note":"MMR蛋白缺失筛查Lynch综合征"}],"specialStainProfile":[{"stain":"PAS","result":"黏液","note":"显示腺体内黏液分泌成分"},{"stain":"阿利新蓝","result":"黏液型鉴别","note":"鉴别黏液腺癌和印戒细胞癌中的酸性黏液"}],"molecularFeatures":"经典通路：APC→KRAS→TP53突变。约15%为MSI-H(散发性MLH1甲基化或Lynch综合征)。BRAF V600E突变见于右半结肠锯齿状通路。","differentialDiagnosis":["gastric-adenocarcinoma","colorectal-adenoma"],"grading":"高分化、中分化、低分化/未分化","staging":"AJCC TNM第8版","prognosis":"I期5年生存率>90%，IV期约15%。MSI-H肿瘤预后较好且对免疫治疗反应佳。","treatment":"手术切除为基础。III期辅助化疗(FOLFOX)。IV期化疗+靶向(KRAS野生型用西妥昔单抗/贝伐珠单抗)。MSI-H/dMMR可用免疫治疗。","images":[{"url":"/diagrams/tubular.svg","caption":"结直肠腺癌的中分化腺管结构"},{"url":"/diagrams/cribriform.svg","caption":"筛状结构：低级别腺体背对背成&quot;筛孔&quot;样"}],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"gist","nameZh":"胃肠道间质瘤","nameEn":"Gastrointestinal Stromal Tumor","aliases":["GIST"],"organ":"gi","category":"malignant","epidemiology":"最常见的消化道间叶源性肿瘤，年发病率约1-1.5/10万。胃(60%)>小肠(30%)>结直肠和食管(少见)。来源于Cajal间质细胞或其前体。好发于50-70岁，男女比例接近，无明显种族差异。多为散发，少数与NF1、Carney三联征或家族性GIST综合征相关。","clinicalFeatures":"可无症状偶然发现，或出现消化道出血、腹痛、腹部肿块。","grossPathology":"黏膜下或浆膜下圆形肿块，有假包膜，切面灰白或灰红色，可伴出血坏死。","microscopy":"梭形细胞型(70%)：细胞呈短束状或交织束状排列，胞浆淡嗜酸性至透明，核长梭形端圆，染色质均匀，可见核端空泡。上皮样型(20%)：细胞圆形至多边形呈片状或巢状排列，胞浆嗜酸性丰富，核圆形居中。混合型(10%)兼有两种成分。间质可伴黏液样变或透明变性，偶见核栅栏状排列。核异型性和核分裂象计数是风险评估的关键：低危者核分裂≤5/5mm²且核温和；高危者核分裂>5/5mm²伴核异型。可见薄壁血管丰富的间质和灶性出血坏死。","keyFeatures":["CD117(c-KIT)和DOG1双阳性是诊断金标准","KIT或PDGFRA基因突变","风险评估基于肿瘤大小、核分裂象和部位","伊马替尼靶向治疗"],"ihcProfile":[{"marker":"CD117","result":"阳性(95%)","note":"c-KIT，诊断关键"},{"marker":"DOG1","result":"阳性(98%)","note":"最敏感标记"},{"marker":"CD34","result":"阳性(70%)","note":""},{"marker":"SMA","result":"部分阳性","note":""},{"marker":"S-100","result":"阴性","note":"排除神经鞘瘤"}],"molecularFeatures":"约75%伴KIT基因突变(外显子11最常见)，约10%伴PDGFRA突变(D842V最常见，对伊马替尼耐药)。10-15%为野生型。","differentialDiagnosis":["gastric-adenocarcinoma"],"grading":"NIH风险评估分级：极低危/低危/中危/高危","staging":"AJCC TNM","prognosis":"取决于风险分级。低危者5年生存率>95%，高危者约50%。","treatment":"手术切除。中高危者辅助伊马替尼(3年)。晚期/转移性一线伊马替尼，二线舒尼替尼。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"colorectal-adenoma","nameZh":"结直肠腺瘤","nameEn":"Colorectal Adenoma","aliases":["息肉","腺瘤性息肉"],"organ":"gi","category":"precancerous","epidemiology":"非常常见，50岁以上人群发病率>25%，是结直肠癌最重要的癌前病变。发病率随年龄增长显著升高，男性略多于女性。危险因素与结直肠癌相似，包括西方化饮食、肥胖和家族史。FAP患者可出现数百枚腺瘤。","clinicalFeatures":"多数无症状，通过肠镜筛查发现。大的腺瘤可引起便血。","grossPathology":"有蒂或无蒂的息肉状隆起，表面绒毛状或分叶状。","microscopy":"管状腺瘤（最常见，>80%）由排列紧密的异型增生腺管构成，腺管被纤细的固有层纤维血管间质分隔。绒毛状腺瘤（恶变风险最高）由细长指状绒毛构成，中心含纤维血管轴心，表面覆盖异型增生上皮。管状绒毛状腺瘤兼有两种结构（绒毛成分25-75%）。上皮细胞异型增生表现为核拉长、假复层排列、核深染、核仁增大、杯状细胞减少。低级别异型增生核局限于下半部、保持极性；高级别异型增生核达表面、极性丧失、核分裂活跃，可出现筛状结构和早期浸润。","keyFeatures":["结直肠癌最重要的癌前病变","管状/绒毛状/管状绒毛状三种类型","异型增生分级(低级别/高级别)","绒毛状成分越多恶变风险越高"],"ihcProfile":[{"marker":"Ki-67","result":"增殖区扩展","note":"异型增生区域增殖活跃"},{"marker":"p53","result":"高级别异型增生可过表达","note":""}],"molecularFeatures":"APC基因失活是腺瘤发生的启动事件(腺瘤-癌序列)。进展中逐步获得KRAS、TP53等突变。","differentialDiagnosis":["colorectal-adenocarcinoma"],"grading":"低级别异型增生/高级别异型增生","staging":"不适用","prognosis":"内镜切除后预后极好。定期随访监测复发。","treatment":"内镜下息肉切除术。定期肠镜随访。","images":[{"url":"/diagrams/papillary.svg","caption":"绒毛状腺瘤：指状纤维血管轴心表面覆盖异型增生上皮"}],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"gastric-lymphoma","nameZh":"胃淋巴瘤","nameEn":"Gastric Lymphoma","aliases":["MALT淋巴瘤","胃黏膜相关淋巴组织淋巴瘤"],"organ":"gi","category":"malignant","epidemiology":"胃是结外淋巴瘤最常见部位，约占所有胃恶性肿瘤的3-5%。胃MALT淋巴瘤与幽门螺杆菌感染密切相关（>90%有Hp感染），好发于50-60岁，男女比例接近。在Hp高感染地区发病率更高。","clinicalFeatures":"消化不良、上腹痛、早饱、体重减轻。内镜可见多发溃疡或黏膜增厚。","grossPathology":"胃壁增厚，黏膜皱襞肥厚，可见多发浅溃疡。","microscopy":"MALT淋巴瘤：小至中等大小的边缘区B细胞（中心细胞样或单核细胞样）弥漫浸润黏膜固有层，围绕反应性生发中心呈边缘带分布。特征性淋巴上皮病变（LEL）表现为肿瘤细胞侵入并破坏腺体上皮，腺体内可见成簇淋巴样细胞。可伴浆细胞分化。间质弥漫淋巴细胞浸润扩大固有层。高级别转化（DLBCL）时出现大的免疫母细胞样或中心母细胞样B细胞弥漫浸润，核大、核仁明显、核分裂活跃，破坏胃壁全层结构。","keyFeatures":["胃MALT与Hp感染密切相关","淋巴上皮病变(LEL)是MALT特征","根除Hp后早期MALT可消退","CD20+/CD79a+/BCL2+"],"ihcProfile":[{"marker":"CD20","result":"阳性","note":"B细胞标记"},{"marker":"CD79a","result":"阳性","note":""},{"marker":"BCL2","result":"阳性","note":""},{"marker":"CD5","result":"阴性","note":"排除套细胞淋巴瘤"},{"marker":"CD10","result":"阴性","note":"排除滤泡性淋巴瘤"}],"molecularFeatures":"t(11;18)(q21;q21) API2-MALT1融合最常见，提示对Hp根除治疗抵抗。","differentialDiagnosis":["gastric-adenocarcinoma","follicular-lymphoma","dlbcl"],"grading":"低级别(MALT) vs 高级别(弥漫大B转化)","staging":"Lugano分期","prognosis":"低级别MALT预后好，Hp根除后有效率>70%。DLBCL转化需化疗。","treatment":"早期限于黏膜者首选Hp根除治疗。不能根除或t(11;18)+者用放疗/免疫化疗。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"esophageal-scc","nameZh":"食管鳞状细胞癌","nameEn":"Esophageal Squamous Cell Carcinoma","aliases":["食管鳞癌"],"organ":"gi","category":"malignant","epidemiology":"全球第七大常见癌症，亚洲（尤其中国北方、伊朗、中亚）高发，年发病率可达30/10万以上。男性显著多于女性（约3:1），中位发病年龄约60-65岁。主要危险因素包括吸烟、饮酒、过热饮食、腌制食品及营养不良（缺乏维生素和水果摄入）。","clinicalFeatures":"进行性吞咽困难（先固体后流质）、胸骨后疼痛、消瘦、贫血。","grossPathology":"溃疡型、蕈伞型或浸润型，多位于食管中段。","microscopy":"肿瘤由鳞状分化的恶性上皮细胞组成，呈实性巢状和条索状排列浸润食管壁各层。高分化者可见角化珠（同心圆层状角化）和细胞间桥，细胞大而多边形，胞浆丰富嗜酸性。中分化者角化不完全，核异型性增加。低分化者角化极少，需免疫组化（p40/CK5/6阳性）确认鳞状分化。核增大深染，核仁明显，核分裂象多见。间质可见促纤维增生反应和慢性炎细胞浸润。常伴淋巴管和血管侵犯。周围黏膜可见鳞状上皮内瘤变/原位癌（前驱病变）。","keyFeatures":["食管中段多见","明显角化（角化珠、细胞间桥）","p40 / p63 / CK5/6 阳性","与腺癌（食管下段、Barrett 相关）在部位、免疫表型上不同","免疫治疗近年显著改变晚期治疗格局"],"ihcProfile":[{"marker":"p40","result":"阳性","note":"鳞癌特异"},{"marker":"CK5/6","result":"阳性","note":""},{"marker":"p63","result":"阳性","note":""},{"marker":"CK7","result":"多数阴性","note":"区别于腺癌"},{"marker":"PD-L1","result":"CPS 评分","note":"指导免疫治疗"}],"molecularFeatures":"TP53 > 90%、NOTCH1、CDKN2A 失活常见。HPV 相关极少。","differentialDiagnosis":["gastric-adenocarcinoma"],"grading":"高 / 中 / 低分化","staging":"AJCC TNM 第 8 版","prognosis":"总体 5 年生存 < 30%。早期（T1）内镜治疗后预后好。","treatment":"早期内镜下 ESD；局部进展期新辅助放化疗 + 手术；晚期化疗 + 免疫治疗（帕博利珠单抗）。","images":[{"url":"/diagrams/keratin-pearl.svg","caption":"角化珠是食管鳞癌分化程度的标志"}],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"crohns-disease","nameZh":"克罗恩病","nameEn":"Crohn's Disease","aliases":["CD","节段性肠炎","区域性肠炎"],"organ":"gi","category":"inflammatory","epidemiology":"发病率在西方较高（北欧、北美约5-10/10万），近年亚洲快速上升。双峰年龄分布（15-30岁和60岁左右），男女比例接近。危险因素包括吸烟、遗传易感性（NOD2/CARD15突变）和西方化生活方式。犹太裔人群发病率较高。","clinicalFeatures":"慢性腹痛、腹泻、体重下降、瘘管、肛周病变、肠外表现（关节炎、葡萄膜炎、皮肤病）。","grossPathology":"&quot;跳跃性&quot;病变、纵行裂隙状溃疡伴卵石路样外观，肠壁增厚、肠系膜爬行脂肪。","microscopy":"透壁性炎症是最重要的组织学特征，炎性浸润累及从黏膜到浆膜的肠壁全层，由淋巴细胞、浆细胞和组织细胞构成。裂隙状溃疡（刀切样）沿肠壁深层穿入，可达浆膜面。非干酪样上皮样肉芽肿约见于30%的活检标本，由上皮样组织细胞和多核巨细胞构成（需排除结核和异物反应）。病变呈节段性分布，病变与正常肠黏膜交替出现。慢性改变包括隐窝结构紊乱、幽门腺化生（Paneth细胞化生）、黏膜下层增宽伴纤维化和淋巴管扩张、神经纤维增生。活动期可见隐窝脓肿和中性粒细胞浸润。","keyFeatures":["透壁性炎 + 非干酪样肉芽肿","跳跃性病变 + 裂隙状溃疡","可累及口腔至肛门任何部位，回盲部最常见","与溃疡性结肠炎的鉴别：UC 限于结肠、连续性、黏膜层为主","存在长期恶变（腺癌、小肠癌）风险"],"ihcProfile":[{"marker":"CD68","result":"肉芽肿内组织细胞阳性","note":""}],"specialStainProfile":[{"stain":"Masson","result":"纤维化","note":"评估肠壁纤维化和狭窄程度"},{"stain":"PAS","result":"肉芽肿","note":"辅助显示非干酪样肉芽肿结构"}],"molecularFeatures":"NOD2/CARD15 突变是最强的遗传易感因素；IL23R、ATG16L1 等参与自噬和 Th17 信号通路。","differentialDiagnosis":["colorectal-adenocarcinoma"],"grading":"活动性（急性炎细胞）vs 慢性（隐窝结构紊乱）","staging":"Montreal 分类（年龄、部位、行为）","prognosis":"慢性复发性疾病，需长期管理。20 年累计手术率 ~50%。","treatment":"5-ASA、糖皮质激素、免疫抑制剂、抗 TNF（英夫利昔）、抗整合素（维多珠单抗）、抗 IL-23。并发症需手术。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"appendiceal-net","nameZh":"阑尾神经内分泌肿瘤","nameEn":"Appendiceal Neuroendocrine Tumor","aliases":["阑尾类癌","NET"],"organ":"gi","category":"malignant","epidemiology":"最常见的阑尾肿瘤，占阑尾切除标本的0.3-0.9%，多为偶然在阑尾切除术后发现。好发于30-50岁，女性稍多见。无明确危险因素，大多数为散发性，罕见与MEN1等遗传综合征相关。","clinicalFeatures":"多数因急性阑尾炎或其他手术偶然发现。阑尾尖端最常见。极少引起类癌综合征（因常无肝转移）。","grossPathology":"阑尾尖端黄白色小结节，直径多 < 1 cm。","microscopy":"肿瘤由大小均匀的圆形至多边形细胞组成，排列呈巢状、小梁状、缎带状或菊形团样结构，被纤细血管间隔分隔。核圆形居中，染色质呈特征性\"胡椒盐\"样（粗颗粒弥散分布），核仁不明显。胞浆中等量嗜酸性颗粒状，含丰富的神经分泌颗粒（电镜可见致密核心颗粒）。核分裂象罕见（多<2/10HPF），Ki-67通常<3%。浸润肌层和肠系膜脂肪常见但不等于恶性行为差。部分阑尾NET含有嗜银颗粒细胞成分（杯状细胞NET/腺类癌），预后和处理不同，需注意鉴别。","keyFeatures":["最常见阑尾肿瘤","多偶然发现，多位于阑尾尖端","Syn / CgA / INSM1 阳性","风险评估看大小、系膜侵犯、核分裂、Ki-67","< 1 cm 大多阑尾切除即可，> 2 cm 需考虑右半结肠切除"],"ihcProfile":[{"marker":"Synaptophysin","result":"阳性","note":"最敏感NE标记"},{"marker":"Chromogranin A","result":"阳性","note":"特异性高"},{"marker":"CD56","result":"阳性","note":""},{"marker":"Ki-67","result":"多 < 3%","note":"分级关键"},{"marker":"INSM1","result":"阳性","note":"新一代NE核标记"}],"molecularFeatures":"分子改变较少，与胰腺、支气管 NET 有部分重叠。","differentialDiagnosis":["carcinoid-tumor","colorectal-adenocarcinoma"],"grading":"WHO G1 / G2 / G3（基于 Ki-67 和核分裂）","staging":"AJCC TNM 第 8 版","prognosis":"< 1 cm 预后极好，5 年生存接近 100%；> 2 cm 风险升高。","treatment":"< 1 cm 单纯阑尾切除；> 2 cm 或伴系膜侵犯、淋巴结受累时行右半结肠切除。","images":[{"url":"/diagrams/tubular.svg","caption":"NET 的器官样巢状结构：均匀细胞被血管间隔"}],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"well-differentiated-net-g1","nameZh":"高分化神经内分泌肿瘤G1","nameEn":"Well-Differentiated Neuroendocrine Tumor G1","aliases":["NET G1","类癌"],"organ":"gi","category":"malignant","epidemiology":"消化道神经内分泌肿瘤中最常见的级别，好发于胃、十二指肠、回肠、直肠和阑尾。发病率近年持续上升（部分归因于内镜检出率提高）。回肠NET最常见引起类癌综合征。总体发病率约3-5/10万。","clinicalFeatures":"多数无症状，经内镜偶然发现。功能性肿瘤可分泌血清素引起类癌综合征（面部潮红、腹泻、支气管痉挛、右心瓣膜病变），但仅在肝转移后出现（绕过肝脏首过效应）。直肠和胃NET多为非功能性。","grossPathology":"黏膜下黄色至灰白色界限清楚的小结节，质硬，切面均匀，多<2cm。","microscopy":"肿瘤由大小均匀的圆形至卵圆形细胞组成，排列成器官样巢状、小梁状、缎带状或菊形团样结构。细胞核圆形居中，染色质呈特征性\"胡椒盐\"状（粗颗粒弥散分布），核仁不明显。胞浆中等量嗜酸性颗粒状（含神经内分泌颗粒）。核分裂象罕见（<2个/10HPF），Ki-67增殖指数<3%。间质纤维血管丰富，无坏死。","keyFeatures":["均匀细胞呈器官样/小梁/巢状排列","胡椒盐样染色质","Ki-67<3%且核分裂<2/10HPF","Syn/CgA/INSM1三联阳性","预后好，10年生存率>90%"],"ihcProfile":[{"marker":"Synaptophysin","result":"弥漫阳性","note":"最敏感的神经内分泌标记"},{"marker":"Chromogranin A","result":"弥漫阳性","note":"特异性高于Syn"},{"marker":"Ki-67","result":"<3%","note":"G1定义标准"},{"marker":"INSM1","result":"阳性","note":"新一代神经内分泌核标记"},{"marker":"CK","result":"阳性","note":"上皮来源确认"}],"molecularFeatures":"消化道NET的分子改变与部位相关：小肠NET常见CDKN1B突变和18号染色体缺失；胰腺NET常见MEN1、DAXX/ATRX突变。表观遗传改变（DNA甲基化）在NET发生中起重要作用。","differentialDiagnosis":["well-differentiated-net-g2","appendiceal-net","colorectal-adenocarcinoma"],"grading":"WHO G1（Ki-67<3%，核分裂<2/10HPF）","staging":"AJCC TNM第8版（按原发部位分别分期）","prognosis":"预后良好，局限性5年生存率>95%，10年生存率>90%。转移性G1 NET仍有较长生存（中位>10年）。","treatment":"局限性肿瘤内镜或手术切除。转移性病例可用生长抑素类似物（奥曲肽LAR、兰瑞肽）控制症状和抑制肿瘤生长。进展者可用依维莫司、舒尼替尼（胰腺NET）或PRRT（177Lu-DOTATATE）。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"well-differentiated-net-g2","nameZh":"高分化神经内分泌肿瘤G2","nameEn":"Well-Differentiated Neuroendocrine Tumor G2","aliases":["NET G2"],"organ":"gi","category":"malignant","epidemiology":"消化道神经内分泌肿瘤的中间级别，好发部位与G1相似（胰腺、小肠、直肠等），胰腺NET中G2比例较高。中位诊断年龄约55-65岁。总体发病率随内镜和影像学检查普及而上升。","clinicalFeatures":"可无症状或出现功能性症状（取决于是否分泌激素），胰腺G2 NET可为功能性（胰岛素瘤、胃泌素瘤等）或非功能性。肝转移后可出现类癌综合征。","grossPathology":"界限清楚的实性肿块，切面灰白至黄色，质较硬，较G1略大，可伴局灶出血但坏死少见。","microscopy":"组织学形态与G1相似，保持高分化的器官样结构（巢状、小梁状、缎带状排列），细胞均匀，核圆形，胡椒盐样染色质。与G1的关键区别在于增殖活性升高：核分裂象2-20个/10HPF和/或Ki-67增殖指数3-20%。细胞核可略增大，核仁可稍明显，但整体仍保持良好分化形态，无明显坏死（区别于NEC）。","keyFeatures":["形态高分化但增殖活性高于G1","Ki-67 3-20%和/或核分裂2-20/10HPF","与G1形态相似但生物学行为更具侵袭性","Syn/CgA/INSM1阳性","需与G3 NET和NEC鉴别"],"ihcProfile":[{"marker":"Synaptophysin","result":"弥漫阳性","note":""},{"marker":"Chromogranin A","result":"弥漫阳性","note":""},{"marker":"Ki-67","result":"3-20%","note":"G2分级的定义标准"},{"marker":"INSM1","result":"阳性","note":""},{"marker":"CK","result":"阳性","note":""}],"molecularFeatures":"与G1 NET分子特征相似但可有更多基因组不稳定性。胰腺NET中MEN1、DAXX/ATRX突变常见，ATRX/DAXX丢失与端粒替代延长（ALT）和较差预后相关。","differentialDiagnosis":["well-differentiated-net-g1","well-differentiated-net-g3","large-cell-nec","appendiceal-net"],"grading":"WHO G2（Ki-67 3-20%，核分裂2-20/10HPF）","staging":"AJCC TNM第8版","prognosis":"中等预后，5年生存率约65-80%（取决于分期和部位）。转移性G2 NET中位生存约5-8年。","treatment":"手术切除是局限性病例的首选治疗。转移性病例用生长抑素类似物（SSA）作为一线治疗，进展后可用依维莫司、舒尼替尼（胰腺）、替莫唑胺方案或PRRT（177Lu-DOTATATE）。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"well-differentiated-net-g3","nameZh":"高分化神经内分泌肿瘤G3","nameEn":"Well-Differentiated Neuroendocrine Tumor G3","aliases":["NET G3","高增殖高分化NET"],"organ":"gi","category":"malignant","epidemiology":"2019年WHO第5版消化系统肿瘤分类新设立的类别，占消化道神经内分泌肿瘤约5-10%。胰腺是最常见的原发部位。将高分化形态但Ki-67>20%的肿瘤从NEC中独立出来，因其生物学行为和治疗反应不同于NEC。","clinicalFeatures":"多数为非功能性，表现为腹痛、体重减轻、肝转移相关症状。诊断时多为晚期（60-70%已有远处转移）。","grossPathology":"较大的实性肿块，切面灰白至灰黄色，可伴局灶坏死但不如NEC广泛，界限较NEC清楚。","microscopy":"关键特征是保持高分化形态（器官样巢状、小梁状排列，细胞均匀，胡椒盐样染色质）但Ki-67增殖指数>20%（通常20-55%，极少>55%）。核分裂象>20/10HPF。与NEC的鉴别至关重要：NET G3保持器官样结构和均匀细胞形态，无NEC的弥漫性片状生长、高度多形性和广泛坏死。Rb蛋白保留表达和p53野生型模式也有助于与NEC鉴别。","keyFeatures":["高分化形态+Ki-67>20%（通常20-55%）","Rb保留表达+p53野生型（区别于NEC）","2019 WHO新分类实体","对铂类化疗反应差于NEC","胰腺最常见原发部位"],"ihcProfile":[{"marker":"Synaptophysin","result":"弥漫阳性","note":""},{"marker":"Chromogranin A","result":"弥漫阳性","note":"NET G3常强阳性（NEC中CgA常减弱）"},{"marker":"Ki-67","result":">20%（通常20-55%）","note":"G3定义标准但通常<55%"},{"marker":"INSM1","result":"阳性","note":""},{"marker":"Rb","result":"保留表达","note":"NEC中常丢失"},{"marker":"p53","result":"野生型模式","note":"NEC中常异常（弥漫强阳或完全缺失）"}],"molecularFeatures":"分子特征更接近低级别NET而非NEC：胰腺NET G3常见MEN1、DAXX/ATRX突变，保留TP53和RB1；而NEC则以TP53和RB1失活为特征。ATRX/DAXX丢失在NET G3中多见。","differentialDiagnosis":["well-differentiated-net-g2","large-cell-nec","mixed-neuroendocrine-non-neuroendocrine-neoplasm"],"grading":"WHO G3（Ki-67>20%，核分裂>20/10HPF，但形态高分化）","staging":"AJCC TNM第8版","prognosis":"预后介于G2 NET和NEC之间，5年生存率约30-50%。对铂类化疗反应率低于NEC（约15-30% vs 50-60%）。","treatment":"手术切除适用于局限性病例。转移性NET G3对铂类化疗反应差，替莫唑胺为基础的方案（CAPTEM）在胰腺NET G3中疗效较好。依维莫司和PRRT也可考虑。SSA仍可用于Ki-67较低的NET G3。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"large-cell-nec","nameZh":"大细胞神经内分泌癌","nameEn":"Large Cell Neuroendocrine Carcinoma","aliases":["LCNEC","大细胞NEC"],"organ":"gi","category":"malignant","epidemiology":"罕见但高度侵袭性的消化道恶性肿瘤，占消化道恶性肿瘤不到1%。可发生于食管、胃、结直肠、胰腺和胆道等任何消化道部位。好发于老年人（中位年龄约65-70岁），男性稍多见。常与吸烟和其他上皮性肿瘤（腺癌）共存。","clinicalFeatures":"病程短、进展快，常表现为腹痛、体重减轻、消化道出血、肝大（肝转移常见）。诊断时>60%已有远处转移。可伴副肿瘤综合征。","grossPathology":"较大的浸润性肿块，切面灰白色，质脆，伴广泛出血和坏死，边界不清。常浸润周围组织和脉管。","microscopy":"肿瘤由大细胞组成（细胞体积大于3个小淋巴细胞），排列成实性片状、巢状或小梁状，伴大片地图样坏死（菊形团样坏死周围可见）。细胞核大，泡状或粗颗粒状染色质（不同于NET的胡椒盐样），核仁明显，核分裂象极多（常>20/10HPF，通常>40/10HPF）。胞浆中等量。与小细胞NEC不同之处在于细胞体积大、核仁可见和胞浆较丰富。可伴腺癌或鳞癌成分（此时归入MiNEN）。","keyFeatures":["大细胞+高度核异型+广泛坏死","Ki-67通常>50%，常>80%","Rb丢失+p53异常是与NET G3的关键鉴别点","Syn阳性/CgA灶状阳性","对铂类化疗初始反应好但快速耐药"],"ihcProfile":[{"marker":"Synaptophysin","result":"阳性","note":"最可靠的NEC神经内分泌标记"},{"marker":"Chromogranin A","result":"灶状阳性或弱阳性","note":"NEC中CgA表达常低于NET"},{"marker":"Ki-67","result":">50%（常>80%）","note":"极高增殖活性"},{"marker":"Rb","result":"表达丢失","note":"RB1基因失活的标志"},{"marker":"p53","result":"异常模式（弥漫强阳或完全缺失）","note":"TP53突变标志"},{"marker":"TTF-1","result":"灶状阳性（肺原发时）","note":"有助于判断肺来源，消化道原发多阴性"}],"molecularFeatures":"以TP53和RB1双失活为分子特征（>90%），区别于NET G3。可伴KRAS、BRAF、APC等与来源器官腺癌共有的突变，支持NEC可能从腺癌去分化而来的假说。基因组高度不稳定。","differentialDiagnosis":["well-differentiated-net-g3","mixed-neuroendocrine-non-neuroendocrine-neoplasm","colorectal-adenocarcinoma","gastric-adenocarcinoma"],"grading":"高级别（NEC仅分大细胞型和小细胞型，不再分级）","staging":"AJCC TNM第8版","prognosis":"预后极差，中位生存约10-15个月。5年生存率<15%。诊断时多为晚期，初始对铂类化疗有一定反应但快速复发。","treatment":"参照小细胞肺癌方案：顺铂/卡铂+依托泊苷为一线化疗。免疫检查点抑制剂（阿替利珠单抗）联合化疗在小细胞肺癌中有获益，消化道NEC中也在探索。局限性病例可考虑手术+辅助化疗。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"mixed-neuroendocrine-non-neuroendocrine-neoplasm","nameZh":"混合性神经内分泌-非神经内分泌肿瘤MiNEN","nameEn":"Mixed Neuroendocrine-Non-Neuroendocrine Neoplasm","aliases":["MiNEN","MANEC","混合性腺神经内分泌癌"],"organ":"gi","category":"malignant","epidemiology":"罕见肿瘤，占消化道恶性肿瘤不到1%。最常见于结直肠、胃和阑尾，也见于胰胆管系统。好发于老年人（中位年龄约60-70岁）。2019年WHO分类将原MANEC概念扩展为MiNEN，允许任何类型的神经内分泌和非神经内分泌成分组合。","clinicalFeatures":"症状取决于原发部位和优势成分，表现与该部位常见恶性肿瘤相似（腹痛、体重减轻、消化道出血、梗阻等），功能性症状少见。","grossPathology":"浸润性肿块，外观取决于优势成分，切面可见不同质地和颜色的混合区域，NEC成分区域常伴坏死。","microscopy":"定义要求神经内分泌成分和非神经内分泌成分各占肿瘤体积的30%以上。最常见的组合是腺癌+NEC（大细胞或小细胞型）。两种成分可混杂交错或区域性分布。NEC成分表现为高级别神经内分泌分化（实性片状、坏死、高核分裂），IHC表达Syn和CgA。非NE成分按来源器官表现（如结直肠腺癌成分CK20+/CDX2+，胃腺癌成分等）。偶见高分化NET+腺癌的组合。两种成分需分别评估级别和分子特征。","keyFeatures":["NE和非NE成分各占>30%","需分别评估两种成分的级别和特征","NE成分Syn+/CgA+","非NE成分按来源器官免疫标记评估","预后取决于最高级别的成分"],"ihcProfile":[{"marker":"Synaptophysin","result":"NE成分阳性","note":"需在NE成分区域评估"},{"marker":"Chromogranin A","result":"NE成分阳性","note":""},{"marker":"Ki-67","result":"NE和非NE成分分别评估","note":"NEC成分通常>50%"},{"marker":"CK20","result":"非NE腺癌成分可阳性","note":"结直肠来源标记"},{"marker":"CDX2","result":"非NE腺癌成分可阳性","note":"肠道分化标记"}],"molecularFeatures":"两种成分常共享部分分子改变（如TP53、APC、KRAS突变），支持共同克隆起源假说。NEC成分额外获得RB1失活和TP53突变。全基因组测序显示两种成分有高度克隆相关性。","differentialDiagnosis":["large-cell-nec","well-differentiated-net-g3","colorectal-adenocarcinoma","gastric-adenocarcinoma"],"grading":"按各成分分别分级（NE成分按NET/NEC标准，非NE成分按WHO组织学分级）","staging":"AJCC TNM第8版（按来源器官分期）","prognosis":"预后取决于最高级别成分，含NEC成分者预后差（类似于纯NEC），中位生存约12-20个月。含高分化NET+腺癌组合者预后相对较好。","treatment":"治疗策略应针对最具侵袭性的成分。含NEC成分者参照NEC方案（铂类+依托泊苷化疗），含腺癌成分者可同时考虑针对腺癌的靶向治疗。局限性病例可手术切除+辅助化疗。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"appendiceal-mucinous-neoplasm","nameZh":"阑尾黏液性肿瘤","nameEn":"Low-Grade Appendiceal Mucinous Neoplasm","aliases":["LAMN","阑尾低级别黏液性肿瘤","阑尾黏液囊肿"],"organ":"gi","category":"other","epidemiology":"阑尾黏液性肿瘤是阑尾第二常见的肿瘤类型，多在阑尾切除术中偶然发现，好发于50-60岁成人，无明显性别差异。","clinicalFeatures":"多数无症状，因急性阑尾炎或影像学偶然发现。部分患者表现为右下腹痛或可扪及包块。破裂后黏液扩散至腹腔可导致腹膜假黏液瘤（PMP）。","grossPathology":"阑尾扩张呈囊状，腔内充满黏稠胶冻样黏液，壁菲薄，直径可达数厘米。切面见黏液湖和扁平的黏膜。","microscopy":"阑尾腔内衬以单层低级别柱状黏液上皮，呈绒毛状或波浪状排列，伴轻度核异型和核层叠。典型特征是固有肌层被黏液推挤菲薄或纤维化替代（推挤性侵犯模式，而非破坏性浸润）。黏液可突破肌壁进入浆膜下或腹腔（acellular mucin或含肿瘤细胞的mucin）。高级别者核异型明显，可有筛状结构和浸润性生长。","keyFeatures":["阑尾腔扩张伴黏液潴留","低级别柱状黏液上皮+波浪状/绒毛状排列","CK20+/CDX2+/CK7-/MUC2+","KRAS突变常见（约60-80%）","破裂可致腹膜假黏液瘤（PMP）"],"ihcProfile":[{"marker":"CK20","result":"阳性","note":"结直肠/阑尾来源标记"},{"marker":"CDX2","result":"阳性","note":"肠道分化标记"},{"marker":"CK7","result":"阴性","note":"区别于卵巢/胰胆管来源"},{"marker":"MUC2","result":"阳性","note":"黏液分泌标记"},{"marker":"MUC5AC","result":"阳性","note":"胃型黏液标记"}],"molecularFeatures":"KRAS突变约60-80%（以G12D/G12V最常见），GNAS突变约50%。TP53突变罕见（出现时提示高级别）。BRAF突变通常阴性。","differentialDiagnosis":["colorectal-adenocarcinoma","appendiceal-net","gastric-adenocarcinoma"],"grading":"低级别（LAMN）/ 高级别（HAMN）","staging":"AJCC TNM第8版（Tis-T4a根据黏液扩散程度）","prognosis":"完整切除的LAMN预后极好。破裂伴腹膜播散者（PMP）预后取决于细胞学级别和减瘤手术完整性，低级别PMP 10年生存率约60-70%。","treatment":"LAMN局限于阑尾者单纯阑尾切除即可。切缘阳性或基底受累者需盲肠切除或右半结肠切除。PMP需行细胞减灭术（CRS）+腹腔热灌注化疗（HIPEC）。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]}
+  {
+    "id": "gastric-adenocarcinoma",
+    "nameZh": "胃腺癌",
+    "nameEn": "Gastric Adenocarcinoma",
+    "aliases": [
+      "胃癌"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "全球癌症死亡第三位，东亚（日本、韩国、中国）高发，年发病率可达40-60/10万。幽门螺杆菌感染是最主要危险因素，其他包括高盐饮食、腌制食品、吸烟和家族史。男性发病率约为女性2倍，中位发病年龄约65-70岁，肠型多见于老年人。",
+    "clinicalFeatures": "早期多无症状，进展期出现上腹痛、纳差、消瘦、黑便。",
+    "grossPathology": "可呈溃疡型、隆起型或弥漫浸润型(革囊胃/皮革胃)。",
+    "microscopy": "Lauren分型指导组织学诊断：肠型表现为不规则腺管结构浸润胃壁各层，腺体由柱状上皮衬覆，可见明确管腔分化，常伴肠化生背景。弥漫型以低黏附性细胞（印戒细胞）散在浸润胃壁为特征，细胞胞浆内充满黏液将核推向一侧呈&quot;戒指&quot;状，细胞间缺乏黏附，弥漫浸润间质伴显著促纤维增生反应。WHO分型包括管状腺癌、乳头状腺癌、低黏附性癌（含印戒细胞癌）、黏液腺癌和混合型。核异型程度和核分裂象依分化级别而异，低分化者核深染多形、核分裂活跃。",
+    "keyFeatures": [
+      "Lauren分型：肠型 vs 弥漫型",
+      "HER2检测指导靶向治疗",
+      "MSI/MMR状态指导免疫治疗",
+      "印戒细胞癌预后差"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "HER2",
+        "result": "约20%过表达(肠型)",
+        "note": "胃特异性判读标准"
+      },
+      {
+        "marker": "CDX2",
+        "result": "肠型阳性",
+        "note": "肠化标记"
+      },
+      {
+        "marker": "MLH1",
+        "result": "部分缺失",
+        "note": "MSI-H/EBV相关"
+      },
+      {
+        "marker": "PD-L1",
+        "result": "CPS评分指导免疫治疗",
+        "note": ""
+      },
+      {
+        "marker": "E-cadherin",
+        "result": "弥漫型丢失",
+        "note": "CDH1突变导致，弥漫型/印戒细胞癌特征"
+      }
+    ],
+    "molecularFeatures": "TCGA分为4个亚型：EBV阳性型、MSI型、基因组稳定型(GS)和染色体不稳定型(CIN)。",
+    "differentialDiagnosis": [
+      "colorectal-adenocarcinoma",
+      "gastric-lymphoma"
+    ],
+    "grading": "高分化、中分化、低分化",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "早期胃癌5年生存率>90%；进展期约30-40%。",
+    "treatment": "手术为主，辅以化疗。HER2阳性用曲妥珠单抗，MSI-H/PD-L1阳性可用免疫治疗。",
+    "images": [
+      {
+        "url": "/diagrams/signet-ring.svg",
+        "caption": "弥漫型（印戒细胞）胃腺癌：胞浆内黏液将核推向一侧"
+      },
+      {
+        "url": "/diagrams/mucinous.svg",
+        "caption": "黏液腺癌：大量细胞外黏液湖中漂浮肿瘤细胞"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胃癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 胃癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中国临床肿瘤学会（CSCO）胃癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] CSCO 胃癌诊疗指南（2023版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 胃癌 HER2 检测指南（2016版） (中华医学会病理学分会 / 中国抗癌协会肿瘤病理专业委员会, 2016)"
+    ]
+  },
+  {
+    "id": "colorectal-adenocarcinoma",
+    "nameZh": "结直肠腺癌",
+    "nameEn": "Colorectal Adenocarcinoma",
+    "aliases": [
+      "结直肠癌",
+      "大肠癌"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "全球第三大常见癌症，年发病率约30-40/10万（西方国家）。男女比例相近，发病率随年龄增长显著升高（中位发病年龄约68岁）。危险因素包括红肉和加工肉类摄入、肥胖、吸烟、饮酒、家族史（一级亲属患病风险增加2-3倍）和炎症性肠病。约5%与遗传综合征相关（Lynch综合征、FAP）。",
+    "clinicalFeatures": "便血、排便习惯改变、腹痛、贫血、肠梗阻。右半结肠癌多贫血，左半和直肠癌多便血。",
+    "grossPathology": "息肉样、溃疡型或环形缩窄型。",
+    "microscopy": "肿瘤由不规则腺管和/或绒毛状腺体结构组成，浸润肠壁各层（黏膜层至浆膜层），破坏正常肠壁结构。分化好者形成明确腺管结构，衬覆高柱状上皮，核拉长、假复层排列，杯状细胞减少；低分化者呈实性巢团、条索或弥漫浸润。核增大深染，核仁明显，核分裂象多见。可伴黏液分化（>50%黏液成分定义为黏液腺癌）或印戒细胞成分。间质可见促纤维增生反应、炎细胞浸润和肿瘤出芽（budding）。脉管和神经侵犯是重要预后因素。肿瘤出芽（单细胞或<5细胞小簇浸润前沿）是独立不良预后指标。",
+    "keyFeatures": [
+      "CK20+/CDX2+/CK7- 经典表达谱",
+      "MMR/MSI检测指导治疗和Lynch筛查",
+      "KRAS/NRAS/BRAF突变检测指导靶向治疗",
+      "腺瘤-癌序列的经典进展模式"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK20",
+        "result": "阳性",
+        "note": "结直肠标记"
+      },
+      {
+        "marker": "CDX2",
+        "result": "阳性",
+        "note": "肠道分化标记"
+      },
+      {
+        "marker": "CK7",
+        "result": "通常阴性",
+        "note": "CK7-/CK20+模式"
+      },
+      {
+        "marker": "SATB2",
+        "result": "阳性",
+        "note": "下消化道特异"
+      },
+      {
+        "marker": "MLH1/MSH2/MSH6/PMS2",
+        "result": "需评估",
+        "note": "MMR蛋白缺失筛查Lynch综合征"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "PAS",
+        "result": "黏液",
+        "note": "显示腺体内黏液分泌成分"
+      },
+      {
+        "stain": "阿利新蓝",
+        "result": "黏液型鉴别",
+        "note": "鉴别黏液腺癌和印戒细胞癌中的酸性黏液"
+      }
+    ],
+    "molecularFeatures": "经典通路：APC→KRAS→TP53突变。约15%为MSI-H(散发性MLH1甲基化或Lynch综合征)。BRAF V600E突变见于右半结肠锯齿状通路。",
+    "differentialDiagnosis": [
+      "gastric-adenocarcinoma",
+      "colorectal-adenoma"
+    ],
+    "grading": "高分化、中分化、低分化/未分化",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "I期5年生存率>90%，IV期约15%。MSI-H肿瘤预后较好且对免疫治疗反应佳。",
+    "treatment": "手术切除为基础。III期辅助化疗(FOLFOX)。IV期化疗+靶向(KRAS野生型用西妥昔单抗/贝伐珠单抗)。MSI-H/dMMR可用免疫治疗。",
+    "images": [
+      {
+        "url": "/diagrams/tubular.svg",
+        "caption": "结直肠腺癌的中分化腺管结构"
+      },
+      {
+        "url": "/diagrams/cribriform.svg",
+        "caption": "筛状结构：低级别腺体背对背成&quot;筛孔&quot;样"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 结直肠癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 国家卫生健康委员会 结直肠癌诊疗规范（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中国结直肠癌诊疗规范（2020 年版） (国家卫健委, 2020)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）结直肠癌诊疗指南2024 (中国临床肿瘤学会（CSCO）, 2024)",
+      "[国内共识] 中国结直肠癌及癌前病变内镜诊治共识（结直肠癌分子病理检测临床实践指南） (中华医学会病理学分会消化疾病学组, 2022)"
+    ]
+  },
+  {
+    "id": "gist",
+    "nameZh": "胃肠道间质瘤",
+    "nameEn": "Gastrointestinal Stromal Tumor",
+    "aliases": [
+      "GIST"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "最常见的消化道间叶源性肿瘤，年发病率约1-1.5/10万。胃(60%)>小肠(30%)>结直肠和食管(少见)。来源于Cajal间质细胞或其前体。好发于50-70岁，男女比例接近，无明显种族差异。多为散发，少数与NF1、Carney三联征或家族性GIST综合征相关。",
+    "clinicalFeatures": "可无症状偶然发现，或出现消化道出血、腹痛、腹部肿块。",
+    "grossPathology": "黏膜下或浆膜下圆形肿块，有假包膜，切面灰白或灰红色，可伴出血坏死。",
+    "microscopy": "梭形细胞型(70%)：细胞呈短束状或交织束状排列，胞浆淡嗜酸性至透明，核长梭形端圆，染色质均匀，可见核端空泡。上皮样型(20%)：细胞圆形至多边形呈片状或巢状排列，胞浆嗜酸性丰富，核圆形居中。混合型(10%)兼有两种成分。间质可伴黏液样变或透明变性，偶见核栅栏状排列。核异型性和核分裂象计数是风险评估的关键：低危者核分裂≤5/5mm²且核温和；高危者核分裂>5/5mm²伴核异型。可见薄壁血管丰富的间质和灶性出血坏死。",
+    "keyFeatures": [
+      "CD117(c-KIT)和DOG1双阳性是诊断金标准",
+      "KIT或PDGFRA基因突变",
+      "风险评估基于肿瘤大小、核分裂象和部位",
+      "伊马替尼靶向治疗"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD117",
+        "result": "阳性(95%)",
+        "note": "c-KIT，诊断关键"
+      },
+      {
+        "marker": "DOG1",
+        "result": "阳性(98%)",
+        "note": "最敏感标记"
+      },
+      {
+        "marker": "CD34",
+        "result": "阳性(70%)",
+        "note": ""
+      },
+      {
+        "marker": "SMA",
+        "result": "部分阳性",
+        "note": ""
+      },
+      {
+        "marker": "S-100",
+        "result": "阴性",
+        "note": "排除神经鞘瘤"
+      }
+    ],
+    "molecularFeatures": "约75%伴KIT基因突变(外显子11最常见)，约10%伴PDGFRA突变(D842V最常见，对伊马替尼耐药)。10-15%为野生型。",
+    "differentialDiagnosis": [
+      "gastric-adenocarcinoma"
+    ],
+    "grading": "NIH风险评估分级：极低危/低危/中危/高危",
+    "staging": "AJCC TNM",
+    "prognosis": "取决于风险分级。低危者5年生存率>95%，高危者约50%。",
+    "treatment": "手术切除。中高危者辅助伊马替尼(3年)。晚期/转移性一线伊马替尼，二线舒尼替尼。",
+    "images": [
+      {
+        "url": "/diagrams/gist-gross.svg",
+        "caption": "大体：胃壁肌层内境界清楚的灰白色实性结节，切面鱼肉样，可见局灶出血与囊性变"
+      },
+      {
+        "url": "/diagrams/gist-spindle-lp.svg",
+        "caption": "低倍（HE）：梭形细胞呈束状、栅栏状排列，起源于固有肌层，推挤性边界，间质可见纤维化"
+      },
+      {
+        "url": "/diagrams/gist-spindle-hp.svg",
+        "caption": "高倍（HE）：梭形细胞胞质嗜酸性、核两端钝圆，可见核旁空泡（paranuclear vacuoles），核分裂象稀少"
+      },
+      {
+        "url": "/diagrams/gist-cd117-dog1-ihc.svg",
+        "caption": "IHC（CD117/DOG1）：肿瘤细胞胞膜及胞质弥漫强阳性表达，支持 GIST 诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胃肠道间质瘤诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 中国胃肠间质瘤诊断治疗共识（2017年版） (中国临床肿瘤学会, 2017)",
+      "[国内共识] CSCO 胃肠道间质瘤诊疗指南（2023版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国胃肠道间质瘤诊断治疗共识（2017年版） (中国临床肿瘤学会（CSCO）胃肠间质瘤专家委员会 / 中国抗癌协会, 2017)"
+    ]
+  },
+  {
+    "id": "colorectal-adenoma",
+    "nameZh": "结直肠腺瘤",
+    "nameEn": "Colorectal Adenoma",
+    "aliases": [
+      "息肉",
+      "腺瘤性息肉"
+    ],
+    "organ": "gi",
+    "category": "precancerous",
+    "epidemiology": "非常常见，50岁以上人群发病率>25%，是结直肠癌最重要的癌前病变。发病率随年龄增长显著升高，男性略多于女性。危险因素与结直肠癌相似，包括西方化饮食、肥胖和家族史。FAP患者可出现数百枚腺瘤。",
+    "clinicalFeatures": "多数无症状，通过肠镜筛查发现。大的腺瘤可引起便血。",
+    "grossPathology": "有蒂或无蒂的息肉状隆起，表面绒毛状或分叶状。",
+    "microscopy": "管状腺瘤（最常见，>80%）由排列紧密的异型增生腺管构成，腺管被纤细的固有层纤维血管间质分隔。绒毛状腺瘤（恶变风险最高）由细长指状绒毛构成，中心含纤维血管轴心，表面覆盖异型增生上皮。管状绒毛状腺瘤兼有两种结构（绒毛成分25-75%）。上皮细胞异型增生表现为核拉长、假复层排列、核深染、核仁增大、杯状细胞减少。低级别异型增生核局限于下半部、保持极性；高级别异型增生核达表面、极性丧失、核分裂活跃，可出现筛状结构和早期浸润。",
+    "keyFeatures": [
+      "结直肠癌最重要的癌前病变",
+      "管状/绒毛状/管状绒毛状三种类型",
+      "异型增生分级(低级别/高级别)",
+      "绒毛状成分越多恶变风险越高"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Ki-67",
+        "result": "增殖区扩展",
+        "note": "异型增生区域增殖活跃"
+      },
+      {
+        "marker": "p53",
+        "result": "高级别异型增生可过表达",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "APC基因失活是腺瘤发生的启动事件(腺瘤-癌序列)。进展中逐步获得KRAS、TP53等突变。",
+    "differentialDiagnosis": [
+      "colorectal-adenocarcinoma"
+    ],
+    "grading": "低级别异型增生/高级别异型增生",
+    "staging": "不适用",
+    "prognosis": "内镜切除后预后极好。定期随访监测复发。",
+    "treatment": "内镜下息肉切除术。定期肠镜随访。",
+    "images": [
+      {
+        "url": "/diagrams/papillary.svg",
+        "caption": "绒毛状腺瘤：指状纤维血管轴心表面覆盖异型增生上皮"
+      },
+      {
+        "url": "/diagrams/colorectal-tubular-adenoma-lp.svg",
+        "caption": "低倍（HE）：管状腺瘤，显示拥挤的小管状腺体密集排列于固有层内，腺体轮廓规则，基底膜完整，未见间质浸润"
+      },
+      {
+        "url": "/diagrams/colorectal-adenoma-low-grade-dysplasia-hp.svg",
+        "caption": "高倍（HE）：低级别上皮内瘤变，腺上皮细胞核呈雪茄形、假复层排列，核极性基本保留，核分裂象可见但局限于腺体下半部"
+      },
+      {
+        "url": "/diagrams/colorectal-villous-adenoma-lp.svg",
+        "caption": "低倍（HE）：绒毛状腺瘤，可见细长指状绒毛突起，表面被覆异型增生的柱状上皮，轴心为薄层固有层"
+      },
+      {
+        "url": "/diagrams/colorectal-adenoma-high-grade-dysplasia-hp.svg",
+        "caption": "高倍（HE）：高级别上皮内瘤变，腺体结构复杂呈筛状或背靠背，核极性消失，核增大深染，核分裂象增多并可见病理性核分裂"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] 中国结直肠癌筛查与早诊早治指南（2020，北京） (国家癌症中心, 2020)",
+      "[国内指南] 中国早期结直肠癌筛查及内镜诊治指南（2014，北京） (中华医学会消化内镜学分会, 2014)",
+      "[国内共识] 中国早期结直肠癌筛查及内镜诊治指南（2014年，北京） (中华医学会消化内镜学分会 / 中国抗癌协会肿瘤内镜学专业委员会, 2014)",
+      "[国内共识] 中国结直肠癌筛查与早诊早治指南（2020，北京） (国家癌症中心 / 中国医师协会结直肠肿瘤专业委员会, 2020)"
+    ]
+  },
+  {
+    "id": "gastric-lymphoma",
+    "nameZh": "胃淋巴瘤",
+    "nameEn": "Gastric Lymphoma",
+    "aliases": [
+      "MALT淋巴瘤",
+      "胃黏膜相关淋巴组织淋巴瘤"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "胃是结外淋巴瘤最常见部位，约占所有胃恶性肿瘤的3-5%。胃MALT淋巴瘤与幽门螺杆菌感染密切相关（>90%有Hp感染），好发于50-60岁，男女比例接近。在Hp高感染地区发病率更高。",
+    "clinicalFeatures": "消化不良、上腹痛、早饱、体重减轻。内镜可见多发溃疡或黏膜增厚。",
+    "grossPathology": "胃壁增厚，黏膜皱襞肥厚，可见多发浅溃疡。",
+    "microscopy": "胃淋巴瘤以黏膜固有层及黏膜下层为主要受累部位，镜下可见弥漫性或结节状致密淋巴样细胞浸润，常向深层肌层及浆膜下扩展。最常见类型为黏膜相关淋巴组织（MALT）结外边缘区淋巴瘤，低倍镜下见小至中等大小的中心细胞样（centrocyte-like）淋巴细胞，胞浆少至中等量、淡染，核圆形或轻度不规则，染色质细密，核仁不明显；瘤细胞围绕并浸润反应性淋巴滤泡（滤泡植入/colonization），并侵入胃腺上皮形成特征性淋巴上皮病变（lymphoepithelial lesion, LEL），表现为 ≥3 个瘤细胞簇集于腺体内伴上皮崩解、嗜酸性变。瘤细胞间可见散在浆细胞样分化及少量大转化细胞，常伴 Dutcher 小体。高级别转化或原发胃弥漫大 B 细胞淋巴瘤（DLBCL）则呈弥漫成片的大细胞增生，胞体较正常淋巴细胞大 2 倍以上，胞浆中等量、嗜碱或双嗜性，核呈圆形、卵圆形或不规则分叶，染色质空泡状，核仁居中或贴膜 1–3 个，核分裂象易见（多 >10/10 HPF），常伴地图样坏死及血管侵犯。背景可见残存萎缩性胃炎、肠上皮化生及幽门螺杆菌感染的中性粒细胞性隐窝炎。分级线索包括大细胞比例（>20% 提示向 DLBCL 转化）、Ki-67 增殖指数（MALT 常 <20%，DLBCL 多 >40%）及核分裂计数。鉴别诊断：①与反应性淋巴组织增生（慢性胃炎）区别——后者滤泡结构保留、无 LEL、无单克隆性轻链限制；②与低分化腺癌/印戒细胞癌区别——腺癌 CK（AE1/AE3）、CDX2 阳性，CD20/CD3 阴性，而淋巴瘤呈 LCA 及 B 细胞标记阳性、黏液染色阴性。",
+    "keyFeatures": [
+      "胃MALT与Hp感染密切相关",
+      "淋巴上皮病变(LEL)是MALT特征",
+      "根除Hp后早期MALT可消退",
+      "CD20+/CD79a+/BCL2+"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "阳性",
+        "note": "B细胞标记"
+      },
+      {
+        "marker": "CD79a",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "BCL2",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD5",
+        "result": "阴性",
+        "note": "排除套细胞淋巴瘤"
+      },
+      {
+        "marker": "CD10",
+        "result": "阴性",
+        "note": "排除滤泡性淋巴瘤"
+      }
+    ],
+    "molecularFeatures": "t(11;18)(q21;q21) API2-MALT1融合最常见，提示对Hp根除治疗抵抗。",
+    "differentialDiagnosis": [
+      "gastric-adenocarcinoma",
+      "follicular-lymphoma",
+      "dlbcl"
+    ],
+    "grading": "低级别(MALT) vs 高级别(弥漫大B转化)",
+    "staging": "Lugano分期",
+    "prognosis": "低级别MALT预后好，Hp根除后有效率>70%。DLBCL转化需化疗。",
+    "treatment": "早期限于黏膜者首选Hp根除治疗。不能根除或t(11;18)+者用放疗/免疫化疗。",
+    "images": [
+      {
+        "url": "/diagrams/gastric-lymphoma-low-power.svg",
+        "caption": "低倍（HE）：胃黏膜固有层及黏膜下层弥漫性单一形态小到中等大淋巴样细胞浸润，正常腺体结构破坏"
+      },
+      {
+        "url": "/diagrams/lymphoepithelial-lesion.svg",
+        "caption": "高倍（HE）：淋巴上皮病变（LEL），肿瘤性 B 细胞浸润并破坏胃腺上皮，为 MALT 淋巴瘤特征性改变"
+      },
+      {
+        "url": "/diagrams/centrocyte-like-cells.svg",
+        "caption": "高倍（HE）：中心细胞样（centrocyte-like）细胞，核轻度不规则、染色质稀疏、胞质淡染，可见散在单核样 B 细胞"
+      },
+      {
+        "url": "/diagrams/gastric-lymphoma-ihc-cd20.svg",
+        "caption": "IHC（CD20）：肿瘤性 B 细胞弥漫膜阳性，勾勒出淋巴上皮病变内浸润腺体的 B 细胞群"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 恶性淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] 中国胃黏膜相关淋巴组织（MALT）淋巴瘤诊断与治疗专家共识 (中国抗癌协会淋巴瘤专业委员会, 2022)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南 2024（弥漫大 B 细胞淋巴瘤及结外边缘区淋巴瘤部分） (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  },
+  {
+    "id": "esophageal-scc",
+    "nameZh": "食管鳞状细胞癌",
+    "nameEn": "Esophageal Squamous Cell Carcinoma",
+    "aliases": [
+      "食管鳞癌"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "全球第七大常见癌症，亚洲（尤其中国北方、伊朗、中亚）高发，年发病率可达30/10万以上。男性显著多于女性（约3:1），中位发病年龄约60-65岁。主要危险因素包括吸烟、饮酒、过热饮食、腌制食品及营养不良（缺乏维生素和水果摄入）。",
+    "clinicalFeatures": "进行性吞咽困难（先固体后流质）、胸骨后疼痛、消瘦、贫血。",
+    "grossPathology": "溃疡型、蕈伞型或浸润型，多位于食管中段。",
+    "microscopy": "肿瘤由鳞状分化的恶性上皮细胞组成，呈实性巢状和条索状排列浸润食管壁各层。高分化者可见角化珠（同心圆层状角化）和细胞间桥，细胞大而多边形，胞浆丰富嗜酸性。中分化者角化不完全，核异型性增加。低分化者角化极少，需免疫组化（p40/CK5/6阳性）确认鳞状分化。核增大深染，核仁明显，核分裂象多见。间质可见促纤维增生反应和慢性炎细胞浸润。常伴淋巴管和血管侵犯。周围黏膜可见鳞状上皮内瘤变/原位癌（前驱病变）。",
+    "keyFeatures": [
+      "食管中段多见",
+      "明显角化（角化珠、细胞间桥）",
+      "p40 / p63 / CK5/6 阳性",
+      "与腺癌（食管下段、Barrett 相关）在部位、免疫表型上不同",
+      "免疫治疗近年显著改变晚期治疗格局"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "p40",
+        "result": "阳性",
+        "note": "鳞癌特异"
+      },
+      {
+        "marker": "CK5/6",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "p63",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK7",
+        "result": "多数阴性",
+        "note": "区别于腺癌"
+      },
+      {
+        "marker": "PD-L1",
+        "result": "CPS 评分",
+        "note": "指导免疫治疗"
+      }
+    ],
+    "molecularFeatures": "TP53 > 90%、NOTCH1、CDKN2A 失活常见。HPV 相关极少。",
+    "differentialDiagnosis": [
+      "gastric-adenocarcinoma"
+    ],
+    "grading": "高 / 中 / 低分化",
+    "staging": "AJCC TNM 第 8 版",
+    "prognosis": "总体 5 年生存 < 30%。早期（T1）内镜治疗后预后好。",
+    "treatment": "早期内镜下 ESD；局部进展期新辅助放化疗 + 手术；晚期化疗 + 免疫治疗（帕博利珠单抗）。",
+    "images": [
+      {
+        "url": "/diagrams/keratin-pearl.svg",
+        "caption": "角化珠是食管鳞癌分化程度的标志"
+      },
+      {
+        "url": "/diagrams/esophageal-scc-gross.svg",
+        "caption": "大体：食管中段溃疡浸润型肿物，边缘隆起呈堤状，中央溃疡，切面灰白质脆，浸润食管壁全层"
+      },
+      {
+        "url": "/diagrams/esophageal-scc-low-power.svg",
+        "caption": "低倍（HE）：鳞状上皮全层异型，突破基底膜形成不规则癌巢，向黏膜下层及肌层浸润，伴间质促纤维增生反应"
+      },
+      {
+        "url": "/diagrams/esophageal-scc-high-power.svg",
+        "caption": "高倍（HE）：癌巢内见角化珠及细胞间桥，细胞异型明显、核分裂象易见，周边基底样细胞呈栅栏状排列"
+      },
+      {
+        "url": "/diagrams/esophageal-scc-ihc-p40.svg",
+        "caption": "IHC（p40）：肿瘤细胞核弥漫强阳性，支持鳞状细胞癌分化；CK5/6 胞浆阳性，TTF-1 阴性"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 食管癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 食管癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中国食管癌放射治疗指南（2023 年版） (中国抗癌协会, 2023)",
+      "[国内共识] 中国临床肿瘤学会(CSCO)食管癌诊疗指南(2023版) (中国临床肿瘤学会(CSCO), 2023)",
+      "[国内共识] 中国食管癌规范化诊治指南 (国家卫生健康委员会, 2022)"
+    ]
+  },
+  {
+    "id": "crohns-disease",
+    "nameZh": "克罗恩病",
+    "nameEn": "Crohn's Disease",
+    "aliases": [
+      "CD",
+      "节段性肠炎",
+      "区域性肠炎"
+    ],
+    "organ": "gi",
+    "category": "inflammatory",
+    "epidemiology": "发病率在西方较高（北欧、北美约5-10/10万），近年亚洲快速上升。双峰年龄分布（15-30岁和60岁左右），男女比例接近。危险因素包括吸烟、遗传易感性（NOD2/CARD15突变）和西方化生活方式。犹太裔人群发病率较高。",
+    "clinicalFeatures": "慢性腹痛、腹泻、体重下降、瘘管、肛周病变、肠外表现（关节炎、葡萄膜炎、皮肤病）。",
+    "grossPathology": "&quot;跳跃性&quot;病变、纵行裂隙状溃疡伴卵石路样外观，肠壁增厚、肠系膜爬行脂肪。",
+    "microscopy": "透壁性炎症是最重要的组织学特征，炎性浸润累及从黏膜到浆膜的肠壁全层，由淋巴细胞、浆细胞和组织细胞构成。裂隙状溃疡（刀切样）沿肠壁深层穿入，可达浆膜面。非干酪样上皮样肉芽肿约见于30%的活检标本，由上皮样组织细胞和多核巨细胞构成（需排除结核和异物反应）。病变呈节段性分布，病变与正常肠黏膜交替出现。慢性改变包括隐窝结构紊乱、幽门腺化生（Paneth细胞化生）、黏膜下层增宽伴纤维化和淋巴管扩张、神经纤维增生。活动期可见隐窝脓肿和中性粒细胞浸润。",
+    "keyFeatures": [
+      "透壁性炎 + 非干酪样肉芽肿",
+      "跳跃性病变 + 裂隙状溃疡",
+      "可累及口腔至肛门任何部位，回盲部最常见",
+      "与溃疡性结肠炎的鉴别：UC 限于结肠、连续性、黏膜层为主",
+      "存在长期恶变（腺癌、小肠癌）风险"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD68",
+        "result": "肉芽肿内组织细胞阳性",
+        "note": ""
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Masson",
+        "result": "纤维化",
+        "note": "评估肠壁纤维化和狭窄程度"
+      },
+      {
+        "stain": "PAS",
+        "result": "肉芽肿",
+        "note": "辅助显示非干酪样肉芽肿结构"
+      }
+    ],
+    "molecularFeatures": "NOD2/CARD15 突变是最强的遗传易感因素；IL23R、ATG16L1 等参与自噬和 Th17 信号通路。",
+    "differentialDiagnosis": [
+      "colorectal-adenocarcinoma"
+    ],
+    "grading": "活动性（急性炎细胞）vs 慢性（隐窝结构紊乱）",
+    "staging": "Montreal 分类（年龄、部位、行为）",
+    "prognosis": "慢性复发性疾病，需长期管理。20 年累计手术率 ~50%。",
+    "treatment": "5-ASA、糖皮质激素、免疫抑制剂、抗 TNF（英夫利昔）、抗整合素（维多珠单抗）、抗 IL-23。并发症需手术。",
+    "images": [
+      {
+        "url": "/diagrams/crohns-transmural-inflammation.svg",
+        "caption": "低倍（HE）：肠壁全层性（透壁性）炎症，淋巴细胞聚集灶自黏膜延伸至浆膜下层，呈'串珠样'分布"
+      },
+      {
+        "url": "/diagrams/crohns-noncaseating-granuloma.svg",
+        "caption": "高倍（HE）：黏膜下层非干酪样上皮样肉芽肿，由上皮样组织细胞及少量多核巨细胞构成，周围见淋巴细胞环绕，无中心性坏死"
+      },
+      {
+        "url": "/diagrams/crohns-fissuring-ulcer.svg",
+        "caption": "低倍（HE）：裂隙状溃疡（fissuring ulcer）纵深穿透肌层，伴节段性跳跃性病变与邻近黏膜结构相对保留"
+      },
+      {
+        "url": "/diagrams/crohns-pyloric-metaplasia.svg",
+        "caption": "高倍（HE）：回肠末端黏膜幽门腺化生及隐窝结构扭曲变形，提示慢性活动性炎症"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] 炎症性肠病诊断与治疗的共识意见（2018年·北京） (中华医学会消化病学分会炎症性肠病学组, 2018)",
+      "[国内共识] 炎症性肠病诊断与治疗的共识意见（2018年·北京） (中华医学会消化病学分会炎症性肠病学组, 2018)",
+      "[国内共识] 中国炎症性肠病病理诊断专家指导意见 (中华医学会病理学分会消化疾病学组 / 中华医学会消化病学分会炎症性肠病学组, 2021)"
+    ]
+  },
+  {
+    "id": "appendiceal-net",
+    "nameZh": "阑尾神经内分泌肿瘤",
+    "nameEn": "Appendiceal Neuroendocrine Tumor",
+    "aliases": [
+      "阑尾类癌",
+      "NET"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "最常见的阑尾肿瘤，占阑尾切除标本的0.3-0.9%，多为偶然在阑尾切除术后发现。好发于30-50岁，女性稍多见。无明确危险因素，大多数为散发性，罕见与MEN1等遗传综合征相关。",
+    "clinicalFeatures": "多数因急性阑尾炎或其他手术偶然发现。阑尾尖端最常见。极少引起类癌综合征（因常无肝转移）。",
+    "grossPathology": "阑尾尖端黄白色小结节，直径多 < 1 cm。",
+    "microscopy": "肿瘤由大小均匀的圆形至多边形细胞组成，排列呈巢状、小梁状、缎带状或菊形团样结构，被纤细血管间隔分隔。核圆形居中，染色质呈特征性\"胡椒盐\"样（粗颗粒弥散分布），核仁不明显。胞浆中等量嗜酸性颗粒状，含丰富的神经分泌颗粒（电镜可见致密核心颗粒）。核分裂象罕见（多<2/10HPF），Ki-67通常<3%。浸润肌层和肠系膜脂肪常见但不等于恶性行为差。部分阑尾NET含有嗜银颗粒细胞成分（杯状细胞NET/腺类癌），预后和处理不同，需注意鉴别。",
+    "keyFeatures": [
+      "最常见阑尾肿瘤",
+      "多偶然发现，多位于阑尾尖端",
+      "Syn / CgA / INSM1 阳性",
+      "风险评估看大小、系膜侵犯、核分裂、Ki-67",
+      "< 1 cm 大多阑尾切除即可，> 2 cm 需考虑右半结肠切除"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": "最敏感NE标记"
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "阳性",
+        "note": "特异性高"
+      },
+      {
+        "marker": "CD56",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "多 < 3%",
+        "note": "分级关键"
+      },
+      {
+        "marker": "INSM1",
+        "result": "阳性",
+        "note": "新一代NE核标记"
+      }
+    ],
+    "molecularFeatures": "分子改变较少，与胰腺、支气管 NET 有部分重叠。",
+    "differentialDiagnosis": [
+      "carcinoid-tumor",
+      "colorectal-adenocarcinoma"
+    ],
+    "grading": "WHO G1 / G2 / G3（基于 Ki-67 和核分裂）",
+    "staging": "AJCC TNM 第 8 版",
+    "prognosis": "< 1 cm 预后极好，5 年生存接近 100%；> 2 cm 风险升高。",
+    "treatment": "< 1 cm 单纯阑尾切除；> 2 cm 或伴系膜侵犯、淋巴结受累时行右半结肠切除。",
+    "images": [
+      {
+        "url": "/diagrams/tubular.svg",
+        "caption": "NET 的器官样巢状结构：均匀细胞被血管间隔"
+      },
+      {
+        "url": "/diagrams/appendiceal-net-gross.svg",
+        "caption": "大体：阑尾尖端黄白色实性结节，切面质韧，边界尚清，直径约 1.2 cm，未累及浆膜"
+      },
+      {
+        "url": "/diagrams/appendiceal-net-low-power.svg",
+        "caption": "低倍（HE）：肿瘤细胞呈实性巢状、小梁状及菊形团样排列，浸润阑尾肌层，间质富含纤细纤维血管"
+      },
+      {
+        "url": "/diagrams/appendiceal-net-high-power.svg",
+        "caption": "高倍（HE）：瘤细胞形态一致，胞质嗜酸性细颗粒状，核圆形，染色质呈特征性'椒盐样'分布，核分裂象罕见"
+      },
+      {
+        "url": "/diagrams/appendiceal-net-ihc-syn-cga.svg",
+        "caption": "IHC（Syn/CgA）：瘤细胞胞质弥漫强阳性表达 Syn 与 CgA，Ki-67 增殖指数 <3%，支持 G1 级神经内分泌肿瘤诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胃肠胰神经内分泌肿瘤诊疗指南 2022 (CSCO, 2022)",
+      "[国内共识] 中国胃肠胰神经内分泌肿瘤专家共识（2020版） (中国抗癌协会神经内分泌肿瘤专业委员会, 2020)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）神经内分泌肿瘤诊疗指南（2022版） (中国临床肿瘤学会（CSCO）, 2022)"
+    ]
+  },
+  {
+    "id": "well-differentiated-net-g1",
+    "nameZh": "高分化神经内分泌肿瘤G1",
+    "nameEn": "Well-Differentiated Neuroendocrine Tumor G1",
+    "aliases": [
+      "NET G1",
+      "类癌"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "消化道神经内分泌肿瘤中最常见的级别，好发于胃、十二指肠、回肠、直肠和阑尾。发病率近年持续上升（部分归因于内镜检出率提高）。回肠NET最常见引起类癌综合征。总体发病率约3-5/10万。",
+    "clinicalFeatures": "多数无症状，经内镜偶然发现。功能性肿瘤可分泌血清素引起类癌综合征（面部潮红、腹泻、支气管痉挛、右心瓣膜病变），但仅在肝转移后出现（绕过肝脏首过效应）。直肠和胃NET多为非功能性。",
+    "grossPathology": "黏膜下黄色至灰白色界限清楚的小结节，质硬，切面均匀，多<2cm。",
+    "microscopy": "低倍镜下肿瘤呈膨胀性或浸润性生长，边界相对清晰，常累及黏膜深层及黏膜下层，可延伸至固有肌层。肿瘤细胞呈特征性的器官样（organoid）排列，形成实性巢状、小梁状、缎带样、腺泡状或菊形团样结构，部分区域可见假腺样或管状排列。间质富含纤细的纤维血管间隔，血窦丰富，呈典型神经内分泌肿瘤的”斑点状”低倍观。肿瘤巢周边细胞常呈栅栏状排列。高倍镜下肿瘤细胞形态单一，呈圆形、卵圆形或多边形，大小一致，胞浆中等量，呈嗜酸性细颗粒状或淡染透亮，胞界较清晰。核居中或偏位，圆形至卵圆形，核膜光滑，染色质呈特征性的”胡椒盐样”（salt-and-pepper）细颗粒状均匀分布，核仁不明显或呈点状嗜酸性小核仁。核异型性轻微，核分裂象罕见，G1 级要求核分裂象 <2/2 mm²（即 <2/10 HPF），Ki-67 增殖指数 <3%。肿瘤组织内一般无坏死，无血管或神经周围侵犯或仅偶见。免疫组化示 Syn、CgA 弥漫强阳性，INSM1 核阳性，CK（AE1/AE3、CAM5.2）呈点状核旁阳性，根据解剖部位可表达特异性激素（如胃泌素、胰高血糖素、胰岛素、5-HT）及转录因子（CDX2、ISL1、PDX1）。鉴别诊断：(1) 神经内分泌癌（NEC）：细胞异型性显著，核分裂象 >20/2 mm²，Ki-67 >20%，常见地图状坏死，可见小细胞或大细胞形态；(2) 高分化 NET G2：形态与 G1 相似，但核分裂象 2–20/2 mm² 或 Ki-67 3–20%，据此严格定量区分；(3) 副神经节瘤及类癌样腺癌需结合部位与免疫组化鉴别。",
+    "keyFeatures": [
+      "均匀细胞呈器官样/小梁/巢状排列",
+      "胡椒盐样染色质",
+      "Ki-67<3%且核分裂<2/10HPF",
+      "Syn/CgA/INSM1三联阳性",
+      "预后好，10年生存率>90%"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "弥漫阳性",
+        "note": "最敏感的神经内分泌标记"
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "弥漫阳性",
+        "note": "特异性高于Syn"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "<3%",
+        "note": "G1定义标准"
+      },
+      {
+        "marker": "INSM1",
+        "result": "阳性",
+        "note": "新一代神经内分泌核标记"
+      },
+      {
+        "marker": "CK",
+        "result": "阳性",
+        "note": "上皮来源确认"
+      }
+    ],
+    "molecularFeatures": "消化道NET的分子改变与部位相关：小肠NET常见CDKN1B突变和18号染色体缺失；胰腺NET常见MEN1、DAXX/ATRX突变。表观遗传改变（DNA甲基化）在NET发生中起重要作用。",
+    "differentialDiagnosis": [
+      "well-differentiated-net-g2",
+      "appendiceal-net",
+      "colorectal-adenocarcinoma"
+    ],
+    "grading": "WHO G1（Ki-67<3%，核分裂<2/10HPF）",
+    "staging": "AJCC TNM第8版（按原发部位分别分期）",
+    "prognosis": "预后良好，局限性5年生存率>95%，10年生存率>90%。转移性G1 NET仍有较长生存（中位>10年）。",
+    "treatment": "局限性肿瘤内镜或手术切除。转移性病例可用生长抑素类似物（奥曲肽LAR、兰瑞肽）控制症状和抑制肿瘤生长。进展者可用依维莫司、舒尼替尼（胰腺NET）或PRRT（177Lu-DOTATATE）。",
+    "images": [
+      {
+        "url": "/diagrams/net-g1-organoid-nests.svg",
+        "caption": "低倍（HE）：肿瘤细胞呈器官样（organoid）排列，形成实性巢状、小梁状及缎带样结构，巢间富含薄壁血窦，间质稀少"
+      },
+      {
+        "url": "/diagrams/net-g1-salt-pepper-chromatin.svg",
+        "caption": "高倍（HE）：瘤细胞大小一致，胞质中等嗜酸性颗粒状，核圆形染色质呈典型'胡椒盐样'（salt-and-pepper），核仁不明显，核分裂象罕见（<2/2 mm²）"
+      },
+      {
+        "url": "/diagrams/net-g1-ihc-syn-cga.svg",
+        "caption": "IHC（Syn / CgA）：肿瘤细胞胞质弥漫强阳性表达突触素（Syn）与嗜铬粒蛋白A（CgA），提示神经内分泌分化"
+      },
+      {
+        "url": "/diagrams/net-g1-ki67-low.svg",
+        "caption": "IHC（Ki-67）：热点区核增殖指数＜3%，符合 WHO 2019 消化系统 NET G1 分级标准"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胃肠胰神经内分泌肿瘤诊疗指南 2022 (CSCO, 2022)",
+      "[国内指南] 中国胃肠胰神经内分泌肿瘤专家共识（2020 年版） (中华医学会, 2020)",
+      "[国内共识] 中国胃肠胰神经内分泌肿瘤病理诊断共识 (中华医学会病理学分会, 2020)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）胃肠胰神经内分泌肿瘤诊疗指南 2022 (中国临床肿瘤学会, 2022)"
+    ]
+  },
+  {
+    "id": "well-differentiated-net-g2",
+    "nameZh": "高分化神经内分泌肿瘤G2",
+    "nameEn": "Well-Differentiated Neuroendocrine Tumor G2",
+    "aliases": [
+      "NET G2"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "消化道神经内分泌肿瘤的中间级别，好发部位与G1相似（胰腺、小肠、直肠等），胰腺NET中G2比例较高。中位诊断年龄约55-65岁。总体发病率随内镜和影像学检查普及而上升。",
+    "clinicalFeatures": "可无症状或出现功能性症状（取决于是否分泌激素），胰腺G2 NET可为功能性（胰岛素瘤、胃泌素瘤等）或非功能性。肝转移后可出现类癌综合征。",
+    "grossPathology": "界限清楚的实性肿块，切面灰白至黄色，质较硬，较G1略大，可伴局灶出血但坏死少见。",
+    "microscopy": "镜下低倍观察，肿瘤呈巢状、小梁状、条索状、缎带状或腺泡样排列，部分区域可见实性片状或菊形团样结构，间质富含薄壁血窦，呈典型神经内分泌肿瘤的器官样（organoid）生长模式。肿瘤边界相对清楚，可见推挤性或轻度浸润性边缘，较 G1 病变更易累及黏膜下层、固有肌层甚至浆膜下层，神经及血管侵犯偶见。肿瘤细胞中等大小，形态较一致，胞浆中等量，呈嗜酸性细颗粒状或双嗜性，胞界欠清；核圆形至卵圆形，居中或偏位，染色质呈特征性的细颗粒状、均匀分散的\"胡椒盐样\"（salt-and-pepper）外观，核仁不明显或呈小而嗜酸性核仁，核膜略增厚，核异型性轻至中度。核分裂象可见，计数范围为 2–20 个/2 mm²（相当于 10 HPF），Ki-67 增殖指数介于 3%–20%，上述两项中取较高级别者作为分级依据（2019 WHO 消化系统肿瘤分类）。肿瘤内通常无肿瘤性坏死，若出现点状坏死需警惕向 NET G3 的分级边界；一旦出现粉刺样或地图样坏死伴核分裂＞20/2 mm²，则提示为神经内分泌癌（NEC）。免疫组化 Syn、CgA 及 INSM1 呈弥漫强阳性，CKpan 胞浆阳性，Ki-67 热点区准确计数。鉴别诊断：① NET G1，核分裂＜2/2 mm²、Ki-67＜3%，形态更温和；② 神经内分泌癌（小细胞/大细胞），细胞显著异型、染色质粗糙、坏死及核分裂象丰富，Ki-67 常＞55%，p53/Rb 异常表达；③ 实性型腺癌或印戒细胞癌，腺样结构及黏液分泌明显，Syn/CgA 阴性而 CDX2、MUC 类标记阳性，可资区别。",
+    "keyFeatures": [
+      "形态高分化但增殖活性高于G1",
+      "Ki-67 3-20%和/或核分裂2-20/10HPF",
+      "与G1形态相似但生物学行为更具侵袭性",
+      "Syn/CgA/INSM1阳性",
+      "需与G3 NET和NEC鉴别"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "弥漫阳性",
+        "note": ""
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "弥漫阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "3-20%",
+        "note": "G2分级的定义标准"
+      },
+      {
+        "marker": "INSM1",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK",
+        "result": "阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "与G1 NET分子特征相似但可有更多基因组不稳定性。胰腺NET中MEN1、DAXX/ATRX突变常见，ATRX/DAXX丢失与端粒替代延长（ALT）和较差预后相关。",
+    "differentialDiagnosis": [
+      "well-differentiated-net-g1",
+      "well-differentiated-net-g3",
+      "large-cell-nec",
+      "appendiceal-net"
+    ],
+    "grading": "WHO G2（Ki-67 3-20%，核分裂2-20/10HPF）",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "中等预后，5年生存率约65-80%（取决于分期和部位）。转移性G2 NET中位生存约5-8年。",
+    "treatment": "手术切除是局限性病例的首选治疗。转移性病例用生长抑素类似物（SSA）作为一线治疗，进展后可用依维莫司、舒尼替尼（胰腺）、替莫唑胺方案或PRRT（177Lu-DOTATATE）。",
+    "images": [
+      {
+        "url": "/diagrams/net-g2-low-power.svg",
+        "caption": "低倍（HE）：高分化神经内分泌肿瘤G2，肿瘤细胞呈器官样、小梁状及实性巢状排列，周围见丰富的纤细血管网，间质稀少"
+      },
+      {
+        "url": "/diagrams/net-g2-high-power.svg",
+        "caption": "高倍（HE）：瘤细胞大小较一致，核圆形至卵圆形，染色质呈特征性\"椒盐样\"分布，胞浆中等量嗜酸性，核分裂象 2–20 个/2 mm²"
+      },
+      {
+        "url": "/diagrams/net-g2-ihc-syn-cga.svg",
+        "caption": "IHC（Syn/CgA）：瘤细胞胞浆弥漫强阳性表达突触素（Syn）与嗜铬粒蛋白A（CgA），提示神经内分泌分化"
+      },
+      {
+        "url": "/diagrams/net-g2-ki67.svg",
+        "caption": "IHC（Ki-67）：热点区核增殖指数介于 3%–20% 之间，符合 WHO 2019 消化系统 NET G2 分级标准"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 神经内分泌肿瘤诊疗指南 2022 (CSCO, 2022)",
+      "[国内指南] 中国胃肠胰神经内分泌肿瘤专家共识（2020年版） (中华医学会病理学分会, 2020)",
+      "[国内共识] 中国胃肠胰神经内分泌肿瘤专家共识（2020版） (中国抗癌协会神经内分泌肿瘤专业委员会, 2020)",
+      "[国内共识] CSCO胃肠胰神经内分泌肿瘤诊疗指南（2022） (中国临床肿瘤学会（CSCO）, 2022)"
+    ]
+  },
+  {
+    "id": "well-differentiated-net-g3",
+    "nameZh": "高分化神经内分泌肿瘤G3",
+    "nameEn": "Well-Differentiated Neuroendocrine Tumor G3",
+    "aliases": [
+      "NET G3",
+      "高增殖高分化NET"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "2019年WHO第5版消化系统肿瘤分类新设立的类别，占消化道神经内分泌肿瘤约5-10%。胰腺是最常见的原发部位。将高分化形态但Ki-67>20%的肿瘤从NEC中独立出来，因其生物学行为和治疗反应不同于NEC。",
+    "clinicalFeatures": "多数为非功能性，表现为腹痛、体重减轻、肝转移相关症状。诊断时多为晚期（60-70%已有远处转移）。",
+    "grossPathology": "较大的实性肿块，切面灰白至灰黄色，可伴局灶坏死但不如NEC广泛，界限较NEC清楚。",
+    "microscopy": "低倍镜下肿瘤呈器官样结构，可见实性巢团状、梁索状、小梁状、腺泡样或菊形团样排列，间质富含纤细的血窦样毛细血管网，此种'神经内分泌样'构筑模式与低级别 NET（G1/G2）基本一致，是区别于神经内分泌癌（NEC）的关键结构特征。瘤巢边界相对清晰，可见推挤性或浸润性生长，部分病例可见血管及神经周围浸润，但不出现 NEC 典型的弥漫片状、地图状坏死。中倍镜下瘤细胞形态较一致，多呈中等大小的圆形、多边形或柱状，胞浆中等量、嗜双色性或淡嗜酸性，可含细颗粒状分泌颗粒，胞界较清；少数病例可见透明细胞样或嗜酸细胞样变。高倍镜下核呈圆形或卵圆形，染色质呈典型的'胡椒盐'样细颗粒状分布，核仁多不明显或呈小而嗜酸性点状，核膜较规则，核多形性轻至中度，显著弱于 NEC。核分裂象明显增多是 G3 的核心诊断线索，按 WHO 5th 消化系统标准需达 >20/2 mm²（即 >20/10 HPF），或 Ki-67 增殖指数 >20%，多数位于 20%–55% 区间，罕见超过 55%；常不见非典型核分裂。肿瘤性坏死可缺如或仅见灶状点状坏死，不出现 NEC 的粉刺样或大片地图状凝固性坏死。免疫组化 Syn、CgA、INSM1 弥漫强阳性，Ki-67 热点区计数；分子层面常保留 MEN1、DAXX/ATRX 改变，Rb 表达保留、p53 野生型模式，可据此与小/大细胞 NEC 鉴别。鉴别诊断：①大细胞神经内分泌癌（LCNEC）——细胞异型性显著、核仁明显、片状坏死、Rb 缺失/p53 异常、Ki-67 常 >55%；②NET G2——核分裂≤20/2 mm² 且 Ki-67≤20%，形态与 G3 高度重叠，需严格计数区分。",
+    "keyFeatures": [
+      "高分化形态+Ki-67>20%（通常20-55%）",
+      "Rb保留表达+p53野生型（区别于NEC）",
+      "2019 WHO新分类实体",
+      "对铂类化疗反应差于NEC",
+      "胰腺最常见原发部位"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "弥漫阳性",
+        "note": ""
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "弥漫阳性",
+        "note": "NET G3常强阳性（NEC中CgA常减弱）"
+      },
+      {
+        "marker": "Ki-67",
+        "result": ">20%（通常20-55%）",
+        "note": "G3定义标准但通常<55%"
+      },
+      {
+        "marker": "INSM1",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Rb",
+        "result": "保留表达",
+        "note": "NEC中常丢失"
+      },
+      {
+        "marker": "p53",
+        "result": "野生型模式",
+        "note": "NEC中常异常（弥漫强阳或完全缺失）"
+      }
+    ],
+    "molecularFeatures": "分子特征更接近低级别NET而非NEC：胰腺NET G3常见MEN1、DAXX/ATRX突变，保留TP53和RB1；而NEC则以TP53和RB1失活为特征。ATRX/DAXX丢失在NET G3中多见。",
+    "differentialDiagnosis": [
+      "well-differentiated-net-g2",
+      "large-cell-nec",
+      "mixed-neuroendocrine-non-neuroendocrine-neoplasm"
+    ],
+    "grading": "WHO G3（Ki-67>20%，核分裂>20/10HPF，但形态高分化）",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "预后介于G2 NET和NEC之间，5年生存率约30-50%。对铂类化疗反应率低于NEC（约15-30% vs 50-60%）。",
+    "treatment": "手术切除适用于局限性病例。转移性NET G3对铂类化疗反应差，替莫唑胺为基础的方案（CAPTEM）在胰腺NET G3中疗效较好。依维莫司和PRRT也可考虑。SSA仍可用于Ki-67较低的NET G3。",
+    "images": [
+      {
+        "url": "/diagrams/net-g3-organoid-pattern.svg",
+        "caption": "低倍（HE）：肿瘤细胞呈巢状、小梁状及器官样排列，间质富于薄壁血管，浸润性生长但保留高分化神经内分泌肿瘤的结构特征"
+      },
+      {
+        "url": "/diagrams/net-g3-uniform-cells-mitosis.svg",
+        "caption": "高倍（HE）：瘤细胞形态相对一致，核圆形至卵圆形，染色质呈'胡椒盐'样，核仁不显著，可见核分裂象（>20/2 mm²）但无小细胞/大细胞癌的显著多形性与坏死"
+      },
+      {
+        "url": "/diagrams/net-g3-ihc-syn-cga.svg",
+        "caption": "IHC（Syn/CgA）：瘤细胞胞浆弥漫强阳性，提示神经内分泌分化，支持高分化 NET 诊断"
+      },
+      {
+        "url": "/diagrams/net-g3-ki67-high.svg",
+        "caption": "IHC（Ki-67）：热点区核增殖指数 >20%（多数介于 20–55%），据此将其与 G1/G2 NET 区分，而形态学高分化特征使其区别于 NEC"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胃肠胰神经内分泌肿瘤诊疗指南 2022 (CSCO, 2022)",
+      "[国内共识] 胃肠胰神经内分泌肿瘤诊疗指南（2022） (中国临床肿瘤学会（CSCO）, 2022)",
+      "[国内共识] 中国胃肠胰神经内分泌肿瘤病理诊断共识 (中华医学会病理学分会消化疾病学组, 2020)"
+    ]
+  },
+  {
+    "id": "large-cell-nec",
+    "nameZh": "大细胞神经内分泌癌",
+    "nameEn": "Large Cell Neuroendocrine Carcinoma",
+    "aliases": [
+      "LCNEC",
+      "大细胞NEC"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "罕见但高度侵袭性的消化道恶性肿瘤，占消化道恶性肿瘤不到1%。可发生于食管、胃、结直肠、胰腺和胆道等任何消化道部位。好发于老年人（中位年龄约65-70岁），男性稍多见。常与吸烟和其他上皮性肿瘤（腺癌）共存。",
+    "clinicalFeatures": "病程短、进展快，常表现为腹痛、体重减轻、消化道出血、肝大（肝转移常见）。诊断时>60%已有远处转移。可伴副肿瘤综合征。",
+    "grossPathology": "较大的浸润性肿块，切面灰白色，质脆，伴广泛出血和坏死，边界不清。常浸润周围组织和脉管。",
+    "microscopy": "低倍镜下，肿瘤呈器官样（organoid）、梁索状、菊形团样或实性巢团状生长，周边常见栅栏状排列，巢团中央可见地图状或粉刺样坏死，坏死灶广泛且常见核碎片。间质血窦丰富，可见血管浸润及神经周围侵犯。肿瘤细胞体积较大，胞浆中等至丰富，呈嗜酸性或淡染颗粒状，细胞边界较清；核浆比高于典型类癌但较小细胞神经内分泌癌为低。核呈圆形、卵圆形或多边形，大小不一，染色质呈粗颗粒状或空泡状，核仁明显且常为嗜酸性大核仁，这是与小细胞癌鉴别的重要线索。核分裂象活跃，通常 > 10/2 mm²（常达 40–80/2 mm²），病理性核分裂易见，Ki-67 增殖指数多 > 40%–80%。可见单个细胞凋亡、散在奇异核及瘤巨细胞，局部可出现 Azzopardi 现象（DNA 沉积于血管壁呈嗜碱性）。免疫组化至少一种神经内分泌标记物（Syn、CgA、CD56、INSM1）弥漫阳性，其中 INSM1 敏感性最高；CK（AE1/AE3）多呈点状核旁阳性，TTF-1 在肺源性中约 50% 阳性，Rb 常缺失，p53 异常表达。鉴别诊断：① 小细胞神经内分泌癌——细胞体积小（< 3 倍淋巴细胞）、胞浆稀少、染色质细颗粒状、核仁不明显、挤压变形（crush artifact）明显；② 不典型类癌（NET G2）——核分裂 2–10/2 mm²、无或仅灶性点状坏死、核仁不突出、Ki-67 多 < 20%；③ 低分化腺癌或基底样鳞癌伴神经内分泌分化——前者腺腔/黏液明显，后者 p40/CK5/6 弥漫阳性而神经内分泌标记多为局灶。",
+    "keyFeatures": [
+      "大细胞+高度核异型+广泛坏死",
+      "Ki-67通常>50%，常>80%",
+      "Rb丢失+p53异常是与NET G3的关键鉴别点",
+      "Syn阳性/CgA灶状阳性",
+      "对铂类化疗初始反应好但快速耐药"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": "最可靠的NEC神经内分泌标记"
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "灶状阳性或弱阳性",
+        "note": "NEC中CgA表达常低于NET"
+      },
+      {
+        "marker": "Ki-67",
+        "result": ">50%（常>80%）",
+        "note": "极高增殖活性"
+      },
+      {
+        "marker": "Rb",
+        "result": "表达丢失",
+        "note": "RB1基因失活的标志"
+      },
+      {
+        "marker": "p53",
+        "result": "异常模式（弥漫强阳或完全缺失）",
+        "note": "TP53突变标志"
+      },
+      {
+        "marker": "TTF-1",
+        "result": "灶状阳性（肺原发时）",
+        "note": "有助于判断肺来源，消化道原发多阴性"
+      }
+    ],
+    "molecularFeatures": "以TP53和RB1双失活为分子特征（>90%），区别于NET G3。可伴KRAS、BRAF、APC等与来源器官腺癌共有的突变，支持NEC可能从腺癌去分化而来的假说。基因组高度不稳定。",
+    "differentialDiagnosis": [
+      "well-differentiated-net-g3",
+      "mixed-neuroendocrine-non-neuroendocrine-neoplasm",
+      "colorectal-adenocarcinoma",
+      "gastric-adenocarcinoma"
+    ],
+    "grading": "高级别（NEC仅分大细胞型和小细胞型，不再分级）",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "预后极差，中位生存约10-15个月。5年生存率<15%。诊断时多为晚期，初始对铂类化疗有一定反应但快速复发。",
+    "treatment": "参照小细胞肺癌方案：顺铂/卡铂+依托泊苷为一线化疗。免疫检查点抑制剂（阿替利珠单抗）联合化疗在小细胞肺癌中有获益，消化道NEC中也在探索。局限性病例可考虑手术+辅助化疗。",
+    "images": [
+      {
+        "url": "/diagrams/lcnec-organoid-low.svg",
+        "caption": "低倍（HE）：肿瘤细胞呈器官样、小梁状及巢状排列，伴周边栅栏状结构，可见地图样坏死及高核分裂活性区"
+      },
+      {
+        "url": "/diagrams/lcnec-large-cells-high.svg",
+        "caption": "高倍（HE）：肿瘤细胞体积较大，胞质中等至丰富，核呈空泡状，核仁明显，核分裂象 >10/2 mm²（典型 >70/2 mm²），与小细胞癌鉴别"
+      },
+      {
+        "url": "/diagrams/lcnec-ihc-syn-cga.svg",
+        "caption": "IHC（Syn/CgA/INSM1）：神经内分泌标记物胞浆弥漫阳性（至少 1 项表达），支持神经内分泌分化诊断"
+      },
+      {
+        "url": "/diagrams/lcnec-ihc-ki67.svg",
+        "caption": "IHC（Ki-67）：核增殖指数显著增高（通常 >40%–80%），与高级别神经内分泌癌生物学行为一致"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胃肠胰神经内分泌肿瘤诊疗指南 2022 (CSCO, 2022)",
+      "[国内指南] 中国胃肠胰神经内分泌肿瘤专家共识（2020 版） (中国临床肿瘤学会, 2020)",
+      "[国内共识] 中国胃肠胰神经内分泌肿瘤专家共识（2020版） (中国临床肿瘤学会（CSCO）神经内分泌肿瘤专家委员会, 2020)",
+      "[国内共识] 胃肠胰神经内分泌肿瘤病理诊断共识 (中华医学会病理学分会, 2020)"
+    ]
+  },
+  {
+    "id": "mixed-neuroendocrine-non-neuroendocrine-neoplasm",
+    "nameZh": "混合性神经内分泌-非神经内分泌肿瘤MiNEN",
+    "nameEn": "Mixed Neuroendocrine-Non-Neuroendocrine Neoplasm",
+    "aliases": [
+      "MiNEN",
+      "MANEC",
+      "混合性腺神经内分泌癌"
+    ],
+    "organ": "gi",
+    "category": "malignant",
+    "epidemiology": "罕见肿瘤，占消化道恶性肿瘤不到1%。最常见于结直肠、胃和阑尾，也见于胰胆管系统。好发于老年人（中位年龄约60-70岁）。2019年WHO分类将原MANEC概念扩展为MiNEN，允许任何类型的神经内分泌和非神经内分泌成分组合。",
+    "clinicalFeatures": "症状取决于原发部位和优势成分，表现与该部位常见恶性肿瘤相似（腹痛、体重减轻、消化道出血、梗阻等），功能性症状少见。",
+    "grossPathology": "浸润性肿块，外观取决于优势成分，切面可见不同质地和颜色的混合区域，NEC成分区域常伴坏死。",
+    "microscopy": "混合性神经内分泌-非神经内分泌肿瘤（MiNEN）镜下呈现双相分化特征，两种成分各自占比不少于30%方可诊断。低倍镜下可见肿瘤呈多结节或弥漫浸润性生长，两种成分常相互交织、彼此毗邻，或呈碰撞瘤样分布；部分病例两种成分之间有清晰分界，部分则呈渐进性移行。神经内分泌成分多表现为神经内分泌癌（NEC）形态，包括小细胞型与大细胞型：小细胞型癌细胞体积小，胞浆稀少，核浆比高，核染色质呈细颗粒状（椒盐状），核仁不明显，可见核塑形及广泛坏死，核分裂象常＞20/2mm²；大细胞型癌细胞体积较大，呈多边形，胞浆中等量嗜双色或嗜酸性，核呈空泡状，核仁明显嗜酸性，排列呈器官样、梁状、菊形团或栅栏状巢团结构，中央常见粉刺样坏死。非神经内分泌成分以腺癌最为常见，呈腺管状、筛状或乳头状结构，腺腔内可见黏液或坏死碎屑，肿瘤细胞呈柱状或立方状，核深染、极性紊乱；部分病例非神经内分泌成分为鳞状细胞癌，可见角化珠及细胞间桥。核特征方面，神经内分泌成分核分裂活跃（常＞20/2mm²），Ki-67增殖指数多＞55%，提示高级别；非神经内分泌成分分化程度可为中-低分化。免疫组化示神经内分泌成分Syn、CgA、INSM1弥漫阳性，而腺癌成分CK20/CK7/CDX2等谱系标记阳性、神经内分泌标记阴性。鉴别诊断：（1）伴神经内分泌分化的腺癌——仅灶状Syn/CgA阳性，神经内分泌成分＜30%，不足以诊断MiNEN；（2）单纯大细胞神经内分泌癌（LCNEC）——无明确非神经内分泌成分，全瘤呈器官样、菊形团样结构且神经内分泌标记弥漫一致阳性，可资区别。",
+    "keyFeatures": [
+      "NE和非NE成分各占>30%",
+      "需分别评估两种成分的级别和特征",
+      "NE成分Syn+/CgA+",
+      "非NE成分按来源器官免疫标记评估",
+      "预后取决于最高级别的成分"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "NE成分阳性",
+        "note": "需在NE成分区域评估"
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "NE成分阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "NE和非NE成分分别评估",
+        "note": "NEC成分通常>50%"
+      },
+      {
+        "marker": "CK20",
+        "result": "非NE腺癌成分可阳性",
+        "note": "结直肠来源标记"
+      },
+      {
+        "marker": "CDX2",
+        "result": "非NE腺癌成分可阳性",
+        "note": "肠道分化标记"
+      }
+    ],
+    "molecularFeatures": "两种成分常共享部分分子改变（如TP53、APC、KRAS突变），支持共同克隆起源假说。NEC成分额外获得RB1失活和TP53突变。全基因组测序显示两种成分有高度克隆相关性。",
+    "differentialDiagnosis": [
+      "large-cell-nec",
+      "well-differentiated-net-g3",
+      "colorectal-adenocarcinoma",
+      "gastric-adenocarcinoma"
+    ],
+    "grading": "按各成分分别分级（NE成分按NET/NEC标准，非NE成分按WHO组织学分级）",
+    "staging": "AJCC TNM第8版（按来源器官分期）",
+    "prognosis": "预后取决于最高级别成分，含NEC成分者预后差（类似于纯NEC），中位生存约12-20个月。含高分化NET+腺癌组合者预后相对较好。",
+    "treatment": "治疗策略应针对最具侵袭性的成分。含NEC成分者参照NEC方案（铂类+依托泊苷化疗），含腺癌成分者可同时考虑针对腺癌的靶向治疗。局限性病例可手术切除+辅助化疗。",
+    "images": [
+      {
+        "url": "/diagrams/minen-low-power-biphasic.svg",
+        "caption": "低倍（HE）：双相性结构示意，一侧为腺样/鳞状非神经内分泌成分，另一侧为实性巢状/器官样神经内分泌成分，两者界限相对清晰并相互毗邻，各成分占比≥30%"
+      },
+      {
+        "url": "/diagrams/minen-high-power-nec-component.svg",
+        "caption": "高倍（HE）：神经内分泌癌成分，小-中等细胞呈实性片状/菊形团样排列，核浆比高，染色质细颗粒状，可见大量核分裂象及地图样坏死"
+      },
+      {
+        "url": "/diagrams/minen-high-power-adenocarcinoma-component.svg",
+        "caption": "高倍（HE）：非神经内分泌成分（腺癌），不规则腺管状结构伴黏液分泌及促纤维结缔组织增生，细胞呈柱状，核极性部分丧失"
+      },
+      {
+        "url": "/diagrams/minen-ihc-syn-cga.svg",
+        "caption": "IHC（Syn / CgA / INSM1）：神经内分泌成分胞浆弥漫强阳性，相邻腺癌成分阴性；CK7/CDX2 则在腺癌成分阳性而神经内分泌成分阴性或弱阳，Ki-67 增殖指数在 NEC 区域常>55%"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胃肠胰神经内分泌肿瘤诊疗指南 2022 (CSCO, 2022)",
+      "[国内共识] 胃肠胰神经内分泌肿瘤诊疗指南（2022） (中国临床肿瘤学会（CSCO）, 2022)",
+      "[国内共识] 中国胃肠胰神经内分泌肿瘤病理诊断共识 (中华医学会病理学分会, 2021)"
+    ]
+  },
+  {
+    "id": "appendiceal-mucinous-neoplasm",
+    "nameZh": "阑尾黏液性肿瘤",
+    "nameEn": "Low-Grade Appendiceal Mucinous Neoplasm",
+    "aliases": [
+      "LAMN",
+      "阑尾低级别黏液性肿瘤",
+      "阑尾黏液囊肿"
+    ],
+    "organ": "gi",
+    "category": "other",
+    "epidemiology": "阑尾黏液性肿瘤是阑尾第二常见的肿瘤类型，多在阑尾切除术中偶然发现，好发于50-60岁成人，无明显性别差异。",
+    "clinicalFeatures": "多数无症状，因急性阑尾炎或影像学偶然发现。部分患者表现为右下腹痛或可扪及包块。破裂后黏液扩散至腹腔可导致腹膜假黏液瘤（PMP）。",
+    "grossPathology": "阑尾扩张呈囊状，腔内充满黏稠胶冻样黏液，壁菲薄，直径可达数厘米。切面见黏液湖和扁平的黏膜。",
+    "microscopy": "低级别阑尾黏液性肿瘤（Low-Grade Appendiceal Mucinous Neoplasm, LAMN）镜下以阑尾腔扩张、腔内大量黏液潴留为基本结构特征。低倍镜下，阑尾壁黏膜正常隐窝结构消失，被覆上皮呈推挤性生长，表现为扁平、波浪状、锯齿状或绒毛状排列，部分区域可见上皮脱落漂浮于黏液湖中。肿瘤性上皮多为单层柱状黏液上皮，胞浆丰富、透亮，充满黏液空泡，细胞核位于基底部呈铅笔状，细胞极性保存。核特征呈低级别异型：核轻度增大、长椭圆形、染色质细腻均匀，核仁不明显，核分裂象罕见（<1/10HPF），无病理性核分裂。黏膜固有层常萎缩或纤维化，黏膜肌层常被压迫、断裂、消失，为 LAMN 的特征性改变之一。阑尾壁常见透壁性纤维化、钙化、玻璃样变，黏液可推挤性浸润至黏膜下层、肌层乃至浆膜层，但无促结缔组织增生性间质反应、无肿瘤细胞团簇在间质内破坏性浸润。若黏液及（或）肿瘤性上皮突破浆膜，则归为 pTis/pT4a 并提示腹膜假黏液瘤（Pseudomyxoma Peritonei, PMP）风险。分级线索：上皮仅呈低级别异型、腺体结构未见复杂筛状或背靠背排列、无单个细胞浸润或印戒细胞——若出现高级别核异型（核深染、核浆比升高、核仁明显、核分裂活跃）则应诊断为高级别阑尾黏液性肿瘤（HAMN）；若见明确破坏性浸润或印戒细胞，则诊断为阑尾黏液腺癌。鉴别要点：（1）阑尾黏液囊肿/潴留囊肿——上皮无异型，为正常单层黏液柱状上皮，无推挤、锯齿或绒毛结构，KRAS/GNAS 多为野生型；（2）阑尾浸润性黏液腺癌——可见促纤维间质反应、不规则浸润性腺体或漂浮于黏液湖中的印戒样细胞簇，核异型明显，核分裂活跃，有别于 LAMN 的推挤性边界与低级别核。",
+    "keyFeatures": [
+      "阑尾腔扩张伴黏液潴留",
+      "低级别柱状黏液上皮+波浪状/绒毛状排列",
+      "CK20+/CDX2+/CK7-/MUC2+",
+      "KRAS突变常见（约60-80%）",
+      "破裂可致腹膜假黏液瘤（PMP）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK20",
+        "result": "阳性",
+        "note": "结直肠/阑尾来源标记"
+      },
+      {
+        "marker": "CDX2",
+        "result": "阳性",
+        "note": "肠道分化标记"
+      },
+      {
+        "marker": "CK7",
+        "result": "阴性",
+        "note": "区别于卵巢/胰胆管来源"
+      },
+      {
+        "marker": "MUC2",
+        "result": "阳性",
+        "note": "黏液分泌标记"
+      },
+      {
+        "marker": "MUC5AC",
+        "result": "阳性",
+        "note": "胃型黏液标记"
+      }
+    ],
+    "molecularFeatures": "KRAS突变约60-80%（以G12D/G12V最常见），GNAS突变约50%。TP53突变罕见（出现时提示高级别）。BRAF突变通常阴性。",
+    "differentialDiagnosis": [
+      "colorectal-adenocarcinoma",
+      "appendiceal-net",
+      "gastric-adenocarcinoma"
+    ],
+    "grading": "低级别（LAMN）/ 高级别（HAMN）",
+    "staging": "AJCC TNM第8版（Tis-T4a根据黏液扩散程度）",
+    "prognosis": "完整切除的LAMN预后极好。破裂伴腹膜播散者（PMP）预后取决于细胞学级别和减瘤手术完整性，低级别PMP 10年生存率约60-70%。",
+    "treatment": "LAMN局限于阑尾者单纯阑尾切除即可。切缘阳性或基底受累者需盲肠切除或右半结肠切除。PMP需行细胞减灭术（CRS）+腹腔热灌注化疗（HIPEC）。",
+    "images": [
+      {
+        "url": "/diagrams/lamn-gross.svg",
+        "caption": "大体：阑尾腔显著扩张呈囊状，壁变薄，腔内充满胶冻状黏液，浆膜面光滑无明显结节"
+      },
+      {
+        "url": "/diagrams/lamn-low-power-he.svg",
+        "caption": "低倍（HE）：阑尾固有肌层萎缩消失，黏膜呈推挤性生长的绒毛状或扁平状增生，间质纤维化伴玻璃样变，腔内大量细胞外黏液"
+      },
+      {
+        "url": "/diagrams/lamn-high-power-he.svg",
+        "caption": "高倍（HE）：低级别黏液柱状上皮，细胞核小、深染、位于基底部，极性保存，无复杂腺体结构及浸润性生长"
+      },
+      {
+        "url": "/diagrams/lamn-pseudomyxoma-peritonei.svg",
+        "caption": "低倍（HE）：腹膜假黏液瘤背景，纤维组织中见无细胞性黏液湖或少量漂浮的低级别黏液上皮条带"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内共识] 腹膜假黏液瘤诊治中国专家共识 (中国抗癌协会胃癌专业委员会腹膜转移分委会, 2019)",
+      "[国内共识] 阑尾肿瘤腹膜转移诊治中国专家共识 (中国抗癌协会肿瘤腹膜转移治疗专业委员会, 2020)"
+    ]
+  }
 ]

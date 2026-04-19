@@ -9,6 +9,7 @@ import { FormRenderer } from './FormRenderer';
 import { FlowchartEditor } from './FlowchartEditor';
 import { ReportTemplateEditor } from './ReportTemplateEditor';
 import { EntityRefArraySelector, EntityRefSelector } from './EntityRefSelector';
+import { classifyConsensusSource } from '@/lib/consensusSource';
 
 // ── Types ──────────────────────────────────────────────────────────
 
@@ -1019,11 +1020,16 @@ function DiseaseEditor({
       {/* References */}
       <section className="rounded-lg p-4" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
         <h3 className="text-xs font-semibold mb-2" style={{ color: 'var(--accent)' }}>参考来源</h3>
+        <p className="text-[11px] mb-2" style={{ color: 'var(--fg-muted)' }}>
+          以 <code>[国内指南]</code> 或 <code>[国内共识]</code> 开头的条目（含 <code>(机构, 年份)</code> 后缀）
+          会被前台自动解析进「共识/指南 → 国内」分组。结构化条目（含 PDF / 链接）请用下方
+          「共识/指南」区块。
+        </p>
         <StringArrayEditor
-          label={'references（文字引用，结构化条目请用"文献参考"区块）'}
+          label={'references（纯文字引用）'}
           items={draft.references || []}
           onChange={v => patch('references', v)}
-          placeholder="如 WHO Thoracic Tumours, 5th Ed"
+          placeholder="如 [国内指南] CSCO 乳腺癌诊疗指南 2024 (CSCO, 2024)"
         />
       </section>
 
@@ -1032,7 +1038,7 @@ function DiseaseEditor({
           <ConsensusEditor
             items={draft.expertConsensus || []}
             onChange={v => patch('expertConsensus', v)}
-            onSave={() => save({ expertConsensus: draft.expertConsensus || [] }, '专家共识')}
+            onSave={() => save({ expertConsensus: draft.expertConsensus || [] }, '共识/指南')}
             busy={busy}
             scope={`diseases/${draft.id}/consensus`}
           />
@@ -1307,7 +1313,7 @@ function MarkerEditor({
           <ConsensusEditor
             items={draft.expertConsensus || []}
             onChange={v => patch('expertConsensus', v)}
-            onSave={() => save({ expertConsensus: draft.expertConsensus || [] }, '专家共识')}
+            onSave={() => save({ expertConsensus: draft.expertConsensus || [] }, '共识/指南')}
             busy={busy}
             scope={`markers/${draft.id}/consensus`}
           />
@@ -1389,25 +1395,56 @@ function ConsensusEditor({
     ]);
   };
 
+  // Counts by source so editors see the spread at a glance — derived from
+  // the same regex the viewer uses to bucket items.
+  const counts = items.reduce(
+    (acc, c) => {
+      const src = classifyConsensusSource(c.organization, c.title);
+      acc[src]++;
+      return acc;
+    },
+    { who: 0, us: 0, cn: 0 } as Record<'who' | 'us' | 'cn', number>,
+  );
+
   return (
     <section>
-      <SectionHead title="专家共识" onAdd={add} onSave={onSave} busy={busy} />
+      <SectionHead title="共识/指南" onAdd={add} onSave={onSave} busy={busy} />
+      <p className="text-[11px] mb-2" style={{ color: 'var(--fg-muted)' }}>
+        前台按 <strong>机构</strong> 字段自动归入「🌐 WHO / 🇺🇸 美国 / 🇨🇳 国内」三个来源分组。
+        当前分布：🌐 {counts.who} · 🇺🇸 {counts.us} · 🇨🇳 {counts.cn}
+      </p>
       <div className="space-y-3">
         {items.length === 0 && (
           <p className="text-xs" style={{ color: 'var(--fg-muted)' }}>暂无条目，点击右上角 &quot;+ 新增&quot; 添加</p>
         )}
         {items.map((c, i) => (
           <div key={c.id} className="rounded-lg p-3 space-y-2" style={{ background: 'var(--card-hover)', border: '1px solid var(--border)' }}>
+            <div className="flex items-center gap-2 mb-1">
+              <SourceBadge organization={c.organization} title={c.title} />
+              <span className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>
+                根据机构名自动归类
+              </span>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               <Field label="标题" value={c.title} onChange={v => update(i, { title: v })} span={3} />
-              <Field label="机构" value={c.organization || ''} onChange={v => update(i, { organization: v })} />
+              <Field label="机构（决定来源分组）" value={c.organization || ''} onChange={v => update(i, { organization: v })} />
               <Field label="年份" value={c.year?.toString() || ''} onChange={v => update(i, { year: Number(v) || undefined })} />
               <Field label="ID" value={c.id} onChange={v => update(i, { id: v })} mono />
             </div>
             <TextareaField label="简介" value={c.summary} onChange={v => update(i, { summary: v })} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <Field label="源地址 URL（出版商/原始发布页）" value={c.sourceUrl || ''} onChange={v => update(i, { sourceUrl: v })} />
-              <Field label="在线阅览 URL（PubMed/摘要/PDF）" value={c.viewUrl || ''} onChange={v => update(i, { viewUrl: v })} />
+              <Field
+                label="源地址 URL（→ 前台「源地址 ↗」按钮；空则灰显）"
+                value={c.sourceUrl || ''}
+                onChange={v => update(i, { sourceUrl: v })}
+                placeholder="https://www.csco.org.cn/..."
+              />
+              <Field
+                label="在线阅览 URL（→ 前台「在线阅览」按钮；空则灰显）"
+                value={c.viewUrl || ''}
+                onChange={v => update(i, { viewUrl: v })}
+                placeholder="/uploads/... 或 https://..."
+              />
             </div>
             <PdfUploadButton
               scope={`${scope}/${c.id}`}
@@ -1427,6 +1464,24 @@ function ConsensusEditor({
         ))}
       </div>
     </section>
+  );
+}
+
+function SourceBadge({ organization, title }: { organization?: string; title?: string }) {
+  const src = classifyConsensusSource(organization, title);
+  const cfg = {
+    who: { emoji: '🌐', label: 'WHO 国际', tint: '#0ea5e9' },
+    us:  { emoji: '🇺🇸', label: '美国',     tint: '#a855f7' },
+    cn:  { emoji: '🇨🇳', label: '国内',     tint: '#10b981' },
+  }[src];
+  return (
+    <span
+      className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full"
+      style={{ background: `${cfg.tint}1a`, color: cfg.tint, border: `1px solid ${cfg.tint}33` }}
+    >
+      <span aria-hidden>{cfg.emoji}</span>
+      {cfg.label}
+    </span>
   );
 }
 

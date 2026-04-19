@@ -40,6 +40,15 @@ interface Scenario {
   firstLineMarkers: string[];
   secondLineMarkers: string[];
   rules: Rule[];
+  /** Set by enhancement pipeline. Holds China-specific lab IHC panel
+   *  recommendation (firstLine / secondLine markerId arrays + cost note). */
+  _enhance_panel_cn_recommendation?: {
+    panels?: {
+      firstLine?: string[];
+      secondLine?: string[];
+      costNote?: string;
+    };
+  };
 }
 
 interface PanelData {
@@ -597,6 +606,59 @@ export default function PanelBuilderPage() {
           <p style={{ fontSize: 12, color: 'var(--fg-muted)', marginBottom: 16 }}>
             已选择 {checkedMarkers.size} 个标记物
           </p>
+
+          {/* China-specific lab panel recommendation (enhancement) */}
+          {selectedScenario._enhance_panel_cn_recommendation?.panels && (
+            <div
+              style={{
+                marginBottom: 24,
+                padding: 14,
+                borderRadius: 10,
+                background: 'rgba(16,185,129,0.06)',
+                border: '1px solid rgba(16,185,129,0.2)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+                <span aria-hidden>🇨🇳</span>
+                <h4 style={{ fontSize: 13, fontWeight: 600, color: '#10b981', margin: 0 }}>
+                  国内实验室常用套餐（推荐）
+                </h4>
+              </div>
+              {selectedScenario._enhance_panel_cn_recommendation.panels.firstLine && selectedScenario._enhance_panel_cn_recommendation.panels.firstLine.length > 0 && (
+                <div style={{ marginBottom: 8 }}>
+                  <span style={{ fontSize: 11, color: 'var(--fg-muted)', marginRight: 6 }}>一线（必做）：</span>
+                  {selectedScenario._enhance_panel_cn_recommendation.panels.firstLine.map((m) => (
+                    <span key={m} style={{
+                      display: 'inline-block',
+                      fontSize: 11, padding: '2px 8px', borderRadius: 12, marginRight: 4, marginBottom: 4,
+                      background: 'rgba(16,185,129,0.12)', color: '#10b981', fontFamily: 'var(--font-mono)',
+                    }}>
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {selectedScenario._enhance_panel_cn_recommendation.panels.secondLine && selectedScenario._enhance_panel_cn_recommendation.panels.secondLine.length > 0 && (
+                <div style={{ marginBottom: 8 }}>
+                  <span style={{ fontSize: 11, color: 'var(--fg-muted)', marginRight: 6 }}>二线（按需）：</span>
+                  {selectedScenario._enhance_panel_cn_recommendation.panels.secondLine.map((m) => (
+                    <span key={m} style={{
+                      display: 'inline-block',
+                      fontSize: 11, padding: '2px 8px', borderRadius: 12, marginRight: 4, marginBottom: 4,
+                      background: 'var(--card-hover)', color: 'var(--fg)', fontFamily: 'var(--font-mono)',
+                    }}>
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {selectedScenario._enhance_panel_cn_recommendation.panels.costNote && (
+                <p style={{ fontSize: 11, color: 'var(--fg-muted)', marginTop: 6, lineHeight: 1.5 }}>
+                  {selectedScenario._enhance_panel_cn_recommendation.panels.costNote}
+                </p>
+              )}
+            </div>
+          )}
 
           {/* Navigation */}
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>

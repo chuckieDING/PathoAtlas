@@ -24,6 +24,17 @@ interface CompanionDiagnostic {
   line: string;
 }
 
+interface NmpaCdxKit {
+  brand: string;
+  platform: string;
+  nmpaApprovalYear?: number;
+}
+
+interface CscoRecommendation {
+  level?: string;
+  year?: number;
+}
+
 interface MolecularMarker {
   id: string;
   geneSymbol: string;
@@ -38,6 +49,12 @@ interface MolecularMarker {
   tcgaSubtypes: string[];
   clinicalSignificance: string;
   references: string[];
+  /** Set by enhancement pipeline (scripts/enhance/merge.py). Holds
+   *  NMPA-approved CDx test kits + CSCO recommendation level. */
+  _enhance_molecular_cn_cdx?: {
+    nmpaCdxKits?: NmpaCdxKit[];
+    cscoRecommendation?: CscoRecommendation;
+  };
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -354,6 +371,45 @@ function MolecularDetail({ marker: m }: { marker: MolecularMarker }) {
                     </span>
                   </td>
                   <td className="px-4 py-2.5 hidden sm:table-cell" style={{ color: 'var(--fg-muted)' }}>{cdx.line}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {/* NMPA-approved CDx kits (enhancement data) */}
+      {m._enhance_molecular_cn_cdx?.nmpaCdxKits && m._enhance_molecular_cn_cdx.nmpaCdxKits.length > 0 && (
+        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+          <div className="px-5 py-3 flex items-center justify-between gap-2 flex-wrap" style={{ background: 'var(--card)' }}>
+            <h3 className="font-semibold text-sm flex items-center gap-2" style={{ color: 'var(--accent)' }}>
+              <span aria-hidden>🇨🇳</span> NMPA 批准的伴随诊断试剂盒
+            </h3>
+            {m._enhance_molecular_cn_cdx.cscoRecommendation?.level && (
+              <span
+                className="text-[10px] px-2 py-0.5 rounded font-medium"
+                style={{ background: 'rgba(16,185,129,0.12)', color: '#10b981', border: '1px solid rgba(16,185,129,0.25)' }}
+                title={`CSCO ${m._enhance_molecular_cn_cdx.cscoRecommendation.year ?? ''} 推荐`}
+              >
+                CSCO {m._enhance_molecular_cn_cdx.cscoRecommendation.level}
+                {m._enhance_molecular_cn_cdx.cscoRecommendation.year ? ` · ${m._enhance_molecular_cn_cdx.cscoRecommendation.year}` : ''}
+              </span>
+            )}
+          </div>
+          <table className="w-full text-xs">
+            <thead>
+              <tr style={{ background: 'var(--card-hover)' }}>
+                <th className="text-left px-4 py-2.5 font-semibold" style={{ color: 'var(--fg)' }}>试剂盒品牌</th>
+                <th className="text-left px-4 py-2.5 font-semibold" style={{ color: 'var(--fg)' }}>检测平台</th>
+                <th className="text-left px-4 py-2.5 font-semibold" style={{ color: 'var(--fg)' }}>NMPA 批准年份</th>
+              </tr>
+            </thead>
+            <tbody>
+              {m._enhance_molecular_cn_cdx.nmpaCdxKits.map((kit, i) => (
+                <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                  <td className="px-4 py-2.5 font-medium" style={{ color: 'var(--fg)' }}>{kit.brand}</td>
+                  <td className="px-4 py-2.5" style={{ color: 'var(--fg-muted)' }}>{kit.platform}</td>
+                  <td className="px-4 py-2.5 tabular-nums" style={{ color: 'var(--fg-muted)' }}>{kit.nmpaApprovalYear ?? '—'}</td>
                 </tr>
               ))}
             </tbody>

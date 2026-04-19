@@ -6,8 +6,37 @@
     "icon": "🔬",
     "color": "#ec4899",
     "description": "乳腺良恶性肿瘤的病理诊断，包括浸润性癌分子分型、原位癌及良性病变",
-    "commonStains": ["HE", "ER", "PR", "HER2", "Ki-67", "P63", "CK5/6", "E-cadherin"],
-    "keyPatterns": ["导管结构", "小叶结构", "筛状结构", "实性巢团", "微乳头结构", "管状结构"]
+    "commonStains": [
+      "HE",
+      "ER",
+      "PR",
+      "HER2",
+      "Ki-67",
+      "P63",
+      "CK5/6",
+      "E-cadherin"
+    ],
+    "keyPatterns": [
+      "导管结构",
+      "小叶结构",
+      "筛状结构",
+      "实性巢团",
+      "微乳头结构",
+      "管状结构"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 33.82,
+        "mortalityPer100k": 7.57,
+        "year": 2022,
+        "maleFemaleRatio": "1:99",
+        "hotspotRegions": [
+          "华东",
+          "华北",
+          "一线城市"
+        ]
+      }
+    }
   },
   {
     "id": "lung",
@@ -16,8 +45,40 @@
     "icon": "🫁",
     "color": "#3b82f6",
     "description": "肺部肿瘤及非肿瘤性疾病的病理诊断，包括腺癌、鳞癌、小细胞癌及间质性肺病",
-    "commonStains": ["HE", "TTF-1", "Napsin A", "P40", "P63", "CK7", "CK5/6", "Syn", "CgA", "ALK", "PD-L1"],
-    "keyPatterns": ["贴壁生长", "腺泡结构", "乳头结构", "微乳头结构", "实性巢团", "角化珠"]
+    "commonStains": [
+      "HE",
+      "TTF-1",
+      "Napsin A",
+      "P40",
+      "P63",
+      "CK7",
+      "CK5/6",
+      "Syn",
+      "CgA",
+      "ALK",
+      "PD-L1"
+    ],
+    "keyPatterns": [
+      "贴壁生长",
+      "腺泡结构",
+      "乳头结构",
+      "微乳头结构",
+      "实性巢团",
+      "角化珠"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 60.58,
+        "mortalityPer100k": 44.94,
+        "year": 2022,
+        "maleFemaleRatio": "1.93:1",
+        "hotspotRegions": [
+          "东北",
+          "华北",
+          "华东"
+        ]
+      }
+    }
   },
   {
     "id": "gi",
@@ -26,8 +87,43 @@
     "icon": "🔴",
     "color": "#ef4444",
     "description": "食管、胃、小肠、大肠肿瘤及非肿瘤性病变的病理诊断，包括腺癌、间质瘤、淋巴瘤及炎症性肠病",
-    "commonStains": ["HE", "CK7", "CK20", "CDX2", "CD117", "DOG1", "MLH1", "MSH2", "MSH6", "PMS2", "Ki-67"],
-    "keyPatterns": ["腺管结构", "筛状结构", "印戒细胞", "黏液湖", "梭形细胞", "神经内分泌分化"]
+    "commonStains": [
+      "HE",
+      "CK7",
+      "CK20",
+      "CDX2",
+      "CD117",
+      "DOG1",
+      "MLH1",
+      "MSH2",
+      "MSH6",
+      "PMS2",
+      "Ki-67"
+    ],
+    "keyPatterns": [
+      "腺管结构",
+      "筛状结构",
+      "印戒细胞",
+      "黏液湖",
+      "梭形细胞",
+      "神经内分泌分化"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": null,
+        "mortalityPer100k": null,
+        "year": 2022,
+        "maleFemaleRatio": "约2:1",
+        "hotspotRegions": [
+          "华北太行山区",
+          "东北",
+          "东南沿海",
+          "江苏淮河流域",
+          "西北河西走廊"
+        ],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "liver",
@@ -36,8 +132,41 @@
     "icon": "🟤",
     "color": "#92400e",
     "description": "肝脏肿瘤及非肿瘤性疾病的病理诊断，包括肝细胞癌、胆管癌、转移癌及各类肝炎肝硬化",
-    "commonStains": ["HE", "Hepatocyte", "GPC-3", "Arginase-1", "CK7", "CK19", "CD34", "Reticulin", "AFP", "pCEA"],
-    "keyPatterns": ["肝板增厚", "假腺管结构", "透明细胞变", "脂肪变性", "胆管分化", "纤维板层结构"]
+    "commonStains": [
+      "HE",
+      "Hepatocyte",
+      "GPC-3",
+      "Arginase-1",
+      "CK7",
+      "CK19",
+      "CD34",
+      "Reticulin",
+      "AFP",
+      "pCEA"
+    ],
+    "keyPatterns": [
+      "肝板增厚",
+      "假腺管结构",
+      "透明细胞变",
+      "脂肪变性",
+      "胆管分化",
+      "纤维板层结构"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 26.92,
+        "mortalityPer100k": 23.93,
+        "year": 2022,
+        "maleFemaleRatio": "2.5:1",
+        "hotspotRegions": [
+          "东南沿海",
+          "广西",
+          "江苏启东",
+          "福建",
+          "华东"
+        ]
+      }
+    }
   },
   {
     "id": "kidney",
@@ -46,8 +175,41 @@
     "icon": "🫘",
     "color": "#dc2626",
     "description": "肾脏肿瘤及非肿瘤性疾病的病理诊断，包括肾细胞癌各亚型、肾母细胞瘤及肾小球疾病",
-    "commonStains": ["HE", "PAX8", "CA-IX", "CD10", "Vimentin", "CK7", "AMACR", "TFE3", "FH", "SDHB"],
-    "keyPatterns": ["透明细胞", "嗜酸细胞", "乳头结构", "管状结构", "囊性结构", "肉瘤样变"]
+    "commonStains": [
+      "HE",
+      "PAX8",
+      "CA-IX",
+      "CD10",
+      "Vimentin",
+      "CK7",
+      "AMACR",
+      "TFE3",
+      "FH",
+      "SDHB"
+    ],
+    "keyPatterns": [
+      "透明细胞",
+      "嗜酸细胞",
+      "乳头结构",
+      "管状结构",
+      "囊性结构",
+      "肉瘤样变"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 5.21,
+        "mortalityPer100k": 1.87,
+        "year": 2022,
+        "maleFemaleRatio": "2.1:1",
+        "hotspotRegions": [
+          "华东",
+          "华北",
+          "东北",
+          "一线城市"
+        ],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "thyroid",
@@ -56,8 +218,39 @@
     "icon": "🦋",
     "color": "#8b5cf6",
     "description": "甲状腺肿瘤及非肿瘤性疾病的病理诊断，包括乳头状癌、滤泡性肿瘤、髓样癌及甲状腺炎",
-    "commonStains": ["HE", "TTF-1", "Thyroglobulin", "Calcitonin", "CK19", "Galectin-3", "HBME-1", "CD56", "PAX8", "CEA"],
-    "keyPatterns": ["乳头结构", "核沟", "核内假包涵体", "毛玻璃样核", "滤泡结构", "砂粒体"]
+    "commonStains": [
+      "HE",
+      "TTF-1",
+      "Thyroglobulin",
+      "Calcitonin",
+      "CK19",
+      "Galectin-3",
+      "HBME-1",
+      "CD56",
+      "PAX8",
+      "CEA"
+    ],
+    "keyPatterns": [
+      "乳头结构",
+      "核沟",
+      "核内假包涵体",
+      "毛玻璃样核",
+      "滤泡结构",
+      "砂粒体"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 20.56,
+        "mortalityPer100k": 0.51,
+        "year": 2022,
+        "maleFemaleRatio": "1:3",
+        "hotspotRegions": [
+          "华东",
+          "华南",
+          "一线城市"
+        ]
+      }
+    }
   },
   {
     "id": "lymphoma",
@@ -66,8 +259,45 @@
     "icon": "🟣",
     "color": "#7c3aed",
     "description": "淋巴瘤及造血系统肿瘤的病理诊断，包括B细胞和T细胞淋巴瘤、霍奇金淋巴瘤及髓系肿瘤",
-    "commonStains": ["HE", "CD20", "CD3", "CD5", "CD10", "CD30", "CD15", "BCL-2", "BCL-6", "MUM1", "Ki-67", "CD23", "Cyclin D1", "ALK", "CD56"],
-    "keyPatterns": ["弥漫大细胞", "滤泡结构", "套区扩张", "R-S细胞", "星空现象", "血管中心性"]
+    "commonStains": [
+      "HE",
+      "CD20",
+      "CD3",
+      "CD5",
+      "CD10",
+      "CD30",
+      "CD15",
+      "BCL-2",
+      "BCL-6",
+      "MUM1",
+      "Ki-67",
+      "CD23",
+      "Cyclin D1",
+      "ALK",
+      "CD56"
+    ],
+    "keyPatterns": [
+      "弥漫大细胞",
+      "滤泡结构",
+      "套区扩张",
+      "R-S细胞",
+      "星空现象",
+      "血管中心性"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 6.68,
+        "mortalityPer100k": 3.77,
+        "year": 2022,
+        "maleFemaleRatio": "1.4:1",
+        "hotspotRegions": [
+          "华东",
+          "华北",
+          "东部沿海地区"
+        ],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "skin",
@@ -76,8 +306,37 @@
     "icon": "🧬",
     "color": "#f59e0b",
     "description": "皮肤肿瘤及非肿瘤性疾病的病理诊断，包括黑色素瘤、基底细胞癌、鳞状细胞癌及各类皮炎",
-    "commonStains": ["HE", "S-100", "SOX10", "Melan-A", "HMB-45", "CK5/6", "P63", "P40", "BerEP4", "EMA", "Ki-67"],
-    "keyPatterns": ["色素沉着", "交界活动", "Pagetoid扩散", "栅栏状排列", "角化珠", "基底样细胞巢"]
+    "commonStains": [
+      "HE",
+      "S-100",
+      "SOX10",
+      "Melan-A",
+      "HMB-45",
+      "CK5/6",
+      "P63",
+      "P40",
+      "BerEP4",
+      "EMA",
+      "Ki-67"
+    ],
+    "keyPatterns": [
+      "色素沉着",
+      "交界活动",
+      "Pagetoid扩散",
+      "栅栏状排列",
+      "角化珠",
+      "基底样细胞巢"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": null,
+        "mortalityPer100k": null,
+        "year": null,
+        "maleFemaleRatio": null,
+        "hotspotRegions": [],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "gynecology",
@@ -86,8 +345,39 @@
     "icon": "🌸",
     "color": "#f472b6",
     "description": "女性生殖系统肿瘤及非肿瘤性疾病的病理诊断，包括宫颈、子宫内膜、卵巢肿瘤及滋养细胞疾病",
-    "commonStains": ["HE", "P16", "Ki-67", "ER", "PR", "WT1", "PAX8", "P53", "Napsin A", "CK7", "Vimentin", "Inhibin"],
-    "keyPatterns": ["乳头结构", "实性片状", "腺管结构", "砂粒体", "透明细胞", "鳞状分化", "CIN分级"]
+    "commonStains": [
+      "HE",
+      "P16",
+      "Ki-67",
+      "ER",
+      "PR",
+      "WT1",
+      "PAX8",
+      "P53",
+      "Napsin A",
+      "CK7",
+      "Vimentin",
+      "Inhibin"
+    ],
+    "keyPatterns": [
+      "乳头结构",
+      "实性片状",
+      "腺管结构",
+      "砂粒体",
+      "透明细胞",
+      "鳞状分化",
+      "CIN分级"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": null,
+        "mortalityPer100k": null,
+        "year": null,
+        "maleFemaleRatio": null,
+        "hotspotRegions": [],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "urology",
@@ -96,8 +386,43 @@
     "icon": "💧",
     "color": "#0ea5e9",
     "description": "膀胱、前列腺、睾丸等泌尿男性生殖系统肿瘤及非肿瘤性疾病的病理诊断",
-    "commonStains": ["HE", "CK7", "CK20", "GATA3", "Uroplakin", "PSA", "PSAP", "P504S", "P63", "HMWCK", "OCT4", "PLAP", "CD30"],
-    "keyPatterns": ["乳头状结构", "尿路上皮分化", "腺泡结构", "Gleason模式", "精原细胞", "胚胎性癌"]
+    "commonStains": [
+      "HE",
+      "CK7",
+      "CK20",
+      "GATA3",
+      "Uroplakin",
+      "PSA",
+      "PSAP",
+      "P504S",
+      "P63",
+      "HMWCK",
+      "OCT4",
+      "PLAP",
+      "CD30"
+    ],
+    "keyPatterns": [
+      "乳头状结构",
+      "尿路上皮分化",
+      "腺泡结构",
+      "Gleason模式",
+      "精原细胞",
+      "胚胎性癌"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": null,
+        "mortalityPer100k": null,
+        "year": null,
+        "maleFemaleRatio": null,
+        "hotspotRegions": [
+          "一线城市",
+          "华东",
+          "华北"
+        ],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "cns",
@@ -106,8 +431,41 @@
     "icon": "🧠",
     "color": "#6366f1",
     "description": "中枢神经系统肿瘤及非肿瘤性疾病的病理诊断，包括胶质瘤、脑膜瘤、髓母细胞瘤及生殖细胞肿瘤",
-    "commonStains": ["HE", "GFAP", "IDH1", "ATRX", "P53", "Ki-67", "EMA", "S-100", "Synaptophysin", "Chromogranin A", "CD56"],
-    "keyPatterns": ["星形细胞", "少突细胞", "室管膜细胞", "神经元分化", "血管增生", "假菊形团"]
+    "commonStains": [
+      "HE",
+      "GFAP",
+      "IDH1",
+      "ATRX",
+      "P53",
+      "Ki-67",
+      "EMA",
+      "S-100",
+      "Synaptophysin",
+      "Chromogranin A",
+      "CD56"
+    ],
+    "keyPatterns": [
+      "星形细胞",
+      "少突细胞",
+      "室管膜细胞",
+      "神经元分化",
+      "血管增生",
+      "假菊形团"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 5.61,
+        "mortalityPer100k": 3.36,
+        "year": 2022,
+        "maleFemaleRatio": "1.2:1",
+        "hotspotRegions": [
+          "华北",
+          "东北",
+          "华东"
+        ],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "soft-tissue",
@@ -116,8 +474,38 @@
     "icon": "🦵",
     "color": "#10b981",
     "description": "软组织肿瘤及非肿瘤性疾病的病理诊断，包括脂肪肉瘤、平滑肌肉瘤、GIST、滑膜肉瘤及横纹肌肉瘤",
-    "commonStains": ["HE", "S-100", "Desmin", "SMA", "CD34", "CD117", "DOG1", "MyoD1", "Myogenin", "H-Caldesmon", "Calponin", "ALK"],
-    "keyPatterns": ["梭形细胞", "多形性细胞", "脂肪细胞", "平滑肌细胞", "横纹肌细胞", "血管结构"]
+    "commonStains": [
+      "HE",
+      "S-100",
+      "Desmin",
+      "SMA",
+      "CD34",
+      "CD117",
+      "DOG1",
+      "MyoD1",
+      "Myogenin",
+      "H-Caldesmon",
+      "Calponin",
+      "ALK"
+    ],
+    "keyPatterns": [
+      "梭形细胞",
+      "多形性细胞",
+      "脂肪细胞",
+      "平滑肌细胞",
+      "横纹肌细胞",
+      "血管结构"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": null,
+        "mortalityPer100k": null,
+        "year": null,
+        "maleFemaleRatio": "1.2:1",
+        "hotspotRegions": [],
+        "_low_confidence": true
+      }
+    }
   },
   {
     "id": "bone",
@@ -126,7 +514,36 @@
     "icon": "🦴",
     "color": "#64748b",
     "description": "骨骼肿瘤及非肿瘤性疾病的病理诊断，包括骨肉瘤、软骨肉瘤、巨细胞瘤及骨囊肿",
-    "commonStains": ["HE", "S-100", "CD68", "CD163", "TRAP", "Ki-67", "Vimentin", "CK", "EMA", "CD99", "Fli-1"],
-    "keyPatterns": ["骨样组织", "软骨组织", "巨细胞", "梭形细胞", "上皮样细胞", "骨破坏"]
+    "commonStains": [
+      "HE",
+      "S-100",
+      "CD68",
+      "CD163",
+      "TRAP",
+      "Ki-67",
+      "Vimentin",
+      "CK",
+      "EMA",
+      "CD99",
+      "Fli-1"
+    ],
+    "keyPatterns": [
+      "骨样组织",
+      "软骨组织",
+      "巨细胞",
+      "梭形细胞",
+      "上皮样细胞",
+      "骨破坏"
+    ],
+    "_enhance_organ_epidemiology_cn": {
+      "cnEpidemiology": {
+        "incidencePer100k": 2.09,
+        "mortalityPer100k": 1.38,
+        "year": 2022,
+        "maleFemaleRatio": "1.4:1",
+        "hotspotRegions": [],
+        "_low_confidence": true
+      }
+    }
   }
 ]

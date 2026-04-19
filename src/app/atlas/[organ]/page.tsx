@@ -40,6 +40,50 @@ export default async function OrganPage({ params }: { params: Promise<{ organ: s
           </div>
         </div>
         <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>{organ.description}</p>
+
+        {/* China-specific epidemiology (NCCR data, populated by enhancement pipeline) */}
+        {(() => {
+          const cn = (organ as { _enhance_organ_epidemiology_cn?: {
+            cnEpidemiology?: {
+              incidencePer100k?: number;
+              mortalityPer100k?: number;
+              year?: number;
+              maleFemaleRatio?: string;
+              hotspotRegions?: string[];
+            };
+          } })._enhance_organ_epidemiology_cn?.cnEpidemiology;
+          if (!cn) return null;
+          const stats = [
+            { label: '发病率', value: cn.incidencePer100k != null ? `${cn.incidencePer100k}` : null, unit: '/10万' },
+            { label: '死亡率', value: cn.mortalityPer100k != null ? `${cn.mortalityPer100k}` : null, unit: '/10万' },
+            { label: '男:女', value: cn.maleFemaleRatio || null, unit: '' },
+          ].filter(s => s.value != null);
+          if (stats.length === 0 && !cn.hotspotRegions?.length) return null;
+          return (
+            <div className="mt-4 rounded-lg p-3" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}>
+              <div className="flex items-center gap-2 mb-2">
+                <span aria-hidden>🇨🇳</span>
+                <h3 className="text-xs font-semibold" style={{ color: '#10b981' }}>中国流行病学（NCCR{cn.year ? ` ${cn.year}` : ''}）</h3>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-xs">
+                {stats.map(s => (
+                  <div key={s.label}>
+                    <span style={{ color: 'var(--fg-muted)' }}>{s.label}：</span>
+                    <span className="font-medium tabular-nums" style={{ color: 'var(--fg)' }}>{s.value}</span>
+                    {s.unit && <span className="ml-0.5" style={{ color: 'var(--fg-muted)' }}>{s.unit}</span>}
+                  </div>
+                ))}
+                {cn.hotspotRegions && cn.hotspotRegions.length > 0 && (
+                  <div>
+                    <span style={{ color: 'var(--fg-muted)' }}>高发地区：</span>
+                    <span style={{ color: 'var(--fg)' }}>{cn.hotspotRegions.join('、')}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })()}
+
         {organ.keyPatterns.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-4">
             {organ.keyPatterns.map(p => (

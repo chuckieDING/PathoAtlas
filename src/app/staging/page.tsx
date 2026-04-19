@@ -28,6 +28,12 @@ interface StagingSystem {
   description: string;
   criteria: StagingCriterion[];
   grades: StagingGrade[];
+  /** Set by enhancement pipeline. Reconciliation against AJCC 8th /
+   *  UICC 9th + China-specific alternative staging (CNLC / CGCA / 鼻咽癌 2017). */
+  _enhance_staging_cn_version?: {
+    verifiedAgainst?: string;
+    cnAlternative?: { name?: string; keyDifferences?: string };
+  };
 }
 
 export default function StagingPage() {
@@ -186,6 +192,33 @@ export default function StagingPage() {
                             </div>
                           ))}
                         </div>
+                      </div>
+                    )}
+
+                    {/* China-specific staging (enhancement) */}
+                    {sys._enhance_staging_cn_version && (sys._enhance_staging_cn_version.verifiedAgainst || sys._enhance_staging_cn_version.cnAlternative?.name) && (
+                      <div className="rounded-lg p-3" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                        <h3 className="text-xs font-semibold mb-2 flex items-center gap-1.5" style={{ color: '#10b981' }}>
+                          <span aria-hidden>🇨🇳</span> 国内分期对照
+                        </h3>
+                        {sys._enhance_staging_cn_version.verifiedAgainst && (
+                          <p className="text-xs leading-relaxed mb-2" style={{ color: 'var(--fg-muted)' }}>
+                            <span className="font-medium" style={{ color: 'var(--fg)' }}>国际对照：</span>
+                            {sys._enhance_staging_cn_version.verifiedAgainst}
+                          </p>
+                        )}
+                        {sys._enhance_staging_cn_version.cnAlternative?.name && (
+                          <div>
+                            <p className="text-xs font-medium mb-1" style={{ color: 'var(--fg)' }}>
+                              {sys._enhance_staging_cn_version.cnAlternative.name}
+                            </p>
+                            {sys._enhance_staging_cn_version.cnAlternative.keyDifferences && (
+                              <p className="text-xs leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                                {sys._enhance_staging_cn_version.cnAlternative.keyDifferences}
+                              </p>
+                            )}
+                          </div>
+                        )}
                       </div>
                     )}
 

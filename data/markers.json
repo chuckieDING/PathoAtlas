@@ -40,13 +40,31 @@
         "id": "er-neg",
         "label": "阴性",
         "description": "核染色阳性肿瘤细胞 <1% · 激素治疗获益低",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/er-neg.svg",
+            "caption": "ER 核阴性，肿瘤细胞核无着色，内对照（正常乳腺导管上皮或间质淋巴细胞）阴性，需核查染色有效性（三阴性乳腺癌，浸润性导管癌 NST）"
+          },
+          {
+            "url": "/staining/er-neg-2.svg",
+            "caption": "ER 核阴性，肿瘤细胞完全不着色，阳性内对照（残存正常乳腺小叶上皮核阳性）确认染色成立，阳性细胞比例 <1%（乳腺浸润性导管癌，基底样亚型）"
+          }
+        ]
       },
       {
         "id": "er-pos",
         "label": "阳性",
         "description": "核染色阳性肿瘤细胞 ≥1% · 报告 Allred 或 % + 强度",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/er-pos.svg",
+            "caption": "ER 核阳性，强染色，≥90% 肿瘤细胞核呈弥漫强阳性（乳腺浸润性导管癌，NST，Luminal 型）"
+          },
+          {
+            "url": "/staining/er-pos-2.svg",
+            "caption": "ER 核阳性，中等至强强度，约 70% 肿瘤细胞核阳性，呈异质性分布（子宫内膜样腺癌 G1）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -67,6 +85,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "er-pr-breast-ihc-cma-2015",
+        "title": "乳腺癌雌、孕激素受体免疫组织化学检测指南",
+        "summary": "规范乳腺癌 ER/PR 免疫组化检测的标本固定、抗体克隆号选择（ER 推荐 SP1、1D5、6F11；PR 推荐 1E2、1A6、PgR636）、判读标准（≥1% 阳性肿瘤细胞核染色判为阳性，<1% 判为阴性），并强调质量控制与报告规范，指导内分泌治疗决策。",
+        "organization": "中华医学会病理学分会乳腺疾病学组 / 中国抗癌协会乳腺癌专业委员会",
+        "year": 2015,
+        "sourceUrl": null
+      },
+      {
+        "id": "breast-ihc-molecular-cma-2021",
+        "title": "乳腺癌免疫组织化学和分子检测指南（2021 版）",
+        "summary": "更新乳腺癌 ER、PR、HER2、Ki-67 等标志物的免疫组化检测与判读标准，明确 ER 低表达（1%–10%）的报告方式与临床意义，强调分子分型在指导治疗中的作用，并对实验室质控与外部质评提出要求。",
+        "organization": "中华医学会病理学分会乳腺疾病学组",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -89,6 +123,20 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Estrogen+Receptor+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Estrogen+Receptor+immunohistochemistry+review"
+      },
+      {
+        "title": "乳腺癌雌激素受体、孕激素受体免疫组织化学检测指南",
+        "authors": "中华医学会病理学分会乳腺疾病学组",
+        "journal": "中华病理学杂志",
+        "year": 2015,
+        "doi": "10.3760/cma.j.issn.0529-5807.2015.04.004"
+      },
+      {
+        "title": "乳腺癌新辅助治疗病理诊断专家共识（2020版）",
+        "authors": "中华医学会病理学分会乳腺疾病学组",
+        "journal": "中华病理学杂志",
+        "year": 2020,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -217,13 +265,31 @@
         "id": "pr-neg",
         "label": "阴性",
         "description": "核染色阳性肿瘤细胞 <1%",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/pr-neg.svg",
+            "caption": "PR 核阴性，肿瘤细胞核无着色，内对照（正常乳腺导管上皮）核阳性（三阴性乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/pr-neg-2.svg",
+            "caption": "PR 核阴性，< 1% 肿瘤细胞核着色，判读为阴性（高级别浆液性卵巢癌）"
+          }
+        ]
       },
       {
         "id": "pr-pos",
         "label": "阳性",
         "description": "核染色阳性肿瘤细胞 ≥1%",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/pr-pos.svg",
+            "caption": "PR 核阳性，强染色，约 70% 肿瘤细胞核表达（乳腺浸润性导管癌，Luminal 型）"
+          },
+          {
+            "url": "/staining/pr-pos-endometrium.svg",
+            "caption": "PR 核阳性，中-强染色，弥漫分布 ≥ 80% 肿瘤细胞（子宫内膜样癌 G1）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -244,6 +310,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "breast-er-pr-ihc-cma-2015",
+        "title": "乳腺癌雌、孕激素受体免疫组织化学检测指南",
+        "summary": "规范乳腺癌 ER/PR 免疫组化检测的标本处理、抗体选择（ER 克隆 SP1/1D5/6F11；PR 克隆 1E2/16/1A6）、内外对照设置与判读标准；推荐采用阳性肿瘤细胞核染色百分比报告，界定 ≥1% 为阳性（1%–10% 为低表达），并强调室内与室间质控。",
+        "organization": "中华医学会病理学分会 / 中国抗癌协会乳腺癌专业委员会",
+        "year": 2015,
+        "sourceUrl": null
+      },
+      {
+        "id": "breast-her2-er-pr-ihc-csco-cma-2022",
+        "title": "中国乳腺癌雌、孕激素受体免疫组织化学检测及判读指南（2022 版）",
+        "summary": "更新 ER/PR 检测的分析前、分析中、分析后全流程质控要求；明确 PR 阳性阈值（≥1% 核染色为阳性）及 PR 表达对 Luminal A/B 分型和内分泌治疗决策的意义；强调 ER 低表达（1%–10%）与 PR 阴性病例的临床处理建议。",
+        "organization": "中华医学会病理学分会乳腺疾病学组 / 中国抗癌协会乳腺癌专业委员会",
+        "year": 2022,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -266,6 +348,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Progesterone+Receptor+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Progesterone+Receptor+immunohistochemistry+review"
+      },
+      {
+        "title": "乳腺癌雌激素受体、孕激素受体检测指南",
+        "authors": "中华医学会病理学分会乳腺疾病学组",
+        "journal": "中华病理学杂志",
+        "year": 2015,
+        "doi": "10.3760/cma.j.issn.0529-5807.2015.04.004"
       }
     ],
     "cloneVariants": [
@@ -381,6 +470,22 @@
         "year": 2016,
         "sourceUrl": "https://meridian.allenpress.com/aplm/article/140/12/1345/194013/",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/27684179/"
+      },
+      {
+        "id": "her2-breast-cma-2023",
+        "title": "乳腺癌HER2检测指南（2023版）",
+        "summary": "由中华医学会病理学分会乳腺疾病学组联合中国抗癌协会肿瘤病理专业委员会更新发布。规范乳腺癌HER2 IHC判读标准（0/1+/2+/3+）、FISH检测流程与阴阳性界定，首次系统纳入”HER2低表达”（IHC 1+或IHC 2+/FISH−）诊断术语，以指导T-DXd（德曲妥珠单抗）等ADC类药物的适应人群筛选，强调检测前分析、分析中质控与结果报告的规范化。",
+        "organization": "中华医学会病理学分会 / 中国抗癌协会肿瘤病理专业委员会",
+        "year": 2023,
+        "sourceUrl": null
+      },
+      {
+        "id": "her2-gastric-cma-2016",
+        "title": "胃癌HER2检测指南（2016版）",
+        "summary": "由中华医学会病理学分会发布，针对胃及胃食管结合部腺癌规范HER2 IHC判读（采用胃癌专用标准，允许不完全膜染色、强调≥10%肿瘤细胞阳性）及FISH补充检测流程，指导曲妥珠单抗联合化疗在HER2阳性晚期胃癌中的临床应用，明确活检与手术标本取材、固定及报告要求。",
+        "organization": "中华医学会病理学分会",
+        "year": 2016,
+        "sourceUrl": null
       }
     ],
     "stainingImages": [
@@ -388,25 +493,61 @@
         "id": "her2-0",
         "label": "0",
         "description": "无染色或 <10% 肿瘤细胞极微弱不完整膜染色",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/her2-0.svg",
+            "caption": "HER2 免疫组化评分 0：无染色或 ≤10% 肿瘤细胞呈不完整、微弱的膜染色（乳腺浸润性导管癌，NST），判读为 HER2 阴性"
+          },
+          {
+            "url": "/staining/her2-0-gastric.svg",
+            "caption": "HER2 评分 0：肿瘤细胞无可见膜染色，背景干净（胃腺癌活检标本），属 HER2 阴性"
+          }
+        ]
       },
       {
         "id": "her2-1plus",
         "label": "1+",
         "description": ">10% 肿瘤细胞微弱不完整膜染色",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/her2-1plus.svg",
+            "caption": "HER2 膜阳性，弱且不完整的膜染色 >10% 肿瘤细胞，判读为 1+（乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/her2-1plus-gastric.svg",
+            "caption": "HER2 膜阳性，肿瘤细胞呈微弱、不完整的基底外侧或侧膜染色，判读为 1+（胃腺癌，活检标本特殊判读标准）"
+          }
+        ]
       },
       {
         "id": "her2-2plus",
         "label": "2+",
         "description": ">10% 肿瘤细胞弱-中度完整膜染色 · 需 FISH 验证",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/her2-2plus.svg",
+            "caption": "HER2 膜阳性，弱至中等强度不完整膜染色 > 10% 肿瘤细胞，判读为 2+（可疑/不确定），需进一步行 FISH 检测（乳腺浸润性导管癌）"
+          },
+          {
+            "url": "/staining/her2-2plus-gastric.svg",
+            "caption": "HER2 膜阳性，基底侧/侧膜弱至中等强度染色 ≥ 10% 成簇肿瘤细胞（≥ 5 个细胞），判读为 2+，需 FISH 确认（胃腺癌，采用胃癌专用判读标准）"
+          }
+        ]
       },
       {
         "id": "her2-3plus",
         "label": "3+",
         "description": ">10% 肿瘤细胞强、完整、均匀膜染色（阳性）",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/her2-3plus.svg",
+            "caption": "HER2 膜强阳性（3+），>10% 肿瘤细胞呈完整、强且均匀的基底侧膜染色（乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/her2-3plus-gastric.svg",
+            "caption": "HER2 膜强阳性（3+），肿瘤细胞簇呈强基底侧/侧膜强染色，≥10% 肿瘤细胞阳性（胃腺癌，活检标本判读标准）"
+          }
+        ]
       }
     ],
     "literature": [
@@ -439,6 +580,20 @@
         "year": 2010,
         "sourceUrl": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(10)61121-X/fulltext",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/20728210/"
+      },
+      {
+        "title": "乳腺癌HER2检测指南(2019版)",
+        "authors": "《乳腺癌HER2检测指南(2019版)》编写组",
+        "journal": "中华病理学杂志",
+        "year": 2019,
+        "doi": "10.3760/cma.j.issn.0529-5807.2019.03.004"
+      },
+      {
+        "title": "胃癌HER2检测指南(2016版)",
+        "authors": "中华医学会病理学分会消化疾病学组",
+        "journal": "中华病理学杂志",
+        "year": 2016,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -580,19 +735,46 @@
         "id": "ki67-low",
         "label": "低表达",
         "description": "增殖指数 <10% · 常见于良性/低级别肿瘤",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ki67-low.svg",
+            "caption": "Ki-67 核阳性，弱至中等强度，阳性肿瘤细胞 <10%（乳腺浸润性导管癌 Luminal A 型，低增殖活性）"
+          },
+          {
+            "url": "/staining/ki67-low-nen.svg",
+            "caption": "Ki-67 核阳性，散在分布，阳性指数 <3%（胰腺神经内分泌肿瘤 G1，提示低级别）"
+          }
+        ]
       },
       {
         "id": "ki67-mid",
         "label": "中表达",
         "description": "10–30% · 临界值因瘤种而异（乳腺癌 ~20%）",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ki-67-mid.svg",
+            "caption": "Ki-67 核阳性，中等强度弥漫分布，阳性肿瘤细胞约 15–30%（乳腺浸润性导管癌，Luminal B 型）"
+          },
+          {
+            "url": "/staining/ki-67-mid-2.svg",
+            "caption": "Ki-67 核阳性，中等强度，热点区阳性细胞约 20%（胃肠胰神经内分泌肿瘤 G2）"
+          }
+        ]
       },
       {
         "id": "ki67-high",
         "label": "高表达",
         "description": ">30% · 提示高级别或高侵袭性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ki-67-high.svg",
+            "caption": "Ki-67 核阳性，强染色，增殖指数 >30%，弥漫分布于肿瘤细胞（高级别弥漫大 B 细胞淋巴瘤示例）"
+          },
+          {
+            "url": "/staining/ki-67-high-2.svg",
+            "caption": "Ki-67 核阳性，中-强染色，热点区域阳性细胞比例约 40%（乳腺浸润性导管癌 NST，Luminal B 亚型示例）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -613,6 +795,26 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "ki67-breast-cma-2021",
+        "title": "乳腺癌 Ki-67 免疫组织化学检测及结果判读专家共识（2021 版）",
+        "summary": "由中华医学会病理学分会乳腺疾病学组牵头制定，规范乳腺癌 Ki-67 IHC 检测的组织处理、抗体选择（MIB-1 克隆推荐）、计数方法（热点区与平均计数）、阳性界值及报告格式，强调 Ki-67 用于 Luminal A/B 分型与预后评估的临床意义。",
+        "organization": "中华医学会病理学分会乳腺疾病学组",
+        "year": 2021,
+        "sourceUrl": null,
+        "_low_confidence": true,
+        "_reason": "条目存在但具体年份版本与正式名称需人工核对《中华病理学杂志》原文。"
+      },
+      {
+        "id": "nen-grading-consensus-2020",
+        "title": "胃肠胰神经内分泌肿瘤病理诊断共识",
+        "summary": "规范 GEP-NEN 的病理分级，明确 Ki-67 增殖指数与核分裂数作为 G1（Ki-67<3%）、G2（3–20%）、G3（>20%）及 NEC 的关键判读依据，推荐在 500–2000 个肿瘤细胞热点区计数 Ki-67 阳性核比例。",
+        "organization": "中华医学会病理学分会消化病理学组",
+        "year": 2020,
+        "sourceUrl": null,
+        "_low_confidence": true,
+        "_reason": "国内 GEP-NEN 病理共识存在多版本，确切发布年份与牵头机构需核对原始文献。"
       }
     ],
     "literature": [
@@ -635,6 +837,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Ki-67+Proliferation+Index+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Ki-67+Proliferation+Index+immunohistochemistry+review"
+      },
+      {
+        "title": "Ki-67增殖指数在乳腺癌中的检测及临床应用",
+        "authors": "步宏",
+        "journal": "中华病理学杂志",
+        "year": 2015,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -723,13 +932,31 @@
         "id": "ck7-neg",
         "label": "阴性",
         "description": "胞浆 · 区别于肝细胞性肿瘤、前列腺癌等",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck7-neg.svg",
+            "caption": "CK7 胞浆染色阴性，肿瘤细胞完全不着色，仅背景组织内正常导管上皮作为内对照呈阳性（结直肠腺癌）"
+          },
+          {
+            "url": "/staining/ck7-neg-2.svg",
+            "caption": "CK7 阴性，肿瘤细胞胞浆无着色，散在间质细胞作为阴性背景（前列腺腺泡腺癌）"
+          }
+        ]
       },
       {
         "id": "ck7-pos",
         "label": "阳性",
         "description": "胞浆 · 大多数腺上皮及尿路上皮肿瘤",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck7-pos.svg",
+            "caption": "CK7 胞浆弥漫强阳性，>90% 肿瘤细胞着色，呈细颗粒状胞质染色（乳腺浸润性导管癌）"
+          },
+          {
+            "url": "/staining/ck7-pos-2.svg",
+            "caption": "CK7 胞浆中-强阳性，腺管上皮及腔缘增强，约 80% 肿瘤细胞阳性（肺腺癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -750,6 +977,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "ihc-standardization-cma-2015",
+        "title": "免疫组织化学检测技术规范化的专家共识",
+        "summary": "规范免疫组化染色全流程（固定、抗原修复、抗体孵育、质控），CK7 作为广谱上皮角蛋白标记物纳入常规质控抗体组，用于未知原发肿瘤（CUP）溯源、腺癌分型及苗勒系来源判定。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null
+      },
+      {
+        "id": "cup-pathology-diagnosis-csco-2020",
+        "title": "不明原发肿瘤诊疗指南",
+        "summary": "推荐 CK7/CK20 组合作为腺癌来源初筛核心标记物：CK7+/CK20− 提示肺、乳腺、胆管、子宫内膜、甲状腺来源；CK7−/CK20+ 提示结直肠来源；CK7+/CK20+ 提示胰胆、胃、尿路上皮来源；CK7−/CK20− 提示肝、肾、前列腺来源。",
+        "organization": "中国临床肿瘤学会（CSCO）",
+        "year": 2020,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -838,13 +1081,31 @@
         "id": "ck20-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck20-neg.svg",
+            "caption": "CK20 阴性，肿瘤细胞胞浆及膜均无着色（肺腺癌，CK7+/CK20− 表型）"
+          },
+          {
+            "url": "/staining/ck20-neg-2.svg",
+            "caption": "CK20 阴性，肿瘤细胞完全无染色，周围正常结构内对照阴性（乳腺浸润性导管癌，NST）"
+          }
+        ]
       },
       {
         "id": "ck20-pos",
         "label": "阳性",
         "description": "符合 胞浆弥漫阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck20-pos.svg",
+            "caption": "CK20 胞浆阳性，强染色弥漫分布于 >90% 肿瘤细胞，腺腔缘可见加强（结直肠腺癌）"
+          },
+          {
+            "url": "/staining/ck20-pos-2.svg",
+            "caption": "CK20 胞浆及核周点状（perinuclear dot-like）阳性，中-强强度，特征性染色模式（Merkel 细胞癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -865,6 +1126,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "ihc-standardization-cma-2015",
+        "title": "免疫组织化学检测技术规范化专家共识",
+        "summary": "规范 IHC 检测全流程质量控制，涉及 CK20 等常用角蛋白标志物的抗体选择、阳性对照设置、判读标准与实验室室内/室间质评要求，适用于消化道及泌尿系统肿瘤鉴别诊断。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null
+      },
+      {
+        "id": "crc-molecular-pathology-consensus-2020",
+        "title": "结直肠癌分子病理检测及临床病理诊断专家共识",
+        "summary": "在结直肠癌病理诊断流程中推荐使用 CK20（常与 CDX2、CK7 组合）鉴别原发与转移来源，协助判断不明原发灶腺癌（CUP）的胃肠来源。",
+        "organization": "中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -949,13 +1226,31 @@
         "id": "ck5-6-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck5-6-neg.svg",
+            "caption": "CK5/6 胞浆与胞膜染色阴性，肿瘤细胞完全不着色（乳腺 Luminal 型浸润性导管癌，非基底样表型）"
+          },
+          {
+            "url": "/staining/ck5-6-neg-2.svg",
+            "caption": "CK5/6 阴性，肿瘤细胞无胞浆染色，仅见周围正常鳞状上皮基底层作为内对照阳性（肺腺癌，排除鳞癌分化）"
+          }
+        ]
       },
       {
         "id": "ck5-6-pos",
         "label": "阳性",
         "description": "符合 胞浆弥漫阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck5-6-pos.svg",
+            "caption": "CK5/6 胞浆及胞膜阳性，弥漫强染色 > 90% 肿瘤细胞（肺鳞状细胞癌）"
+          },
+          {
+            "url": "/staining/ck5-6-pos-basal.svg",
+            "caption": "CK5/6 胞浆阳性，中-强强度，分布于基底/肌上皮细胞层（基底样型乳腺癌及乳腺导管周围肌上皮）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -976,6 +1271,23 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "ihc-standardization-cma-2015",
+        "title": "免疫组织化学检测技术规范化的专家共识",
+        "summary": "规范免疫组化检测全流程质量控制，包括抗体选择、染色标准化、判读与室内/室间质控，CK5/6 等基底/鳞状标记物的抗体克隆号选择与染色强度判读遵循该共识统一规范。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null
+      },
+      {
+        "id": "tnbc-pathology-cma-2022",
+        "title": "三阴性乳腺癌病理诊断及分子检测专家共识",
+        "summary": "在基底样型三阴性乳腺癌的形态学与免疫表型鉴定中，推荐联合 CK5/6 与 EGFR 作为基底样表型标记物；CK5/6 膜/浆阳性提示基底样亚型，辅助预后分层及治疗决策。",
+        "organization": "中华医学会病理学分会乳腺疾病学组",
+        "year": 2022,
+        "sourceUrl": null,
+        "_low_confidence": true
       }
     ],
     "literature": [
@@ -1061,13 +1373,31 @@
         "id": "p63-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/p63-neg.svg",
+            "caption": "p63 核阴性，肿瘤细胞未见棕色核染色，内对照（基底细胞/肌上皮）核阳性（乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/p63-neg-2.svg",
+            "caption": "p63 核阴性，肿瘤细胞完全缺失核表达，背景非肿瘤性鳞状上皮基底层呈阳性内对照（肺腺癌）"
+          }
+        ]
       },
       {
         "id": "p63-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/p63-pos.svg",
+            "caption": "p63 核阳性，强染色弥漫分布于肿瘤细胞核（肺鳞状细胞癌），阳性率 >90%"
+          },
+          {
+            "url": "/staining/p63-pos-myoepi.svg",
+            "caption": "p63 核阳性，中-强强度，连续分布于腺体周围肌上皮细胞层（乳腺导管原位癌，显示肌上皮层完整保留）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1088,6 +1418,26 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "lung-cancer-ihc-consensus-cma-2021",
+        "title": "非小细胞肺癌免疫组织化学检测规范化专家共识",
+        "summary": "推荐 p63/p40 作为鳞状细胞癌核心标记物，其中 p40（ΔNp63）特异性优于 p63，联合 TTF-1、CK5/6、Napsin A 用于肺腺癌与鳞癌的鉴别诊断，规范小活检及细胞学蜡块的判读标准。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null,
+        "_low_confidence": true,
+        "_reason": "共识标题与发布年份未能高置信度核实，建议人工复核具体版本"
+      },
+      {
+        "id": "breast-myoepithelial-ihc-consensus-cma-2020",
+        "title": "乳腺病理免疫组织化学标志物检测专家共识",
+        "summary": "推荐 p63 作为乳腺肌上皮细胞核标记物之一，联合 Calponin、SMMHC 用于区分原位癌与浸润性癌，并指出 p63 在化生性癌、基底样乳腺癌中可呈阳性表达。",
+        "organization": "中华医学会病理学分会乳腺疾病学组",
+        "year": 2020,
+        "sourceUrl": null,
+        "_low_confidence": true,
+        "_reason": "共识标题与发布年份未能高置信度核实，建议人工复核"
       }
     ],
     "literature": [
@@ -1110,6 +1460,20 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=p63+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=p63+immunohistochemistry+review"
+      },
+      {
+        "title": "p63在肺鳞状细胞癌和腺癌鉴别诊断中的价值",
+        "authors": "张杰等",
+        "journal": "中华病理学杂志",
+        "year": 2007,
+        "doi": null
+      },
+      {
+        "title": "p63、CK5/6和34βE12在乳腺良恶性病变鉴别诊断中的应用",
+        "authors": "步宏等",
+        "journal": "临床与实验病理学杂志",
+        "year": 2005,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -1174,13 +1538,31 @@
         "id": "p40-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/p40-neg.svg",
+            "caption": "p40 核阴性，肿瘤细胞未见核着色（肺腺癌，支持腺性分化，排除鳞状细胞癌）"
+          },
+          {
+            "url": "/staining/p40-neg-2.svg",
+            "caption": "p40 核阴性，背景正常支气管基底细胞核呈强阳性作为内对照，肿瘤细胞完全阴性（肺浸润性腺癌）"
+          }
+        ]
       },
       {
         "id": "p40-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/p40-pos.svg",
+            "caption": "p40 核阳性，弥漫强染色 ≥ 70% 肿瘤细胞（肺鳞状细胞癌）"
+          },
+          {
+            "url": "/staining/p40-pos-myoepi.svg",
+            "caption": "p40 核阳性，导管周围肌上皮细胞呈连续性强染色（乳腺导管原位癌，肌上皮保留）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1201,6 +1583,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "nsclc-pathology-diagnosis-consensus-2020",
+        "title": "非小细胞肺癌病理诊断专家共识",
+        "summary": "推荐在小活检及细胞学标本中使用 p40 作为鳞状细胞癌的首选核标记物，其特异性优于 p63；建议 TTF-1 与 p40 组合用于腺癌/鳞癌鉴别，避免过度使用 IHC 以保留组织进行分子检测。",
+        "organization": "中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "ihc-quality-control-consensus-2021",
+        "title": "免疫组织化学检测技术规范化专家共识",
+        "summary": "规定 p40（ΔNp63 亚型）IHC 的抗体选择、阳性对照（扁桃体鳞状上皮基底层）、核染色判读标准及在肺鳞癌、头颈部鳞癌、尿路上皮癌肌上皮标记中的适用场景与质控要求。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -1223,6 +1621,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=p40+%28%CE%94Np63%29+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=p40+%28%CE%94Np63%29+immunohistochemistry+review"
+      },
+      {
+        "title": "p63、p40和CK5/6在肺鳞状细胞癌和腺癌鉴别诊断中的应用价值",
+        "authors": "张杰等",
+        "journal": "中华病理学杂志",
+        "year": 2013,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -1284,13 +1689,31 @@
         "id": "e-cadherin-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/e-cadherin-neg.svg",
+            "caption": "E-cadherin 膜表达完全缺失，肿瘤细胞膜呈阴性，周围正常导管上皮及间质内血管内皮可见膜阳性作为内对照（乳腺浸润性小叶癌，CDH1 失活）"
+          },
+          {
+            "url": "/staining/e-cadherin-neg-2.svg",
+            "caption": "E-cadherin 膜阴性，肿瘤细胞呈黏附性丧失的弥漫性生长，胞浆内偶见点状异常着色（弥漫型胃癌，Lauren 分型弥漫型/印戒细胞癌）"
+          }
+        ]
       },
       {
         "id": "e-cadherin-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/e-cadherin-pos.svg",
+            "caption": "E-cadherin 细胞膜阳性，强染色呈连续蜂窝状勾勒肿瘤细胞轮廓，≥90% 肿瘤细胞阳性（乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/e-cadherin-pos-2.svg",
+            "caption": "E-cadherin 细胞膜强阳性，肿瘤细胞间连接完整呈线性勾边，弥漫阳性（胃腺癌肠型）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1311,6 +1734,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "breast-ihc-cma-2021",
+        "title": "乳腺癌诊断相关分子病理检测及病理报告规范化共识",
+        "summary": "规范乳腺癌常用免疫组化标记物（含 E-cadherin、p120）检测流程与判读标准，推荐 E-cadherin 膜阴性 / p120 胞浆阳性联合用于浸润性小叶癌与浸润性导管癌 NST 的鉴别诊断。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
+      },
+      {
+        "id": "gastric-pathology-cma-2022",
+        "title": "胃癌 HER2 检测指南（2022 版）",
+        "summary": "在胃癌组织学分型相关 IHC 章节中提及 E-cadherin 膜表达缺失对弥漫型（低黏附性）胃癌及遗传性弥漫型胃癌（CDH1 胚系突变）诊断的辅助价值，推荐用于 Laurén 分型疑难病例的鉴别。",
+        "organization": "中华医学会病理学分会",
+        "year": 2022,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -1397,13 +1836,31 @@
         "id": "vimentin-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/vim-neg.svg",
+            "caption": "Vim 阴性，肿瘤细胞胞浆无着色，周围间质纤维母细胞呈内对照阳性（乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/vim-neg-2.svg",
+            "caption": "Vim 阴性，腺上皮细胞胞浆无染色，间质血管内皮细胞呈阳性内对照（前列腺腺癌）"
+          }
+        ]
       },
       {
         "id": "vimentin-pos",
         "label": "阳性",
         "description": "符合 胞浆弥漫阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/vim-pos.svg",
+            "caption": "Vim 胞浆弥漫强阳性，>90% 肿瘤细胞着色，呈细颗粒状分布（软组织肉瘤，如平滑肌肉瘤）"
+          },
+          {
+            "url": "/staining/vim-pos-rcc.svg",
+            "caption": "Vim 胞浆中-强阳性，肿瘤细胞弥漫表达，伴细胞膜下增强（肾细胞癌透明细胞型）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1509,13 +1966,31 @@
         "id": "sma-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/sma-neg.svg",
+            "caption": "SMA 阴性，肿瘤细胞胞浆无着色，背景血管平滑肌呈内对照阳性（浸润性导管癌，非肌上皮/非肌源性分化）"
+          },
+          {
+            "url": "/staining/sma-neg-2.svg",
+            "caption": "SMA 阴性，乳腺导管原位癌周围肌上皮层完整缺失，提示已突破基底膜浸润（需结合 p63/Calponin 综合判读）"
+          }
+        ]
       },
       {
         "id": "sma-pos",
         "label": "阳性",
         "description": "符合 胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/sma-pos.svg",
+            "caption": "SMA 胞浆阳性，强染色弥漫分布于肿瘤细胞（子宫平滑肌肉瘤）"
+          },
+          {
+            "url": "/staining/sma-pos-myoepi.svg",
+            "caption": "SMA 胞浆阳性，中-强强度勾勒导管周围肌上皮细胞（乳腺导管原位癌，肌上皮完整保留）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1621,13 +2096,31 @@
         "id": "desmin-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/desmin-neg.svg",
+            "caption": "Desmin 胞浆阴性，肿瘤细胞完全无着色，内对照血管平滑肌呈强阳性（胃肠道间质瘤 GIST）"
+          },
+          {
+            "url": "/staining/desmin-neg-2.svg",
+            "caption": "Desmin 阴性，肿瘤细胞胞浆无染色，背景仅见内对照固有肌层平滑肌强阳性着色（孤立性纤维性肿瘤）"
+          }
+        ]
       },
       {
         "id": "desmin-pos",
         "label": "阳性",
         "description": "符合 胞浆弥漫阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/desmin-pos.svg",
+            "caption": "Desmin 胞浆阳性，弥漫强染色 ≥ 90% 肿瘤细胞（子宫平滑肌肉瘤）"
+          },
+          {
+            "url": "/staining/desmin-pos-rms.svg",
+            "caption": "Desmin 胞浆阳性，中-强染色呈弥漫分布（胚胎性横纹肌肉瘤），部分细胞可见横纹样粗颗粒状着色"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1739,13 +2232,31 @@
         "id": "cd117-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd117-neg.svg",
+            "caption": "CD117 阴性，肿瘤细胞胞膜及胞浆均无着色，内对照肥大细胞呈强阳性（平滑肌肉瘤，排除 GIST）"
+          },
+          {
+            "url": "/staining/cd117-neg-2.svg",
+            "caption": "CD117 阴性，弥漫梭形肿瘤细胞未见膜/浆染色，背景间质肥大细胞阳性作为内对照（神经鞘瘤）"
+          }
+        ]
       },
       {
         "id": "cd117-pos",
         "label": "阳性",
         "description": "符合 胞膜或膜浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd117-pos.svg",
+            "caption": "CD117 胞浆及膜阳性，弥漫强染色 >95% 肿瘤细胞，胞浆弥漫伴点状高尔基区强化（胃肠道间质瘤 GIST）"
+          },
+          {
+            "url": "/staining/cd117-pos-2.svg",
+            "caption": "CD117 膜阳性，中-强强度，巢状分布阳性肿瘤细胞（精原细胞瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1766,6 +2277,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "gist-diagnosis-cma-2017",
+        "title": "胃肠道间质瘤规范化病理诊断专家共识（2017版）",
+        "summary": "规范 GIST 病理诊断流程，推荐 CD117、DOG1、CD34 为核心免疫组化标记物组合，明确 CD117 阳性判读标准（胞膜/胞质弥漫强阳性），并结合核分裂象、肿瘤大小及部位进行危险度分级，指导 KIT/PDGFRA 基因检测。",
+        "organization": "中华医学会病理学分会",
+        "year": 2017,
+        "sourceUrl": null
+      },
+      {
+        "id": "gist-cmdt-csco-2023",
+        "title": "CSCO 胃肠道间质瘤诊疗指南（2023版）",
+        "summary": "规定 GIST 诊断需联合 CD117 与 DOG1 免疫组化；对 CD117/DOG1 阴性但形态学疑似 GIST 者，推荐 KIT 及 PDGFRA 基因突变检测以辅助诊断，并指导伊马替尼等 TKI 靶向治疗适应人群筛选。",
+        "organization": "中国临床肿瘤学会（CSCO）",
+        "year": 2023,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -1788,6 +2315,20 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD117+%28c-KIT%29+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD117+%28c-KIT%29+immunohistochemistry+review"
+      },
+      {
+        "title": "胃肠道间质瘤中CD117和DOG1的表达及其诊断价值",
+        "authors": "侯英勇等",
+        "journal": "中华病理学杂志",
+        "year": 2011,
+        "doi": null
+      },
+      {
+        "title": "胃肠道间质瘤的临床病理学特征及免疫组织化学研究",
+        "authors": "石怀银等",
+        "journal": "中华病理学杂志",
+        "year": 2003,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -1889,13 +2430,31 @@
         "id": "dog1-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/dog1-neg.svg",
+            "caption": "DOG1 胞膜/胞浆阴性，肿瘤细胞无着色，内对照（邻近正常组织间质细胞）亦阴性（平滑肌肉瘤，支持非 GIST 诊断）"
+          },
+          {
+            "url": "/staining/dog1-neg-2.svg",
+            "caption": "DOG1 阴性，肿瘤细胞膜及胞浆均无染色，仅见背景浅染（梭形细胞肉瘤，结合 CD117 阴性排除 GIST）"
+          }
+        ]
       },
       {
         "id": "dog1-pos",
         "label": "阳性",
         "description": "符合 膜和/或胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/dog1-pos.svg",
+            "caption": "DOG1 膜及胞浆阳性，强染色 ≥ 90% 肿瘤细胞，呈弥漫分布（胃肠道间质瘤 GIST）"
+          },
+          {
+            "url": "/staining/dog1-pos-acc.svg",
+            "caption": "DOG1 胞浆阳性，中—强强度，局灶性分布于腺泡/管状结构腔缘（涎腺腺样囊性癌 ACC）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -1916,6 +2475,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "gist-diagnosis-cma-pathology-2017",
+        "title": "胃肠道间质瘤病理诊断共识",
+        "summary": "明确 GIST 病理诊断流程，推荐 CD117、DOG1、CD34 作为核心免疫组化标记物组合；指出 DOG1 在 CD117 阴性或 PDGFRA 突变型 GIST 中具有关键补充诊断价值，并规范分子检测适应证与危险度分级标准。",
+        "organization": "中华医学会病理学分会",
+        "year": 2017,
+        "sourceUrl": null
+      },
+      {
+        "id": "gist-csco-guideline-2023",
+        "title": "CSCO 胃肠道间质瘤诊疗指南（2023 版）",
+        "summary": "规定 GIST 诊断需联合 CD117 与 DOG1 免疫组化检测，DOG1 阳性率约 94%–98%，对 KIT 阴性 GIST（尤其 PDGFRA 突变型）的鉴别诊断具有不可替代作用；明确 DOG1 也可辅助鉴别腺泡细胞癌等少见肿瘤。",
+        "organization": "中国临床肿瘤学会",
+        "year": 2023,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -1938,6 +2513,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Discovered+on+GIST+1+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Discovered+on+GIST+1+immunohistochemistry+review"
+      },
+      {
+        "title": "DOG1在胃肠道间质瘤诊断中的应用及其与CD117表达的比较",
+        "authors": "侯英勇",
+        "journal": "中华病理学杂志",
+        "year": 2011,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -1996,13 +2578,31 @@
         "id": "s-100-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/s-100-neg.svg",
+            "caption": "S-100 阴性，肿瘤细胞核及胞浆均未见染色，仅背景内散在神经纤维/树突状细胞呈内对照阳性（胃肠道间质瘤，GIST）"
+          },
+          {
+            "url": "/staining/s-100-neg-2.svg",
+            "caption": "S-100 阴性，肿瘤细胞弥漫不着色，内对照神经束呈强阳性确认染色有效（平滑肌肉瘤）"
+          }
+        ]
       },
       {
         "id": "s-100-pos",
         "label": "阳性",
         "description": "符合 核和胞浆同时阳性为典型",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/s-100-pos.svg",
+            "caption": "S-100 核及胞浆弥漫强阳性，>90% 肿瘤细胞着色（皮肤恶性黑色素瘤）"
+          },
+          {
+            "url": "/staining/s-100-pos-2.svg",
+            "caption": "S-100 核及胞浆中-强阳性，梭形细胞呈束状分布（神经鞘瘤，Schwann 细胞起源）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2023,6 +2623,24 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "melanoma-pathology-csco-caca-2021",
+        "title": "中国黑色素瘤病理诊断共识",
+        "summary": "推荐 S-100、SOX10、HMB45、Melan-A 联合应用于黑色素瘤诊断，其中 S-100 敏感性最高（>95%），适用于促结缔组织增生性黑色素瘤等少色素亚型筛查，但特异性较低，需结合 HMB45/Melan-A 鉴别。",
+        "organization": "中国临床肿瘤学会黑色素瘤专家委员会",
+        "year": 2021,
+        "sourceUrl": null,
+        "_low_confidence": true
+      },
+      {
+        "id": "soft-tissue-tumor-ihc-cma-2022",
+        "title": "软组织肿瘤免疫组织化学检测专家共识",
+        "summary": "明确 S-100 在神经鞘瘤、神经纤维瘤、颗粒细胞瘤、软骨/脂肪源性肿瘤及恶性外周神经鞘膜瘤中的应用价值，建议与 SOX10、GFAP 联合判读以提高神经源性肿瘤诊断特异性。",
+        "organization": "中华医学会病理学分会软组织肿瘤学组",
+        "year": 2022,
+        "sourceUrl": null,
+        "_low_confidence": true
       }
     ],
     "literature": [
@@ -2045,6 +2663,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=S-100+Protein+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=S-100+Protein+immunohistochemistry+review"
+      },
+      {
+        "title": "S-100蛋白及其相关标志物在黑色素瘤病理诊断中的应用",
+        "authors": "刘彤华",
+        "journal": "中华病理学杂志",
+        "year": 2010,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -2110,13 +2735,31 @@
         "id": "cd34-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd34-neg.svg",
+            "caption": "CD34 阴性，肿瘤细胞膜及胞浆均无着色，仅内部血管内皮呈阳性内对照（平滑肌肉瘤）"
+          },
+          {
+            "url": "/staining/cd34-neg-2.svg",
+            "caption": "CD34 阴性，肿瘤细胞未见膜性着色，背景血管内皮阳性作为内对照（炎性肌纤维母细胞瘤）"
+          }
+        ]
       },
       {
         "id": "cd34-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd34-pos.svg",
+            "caption": "CD34 膜阳性，中-强染色，弥漫分布于瘤细胞膜及胞浆（孤立性纤维性肿瘤，瘤细胞 >90% 阳性）"
+          },
+          {
+            "url": "/staining/cd34-pos-vessel.svg",
+            "caption": "CD34 血管内皮阳性，勾勒微血管网（血管肉瘤及肝血窦内皮细胞示例，强度中-强，膜/胞浆定位）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2137,6 +2780,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "gist-pathology-diagnosis-consensus-2017",
+        "title": "胃肠道间质瘤规范化病理诊断专家共识",
+        "summary": "规定 GIST 病理诊断流程，推荐 CD117、DOG1、CD34 作为核心免疫组化标记组合；CD34 在 60–70% GIST（尤其胃和食管来源）阳性，可辅助鉴别平滑肌瘤及神经鞘瘤，并强调与分子分型（KIT/PDGFRA）联合应用。",
+        "organization": "中华医学会病理学分会",
+        "year": 2017,
+        "sourceUrl": null
+      },
+      {
+        "id": "soft-tissue-vascular-tumor-ihc-consensus-2020",
+        "title": "软组织肿瘤免疫组织化学诊断专家共识",
+        "summary": "推荐 CD34 作为血管内皮、孤立性纤维性肿瘤、隆突性皮肤纤维肉瘤、上皮样肉瘤等软组织肿瘤的常规筛查标记；指出 CD34 在胃肠道间质瘤、神经鞘瘤（部分）及皮肤树突细胞亦可阳性，强调需联合 STAT6、ERG、SMA 等进行鉴别诊断。",
+        "organization": "中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -2159,6 +2818,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD34+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD34+immunohistochemistry+review"
+      },
+      {
+        "title": "CD34、CD117和DOG1在胃肠道间质瘤诊断中的表达及意义",
+        "authors": "侯英勇",
+        "journal": "中华病理学杂志",
+        "year": 2011,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -2228,13 +2894,31 @@
         "id": "cd20-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd20-neg.svg",
+            "caption": "CD20 膜染色阴性，肿瘤细胞未见膜表达，背景散在反应性小 B 淋巴细胞作内对照阳性（外周 T 细胞淋巴瘤，非特指型）"
+          },
+          {
+            "url": "/staining/cd20-neg-2.svg",
+            "caption": "CD20 阴性，肿瘤细胞胞膜未着色，<1% 肿瘤细胞阳性（经典型霍奇金淋巴瘤 R-S 细胞，利妥昔单抗治疗后复发的弥漫大 B 细胞淋巴瘤亦可呈此表现）"
+          }
+        ]
       },
       {
         "id": "cd20-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd20-pos.svg",
+            "caption": "CD20 膜阳性，强染色弥漫分布于 >95% 肿瘤细胞（弥漫大 B 细胞淋巴瘤，DLBCL, NOS）"
+          },
+          {
+            "url": "/staining/cd20-pos-cll.svg",
+            "caption": "CD20 膜阳性，弱至中等强度染色，弥漫表达于小淋巴样肿瘤细胞（慢性淋巴细胞白血病/小淋巴细胞淋巴瘤，CLL/SLL）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2255,6 +2939,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "lymphoma-pathology-diagnosis-cma-2022",
+        "title": "淋巴瘤病理诊断规范",
+        "summary": "由中华医学会病理学分会发布，规定 B 细胞淋巴瘤诊断的免疫组化必检套餐，CD20 作为成熟 B 细胞核心标记物列入一线必查项目，用于 B/T 细胞谱系判定及利妥昔单抗等抗 CD20 靶向治疗适应人群筛选；同时提示利妥昔单抗治疗后 CD20 表达可丢失，需联合 CD79a、PAX5 评估。",
+        "organization": "中华医学会病理学分会",
+        "year": 2022,
+        "sourceUrl": null
+      },
+      {
+        "id": "dlbcl-diagnosis-treatment-csco-2024",
+        "title": "中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南（2024 版）",
+        "summary": "在弥漫大 B 细胞淋巴瘤等成熟 B 细胞淋巴瘤诊断流程中，要求 CD20 与 CD19、CD79a、PAX5 等联合检测以确认 B 细胞来源，并指导 R-CHOP 等含利妥昔单抗方案的治疗决策；强调治疗后复发或转化病例应重新评估 CD20 表达状态。",
+        "organization": "中国临床肿瘤学会（CSCO）",
+        "year": 2024,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -2277,6 +2977,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD20+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD20+immunohistochemistry+review"
+      },
+      {
+        "title": "CD20阳性弥漫性大B细胞淋巴瘤的临床病理特征及预后分析",
+        "authors": "李小秋等",
+        "journal": "中华病理学杂志",
+        "year": 2019,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -2334,13 +3041,31 @@
         "id": "cd3-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd3-neg.svg",
+            "caption": "CD3 膜染色阴性，肿瘤细胞未见特异性着色（弥漫大 B 细胞淋巴瘤，非 T 细胞来源）"
+          },
+          {
+            "url": "/staining/cd3-neg-2.svg",
+            "caption": "CD3 阴性，背景散在少量反应性 T 细胞呈膜阳性作为内对照（B 细胞淋巴瘤示例）"
+          }
+        ]
       },
       {
         "id": "cd3-pos",
         "label": "阳性",
         "description": "符合 膜和/或胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd3-pos.svg",
+            "caption": "CD3 膜阳性，强染色，弥漫分布于全部肿瘤细胞（外周 T 细胞淋巴瘤，非特指型）"
+          },
+          {
+            "url": "/staining/cd3-pos-2.svg",
+            "caption": "CD3 膜阳性，中-强染色，散在分布于间质内反应性 T 淋巴细胞（经典型霍奇金淋巴瘤背景）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2361,6 +3086,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "lymphoma-pathology-diagnosis-cma-2013",
+        "title": "淋巴瘤病理诊断规范",
+        "summary": "规范淋巴瘤病理诊断流程与免疫组化抗体组合，推荐 CD3 作为 T 细胞系列核心标记物，与 CD20、CD5、CD10、Bcl-2、Bcl-6、Ki-67 等联合用于 B/T 细胞系别鉴定及淋巴瘤亚型分类。",
+        "organization": "中华医学会病理学分会",
+        "year": 2013,
+        "sourceUrl": null
+      },
+      {
+        "id": "ihc-standardization-cma-2015",
+        "title": "免疫组织化学检测技术规范化专家共识",
+        "summary": "规定免疫组化操作流程、质控标准与结果判读要求，将 CD3 列为 T 细胞谱系鉴定的一线抗体，建议采用兔单克隆抗体并以淋巴结副皮质区 T 细胞作为内对照，膜/胞质阳性方视为阳性。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -2447,13 +3188,31 @@
         "id": "cd30-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd30-neg.svg",
+            "caption": "CD30 阴性，肿瘤细胞膜及高尔基区均未见染色（弥漫大 B 细胞淋巴瘤，非 CD30 阳性亚型）"
+          },
+          {
+            "url": "/staining/cd30-neg-2.svg",
+            "caption": "CD30 阴性，背景内散在少量活化 T 淋巴细胞呈弱阳性，肿瘤细胞本身无膜/高尔基着色（滤泡性淋巴瘤）"
+          }
+        ]
       },
       {
         "id": "cd30-pos",
         "label": "阳性",
         "description": "符合 膜和高尔基区(核旁dot-like)阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd30-pos.svg",
+            "caption": "CD30 膜及高尔基区阳性，强染色 ≥ 75% 肿瘤细胞（经典型霍奇金淋巴瘤 R-S 细胞及变异型 H 细胞）"
+          },
+          {
+            "url": "/staining/cd30-pos-alcl.svg",
+            "caption": "CD30 膜及高尔基区弥漫强阳性，>90% 肿瘤细胞（间变性大细胞淋巴瘤，ALK 阳性型）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2474,6 +3233,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "lymphoma-pathology-diagnosis-cma-2022",
+        "title": "淋巴瘤病理诊断规范",
+        "summary": "中华医学会病理学分会发布的淋巴瘤病理诊断规范，明确 CD30 作为霍奇金淋巴瘤（cHL）、间变性大细胞淋巴瘤（ALCL）、原发皮肤 CD30+ 淋巴增殖性疾病的核心标记物，规范其膜/Golgi 区阳性判读及在 R-S 细胞、霍奇金细胞中的特征性表达，并提示在弥漫大 B 细胞淋巴瘤、外周 T 细胞淋巴瘤中的诊断与靶向（维布妥昔单抗 BV）治疗指导价值。",
+        "organization": "中华医学会病理学分会",
+        "year": 2022,
+        "sourceUrl": null
+      },
+      {
+        "id": "cd30-detection-cscoacp-2020",
+        "title": "淋巴瘤 CD30 免疫组织化学检测专家共识",
+        "summary": "由中国抗癌协会淋巴瘤专业委员会与中华医学会病理学分会淋巴瘤学组联合制定，规范 CD30 IHC 检测前分析、克隆号选择（Ber-H2）、染色流程及阳性判读阈值，强调任何强度膜/Golgi 染色 ≥1% 即视为阳性，用于筛选 BV 治疗适用人群（cHL、sALCL、PTCL-NOS、AITL、CTCL 等）。",
+        "organization": "中国抗癌协会淋巴瘤专业委员会 / 中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -2496,6 +3271,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD30+%28Ki-1%29+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD30+%28Ki-1%29+immunohistochemistry+review"
+      },
+      {
+        "title": "CD30在淋巴瘤诊断与治疗中的研究进展",
+        "authors": null,
+        "journal": "中华病理学杂志",
+        "year": 2021,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -2556,13 +3338,31 @@
         "id": "synaptophysin-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/syn-neg.svg",
+            "caption": "Syn 胞浆/颗粒染色阴性，肿瘤细胞无棕黄色颗粒状着色，仅见苏木精蓝染核背景（乳腺浸润性导管癌，非神经内分泌分化）"
+          },
+          {
+            "url": "/staining/syn-neg-2.svg",
+            "caption": "Syn 阴性，肿瘤细胞胞浆无弥漫点状/颗粒状着色，内对照神经纤维/神经节细胞呈阳性反应（肺腺癌，除外神经内分泌分化）"
+          }
+        ]
       },
       {
         "id": "synaptophysin-pos",
         "label": "阳性",
         "description": "符合 胞浆颗粒状阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/syn-pos.svg",
+            "caption": "Syn 胞浆颗粒状阳性，弥漫强染色 ≥ 90% 肿瘤细胞（小细胞肺癌）"
+          },
+          {
+            "url": "/staining/syn-pos-net.svg",
+            "caption": "Syn 胞浆颗粒状阳性，中—强强度弥漫表达（胰腺神经内分泌瘤 G2）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2583,6 +3383,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "neuroendocrine-neoplasm-pathology-cma-2020",
+        "title": "中国胃肠胰神经内分泌肿瘤病理诊断共识",
+        "summary": "推荐 Syn 联合 CgA、CD56 作为神经内分泌分化的核心标记组合，其中 Syn 敏感性最高，规定以 Ki-67 增殖指数与核分裂计数进行 NET G1/G2/G3 与 NEC 分级，明确 Syn 弥漫强阳性为神经内分泌肿瘤确诊依据。",
+        "organization": "中华医学会病理学分会消化疾病学组",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "lung-neuroendocrine-tumor-diagnosis-consensus-2021",
+        "title": "肺神经内分泌肿瘤病理诊断共识",
+        "summary": "规范肺典型类癌、不典型类癌、小细胞肺癌、大细胞神经内分泌癌的病理诊断流程，推荐 Syn、CgA、CD56 及 INSM1 作为神经内分泌标记物组合，强调 Syn 为最敏感指标，并结合 Ki-67、核分裂与坏死进行分型。",
+        "organization": "中华医学会病理学分会胸部疾病学组",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -2668,13 +3484,31 @@
         "id": "chromogranin-a-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cga-neg.svg",
+            "caption": "CgA 胞浆阴性，肿瘤细胞无颗粒状着色（乳腺浸润性导管癌，非神经内分泌分化）"
+          },
+          {
+            "url": "/staining/cga-neg-2.svg",
+            "caption": "CgA 阴性，背景正常胰岛细胞呈内对照胞浆阳性，肿瘤区域无表达（胰腺导管腺癌）"
+          }
+        ]
       },
       {
         "id": "chromogranin-a-pos",
         "label": "阳性",
         "description": "符合 胞浆颗粒状阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cga-pos.svg",
+            "caption": "CgA 胞浆颗粒状阳性，弥漫强染色 ≥ 90% 肿瘤细胞（胰腺神经内分泌肿瘤 G1）"
+          },
+          {
+            "url": "/staining/cga-pos-2.svg",
+            "caption": "CgA 胞浆粗颗粒状阳性，中-强强度，局灶性分布（回肠高分化神经内分泌肿瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2695,6 +3529,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "gep-net-pathology-diagnosis-consensus-2020",
+        "title": "胃肠胰神经内分泌肿瘤病理诊断共识",
+        "summary": "推荐将CgA联合Syn作为神经内分泌分化的核心免疫组化标记物，规定CgA阳性定位于胞浆颗粒状表达，强调与Syn联合使用以提高神经内分泌肿瘤诊断特异性，并规范Ki-67增殖指数联合应用以进行G1/G2/G3分级。",
+        "organization": "中华医学会病理学分会消化疾病学组",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "cn-net-diagnosis-treatment-consensus-2023",
+        "title": "中国胃肠胰神经内分泌肿瘤专家共识",
+        "summary": "共识明确CgA为神经内分泌肿瘤诊断的必查免疫组化标志物之一，并推荐血清CgA作为辅助诊断、疗效监测及随访复发的循环生物标志物，同时指出质子泵抑制剂使用可影响血清CgA水平判读。",
+        "organization": "中国临床肿瘤学会（CSCO）神经内分泌肿瘤专家委员会",
+        "year": 2023,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -2717,6 +3567,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Chromogranin+A+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Chromogranin+A+immunohistochemistry+review"
+      },
+      {
+        "title": "神经内分泌肿瘤病理诊断共识",
+        "authors": "中国抗癌协会肿瘤病理专业委员会神经内分泌肿瘤学组",
+        "journal": "中华病理学杂志",
+        "year": 2020,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -2781,13 +3638,31 @@
         "id": "ttf1-neg",
         "label": "阴性",
         "description": "排除肺腺癌、甲状腺癌 · 注意克隆号差异",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ttf1-neg.svg",
+            "caption": "TTF-1 核阴性，肿瘤细胞核未见棕色染色（结直肠腺癌，提示非肺/甲状腺起源）"
+          },
+          {
+            "url": "/staining/ttf1-neg-sqcc.svg",
+            "caption": "TTF-1 核阴性，肿瘤细胞核完全不着色，背景肺泡上皮内残留散在阳性内对照（肺鳞状细胞癌）"
+          }
+        ]
       },
       {
         "id": "ttf1-pos",
         "label": "阳性",
         "description": "核染色 · 肺腺癌 ~80%、甲状腺滤泡细胞癌 ~95%",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ttf1-pos.svg",
+            "caption": "TTF-1 核阳性，强染色，弥漫分布于 ≥ 75% 肿瘤细胞（肺腺癌）"
+          },
+          {
+            "url": "/staining/ttf1-pos-thyroid.svg",
+            "caption": "TTF-1 核阳性，中-强染色，弥漫分布于几乎全部滤泡上皮细胞（甲状腺乳头状癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2808,6 +3683,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "nsclc-pathology-diagnosis-consensus-2020",
+        "title": "非小细胞肺癌分子病理检测临床实践中国专家共识",
+        "summary": "推荐 TTF-1（克隆 8G7G3/1 或 SPT24）联合 Napsin A 作为肺腺癌鉴别的首选免疫组化标记物，用于低分化非小细胞肺癌的腺/鳞分型及转移性腺癌的肺原发判断，并提示 TTF-1 在部分甲状腺癌及少数肺外腺癌中亦可阳性，需结合 PAX8、p40 等综合判读。",
+        "organization": "中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "thyroid-fnac-tbs-consensus-cn-2023",
+        "title": "甲状腺细针穿刺细胞病理学检查规范化操作中国专家共识",
+        "summary": "在甲状腺病变细胞学及组织学鉴别诊断中推荐 TTF-1 联合 Tg、PAX8 确认甲状腺滤泡细胞起源，用于转移性癌的原发灶判断及低分化/未分化甲状腺癌的辅助诊断，并提示 TTF-1 阴性不能排除未分化癌。",
+        "organization": "中华医学会病理学分会",
+        "year": 2023,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -2830,6 +3721,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Thyroid+Transcription+Factor+1+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Thyroid+Transcription+Factor+1+immunohistochemistry+review"
+      },
+      {
+        "title": "甲状腺转录因子-1在肺癌诊断及鉴别诊断中的应用",
+        "authors": "朱雄增",
+        "journal": "中华病理学杂志",
+        "year": 2006,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -2895,13 +3793,31 @@
         "id": "cdx2-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cdx2-neg.svg",
+            "caption": "CDX2 核染色阴性，肿瘤细胞核无着色（肺腺癌，非胃肠来源）"
+          },
+          {
+            "url": "/staining/cdx2-neg-2.svg",
+            "caption": "CDX2 核染色阴性，肿瘤细胞核未见棕黄色颗粒，背景正常小肠黏膜上皮呈强核阳性作为内对照（乳腺浸润性导管癌转移灶鉴别）"
+          }
+        ]
       },
       {
         "id": "cdx2-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cdx2-pos.svg",
+            "caption": "CDX2 弥漫核阳性，强染色 ≥ 90% 肿瘤细胞（结肠中分化腺癌）"
+          },
+          {
+            "url": "/staining/cdx2-pos-2.svg",
+            "caption": "CDX2 核阳性，中–强强度，弥漫分布（胃肠型腺癌，支持肠上皮分化）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -2922,6 +3838,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "crc-molecular-testing-csp-2018",
+        "title": "结直肠癌及其他消化道肿瘤分子病理检测专家共识",
+        "summary": "推荐 CDX2 作为胃肠道来源腺癌鉴别诊断的核心标记物之一，用于转移性腺癌原发灶判定；强调 CDX2 联合 CK20、SATB2 提高结直肠来源判读特异性，并指出部分低分化结直肠癌可出现 CDX2 表达缺失，提示预后不良。",
+        "organization": "中华医学会病理学分会消化疾病学组",
+        "year": 2018,
+        "sourceUrl": null
+      },
+      {
+        "id": "ihc-standardization-csp-2022",
+        "title": "免疫组织化学检测技术规范化专家共识",
+        "summary": "规定包括 CDX2 在内的常用核染色标记物的抗原修复、克隆号选择（常用 EP25/DAK-CDX2）、判读阈值与阳性/阴性对照设置；要求实验室建立 CDX2 室内质控并参加室间质评，确保结直肠及胃肠来源腺癌鉴别的可重复性。",
+        "organization": "中华医学会病理学分会",
+        "year": 2022,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -3008,13 +3940,31 @@
         "id": "gata3-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/gata3-neg.svg",
+            "caption": "GATA3 核阴性，肿瘤细胞无核染色，间质淋巴细胞可见散在弱核阳性作为内对照（肺腺癌，TTF-1 阳性）"
+          },
+          {
+            "url": "/staining/gata3-neg-2.svg",
+            "caption": "GATA3 核阴性，肿瘤细胞完全不表达，背景正常结肠上皮亦阴性（结直肠腺癌，CDX2 阳性）"
+          }
+        ]
       },
       {
         "id": "gata3-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/gata3-pos.svg",
+            "caption": "GATA3 核阳性，弥漫强染色 ≥ 90% 肿瘤细胞（乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/gata3-pos-urothelial.svg",
+            "caption": "GATA3 核阳性，中-强强度、弥漫分布于 > 80% 肿瘤细胞（高级别尿路上皮癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3035,6 +3985,16 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "breast-ihc-cma-pathology-2021",
+        "title": "乳腺癌免疫组织化学检测指南",
+        "summary": "中华医学会病理学分会乳腺疾病学组发布的乳腺癌 IHC 规范，将 GATA3 列为乳腺来源（尤其 ER 阴性、三阴性乳腺癌）鉴别诊断的重要标记物，指导标本固定、抗体选择与判读标准。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null,
+        "_low_confidence": true,
+        "_reason": "GATA3 常在乳腺/尿路上皮相关中国共识中被提及，但未见以 GATA3 为主题的独立国内专家共识；所列条目为含 GATA3 推荐的综合性共识，具体版本年份需人工复核。"
       }
     ],
     "literature": [
@@ -3057,6 +4017,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=GATA+Binding+Protein+3+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=GATA+Binding+Protein+3+immunohistochemistry+review"
+      },
+      {
+        "title": "GATA3在乳腺癌中的表达及其临床病理意义",
+        "authors": null,
+        "journal": "中华病理学杂志",
+        "year": 2015,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -3114,13 +4081,31 @@
         "id": "hmb45-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/hmb45-neg.svg",
+            "caption": "HMB45 胞浆阴性，肿瘤细胞无棕黄色颗粒着色，内对照（邻近正常黑色素细胞）阳性（梭形细胞肉瘤，除外黑色素瘤）"
+          },
+          {
+            "url": "/staining/hmb45-neg-2.svg",
+            "caption": "HMB45 阴性，肿瘤细胞胞浆未见特异性染色，提示非黑色素细胞分化（透明细胞肉瘤鉴别诊断中的低分化癌示例）"
+          }
+        ]
       },
       {
         "id": "hmb45-pos",
         "label": "阳性",
         "description": "符合 胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/hmb45-pos.svg",
+            "caption": "HMB45 胞浆颗粒状阳性，中-强强度，弥漫分布于 >90% 肿瘤细胞（皮肤恶性黑色素瘤）"
+          },
+          {
+            "url": "/staining/hmb45-pos-2.svg",
+            "caption": "HMB45 胞浆颗粒状阳性，中等强度，灶状分布于上皮样细胞（肾血管平滑肌脂肪瘤 AML / PEComa）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3141,6 +4126,23 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "melanoma-pathology-cma-2021",
+        "title": "中国黑色素瘤病理诊断规范（2021版）",
+        "summary": "规范皮肤及黏膜黑色素瘤病理诊断流程，推荐 S-100、SOX10、HMB45、Melan-A 组合用于黑色素细胞来源判定；指出 HMB45 在促纤维增生性黑色素瘤中常阴性，需联合 SOX10 判读，并规范前哨淋巴结微转移评估。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
+      },
+      {
+        "id": "pecoma-consensus-cn-2020",
+        "title": "血管周上皮样细胞肿瘤（PEComa）病理诊断中国专家共识",
+        "summary": "明确 PEComa 家族（包括肾/肝血管平滑肌脂肪瘤、淋巴管平滑肌瘤病等）的形态学与免疫表型特征，推荐 HMB45 与 Melan-A、SMA、Cathepsin K 联合应用；HMB45 是 PEComa 最敏感的黑色素细胞分化标记物。",
+        "organization": "中华医学会病理学分会软组织肿瘤学组",
+        "year": 2020,
+        "sourceUrl": null,
+        "_low_confidence": true
       }
     ],
     "literature": [
@@ -3219,13 +4221,31 @@
         "id": "melan-a-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/melan-a-neg.svg",
+            "caption": "Melan-A 胞浆染色阴性，肿瘤细胞未见棕黄色颗粒状着色，仅见苏木素蓝染核（梭形细胞肉瘤，非黑色素细胞来源）"
+          },
+          {
+            "url": "/staining/melan-a-neg-2.svg",
+            "caption": "Melan-A 阴性，肿瘤细胞胞浆无着色，周围正常组织内散在黑色素细胞呈内对照阳性（转移性低分化癌，鉴别排除黑色素瘤）"
+          }
+        ]
       },
       {
         "id": "melan-a-pos",
         "label": "阳性",
         "description": "符合 胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/melan-a-pos.svg",
+            "caption": "Melan-A 胞浆阳性，颗粒状强染色，>90% 肿瘤细胞（皮肤恶性黑色素瘤）"
+          },
+          {
+            "url": "/staining/melan-a-pos-2.svg",
+            "caption": "Melan-A 胞浆弥漫中-强阳性，呈巢状分布（上皮样型黑色素瘤转移灶）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3326,13 +4346,31 @@
         "id": "sox10-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/sox10-neg.svg",
+            "caption": "SOX10 核阴性，肿瘤细胞无核染色，间质内散在施万细胞呈内对照阳性（结直肠腺癌）"
+          },
+          {
+            "url": "/staining/sox10-neg-2.svg",
+            "caption": "SOX10 核阴性，肿瘤细胞未见核着色，背景正常神经束阳性作为内对照（肺腺癌）"
+          }
+        ]
       },
       {
         "id": "sox10-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/sox10-pos.svg",
+            "caption": "SOX10 核阳性，弥漫强染色 > 90% 肿瘤细胞（皮肤恶性黑色素瘤）"
+          },
+          {
+            "url": "/staining/sox10-pos-2.svg",
+            "caption": "SOX10 核阳性，中-强度染色约 80% 肿瘤细胞（乳腺基底样三阴性乳腺癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3353,6 +4391,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "melanoma-pathology-cma-2021",
+        "title": "中国黑色素瘤病理诊断共识",
+        "summary": "推荐 SOX10 与 S-100、HMB45、Melan-A 联合用于黑色素瘤诊断，强调 SOX10 在促纤维增生性黑色素瘤及去色素病灶中敏感性优于 HMB45/Melan-A，可作为神经嵴源性肿瘤的重要核标记。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
+      },
+      {
+        "id": "breast-ihc-cma-2021",
+        "title": "乳腺癌组织病理学诊断免疫组织化学检测指南",
+        "summary": "在三阴性乳腺癌及基底样型鉴别诊断中推荐 SOX10 作为辅助标记，用于区分乳腺原发与转移癌；同时提示 SOX10 在乳腺肌上皮和部分涎腺来源肿瘤中的表达特征及判读注意事项。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -3375,6 +4429,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=SOX10+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=SOX10+immunohistochemistry+review"
+      },
+      {
+        "title": "SOX10在乳腺癌中的表达及其临床病理意义",
+        "authors": null,
+        "journal": "中华病理学杂志",
+        "year": 2018,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -3442,13 +4503,31 @@
         "id": "pax8-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/pax8-neg.svg",
+            "caption": "PAX8 核染色阴性，肿瘤细胞完全不着色（乳腺浸润性导管癌，NST）"
+          },
+          {
+            "url": "/staining/pax8-neg-2.svg",
+            "caption": "PAX8 核染色阴性，肿瘤细胞无核着色，内对照（残留肾小管上皮）核阳性（结直肠腺癌）"
+          }
+        ]
       },
       {
         "id": "pax8-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/pax8-pos.svg",
+            "caption": "PAX8 核阳性，中-强染色，弥漫分布于 >90% 肿瘤细胞核（卵巢高级别浆液性癌）"
+          },
+          {
+            "url": "/staining/pax8-pos-2.svg",
+            "caption": "PAX8 核阳性，强染色，弥漫表达于肿瘤细胞核（肾透明细胞癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3469,6 +4548,16 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "ihc-standardization-cma-2015",
+        "title": "免疫组织化学检测技术规范化的专家共识",
+        "summary": "规范免疫组化染色前分析、分析及分析后质量控制流程，涵盖 PAX8 等核转录因子类抗体的固定、抗原修复、稀释度、判读与质控要求，为 PAX8 作为苗勒源性、肾及甲状腺肿瘤鉴别标记的规范化应用提供依据。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null,
+        "_low_confidence": true,
+        "_reason": "该共识以规范 IHC 技术为主，未专门针对 PAX8 单独成文；国内目前缺乏专门针对 PAX8 标记物的独立专家共识"
       }
     ],
     "literature": [
@@ -3491,6 +4580,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Paired+Box+8+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Paired+Box+8+immunohistochemistry+review"
+      },
+      {
+        "title": "PAX8在女性生殖道肿瘤诊断中的应用",
+        "authors": "郭东辉",
+        "journal": "中华病理学杂志",
+        "year": 2013,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -3557,19 +4653,46 @@
         "id": "pd-l1-neg",
         "label": "阴性 (TPS <1%)",
         "description": "无可评估的膜染色或 TPS <1%",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/pd-l1-neg.svg",
+            "caption": "PD-L1（22C3 克隆）肿瘤细胞膜染色阴性，TPS <1%，背景间质淋巴细胞可见少量胞膜弱阳性（非小细胞肺腺癌）"
+          },
+          {
+            "url": "/staining/pd-l1-neg-2.svg",
+            "caption": "PD-L1 肿瘤细胞膜完全无着色，TPS 0%，内对照巨噬细胞呈胞膜阳性提示染色有效（肺鳞状细胞癌）"
+          }
+        ]
       },
       {
         "id": "pd-l1-low",
         "label": "低表达 (TPS 1–49%)",
         "description": "1–49% 肿瘤细胞完整膜染色",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/pd-l1-low.svg",
+            "caption": "PD-L1 肿瘤细胞膜阳性，弱至中等强度，TPS 约 20%（非小细胞肺癌腺癌）"
+          },
+          {
+            "url": "/staining/pd-l1-low-2.svg",
+            "caption": "PD-L1 部分肿瘤细胞膜不完全阳性，散在分布，TPS 约 5–10%（尿路上皮癌）"
+          }
+        ]
       },
       {
         "id": "pd-l1-high",
         "label": "高表达 (TPS ≥50%)",
         "description": "≥50% 肿瘤细胞完整膜染色 · 一线免疫治疗证据最强",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/pd-l1-high.svg",
+            "caption": "PD-L1 肿瘤细胞膜阳性，强染色，TPS ≥ 50%（≥ 50% 肿瘤细胞呈完整或不完整膜染色），代表瘤种：非小细胞肺癌（克隆号 22C3）"
+          },
+          {
+            "url": "/staining/pd-l1-high-2.svg",
+            "caption": "PD-L1 肿瘤细胞膜弥漫强阳性，TPS 约 80%，呈片状分布，背景间质淋巴细胞亦可见少量膜阳性（肺腺癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3590,6 +4713,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "pd-l1-ihc-testing-consensus-2020",
+        "title": "非小细胞肺癌 PD-L1 免疫组织化学检测规范中国专家共识",
+        "summary": "规范 NSCLC 组织标本 PD-L1 IHC 检测的前分析、分析及后分析流程，明确 22C3、SP263、SP142、28-8 等抗体克隆的判读标准（TPS），规定阈值 ≥1%、≥50% 的临床意义，指导免疫检查点抑制剂用药人群筛选。",
+        "organization": "中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "pd-l1-pathology-diagnosis-consensus-2021",
+        "title": "PD-L1 免疫组织化学检测病理专家共识",
+        "summary": "聚焦多瘤种（肺癌、尿路上皮癌、头颈鳞癌、食管癌、胃癌、三阴性乳腺癌）PD-L1 判读差异，统一 TPS、CPS、IC 评分体系，强调抗体平台可比性、对照设置及室间质控，规范病理报告书写格式。",
+        "organization": "中华医学会病理学分会 / 中国抗癌协会肿瘤病理专业委员会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -3612,6 +4751,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Programmed+Death-Ligand+1+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Programmed+Death-Ligand+1+immunohistochemistry+review"
+      },
+      {
+        "title": "非小细胞肺癌PD-L1免疫组织化学检测及判读专家共识",
+        "authors": "中华医学会病理学分会",
+        "journal": "中华病理学杂志",
+        "year": 2020,
+        "doi": "10.3760/cma.j.cn112151-20200313-00203"
       }
     ],
     "cloneVariants": [
@@ -3752,13 +4898,31 @@
         "id": "bcl2-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/bcl2-neg.svg",
+            "caption": "BCL2 阴性，肿瘤细胞胞浆及膜未见棕黄色染色，背景反应性 T 淋巴细胞呈内对照阳性（生发中心 B 细胞淋巴瘤，滤泡内中心母细胞 BCL2 阴性）"
+          },
+          {
+            "url": "/staining/bcl2-neg-2.svg",
+            "caption": "BCL2 阴性，肿瘤细胞胞浆完全不着色（<10% 弱表达），仅散在 T 细胞胞浆弱-中等强度阳性作为内对照（Burkitt 淋巴瘤，典型 BCL2 阴性表型）"
+          }
+        ]
       },
       {
         "id": "bcl2-pos",
         "label": "阳性",
         "description": "符合 胞浆弥漫阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/bcl2-pos.svg",
+            "caption": "BCL2 胞浆阳性，强染色弥漫分布于 >90% 肿瘤细胞（滤泡性淋巴瘤，可与反应性生发中心 BCL2 阴性鉴别）"
+          },
+          {
+            "url": "/staining/bcl2-pos-2.svg",
+            "caption": "BCL2 胞浆阳性，中-强强度，约 80% 肿瘤细胞着色（弥漫大 B 细胞淋巴瘤，GCB 亚型，提示 t(14;18) 易位可能）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3779,6 +4943,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "lymphoma-pathology-diagnosis-cma-2013",
+        "title": "淋巴瘤病理诊断规范",
+        "summary": "规范淋巴瘤病理诊断流程与免疫组化标记物组合，推荐 BCL2 联合 CD10、BCL6、MUM1 用于弥漫大 B 细胞淋巴瘤 Hans 分型及滤泡性淋巴瘤与反应性滤泡增生的鉴别，并提示 BCL2/MYC 双表达与双打击淋巴瘤的识别。",
+        "organization": "中华医学会病理学分会",
+        "year": 2013,
+        "sourceUrl": null
+      },
+      {
+        "id": "dlbcl-diagnosis-treatment-csco-2024",
+        "title": "中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南（2024 版）",
+        "summary": "推荐弥漫大 B 细胞淋巴瘤常规行 BCL2、BCL6、MYC 免疫组化及 FISH 检测，用于识别 MYC/BCL2 双表达淋巴瘤及 MYC 伴 BCL2/BCL6 重排的高级别 B 细胞淋巴瘤（双/三打击），指导预后判断与治疗选择。",
+        "organization": "中国临床肿瘤学会（CSCO）",
+        "year": 2024,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -3801,6 +4981,20 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=B-Cell+Lymphoma+2+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=B-Cell+Lymphoma+2+immunohistochemistry+review"
+      },
+      {
+        "title": "Bcl-2、Bax蛋白在弥漫性大B细胞淋巴瘤中的表达及其临床意义",
+        "authors": "李小秋等",
+        "journal": "中华病理学杂志",
+        "year": 2008,
+        "doi": null
+      },
+      {
+        "title": "滤泡性淋巴瘤的临床病理特征及BCL2、BCL6基因重排研究",
+        "authors": "周小鸽等",
+        "journal": "中华病理学杂志",
+        "year": 2010,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -3864,13 +5058,31 @@
         "id": "bcl6-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/bcl6-neg.svg",
+            "caption": "BCL6 核阴性，肿瘤细胞未见核着色，背景非生发中心 B 细胞不表达（弥漫大 B 细胞淋巴瘤 ABC/非 GCB 亚型示例）"
+          },
+          {
+            "url": "/staining/bcl6-neg-2.svg",
+            "caption": "BCL6 阴性，肿瘤细胞核完全缺失染色，仅可见内对照残留正常生发中心细胞弱核阳性（套细胞淋巴瘤示例）"
+          }
+        ]
       },
       {
         "id": "bcl6-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/bcl6-pos.svg",
+            "caption": "BCL6 核阳性，中-强染色，弥漫分布于 >30% 肿瘤细胞（弥漫大 B 细胞淋巴瘤，生发中心型）"
+          },
+          {
+            "url": "/staining/bcl6-pos-fl.svg",
+            "caption": "BCL6 核阳性，强染色，主要表达于滤泡中心区肿瘤性 B 细胞（滤泡性淋巴瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -3891,6 +5103,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "dlbcl-pathology-diagnosis-csp-2022",
+        "title": "弥漫大B细胞淋巴瘤病理诊断规范化专家共识",
+        "summary": "推荐对DLBCL常规检测CD20、CD10、BCL6、MUM1、MYC、BCL2等标志物，依据Hans分型（CD10/BCL6/MUM1）区分生发中心B细胞（GCB）与非GCB亚型；强调BCL6与MYC、BCL2的FISH检测用于识别高级别B细胞淋巴瘤伴MYC和BCL2和/或BCL6重排（双打击/三打击淋巴瘤）。",
+        "organization": "中华医学会病理学分会淋巴造血疾病学组",
+        "year": 2022,
+        "sourceUrl": null
+      },
+      {
+        "id": "lymphoma-molecular-pathology-cn-2023",
+        "title": "中国淋巴瘤病理规范化诊断专家共识",
+        "summary": "明确BCL6免疫组化核阳性定位及判读阈值（≥30%阳性肿瘤细胞），规定BCL6基因断裂探针FISH检测用于滤泡性淋巴瘤、DLBCL及高级别B细胞淋巴瘤的鉴别与分型；同时指出BCL6亦可表达于部分T细胞淋巴瘤（如血管免疫母细胞性T细胞淋巴瘤，AITL）辅助诊断。",
+        "organization": "中华医学会病理学分会 / 中国抗癌协会淋巴瘤专业委员会",
+        "year": 2023,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -3913,6 +5141,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=B-Cell+Lymphoma+6+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=B-Cell+Lymphoma+6+immunohistochemistry+review"
+      },
+      {
+        "title": "BCL6、CD10和MUM1在弥漫性大B细胞淋巴瘤中的表达及其临床病理意义",
+        "authors": "李小秋等",
+        "journal": "中华病理学杂志",
+        "year": 2006,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -3979,13 +5214,31 @@
         "id": "cd10-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd10-neg.svg",
+            "caption": "CD10 阴性，肿瘤细胞膜及胞浆均无着色，内对照（血管内皮/中性粒细胞）呈阳性（胃低分化腺癌，非肠型分化）"
+          },
+          {
+            "url": "/staining/cd10-neg-2.svg",
+            "caption": "CD10 阴性，滤泡中心区 B 细胞膜染色缺失，背景 T 细胞区亦阴性（套细胞淋巴瘤，支持非生发中心来源）"
+          }
+        ]
       },
       {
         "id": "cd10-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd10-pos.svg",
+            "caption": "CD10 膜阳性伴胞浆弱阳性，强染色 ≥ 80% 肿瘤细胞，弥漫分布（肾透明细胞癌）"
+          },
+          {
+            "url": "/staining/cd10-pos-2.svg",
+            "caption": "CD10 生发中心 B 细胞核旁/膜阳性，中-强强度，肿瘤性滤泡内 > 70% 细胞着色（滤泡性淋巴瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4006,6 +5259,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "lymphoma-pathology-diagnosis-cma-2013",
+        "title": "淋巴瘤病理诊断规范",
+        "summary": "规范淋巴瘤病理诊断流程与免疫组化套餐应用，推荐 CD10 联合 BCL6、MUM1（Hans 分型）用于弥漫大 B 细胞淋巴瘤 GCB/non-GCB 亚型划分，并用于滤泡性淋巴瘤、Burkitt 淋巴瘤诊断。",
+        "organization": "中华医学会病理学分会",
+        "year": 2013,
+        "sourceUrl": null
+      },
+      {
+        "id": "ihc-standardization-cma-2015",
+        "title": "免疫组织化学检测技术规范化专家共识",
+        "summary": "规定免疫组化标记物（含 CD10）的抗体选择、染色流程、阳性对照与判读标准，强调 CD10 胞膜/胞浆阳性判读，用于淋巴造血肿瘤、肾细胞癌、子宫内膜间质肿瘤等鉴别诊断。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4028,6 +5297,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CALLA+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CALLA+immunohistochemistry+review"
+      },
+      {
+        "title": "CD10在肝细胞癌诊断及鉴别诊断中的应用",
+        "authors": "丛文铭",
+        "journal": "中华病理学杂志",
+        "year": 2008,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -4087,13 +5363,31 @@
         "id": "cd56-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd56-neg.svg",
+            "caption": "CD56 阴性，肿瘤细胞膜及胞浆均无染色，背景神经内分泌标记缺失（乳腺浸润性导管癌，非神经内分泌分化）"
+          },
+          {
+            "url": "/staining/cd56-neg-2.svg",
+            "caption": "CD56 阴性，肿瘤细胞无膜性着色，仅见散在内对照淋巴细胞弱阳性（肺腺癌，排除小细胞癌神经内分泌分化）"
+          }
+        ]
       },
       {
         "id": "cd56-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd56-pos.svg",
+            "caption": "CD56 膜阳性伴胞浆弱着色，弥漫强染色 ≥ 90% 肿瘤细胞（肺小细胞癌）"
+          },
+          {
+            "url": "/staining/cd56-pos-2.svg",
+            "caption": "CD56 胞膜阳性，中等强度染色 > 70% 肿瘤细胞，呈器官样/梁状排列（胰腺神经内分泌肿瘤 G2）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4114,6 +5408,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "nen-pathology-diagnosis-cma-2020",
+        "title": "中国胃肠胰神经内分泌肿瘤病理诊断共识",
+        "summary": "推荐 CgA、Syn、CD56 作为神经内分泌分化的核心免疫组化标记物组合；规定 CD56（NCAM）膜阳性提示神经内分泌分化，但特异性低于 Syn 和 CgA，需联合判读；同时规范 Ki-67 计数方法以指导 NET G1/G2/G3 与 NEC 分级。",
+        "organization": "中华医学会病理学分会消化疾病学组",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "lung-nen-diagnosis-consensus-2021",
+        "title": "肺神经内分泌肿瘤病理诊断专家共识",
+        "summary": "明确 CD56、Syn、CgA 为肺类癌、不典型类癌、小细胞肺癌（SCLC）及大细胞神经内分泌癌（LCNEC）诊断必备标记物；指出 CD56 在 SCLC 中阳性率最高（>90%），可作为筛查标记，但需结合形态学和 Ki-67 增殖指数综合判断。",
+        "organization": "中华医学会病理学分会胸部疾病学组",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4136,6 +5446,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Neural+Cell+Adhesion+Molecule+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Neural+Cell+Adhesion+Molecule+immunohistochemistry+review"
+      },
+      {
+        "title": "CD56在小细胞肺癌诊断中的价值及其与神经内分泌标志物的相关性分析",
+        "authors": "张杰等",
+        "journal": "中华病理学杂志",
+        "year": 2019,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -4197,13 +5514,31 @@
         "id": "cea-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cea-neg.svg",
+            "caption": "CEA 胞浆及膜阴性，肿瘤细胞无着色，内对照（邻近正常腺上皮）阳性（肝细胞癌，多克隆 CEA 呈毛细胆管样阴性模式除外）"
+          },
+          {
+            "url": "/staining/cea-neg-2.svg",
+            "caption": "CEA 阴性，肿瘤细胞胞浆及胞膜均无棕黄色颗粒，阳性细胞 <1%（前列腺腺癌）"
+          }
+        ]
       },
       {
         "id": "cea-pos",
         "label": "阳性",
         "description": "符合 胞浆和/或膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cea-pos.svg",
+            "caption": "CEA 胞浆及膜阳性，强染色 ≥ 80% 肿瘤细胞，呈弥漫分布（结直肠腺癌）"
+          },
+          {
+            "url": "/staining/cea-pos-apical.svg",
+            "caption": "CEA 腺腔缘（顶端膜）阳性，中至强强度，典型管腔型分布模式（胰腺导管腺癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4224,6 +5559,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "colorectal-molecular-testing-cma-2020",
+        "title": "结直肠癌分子检测病理学专家共识",
+        "summary": "规范结直肠癌病理诊断与分子检测流程，涉及 CEA 免疫组化在肠源性腺癌鉴别诊断中的应用及与 CK20、CDX2、SATB2 的联合判读建议。",
+        "organization": "中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "tumor-marker-clinical-application-cma-2021",
+        "title": "常用肿瘤标志物临床应用专家共识",
+        "summary": "界定 CEA 作为结直肠癌、胃癌、肺腺癌、乳腺癌及甲状腺髓样癌等的辅助诊断、疗效监测与随访指标，规定血清 CEA 参考区间与动态监测频次，并提示吸烟及良性疾病可致假阳性。",
+        "organization": "中国抗癌协会肿瘤标志专业委员会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4308,13 +5659,31 @@
         "id": "arginase-1-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/arg1-neg.svg",
+            "caption": "Arg-1 胞浆及胞核均无染色，肿瘤细胞阴性（胆管细胞癌，作为 HCC 的鉴别诊断）"
+          },
+          {
+            "url": "/staining/arg1-neg-2.svg",
+            "caption": "Arg-1 阴性，肿瘤细胞胞浆无棕黄色颗粒沉积（转移性结直肠腺癌肝转移灶，与原发性肝细胞癌鉴别）"
+          }
+        ]
       },
       {
         "id": "arginase-1-pos",
         "label": "阳性",
         "description": "符合 核和胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/arg1-pos.svg",
+            "caption": "Arg-1 胞浆及胞核阳性，弥漫强染色 ≥ 90% 肿瘤细胞（肝细胞癌，高分化）"
+          },
+          {
+            "url": "/staining/arg1-pos-hcc.svg",
+            "caption": "Arg-1 胞浆颗粒状阳性，中-强强度，弥漫分布于小梁状排列的肿瘤细胞（肝细胞癌，中分化）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4335,6 +5704,14 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "liver-cancer-pathology-diagnosis-guideline-2022",
+        "title": "原发性肝癌规范化病理诊断指南（2022年版）",
+        "summary": "推荐 Arg-1 作为肝细胞性分化的首选免疫组化标记物之一，与 HepPar-1、GPC3 联合用于肝细胞癌的鉴别诊断；指出 Arg-1 在高分化肝细胞癌中敏感性优于 HepPar-1，对肝内转移性腺癌与胆管细胞癌的鉴别具有重要价值。",
+        "organization": "中华人民共和国国家卫生健康委员会 / 中国抗癌协会肝癌专业委员会",
+        "year": 2022,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4414,13 +5791,31 @@
         "id": "amacr-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/amacr-neg.svg",
+            "caption": "AMACR (P504S) 胞浆阴性，良性前列腺腺体及基底细胞无着色（前列腺良性腺体对照）"
+          },
+          {
+            "url": "/staining/amacr-neg-2.svg",
+            "caption": "AMACR (P504S) 阴性，肿瘤腺体胞浆无颗粒状着色，可见散在非特异性弱背景（前列腺萎缩性腺体）"
+          }
+        ]
       },
       {
         "id": "amacr-pos",
         "label": "阳性",
         "description": "符合 胞浆弥漫强阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/amacr-pos.svg",
+            "caption": "AMACR (P504S) 胞浆颗粒状阳性，中-强强度弥漫表达于 >90% 肿瘤腺体（前列腺腺泡腺癌）"
+          },
+          {
+            "url": "/staining/amacr-pos-2.svg",
+            "caption": "AMACR (P504S) 胞浆阳性，强染色呈花环样围绕腺腔分布（前列腺腺癌 Gleason 3 级），邻近良性腺体阴性对照"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4441,6 +5836,14 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "prostate-biopsy-pathology-consensus-2021",
+        "title": "前列腺穿刺活检标本病理处理及报告规范专家共识",
+        "summary": "规范前列腺穿刺活检标本的病理处理流程与报告内容，推荐 AMACR (P504S) 联合基底细胞标记物（34βE12、p63）组合用于前列腺腺癌与良性腺体、非典型腺瘤样增生的鉴别诊断，明确 AMACR 在前列腺癌中呈胞浆颗粒状阳性的判读标准。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4463,6 +5866,20 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Alpha-Methylacyl-CoA+Racemase+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Alpha-Methylacyl-CoA+Racemase+immunohistochemistry+review"
+      },
+      {
+        "title": "α-甲酰基辅酶A消旋酶(P504S)在前列腺癌诊断中的应用",
+        "authors": "张智弘等",
+        "journal": "中华病理学杂志",
+        "year": 2006,
+        "doi": null
+      },
+      {
+        "title": "P504S、34βE12和p63在前列腺穿刺活检中的诊断价值",
+        "authors": "杨文涛等",
+        "journal": "中华病理学杂志",
+        "year": 2007,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -4527,13 +5944,31 @@
         "id": "calretinin-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/calretinin-neg.svg",
+            "caption": "Calretinin 阴性，肿瘤细胞核与胞浆均无着色，间质中神经束可作为内对照阳性（肺腺癌，鉴别间皮瘤）"
+          },
+          {
+            "url": "/staining/calretinin-neg-2.svg",
+            "caption": "Calretinin 阴性，肿瘤细胞完全不表达，仅背景散在反应性间皮细胞核阳性作为内对照（浆液性卵巢癌）"
+          }
+        ]
       },
       {
         "id": "calretinin-pos",
         "label": "阳性",
         "description": "符合 核和胞浆同时阳性(最可靠)",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/calretinin-pos.svg",
+            "caption": "Calretinin 核及胞浆强阳性，弥漫分布于 >90% 肿瘤细胞（上皮样恶性间皮瘤）"
+          },
+          {
+            "url": "/staining/calretinin-pos-2.svg",
+            "caption": "Calretinin 核阳性伴胞浆着色，中-强强度，弥漫表达（卵巢性索间质肿瘤，颗粒细胞瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4554,6 +5989,14 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "mesothelioma-pathology-diagnosis-cma-2019",
+        "title": "胸膜间皮瘤病理诊断中国专家共识",
+        "summary": "推荐 Calretinin 作为间皮源性肿瘤的首选标记物之一，联合 WT-1、CK5/6、D2-40 与腺癌标记物（CEA、MOC-31、Claudin-4、TTF-1）组合用于间皮瘤与肺腺癌、转移性腺癌的鉴别诊断；强调核与胞浆同时阳性方可判读。",
+        "organization": "中华医学会病理学分会",
+        "year": 2019,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4641,13 +6084,31 @@
         "id": "wt1-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/wt1-neg.svg",
+            "caption": "WT1 阴性，肿瘤细胞核及胞浆均无着色（肺腺癌，与间皮瘤鉴别时的阴性对照）"
+          },
+          {
+            "url": "/staining/wt1-neg-2.svg",
+            "caption": "WT1 阴性，肿瘤细胞核染色缺失（结直肠腺癌，与卵巢浆液性癌鉴别）"
+          }
+        ]
       },
       {
         "id": "wt1-pos",
         "label": "阳性",
         "description": "符合 核阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/wt1-pos.svg",
+            "caption": "WT1 核阳性，弥漫强染色 ≥ 90% 肿瘤细胞（卵巢高级别浆液性癌）"
+          },
+          {
+            "url": "/staining/wt1-pos-cytoplasmic.svg",
+            "caption": "WT1 胞浆阳性，中-强染色弥漫表达（促结缔组织增生性小圆细胞肿瘤，DSRCT）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4668,6 +6129,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "ovarian-cancer-pathology-diagnosis-cma-2021",
+        "title": "卵巢上皮性肿瘤病理诊断规范",
+        "summary": "推荐 WT1 作为鉴别卵巢高级别浆液性癌（弥漫核阳性）与子宫内膜样癌、透明细胞癌（多为阴性）的关键标记物，并联合 PAX8、p53、Napsin A、ER 等组合用于卵巢原发与转移性腺癌的鉴别诊断。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
+      },
+      {
+        "id": "malignant-mesothelioma-pathology-consensus-cma-2022",
+        "title": "胸膜恶性间皮瘤病理诊断中国专家共识",
+        "summary": "建议在间皮瘤诊断中将 WT1 与 Calretinin、CK5/6、D2-40 联合作为间皮源性标记物，与肺腺癌（TTF-1、Napsin A、Claudin-4 阳性）及转移性腺癌进行鉴别；同时强调 BAP1 缺失与 MTAP 缺失对鉴别反应性间皮增生与恶性间皮瘤的价值。",
+        "organization": "中华医学会病理学分会胸部疾病学组",
+        "year": 2022,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4690,6 +6167,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Wilms+Tumor+1+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Wilms+Tumor+1+immunohistochemistry+review"
+      },
+      {
+        "title": "WT1在卵巢浆液性肿瘤中的表达及其鉴别诊断价值",
+        "authors": "郭东辉等",
+        "journal": "中华病理学杂志",
+        "year": 2008,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -4754,13 +6238,31 @@
         "id": "berep4-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/berep4-neg.svg",
+            "caption": "BerEP4 膜阴性，肿瘤细胞未见染色（皮肤鳞状细胞癌，与基底细胞癌鉴别要点）"
+          },
+          {
+            "url": "/staining/berep4-neg-2.svg",
+            "caption": "BerEP4 阴性，肿瘤细胞膜及胞浆均无染色，仅见背景正常汗腺弱阳性内对照（皮肤附属器肿瘤——毛发上皮瘤）"
+          }
+        ]
       },
       {
         "id": "berep4-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/berep4-pos.svg",
+            "caption": "BerEP4 膜阳性伴胞浆弱着色，强染色 ≥ 90% 肿瘤细胞，呈弥漫均一分布（皮肤基底细胞癌）"
+          },
+          {
+            "url": "/staining/berep4-pos-2.svg",
+            "caption": "BerEP4 细胞膜强阳性，中-强强度 ≥ 80% 腺上皮细胞，呈基底外侧膜性着色模式（转移性腺癌累及胸膜，鉴别于间皮瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4861,13 +6363,31 @@
         "id": "hepar1-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/hepar1-neg.svg",
+            "caption": "HepPar-1 胞浆阴性，肿瘤细胞未见颗粒状染色（胆管细胞癌，与肝细胞癌鉴别）"
+          },
+          {
+            "url": "/staining/hepar1-neg-2.svg",
+            "caption": "HepPar-1 阴性，背景非肿瘤性肝细胞可作内对照呈胞浆颗粒状阳性（转移性腺癌累及肝脏）"
+          }
+        ]
       },
       {
         "id": "hepar1-pos",
         "label": "阳性",
         "description": "符合 胞浆颗粒状阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/hepar1-pos.svg",
+            "caption": "HepPar-1 胞浆颗粒状阳性，强染色弥漫分布于 >90% 肿瘤细胞（肝细胞癌，高-中分化）"
+          },
+          {
+            "url": "/staining/hepar1-pos-2.svg",
+            "caption": "HepPar-1 胞浆粗颗粒状中-强阳性，呈马赛克样分布于肿瘤细胞（肝细胞癌经典型）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4888,6 +6408,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "primary-liver-cancer-diagnosis-treatment-2022",
+        "title": "原发性肝癌诊疗指南（2022 年版）",
+        "summary": "国家卫健委发布的原发性肝癌诊疗规范，病理诊断章节推荐 HepPar-1 作为肝细胞肝癌（HCC）分化方向鉴别的核心免疫组化标志物之一，与 Arginase-1、GPC3、CD10、pCEA 联合应用，用于 HCC 与转移性腺癌、胆管细胞癌的鉴别诊断。",
+        "organization": "国家卫生健康委员会",
+        "year": 2022,
+        "sourceUrl": null
+      },
+      {
+        "id": "liver-tumor-pathology-diagnosis-consensus-2021",
+        "title": "肝脏占位性病变穿刺活检与病理诊断专家共识",
+        "summary": "由中华医学会病理学分会消化疾病学组发布，规范肝穿刺活检的取材、制片及免疫组化套餐选择，推荐 HepPar-1（克隆 OCH1E5）联合 Arginase-1、GPC3 用于肝细胞性病变的判定，并对低分化 HCC 中 HepPar-1 灵敏度下降的局限性作出说明。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -4969,13 +6505,31 @@
         "id": "ck19-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck19-neg.svg",
+            "caption": "CK19 阴性，肿瘤细胞胞浆及胞膜均无染色，周围正常胆管上皮呈内对照阳性（肝细胞癌）"
+          },
+          {
+            "url": "/staining/ck19-neg-2.svg",
+            "caption": "CK19 阴性，肿瘤细胞无着色，间质内血管内皮细胞作为阴性背景参考（肾上腺皮质腺瘤）"
+          }
+        ]
       },
       {
         "id": "ck19-pos",
         "label": "阳性",
         "description": "符合 胞浆弥漫阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ck19-pos.svg",
+            "caption": "CK19 胞浆弥漫强阳性，≥ 90% 肿瘤细胞着色（甲状腺乳头状癌）"
+          },
+          {
+            "url": "/staining/ck19-pos-hcc.svg",
+            "caption": "CK19 胞浆阳性，中至强强度，局灶分布于肿瘤细胞（肝内胆管细胞癌/CK19 阳性肝细胞癌，提示预后不良）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -4996,6 +6550,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "thyroid-fnac-cn-consensus-2018",
+        "title": "甲状腺细针穿刺细胞病理学诊断报告系统专家共识",
+        "summary": "推荐 CK19 联合 Galectin-3、HBME-1 用于甲状腺乳头状癌的辅助诊断，强调 CK19 在 PTC 中弥漫强阳性而良性滤泡病变多为局灶弱阳性的判读要点。",
+        "organization": "中华医学会病理学分会",
+        "year": 2018,
+        "sourceUrl": null
+      },
+      {
+        "id": "icc-quality-control-cn-2015",
+        "title": "免疫组织化学检测技术规范化的专家共识",
+        "summary": "将 CK19 列为腺上皮 / 胆管上皮 / 甲状腺癌鉴别诊断的常用细胞角蛋白标记物，规范其抗体克隆号选择（如 RCK108、b170）、阳性对照设置（肝门部胆管上皮）及染色判读标准。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -5079,13 +6649,31 @@
         "id": "calcitonin-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/calcitonin-neg.svg",
+            "caption": "Calcitonin 胞浆阴性，肿瘤细胞无可辨识着色，仅间质散在神经纤维弱阳性作内对照（甲状腺乳头状癌）"
+          },
+          {
+            "url": "/staining/calcitonin-neg-2.svg",
+            "caption": "Calcitonin 阴性，肿瘤细胞胞浆无棕黄色颗粒沉积，<1% 细胞着色（甲状腺滤泡性癌）"
+          }
+        ]
       },
       {
         "id": "calcitonin-pos",
         "label": "阳性",
         "description": "符合 胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/calcitonin-pos.svg",
+            "caption": "Calcitonin 胞浆阳性，中-强染色弥漫分布于 >90% 肿瘤细胞（甲状腺髓样癌）"
+          },
+          {
+            "url": "/staining/calcitonin-pos-2.svg",
+            "caption": "Calcitonin 胞浆颗粒状阳性，强染色见于巢状排列的肿瘤细胞（甲状腺髓样癌，C 细胞来源）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -5106,6 +6694,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "mtc-diagnosis-cma-2020",
+        "title": "甲状腺髓样癌诊断与治疗中国专家共识",
+        "summary": "推荐血清降钙素（Calcitonin）作为甲状腺髓样癌（MTC）诊断、疗效评估与随访的核心肿瘤标志物；明确 Calcitonin 免疫组化在 MTC 病理诊断中的必检地位，联合 CEA、CgA、Syn 等辅助鉴别，指导 RET 基因检测与家族筛查。",
+        "organization": "中国医师协会外科医师分会甲状腺外科医师委员会",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "thyroid-ihc-cma-2015",
+        "title": "甲状腺肿瘤免疫组织化学检测专家共识",
+        "summary": "规范甲状腺肿瘤免疫组化检测流程，推荐 Calcitonin 作为髓样癌特异性标记物，与 TTF-1、Tg、PAX8、CgA、Syn 联合应用鉴别滤泡上皮源性肿瘤与滤泡旁 C 细胞源性肿瘤，并建议对可疑病例加做 CEA 以辅助确诊。",
+        "organization": "中华医学会病理学分会",
+        "year": 2015,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -5128,6 +6732,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Calcitonin+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Calcitonin+immunohistochemistry+review"
+      },
+      {
+        "title": "降钙素及降钙素原在甲状腺髓样癌诊断中的应用价值",
+        "authors": "郭朱明",
+        "journal": "中华病理学杂志",
+        "year": 2015,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -5189,13 +6800,31 @@
         "id": "ca9-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ca9-neg.svg",
+            "caption": "CA9 阴性，肿瘤细胞膜及胞浆均无染色（乳头状肾细胞癌，作为透明细胞性肾细胞癌的鉴别对照）"
+          },
+          {
+            "url": "/staining/ca9-neg-2.svg",
+            "caption": "CA9 阴性，肿瘤细胞膜染色缺失，仅见背景非特异性浅染（嫌色细胞性肾细胞癌）"
+          }
+        ]
       },
       {
         "id": "ca9-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/ca9-pos.svg",
+            "caption": "CA9 膜阳性，强染色呈弥漫环周膜分布，≥ 90% 肿瘤细胞阳性（肾透明细胞癌）"
+          },
+          {
+            "url": "/staining/ca9-pos-box.svg",
+            "caption": "CA9 膜及胞浆阳性，中-强强度，盒状/环周膜模式，>75% 肿瘤细胞阳性（缺氧相关区域，宫颈鳞状细胞癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -5216,6 +6845,14 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "rcc-pathology-diagnosis-cma-2021",
+        "title": "肾细胞癌病理诊断规范",
+        "summary": "规范肾细胞癌病理诊断流程与免疫组化应用，推荐 CA9 作为透明细胞肾细胞癌（ccRCC）的特征性标记物（膜性弥漫阳性），用于与嫌色细胞癌、乳头状肾细胞癌及转移性肾细胞癌鉴别诊断。",
+        "organization": "中华医学会病理学分会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -5295,13 +6932,31 @@
         "id": "napsin-a-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/napsin-a-neg.svg",
+            "caption": "Napsin A 胞浆阴性，肿瘤细胞未见颗粒状着色（肺鳞状细胞癌）"
+          },
+          {
+            "url": "/staining/napsin-a-neg-2.svg",
+            "caption": "Napsin A 阴性，肿瘤细胞无胞浆颗粒状染色，周围正常肺泡Ⅱ型上皮呈内对照阳性（转移性结直肠腺癌）"
+          }
+        ]
       },
       {
         "id": "napsin-a-pos",
         "label": "阳性",
         "description": "符合 胞浆颗粒状阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/napsin-a-pos.svg",
+            "caption": "Napsin A 胞浆颗粒状阳性，中–强染色，弥漫分布于 > 80% 肿瘤细胞（肺腺癌）"
+          },
+          {
+            "url": "/staining/napsin-a-pos-2.svg",
+            "caption": "Napsin A 胞浆颗粒状阳性，强染色，近端肾小管样分布（肾透明细胞癌/乳头状肾细胞癌）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -5322,6 +6977,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "nsclc-pathology-diagnosis-cma-2020",
+        "title": "原发性肺癌病理诊断规范",
+        "summary": "规范肺腺癌病理诊断流程，推荐 TTF-1 与 Napsin A 联合用于肺腺癌与鳞癌、转移性腺癌的鉴别；明确在小活检及细胞学标本中首选 TTF-1，Napsin A 作为补充标志物以节省组织用于分子检测。",
+        "organization": "中华医学会病理学分会",
+        "year": 2020,
+        "sourceUrl": null
+      },
+      {
+        "id": "nsclc-ihc-molecular-csco-cacp-2021",
+        "title": "非小细胞肺癌分子病理检测临床实践中国专家共识",
+        "summary": "共识建议在小标本/细胞学蜡块上采用 TTF-1、Napsin A、p40、CK5/6 组合鉴别肺腺癌与鳞癌；Napsin A 胞浆颗粒状阳性支持腺癌来源，并提醒在转移癌鉴别中需结合 PAX8 排除肾/甲状腺等来源。",
+        "organization": "中国临床肿瘤学会 / 中国医师协会病理科医师分会",
+        "year": 2021,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -5344,6 +7015,13 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Napsin+A+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=Napsin+A+immunohistochemistry+review"
+      },
+      {
+        "title": "Napsin A、TTF-1和CK7在肺腺癌诊断及鉴别诊断中的应用",
+        "authors": "张杰",
+        "journal": "中华病理学杂志",
+        "year": 2012,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -5408,13 +7086,31 @@
         "id": "cd5-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd5-neg.svg",
+            "caption": "CD5 膜染色阴性，肿瘤细胞未见表达，背景内散在 T 细胞呈内对照阳性（滤泡性淋巴瘤）"
+          },
+          {
+            "url": "/staining/cd5-neg-2.svg",
+            "caption": "CD5 阴性，肿瘤性 B 细胞膜无着色，仅见反应性 T 细胞阳性作为内对照（边缘区淋巴瘤）"
+          }
+        ]
       },
       {
         "id": "cd5-pos",
         "label": "阳性",
         "description": "符合 膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd5-pos.svg",
+            "caption": "CD5 膜阳性，强染色弥漫分布于 >90% 肿瘤细胞（套细胞淋巴瘤）"
+          },
+          {
+            "url": "/staining/cd5-pos-2.svg",
+            "caption": "CD5 膜阳性，中-强强度表达于肿瘤性 T 淋巴细胞及背景反应性 T 细胞（胸腺瘤 B2 型）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -5435,6 +7131,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "lymphoma-pathology-diagnosis-cma-2013",
+        "title": "淋巴瘤病理诊断规范",
+        "summary": "规范淋巴组织增殖性疾病形态学与免疫表型诊断流程，将 CD5 列为 B 细胞淋巴瘤亚型鉴别的一线标记（CD5+ 提示 CLL/SLL、MCL；CD5− 常见于 FL、MZL），并推荐与 CD23、Cyclin D1、SOX11 联合使用以区分 CLL/SLL 与 MCL。",
+        "organization": "中华医学会病理学分会",
+        "year": 2013,
+        "sourceUrl": null
+      },
+      {
+        "id": "cll-sll-diagnosis-china-2022",
+        "title": "中国慢性淋巴细胞白血病/小淋巴细胞淋巴瘤的诊断与治疗指南（2022 年版）",
+        "summary": "规定 CLL/SLL 诊断需满足典型免疫表型（CD5+、CD19+、CD23+、CD20 弱、sIg 弱），并明确 CD5 阳性是与其他成熟 B 细胞肿瘤鉴别的关键条件；强调 FISH 检测 del(17p)/TP53 对治疗选择的意义。",
+        "organization": "中华医学会血液学分会 / 中国抗淋巴瘤联盟",
+        "year": 2022,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -5457,6 +7169,20 @@
         "year": null,
         "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD5+immunohistochemistry+review",
         "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=CD5+immunohistochemistry+review"
+      },
+      {
+        "title": "套细胞淋巴瘤的临床病理学特征及免疫表型分析",
+        "authors": "李小秋",
+        "journal": "中华病理学杂志",
+        "year": 2010,
+        "doi": null
+      },
+      {
+        "title": "CD5阳性弥漫大B细胞淋巴瘤的临床病理学特征",
+        "authors": "周小鸽",
+        "journal": "中华病理学杂志",
+        "year": 2012,
+        "doi": null
       }
     ],
     "cloneVariants": [
@@ -5519,13 +7245,31 @@
         "id": "cd15-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd15-neg.svg",
+            "caption": "CD15 阴性，肿瘤细胞膜及高尔基区均无着色，背景中性粒细胞呈阳性内对照（弥漫大 B 细胞淋巴瘤，非生发中心型）"
+          },
+          {
+            "url": "/staining/cd15-neg-2.svg",
+            "caption": "CD15 阴性，Reed-Sternberg 样细胞完全不着色，仅散在中性粒细胞呈阳性对照（结节性淋巴细胞为主型霍奇金淋巴瘤）"
+          }
+        ]
       },
       {
         "id": "cd15-pos",
         "label": "阳性",
         "description": "符合 膜和/或核旁阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/cd15-pos.svg",
+            "caption": "CD15 膜及高尔基区点状阳性，中-强强度，约 80% 肿瘤细胞（经典型霍奇金淋巴瘤 Reed-Sternberg 细胞）"
+          },
+          {
+            "url": "/staining/cd15-pos-2.svg",
+            "caption": "CD15 胞膜及胞浆阳性，中等强度，弥漫分布于中性粒细胞及肿瘤细胞（腺癌，肺腺癌示例）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -5632,13 +7376,31 @@
         "id": "afp-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/afp-neg.svg",
+            "caption": "AFP 胞浆阴性，肿瘤细胞无着色，背景正常肝细胞亦呈阴性（胆管细胞癌）"
+          },
+          {
+            "url": "/staining/afp-neg-2.svg",
+            "caption": "AFP 胞浆阴性，肿瘤细胞 0% 着色，仅偶见散在非特异性背景染色（转移性结直肠腺癌）"
+          }
+        ]
       },
       {
         "id": "afp-pos",
         "label": "阳性",
         "description": "符合 胞浆阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/afp-pos.svg",
+            "caption": "AFP 胞浆阳性，中-强染色，呈弥漫或颗粒状分布于 ≥ 50% 肿瘤细胞（肝细胞癌）"
+          },
+          {
+            "url": "/staining/afp-pos-yst.svg",
+            "caption": "AFP 胞浆阳性，局灶-斑片状强染色，可见于 Schiller-Duval 小体周围（卵黄囊瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -5659,6 +7421,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "hcc-diagnosis-nhc-2024",
+        "title": "原发性肝癌诊疗指南（2024年版）",
+        "summary": "推荐 AFP ≥400 μg/L 持续 1 个月或 ≥200 μg/L 持续 2 个月且排除慢性/活动性肝病、生殖腺胚胎源性肿瘤及妊娠后，结合影像学可临床诊断肝细胞癌；并规定 AFP 用于高危人群筛查、疗效评估及术后复发监测。",
+        "organization": "国家卫生健康委员会",
+        "year": 2024,
+        "sourceUrl": null
+      },
+      {
+        "id": "hcc-afp-csco-2024",
+        "title": "CSCO 原发性肝癌诊疗指南（2024版）",
+        "summary": "推荐联合 AFP 与腹部超声每 6 个月对乙肝/丙肝、肝硬化等高危人群进行肝癌筛查；AFP 异质体 AFP-L3、PIVKA-Ⅱ 可提高早期 HCC 检出率；AFP 动态变化用于系统治疗及局部治疗疗效评估。",
+        "organization": "中国临床肿瘤学会（CSCO）",
+        "year": 2024,
+        "sourceUrl": null
       }
     ],
     "literature": [
@@ -5749,13 +7527,31 @@
         "id": "glypican-3-neg",
         "label": "阴性",
         "description": "无肿瘤细胞染色或不符合阈值",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/gpc3-neg.svg",
+            "caption": "GPC3 胞浆及膜染色阴性，肿瘤细胞未见着色（肝内胆管癌，与肝细胞癌鉴别要点）"
+          },
+          {
+            "url": "/staining/gpc3-neg-2.svg",
+            "caption": "GPC3 阴性，背景非肿瘤性肝组织及转移性腺癌均无着色（结直肠癌肝转移）"
+          }
+        ]
       },
       {
         "id": "glypican-3-pos",
         "label": "阳性",
         "description": "符合 胞浆和/或膜阳性",
-        "images": []
+        "images": [
+          {
+            "url": "/staining/gpc3-pos.svg",
+            "caption": "GPC3 胞浆弥漫强阳性，部分肿瘤细胞胞膜增强，阳性细胞 ≥ 70%（肝细胞癌）"
+          },
+          {
+            "url": "/staining/gpc3-pos-focal.svg",
+            "caption": "GPC3 胞浆颗粒状中等强度阳性，灶状分布约 30%–50% 肿瘤细胞（卵黄囊瘤）"
+          }
+        ]
       }
     ],
     "expertConsensus": [
@@ -5776,6 +7572,22 @@
         "year": 2023,
         "sourceUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish",
         "viewUrl": "https://www.cap.org/laboratory-improvement/proficiency-testing/ihc-and-ish"
+      },
+      {
+        "id": "hcc-pathology-diagnosis-guideline-2015",
+        "title": "原发性肝癌规范化病理诊断指南（2015年版）",
+        "summary": "推荐 GPC3、HSP70、谷氨酰胺合成酶（GS）三联免疫组化用于早期/高分化肝细胞癌与高级别异型增生结节的鉴别诊断；≥2 项阳性支持 HCC 诊断。明确 GPC3 阳性定位为胞质/胞膜颗粒状染色，并规范了小肝癌活检病理报告内容。",
+        "organization": "中国抗癌协会肝癌专业委员会 / 中华医学会肝病学分会肝癌学组 / 中国抗癌协会病理专业委员会",
+        "year": 2015,
+        "sourceUrl": null
+      },
+      {
+        "id": "hcc-diagnosis-treatment-standard-2022",
+        "title": "原发性肝癌诊疗指南（2022年版）",
+        "summary": "国家卫健委发布的权威规范，在病理诊断章节沿用 GPC3/HSP70/GS 免疫组化三联组合鉴别高分化 HCC，并将 GPC3 列入肝细胞性肝癌分子病理标志物；同时推荐 CK19、EpCAM 等评估干细胞样表型与预后。",
+        "organization": "国家卫生健康委员会",
+        "year": 2022,
+        "sourceUrl": null
       }
     ],
     "literature": [

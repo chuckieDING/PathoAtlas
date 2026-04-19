@@ -26,7 +26,109 @@
       "ALK",
       "TLE1"
     ],
-    "algorithm": "CD117+/DOG1+ → GIST（胃肠道间质瘤）；SMA+/Desmin+ → 平滑肌肿瘤（SMA+/Desmin+/h-Caldesmon+）；S-100弥漫+ → 神经鞘瘤（Schwannoma）；CD34+/STAT6核+ → 孤立性纤维性肿瘤（SFT）；β-catenin核+ → 韧带样纤维瘤病（Desmoid）；ALK+ → 炎性肌纤维母细胞瘤（IMT）；TLE1+/EMA灶+ → 滑膜肉瘤（需SS18-SSX融合基因确认）"
+    "algorithm": "CD117+/DOG1+ → GIST（胃肠道间质瘤）；SMA+/Desmin+ → 平滑肌肿瘤（SMA+/Desmin+/h-Caldesmon+）；S-100弥漫+ → 神经鞘瘤（Schwannoma）；CD34+/STAT6核+ → 孤立性纤维性肿瘤（SFT）；β-catenin核+ → 韧带样纤维瘤病（Desmoid）；ALK+ → 炎性肌纤维母细胞瘤（IMT）；TLE1+/EMA灶+ → 滑膜肉瘤（需SS18-SSX融合基因确认）",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "gist",
+            "cells": [
+              "梭形细胞束状排列，胞质嗜酸，可见核旁空泡；部分呈上皮样；核分裂因部位而异",
+              "CD117+ DOG1+ CD34+/− SMA−/+ S-100− Desmin−",
+              "KIT（外显子 11、9）或 PDGFRA 突变；少数 SDH 缺陷型、NF1 相关",
+              "好发于胃（60%）、小肠，50–70 岁；可表现为消化道出血或腹部包块"
+            ]
+          },
+          {
+            "diseaseId": "leiomyosarcoma",
+            "cells": [
+              "长束状交叉排列，胞质深嗜酸，钝头雪茄样核；核分裂活跃伴坏死",
+              "SMA+ Desmin+ h-Caldesmon+ CD117− DOG1− S-100−",
+              "复杂核型，TP53、RB1、MED12（子宫型）、ATRX 改变",
+              "子宫、腹膜后、四肢深部软组织；女性多见；预后与分级、部位相关"
+            ]
+          },
+          {
+            "diseaseId": "schwannoma",
+            "cells": [
+              "Antoni A（栅栏状 Verocay 小体）与 Antoni B（疏松）交替；包膜完整",
+              "S-100 弥漫强+ SOX10+ GFAP+/− CD34 灶+ SMA− Desmin−",
+              "NF2 基因失活（散发与 NF2 相关型）；少数 SMARCB1（神经鞘瘤病）",
+              "各年龄段，头颈、四肢屈侧、纵隔；生长缓慢；多为良性"
+            ]
+          },
+          {
+            "diseaseId": "neurofibroma",
+            "cells": [
+              "疏松黏液样背景中波浪状细胞，胶原呈”胡萝卜丝”状；无包膜",
+              "S-100+（散在）SOX10+ CD34+（指纹状网）EMA−（Perineurium 外）",
+              "NF1 基因失活；丛状型高度提示 NF1 综合征",
+              "皮肤/皮下结节；丛状型见于 NF1；恶变为 MPNST 风险"
+            ]
+          },
+          {
+            "diseaseId": "solitary-fibrous-tumor",
+            "cells": [
+              "无模式排列的梭形细胞，粗大绳索样胶原、鹿角状血管",
+              "STAT6 核+ CD34+ Bcl-2+ CD99+ S-100− SMA−",
+              "NAB2-STAT6 基因融合（特征性）",
+              "胸膜、腹膜后、头颈；成人多见；少数呈侵袭性或去分化"
+            ]
+          },
+          {
+            "diseaseId": "synovial-sarcoma",
+            "cells": [
+              "单相型：均一梭形细胞呈片状/束状；双相型：伴上皮样腺样结构",
+              "TLE1+ EMA灶+ CK7/19 灶+ CD99+ S-100 弱+/− SMA−",
+              "SS18-SSX1/SSX2/SSX4 融合 [t(X;18)]（诊断性）",
+              "青少年及青年；四肢关节旁深部软组织；中高度恶性"
+            ]
+          },
+          {
+            "diseaseId": "fibrosarcoma-dfsp",
+            "cells": [
+              "隆突性皮肤纤维肉瘤：均一梭形细胞席纹状排列，浸润皮下脂肪呈蜂窝状",
+              "CD34+ 弥漫 Factor XIIIa− S-100− SMA− STAT6−",
+              "COL1A1-PDGFB 融合 [t(17;22)]",
+              "中青年躯干/近端肢体皮肤；局部侵袭，远处转移罕见；纤维肉瘤性转化提示高级别"
+            ]
+          },
+          {
+            "diseaseId": "inflammatory-myofibroblastic-tumor",
+            "cells": [
+              "梭形肌纤维母细胞疏松排列于黏液及炎症背景中，浆细胞/淋巴细胞浸润",
+              "SMA+ Desmin+/− ALK+（约 50–60%）S-100− CD117−",
+              "ALK 基因重排（2p23）；少数 ROS1、NTRK 融合",
+              "儿童及青少年多见；肺、肠系膜、腹膜后；可复发，少数转移"
+            ]
+          },
+          {
+            "diseaseId": "mpnst",
+            "cells": [
+              "束状排列，细胞密度交替（“洋葱皮”血管周密集）；核分裂多、坏死",
+              "S-100 局灶+/弱（约 50%）SOX10 局灶+ H3K27me3 丢失 CD34−",
+              "NF1 失活、CDKN2A 缺失、PRC2 组分（SUZ12/EED）失活",
+              "约 50% 继发于 NF1；大的深部神经干周围；高度恶性，预后差"
+            ]
+          },
+          {
+            "diseaseId": "melanoma-spindle-cell",
+            "cells": [
+              "束状或筋膜样排列的非典型梭形细胞；色素常缺失；可见嗜神经现象",
+              "S-100+ SOX10+ HMB-45−/+（促纤维增生型常阴）Melan-A−/+ CK−",
+              "BRAF V600E（非促纤维型）、NF1、NRAS；促纤维增生型高 TMB",
+              "中老年头颈部阳光暴露皮肤；促纤维增生型易局部复发，嗜神经浸润"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "small-round-blue-cell-tumors",
@@ -38,7 +140,7 @@
       "neuroblastoma",
       "rhabdomyosarcoma",
       "dlbcl",
-      "small-cell-carcinoma",
+      "small-cell-lung-carcinoma",
       "wilms-tumor",
       "desmoplastic-small-round-cell-tumor",
       "merkel-cell-carcinoma"
@@ -61,7 +163,91 @@
       "NeuN",
       "PHOX2B"
     ],
-    "algorithm": "CD99膜+/NKX2.2+ → Ewing肉瘤（需EWSR1融合确认）；Desmin+/Myogenin+/MyoD1+ → 横纹肌肉瘤；CD45+ → 淋巴瘤（进一步分型）；Syn+/CgA+/CK+ → 小细胞癌/神经内分泌癌；PHOX2B+/NB84+ → 神经母细胞瘤；WT1核+/Desmin+/CK+ → 促结缔组织增生性小圆细胞肿瘤（DSRCT，需EWSR1-WT1融合确认）；CK20核旁点状+/Syn+ → Merkel细胞癌"
+    "algorithm": "CD99膜+/NKX2.2+ → Ewing肉瘤（需EWSR1融合确认）；Desmin+/Myogenin+/MyoD1+ → 横纹肌肉瘤；CD45+ → 淋巴瘤（进一步分型）；Syn+/CgA+/CK+ → 小细胞癌/神经内分泌癌；PHOX2B+/NB84+ → 神经母细胞瘤；WT1核+/Desmin+/CK+ → 促结缔组织增生性小圆细胞肿瘤（DSRCT，需EWSR1-WT1融合确认）；CK20核旁点状+/Syn+ → Merkel细胞癌",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "ewing-sarcoma",
+            "cells": [
+              "均一小圆细胞，胞浆稀少透明（富含糖原，PAS+），核圆染色质细腻，罕见 Homer-Wright 菊形团",
+              "CD99 膜弥漫强+、NKX2.2+、FLI1+、Vim+，CK 偶灶+",
+              "EWSR1-FLI1（约 85%）、EWSR1-ERG 等 FET-ETS 融合",
+              "儿童及青少年，长骨骨干/骨盆，局部疼痛性肿块伴骨质破坏"
+            ]
+          },
+          {
+            "diseaseId": "alveolar-rhabdomyosarcoma",
+            "cells": [
+              "腺泡状/实性巢，小圆细胞漂浮于纤维血管间隔，可见多核巨细胞",
+              "Desmin+、Myogenin 弥漫强+、MyoD1+、Myf4+",
+              "PAX3-FOXO1（约 60%）或 PAX7-FOXO1 融合",
+              "青少年，四肢、躯干、头颈深部软组织，易淋巴结及骨髓转移"
+            ]
+          },
+          {
+            "diseaseId": "embryonal-rhabdomyosarcoma",
+            "cells": [
+              "小圆至梭形细胞疏密相间，可见嗜酸性胞浆横纹肌母细胞",
+              "Desmin+、Myogenin 灶性+、MyoD1+",
+              "11p15.5 LOH，无 FOXO1 重排，常见 RAS/TP53 突变",
+              "婴幼儿，头颈（眶、鼻咽）、泌尿生殖道（膀胱、前列腺、阴道）"
+            ]
+          },
+          {
+            "diseaseId": "neuroblastoma",
+            "cells": [
+              "小圆细胞伴神经纤维基质（neuropil），Homer-Wright 菊形团，可见钙化",
+              "Syn+、CgA+、NSE+、PHOX2B+、GATA3+，CK-、CD99-",
+              "MYCN 扩增（高危）、1p36/11q LOH、ALK 突变",
+              "<5 岁幼儿，肾上腺/椎旁交感链，尿 VMA/HVA 升高"
+            ]
+          },
+          {
+            "diseaseId": "lymphoblastic-lymphoma",
+            "cells": [
+              "弥漫浸润，核染色质细腻、核仁不明显，核分裂活跃，星空现象",
+              "TdT+、CD99+、CD45+；T-LBL: CD3+/CD7+；B-LBL: CD79a+/PAX5+/CD10+",
+              "TCR（T-LBL）或 IGH（B-LBL）克隆性重排；可伴 NOTCH1 突变",
+              "儿童/青少年，T-LBL 好发前纵隔伴胸腔积液，B-LBL 以皮肤/骨/淋巴结为主"
+            ]
+          },
+          {
+            "diseaseId": "desmoplastic-small-round-cell-tumor",
+            "cells": [
+              "小圆细胞巢漂浮于富于细胞的促纤维增生性间质中，中央可坏死",
+              "Desmin 核旁点状+、CK+/EMA+、WT1（C 端）+、NSE+、Vim+",
+              "EWSR1-WT1 t(11;22)(p13;q12) 融合（特征性）",
+              "青年男性，腹膜/盆腔/大网膜多发结节，常伴腹水"
+            ]
+          },
+          {
+            "diseaseId": "wilms-tumor-blastemal",
+            "cells": [
+              "三相分化（胚芽、上皮、间叶），胚芽区小圆细胞密集，可见幼稚肾小管/肾小球",
+              "WT1 核弥漫+、PAX8+、CD56+、Vim+，CK 灶+",
+              "WT1、CTNNB1、WTX、TP53 突变；11p13/11p15 异常",
+              "2–5 岁幼儿，单侧肾脏巨大无痛性包块，偶伴高血压/血尿"
+            ]
+          },
+          {
+            "diseaseId": "small-cell-carcinoma-lung",
+            "cells": [
+              "核铸型（nuclear molding），染色质颗粒状（椒盐状），胞浆稀少，挤压假象及坏死显著",
+              "CK（核旁点状）+、Syn+、CgA+、INSM1+、TTF-1+、Ki-67>80%",
+              "TP53 与 RB1 双失活，无驱动基因靶点",
+              "中老年重度吸烟者，肺门/中央型肿块，常伴副肿瘤综合征及早期广泛转移"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "clear-cell-tumors",
@@ -91,7 +277,109 @@
       "EMA",
       "AR"
     ],
-    "algorithm": "PAX8+/CA-IX弥漫膜+/CD10+ → 肾透明细胞癌（VHL基因改变）；PAX8+/Napsin A+/HNF-1β+ → 卵巢/子宫内膜透明细胞癌；Inhibin+/Melan-A+/SF-1+ → 肾上腺皮质肿瘤；S-100+/SOX10+/HMB-45灶+ → 透明细胞肉瘤（需EWSR1-ATF1融合确认）或黑色素瘤；HMB-45+/SMA+/Melan-A+ → PEComa/血管周上皮样细胞肿瘤（糖瘤）"
+    "algorithm": "PAX8+/CA-IX弥漫膜+/CD10+ → 肾透明细胞癌（VHL基因改变）；PAX8+/Napsin A+/HNF-1β+ → 卵巢/子宫内膜透明细胞癌；Inhibin+/Melan-A+/SF-1+ → 肾上腺皮质肿瘤；S-100+/SOX10+/HMB-45灶+ → 透明细胞肉瘤（需EWSR1-ATF1融合确认）或黑色素瘤；HMB-45+/SMA+/Melan-A+ → PEComa/血管周上皮样细胞肿瘤（糖瘤）",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "clear-cell-rcc",
+            "cells": [
+              "巢状/腺泡状排列，富含薄壁血管网，胞质透明富含糖原和脂质",
+              "PAX8+ CAIX+(膜盒状) CD10+ Vim+ CK7−/弱+",
+              "VHL 失活（3p25 缺失/突变/启动子甲基化），3p 缺失",
+              "成人肾脏最常见恶性肿瘤，50-70 岁，血尿/腰痛/腹部包块"
+            ]
+          },
+          {
+            "diseaseId": "chromophobe-rcc",
+            "cells": [
+              "实性片状，植物细胞样，胞膜厚，核周空晕，核皱缩呈葡萄干样",
+              "CK7+(弥漫) EMA+ CD117+ E-cadherin+ Vim− CAIX−",
+              "7、17、2、6、10、13、21 号染色体多倍体丢失，TP53/PTEN 突变",
+              "预后较好，Birt-Hogg-Dubé 综合征相关"
+            ]
+          },
+          {
+            "diseaseId": "clear-cell-papillary-rct",
+            "cells": [
+              "乳头状+管状，胞核呈线性排列于细胞顶端（远离基底膜）",
+              "CK7+(弥漫) CAIX+(杯口状，顶端阴性) CD10− AMACR−",
+              "无 VHL 突变，无 3p 缺失，无 7/17 三体",
+              "惰性行为，尚无转移报道，WHO 5th 归为良性肿瘤"
+            ]
+          },
+          {
+            "diseaseId": "clear-cell-sarcoma",
+            "cells": [
+              "巢状/束状排列的上皮样-梭形细胞，胞质透明/嗜酸，核仁明显",
+              "S-100+ SOX10+ HMB45+ Melan-A+ MITF+",
+              "EWSR1::ATF1 (t(12;22))，少数 EWSR1::CREB1",
+              "青年人四肢深部软组织（肌腱/腱膜），预后差"
+            ]
+          },
+          {
+            "diseaseId": "pecoma",
+            "cells": [
+              "上皮样/梭形，胞质透明-嗜酸颗粒状，围绕血管呈放射状排列",
+              "HMB45+ Melan-A+ SMA+ Cathepsin K+ TFE3 +/−",
+              "TSC1/TSC2 失活，少数 TFE3 重排",
+              "结节性硬化症相关，肾/肝/子宫/腹膜后，女性多见"
+            ]
+          },
+          {
+            "diseaseId": "clear-cell-meningioma",
+            "cells": [
+              "多角形细胞片状，胞质富含糖原（PAS+ 淀粉酶敏感），无漩涡/砂粒体",
+              "EMA+ SSTR2A+ Vim+ PAS+（淀粉酶消化后阴性）",
+              "SMARCE1 胚系/体系失活突变",
+              "青年人多见，小脑桥脑角/脊髓，WHO 2 级易复发"
+            ]
+          },
+          {
+            "diseaseId": "clear-cell-carcinoma-ovary",
+            "cells": [
+              "管状囊性/乳头状/实性，鞋钉样细胞，透明胞质，胞外嗜酸小球",
+              "Napsin A+ HNF1β+ PAX8+ CK7+ ER− WT1−",
+              "ARID1A 失活、PIK3CA 突变，MSI 可见",
+              "子宫内膜异位症相关，化疗抵抗，预后较差"
+            ]
+          },
+          {
+            "diseaseId": "clear-cell-carcinoma-endometrium",
+            "cells": [
+              "乳头状/管囊状/实性，鞋钉细胞，核异型显著",
+              "Napsin A+ HNF1β+ PAX8+ p53 异常表达常见 ER−",
+              "TP53 突变，ARID1A/PIK3CA 突变",
+              "绝经后女性，II 型子宫内膜癌，侵袭性强"
+            ]
+          },
+          {
+            "diseaseId": "clear-cell-hidradenoma",
+            "cells": [
+              "真皮内边界清楚的实性-囊性结节，透明细胞与鳞状/导管细胞混杂",
+              "CK+ EMA+ CEA+(导管) S-100−",
+              "MAML2 重排可见（部分病例）",
+              "皮肤附属器良性肿瘤，头颈/四肢，局部切除可治愈"
+            ]
+          },
+          {
+            "diseaseId": "perivascular-epithelioid-angiomyolipoma",
+            "cells": [
+              "成熟脂肪+畸形厚壁血管+HMB45+ 上皮样/梭形肌细胞",
+              "HMB45+ Melan-A+ SMA+ Cathepsin K+ Desmin +/−",
+              "TSC2 失活（结节性硬化症相关）",
+              "肾脏良性肿瘤，TSC 综合征相关，上皮样型有恶性潜能"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "papillary-thyroid-vs-others",
@@ -115,7 +403,82 @@
       "BRAF-V600E",
       "RAS"
     ],
-    "algorithm": "经典核特征（核沟+核内假包涵体+毛玻璃样核）+ 乳头结构 + CK19弥漫+/HBME-1+/Galectin-3+ → 甲状腺乳头状癌（PTC）；有PTC样核特征但包膜完整无浸润且滤泡为主 → NIFTP（需完整包膜取材排除浸润）；CD56+/CK19-/Galectin-3- → 倾向良性滤泡性病变；BRAF V600E突变支持PTC诊断"
+    "algorithm": "经典核特征（核沟+核内假包涵体+毛玻璃样核）+ 乳头结构 + CK19弥漫+/HBME-1+/Galectin-3+ → 甲状腺乳头状癌（PTC）；有PTC样核特征但包膜完整无浸润且滤泡为主 → NIFTP（需完整包膜取材排除浸润）；CD56+/CK19-/Galectin-3- → 倾向良性滤泡性病变；BRAF V600E突变支持PTC诊断",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "papillary-thyroid-carcinoma",
+            "cells": [
+              "真性乳头伴纤维血管轴心，核拥挤重叠、毛玻璃核、核沟、核内假包涵体，常见砂粒体",
+              "TG+ TTF-1+ PAX8+ CK19弥漫+ HBME-1+ Galectin-3+ CD56−",
+              "BRAF V600K突变（约60%）、RET/PTC重排、较少见RAS突变",
+              "中青年女性多见，颈部无痛性结节，常伴颈淋巴结转移，预后良好"
+            ]
+          },
+          {
+            "diseaseId": "nifpt",
+            "cells": [
+              "完全包裹或边界清楚，滤泡为主生长，乳头成分<1%，具PTC样核特征但无血管/包膜侵犯、无砂粒体、无肿瘤性坏死",
+              "TG+ TTF-1+ PAX8+ HBME-1可+ CK19灶+",
+              "RAS突变常见（NRAS/HRAS/KRAS），BRAF V600E阴性（排除标准）",
+              "中年女性多见，惰性生物学行为，外科切除后极少复发"
+            ]
+          },
+          {
+            "diseaseId": "follicular-variant-ptc",
+            "cells": [
+              "滤泡结构为主，无真性乳头，具PTC核特征，可伴包膜/血管侵犯（浸润型）",
+              "TG+ TTF-1+ PAX8+ HBME-1+ CK19+ Galectin-3+",
+              "浸润型常见BRAF V600E；非浸润包裹型多为RAS突变",
+              "常以甲状腺结节就诊，浸润型生物学行为类似经典PTC"
+            ]
+          },
+          {
+            "diseaseId": "papillary-hyperplasia",
+            "cells": [
+              "乳头较短、分支简单，核规则圆形、染色质细腻，无核沟/假包涵体，常见胶质及泡沫细胞",
+              "TG+ TTF-1+ PAX8+ HBME-1− Galectin-3− CK19弱/灶+",
+              "无BRAF/RAS突变，克隆性检测阴性",
+              "Graves病或结节性甲状腺肿背景，弥漫性甲亢或多结节性肿大"
+            ]
+          },
+          {
+            "diseaseId": "hyalinizing-trabecular-tumor",
+            "cells": [
+              "小梁状/器官样排列，间质玻璃样变，细胞呈梭形/多角形，核沟、假包涵体显著，可见黄色小体",
+              "TG+ TTF-1+ PAX8+ Ki-67膜样阳性（MIB-1独特模式）、CK19灶+",
+              "GLIS3::PAX8 或 GLIS1::PAX8 融合",
+              "成年女性多见，常为孤立性结节，生物学行为惰性"
+            ]
+          },
+          {
+            "diseaseId": "cribriform-morular-thyroid-carcinoma",
+            "cells": [
+              "筛状、乳头、滤泡混合，鳞样桑葚体（morule）特征，核特征部分类似PTC",
+              "TG灶+/− TTF-1+ PAX8+ β-catenin核/浆异常+ ER+ PR+",
+              "APC 胚系或体细胞突变、CTNNB1突变，与家族性腺瘤性息肉病（FAP）相关",
+              "年轻女性为主，可为FAP综合征表现，需筛查结直肠息肉"
+            ]
+          },
+          {
+            "diseaseId": "warthin-like-ptc",
+            "cells": [
+              "乳头被覆嗜酸性细胞，轴心内大量淋巴浆细胞浸润，具PTC核特征",
+              "TG+ TTF-1+ PAX8+ HBME-1+ CK19+",
+              "BRAF V600E突变常见",
+              "常发生于桥本甲状腺炎背景，预后与经典PTC相似"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "ck7-pos-ck20-neg-tumors",
@@ -126,7 +489,7 @@
       "lung-adenocarcinoma",
       "invasive-ductal-carcinoma-nst",
       "endometrial-adenocarcinoma",
-      "ovarian-serous-carcinoma",
+      "high-grade-serous-ovarian-carcinoma",
       "cholangiocarcinoma",
       "papillary-thyroid-carcinoma",
       "mesothelioma"
@@ -147,7 +510,82 @@
       "D2-40",
       "Thyroglobulin"
     ],
-    "algorithm": "TTF-1+/Napsin A+ → 肺腺癌；GATA3+/Mammaglobin+/ER+ → 乳腺癌；PAX8+/ER+/Vimentin+ → 子宫内膜癌；PAX8+/WT1+ → 卵巢高级别浆液性癌；CK7+/CA19-9+/MUC1+ → 胆管癌；Calretinin+/D2-40+/WT1+ → 恶性间皮瘤（需排除腺癌转移，加做CEA/MOC31/BerEP4/Claudin-4）"
+    "algorithm": "TTF-1+/Napsin A+ → 肺腺癌；GATA3+/Mammaglobin+/ER+ → 乳腺癌；PAX8+/ER+/Vimentin+ → 子宫内膜癌；PAX8+/WT1+ → 卵巢高级别浆液性癌；CK7+/CA19-9+/MUC1+ → 胆管癌；Calretinin+/D2-40+/WT1+ → 恶性间皮瘤（需排除腺癌转移，加做CEA/MOC31/BerEP4/Claudin-4）",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "lung-adenocarcinoma",
+            "cells": [
+              "腺泡/乳头/贴壁/微乳头/实性结构，可伴黏液分化",
+              "CK7+ CK20- TTF-1+ Napsin A+ p40-",
+              "EGFR/KRAS/ALK/ROS1/BRAF/MET 等驱动基因改变",
+              "中老年，肺周边部好发，咳嗽/咯血或体检发现"
+            ]
+          },
+          {
+            "diseaseId": "breast-invasive-carcinoma",
+            "cells": [
+              "浸润性导管（NST）呈腺管/条索；小叶癌单行排列",
+              "CK7+ CK20- GATA3+ ER/PR+/− HER2 按评分判读",
+              "PIK3CA / TP53 突变，HER2 扩增，BRCA1/2 胚系",
+              "女性为主，乳腺肿块/乳头溢液，腋窝淋巴结转移"
+            ]
+          },
+          {
+            "diseaseId": "endometrial-endometrioid-carcinoma",
+            "cells": [
+              "腺样/绒毛腺样结构，常伴鳞化",
+              "CK7+ CK20- ER+ PR+ Vimentin+ PAX8+",
+              "POLE 超突变 / MMR-d / p53 异常 / NSMP 四分型",
+              "围绝经期/绝经后异常阴道出血，子宫内膜增厚"
+            ]
+          },
+          {
+            "diseaseId": "ovarian-high-grade-serous-carcinoma",
+            "cells": [
+              "乳头/裂隙/实性 + 砂粒体 + 明显核异型及坏死",
+              "CK7+ CK20- PAX8+ WT1+ p53 弥漫强阳/完全缺失",
+              "TP53 近 100% 突变，BRCA1/2 胚系或体细胞",
+              "中老年女性，腹胀/盆腔包块/腹水，CA125 升高"
+            ]
+          },
+          {
+            "diseaseId": "papillary-thyroid-carcinoma",
+            "cells": [
+              "真性乳头结构 + 毛玻璃核 + 核沟 + 核内假包涵体",
+              "CK7+ CK20- TTF-1+ TG+ PAX8+ HBME-1+",
+              "BRAF V600E 突变、RET/PTC 融合、TERT 启动子",
+              "甲状腺结节，颈部淋巴结转移，女性多见"
+            ]
+          },
+          {
+            "diseaseId": "intrahepatic-cholangiocarcinoma",
+            "cells": [
+              "不规则腺管/小管 + 显著促纤维结缔组织反应",
+              "CK7+ CK19+ CK20−/+ CA19-9+ HepPar-1-",
+              "IDH1/2 突变、FGFR2 融合、KRAS/TP53 突变",
+              "肝内占位，黄疸/腹痛，CA19-9 升高"
+            ]
+          },
+          {
+            "diseaseId": "epithelioid-mesothelioma",
+            "cells": [
+              "管状/乳头/实性，无黏液，细胞胞浆丰富嗜酸",
+              "CK7+ CK20- Calretinin+ WT1+ D2-40+ CK5/6+",
+              "BAP1 缺失、CDKN2A 纯合缺失、NF2 改变",
+              "石棉暴露史，胸膜弥漫增厚，胸腔积液"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "ck7-neg-ck20-pos-tumors",
@@ -173,7 +611,46 @@
       "MSH6",
       "PMS2"
     ],
-    "algorithm": "CDX2+/SATB2+/Villin+ → 结直肠腺癌（最经典的CK7-/CK20+/CDX2+三联表型）；CK20核旁点状+/Syn+/CgA+ → Merkel细胞癌（需注意与小细胞肺癌鉴别：Merkel为CK20+/TTF-1-，小细胞肺癌为CK20-/TTF-1+）；注意：少数结直肠癌可CK7灶+，高度微卫星不稳定(MSI-H)结直肠癌可CK7+/CK20减弱"
+    "algorithm": "CDX2+/SATB2+/Villin+ → 结直肠腺癌（最经典的CK7-/CK20+/CDX2+三联表型）；CK20核旁点状+/Syn+/CgA+ → Merkel细胞癌（需注意与小细胞肺癌鉴别：Merkel为CK20+/TTF-1-，小细胞肺癌为CK20-/TTF-1+）；注意：少数结直肠癌可CK7灶+，高度微卫星不稳定(MSI-H)结直肠癌可CK7+/CK20减弱",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "colorectal-adenocarcinoma",
+            "cells": [
+              "腺管状结构，脏污性坏死（dirty necrosis），高柱状肿瘤细胞",
+              "CK20+ CK7- CDX2+ SATB2+ villin+",
+              "APC/KRAS/TP53 突变，部分 MSI-H/BRAF V600E",
+              "中老年多见，结直肠原发，可伴肝肺转移"
+            ]
+          },
+          {
+            "diseaseId": "merkel-cell-carcinoma",
+            "cells": [
+              "真皮内小圆蓝细胞，核分裂及凋亡多，染色质细颗粒状",
+              "CK20+（核旁点状）CK7- Syn+ CgA+ INSM1+ TTF-1-",
+              "MCPyV 整合（约 80%），UV 相关高突变负荷型 TP53/RB1 突变",
+              "老年人头颈及肢体暴露部位皮肤结节，进展快"
+            ]
+          },
+          {
+            "diseaseId": "mucinous-appendiceal-neoplasm",
+            "cells": [
+              "低级别黏液上皮衬覆伴黏液外渗，可形成腹膜假黏液瘤",
+              "CK20+ CDX2+ SATB2+ CK7-/±",
+              "KRAS 及 GNAS 突变常见",
+              "中老年，阑尾肿块或腹膜假黏液瘤"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "tnbc-vs-metastases",
@@ -185,7 +662,7 @@
       "high-grade-serous-ovarian-carcinoma",
       "lung-adenocarcinoma",
       "urothelial-carcinoma",
-      "squamous-cell-carcinoma",
+      "lung-squamous-cell-carcinoma",
       "melanoma"
     ],
     "keyMarkers": [
@@ -202,7 +679,91 @@
       "P40",
       "S-100"
     ],
-    "algorithm": "GATA3+（约60-70%三阴性乳腺癌阳性）最为可靠；Mammaglobin+/GCDFP-15+支持乳腺来源但敏感性较低；SOX10+常见于基底样三阴性乳腺癌（需排除黑色素瘤：乳腺癌CK+/S-100通常-）；注意GATA3也可阳性于尿路上皮癌，需结合临床和其他标记物；TTF-1+/Napsin A+排除乳腺来源指向肺；PAX8+/WT1+指向卵巢浆液性癌"
+    "algorithm": "GATA3+（约60-70%三阴性乳腺癌阳性）最为可靠；Mammaglobin+/GCDFP-15+支持乳腺来源但敏感性较低；SOX10+常见于基底样三阴性乳腺癌（需排除黑色素瘤：乳腺癌CK+/S-100通常-）；注意GATA3也可阳性于尿路上皮癌，需结合临床和其他标记物；TTF-1+/Napsin A+排除乳腺来源指向肺；PAX8+/WT1+指向卵巢浆液性癌",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "tnbc",
+            "cells": [
+              "浸润性癌，多为高级别，推挤性边界，常见地图样坏死、间质淋巴细胞浸润（TILs）",
+              "ER− PR− HER2−；CK5/6+ EGFR+ 常见（基底样），GATA3 +/−，SOX10 +/−，AR 可变",
+              "BRCA1/2 胚系突变常见；TP53 高频突变；同源重组缺陷（HRD）",
+              "中青年女性多见，常表现为乳腺肿块，易早期远处转移"
+            ]
+          },
+          {
+            "diseaseId": "metastatic-serous-carcinoma",
+            "cells": [
+              "乳头状/实性/裂隙样结构，核异型显著，砂粒体可见",
+              "PAX8+ WT1+ ER+（常阳性）；GATA3− SOX10− mammaglobin−",
+              "TP53 突变（>95%）；BRCA1/2 相关",
+              "既往卵巢/输卵管/腹膜浆液性癌病史，乳腺为转移靶器官之一"
+            ]
+          },
+          {
+            "diseaseId": "metastatic-lung-adenocarcinoma",
+            "cells": [
+              "腺样/实性结构，常伴坏死，可有黏液",
+              "TTF-1+ Napsin A+ CK7+；ER− PR− HER2− GATA3− SOX10−",
+              "EGFR/KRAS/ALK 改变可能阳性",
+              "有肺部原发灶或吸烟史，多灶性病变，影像学支持"
+            ]
+          },
+          {
+            "diseaseId": "metastatic-melanoma",
+            "cells": [
+              "上皮样/梭形细胞，核仁显著，色素可有可无",
+              "S-100+ SOX10+ HMB45+ Melan-A+ ；CK AE1/AE3− GATA3−",
+              "BRAF V600E、NRAS 突变",
+              "既往皮肤/黏膜/眼内黑色素瘤史，可呈乳腺孤立结节"
+            ]
+          },
+          {
+            "diseaseId": "metastatic-renal-clear-cell-carcinoma",
+            "cells": [
+              "透明/嗜酸胞质，富血窦网状间质",
+              "PAX8+ CD10+ RCC+ CAIX+；GATA3− SOX10− CK7−/弱",
+              "VHL 失活、3p 缺失",
+              "既往肾透明细胞癌史，可合并多器官转移"
+            ]
+          },
+          {
+            "diseaseId": "metastatic-colorectal-adenocarcinoma",
+            "cells": [
+              "肠型腺体，污秽样坏死（“dirty necrosis”），高柱状细胞",
+              "CDX2+ CK20+ SATB2+ villin+；CK7− GATA3− ER−",
+              "KRAS/NRAS/BRAF 突变，MSI 状态",
+              "既往结直肠癌史，常伴肝/肺同步转移"
+            ]
+          },
+          {
+            "diseaseId": "metastatic-gastric-adenocarcinoma",
+            "cells": [
+              "印戒细胞、低黏附性或肠型腺癌结构",
+              "CK7+/− CK20+/− CDX2+/− ；ER− GATA3− E-cadherin 可缺失",
+              "CDH1 突变（弥漫型）、HER2 扩增可能",
+              "既往胃癌史，女性易与浸润性小叶癌混淆"
+            ]
+          },
+          {
+            "diseaseId": "diffuse-large-b-cell-lymphoma",
+            "cells": [
+              "弥漫片状大细胞，核仁显著，无腺管或癌巢",
+              "CD45+ CD20+ CD79a+ PAX5+；CK AE1/AE3− GATA3−",
+              "MYC/BCL2/BCL6 重排（双打击），IGH 克隆性重排",
+              "可原发乳腺或系统性累及，老年女性多见"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "hcc-vs-cholangiocarcinoma",
@@ -229,7 +790,37 @@
       "mCEA(pCEA)",
       "CD10"
     ],
-    "algorithm": "HepPar-1+/Arginase-1+/GPC-3+ → 肝细胞癌（Reticulin网架减少/消失，CD34弥漫窦内皮阳性为辅助诊断特征）；CK7+/CK19+/MUC1+/HepPar-1- → 肝内胆管癌；两种成分混合存在 → 混合型肝癌-胆管癌（cHCC-CCA）；Arginase-1是肝细胞分化最敏感和特异的标记物（优于HepPar-1）；mCEA小管样阳性和CD10小管样阳性支持肝细胞癌"
+    "algorithm": "HepPar-1+/Arginase-1+/GPC-3+ → 肝细胞癌（Reticulin网架减少/消失，CD34弥漫窦内皮阳性为辅助诊断特征）；CK7+/CK19+/MUC1+/HepPar-1- → 肝内胆管癌；两种成分混合存在 → 混合型肝癌-胆管癌（cHCC-CCA）；Arginase-1是肝细胞分化最敏感和特异的标记物（优于HepPar-1）；mCEA小管样阳性和CD10小管样阳性支持肝细胞癌",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "hcc",
+            "cells": [
+              "梁索状/小梁状排列，肝窦样血管，多角形细胞胞浆嗜酸，可见胆汁、Mallory 小体及脂肪变",
+              "Hep Par-1+ Arginase-1+ GPC3+ pCEA 毛细胆管样+ CD10 毛细胆管样+ CK7−/+ CK19−",
+              "TERT 启动子突变、CTNNB1、TP53 突变；染色体不稳定",
+              "多见于 50–70 岁男性，常合并 HBV/HCV 肝硬化，AFP 常升高，影像呈富血供快进快出"
+            ]
+          },
+          {
+            "diseaseId": "intrahepatic-cholangiocarcinoma",
+            "cells": [
+              "腺管/腺样结构伴丰富纤维间质（促结缔组织增生），可见神经周围浸润，无胆汁",
+              "CK7+ CK19+ CK20−/+ MUC1+ Hep Par-1− Arginase-1− GPC3−",
+              "IDH1/IDH2 突变、FGFR2 融合、KRAS 突变、BAP1 改变",
+              "多见于 55–75 岁，可合并肝吸虫、肝内胆管结石或 PSC，CA19-9 升高，影像呈乏血供延迟强化"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "b-vs-t-cell-lymphoma",
@@ -244,7 +835,7 @@
       "burkitt-lymphoma",
       "ptcl-nos",
       "aitl",
-      "alcl",
+      "anaplastic-large-cell-lymphoma",
       "nk-t-cell-lymphoma"
     ],
     "keyMarkers": [
@@ -268,7 +859,118 @@
       "Ki-67",
       "TdT"
     ],
-    "algorithm": "CD20+/CD3- → B细胞淋巴瘤：CD10+/BCL-6+/BCL-2+ → 滤泡性淋巴瘤；CD5+/Cyclin D1+/SOX11+ → 套细胞淋巴瘤；CD5+/CD23+/Cyclin D1- → CLL/SLL；CD10+/BCL-6+/Ki-67近100%/星空现象 → Burkitt淋巴瘤；Hans分型(CD10/BCL-6/MUM1) → DLBCL GCB vs non-GCB亚型 | CD3+/CD20- → T细胞淋巴瘤：CD30+/ALK+ → ALK阳性间变大细胞淋巴瘤；CXCL13+/PD-1+/CD10灶+ → 血管免疫母细胞性T细胞淋巴瘤(AITL)；CD56+/EBER+ → 结外NK/T细胞淋巴瘤，鼻型"
+    "algorithm": "CD20+/CD3- → B细胞淋巴瘤：CD10+/BCL-6+/BCL-2+ → 滤泡性淋巴瘤；CD5+/Cyclin D1+/SOX11+ → 套细胞淋巴瘤；CD5+/CD23+/Cyclin D1- → CLL/SLL；CD10+/BCL-6+/Ki-67近100%/星空现象 → Burkitt淋巴瘤；Hans分型(CD10/BCL-6/MUM1) → DLBCL GCB vs non-GCB亚型 | CD3+/CD20- → T细胞淋巴瘤：CD30+/ALK+ → ALK阳性间变大细胞淋巴瘤；CXCL13+/PD-1+/CD10灶+ → 血管免疫母细胞性T细胞淋巴瘤(AITL)；CD56+/EBER+ → 结外NK/T细胞淋巴瘤，鼻型",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "dlbcl-nos",
+            "cells": [
+              "弥漫性中心母/免疫母细胞样大细胞，核仁明显，核分裂活跃",
+              "CD20+ CD79a+ PAX5+ CD3− ；GCB/ABC 分型用 CD10/BCL6/MUM1（Hans 法）",
+              "IGH 克隆性重排；部分 BCL6/BCL2/MYC 重排；MYD88/CD79B（ABC 型）突变",
+              "中老年，结内外均可；侵袭性，R-CHOP 一线"
+            ]
+          },
+          {
+            "diseaseId": "follicular-lymphoma",
+            "cells": [
+              "滤泡样结节状生长，中心细胞/中心母细胞混合",
+              "CD20+ CD10+ BCL6+ BCL2+ CD3− CD5−",
+              "t(14;18)(q32;q21) IGH::BCL2 重排；EZH2/KMT2D 突变",
+              "中老年，惰性，淋巴结肿大为主；可转化为 DLBCL"
+            ]
+          },
+          {
+            "diseaseId": "burkitt-lymphoma",
+            "cells": [
+              "中等大小单形细胞，满天星现象，核分裂极多，Ki-67≈100%",
+              "CD20+ CD10+ BCL6+ BCL2− TdT− CD3−",
+              "MYC 重排 t(8;14)/t(2;8)/t(8;22)；无 BCL2/BCL6 重排",
+              "儿童/青年，地方性（EBV 相关）或散发性；高度侵袭，需强化方案"
+            ]
+          },
+          {
+            "diseaseId": "mantle-cell-lymphoma",
+            "cells": [
+              "单形小-中等淋巴细胞，结节状/弥漫性",
+              "CD20+ CD5+ Cyclin D1+ SOX11+ CD23− CD10−",
+              "t(11;14)(q13;q32) IGH::CCND1；部分 TP53 突变",
+              "中老年男性，常有骨髓/胃肠受累；侵袭性"
+            ]
+          },
+          {
+            "diseaseId": "cll-sll",
+            "cells": [
+              "小圆淋巴细胞弥漫浸润，可见增殖中心",
+              "CD20(弱)+ CD5+ CD23+ CD79b(弱)+ Cyclin D1− LEF1+",
+              "IGHV 突变状态、del(13q)/del(17p)/TP53 突变判断预后",
+              "老年患者，外周血淋巴细胞增多；惰性，可 Richter 转化"
+            ]
+          },
+          {
+            "diseaseId": "marginal-zone-lymphoma",
+            "cells": [
+              "边缘区小细胞 + 单核样 B 细胞 ± 浆样分化，淋巴上皮病变（MALT）",
+              "CD20+ CD43+/− CD5− CD10− CD23− Cyclin D1−",
+              "t(11;18) API2::MALT1（胃 MALT）；t(14;18) IGH::MALT1",
+              "胃（Hp 相关）、唾液腺（Sjögren）、甲状腺（桥本）等结外好发，惰性"
+            ]
+          },
+          {
+            "diseaseId": "ptcl-nos",
+            "cells": [
+              "多形性中-大 T 细胞，核不规则，背景炎细胞混合",
+              "CD3+ CD2+ CD5+/− CD4/CD8 可变 CD20− ；常丢失 pan-T 抗原",
+              "TCR 克隆性重排；TET2/DNMT3A/RHOA 突变可见",
+              "中老年，结内外均可；侵袭性，预后差"
+            ]
+          },
+          {
+            "diseaseId": "aitl",
+            "cells": [
+              "副皮质区扩张，多形淋巴细胞伴高内皮小静脉及 FDC 网增生",
+              "CD3+ CD4+ CD10+ BCL6+ PD-1+ CXCL13+ ICOS+（TFH 表型）",
+              "TCR 重排；RHOA G17V、TET2、DNMT3A、IDH2 R172 突变；EBV+ B 免疫母细胞",
+              "老年，全身淋巴结肿大 + 皮疹、发热、高球蛋白血症；侵袭"
+            ]
+          },
+          {
+            "diseaseId": "alcl-alk-positive",
+            "cells": [
+              "大 hallmark 细胞（马蹄/肾形核），窦内生长常见",
+              "CD30+（膜+Golgi 强）ALK+ EMA+ CD3 常−  CD4+/− Cytotoxic（TIA-1/GrB）+",
+              "t(2;5)(p23;q35) NPM1::ALK 等 ALK 重排",
+              "儿童/青年，预后相对好；BV+CHP 一线"
+            ]
+          },
+          {
+            "diseaseId": "enktcl-nasal",
+            "cells": [
+              "血管中心/血管破坏，凝固性坏死，中等大异型淋巴细胞",
+              "CD2+ cCD3ε+ CD56+ sCD3− CD5− 细胞毒标记+ EBER+",
+              "EBV 阳性（原位杂交）；TCR 多为胚系构型；JAK3/STAT3 突变",
+              "鼻腔/鼻咽多见，东亚高发；侵袭，P-Gemox/门冬酰胺酶方案"
+            ]
+          },
+          {
+            "diseaseId": "mycosis-fungoides",
+            "cells": [
+              "表皮亲表皮性小-中等脑回样 T 细胞，Pautrier 微脓肿",
+              "CD3+ CD4+ CD8− CD7 常丢失 CD30−（转化时+）",
+              "TCR 克隆性重排；分子异质性高",
+              "成人慢性斑片/斑块/肿瘤期皮损；惰性，晚期可系统受累"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "neuroendocrine-tumors",
@@ -279,7 +981,7 @@
       "well-differentiated-net-g1",
       "well-differentiated-net-g2",
       "well-differentiated-net-g3",
-      "small-cell-carcinoma",
+      "small-cell-lung-carcinoma",
       "large-cell-nec",
       "mixed-neuroendocrine-non-neuroendocrine-neoplasm"
     ],
@@ -298,7 +1000,100 @@
       "Rb",
       "P53"
     ],
-    "algorithm": "Syn+/CgA+/INSM1+确认神经内分泌分化 → Ki-67指数分级：Ki-67<3% → NET G1；Ki-67 3-20% → NET G2；Ki-67>20%但分化好 → NET G3（Rb和P53表达正常）；低分化+Ki-67通常>50% → 神经内分泌癌NEC（Rb缺失和/或P53异常表达）；分为小细胞型和大细胞型 | 注意：高分化NET G3与低分化NEC的鉴别至关重要（治疗方案不同）：NET G3保留ATRX/DAXX和Rb表达，NEC则Rb缺失/P53异常"
+    "algorithm": "Syn+/CgA+/INSM1+确认神经内分泌分化 → Ki-67指数分级：Ki-67<3% → NET G1；Ki-67 3-20% → NET G2；Ki-67>20%但分化好 → NET G3（Rb和P53表达正常）；低分化+Ki-67通常>50% → 神经内分泌癌NEC（Rb缺失和/或P53异常表达）；分为小细胞型和大细胞型 | 注意：高分化NET G3与低分化NEC的鉴别至关重要（治疗方案不同）：NET G3保留ATRX/DAXX和Rb表达，NEC则Rb缺失/P53异常",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "net-g1",
+            "cells": [
+              "器官样/小梁状排列，胞浆嗜酸性细颗粒，核圆形染色质点彩状，核分裂罕见",
+              "Syn+ CgA+ INSM1+ Ki-67<3%",
+              "MEN1、DAXX/ATRX 突变（胰腺）",
+              "好发于胃肠胰，中位 50-60 岁，惰性，5 年生存率>90%"
+            ]
+          },
+          {
+            "diseaseId": "net-g2",
+            "cells": [
+              "形态同 G1，可见局灶坏死，核分裂略增",
+              "Syn+ CgA+ INSM1+ Ki-67 3-20%",
+              "MEN1、DAXX/ATRX 突变",
+              "可伴肝转移，需结合分级评估预后"
+            ]
+          },
+          {
+            "diseaseId": "net-g3",
+            "cells": [
+              "高分化形态保留器官样结构，核异型轻-中度，核分裂增多",
+              "Syn+ CgA+ INSM1+ Ki-67>20% (常 20-55%) Rb 保留 p53 野生型",
+              "MEN1、DAXX/ATRX 突变；TP53/RB1 野生",
+              "胰腺/胃肠较多见，预后介于 G2 与 NEC 之间"
+            ]
+          },
+          {
+            "diseaseId": "nec-small-cell",
+            "cells": [
+              "弥漫片状，小圆蓝细胞，胞浆稀少，核铸型，挤压伪影，广泛坏死，核分裂极多",
+              "Syn+/− CgA+/− INSM1+ Ki-67 常>70% Rb 丢失 p53 异常",
+              "TP53 + RB1 双失活，MEN1 野生",
+              "肺最常见，吸烟相关，侵袭性强，化疗敏感但易复发"
+            ]
+          },
+          {
+            "diseaseId": "nec-large-cell",
+            "cells": [
+              "器官样/弥漫巢状，细胞大，胞浆丰富，核仁明显，地图样坏死，核分裂>10/2mm²",
+              "Syn+ CgA+ INSM1+ CK+ Ki-67 常>40% Rb 丢失 p53 异常",
+              "TP53 + RB1 失活；部分 KEAP1/STK11 突变",
+              "肺、胃肠多见，预后差，与小细胞癌相似"
+            ]
+          },
+          {
+            "diseaseId": "manec-mince",
+            "cells": [
+              "神经内分泌成分与腺癌/鳞癌成分各≥30% 混合",
+              "各成分分别表达 Syn/CgA 与 CK/CDX2 等上皮标记",
+              "两种成分常共享驱动突变（如 KRAS、TP53）",
+              "胃肠胆胰常见，按高级别成分判断预后"
+            ]
+          },
+          {
+            "diseaseId": "paraganglioma",
+            "cells": [
+              "Zellballen 巢状，主细胞胞浆嗜酸或嗜碱，周围支持细胞",
+              "Syn+ CgA+ GATA3+ 主细胞 CK− S100+（支持细胞） Ki-67 低",
+              "SDHB/SDHD/SDHA、VHL、RET、NF1 突变",
+              "副神经节/嗜铬细胞瘤，可分泌儿茶酚胺，遗传综合征相关"
+            ]
+          },
+          {
+            "diseaseId": "medullary-thyroid-ca",
+            "cells": [
+              "实性巢状，圆形/梭形细胞，间质淀粉样物质（刚果红+）",
+              "Calcitonin+ CEA+ Syn+ CgA+ TTF-1+ Thyroglobulin−",
+              "RET 胚系/体细胞突变（MEN2），RAS 突变",
+              "甲状腺 C 细胞起源，血清降钙素升高"
+            ]
+          },
+          {
+            "diseaseId": "merkel-cell-ca",
+            "cells": [
+              "真皮内小圆蓝细胞，核分裂多，挤压伪影",
+              "CK20+ 核旁点状 Syn+ CgA+ INSM1+ TTF-1−",
+              "MCPyV 阳性型 或 UV 相关 RB1/TP53 突变型",
+              "老年人头颈/肢体皮肤，紫外线/免疫抑制相关"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "glandular-vs-squamous",
@@ -307,10 +1102,10 @@
     "description": "低分化癌中腺分化与鳞状分化的免疫组化鉴别，对治疗方案选择有重要意义（如肺癌）",
     "diseases": [
       "lung-adenocarcinoma",
-      "squamous-cell-carcinoma",
+      "lung-squamous-cell-carcinoma",
       "adenosquamous-carcinoma",
       "large-cell-nec",
-      "small-cell-carcinoma"
+      "small-cell-lung-carcinoma"
     ],
     "keyMarkers": [
       "CK7",
@@ -326,7 +1121,37 @@
       "Syn",
       "CgA"
     ],
-    "algorithm": "TTF-1+/Napsin A+/CK7+ → 腺分化（肺腺癌）；P40+/CK5/6+ → 鳞状分化（P40特异性优于P63，P63在部分腺癌中可弱阳性）；两者均阳性 → 考虑腺鳞癌（需两种成分各占≥10%）；两者均阴性 → 考虑未分化癌或神经内分泌癌（加做Syn/CgA/INSM1）| 注意：在肺癌中腺鳞鉴别直接影响靶向治疗策略；P40是鳞状分化的金标准标记物"
+    "algorithm": "TTF-1+/Napsin A+/CK7+ → 腺分化（肺腺癌）；P40+/CK5/6+ → 鳞状分化（P40特异性优于P63，P63在部分腺癌中可弱阳性）；两者均阳性 → 考虑腺鳞癌（需两种成分各占≥10%）；两者均阴性 → 考虑未分化癌或神经内分泌癌（加做Syn/CgA/INSM1）| 注意：在肺癌中腺鳞鉴别直接影响靶向治疗策略；P40是鳞状分化的金标准标记物",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "adenocarcinoma",
+            "cells": [
+              "腺样/腺泡/乳头/微乳头结构，可见腔内黏液及胞浆内空泡，细胞呈柱状或立方状，核位于基底侧",
+              "CK7+ (多数)、TTF-1+ (肺)、Napsin A+ (肺)、CDX2+ (胃肠)、GATA3+ (乳腺)、MUC1/MUC2+、黏液卡红及 PAS-D 阳性；p40−、p63− 或灶状弱阳性",
+              "肺腺癌常见 EGFR 突变、ALK/ROS1/RET 融合、KRAS G12C 突变；结直肠腺癌 KRAS/NRAS/BRAF 突变、MSI；胃腺癌 HER2 扩增、CLDN18.2 表达",
+              "好发于腺上皮分布部位（肺外周、胃肠、乳腺、胰腺、前列腺）；肺腺癌非吸烟者比例较高，女性亚裔多见；可呈多灶或转移性病灶，部分伴黏液分泌相关症状"
+            ]
+          },
+          {
+            "diseaseId": "squamous-cell-carcinoma",
+            "cells": [
+              "巢团状/片状排列，可见角化珠、细胞间桥、胞浆嗜酸性丰富，核深染具多形性，无腺腔及黏液分泌",
+              "p40+、p63+、CK5/6+、SOX2+、Desmoglein-3+、CK14+；TTF-1−、Napsin A−、CK7 多为阴性或局灶弱阳性，黏液染色阴性",
+              "肺鳞癌常见 TP53、CDKN2A、PIK3CA、SOX2 扩增、FGFR1 扩增；宫颈/头颈/肛管鳞癌与 HPV（尤其 16/18 型）相关，p16 弥漫强阳性；EGFR 突变罕见",
+              "好发于鳞状上皮覆盖部位（皮肤、口腔、喉、食管、宫颈、肛管）及鳞化部位（肺中央气道）；肺鳞癌与长期吸烟密切相关，男性多见；常表现为中央型肿块伴阻塞、溃疡及出血"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "melanocytic-lesions",
@@ -356,7 +1181,91 @@
       "Cyclin D1",
       "P53"
     ],
-    "algorithm": "良性痣特征：对称性、成熟现象（深层细胞变小）、HMB-45表层阳性深层消失、Ki-67低、PRAME阴性；恶性黑色素瘤特征：不对称、缺乏成熟、Pagetoid扩散、核分裂象多、HMB-45深层仍阳性、Ki-67增高、PRAME弥漫阳性 | PRAME是近年来最有价值的恶性标记物（在大多数黑色素瘤中弥漫强阳性，良性痣中阴性）；Spitz痣需排除Spitz黑色素瘤（FISH和分子检测辅助鉴别）；促纤维增生性黑色素瘤S-100+/SOX10+但Melan-A常阴性"
+    "algorithm": "良性痣特征：对称性、成熟现象（深层细胞变小）、HMB-45表层阳性深层消失、Ki-67低、PRAME阴性；恶性黑色素瘤特征：不对称、缺乏成熟、Pagetoid扩散、核分裂象多、HMB-45深层仍阳性、Ki-67增高、PRAME弥漫阳性 | PRAME是近年来最有价值的恶性标记物（在大多数黑色素瘤中弥漫强阳性，良性痣中阴性）；Spitz痣需排除Spitz黑色素瘤（FISH和分子检测辅助鉴别）；促纤维增生性黑色素瘤S-100+/SOX10+但Melan-A常阴性",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "common-acquired-nevus",
+            "cells": [
+              "对称、境界清，表皮内巢状，向深部成熟（Maturation）",
+              "S-100+ SOX10+ Melan-A+ HMB45 表层+深层−；Ki-67 低（<1%）",
+              "无 BRAF/NRAS 驱动突变的特异分子改变（常见 BRAF V600E 但属良性背景）",
+              "青少年-中年，直径<6 mm，边界清，生长缓慢"
+            ]
+          },
+          {
+            "diseaseId": "dysplastic-nevus",
+            "cells": [
+              "结构不对称，交界成分肩状延伸，雀斑样增生伴桥接，轻-重度细胞异型",
+              "S-100+ SOX10+ HMB45 交界弱+；p16 表达可部分保留",
+              "BRAF V600E / NRAS 突变，无 CDKN2A 纯合缺失",
+              "成人，≥5 mm，边界模糊不规则色素，FAMMM 家族史"
+            ]
+          },
+          {
+            "diseaseId": "spitz-nevus",
+            "cells": [
+              "大上皮样/梭形黑色素细胞，Kamino 小体，表皮增生，对称成熟",
+              "S-100+ SOX10+ HMB45 表层+；p16 保留；Ki-67 低",
+              "HRAS 突变或 ALK/ROS1/NTRK1/NTRK3/RET/MET/BRAF 激酶融合，无 TERT 启动子突变",
+              "儿童/青少年，头面部、下肢，红色半球形结节"
+            ]
+          },
+          {
+            "diseaseId": "blue-nevus",
+            "cells": [
+              "真皮内树突状/梭形含色素细胞，硬化胶原背景，无交界成分",
+              "S-100+ SOX10+ HMB45+ Melan-A+；Ki-67 极低",
+              "GNAQ 或 GNA11 Q209 突变",
+              "青年，头皮/骶部/手背，蓝黑色斑丘疹"
+            ]
+          },
+          {
+            "diseaseId": "melanoma-in-situ",
+            "cells": [
+              "表皮内单个黑色素细胞 Paget 样上行，基底连续性增生，累及附属器",
+              "SOX10+ Melan-A+ HMB45 弥漫+；PRAME 弥漫核+；p16 可丢失",
+              "TERT 启动子突变，BRAF/NRAS 突变，CDKN2A 缺失；FISH/CGH 多发拷贝数异常",
+              "中老年，日光暴露区，>6 mm 不规则色素斑（ABCDE）"
+            ]
+          },
+          {
+            "diseaseId": "invasive-melanoma",
+            "cells": [
+              "真皮内非典型黑色素细胞无成熟，核分裂易见，溃疡、浸润",
+              "SOX10+ S-100+ HMB45 深层仍+；PRAME 弥漫+；Ki-67 高（>10%）；p16 丢失",
+              "BRAF V600E（皮肤）/ NRAS / KIT（肢端-黏膜）/ GNAQ-GNA11（眼内）；TERT 启动子突变；CDKN2A 纯合缺失",
+              "成人，Breslow 厚度分期，区域淋巴结和远处转移风险"
+            ]
+          },
+          {
+            "diseaseId": "deep-penetrating-nevus",
+            "cells": [
+              "楔形深达网状真皮，色素性上皮样/梭形细胞巢，无明显成熟",
+              "S-100+ SOX10+ HMB45 弥漫+；β-catenin 核+；LEF1+；Ki-67 低",
+              "CTNNB1 或 APC 突变激活 Wnt 通路，常伴 BRAF V600E",
+              "青年，头颈/肩背，深色结节，直径多<1 cm"
+            ]
+          },
+          {
+            "diseaseId": "cellular-blue-nevus",
+            "cells": [
+              "双相：经典蓝痣区 + 富细胞梭形/上皮样岛，哑铃状延伸至皮下",
+              "S-100+ SOX10+ HMB45+；Ki-67 低；BAP1 保留",
+              "GNAQ/GNA11 突变，无 BAP1 失活（区别于 BAP1 失活肿瘤）",
+              "成人，骶尾部/臀部，蓝黑色结节，可达 2 cm"
+            ]
+          }
+        ]
+      }
+    }
   },
   {
     "id": "renal-cell-carcinoma-subtypes",
@@ -390,6 +1299,264 @@
       "Vimentin",
       "EMA"
     ],
-    "algorithm": "CA-IX弥漫膜+（box pattern）/CD10+/Vimentin+/CK7- → 透明细胞型RCC（3p缺失/VHL失活）；CK7+/AMACR+/CA-IX-/CD10灶+ → 乳头状RCC（1型：薄乳头，泡沫巨噬细胞；2型：假复层，嗜酸细胞）；CK7+/CD117+/Ksp-cadherin+/Hale胶体铁弥漫+ → 嫌色细胞RCC；CD117+/CK7-/Hale胶体铁灶+ → 嗜酸细胞瘤（良性，需与嫌色细胞癌嗜酸亚型鉴别）；TFE3核强+ → MiTF易位型RCC（需FISH确认）；FH缺失/2SC阳性 → FH缺陷型RCC（遗传性平滑肌瘤病和肾癌综合征）；SDHB缺失 → SDH缺陷型RCC"
+    "algorithm": "CA-IX弥漫膜+（box pattern）/CD10+/Vimentin+/CK7- → 透明细胞型RCC（3p缺失/VHL失活）；CK7+/AMACR+/CA-IX-/CD10灶+ → 乳头状RCC（1型：薄乳头，泡沫巨噬细胞；2型：假复层，嗜酸细胞）；CK7+/CD117+/Ksp-cadherin+/Hale胶体铁弥漫+ → 嫌色细胞RCC；CD117+/CK7-/Hale胶体铁灶+ → 嗜酸细胞瘤（良性，需与嫌色细胞癌嗜酸亚型鉴别）；TFE3核强+ → MiTF易位型RCC（需FISH确认）；FH缺失/2SC阳性 → FH缺陷型RCC（遗传性平滑肌瘤病和肾癌综合征）；SDHB缺失 → SDH缺陷型RCC",
+    "_enhance_diff_comparison_table": {
+      "comparisonTable": {
+        "columns": [
+          "组织形态",
+          "IHC",
+          "分子",
+          "临床"
+        ],
+        "rows": [
+          {
+            "diseaseId": "clear-cell-rcc",
+            "cells": [
+              "透明细胞为主，胞浆富含糖原/脂质，腺泡状/巢状排列，纤细血管网分隔",
+              "CA9 膜弥漫+ (盒状)、PAX8+、CD10+、Vimentin+、CK7 −/局灶+、AMACR −",
+              "VHL 基因失活 (3p25)、3p 缺失",
+              "最常见 RCC 亚型 (约 70%)，50-70 岁男性多见，可伴 VHL 综合征"
+            ]
+          },
+          {
+            "diseaseId": "papillary-rcc",
+            "cells": [
+              "真性乳头/管状结构伴纤维血管轴心，轴心内泡沫状巨噬细胞及砂粒体；1 型乳头单层小细胞，2 型假复层嗜酸性大细胞",
+              "CK7+ (1 型弥漫，2 型减弱)、AMACR+ 弥漫、Vimentin+、CD10+、CA9 −",
+              "MET 突变/7、17 号染色体三体、Y 染色体丢失 (1 型)；2 型可见 CDKN2A、SETD2、BAP1 改变",
+              "占 RCC 约 10-15%，多中心/双侧倾向，遗传性乳头状 RCC 综合征 (HPRC)"
+            ]
+          },
+          {
+            "diseaseId": "chromophobe-rcc",
+            "cells": [
+              "大多角形细胞伴植物细胞样胞膜、核周空晕、胞浆细颗粒/絮状，葡萄干样核及核沟",
+              "CK7+ 弥漫、CD117 (KIT)+、E-cadherin+、Hale 胶体铁胞浆弥漫+、Vimentin −、CA9 −、AMACR −",
+              "多条染色体丢失 (1、2、6、10、13、17、21)，TP53/PTEN 突变",
+              "占 RCC 约 5%，预后较好，Birt-Hogg-Dubé 综合征相关"
+            ]
+          },
+          {
+            "diseaseId": "mit-family-translocation-rcc",
+            "cells": [
+              "乳头状/巢状结构，透明及嗜酸性细胞混合，常见砂粒体",
+              "TFE3/TFEB 核+ (免疫组化)、Cathepsin K+、Melan-A/HMB45 局灶+、PAX8+、CK 弱+/−",
+              "TFE3 (Xp11.2) 或 TFEB (6p21) 基因重排 (FISH)",
+              "儿童及年轻成人为主，女性稍多，侵袭性不一"
+            ]
+          },
+          {
+            "diseaseId": "collecting-duct-carcinoma",
+            "cells": [
+              "髓质起源，不规则管状/乳头状伴显著促纤维反应及炎症背景，细胞异型明显",
+              "CK7+、高分子量 CK (34βE12)+、PAX8+、INI1 保留、CA9 −、Vimentin+",
+              "无特异性改变，可见 SMARCB1 完整、多基因突变",
+              "罕见 (<1%)，中老年，高度侵袭，预后极差"
+            ]
+          },
+          {
+            "diseaseId": "renal-medullary-carcinoma",
+            "cells": [
+              "网状/筛状/腺样结构伴明显炎症及促纤维间质，横纹肌样细胞",
+              "INI1 (SMARCB1) 缺失、OCT3/4+、CK+、PAX8+/−",
+              "SMARCB1 双等位失活",
+              "年轻黑人/镰状细胞特质患者，高度恶性"
+            ]
+          },
+          {
+            "diseaseId": "fh-deficient-rcc",
+            "cells": [
+              "乳头状/管囊状/实性混合，核仁显著伴核周空晕 (病毒包涵体样)",
+              "FH 缺失、2SC+ (2-琥珀酰半胱氨酸)、CK7 −、AMACR +/−、PAX8+",
+              "FH 基因 (1q42) 胚系或体细胞失活",
+              "HLRCC 综合征 (遗传性平滑肌瘤病和 RCC)，侵袭性强"
+            ]
+          },
+          {
+            "diseaseId": "succinate-dehydrogenase-deficient-rcc",
+            "cells": [
+              "实性巢状由立方/嗜酸性细胞组成，胞浆内絮状空泡 (线粒体聚集)",
+              "SDHB 缺失、CK 阴性/局灶+、PAX8+、KIT −",
+              "SDHA/B/C/D 胚系突变",
+              "年轻患者，可伴副神经节瘤/GIST，通常低级别"
+            ]
+          },
+          {
+            "diseaseId": "eosinophilic-solid-cystic-rcc",
+            "cells": [
+              "实性及大小不等囊性区混合，嗜酸性胞浆内粗颗粒 (嗜碱性点彩)",
+              "CK20+ (局灶或弥漫)、CK7 −/局灶、CD117 −、PAX8+",
+              "TSC1/TSC2 体细胞突变",
+              "女性多见，多为散发，预后良好"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "small-round-blue-cell",
+    "titleZh": "小圆蓝细胞肿瘤鉴别",
+    "titleEn": "Small Round Blue Cell Tumor Differentials",
+    "description": "小圆蓝细胞肿瘤（SRBCT）是一组由小至中等大小、圆形、胞浆稀少、核深染（HE 切片呈蓝染）的原始或低分化肿瘤细胞构成的异质性肿瘤，多见于儿童及青少年，形态学重叠显著，鉴别高度依赖免疫组化及分子检测（融合基因/易位）。常见成员包括尤文肉瘤/原始神经外胚层肿瘤、神经母细胞瘤、横纹肌肉瘤（尤其腺泡型）、促结缔组织增生性小圆细胞肿瘤（DSRCT）、淋巴母细胞淋巴瘤/白血病、伯基特淋巴瘤、视网膜母细胞瘤、Wilms 瘤（母细胞为主型）、髓母细胞瘤、小细胞骨肉瘤、间叶性软骨肉瘤、NUT 癌及 CIC/BCOR 重排未分化圆细胞肉瘤等。",
+    "diseases": [
+      "ewing-sarcoma",
+      "neuroblastoma",
+      "rhabdomyosarcoma",
+      "desmoplastic-small-round-cell-tumor",
+      "burkitt-lymphoma",
+      "wilms-tumor",
+      "medulloblastoma"
+    ],
+    "keyMarkers": [
+      "CD99",
+      "NKX2.2",
+      "FLI1",
+      "Synaptophysin",
+      "Chromogranin A",
+      "INSM1",
+      "PHOX2B",
+      "Desmin",
+      "Myogenin",
+      "MyoD1",
+      "WT1",
+      "CD45",
+      "TdT",
+      "CD20",
+      "CD3",
+      "c-MYC",
+      "NUT (NUTM1)",
+      "SOX10",
+      "SALL4",
+      "BCOR",
+      "DUX4",
+      "S-100",
+      "INI1 (SMARCB1)",
+      "Ki-67"
+    ],
+    "algorithm": "第一步：CD45(LCA) 区分造血与非造血来源——CD45+ 进入淋巴造血分支（TdT+ → 淋巴母细胞性；CD20+CD10+BCL6+c-MYC+、Ki-67≈100% → 伯基特；CD3+ → T 淋巴母细胞）。第二步：CD45- 时依据神经内分泌/神经标记——Syn/CgA/INSM1+ 且 PHOX2B+ → 神经母细胞瘤；Syn+CK+（膜点状）+WT1(C端)+ 伴 EWSR1-WT1 融合 → DSRCT；Syn+NUT- 单一神经内分泌 → 其他神经内分泌小细胞癌。第三步：肌源性标记——Desmin+Myogenin/MyoD1+ → 横纹肌肉瘤（腺泡型核强弥漫 Myogenin、PAX3/7-FOXO1 融合；胚胎型斑驳表达）。第四步：CD99 膜强阳性 + NKX2.2+ + FLI1+ → 尤文肉瘤（EWSR1-FLI1/ERG 融合）；CD99 弥漫但 NKX2.2-、WT1+/ETV4+ → CIC 重排肉瘤（CIC-DUX4）；CD99±、BCOR+CCNB3+（男童骨） → BCOR 重排肉瘤。第五步：特殊定位线索——鼻窦/中线 + NUT(NUTM1) 核点状+ → NUT 癌；眼内儿童 + CRX/Otx2+ → 视网膜母细胞瘤；小脑 + Syn+ → 髓母细胞瘤；肾 + WT1+CK+vimentin+ → Wilms 瘤母细胞型；骨内 CD99+ 但伴软骨岛 + SOX9+ → 间叶性软骨肉瘤；骨内 CD99+ 形态似尤文但骨样基质 → 小细胞骨肉瘤。第六步：疑难病例务必行分子检测（FISH 或 RNA 测序）确认 EWSR1、FUS、CIC、BCOR、PAX3/7-FOXO1、EWSR1-WT1、NUTM1 等融合以最终定性。"
+  },
+  {
+    "id": "epithelioid-tumors",
+    "titleZh": "上皮样肿瘤鉴别",
+    "titleEn": "Epithelioid Tumor Differentials",
+    "description": "由多边形、胞浆丰富嗜酸性或透明、核圆形居中的上皮样细胞构成的一组肿瘤，形态学常与癌相似，需结合免疫组化与分子检测与真性癌、黑色素瘤及多种上皮样软组织肿瘤鉴别",
+    "diseases": [
+      "melanoma"
+    ],
+    "keyMarkers": [
+      "AE1/AE3",
+      "EMA",
+      "INI1/SMARCB1",
+      "CD34",
+      "ERG",
+      "CD31",
+      "CAMTA1",
+      "TFE3",
+      "HMB45",
+      "Melan-A",
+      "S-100",
+      "SOX10",
+      "CD117",
+      "DOG1",
+      "Desmin",
+      "Calretinin",
+      "WT1"
+    ],
+    "algorithm": "CK+/EMA+ 且 INI1 丢失 → 上皮样肉瘤；CK±、ERG+/CD31+/CD34+ 血管标记阳性 → 上皮样血管内皮瘤（CAMTA1 或 TFE3+）/ 上皮样血管肉瘤；CK-、HMB45+/Melan-A+/SOX10+ → 黑色素瘤；HMB45+/Melan-A+ 伴 SMA+ → PEComa；CD117+/DOG1+ → 上皮样 GIST；S-100+/SOX10+ 伴 H3K27me3 丢失 → 上皮样 MPNST；CK+/Calretinin+/WT1+ 且累及浆膜 → 上皮样间皮瘤；均阴性且广谱 CK 弥漫+ → 回到癌（NOS）并追查原发"
+  },
+  {
+    "id": "papillary-thyroid-mimics",
+    "titleZh": "甲状腺乳头状癌形态拟态鉴别",
+    "titleEn": "Papillary Thyroid Carcinoma Mimics Differentials",
+    "description": "一组在组织学上可出现乳头状结构、核透明、核沟或核内假包涵体等类似甲状腺乳头状癌（PTC）形态特征的甲状腺病变。需结合核特征完整性、包膜/侵袭情况及分子改变进行鉴别，避免过诊断。",
+    "diseases": [
+      "papillary-thyroid-carcinoma",
+      "niftp",
+      "follicular-adenoma",
+      "follicular-thyroid-carcinoma",
+      "hashimoto-thyroiditis",
+      "graves-disease",
+      "hyalinizing-trabecular-tumor"
+    ],
+    "keyMarkers": [
+      "BRAF V600E",
+      "HBME-1",
+      "Galectin-3",
+      "CK19",
+      "CD56",
+      "TTF-1",
+      "Thyroglobulin",
+      "Ki-67",
+      "RET/PTC",
+      "RAS"
+    ],
+    "algorithm": "第一步评估核特征：若具备完整 PTC 核特征（核增大、拥挤重叠、透明、核沟、核内假包涵体）→ 考虑 PTC 或其拟态病变。第二步评估生长方式与包膜：有完整包膜、仅滤泡状生长、无包膜/血管侵犯且核特征达标 → NIFTP；包膜完整且核特征不足 → 滤泡性腺瘤；有包膜或血管侵犯而核特征不足 → 滤泡癌。第三步评估背景：淋巴细胞浸润伴嗜酸性变、局灶核透明 → 桥本甲状腺炎（核沟/透明为反应性，BRAF 阴性）；弥漫增生伴乳头样皱褶、扇贝样胶质 → Graves 病。第四步辅助标志：HBME-1+/Galectin-3+/CK19 弥漫强+/BRAF V600E+ 支持 PTC；透明小梁状肿瘤 MIB-1（Ki-67）呈特征性膜染色、PAX8-PPARG 阴性、GLIS 重排可鉴别。第五步分子检测：BRAF V600E、RET/PTC 融合支持 PTC；RAS 突变多见于滤泡型病变/NIFTP；均阴性且形态不足需保守诊断为 WDT-UMP/FT-UMP。"
+  },
+  {
+    "id": "signet-ring-cell",
+    "titleZh": "印戒细胞癌来源鉴别",
+    "titleEn": "Signet Ring Cell Carcinoma Origin Differentials",
+    "description": "以胞浆内黏液聚集将细胞核挤压至一侧形成印戒样形态的腺癌，可起源于胃、结直肠、乳腺、肺等多个部位，需结合免疫组化判断原发灶",
+    "diseases": [
+      "invasive-lobular-carcinoma",
+      "lung-adenocarcinoma",
+      "appendiceal-mucinous-neoplasm"
+    ],
+    "keyMarkers": [
+      "CK7",
+      "CK20",
+      "CDX2",
+      "GATA3",
+      "E-cadherin",
+      "TTF-1",
+      "SATB2",
+      "ER",
+      "GCDFP-15",
+      "Mammaglobin",
+      "MUC1",
+      "MUC2",
+      "MUC5AC",
+      "MUC6"
+    ],
+    "algorithm": "CK7-/CK20+/CDX2+/SATB2+ → 结直肠来源；CK7+/CK20±/CDX2± /MUC5AC+/MUC6+ → 胃来源；CK7+/CK20-/GATA3+/ER+/E-cadherin 缺失 → 乳腺浸润性小叶癌（印戒样变异）；CK7+/TTF-1+/Napsin A+ → 肺腺癌印戒细胞变异；CK20+/CDX2+/MUC2+ 伴阑尾病变 → 阑尾黏液性肿瘤；必要时加做 PAX8（除外 Müllerian/肾）及 SOX10/Melan-A（除外转移性黑色素瘤）"
+  },
+  {
+    "id": "metastasis-unknown-primary",
+    "titleZh": "转移癌未知原发鉴别",
+    "titleEn": "Carcinoma of Unknown Primary Differentials",
+    "description": "以转移灶为首发表现、经规范检查仍未能明确原发部位的恶性肿瘤，需通过形态学结合免疫组化逐步推断可能起源，指导治疗决策",
+    "diseases": [
+      "lung-adenocarcinoma",
+      "colorectal-adenocarcinoma",
+      "gastric-adenocarcinoma",
+      "hepatocellular-carcinoma",
+      "prostate-adenocarcinoma",
+      "urothelial-carcinoma",
+      "melanoma"
+    ],
+    "keyMarkers": [
+      "CK7",
+      "CK20",
+      "TTF-1",
+      "Napsin A",
+      "GATA3",
+      "CDX2",
+      "PAX8",
+      "GCDFP-15",
+      "Mammaglobin",
+      "HepPar-1",
+      "Arginase-1",
+      "Thyroglobulin",
+      "NKX3.1",
+      "PSA",
+      "WT1",
+      "PAX2",
+      "p40",
+      "S-100",
+      "SOX10",
+      "HMB45"
+    ],
+    "algorithm": "第一步按广谱 CK / Vim / LCA / S-100 区分癌 / 肉瘤 / 淋巴造血 / 黑色素瘤；第二步癌类按 CK7/CK20 分四象限：CK7+/CK20- → 肺（TTF-1/Napsin A+）、乳腺（GATA3/GCDFP-15/Mammaglobin+）、甲状腺（TTF-1/Tg+）、卵巢/子宫内膜（PAX8/WT1+）、胆胰（CK19+，无特异）；CK7+/CK20+ → 胰胆、尿路（GATA3+/p40+）、部分胃；CK7-/CK20+ → 结直肠（CDX2/SATB2+）、Merkel（CK20 核旁点状+）；CK7-/CK20- → 肝（HepPar-1/Arg-1/Gly3+）、肾（PAX8/PAX2+CD10+）、前列腺（NKX3.1/PSA+）、鳞癌（p40/p63+）；第三步结合性别特异及分子检测（如 CUP 基因表达谱、NGS 融合/驱动基因）进一步定位"
   }
 ]
