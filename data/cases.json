@@ -131,7 +131,8 @@
           "relevantPoint": "浸润性乳腺癌常规报告组织学分级（Nottingham 分级）、肿瘤大小、脉管侵犯、切缘及 ER/PR/HER2/Ki-67；HER2 IHC 2+ 必须加做 ISH；HER2 低表达（IHC 1+ 或 2+/ISH−）患者在晚期阶段可纳入抗体偶联药物（如 T-DXd）治疗决策。"
         }
       ]
-    }
+    },
+    "titleEn": "55-Year-Old Woman with Breast Mass"
   },
   {
     "id": "case-002",
@@ -262,7 +263,8 @@
           "relevantPoint": "对于单纯 DCIS，保乳术后推荐全乳放疗以降低同侧复发；ER 阳性者术后可给予他莫昔芬 5 年辅助内分泌治疗，不推荐常规行腋窝前哨淋巴结活检，除非拟行全乳切除或病灶广泛疑有微浸润。"
         }
       ]
-    }
+    },
+    "titleEn": "48-Year-Old Woman with Mammographic Microcalcifications"
   },
   {
     "id": "case-003",
@@ -383,7 +385,8 @@
           "relevantPoint": "对于体积较大（>3 cm）或短期内迅速增大的乳腺肿物，影像学评估推荐乳腺超声联合钼靶，必要时行乳腺 MRI；病理诊断应描述间质细胞密度、核分裂象计数、间质过度生长及肿瘤边界，用于叶状肿瘤的良性/交界性/恶性分级。"
         }
       ]
-    }
+    },
+    "titleEn": "42-Year-Old Woman with Rapidly Enlarging Breast Mass"
   },
   {
     "id": "case-004",
@@ -493,7 +496,8 @@
           "relevantPoint": "对直径＞8mm 的持续性磨玻璃结节，建议进行 3–6 个月随访薄层 CT；若结节增大或实性成分增加，应考虑非手术活检或手术切除以明确诊断。"
         }
       ]
-    }
+    },
+    "titleEn": "62-Year-Old Man with Pulmonary Ground-Glass Nodule"
   },
   {
     "id": "case-005",
@@ -631,7 +635,8 @@
           "relevantPoint": "中央型肺肿物活检小标本病理诊断需结合形态学与免疫组化（TTF-1、Napsin A、p40、CK5/6、Syn、CgA、CD56、INSM1、Ki-67）鉴别腺癌、鳞癌与神经内分泌癌；确诊 NSCLC 后须常规检测 EGFR、ALK、ROS1、BRAF、KRAS、MET、RET、HER2 及 PD-L1 表达。"
         }
       ]
-    }
+    },
+    "titleEn": "58-Year-Old Man with Central Lung Mass"
   },
   {
     "id": "case-006",
@@ -759,7 +764,8 @@
           "relevantPoint": "直肠癌根治标本病理报告需包含肿瘤分化程度、浸润深度（pT）、区域淋巴结状态（pN，需至少检出 12 枚）、脉管及神经侵犯、环周切缘（CRM，≤1 mm 为阳性）及 TRG 分级（如接受新辅助治疗）。"
         }
       ]
-    }
+    },
+    "titleEn": "65-Year-Old Man with Rectal Mass"
   },
   {
     "id": "case-007",
@@ -892,7 +898,8 @@
           "relevantPoint": "GIST 免疫组化诊断应常规检测 CD117、DOG1、CD34、SMA、S-100 及 Ki-67；CD117 和/或 DOG1 阳性是 GIST 诊断的关键依据，对疑难病例推荐进行 KIT 及 PDGFRA 基因突变检测以指导靶向治疗及预后判断。"
         }
       ]
-    }
+    },
+    "titleEn": "52-Year-Old Woman with Gastric Submucosal Mass"
   },
   {
     "id": "case-008",
@@ -1018,7 +1025,8 @@
           "relevantPoint": "活检或手术标本诊断低黏附性癌/印戒细胞癌时，应常规加做 E-cadherin、CK（AE1/AE3）免疫组化以识别散在浸润细胞，并评估 Lauren 分型；弥漫型胃癌需警惕 CDH1 胚系突变，建议结合家族史进行遗传咨询。"
         }
       ]
-    }
+    },
+    "titleEn": "45-Year-Old Woman with Diffuse Gastric Wall Thickening"
   },
   {
     "id": "case-009",
@@ -1135,7 +1143,8 @@
           "relevantPoint": "HCC 病理报告应包含肿瘤大小、数目、分化程度（Edmondson-Steiner 分级）、微血管侵犯（MVI）分级（M0/M1/M2）、卫星结节及切缘情况；MVI 是术后复发的独立危险因素，M1/M2 级患者推荐术后辅助治疗。"
         }
       ]
-    }
+    },
+    "titleEn": "56-Year-Old Man with Hepatic Mass"
   },
   {
     "id": "case-010",
@@ -1254,7 +1263,8 @@
           "relevantPoint": "肝内胆管癌病理诊断需与肝细胞癌及转移性腺癌鉴别，推荐联合 CK7、CK19、CK20、Hep Par-1、Arginase-1、GPC-3、CDX2 等免疫组化标记；明确组织学亚型（大胆管型 vs 小胆管型）并报告神经、脉管及切缘状态。"
         }
       ]
-    }
+    },
+    "titleEn": "60-Year-Old Woman with Intrahepatic Bile Duct Mass"
   },
   {
     "id": "case-011",
@@ -1381,7 +1391,8 @@
           "relevantPoint": "Bethesda Ⅲ/Ⅳ 类（意义不明的非典型病变/滤泡性病变、滤泡性肿瘤）建议行 BRAF V600E、RAS、RET/PTC 等分子检测以辅助良恶性判断；Bethesda Ⅴ/Ⅵ 类（可疑恶性/恶性）推荐手术治疗。"
         }
       ]
-    }
+    },
+    "titleEn": "35-Year-Old Woman with Thyroid Nodule"
   },
   {
     "id": "case-012",
@@ -1502,7 +1513,8 @@
           "relevantPoint": "包裹性滤泡性肿瘤若仅具有乳头状癌核特征而无浸润证据，应诊断为 NIFTP，采用腺叶切除即可，不建议术后放射性碘治疗；若存在包膜全层穿透或血管侵犯，则诊断为浸润性包裹型滤泡亚型乳头状癌或微浸润性滤泡癌，需按分化型甲状腺癌处理并行危险分层。"
         }
       ]
-    }
+    },
+    "titleEn": "50-Year-Old Woman with Encapsulated Thyroid Nodule"
   },
   {
     "id": "case-013",
@@ -1622,7 +1634,8 @@
           "relevantPoint": "推荐采用 TCGA 分子分型（POLE 超突变型、MSI-H/dMMR、低拷贝数型、高拷贝数型/p53 异常型）整合病理诊断；早期低危患者以手术为主，高危及晚期患者需结合分子分型选择放化疗或免疫联合治疗。"
         }
       ]
-    }
+    },
+    "titleEn": "58-Year-Old Woman with Abnormal Uterine Bleeding"
   },
   {
     "id": "case-014",
@@ -1755,7 +1768,8 @@
           "_low_confidence": true
         }
       ]
-    }
+    },
+    "titleEn": "55-Year-Old Woman with Cystic-Solid Pelvic Mass"
   },
   {
     "id": "case-015",
@@ -1887,7 +1901,8 @@
           "relevantPoint": "老年（≥60 岁）弥漫大 B 细胞淋巴瘤患者需按 IPI/NCCN-IPI 评分分层，并在治疗前常规完善心脏功能（LVEF）、HBV 血清学及乙肝 DNA 检测，HBsAg 或 HBcAb 阳性者需预防性抗病毒治疗以降低利妥昔单抗相关 HBV 再激活风险。"
         }
       ]
-    }
+    },
+    "titleEn": "68-Year-Old Man with Cervical Lymphadenopathy"
   },
   {
     "id": "case-016",
@@ -2023,7 +2038,8 @@
           "relevantPoint": "成人浅表淋巴结肿大活检病理报告须明确区分反应性增生、霍奇金淋巴瘤与非霍奇金淋巴瘤，并依据 WHO 造血与淋巴组织肿瘤分类进行亚型划分；对弥漫大 B 细胞淋巴瘤须加做 Hans 分型（CD10/BCL6/MUM1）及 MYC、BCL2 双表达评估。"
         }
       ]
-    }
+    },
+    "titleEn": "45-Year-Old Woman with Inguinal Lymphadenopathy"
   },
   {
     "id": "case-017",
@@ -2143,7 +2159,8 @@
           "relevantPoint": "对于直径 ≤4 cm 的 T1a 期肾肿物推荐优先行保留肾单位手术（部分肾切除）；病理报告须包含切缘状态、脂肪/肾窦/肾静脉侵犯及 pTNM 分期，疑难病例建议加做 CK7、CAIX、CD10、AMACR、TFE3 等免疫组化以鉴别肾细胞癌各亚型。"
         }
       ]
-    }
+    },
+    "titleEn": "55-Year-Old Man with Renal Mass"
   },
   {
     "id": "case-018",
@@ -2276,7 +2293,8 @@
           "_low_confidence": true
         }
       ]
-    }
+    },
+    "titleEn": "38-Year-Old Man with Pigmented Lesion on the Back"
   },
   {
     "id": "case-019",
@@ -2398,7 +2416,8 @@
           "relevantPoint": "对膝关节周围软组织肿物，影像提示 >5 cm、深筋膜下或生长迅速者应行空芯针活检明确病理；术前须进行 FNCLCC 分级及分子检测（如 SS18-SSX 融合除外滑膜肉瘤），R0 切除为首要治疗目标，高级别或切缘不足者加行术后放疗。"
         }
       ]
-    }
+    },
+    "titleEn": "25-Year-Old Man with Mass Adjacent to the Knee Joint"
   },
   {
     "id": "case-020",
@@ -2528,6 +2547,7 @@
           "relevantPoint": "推荐对怀疑胶质瘤的颅内占位行最大安全范围切除，术后依据整合诊断（组织学+分子分型）进行分层治疗；GBM IDH 野生型标准方案为 Stupp 方案（术后同步放化疗 + 替莫唑胺 6 周期辅助化疗），MGMT 启动子甲基化者获益更显著。"
         }
       ]
-    }
+    },
+    "titleEn": "58-Year-Old Man with Temporal Lobe Mass"
   }
 ]

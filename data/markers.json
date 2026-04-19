@@ -188,7 +188,8 @@
           "interpretation": "在ER低表达(1-10%)病例中可能灵敏度略低于SP1"
         },
         "clinicalImplication": "ASCO/CAP指南将ER阳性cutoff定为≥1%。在1-10%低表达区间，SP1的检出率优于1D5，选择高灵敏度克隆号对临床决策有重要影响。",
-        "context": "乳腺癌ER评估，特别是ER低表达(1-10%)病例"
+        "context": "乳腺癌ER评估，特别是ER低表达(1-10%)病例",
+        "titleEn": "SP1 vs 1D5 vs EP1 Low-Expression Sensitivity Differences"
       }
     ],
     "companionDiagnostics": [
@@ -645,7 +646,8 @@
           "interpretation": "乳腺癌中金标准，胃癌中阳性率略低于4B5"
         },
         "clinicalImplication": "乳腺癌中两种克隆号一致性较好；胃癌中4B5可能显示更高阳性率，需注意胃癌特有的基底外侧膜不完整染色模式（胃癌HER2评分标准与乳腺不同）。",
-        "context": "乳腺癌HER2评估、胃癌HER2检测"
+        "context": "乳腺癌HER2评估、胃癌HER2检测",
+        "titleEn": "4B5 (Ventana) vs HercepTest (Dako) Scoring Differences"
       }
     ],
     "companionDiagnostics": [
@@ -890,7 +892,8 @@
           "interpretation": "Ventana平台首选，阳性指数与MIB-1高度相关"
         },
         "clinicalImplication": "不同克隆号在相同cutoff下可能产生不同结果。国际Ki-67乳腺癌工作组推荐使用MIB-1作为标准，计数热点区至少500个肿瘤细胞。30-9在Ventana自动化平台上与MIB-1一致性>90%。",
-        "context": "乳腺癌分子分型（Luminal A vs B），神经内分泌肿瘤分级"
+        "context": "乳腺癌分子分型（Luminal A vs B），神经内分泌肿瘤分级",
+        "titleEn": "MIB-1 vs 30-9 vs SP6 Counting Methodology Differences"
       }
     ]
   },
@@ -4809,7 +4812,8 @@
           "interpretation": "阿替利珠单抗(Tecentriq)伴随诊断，IC≥1%为阳性"
         },
         "clinicalImplication": "不同PD-L1克隆号与不同免疫检查点抑制剂绑定，不可互换。22C3应用范围最广（NSCLC/胃癌/TNBC等），SP142在TNBC和尿路上皮癌中使用。SP263与22C3在多数cutoff下一致性较好。28-8用于纳武利尤单抗。",
-        "context": "非小细胞肺癌、三阴性乳腺癌、尿路上皮癌免疫治疗伴随诊断"
+        "context": "非小细胞肺癌、三阴性乳腺癌、尿路上皮癌免疫治疗伴随诊断",
+        "titleEn": "22C3 vs 28-8 vs SP142 vs SP263 Companion Diagnostic Comparison"
       }
     ],
     "companionDiagnostics": [

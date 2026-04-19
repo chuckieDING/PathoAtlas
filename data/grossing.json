@@ -329,7 +329,8 @@
       "未描述肿瘤与 SMV/PV 沟（肠系膜上静脉/门静脉沟）关系",
       "遗漏非肿瘤胰腺的 PanIN/IPMN 背景评估",
       "R1 判定标准不统一（1mm 原则 vs 0mm 原则未在报告中注明）"
-    ]
+    ],
+    "nameEn": "Pancreaticoduodenectomy Specimen"
   },
   {
     "id": "gastrectomy",
@@ -358,7 +359,8 @@
       "未单独留取冰冻切缘或在切缘墨标前已切开，造成切缘判读困难",
       "遗漏 Lauren 分型相关取材（弥漫型需多点取材以避免漏诊印戒细胞癌）",
       "送检淋巴结总数不足 16 枚（AJCC 第 8 版要求），影响 pN 分期可靠性"
-    ]
+    ],
+    "nameEn": "Radical Gastrectomy Specimen"
   },
   {
     "id": "colectomy",
@@ -389,7 +391,8 @@
       "新辅助治疗后标本未按肿瘤瘤床全部取材以评估 TRG",
       "右半结肠未单独描述并取材阑尾及回盲瓣",
       "未在墨标前拍照并记录肿瘤大体分型（隆起/溃疡/浸润/胶样）"
-    ]
+    ],
+    "nameEn": "Radical Colorectal Resection Specimen"
   },
   {
     "id": "hysterectomy-with-adnexa",
@@ -418,7 +421,8 @@
       "淋巴结分组混装、未注明解剖部位",
       "未描述肿瘤大小、部位（宫底/宫体/宫角/下段）及与宫腔关系",
       "未记录附件大体是否与子宫或盆壁粘连"
-    ]
+    ],
+    "nameEn": "Hysterectomy with Bilateral Salpingo-Oophorectomy Specimen"
   },
   {
     "id": "radical-prostatectomy",
@@ -443,7 +447,8 @@
       "未描述肿瘤占比、双侧受累情况及包膜外侵犯范围",
       "淋巴结未按解剖分组送检或计数错误",
       "标本未充分固定即切开，组织结构破坏影响判读"
-    ]
+    ],
+    "nameEn": "Radical Prostatectomy Specimen"
   },
   {
     "id": "pulmonary-lobectomy",
@@ -469,7 +474,8 @@
       "多发病灶未分别编号取材，无法区分多原发癌与肺内转移",
       "肿瘤大小仅以大体最大径报告，未结合镜下浸润成分测量（尤其贴壁型腺癌）",
       "背景肺组织取材不足，遗漏原位腺癌/微浸润腺癌或间质性病变"
-    ]
+    ],
+    "nameEn": "Lobectomy Specimen"
   },
   {
     "id": "radical-nephrectomy",
@@ -501,7 +507,8 @@
       "未对背景非肿瘤肾实质取材，漏诊糖尿病肾病、IgA 肾病等共存病变",
       "墨标不规范导致切缘判读困难（尤其肾周脂肪面）",
       "肿瘤多灶性时遗漏次要病灶取材，漏诊遗传性肾癌综合征线索"
-    ]
+    ],
+    "nameEn": "Radical Nephrectomy Specimen"
   },
   {
     "id": "pancreatic-distal",
@@ -529,7 +536,8 @@
       "遗漏对脾门淋巴结及脾血管受累的评估",
       "未区分 PanIN、IPMN 背景病变与浸润癌的关系",
       "神经束侵犯（PNI）及脉管侵犯（LVI）区域未针对性补充取材"
-    ]
+    ],
+    "nameEn": "Distal Pancreatectomy"
   },
   {
     "id": "hepatectomy",
@@ -555,7 +563,8 @@
       "未记录肿瘤大体分型（结节型/巨块型/弥漫型）及出血坏死比例",
       "墨汁未干即切开导致切缘染色污染实质",
       "淋巴结（肝门区）遗漏送检或未分组"
-    ]
+    ],
+    "nameEn": "Partial Hepatectomy Specimen"
   },
   {
     "id": "thyroidectomy",
@@ -580,6 +589,7 @@
       "未识别并单独描述送检的甲状旁腺，造成术后低钙原因不明",
       "NIFTP 相关病变未全部取材，无法排除浸润",
       "未记录肿瘤与甲状腺外软组织、气管、喉返神经的关系，影响 T 分期"
-    ]
+    ],
+    "nameEn": "Thyroidectomy Specimen"
   }
 ]

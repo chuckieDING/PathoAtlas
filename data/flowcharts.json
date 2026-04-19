@@ -171,7 +171,8 @@
         "to": "other",
         "label": "−"
       }
-    ]
+    ],
+    "titleEn": "IHC Workup of Spindle Cell Tumors"
   },
   {
     "id": "lymphoma-subtyping",
@@ -336,7 +337,8 @@
         "to": "nktcl",
         "label": "−"
       }
-    ]
+    ],
+    "titleEn": "B-Cell vs T-Cell Lymphoma Classification Workup"
   },
   {
     "id": "soft-tissue-sarcoma",
@@ -515,7 +517,8 @@
         "to": "cic-dux4",
         "label": "WT1(C端)+ / ETV4+"
       }
-    ]
+    ],
+    "titleEn": "Morphology-Guided IHC Workup of Soft Tissue Sarcomas"
   },
   {
     "id": "thyroid-follicular-lesion",
@@ -657,7 +660,8 @@
         "to": "fa",
         "label": "无浸润"
       }
-    ]
+    ],
+    "titleEn": "Differential Workup of Thyroid Follicular Lesions"
   },
   {
     "id": "prostate-adenocarcinoma-vs-benign",
@@ -773,7 +777,8 @@
         "to": "asap",
         "label": "阴性/弱"
       }
-    ]
+    ],
+    "titleEn": "Prostatic Adenocarcinoma vs Benign Mimics Workup"
   },
   {
     "id": "small-round-blue-cell",
@@ -973,7 +978,8 @@
         "to": "merkel",
         "label": "+"
       }
-    ]
+    ],
+    "titleEn": "IHC Workup of Small Round Blue Cell Tumors"
   },
   {
     "id": "clear-cell-tumors",
@@ -1100,7 +1106,8 @@
         "to": "melanoma",
         "label": "+"
       }
-    ]
+    ],
+    "titleEn": "IHC Workup of Clear Cell Tumors"
   },
   {
     "id": "ck7-ck20-algorithm",
@@ -1461,7 +1468,8 @@
         "to": "mesothelioma",
         "label": "阳性"
       }
-    ]
+    ],
+    "titleEn": "IHC Workup of CK7+/CK20- Adenocarcinomas"
   },
   {
     "id": "ck20-pos-algorithm",
@@ -1589,7 +1597,8 @@
         "to": "appendiceal-leaf",
         "label": "SATB2+ 局灶"
       }
-    ]
+    ],
+    "titleEn": "IHC Workup of CK7-/CK20+ Tumors"
   },
   {
     "id": "melanocytic-lesion",
@@ -1717,7 +1726,8 @@
         "to": "ck-positive-leaf",
         "label": "是"
       }
-    ]
+    ],
+    "titleEn": "IHC Workup of Melanocytic Lesions"
   },
   {
     "id": "neuroendocrine-grading",
@@ -1833,7 +1843,8 @@
         "to": "lcnec",
         "label": "大细胞"
       }
-    ]
+    ],
+    "titleEn": "Grading Workup of Neuroendocrine Neoplasms"
   },
   {
     "id": "glandular-vs-squamous",
@@ -1936,7 +1947,8 @@
         "to": "adenosquamous",
         "label": "两者均+"
       }
-    ]
+    ],
+    "titleEn": "Glandular vs Squamous Differentiation Workup in Poorly Differentiated Carcinoma"
   },
   {
     "id": "rcc-subtypes",
@@ -2145,6 +2157,7 @@
         "to": "alk-rearranged-rcc",
         "label": "ALK 阳性分支"
       }
-    ]
+    ],
+    "titleEn": "IHC Workup of Renal Cell Carcinoma Subtypes"
   }
 ]

@@ -10,76 +10,267 @@
           "id": "common-tumors",
           "titleZh": "最常见20种肿瘤",
           "items": [
-            { "type": "disease", "id": "lung-adenocarcinoma", "organ": "lung" },
-            { "type": "disease", "id": "lung-squamous-cell-carcinoma", "organ": "lung" },
-            { "type": "disease", "id": "small-cell-lung-carcinoma", "organ": "lung" },
-            { "type": "disease", "id": "invasive-ductal-carcinoma-nst", "organ": "breast" },
-            { "type": "disease", "id": "invasive-lobular-carcinoma", "organ": "breast" },
-            { "type": "disease", "id": "gastric-adenocarcinoma", "organ": "gi" },
-            { "type": "disease", "id": "colorectal-adenocarcinoma", "organ": "gi" },
-            { "type": "disease", "id": "hepatocellular-carcinoma", "organ": "liver" },
-            { "type": "disease", "id": "clear-cell-rcc", "organ": "kidney" },
-            { "type": "disease", "id": "papillary-thyroid-carcinoma", "organ": "thyroid" },
-            { "type": "disease", "id": "cervical-scc", "organ": "gynecology" },
-            { "type": "disease", "id": "endometrial-adenocarcinoma", "organ": "gynecology" },
-            { "type": "disease", "id": "ovarian-serous-carcinoma", "organ": "gynecology" },
-            { "type": "disease", "id": "urothelial-carcinoma", "organ": "urology" },
-            { "type": "disease", "id": "prostate-adenocarcinoma", "organ": "urology" },
-            { "type": "disease", "id": "dlbcl", "organ": "lymphoma" },
-            { "type": "disease", "id": "melanoma", "organ": "skin" },
-            { "type": "disease", "id": "basal-cell-carcinoma", "organ": "skin" },
-            { "type": "disease", "id": "glioblastoma-multiforme", "organ": "cns" },
-            { "type": "disease", "id": "osteosarcoma", "organ": "bone" }
-          ]
+            {
+              "type": "disease",
+              "id": "lung-adenocarcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "lung-squamous-cell-carcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "small-cell-lung-carcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "invasive-ductal-carcinoma-nst",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "invasive-lobular-carcinoma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "gastric-adenocarcinoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "colorectal-adenocarcinoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "hepatocellular-carcinoma",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "clear-cell-rcc",
+              "organ": "kidney"
+            },
+            {
+              "type": "disease",
+              "id": "papillary-thyroid-carcinoma",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "cervical-scc",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "endometrial-adenocarcinoma",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "ovarian-serous-carcinoma",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "urothelial-carcinoma",
+              "organ": "urology"
+            },
+            {
+              "type": "disease",
+              "id": "prostate-adenocarcinoma",
+              "organ": "urology"
+            },
+            {
+              "type": "disease",
+              "id": "dlbcl",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "melanoma",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "basal-cell-carcinoma",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "glioblastoma-multiforme",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "osteosarcoma",
+              "organ": "bone"
+            }
+          ],
+          "titleEn": "Top 20 Most Common Tumors"
         },
         {
           "id": "basic-ihc-markers",
           "titleZh": "基础免疫组化标记物",
           "items": [
-            { "type": "marker", "id": "ck7" },
-            { "type": "marker", "id": "ck20" },
-            { "type": "marker", "id": "ck5-6" },
-            { "type": "marker", "id": "er" },
-            { "type": "marker", "id": "pr" },
-            { "type": "marker", "id": "her2" },
-            { "type": "marker", "id": "ki-67" },
-            { "type": "marker", "id": "p63" },
-            { "type": "marker", "id": "p40" },
-            { "type": "marker", "id": "vimentin" },
-            { "type": "marker", "id": "sma" },
-            { "type": "marker", "id": "desmin" },
-            { "type": "marker", "id": "s-100" },
-            { "type": "marker", "id": "cd34" }
-          ]
+            {
+              "type": "marker",
+              "id": "ck7"
+            },
+            {
+              "type": "marker",
+              "id": "ck20"
+            },
+            {
+              "type": "marker",
+              "id": "ck5-6"
+            },
+            {
+              "type": "marker",
+              "id": "er"
+            },
+            {
+              "type": "marker",
+              "id": "pr"
+            },
+            {
+              "type": "marker",
+              "id": "her2"
+            },
+            {
+              "type": "marker",
+              "id": "ki-67"
+            },
+            {
+              "type": "marker",
+              "id": "p63"
+            },
+            {
+              "type": "marker",
+              "id": "p40"
+            },
+            {
+              "type": "marker",
+              "id": "vimentin"
+            },
+            {
+              "type": "marker",
+              "id": "sma"
+            },
+            {
+              "type": "marker",
+              "id": "desmin"
+            },
+            {
+              "type": "marker",
+              "id": "s-100"
+            },
+            {
+              "type": "marker",
+              "id": "cd34"
+            }
+          ],
+          "titleEn": "Basic Immunohistochemistry Markers"
         },
         {
           "id": "common-benign-lesions",
           "titleZh": "常见良性病变",
           "items": [
-            { "type": "disease", "id": "fibroadenoma", "organ": "breast" },
-            { "type": "disease", "id": "intraductal-papilloma", "organ": "breast" },
-            { "type": "disease", "id": "colorectal-adenoma", "organ": "gi" },
-            { "type": "disease", "id": "focal-nodular-hyperplasia", "organ": "liver" },
-            { "type": "disease", "id": "hepatic-adenoma", "organ": "liver" },
-            { "type": "disease", "id": "follicular-adenoma", "organ": "thyroid" },
-            { "type": "disease", "id": "hashimoto-thyroiditis", "organ": "thyroid" },
-            { "type": "disease", "id": "uterine-leiomyoma", "organ": "gynecology" },
-            { "type": "disease", "id": "bph", "organ": "urology" },
-            { "type": "disease", "id": "seborrheic-keratosis", "organ": "skin" },
-            { "type": "disease", "id": "dysplastic-nevus", "organ": "skin" },
-            { "type": "disease", "id": "pulmonary-hamartoma", "organ": "lung" },
-            { "type": "disease", "id": "oncocytoma", "organ": "kidney" },
-            { "type": "disease", "id": "fibrous-dysplasia", "organ": "bone" }
-          ]
+            {
+              "type": "disease",
+              "id": "fibroadenoma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "intraductal-papilloma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "colorectal-adenoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "focal-nodular-hyperplasia",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "hepatic-adenoma",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "follicular-adenoma",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "hashimoto-thyroiditis",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "uterine-leiomyoma",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "bph",
+              "organ": "urology"
+            },
+            {
+              "type": "disease",
+              "id": "seborrheic-keratosis",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "dysplastic-nevus",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "pulmonary-hamartoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "oncocytoma",
+              "organ": "kidney"
+            },
+            {
+              "type": "disease",
+              "id": "fibrous-dysplasia",
+              "organ": "bone"
+            }
+          ],
+          "titleEn": "Common Benign Lesions"
         },
         {
           "id": "intro-differentials",
           "titleZh": "入门鉴别诊断",
           "items": [
-            { "type": "differential", "id": "ck7-pos-ck20-neg-tumors" },
-            { "type": "differential", "id": "ck7-neg-ck20-pos-tumors" },
-            { "type": "differential", "id": "glandular-vs-squamous" }
-          ]
+            {
+              "type": "differential",
+              "id": "ck7-pos-ck20-neg-tumors"
+            },
+            {
+              "type": "differential",
+              "id": "ck7-neg-ck20-pos-tumors"
+            },
+            {
+              "type": "differential",
+              "id": "glandular-vs-squamous"
+            }
+          ],
+          "titleEn": "Introductory Differential Diagnosis"
         }
       ]
     },
@@ -93,97 +284,327 @@
           "id": "lung-panel",
           "titleZh": "肺部肿瘤IHC Panel",
           "items": [
-            { "type": "marker", "id": "ttf-1" },
-            { "type": "marker", "id": "napsin-a" },
-            { "type": "marker", "id": "synaptophysin" },
-            { "type": "marker", "id": "chromogranin-a" },
-            { "type": "marker", "id": "pd-l1" },
-            { "type": "disease", "id": "lung-adenocarcinoma", "organ": "lung" },
-            { "type": "disease", "id": "lung-squamous-cell-carcinoma", "organ": "lung" },
-            { "type": "disease", "id": "small-cell-lung-carcinoma", "organ": "lung" },
-            { "type": "disease", "id": "large-cell-neuroendocrine-carcinoma", "organ": "lung" },
-            { "type": "disease", "id": "mesothelioma", "organ": "lung" },
-            { "type": "disease", "id": "carcinoid-tumor", "organ": "lung" },
-            { "type": "differential", "id": "glandular-vs-squamous" }
-          ]
+            {
+              "type": "marker",
+              "id": "ttf-1"
+            },
+            {
+              "type": "marker",
+              "id": "napsin-a"
+            },
+            {
+              "type": "marker",
+              "id": "synaptophysin"
+            },
+            {
+              "type": "marker",
+              "id": "chromogranin-a"
+            },
+            {
+              "type": "marker",
+              "id": "pd-l1"
+            },
+            {
+              "type": "disease",
+              "id": "lung-adenocarcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "lung-squamous-cell-carcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "small-cell-lung-carcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "large-cell-neuroendocrine-carcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "mesothelioma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "carcinoid-tumor",
+              "organ": "lung"
+            },
+            {
+              "type": "differential",
+              "id": "glandular-vs-squamous"
+            }
+          ],
+          "titleEn": "Lung Tumor IHC Panel"
         },
         {
           "id": "breast-panel",
           "titleZh": "乳腺肿瘤IHC Panel",
           "items": [
-            { "type": "marker", "id": "er" },
-            { "type": "marker", "id": "pr" },
-            { "type": "marker", "id": "her2" },
-            { "type": "marker", "id": "ki-67" },
-            { "type": "marker", "id": "e-cadherin" },
-            { "type": "marker", "id": "gata3" },
-            { "type": "disease", "id": "invasive-ductal-carcinoma-nst", "organ": "breast" },
-            { "type": "disease", "id": "invasive-lobular-carcinoma", "organ": "breast" },
-            { "type": "disease", "id": "dcis", "organ": "breast" },
-            { "type": "disease", "id": "triple-negative-breast-cancer", "organ": "breast" },
-            { "type": "disease", "id": "phyllodes-tumor", "organ": "breast" },
-            { "type": "differential", "id": "tnbc-vs-metastases" }
-          ]
+            {
+              "type": "marker",
+              "id": "er"
+            },
+            {
+              "type": "marker",
+              "id": "pr"
+            },
+            {
+              "type": "marker",
+              "id": "her2"
+            },
+            {
+              "type": "marker",
+              "id": "ki-67"
+            },
+            {
+              "type": "marker",
+              "id": "e-cadherin"
+            },
+            {
+              "type": "marker",
+              "id": "gata3"
+            },
+            {
+              "type": "disease",
+              "id": "invasive-ductal-carcinoma-nst",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "invasive-lobular-carcinoma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "dcis",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "triple-negative-breast-cancer",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "phyllodes-tumor",
+              "organ": "breast"
+            },
+            {
+              "type": "differential",
+              "id": "tnbc-vs-metastases"
+            }
+          ],
+          "titleEn": "Breast Tumor IHC Panel"
         },
         {
           "id": "gi-liver-panel",
           "titleZh": "消化道与肝脏IHC Panel",
           "items": [
-            { "type": "marker", "id": "cdx2" },
-            { "type": "marker", "id": "cd117" },
-            { "type": "marker", "id": "dog1" },
-            { "type": "marker", "id": "hepar1" },
-            { "type": "marker", "id": "arginase-1" },
-            { "type": "marker", "id": "glypican-3" },
-            { "type": "marker", "id": "afp" },
-            { "type": "disease", "id": "gastric-adenocarcinoma", "organ": "gi" },
-            { "type": "disease", "id": "colorectal-adenocarcinoma", "organ": "gi" },
-            { "type": "disease", "id": "gist", "organ": "gi" },
-            { "type": "disease", "id": "hepatocellular-carcinoma", "organ": "liver" },
-            { "type": "disease", "id": "cholangiocarcinoma", "organ": "liver" },
-            { "type": "differential", "id": "hcc-vs-cholangiocarcinoma" },
-            { "type": "differential", "id": "spindle-cell-tumors" }
-          ]
+            {
+              "type": "marker",
+              "id": "cdx2"
+            },
+            {
+              "type": "marker",
+              "id": "cd117"
+            },
+            {
+              "type": "marker",
+              "id": "dog1"
+            },
+            {
+              "type": "marker",
+              "id": "hepar1"
+            },
+            {
+              "type": "marker",
+              "id": "arginase-1"
+            },
+            {
+              "type": "marker",
+              "id": "glypican-3"
+            },
+            {
+              "type": "marker",
+              "id": "afp"
+            },
+            {
+              "type": "disease",
+              "id": "gastric-adenocarcinoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "colorectal-adenocarcinoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "gist",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "hepatocellular-carcinoma",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "cholangiocarcinoma",
+              "organ": "liver"
+            },
+            {
+              "type": "differential",
+              "id": "hcc-vs-cholangiocarcinoma"
+            },
+            {
+              "type": "differential",
+              "id": "spindle-cell-tumors"
+            }
+          ],
+          "titleEn": "Gastrointestinal and Liver IHC Panel"
         },
         {
           "id": "lymphoma-panel",
           "titleZh": "淋巴瘤IHC Panel",
           "items": [
-            { "type": "marker", "id": "cd20" },
-            { "type": "marker", "id": "cd3" },
-            { "type": "marker", "id": "cd5" },
-            { "type": "marker", "id": "cd10" },
-            { "type": "marker", "id": "cd30" },
-            { "type": "marker", "id": "cd15" },
-            { "type": "marker", "id": "bcl2" },
-            { "type": "marker", "id": "bcl6" },
-            { "type": "disease", "id": "dlbcl", "organ": "lymphoma" },
-            { "type": "disease", "id": "follicular-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "mantle-cell-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "classical-hodgkin-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "burkitt-lymphoma", "organ": "lymphoma" },
-            { "type": "differential", "id": "b-vs-t-cell-lymphoma" }
-          ]
+            {
+              "type": "marker",
+              "id": "cd20"
+            },
+            {
+              "type": "marker",
+              "id": "cd3"
+            },
+            {
+              "type": "marker",
+              "id": "cd5"
+            },
+            {
+              "type": "marker",
+              "id": "cd10"
+            },
+            {
+              "type": "marker",
+              "id": "cd30"
+            },
+            {
+              "type": "marker",
+              "id": "cd15"
+            },
+            {
+              "type": "marker",
+              "id": "bcl2"
+            },
+            {
+              "type": "marker",
+              "id": "bcl6"
+            },
+            {
+              "type": "disease",
+              "id": "dlbcl",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "follicular-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "mantle-cell-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "classical-hodgkin-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "burkitt-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "differential",
+              "id": "b-vs-t-cell-lymphoma"
+            }
+          ],
+          "titleEn": "Lymphoma IHC Panel"
         },
         {
           "id": "thyroid-kidney-panel",
           "titleZh": "甲状腺与肾脏IHC Panel",
           "items": [
-            { "type": "marker", "id": "pax8" },
-            { "type": "marker", "id": "ca9" },
-            { "type": "marker", "id": "amacr" },
-            { "type": "marker", "id": "calcitonin" },
-            { "type": "marker", "id": "ck19" },
-            { "type": "disease", "id": "papillary-thyroid-carcinoma", "organ": "thyroid" },
-            { "type": "disease", "id": "follicular-thyroid-carcinoma", "organ": "thyroid" },
-            { "type": "disease", "id": "medullary-thyroid-carcinoma", "organ": "thyroid" },
-            { "type": "disease", "id": "clear-cell-rcc", "organ": "kidney" },
-            { "type": "disease", "id": "papillary-rcc", "organ": "kidney" },
-            { "type": "disease", "id": "chromophobe-rcc", "organ": "kidney" },
-            { "type": "differential", "id": "papillary-thyroid-vs-others" },
-            { "type": "differential", "id": "renal-cell-carcinoma-subtypes" },
-            { "type": "differential", "id": "clear-cell-tumors" }
-          ]
+            {
+              "type": "marker",
+              "id": "pax8"
+            },
+            {
+              "type": "marker",
+              "id": "ca9"
+            },
+            {
+              "type": "marker",
+              "id": "amacr"
+            },
+            {
+              "type": "marker",
+              "id": "calcitonin"
+            },
+            {
+              "type": "marker",
+              "id": "ck19"
+            },
+            {
+              "type": "disease",
+              "id": "papillary-thyroid-carcinoma",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "follicular-thyroid-carcinoma",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "medullary-thyroid-carcinoma",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "clear-cell-rcc",
+              "organ": "kidney"
+            },
+            {
+              "type": "disease",
+              "id": "papillary-rcc",
+              "organ": "kidney"
+            },
+            {
+              "type": "disease",
+              "id": "chromophobe-rcc",
+              "organ": "kidney"
+            },
+            {
+              "type": "differential",
+              "id": "papillary-thyroid-vs-others"
+            },
+            {
+              "type": "differential",
+              "id": "renal-cell-carcinoma-subtypes"
+            },
+            {
+              "type": "differential",
+              "id": "clear-cell-tumors"
+            }
+          ],
+          "titleEn": "Thyroid and Kidney IHC Panel"
         }
       ]
     },
@@ -197,65 +618,216 @@
           "id": "advanced-differentials",
           "titleZh": "疑难鉴别诊断",
           "items": [
-            { "type": "differential", "id": "spindle-cell-tumors" },
-            { "type": "differential", "id": "small-round-blue-cell-tumors" },
-            { "type": "differential", "id": "clear-cell-tumors" },
-            { "type": "differential", "id": "melanocytic-lesions" },
-            { "type": "differential", "id": "neuroendocrine-tumors" },
-            { "type": "disease", "id": "well-differentiated-liposarcoma", "organ": "soft-tissue" },
-            { "type": "disease", "id": "synovial-sarcoma", "organ": "soft-tissue" },
-            { "type": "disease", "id": "ewing-sarcoma", "organ": "soft-tissue" },
-            { "type": "disease", "id": "rhabdomyosarcoma", "organ": "soft-tissue" },
-            { "type": "disease", "id": "malignant-peripheral-nerve-sheath-tumor", "organ": "soft-tissue" }
-          ]
+            {
+              "type": "differential",
+              "id": "spindle-cell-tumors"
+            },
+            {
+              "type": "differential",
+              "id": "small-round-blue-cell-tumors"
+            },
+            {
+              "type": "differential",
+              "id": "clear-cell-tumors"
+            },
+            {
+              "type": "differential",
+              "id": "melanocytic-lesions"
+            },
+            {
+              "type": "differential",
+              "id": "neuroendocrine-tumors"
+            },
+            {
+              "type": "disease",
+              "id": "well-differentiated-liposarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "synovial-sarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "ewing-sarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "rhabdomyosarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "malignant-peripheral-nerve-sheath-tumor",
+              "organ": "soft-tissue"
+            }
+          ],
+          "titleEn": "Challenging Differential Diagnosis"
         },
         {
           "id": "molecular-pathology",
           "titleZh": "分子病理入门",
           "items": [
-            { "type": "marker", "id": "pd-l1" },
-            { "type": "marker", "id": "her2" },
-            { "type": "marker", "id": "cd56" },
-            { "type": "disease", "id": "lung-adenocarcinoma-in-situ", "organ": "lung" },
-            { "type": "disease", "id": "niftp", "organ": "thyroid" },
-            { "type": "disease", "id": "her2-enriched-breast-cancer", "organ": "breast" },
-            { "type": "disease", "id": "triple-negative-breast-cancer", "organ": "breast" },
-            { "type": "disease", "id": "gist", "organ": "gi" }
-          ]
+            {
+              "type": "marker",
+              "id": "pd-l1"
+            },
+            {
+              "type": "marker",
+              "id": "her2"
+            },
+            {
+              "type": "marker",
+              "id": "cd56"
+            },
+            {
+              "type": "disease",
+              "id": "lung-adenocarcinoma-in-situ",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "niftp",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "her2-enriched-breast-cancer",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "triple-negative-breast-cancer",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "gist",
+              "organ": "gi"
+            }
+          ],
+          "titleEn": "Introduction to Molecular Pathology"
         },
         {
           "id": "frozen-section-essentials",
           "titleZh": "冰冻切片要点",
           "items": [
-            { "type": "disease", "id": "papillary-thyroid-carcinoma", "organ": "thyroid" },
-            { "type": "disease", "id": "ovarian-serous-carcinoma", "organ": "gynecology" },
-            { "type": "disease", "id": "lung-adenocarcinoma", "organ": "lung" },
-            { "type": "disease", "id": "invasive-ductal-carcinoma-nst", "organ": "breast" },
-            { "type": "disease", "id": "glioblastoma-multiforme", "organ": "cns" },
-            { "type": "disease", "id": "meningioma", "organ": "cns" },
-            { "type": "disease", "id": "seminoma", "organ": "urology" }
-          ]
+            {
+              "type": "disease",
+              "id": "papillary-thyroid-carcinoma",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "ovarian-serous-carcinoma",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "lung-adenocarcinoma",
+              "organ": "lung"
+            },
+            {
+              "type": "disease",
+              "id": "invasive-ductal-carcinoma-nst",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "glioblastoma-multiforme",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "meningioma",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "seminoma",
+              "organ": "urology"
+            }
+          ],
+          "titleEn": "Frozen Section Essentials"
         },
         {
           "id": "rare-tumors",
           "titleZh": "少见肿瘤",
           "items": [
-            { "type": "disease", "id": "merkel-cell-carcinoma", "organ": "skin" },
-            { "type": "disease", "id": "anaplastic-large-cell-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "medulloblastoma", "organ": "cns" },
-            { "type": "disease", "id": "ependymoma", "organ": "cns" },
-            { "type": "disease", "id": "germ-cell-tumor", "organ": "cns" },
-            { "type": "disease", "id": "anaplastic-thyroid-carcinoma", "organ": "thyroid" },
-            { "type": "disease", "id": "chondrosarcoma", "organ": "bone" },
-            { "type": "disease", "id": "giant-cell-tumor", "organ": "bone" },
-            { "type": "disease", "id": "wilms-tumor", "organ": "kidney" },
-            { "type": "disease", "id": "angiomyolipoma", "organ": "kidney" },
-            { "type": "marker", "id": "calretinin" },
-            { "type": "marker", "id": "wt1" },
-            { "type": "marker", "id": "sox10" },
-            { "type": "marker", "id": "hmb45" },
-            { "type": "marker", "id": "melan-a" }
-          ]
+            {
+              "type": "disease",
+              "id": "merkel-cell-carcinoma",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "anaplastic-large-cell-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "medulloblastoma",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "ependymoma",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "germ-cell-tumor",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "anaplastic-thyroid-carcinoma",
+              "organ": "thyroid"
+            },
+            {
+              "type": "disease",
+              "id": "chondrosarcoma",
+              "organ": "bone"
+            },
+            {
+              "type": "disease",
+              "id": "giant-cell-tumor",
+              "organ": "bone"
+            },
+            {
+              "type": "disease",
+              "id": "wilms-tumor",
+              "organ": "kidney"
+            },
+            {
+              "type": "disease",
+              "id": "angiomyolipoma",
+              "organ": "kidney"
+            },
+            {
+              "type": "marker",
+              "id": "calretinin"
+            },
+            {
+              "type": "marker",
+              "id": "wt1"
+            },
+            {
+              "type": "marker",
+              "id": "sox10"
+            },
+            {
+              "type": "marker",
+              "id": "hmb45"
+            },
+            {
+              "type": "marker",
+              "id": "melan-a"
+            }
+          ],
+          "titleEn": "Rare Tumors"
         }
       ]
     }
@@ -272,38 +844,108 @@
           "id": "breast-benign",
           "titleZh": "乳腺良性病变",
           "items": [
-            { "type": "disease", "id": "fibroadenoma", "organ": "breast" },
-            { "type": "disease", "id": "intraductal-papilloma", "organ": "breast" },
-            { "type": "disease", "id": "phyllodes-tumor", "organ": "breast" },
-            { "type": "marker", "id": "p63" },
-            { "type": "marker", "id": "ck5-6" }
-          ]
+            {
+              "type": "disease",
+              "id": "fibroadenoma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "intraductal-papilloma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "phyllodes-tumor",
+              "organ": "breast"
+            },
+            {
+              "type": "marker",
+              "id": "p63"
+            },
+            {
+              "type": "marker",
+              "id": "ck5-6"
+            }
+          ],
+          "titleEn": "Benign Breast Lesions"
         },
         {
           "id": "breast-malignant",
           "titleZh": "乳腺恶性肿瘤",
           "items": [
-            { "type": "disease", "id": "invasive-ductal-carcinoma-nst", "organ": "breast" },
-            { "type": "disease", "id": "invasive-lobular-carcinoma", "organ": "breast" },
-            { "type": "disease", "id": "dcis", "organ": "breast" },
-            { "type": "disease", "id": "mucinous-carcinoma", "organ": "breast" },
-            { "type": "disease", "id": "tubular-carcinoma", "organ": "breast" },
-            { "type": "disease", "id": "triple-negative-breast-cancer", "organ": "breast" },
-            { "type": "disease", "id": "her2-enriched-breast-cancer", "organ": "breast" }
-          ]
+            {
+              "type": "disease",
+              "id": "invasive-ductal-carcinoma-nst",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "invasive-lobular-carcinoma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "dcis",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "mucinous-carcinoma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "tubular-carcinoma",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "triple-negative-breast-cancer",
+              "organ": "breast"
+            },
+            {
+              "type": "disease",
+              "id": "her2-enriched-breast-cancer",
+              "organ": "breast"
+            }
+          ],
+          "titleEn": "Malignant Breast Tumors"
         },
         {
           "id": "breast-ihc",
           "titleZh": "乳腺IHC Panel",
           "items": [
-            { "type": "marker", "id": "er" },
-            { "type": "marker", "id": "pr" },
-            { "type": "marker", "id": "her2" },
-            { "type": "marker", "id": "ki-67" },
-            { "type": "marker", "id": "e-cadherin" },
-            { "type": "marker", "id": "gata3" },
-            { "type": "differential", "id": "tnbc-vs-metastases" }
-          ]
+            {
+              "type": "marker",
+              "id": "er"
+            },
+            {
+              "type": "marker",
+              "id": "pr"
+            },
+            {
+              "type": "marker",
+              "id": "her2"
+            },
+            {
+              "type": "marker",
+              "id": "ki-67"
+            },
+            {
+              "type": "marker",
+              "id": "e-cadherin"
+            },
+            {
+              "type": "marker",
+              "id": "gata3"
+            },
+            {
+              "type": "differential",
+              "id": "tnbc-vs-metastases"
+            }
+          ],
+          "titleEn": "Breast IHC Panel"
         }
       ]
     },
@@ -318,44 +960,135 @@
           "id": "gi-epithelial",
           "titleZh": "消化道上皮性肿瘤",
           "items": [
-            { "type": "disease", "id": "gastric-adenocarcinoma", "organ": "gi" },
-            { "type": "disease", "id": "colorectal-adenocarcinoma", "organ": "gi" },
-            { "type": "disease", "id": "colorectal-adenoma", "organ": "gi" },
-            { "type": "disease", "id": "esophageal-scc", "organ": "gi" },
-            { "type": "disease", "id": "appendiceal-net", "organ": "gi" },
-            { "type": "marker", "id": "cdx2" },
-            { "type": "marker", "id": "ck20" },
-            { "type": "marker", "id": "ck7" }
-          ]
+            {
+              "type": "disease",
+              "id": "gastric-adenocarcinoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "colorectal-adenocarcinoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "colorectal-adenoma",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "esophageal-scc",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "appendiceal-net",
+              "organ": "gi"
+            },
+            {
+              "type": "marker",
+              "id": "cdx2"
+            },
+            {
+              "type": "marker",
+              "id": "ck20"
+            },
+            {
+              "type": "marker",
+              "id": "ck7"
+            }
+          ],
+          "titleEn": "Gastrointestinal Epithelial Tumors"
         },
         {
           "id": "gi-mesenchymal",
           "titleZh": "消化道间叶源性肿瘤",
           "items": [
-            { "type": "disease", "id": "gist", "organ": "gi" },
-            { "type": "disease", "id": "gastrointestinal-stromal-tumor", "organ": "soft-tissue" },
-            { "type": "disease", "id": "leiomyosarcoma", "organ": "soft-tissue" },
-            { "type": "marker", "id": "cd117" },
-            { "type": "marker", "id": "dog1" },
-            { "type": "marker", "id": "sma" },
-            { "type": "marker", "id": "desmin" },
-            { "type": "differential", "id": "spindle-cell-tumors" }
-          ]
+            {
+              "type": "disease",
+              "id": "gist",
+              "organ": "gi"
+            },
+            {
+              "type": "disease",
+              "id": "gastrointestinal-stromal-tumor",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "leiomyosarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "marker",
+              "id": "cd117"
+            },
+            {
+              "type": "marker",
+              "id": "dog1"
+            },
+            {
+              "type": "marker",
+              "id": "sma"
+            },
+            {
+              "type": "marker",
+              "id": "desmin"
+            },
+            {
+              "type": "differential",
+              "id": "spindle-cell-tumors"
+            }
+          ],
+          "titleEn": "Gastrointestinal Mesenchymal Tumors"
         },
         {
           "id": "gi-liver",
           "titleZh": "肝脏肿瘤",
           "items": [
-            { "type": "disease", "id": "hepatocellular-carcinoma", "organ": "liver" },
-            { "type": "disease", "id": "cholangiocarcinoma", "organ": "liver" },
-            { "type": "disease", "id": "focal-nodular-hyperplasia", "organ": "liver" },
-            { "type": "disease", "id": "hepatic-adenoma", "organ": "liver" },
-            { "type": "disease", "id": "liver-metastasis", "organ": "liver" },
-            { "type": "marker", "id": "hepar1" },
-            { "type": "marker", "id": "arginase-1" },
-            { "type": "marker", "id": "glypican-3" },
-            { "type": "differential", "id": "hcc-vs-cholangiocarcinoma" }
-          ]
+            {
+              "type": "disease",
+              "id": "hepatocellular-carcinoma",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "cholangiocarcinoma",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "focal-nodular-hyperplasia",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "hepatic-adenoma",
+              "organ": "liver"
+            },
+            {
+              "type": "disease",
+              "id": "liver-metastasis",
+              "organ": "liver"
+            },
+            {
+              "type": "marker",
+              "id": "hepar1"
+            },
+            {
+              "type": "marker",
+              "id": "arginase-1"
+            },
+            {
+              "type": "marker",
+              "id": "glypican-3"
+            },
+            {
+              "type": "differential",
+              "id": "hcc-vs-cholangiocarcinoma"
+            }
+          ],
+          "titleEn": "Liver Tumors"
         }
       ]
     },
@@ -370,35 +1103,92 @@
           "id": "gyn-cervix",
           "titleZh": "宫颈病变",
           "items": [
-            { "type": "disease", "id": "cervical-scc", "organ": "gynecology" },
-            { "type": "disease", "id": "cin", "organ": "gynecology" },
-            { "type": "marker", "id": "p40" },
-            { "type": "marker", "id": "ki-67" }
-          ]
+            {
+              "type": "disease",
+              "id": "cervical-scc",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "cin",
+              "organ": "gynecology"
+            },
+            {
+              "type": "marker",
+              "id": "p40"
+            },
+            {
+              "type": "marker",
+              "id": "ki-67"
+            }
+          ],
+          "titleEn": "Cervical Lesions"
         },
         {
           "id": "gyn-uterine",
           "titleZh": "子宫体病变",
           "items": [
-            { "type": "disease", "id": "endometrial-adenocarcinoma", "organ": "gynecology" },
-            { "type": "disease", "id": "endometrial-hyperplasia", "organ": "gynecology" },
-            { "type": "disease", "id": "uterine-leiomyoma", "organ": "gynecology" },
-            { "type": "marker", "id": "er" },
-            { "type": "marker", "id": "pr" },
-            { "type": "marker", "id": "pax8" },
-            { "type": "marker", "id": "wt1" }
-          ]
+            {
+              "type": "disease",
+              "id": "endometrial-adenocarcinoma",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "endometrial-hyperplasia",
+              "organ": "gynecology"
+            },
+            {
+              "type": "disease",
+              "id": "uterine-leiomyoma",
+              "organ": "gynecology"
+            },
+            {
+              "type": "marker",
+              "id": "er"
+            },
+            {
+              "type": "marker",
+              "id": "pr"
+            },
+            {
+              "type": "marker",
+              "id": "pax8"
+            },
+            {
+              "type": "marker",
+              "id": "wt1"
+            }
+          ],
+          "titleEn": "Uterine Corpus Lesions"
         },
         {
           "id": "gyn-ovarian",
           "titleZh": "卵巢肿瘤",
           "items": [
-            { "type": "disease", "id": "ovarian-serous-carcinoma", "organ": "gynecology" },
-            { "type": "marker", "id": "pax8" },
-            { "type": "marker", "id": "wt1" },
-            { "type": "marker", "id": "calretinin" },
-            { "type": "differential", "id": "clear-cell-tumors" }
-          ]
+            {
+              "type": "disease",
+              "id": "ovarian-serous-carcinoma",
+              "organ": "gynecology"
+            },
+            {
+              "type": "marker",
+              "id": "pax8"
+            },
+            {
+              "type": "marker",
+              "id": "wt1"
+            },
+            {
+              "type": "marker",
+              "id": "calretinin"
+            },
+            {
+              "type": "differential",
+              "id": "clear-cell-tumors"
+            }
+          ],
+          "titleEn": "Ovarian Tumors"
         }
       ]
     },
@@ -413,26 +1203,73 @@
           "id": "skin-melanocytic",
           "titleZh": "黑色素细胞病变",
           "items": [
-            { "type": "disease", "id": "melanoma", "organ": "skin" },
-            { "type": "disease", "id": "dysplastic-nevus", "organ": "skin" },
-            { "type": "marker", "id": "s-100" },
-            { "type": "marker", "id": "sox10" },
-            { "type": "marker", "id": "melan-a" },
-            { "type": "marker", "id": "hmb45" },
-            { "type": "differential", "id": "melanocytic-lesions" }
-          ]
+            {
+              "type": "disease",
+              "id": "melanoma",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "dysplastic-nevus",
+              "organ": "skin"
+            },
+            {
+              "type": "marker",
+              "id": "s-100"
+            },
+            {
+              "type": "marker",
+              "id": "sox10"
+            },
+            {
+              "type": "marker",
+              "id": "melan-a"
+            },
+            {
+              "type": "marker",
+              "id": "hmb45"
+            },
+            {
+              "type": "differential",
+              "id": "melanocytic-lesions"
+            }
+          ],
+          "titleEn": "Melanocytic Lesions"
         },
         {
           "id": "skin-epithelial",
           "titleZh": "皮肤上皮性肿瘤",
           "items": [
-            { "type": "disease", "id": "basal-cell-carcinoma", "organ": "skin" },
-            { "type": "disease", "id": "cutaneous-scc", "organ": "skin" },
-            { "type": "disease", "id": "merkel-cell-carcinoma", "organ": "skin" },
-            { "type": "disease", "id": "seborrheic-keratosis", "organ": "skin" },
-            { "type": "marker", "id": "berep4" },
-            { "type": "marker", "id": "ck20" }
-          ]
+            {
+              "type": "disease",
+              "id": "basal-cell-carcinoma",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "cutaneous-scc",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "merkel-cell-carcinoma",
+              "organ": "skin"
+            },
+            {
+              "type": "disease",
+              "id": "seborrheic-keratosis",
+              "organ": "skin"
+            },
+            {
+              "type": "marker",
+              "id": "berep4"
+            },
+            {
+              "type": "marker",
+              "id": "ck20"
+            }
+          ],
+          "titleEn": "Cutaneous Epithelial Tumors"
         }
       ]
     },
@@ -447,39 +1284,109 @@
           "id": "heme-bcell",
           "titleZh": "B细胞淋巴瘤",
           "items": [
-            { "type": "disease", "id": "dlbcl", "organ": "lymphoma" },
-            { "type": "disease", "id": "follicular-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "mantle-cell-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "marginal-zone-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "burkitt-lymphoma", "organ": "lymphoma" },
-            { "type": "marker", "id": "cd20" },
-            { "type": "marker", "id": "cd10" },
-            { "type": "marker", "id": "bcl2" },
-            { "type": "marker", "id": "bcl6" },
-            { "type": "marker", "id": "cd5" }
-          ]
+            {
+              "type": "disease",
+              "id": "dlbcl",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "follicular-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "mantle-cell-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "marginal-zone-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "burkitt-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "marker",
+              "id": "cd20"
+            },
+            {
+              "type": "marker",
+              "id": "cd10"
+            },
+            {
+              "type": "marker",
+              "id": "bcl2"
+            },
+            {
+              "type": "marker",
+              "id": "bcl6"
+            },
+            {
+              "type": "marker",
+              "id": "cd5"
+            }
+          ],
+          "titleEn": "B-Cell Lymphomas"
         },
         {
           "id": "heme-tcell-hodgkin",
           "titleZh": "T细胞淋巴瘤与霍奇金淋巴瘤",
           "items": [
-            { "type": "disease", "id": "classical-hodgkin-lymphoma", "organ": "lymphoma" },
-            { "type": "disease", "id": "anaplastic-large-cell-lymphoma", "organ": "lymphoma" },
-            { "type": "marker", "id": "cd3" },
-            { "type": "marker", "id": "cd30" },
-            { "type": "marker", "id": "cd15" },
-            { "type": "differential", "id": "b-vs-t-cell-lymphoma" }
-          ]
+            {
+              "type": "disease",
+              "id": "classical-hodgkin-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "disease",
+              "id": "anaplastic-large-cell-lymphoma",
+              "organ": "lymphoma"
+            },
+            {
+              "type": "marker",
+              "id": "cd3"
+            },
+            {
+              "type": "marker",
+              "id": "cd30"
+            },
+            {
+              "type": "marker",
+              "id": "cd15"
+            },
+            {
+              "type": "differential",
+              "id": "b-vs-t-cell-lymphoma"
+            }
+          ],
+          "titleEn": "T-Cell Lymphomas and Hodgkin Lymphoma"
         },
         {
           "id": "heme-neuroendocrine",
           "titleZh": "淋巴瘤与其他小细胞肿瘤鉴别",
           "items": [
-            { "type": "differential", "id": "small-round-blue-cell-tumors" },
-            { "type": "marker", "id": "cd56" },
-            { "type": "marker", "id": "synaptophysin" },
-            { "type": "marker", "id": "chromogranin-a" }
-          ]
+            {
+              "type": "differential",
+              "id": "small-round-blue-cell-tumors"
+            },
+            {
+              "type": "marker",
+              "id": "cd56"
+            },
+            {
+              "type": "marker",
+              "id": "synaptophysin"
+            },
+            {
+              "type": "marker",
+              "id": "chromogranin-a"
+            }
+          ],
+          "titleEn": "Differentiating Lymphomas from Other Small Cell Tumors"
         }
       ]
     },
@@ -494,24 +1401,66 @@
           "id": "neuro-glial",
           "titleZh": "胶质肿瘤",
           "items": [
-            { "type": "disease", "id": "glioblastoma-multiforme", "organ": "cns" },
-            { "type": "disease", "id": "diffuse-astrocytoma-idh-mutant", "organ": "cns" },
-            { "type": "disease", "id": "oligodendroglioma-idh-mutant", "organ": "cns" },
-            { "type": "disease", "id": "ependymoma", "organ": "cns" }
-          ]
+            {
+              "type": "disease",
+              "id": "glioblastoma-multiforme",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "diffuse-astrocytoma-idh-mutant",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "oligodendroglioma-idh-mutant",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "ependymoma",
+              "organ": "cns"
+            }
+          ],
+          "titleEn": "Glial Tumors"
         },
         {
           "id": "neuro-other",
           "titleZh": "其他CNS肿瘤",
           "items": [
-            { "type": "disease", "id": "meningioma", "organ": "cns" },
-            { "type": "disease", "id": "medulloblastoma", "organ": "cns" },
-            { "type": "disease", "id": "germ-cell-tumor", "organ": "cns" },
-            { "type": "marker", "id": "s-100" },
-            { "type": "marker", "id": "synaptophysin" },
-            { "type": "marker", "id": "chromogranin-a" },
-            { "type": "marker", "id": "cd56" }
-          ]
+            {
+              "type": "disease",
+              "id": "meningioma",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "medulloblastoma",
+              "organ": "cns"
+            },
+            {
+              "type": "disease",
+              "id": "germ-cell-tumor",
+              "organ": "cns"
+            },
+            {
+              "type": "marker",
+              "id": "s-100"
+            },
+            {
+              "type": "marker",
+              "id": "synaptophysin"
+            },
+            {
+              "type": "marker",
+              "id": "chromogranin-a"
+            },
+            {
+              "type": "marker",
+              "id": "cd56"
+            }
+          ],
+          "titleEn": "Other CNS Tumors"
         }
       ]
     },
@@ -526,36 +1475,97 @@
           "id": "st-spindle",
           "titleZh": "梭形细胞肿瘤",
           "items": [
-            { "type": "disease", "id": "gastrointestinal-stromal-tumor", "organ": "soft-tissue" },
-            { "type": "disease", "id": "leiomyosarcoma", "organ": "soft-tissue" },
-            { "type": "disease", "id": "malignant-peripheral-nerve-sheath-tumor", "organ": "soft-tissue" },
-            { "type": "disease", "id": "synovial-sarcoma", "organ": "soft-tissue" },
-            { "type": "marker", "id": "cd117" },
-            { "type": "marker", "id": "dog1" },
-            { "type": "marker", "id": "sma" },
-            { "type": "marker", "id": "desmin" },
-            { "type": "marker", "id": "s-100" },
-            { "type": "marker", "id": "cd34" },
-            { "type": "differential", "id": "spindle-cell-tumors" }
-          ]
+            {
+              "type": "disease",
+              "id": "gastrointestinal-stromal-tumor",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "leiomyosarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "malignant-peripheral-nerve-sheath-tumor",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "synovial-sarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "marker",
+              "id": "cd117"
+            },
+            {
+              "type": "marker",
+              "id": "dog1"
+            },
+            {
+              "type": "marker",
+              "id": "sma"
+            },
+            {
+              "type": "marker",
+              "id": "desmin"
+            },
+            {
+              "type": "marker",
+              "id": "s-100"
+            },
+            {
+              "type": "marker",
+              "id": "cd34"
+            },
+            {
+              "type": "differential",
+              "id": "spindle-cell-tumors"
+            }
+          ],
+          "titleEn": "Spindle Cell Tumors"
         },
         {
           "id": "st-round-cell",
           "titleZh": "小圆细胞肿瘤",
           "items": [
-            { "type": "disease", "id": "ewing-sarcoma", "organ": "soft-tissue" },
-            { "type": "disease", "id": "rhabdomyosarcoma", "organ": "soft-tissue" },
-            { "type": "differential", "id": "small-round-blue-cell-tumors" }
-          ]
+            {
+              "type": "disease",
+              "id": "ewing-sarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "disease",
+              "id": "rhabdomyosarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "differential",
+              "id": "small-round-blue-cell-tumors"
+            }
+          ],
+          "titleEn": "Small Round Cell Tumors"
         },
         {
           "id": "st-adipocytic",
           "titleZh": "脂肪源性肿瘤",
           "items": [
-            { "type": "disease", "id": "well-differentiated-liposarcoma", "organ": "soft-tissue" },
-            { "type": "marker", "id": "cd34" },
-            { "type": "marker", "id": "s-100" }
-          ]
+            {
+              "type": "disease",
+              "id": "well-differentiated-liposarcoma",
+              "organ": "soft-tissue"
+            },
+            {
+              "type": "marker",
+              "id": "cd34"
+            },
+            {
+              "type": "marker",
+              "id": "s-100"
+            }
+          ],
+          "titleEn": "Adipocytic Tumors"
         }
       ]
     }

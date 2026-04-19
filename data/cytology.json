@@ -694,31 +694,36 @@
         "id": "nd",
         "nameZh": "标本无法诊断（ND）",
         "riskOfMalignancy": "17-26%",
-        "management": "结合临床重新送检或行进一步影像学/活检评估"
+        "management": "结合临床重新送检或行进一步影像学/活检评估",
+        "nameEn": "Non-Diagnostic (ND)"
       },
       {
         "id": "nfm",
         "nameZh": "未见恶性细胞（NFM）",
         "riskOfMalignancy": "21%",
-        "management": "结合临床随访；高度怀疑恶性时建议重复穿刺或影像学复查"
+        "management": "结合临床随访；高度怀疑恶性时建议重复穿刺或影像学复查",
+        "nameEn": "Negative for Malignancy (NFM)"
       },
       {
         "id": "aus",
         "nameZh": "非典型细胞（AUS）",
         "riskOfMalignancy": "66%",
-        "management": "建议重复穿刺、辅助免疫组化/分子检测或多学科评估"
+        "management": "建议重复穿刺、辅助免疫组化/分子检测或多学科评估",
+        "nameEn": "Atypia of Undetermined Significance (AUS)"
       },
       {
         "id": "sfm",
         "nameZh": "可疑恶性（SFM）",
         "riskOfMalignancy": "82%",
-        "management": "结合临床与影像，必要时行组织活检确诊后按恶性处理"
+        "management": "结合临床与影像，必要时行组织活检确诊后按恶性处理",
+        "nameEn": "Suspicious for Malignancy (SFM)"
       },
       {
         "id": "mal",
         "nameZh": "恶性（MAL）",
         "riskOfMalignancy": "99%",
-        "management": "按相应原发肿瘤分期与治疗方案处理；建议行免疫组化/分子检测明确来源与治疗靶点"
+        "management": "按相应原发肿瘤分期与治疗方案处理；建议行免疫组化/分子检测明确来源与治疗靶点",
+        "nameEn": "Malignant (MAL)"
       }
     ]
   },
@@ -732,37 +737,43 @@
         "id": "nondiagnostic",
         "nameZh": "无法诊断",
         "riskOfMalignancy": "43-53%",
-        "management": "结合临床与影像重新取材（重复支气管镜/EBUS-TBNA 或其他活检方式）"
+        "management": "结合临床与影像重新取材（重复支气管镜/EBUS-TBNA 或其他活检方式）",
+        "nameEn": "Non-Diagnostic"
       },
       {
         "id": "negative",
         "nameZh": "阴性（良性）",
         "riskOfMalignancy": "19-29%",
-        "management": "结合影像学临床随访；高危病灶者建议再次取材或活检"
+        "management": "结合影像学临床随访；高危病灶者建议再次取材或活检",
+        "nameEn": "Negative (Benign)"
       },
       {
         "id": "atypical",
         "nameZh": "非典型",
         "riskOfMalignancy": "46-55%",
-        "management": "结合临床影像综合评估，多数建议重复取样或进一步活检"
+        "management": "结合临床影像综合评估，多数建议重复取样或进一步活检",
+        "nameEn": "Atypical"
       },
       {
         "id": "neoplastic",
         "nameZh": "肿瘤性：良性或低度恶性潜能",
         "riskOfMalignancy": "25-65%",
-        "management": "依据具体病变（如类癌、低级别涎腺型肿瘤）选择手术切除或随访"
+        "management": "依据具体病变（如类癌、低级别涎腺型肿瘤）选择手术切除或随访",
+        "nameEn": "Neoplastic: Benign or Low Malignant Potential"
       },
       {
         "id": "suspicious",
         "nameZh": "可疑恶性",
         "riskOfMalignancy": "75-88%",
-        "management": "多学科讨论，一般按恶性处理或组织学确诊后治疗"
+        "management": "多学科讨论，一般按恶性处理或组织学确诊后治疗",
+        "nameEn": "Suspicious for Malignancy"
       },
       {
         "id": "malignant",
         "nameZh": "恶性",
         "riskOfMalignancy": "87-100%",
-        "management": "按肿瘤类型（NSCLC/SCLC/转移癌等）分型分期并启动规范化治疗"
+        "management": "按肿瘤类型（NSCLC/SCLC/转移癌等）分型分期并启动规范化治疗",
+        "nameEn": "Malignant"
       }
     ]
   }

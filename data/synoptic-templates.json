@@ -4381,7 +4381,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Gastric Cancer Radical Resection Report"
   },
   {
     "id": "colorectal-resection",
@@ -4929,7 +4930,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Colorectal Cancer Radical Resection Report"
   },
   {
     "id": "prostate-radical",
@@ -5614,7 +5616,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Radical Prostatectomy Report"
   },
   {
     "id": "lung-resection",
@@ -7093,7 +7096,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Hepatectomy Report"
   },
   {
     "id": "pancreatic-resection",
@@ -8568,7 +8572,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Endometrial Cancer Radical Resection Report"
   },
   {
     "id": "ovarian-resection",
@@ -9128,7 +9133,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Ovarian Cancer Debulking Report"
   },
   {
     "id": "melanoma-excision",
@@ -9761,7 +9767,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Melanoma Excision Report"
   },
   {
     "id": "soft-tissue-resection",
@@ -10367,7 +10374,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Soft Tissue Sarcoma Resection Report"
   },
   {
     "id": "lymphoma-diagnostic",
@@ -10941,7 +10949,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Lymphoma Diagnostic Report"
   },
   {
     "id": "bladder-cystectomy",
@@ -11549,7 +11558,8 @@
           }
         ]
       }
-    ]
+    ],
+    "nameEn": "Radical Cystectomy Report"
   },
   {
     "id": "kidney-nephrectomy",
