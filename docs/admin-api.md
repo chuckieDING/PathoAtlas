@@ -2,6 +2,10 @@
 
 本文档描述 `/api/admin/*` 接口，供部署后的**外部 AI 产品**或自动化流程调用。
 
+> 📖 **只读查询** API（无需鉴权）见 [`api.md`](./api.md)。
+
+> 🇨🇳 写入时若给字段加 `_enhance_*` 前缀，前台会按惯例按"增强数据"处理（如自动归类、灰显占位等）。详见 [`scripts/enhance/`](../scripts/enhance/)。
+
 ## 鉴权
 
 两种方式任选其一：
@@ -222,7 +226,7 @@ curl -X PUT https://your-deployment.example.com/api/admin/marker \
 
 ---
 
-## 通用 Content API（其他 12 个模块）
+## 通用 Content API（其他 10 个模块）
 
 非疾病/标记物的模块（器官、鉴别诊断、分期、病例等）统一通过一个通用路由管理：
 
@@ -240,15 +244,17 @@ DELETE /api/admin/content/<module>?id=<id>   → 删除
 | `organs` | organs.json | 器官系统 |
 | `differentials` | differentials.json | 鉴别诊断场景 |
 | `flowcharts` | flowcharts.json | 鉴别流程图（SVG 节点/边） |
-| `staging` | staging.json | 分级分期系统（Nottingham、TNM 等） |
+| `staging` | staging.json | 分级分期系统（Nottingham/TNM/CNLC/CGCA 等） |
 | `cases` | cases.json | 虚拟病例 |
 | `cytology` | cytology.json | 细胞病理分类系统（Bethesda、TBS 等） |
-| `frozen-sections` | frozen-sections.json | 冰冻切片协议 |
 | `glossary` | glossary.json | 术语词汇表 |
 | `grossing` | grossing.json | 取材规范 |
 | `molecular` | molecular.json | 分子病理标志物 |
 | `reports` | synoptic-templates.json | CAP 同步报告模板 |
-| `special-stains` | special-stains.json | 特殊染色 |
+
+> **不在通用接口的模块**：
+> - 疾病、标记物、特殊染色、冰冻切片有专属端点（见上文 `Disease` / `Marker` 节）；
+> - 学习路径（`curriculum.json`）、IHC 套餐（`panel-builder.json`）目前**只读**，无 CRUD 接口。
 
 ### 示例：添加一个鉴别诊断场景
 

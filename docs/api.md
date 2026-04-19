@@ -4,6 +4,11 @@
 
 所有响应格式为 JSON。
 
+> 📝 **写入侧** API（创建 / 更新 / 删除 / 上传）见 [`admin-api.md`](./admin-api.md)。
+
+> 🇨🇳 **国内增强字段**：部分响应可能含 `_enhance_*` 前缀字段（如 `_enhance_molecular_cn_cdx`、`_enhance_organ_epidemiology_cn`），由
+> [`scripts/enhance/`](../scripts/enhance/) 流水线注入。前端组件可选择渲染或忽略，不影响核心字段。
+
 ---
 
 ## 端点清单
@@ -389,6 +394,84 @@ GET /api/diseases-by-ids?ids=lung-adenocarcinoma,breast-invasive-ductal-carcinom
   }
 }
 ```
+
+---
+
+### 鉴别诊断 / 流程图
+
+#### `GET /api/differentials`
+鉴别诊断主题列表（含 `diseases[]` / `keyMarkers[]` / `algorithm`）。**18** 项。
+
+#### `GET /api/flowcharts`
+鉴别流程图（节点 + 边）。**13** 个流程图。
+
+---
+
+### 分子病理
+
+#### `GET /api/molecular`
+全部分子标志物。**37** 个驱动基因 / 生物标志物。每条含 `variants[]` / `detectionMethods[]` / `companionDiagnostics[]`。
+
+可能含 `_enhance_molecular_cn_cdx`：NMPA 批准的伴随诊断试剂盒清单 + CSCO 推荐等级。
+
+---
+
+### 分级分期
+
+#### `GET /api/staging`
+全部分期分级系统。**21** 个（Nottingham / Gleason / FIGO / TNM / **CNLC / CGCA / 鼻咽中国 2017** 等）。
+
+可能含 `_enhance_staging_cn_version`：国际对照与国内替代分期说明。
+
+---
+
+### 特殊染色
+
+#### `GET /api/special-stains`
+特殊染色参考库。**19** 种（PAS / AB / 网织 / 刚果红 / Masson / GMS 等）。
+
+可能含 `_enhance_special_stain_images`：阳性 / 阴性样图 + 国内常用试剂厂家。
+
+---
+
+### IHC 套餐工具
+
+#### `GET /api/panel-builder`
+返回 `{ morphologyPatterns[], anatomicSites[], scenarios[] }`。每个 scenario 含 `firstLineMarkers[]` / `secondLineMarkers[]` / `rules[]`。
+
+scenario 可能含 `_enhance_panel_cn_recommendation`：国内实验室一线 / 二线套餐。
+
+---
+
+### CAP 报告模板
+
+#### `GET /api/reports`
+全部结构化肿瘤报告模板。**24** 个，按器官（含国内特色器官根治标本）。每条含 `sections[].fields[]`。
+
+可能含 `_enhance_synoptic_cn_align`：与国内《肿瘤病理诊断报告规范》字段对照。
+
+---
+
+### 虚拟病例
+
+#### `GET /api/cases`
+全部教学病例。**20** 个，分难度（easy/medium/hard）。每条含 `steps[]` 互动序列、`expertCommentary`。
+
+可能含 `_enhance_case_cn_reference` / `_enhance_case_images`：国内指南要点 + 待补充的教学配图清单。
+
+---
+
+### 学习路径 / 课程
+
+#### `GET /api/curriculum`
+返回 `{ yearPaths[], specialtyPaths[] }`。Year 1-4 + 7 个专科路径。每个路径含 `modules[]`。
+
+---
+
+### 术语词汇表
+
+#### `GET /api/glossary`
+全部术语条目。**358** 条（含 WHO 5th 新实体）。每条含 `termZh / termEn / definition / category / relatedTerms / synonyms`。
 
 ---
 
