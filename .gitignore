@@ -61,3 +61,7 @@ data-runtime/backups/
 **/__pycache__/
 *.pyc
 scripts/enhance/*.log
+
+# Pending-resources auditor outputs (re-derivable)
+docs/pending-resources.md
+docs/pending-resources.json
