@@ -16,6 +16,12 @@ interface GrossingProtocol {
   photoRequirements: string;
   frozenConsiderations: string;
   commonErrors: string[];
+  /** Set by enhancement pipeline. Holds China-specific protocol notes
+   *  + a comparison against CAP. */
+  _enhance_grossing_cn_protocol?: {
+    cnProtocolNotes?: string;
+    differencesFromCAP?: string;
+  };
 }
 
 export default function GrossingPage() {
@@ -186,6 +192,31 @@ export default function GrossingPage() {
                   ))}
                 </ul>
               </div>
+
+              {/* China-specific protocol (from enhancement pipeline) */}
+              {selected._enhance_grossing_cn_protocol && (
+                <div className="rounded-lg p-4" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                  <h3 className="font-semibold mb-3 text-lg flex items-center gap-2" style={{ color: '#10b981' }}>
+                    <span aria-hidden>🇨🇳</span> 国内取材规范要点
+                  </h3>
+                  {selected._enhance_grossing_cn_protocol.cnProtocolNotes && (
+                    <div className="mb-3">
+                      <h4 className="font-medium text-sm mb-1.5" style={{ color: 'var(--fg)' }}>国内规范说明</h4>
+                      <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--fg)', opacity: 0.85 }}>
+                        {selected._enhance_grossing_cn_protocol.cnProtocolNotes}
+                      </p>
+                    </div>
+                  )}
+                  {selected._enhance_grossing_cn_protocol.differencesFromCAP && (
+                    <div>
+                      <h4 className="font-medium text-sm mb-1.5" style={{ color: 'var(--fg)' }}>与 CAP 协议的差异</h4>
+                      <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--fg)', opacity: 0.85 }}>
+                        {selected._enhance_grossing_cn_protocol.differencesFromCAP}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           ) : (
             <div className="text-center py-12" style={{ color: 'var(--fg-muted)' }}>
