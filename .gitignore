@@ -56,3 +56,8 @@ docs/review-rejections.txt
 
 # Runtime data + backups (seeded from data/ on first run)
 data-runtime/backups/
+
+# Python bytecode + script logs
+**/__pycache__/
+*.pyc
+scripts/enhance/*.log
