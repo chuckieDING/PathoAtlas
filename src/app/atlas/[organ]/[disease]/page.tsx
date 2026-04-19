@@ -866,6 +866,11 @@ interface SpecialStainRef {
   id: string; nameZh: string; nameEn: string; abbreviation: string;
   targetProtein: string; interpretation: string;
   positiveResult: string; negativeResult: string;
+  /** Set by enhancement pipeline. Per-state example images + 国内常用试剂厂家. */
+  _enhance_special_stain_images?: {
+    images?: Array<{ stateId?: string; url?: string; caption: string }>;
+    cnReagentVendors?: string[];
+  };
 }
 
 function SpecialStainsTab({ profile }: { profile: StainProfileItem[] }) {
@@ -959,6 +964,17 @@ function SpecialStainsTab({ profile }: { profile: StainProfileItem[] }) {
                     <div><strong style={{ color: 'var(--fg)' }}>检测：</strong>{s.targetProtein}</div>
                     <div><strong style={{ color: '#22c55e' }}>阳性：</strong>{s.positiveResult}</div>
                     <div><strong style={{ color: '#ef4444' }}>阴性：</strong>{s.negativeResult}</div>
+                    {s._enhance_special_stain_images?.cnReagentVendors && s._enhance_special_stain_images.cnReagentVendors.length > 0 && (
+                      <div className="pt-1 mt-1" style={{ borderTop: '1px dashed var(--border)' }}>
+                        <strong style={{ color: '#10b981' }}>🇨🇳 国内试剂：</strong>
+                        {s._enhance_special_stain_images.cnReagentVendors.join('、')}
+                      </div>
+                    )}
+                    {s._enhance_special_stain_images?.images && s._enhance_special_stain_images.images.length > 0 && (
+                      <div className="text-[10px]" style={{ color: 'var(--fg-muted)', opacity: 0.6 }}>
+                        含 {s._enhance_special_stain_images.images.length} 张样图建议（待补充原图）
+                      </div>
+                    )}
                   </div>
                 </Link>
               ))}

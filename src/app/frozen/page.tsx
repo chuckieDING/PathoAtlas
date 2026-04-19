@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { IconSnowflake, IconSearch } from '@/components/Icon';
+import EnhancementImageGallery from '@/components/EnhancementImageGallery';
 
 interface FrozenSection {
   id: string;
@@ -15,6 +16,17 @@ interface FrozenSection {
   typicalErrors?: string[];
   commonErrors?: string[];
   reportingTemplate: string;
+  /** Set by enhancement pipeline. Pitfall/trap images keyed by trap type
+   *  + a brief 国内快速冰冻共识 note. URLs are placeholders pending real
+   *  artwork. */
+  _enhance_frozen_pitfall_image?: {
+    pitfallImages?: Array<{
+      url?: string;
+      caption: string;
+      trapType?: 'false-positive' | 'false-negative' | 'artifact';
+    }>;
+    cnConsensusNote?: string;
+  };
 }
 
 export default function FrozenSectionPage() {
@@ -195,6 +207,29 @@ export default function FrozenSectionPage() {
                     {selectedSection.reportingTemplate}
                   </pre>
                 </div>
+
+                {/* Pitfall image gallery + China consensus note (enhancement) */}
+                {selectedSection._enhance_frozen_pitfall_image?.pitfallImages && selectedSection._enhance_frozen_pitfall_image.pitfallImages.length > 0 && (
+                  <EnhancementImageGallery
+                    title="冰冻陷阱 / 假阳 / 假阴示例"
+                    items={selectedSection._enhance_frozen_pitfall_image.pitfallImages.map(img => ({
+                      url: img.url,
+                      caption: img.caption,
+                      badge: img.trapType,
+                    }))}
+                    accent="#f59e0b"
+                  />
+                )}
+                {selectedSection._enhance_frozen_pitfall_image?.cnConsensusNote && (
+                  <div className="rounded-xl p-4" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                    <h4 className="font-semibold text-xs mb-2 flex items-center gap-1.5" style={{ color: '#10b981' }}>
+                      <span aria-hidden>🇨🇳</span> 国内快速冰冻病理共识要点
+                    </h4>
+                    <p className="text-xs leading-relaxed" style={{ color: 'var(--fg)' }}>
+                      {selectedSection._enhance_frozen_pitfall_image.cnConsensusNote}
+                    </p>
+                  </div>
+                )}
               </>
             ) : (
               <div className="flex items-center justify-center h-96">

@@ -17,12 +17,22 @@ interface TemplateSection {
   title: string;
   fields: TemplateField[];
 }
+interface CnRegulationAlignItem {
+  cnField: string;
+  coveredBy: string | null;
+}
 interface SynopticTemplate {
   id: string;
   nameZh: string;
   nameEn: string;
   capProtocol: string;
   sections: TemplateSection[];
+  /** Set by enhancement pipeline. Maps fields required by China's
+   *  hospital reporting standard onto sections of the CAP protocol. */
+  _enhance_synoptic_cn_align?: {
+    capVersion?: string;
+    cnRegulationAlign?: CnRegulationAlignItem[];
+  };
 }
 
 type FormValues = Record<string, string | string[]>;
@@ -179,6 +189,46 @@ export default function ReportsPage() {
                   </div>
                 </div>
               </div>
+
+              {/* China regulatory alignment (enhancement) */}
+              {selected._enhance_synoptic_cn_align?.cnRegulationAlign && selected._enhance_synoptic_cn_align.cnRegulationAlign.length > 0 && (
+                <div className="rounded-xl p-5" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                  <h3 className="font-semibold text-sm mb-1 flex items-center gap-2" style={{ color: '#10b981' }}>
+                    <span aria-hidden>🇨🇳</span> 国内《肿瘤病理诊断报告规范》对齐
+                  </h3>
+                  {selected._enhance_synoptic_cn_align.capVersion && (
+                    <p className="text-xs mb-3" style={{ color: 'var(--fg-muted)' }}>
+                      参照 CAP 版本：{selected._enhance_synoptic_cn_align.capVersion}
+                    </p>
+                  )}
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr style={{ borderBottom: '1px solid rgba(16,185,129,0.2)' }}>
+                          <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg)' }}>国内规范字段</th>
+                          <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--fg)' }}>本模板覆盖</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {selected._enhance_synoptic_cn_align.cnRegulationAlign.map((row, i) => (
+                          <tr key={i} style={{ borderTop: i ? '1px dashed var(--border)' : undefined }}>
+                            <td className="px-3 py-2" style={{ color: 'var(--fg)' }}>{row.cnField}</td>
+                            <td className="px-3 py-2">
+                              {row.coveredBy ? (
+                                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono" style={{ background: 'rgba(16,185,129,0.12)', color: '#10b981' }}>
+                                  {row.coveredBy}
+                                </span>
+                              ) : (
+                                <span className="text-[10px] italic" style={{ color: '#ef4444' }}>未覆盖</span>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
 
               {/* Sections */}
               {selected.sections.map(section => (
