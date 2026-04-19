@@ -46,3 +46,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Enhancement pipeline outputs (re-derivable from data/)
+docs/enhancement-results/
+docs/enhancement-tasks.json
+docs/enhancement-plan.json
+docs/review-queue.md
+docs/review-rejections.txt
+
+# Runtime data + backups (seeded from data/ on first run)
+data-runtime/backups/
