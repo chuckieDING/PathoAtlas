@@ -65,3 +65,7 @@ scripts/enhance/*.log
 # Pending-resources auditor outputs (re-derivable)
 docs/pending-resources.md
 docs/pending-resources.json
+
+# i18n auditor outputs (re-derivable)
+docs/i18n-audit.md
+docs/i18n-audit.json
