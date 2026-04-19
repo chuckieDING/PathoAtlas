@@ -14,19 +14,20 @@
 
 ### 学习与参考
 
-- **🔬 疾病图谱** — **132** 种疾病，按 **13** 大器官系统组织（乳腺 / 肺 / 胃肠 / 肝 / 肾 / 甲状腺 / 淋巴瘤 / 皮肤 / 妇科 / 泌尿 / CNS / 软组织 / 骨）；每个疾病 10 个 Tab：概述 / 大体 / 镜下 / 免疫组化 / 分子 / 特殊染色 / 鉴别 / 专家共识 / 文献 / 临床
-- **🧪 标记物数据库** — **49** 个免疫组化标记物 + **10** 种特殊染色，统一标记物目录双 tab 切换，详情页含机制概念图、克隆变体、对照组织、染色陷阱
-- **⚖️ 鉴别诊断** — **13** 个场景 + **13** 个可视化流程图（SVG 决策树），点击疾病直接跳转详情
-- **📊 分级分期系统** — **9** 个评分体系（Nottingham / Gleason / ISUP / FIGO / Bethesda / TNM 等），配套交互式计算器挂载在疾病详情页
-- **🔬 细胞病理** — **7** 个分类系统（Bethesda 甲状腺 / TBS 宫颈 / Paris 尿液 / Milan 唾液腺 / ROSE / 体腔积液 / Yokohama 乳腺）
-- **❄️ 冰冻切片** — **10** 个术中会诊决策场景，含诊断陷阱 + 常见错误 + 报告模板
-- **📋 取材规范** — **11+** 种标本协议（墨水方案 / 切开方向 / 必取部位 / 冰冻注意 / 常见错误）
-- **🧬 分子病理** — **26** 个驱动基因/生物标志物，检测方法对比表 + 伴随诊断 CDx 矩阵
-- **📝 CAP 同步报告** — **11** 个结构化肿瘤报告模板，可填写导出
-- **🎓 虚拟病例** — **20** 个跨器官交互式病例（分难度 + 步进诊断）
-- **🛠️ IHC 组合构建器** — 4 步推导：选形态 → 选标记物 → 录入结果 → 排序鉴别清单
-- **📚 术语词汇表** — **345** 条病理学专业术语（8 大类别，中英文释义）
+- **🔬 疾病图谱** — **128** 种疾病，按 **13** 大器官系统组织（乳腺 / 肺 / 胃肠 / 肝 / 肾 / 甲状腺 / 淋巴瘤 / 皮肤 / 妇科 / 泌尿 / CNS / 软组织 / 骨）；每个疾病 10 个 Tab：概述 / 大体 / 镜下 / 免疫组化 / 分子 / 特殊染色 / 鉴别 / **共识/指南** / 文献 / 临床
+- **🧪 标记物数据库** — **49** 个免疫组化标记物 + **19** 种特殊染色，统一标记物目录双 tab 切换，详情页含机制概念图、克隆变体、对照组织、染色陷阱
+- **⚖️ 鉴别诊断** — **18** 个场景 + **13** 个可视化流程图（SVG 决策树），点击疾病直接跳转详情
+- **📊 分级分期系统** — **21** 个评分体系（Nottingham / Gleason / ISUP / FIGO / Bethesda / TNM / **CNLC / CGCA / 鼻咽中国分期** 等），配套交互式计算器挂载在疾病详情页
+- **🔬 细胞病理** — **9** 个分类系统（Bethesda 甲状腺 / TBS 宫颈 / Paris 尿液 / Milan 唾液腺 / Yokohama 乳腺 / ROSE / 体腔积液 / IOS 胸腹水 / PSC 呼吸道）
+- **❄️ 冰冻切片** — **15** 个术中会诊决策场景，含诊断陷阱 + 常见错误 + 报告模板
+- **📋 取材规范** — **21** 种标本协议（墨水方案 / 切开方向 / 必取部位 / 冰冻注意 / 常见错误 + **国内规范要点 + 与 CAP 差异**）
+- **🧬 分子病理** — **37** 个驱动基因/生物标志物，检测方法对比表 + 伴随诊断 CDx 矩阵 + **NMPA 批准试剂盒清单**
+- **📝 CAP 同步报告** — **24** 个结构化肿瘤报告模板，可填写导出，附**国内《肿瘤病理诊断报告规范》对齐表**
+- **🎓 虚拟病例** — **20** 个跨器官交互式病例（分难度 + 步进诊断 + 国内指南要点）
+- **🛠️ IHC 组合构建器** — 4 步推导：选形态 → 选标记物 → 录入结果 → 排序鉴别清单（含**国内实验室常用套餐**）
+- **📚 术语词汇表** — **358** 条病理学专业术语（8 大类别，中英文释义，含 WHO 5th 新实体）
 - **🗺️ 学习路径** — Year 1-4 按年级 + 7 个专科路径
+- **🇨🇳 国内增强** — 共识/指南分 🌐 WHO / 🇺🇸 美国 / 🇨🇳 国内（CSCO/CACA/卫健委/中华医学会）三源呈现；器官页含 NCCR 中国流行病学；分子页含 NMPA CDx 试剂盒
 
 ### 用户体验
 
@@ -56,22 +57,34 @@
 ```
 PathoAtlas/
 ├── data/                              # 结构化 JSON 数据（种子模板，git 跟踪）
-│   ├── organs.json                    # 13 个器官系统
+│   ├── organs.json                    # 13 个器官系统（+NCCR 中国流行病学）
 │   ├── markers.json                   # 49 个 IHC 标记物
-│   ├── special-stains.json            # 10 种特殊染色
-│   ├── differentials.json             # 13 个鉴别场景
+│   ├── special-stains.json            # 19 种特殊染色（+国内试剂厂家）
+│   ├── differentials.json             # 18 个鉴别场景
 │   ├── flowcharts.json                # 13 个鉴别流程图
-│   ├── staging.json                   # 9 个分级分期系统
-│   ├── cytology.json                  # 7 个细胞学分类
-│   ├── frozen-sections.json           # 10 个冰冻切片协议
-│   ├── grossing.json                  # 11 种取材规范
-│   ├── molecular.json                 # 26 个分子标志物
-│   ├── cases.json                     # 20 个虚拟病例
+│   ├── staging.json                   # 21 个分级分期系统（+CNLC/CGCA 等国内）
+│   ├── cytology.json                  # 9 个细胞学分类（+国内对应共识）
+│   ├── frozen-sections.json           # 15 个冰冻切片协议（+陷阱图 + 国内共识）
+│   ├── grossing.json                  # 21 种取材规范（+国内规范要点）
+│   ├── molecular.json                 # 37 个分子标志物（+NMPA CDx 试剂盒）
+│   ├── cases.json                     # 20 个虚拟病例（+国内指南要点）
 │   ├── curriculum.json                # 学习路径
-│   ├── glossary.json                  # 345 条术语
-│   ├── synoptic-templates.json        # 11 个 CAP 报告模板
+│   ├── glossary.json                  # 358 条术语（+WHO 5th 新实体）
+│   ├── synoptic-templates.json        # 24 个 CAP 报告模板（+国内规范对齐）
 │   └── diseases/
-│       └── *.json                     # 132 个疾病分 13 个器官文件
+│       └── *.json                     # 128 个疾病分 13 个器官文件
+├── scripts/
+│   └── enhance/                       # 数据补全流水线（Claude Code CLI 后端）
+│       ├── generate_tasks.py          # 从 data/ 推导任务清单
+│       ├── prompts.py                 # 37 个维度的 system prompt
+│       ├── run.py                     # subprocess 调 claude -p（订阅计费）
+│       ├── validate.py                # 校验器（年份/外国指南冒充等）
+│       ├── merge.py                   # 原子写入 + 备份 + rollback
+│       ├── apply_flowchart_patches.py # 流程图 patch 应用器
+│       ├── import_new_entries.py      # 新记录智能合并
+│       ├── review.py                  # 人工复核队列
+│       ├── report.py                  # 进度仪表板
+│       └── daemon.sh                  # 5 分钟一轮无人值守
 ├── data-runtime/                      # 运行时数据（gitignored，保留 admin 编辑）
 │   └── users/<sha256(email)>/         # 每用户独立目录
 │       ├── profile.json
@@ -185,6 +198,43 @@ npm run build
 npm run start
 ```
 
+### 数据补全流水线 `scripts/enhance/`
+
+批量补全国内指南/共识/CDx 等 PathoAtlas 内容增强的脚本套件。**走 Claude Code CLI（Pro/Max 订阅），无需 API key**。
+
+```bash
+# 1. 一次性安装：claude auth login（已登录可跳过）
+
+# 2. 生成任务清单（从当前 data/ 推导，已有内容自动跳过）
+python3 scripts/enhance/generate_tasks.py
+
+# 3. 估算成本 + 评估优先级
+python3 scripts/enhance/plan.py --top 20
+
+# 4. 跑批（推荐 daemon 无人值守，5 分钟一轮，遇限额自动退避）
+nohup scripts/enhance/daemon.sh > daemon.log 2>&1 &
+
+# 5. 验证 + 复核
+python3 scripts/enhance/validate.py
+python3 scripts/enhance/review.py        # 生成 docs/review-queue.md
+
+# 6. 合并回数据文件（含原子写入 + 备份）
+python3 scripts/enhance/merge.py          # dry-run
+python3 scripts/enhance/merge.py --apply
+
+# 7. 进度仪表板
+python3 scripts/enhance/report.py
+```
+
+**消化暗数据**（接入新维度后清理 `_enhance_*` 字段）：
+
+```bash
+python3 scripts/enhance/apply_flowchart_patches.py --apply  # flowchart 节点/边 patch
+python3 scripts/enhance/import_new_entries.py --apply       # 新记录入库
+```
+
+详见 `scripts/enhance/*.py` 注释。
+
 ---
 
 ## 🧱 数据模型
@@ -281,10 +331,10 @@ interface Marker {
 
 ### 三大分类 Tab
 
-- **疾病** — 13 个器官文件，全字段表单 + 图片上传（大体/镜下按放大倍数分组）+ PDF 共识/文献
+- **疾病** — 13 个器官文件，全字段表单 + 图片上传（大体/镜下按放大倍数分组）+ PDF 共识/文献，**「共识/指南」按机构自动归入 WHO/美国/国内 三组**
 - **标记物** — 双子 tab：
   - **免疫组化**：49 条记录 + 克隆变体 + 对照组织 + 染色图
-  - **特殊染色**：10 条记录 + 染色图管理
+  - **特殊染色**：19 条记录 + 染色图管理
 - **其他模块** — 统一 schema 驱动界面管理 11 个内容模块：
   - 器官系统（实时 OrganIcon 预览）
   - 鉴别场景 / **鉴别流程图（可视化拖拽编辑器）**
