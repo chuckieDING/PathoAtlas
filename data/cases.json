@@ -16,7 +16,13 @@
         "step": 1,
         "prompt": "根据HE形态学特征，你的初步诊断考虑是什么？",
         "type": "multiple-choice",
-        "options": ["浸润性导管癌（非特殊型）", "浸润性小叶癌", "导管原位癌", "纤维腺瘤", "叶状肿瘤"],
+        "options": [
+          "浸润性导管癌（非特殊型）",
+          "浸润性小叶癌",
+          "导管原位癌",
+          "纤维腺瘤",
+          "叶状肿瘤"
+        ],
         "correctIndex": 0,
         "explanation": "不规则浸润性腺体伴硬化性间质反应是浸润性导管癌（非特殊型）的典型特征。小叶癌呈单行排列，DCIS局限于导管内，纤维腺瘤和叶状肿瘤有不同的结构特征。"
       },
@@ -24,15 +30,30 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来进一步评估？",
         "type": "marker-select",
-        "recommendedMarkers": ["ER", "PR", "HER2", "Ki-67"],
-        "results": { "ER": "强阳性(>90%)", "PR": "阳性(约60%)", "HER2": "阴性(1+)", "Ki-67": "约15%" },
+        "recommendedMarkers": [
+          "ER",
+          "PR",
+          "HER2",
+          "Ki-67"
+        ],
+        "results": {
+          "ER": "强阳性(>90%)",
+          "PR": "阳性(约60%)",
+          "HER2": "阴性(1+)",
+          "Ki-67": "约15%"
+        },
         "explanation": "乳腺浸润性癌必做ER/PR/HER2/Ki-67四项，指导分子分型和治疗方案选择。该例为Luminal A型（ER+/PR+/HER2-/Ki-67低）。"
       },
       {
         "step": 3,
         "prompt": "基于免疫组化结果，该肿瘤的分子分型是什么？",
         "type": "multiple-choice",
-        "options": ["Luminal A型", "Luminal B型", "HER2过表达型", "三阴性/基底样型"],
+        "options": [
+          "Luminal A型",
+          "Luminal B型",
+          "HER2过表达型",
+          "三阴性/基底样型"
+        ],
         "correctIndex": 0,
         "explanation": "ER强阳性(>90%)、PR阳性(>=20%)、HER2阴性、Ki-67<20%符合Luminal A型分子分型，预后相对良好，内分泌治疗有效。"
       }
@@ -43,9 +64,74 @@
       "ER/PR/HER2/Ki-67是乳腺癌必做的预测性标记物",
       "Luminal A型预后最好，内分泌治疗为主"
     ],
-    "relatedDiseaseIds": ["invasive-ductal-carcinoma-nst"],
-    "relatedMarkerIds": ["er", "pr", "her2", "ki-67"],
-    "expertCommentary": "本例为典型的浸润性导管癌，形态学诊断相对直接。关键在于准确的免疫组化评估和分子分型。"
+    "relatedDiseaseIds": [
+      "invasive-ductal-carcinoma-nst"
+    ],
+    "relatedMarkerIds": [
+      "er",
+      "pr",
+      "her2",
+      "ki-67"
+    ],
+    "expertCommentary": "本例为典型的浸润性导管癌，形态学诊断相对直接。关键在于准确的免疫组化评估和分子分型。",
+    "_enhance_case_expert_commentary": {
+      "expertCommentary": "本例最易被误诊为乳腺良性增生性病变或慢性炎伴纤维化——肿瘤细胞小而一致、核异型轻微、呈单行\"列兵样\"浸润于致密间质中，低倍镜下极易被忽视；且钼靶对浸润性小叶癌（ILC）的检出率仅约 60–70%，常无明确肿块或钙化，这是国内基层漏诊的高发点。诊断关键抓手有三：其一，低倍镜识别\"列兵样\"/单细胞线样排列及围绕正常导管的\"靶环状\"浸润；其二，E-cadherin 膜阴性或 p120 胞浆定位（由膜转浆）为决定性证据，二者应联合使用以避免 E-cadherin 异常弱膜阳性造成误判；其三，常合并 LCIS 背景，需全面取材评估范围。IHC/分子方案建议：ER/PR 多强阳性、HER2 多阴性、Ki-67 较低，符合 Luminal A 型，术后建议行 21 基因或 70 基因检测指导化疗决策；对年轻、多灶或有弥漫性胃癌家族史者应行 CDH1 胚系突变检测并转诊遗传咨询，警惕遗传性弥漫型胃癌综合征。报告中应提示临床补充乳腺 MRI 以准确评估病灶范围和对侧乳腺，避免保乳切缘阳性。"
+    },
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-001/gross.svg",
+          "caption": "大体：乳腺外上象限灰白色质硬肿物，大小约 2.3cm，切面放射状星芒状边界，与周围脂肪组织分界不清",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-001/lp-he.svg",
+          "caption": "低倍 HE：肿瘤呈浸润性生长，形成大小不等的腺管及条索状结构，间质伴显著促纤维增生反应",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-001/hp-he.svg",
+          "caption": "高倍 HE：肿瘤细胞中等大小，核圆形至卵圆形，核仁明显，核分裂象可见（约 8/10 HPF），排列呈不规则腺管",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-001/ihc-er.svg",
+          "caption": "IHC ER：肿瘤细胞核强阳性表达，阳性比例约 90%",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-001/ihc-pr.svg",
+          "caption": "IHC PR：肿瘤细胞核阳性表达，阳性比例约 70%",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-001/ihc-her2.svg",
+          "caption": "IHC HER2：肿瘤细胞膜染色 1+，判读为阴性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-001/ihc-ki67.svg",
+          "caption": "IHC Ki-67：肿瘤细胞核阳性，热点区增殖指数约 20%",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 乳腺癌诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "激素受体阳性/HER2 阴性早期乳腺癌，术后辅助内分泌治疗是基石；绝经后患者推荐芳香化酶抑制剂 5 年，高复发风险者可延长至 7-10 年；Ki-67 ≥ 20% 或 Luminal B 型推荐辅助化疗联合内分泌治疗。"
+        },
+        {
+          "title": "中国抗癌协会乳腺癌诊治指南与规范 2024 年版",
+          "org": "CACA",
+          "year": 2024,
+          "relevantPoint": "浸润性乳腺癌常规报告组织学分级（Nottingham 分级）、肿瘤大小、脉管侵犯、切缘及 ER/PR/HER2/Ki-67；HER2 IHC 2+ 必须加做 ISH；HER2 低表达（IHC 1+ 或 2+/ISH−）患者在晚期阶段可纳入抗体偶联药物（如 T-DXd）治疗决策。"
+        }
+      ]
+    }
   },
   {
     "id": "case-002",
@@ -64,7 +150,13 @@
         "step": 1,
         "prompt": "组织学所见最符合以下哪一诊断？",
         "type": "multiple-choice",
-        "options": ["高级别导管原位癌（粉刺型）", "低级别导管原位癌", "浸润性导管癌", "不典型导管增生", "小叶原位癌"],
+        "options": [
+          "高级别导管原位癌（粉刺型）",
+          "低级别导管原位癌",
+          "浸润性导管癌",
+          "不典型导管增生",
+          "小叶原位癌"
+        ],
         "correctIndex": 0,
         "explanation": "扩张导管内充满高级别异型细胞伴中央粉刺样坏死是高级别DCIS的特征。基底膜完整排除浸润性癌。核级别高排除低级别DCIS。"
       },
@@ -72,15 +164,30 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来确认诊断？",
         "type": "marker-select",
-        "recommendedMarkers": ["p63", "CK5/6", "HER2", "Ki-67"],
-        "results": { "p63": "肌上皮阳性（基底膜完整）", "CK5/6": "肿瘤细胞阴性", "HER2": "3+强阳性", "Ki-67": "约40%" },
+        "recommendedMarkers": [
+          "p63",
+          "CK5/6",
+          "HER2",
+          "Ki-67"
+        ],
+        "results": {
+          "p63": "肌上皮阳性（基底膜完整）",
+          "CK5/6": "肿瘤细胞阴性",
+          "HER2": "3+强阳性",
+          "Ki-67": "约40%"
+        },
         "explanation": "p63证实肌上皮层完整，确认原位病变。高级别粉刺型DCIS常伴HER2过表达。CK5/6阴性排除普通型增生。"
       },
       {
         "step": 3,
         "prompt": "高级别DCIS进展为浸润性癌的风险约为多少？",
         "type": "multiple-choice",
-        "options": ["<5%", "30-50%（若未治疗）", "80-90%", "几乎不会进展"],
+        "options": [
+          "<5%",
+          "30-50%（若未治疗）",
+          "80-90%",
+          "几乎不会进展"
+        ],
         "correctIndex": 1,
         "explanation": "高级别DCIS若未经治疗，约30-50%可在10-15年内进展为浸润性癌。因此需要积极手术治疗，ER阳性者可加内分泌治疗。"
       }
@@ -92,9 +199,70 @@
       "肌上皮标记物（p63/SMA）确认基底膜完整是诊断原位癌的关键",
       "未治疗的DCIS约30-50%可进展为浸润性癌"
     ],
-    "relatedDiseaseIds": ["dcis", "invasive-ductal-carcinoma-nst"],
-    "relatedMarkerIds": ["p63", "her2", "ki-67", "ck5-6"],
-    "expertCommentary": "高级别DCIS的诊断要点是确认肿瘤局限于基底膜内。肌上皮免疫组化标记在排除微浸润时至关重要。"
+    "relatedDiseaseIds": [
+      "dcis",
+      "invasive-ductal-carcinoma-nst"
+    ],
+    "relatedMarkerIds": [
+      "p63",
+      "her2",
+      "ki-67",
+      "ck5-6"
+    ],
+    "expertCommentary": "高级别DCIS的诊断要点是确认肿瘤局限于基底膜内。肌上皮免疫组化标记在排除微浸润时至关重要。",
+    "_enhance_case_expert_commentary": {
+      "expertCommentary": "该病例的核心陷阱在于把成簇多形性微钙化当作单纯良性改变或纤维囊性变随访处理。国内筛查工作中，BI-RADS 4B/4C 的细小多形性或线样分支钙化应高度警惕 DCIS，真空辅助活检（VABB）取材不足时易漏诊高级别病变或伴微浸润灶。镜下诊断关键抓手：导管内实性/筛状/粉刺样增生伴中心坏死、核分级 2-3 级、钙化落于坏死灶内，提示高级别 DCIS；需在每一张 HE 切片上系统寻找可疑浸润点，并辅以肌上皮标记（p63、Calponin、CK5/6）连续切片确认基底膜完整性，避免将 DCIS 累及小叶（CLIS 样模式）误判为浸润。IHC/分子方案建议：ER、PR、HER2、Ki-67 应对 DCIS 常规开展，HER2 2+ 时按乳腺癌 HER2 检测指南（中华医学会病理学分会）追加 FISH；若见任何可疑浸润灶，需按浸润癌补测并注明浸润灶最大径。报告中应明确钙化是否位于病变内、切缘距离及是否伴微浸润，帮助外科决定是否前哨淋巴结活检，减少国内常见的”DCIS 报告过简导致二次手术”问题。"
+    },
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-002/gross.svg",
+          "caption": "大体：乳腺切除标本切面见灰白色颗粒状区域约 1.5cm，伴粉刺样坏死挤出",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-002/lp-he.svg",
+          "caption": "低倍 HE：终末导管小叶单位内导管扩张，管腔内见肿瘤细胞充填伴中央坏死及微钙化",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-002/hp-he.svg",
+          "caption": "高倍 HE：导管内肿瘤细胞呈实性/筛状排列，核中-高级别异型，核分裂可见，基底膜完整无间质浸润",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-002/ihc-er.svg",
+          "caption": "IHC ER：肿瘤细胞核强阳性 >90%",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-002/ihc-p63.svg",
+          "caption": "IHC p63：导管周围肌上皮核阳性连续环绕，提示原位病变",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-002/ihc-her2.svg",
+          "caption": "IHC HER2：膜染色 2+，需 FISH 进一步判定",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "中国抗癌协会乳腺癌诊治指南与规范 2024 版",
+          "org": "中国抗癌协会乳腺癌专业委员会",
+          "year": 2024,
+          "relevantPoint": "乳腺 X 线摄影发现的成簇细小多形性或线样分枝状钙化（BI-RADS 4B 及以上）应行影像引导下真空辅助活检；病理证实为导管原位癌（DCIS）时，需评估病灶范围、核级别、坏死及 ER/PR 状态以指导保乳手术联合全乳放疗或全乳切除的决策。"
+        },
+        {
+          "title": "CSCO 乳腺癌诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "对于单纯 DCIS，保乳术后推荐全乳放疗以降低同侧复发；ER 阳性者术后可给予他莫昔芬 5 年辅助内分泌治疗，不推荐常规行腋窝前哨淋巴结活检，除非拟行全乳切除或病灶广泛疑有微浸润。"
+        }
+      ]
+    }
   },
   {
     "id": "case-003",
@@ -113,7 +281,13 @@
         "step": 1,
         "prompt": "该肿物的形态学特征最符合哪种诊断？",
         "type": "multiple-choice",
-        "options": ["叶状肿瘤（交界性）", "纤维腺瘤", "浸润性导管癌", "乳腺肉瘤", "黏液癌"],
+        "options": [
+          "叶状肿瘤（交界性）",
+          "纤维腺瘤",
+          "浸润性导管癌",
+          "乳腺肉瘤",
+          "黏液癌"
+        ],
         "correctIndex": 0,
         "explanation": "叶状结构突出，间质叶片状突入腺腔，间质丰富伴中等异型性，核分裂象8/10HPF，符合交界性叶状肿瘤。纤维腺瘤间质温和无异型。"
       },
@@ -121,7 +295,12 @@
         "step": 2,
         "prompt": "区分叶状肿瘤良性、交界性和恶性的关键指标有哪些？",
         "type": "multiple-choice",
-        "options": ["间质细胞密度、异型性、核分裂象和边界浸润方式", "仅看核分裂象计数", "仅依据免疫组化CD34结果", "仅依据肿物大小"],
+        "options": [
+          "间质细胞密度、异型性、核分裂象和边界浸润方式",
+          "仅看核分裂象计数",
+          "仅依据免疫组化CD34结果",
+          "仅依据肿物大小"
+        ],
         "correctIndex": 0,
         "explanation": "叶状肿瘤的分级依据间质细胞密度、异型性、核分裂象计数（良性<5/10HPF，交界性5-9/10HPF，恶性>=10/10HPF）和边界浸润方式（推挤性vs浸润性）综合判断。"
       },
@@ -129,7 +308,12 @@
         "step": 3,
         "prompt": "叶状肿瘤的治疗原则是什么？",
         "type": "multiple-choice",
-        "options": ["广泛切除确保切缘>1cm阴性", "针吸活检后化疗", "内分泌治疗", "放疗为主"],
+        "options": [
+          "广泛切除确保切缘>1cm阴性",
+          "针吸活检后化疗",
+          "内分泌治疗",
+          "放疗为主"
+        ],
         "correctIndex": 0,
         "explanation": "叶状肿瘤治疗以广泛手术切除为主，要求切缘至少1cm阴性，因其局部复发率高。交界性和恶性者切缘不足需再次扩大切除。化疗和内分泌治疗效果有限。"
       }
@@ -141,9 +325,65 @@
       "分级依据间质密度、异型性、核分裂象和边界综合判断",
       "治疗以广泛切除为主，切缘>1cm是关键"
     ],
-    "relatedDiseaseIds": ["phyllodes-tumor", "fibroadenoma"],
-    "relatedMarkerIds": ["cd34", "ki-67"],
-    "expertCommentary": "叶状肿瘤与巨大纤维腺瘤的鉴别有时具有挑战性。需要充分取材，评估间质最丰富区域的细胞密度和异型性。"
+    "relatedDiseaseIds": [
+      "phyllodes-tumor",
+      "fibroadenoma"
+    ],
+    "relatedMarkerIds": [
+      "cd34",
+      "ki-67"
+    ],
+    "expertCommentary": "叶状肿瘤与巨大纤维腺瘤的鉴别有时具有挑战性。需要充分取材，评估间质最丰富区域的细胞密度和异型性。",
+    "_enhance_case_expert_commentary": {
+      "expertCommentary": "本例最易被误诊为良性叶状肿瘤或富于细胞性纤维腺瘤，国内基层实验室在冷冻或小活检标本上漏诊率较高。诊断关键抓手有三：其一，低倍镜观察间质是否呈”叶状”裂隙样结构并出现间质过度生长（一个 4× 视野内全为间质无上皮），此为区分良恶性叶状肿瘤的核心指标；其二，高倍镜评估间质细胞异型性、核分裂数（≥10/10HPF 提示恶性）及有无间质浸润性边界；其三，警惕异源性分化（脂肪肉瘤、软骨肉瘤样区域），一旦出现即定性为恶性。IHC 方案建议 CD34、CK（AE1/AE3）、p63、Ki-67 组合，必要时加 BCL-2、CD10 辅助判断间质来源；疑似化生性癌时需补充 p40、SOX10、CK5/6 排除。分子层面 MED12 突变多见于纤维腺瘤及良性叶状肿瘤，恶性叶状肿瘤常伴 TERT 启动子突变。报告时须明确分级（良性/交界性/恶性）并注明切缘，国内常见漏诊情形是将恶性叶状肿瘤误报为”纤维腺瘤伴间质细胞丰富”，导致切缘不足而复发，建议在备注中提示临床扩大切除至 ≥1 cm。",
+      "_low_confidence": true,
+      "_reason": "未获取 case-003 原始病例详情，点评基于题目”42岁女性乳腺快速增大肿物”最常见鉴别方向（叶状肿瘤谱系）撰写，需人工核对病例实际诊断后调整。"
+    },
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-003/gross.svg",
+          "caption": "大体：类圆形肿物直径约 8cm，切面灰白鱼肉样伴出血坏死，边界推挤状",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-003/lp-he.svg",
+          "caption": "低倍 HE：叶状结构伴间质过度增生，呈裂隙样及叶状突入",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-003/hp-he.svg",
+          "caption": "高倍 HE：间质细胞密度显著增高，核分裂象 ≥10/10HPF，细胞异型明显",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-003/ihc-cd34.svg",
+          "caption": "IHC CD34：间质梭形细胞弥漫阳性，支持叶状肿瘤间质来源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-003/ihc-ki67.svg",
+          "caption": "IHC Ki-67：间质成分增殖指数约 30%",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 乳腺癌诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "对于短期内快速增大的乳腺肿物，应通过空芯针穿刺活检（CNB）明确组织学分型，重点鉴别叶状肿瘤、化生性癌与高级别浸润性癌；术前应完成 ER/PR/HER2/Ki-67 检测以指导后续治疗策略。"
+        },
+        {
+          "title": "中国乳腺癌诊疗规范（2022年版）",
+          "org": "国家卫生健康委员会",
+          "year": 2022,
+          "relevantPoint": "对于体积较大（>3 cm）或短期内迅速增大的乳腺肿物，影像学评估推荐乳腺超声联合钼靶，必要时行乳腺 MRI；病理诊断应描述间质细胞密度、核分裂象计数、间质过度生长及肿瘤边界，用于叶状肿瘤的良性/交界性/恶性分级。"
+        }
+      ]
+    }
   },
   {
     "id": "case-004",
@@ -162,7 +402,13 @@
         "step": 1,
         "prompt": "该病变最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["肺浸润性腺癌（贴壁为主型伴腺泡型浸润）", "原位腺癌", "微浸润腺癌", "鳞状细胞癌", "类癌"],
+        "options": [
+          "肺浸润性腺癌（贴壁为主型伴腺泡型浸润）",
+          "原位腺癌",
+          "微浸润腺癌",
+          "鳞状细胞癌",
+          "类癌"
+        ],
         "correctIndex": 0,
         "explanation": "以贴壁生长为主但含有浸润性成分（腺泡型），浸润灶>5mm，诊断为浸润性腺癌。原位腺癌无浸润，微浸润腺癌浸润<=5mm。"
       },
@@ -170,8 +416,18 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物进行鉴别？",
         "type": "marker-select",
-        "recommendedMarkers": ["TTF-1", "Napsin A", "CK7", "P40"],
-        "results": { "TTF-1": "弥漫核阳性", "Napsin A": "弥漫胞浆颗粒状阳性", "CK7": "弥漫阳性", "P40": "阴性" },
+        "recommendedMarkers": [
+          "TTF-1",
+          "Napsin A",
+          "CK7",
+          "P40"
+        ],
+        "results": {
+          "TTF-1": "弥漫核阳性",
+          "Napsin A": "弥漫胞浆颗粒状阳性",
+          "CK7": "弥漫阳性",
+          "P40": "阴性"
+        },
         "explanation": "TTF-1和Napsin A弥漫阳性支持肺腺癌诊断。P40阴性排除鳞状细胞癌。CK7阳性是肺腺癌的常见表现。"
       }
     ],
@@ -182,9 +438,62 @@
       "TTF-1和Napsin A是肺腺癌的特异性标记物",
       "磨玻璃结节对应贴壁生长，实性成分对应浸润性成分"
     ],
-    "relatedDiseaseIds": ["lung-adenocarcinoma", "lung-adenocarcinoma-in-situ"],
-    "relatedMarkerIds": ["ttf-1", "napsin-a", "ck7", "p40"],
-    "expertCommentary": "磨玻璃结节的病理评估需要充分取材。浸润灶的大小直接影响TNM分期。建议弹力纤维染色辅助评估浸润范围。"
+    "relatedDiseaseIds": [
+      "lung-adenocarcinoma",
+      "lung-adenocarcinoma-in-situ"
+    ],
+    "relatedMarkerIds": [
+      "ttf-1",
+      "napsin-a",
+      "ck7",
+      "p40"
+    ],
+    "expertCommentary": "磨玻璃结节的病理评估需要充分取材。浸润灶的大小直接影响TNM分期。建议弹力纤维染色辅助评估浸润范围。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-004/gross.svg",
+          "caption": "大体：右肺上叶胸膜下灰白色结节 1.8cm，边界不清，切面呈星芒状",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-004/lp-he.svg",
+          "caption": "低倍 HE：肺泡结构为支架，肿瘤细胞沿肺泡壁贴壁生长，局灶见腺泡状浸润",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-004/hp-he.svg",
+          "caption": "高倍 HE：肿瘤细胞立方至柱状，核轻度异型，核仁可见，贴壁-腺泡混合型生长",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-004/ihc-ttf1.svg",
+          "caption": "IHC TTF-1：肿瘤细胞核弥漫强阳性，支持肺腺癌来源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-004/ihc-napsinA.svg",
+          "caption": "IHC Napsin A：肿瘤细胞胞浆颗粒状阳性，支持原发性肺腺癌",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 非小细胞肺癌诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "对于持续存在的混合性磨玻璃结节（mGGN），实性成分＞5mm 或随访中实性成分增大者，推荐手术切除；病理证实为微浸润腺癌（MIA）及原位腺癌（AIS）者，亚肺叶切除（楔形切除或肺段切除）可获得与肺叶切除相当的生存预后。"
+        },
+        {
+          "title": "肺结节诊治中国专家共识（2018 年版）",
+          "org": "中华医学会呼吸病学分会肺癌学组",
+          "year": 2018,
+          "relevantPoint": "对直径＞8mm 的持续性磨玻璃结节，建议进行 3–6 个月随访薄层 CT；若结节增大或实性成分增加，应考虑非手术活检或手术切除以明确诊断。"
+        }
+      ]
+    }
   },
   {
     "id": "case-005",
@@ -203,7 +512,13 @@
         "step": 1,
         "prompt": "根据HE形态，最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["肺鳞状细胞癌", "肺腺癌", "小细胞肺癌", "大细胞神经内分泌癌", "类癌"],
+        "options": [
+          "肺鳞状细胞癌",
+          "肺腺癌",
+          "小细胞肺癌",
+          "大细胞神经内分泌癌",
+          "类癌"
+        ],
         "correctIndex": 0,
         "explanation": "角化珠和细胞间桥是鳞状细胞癌的特征性表现。中央型肺癌伴吸烟史高度支持鳞癌诊断。腺癌通常为周围型。"
       },
@@ -211,15 +526,30 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物确认诊断？",
         "type": "marker-select",
-        "recommendedMarkers": ["P40", "P63", "CK5/6", "TTF-1"],
-        "results": { "P40": "弥漫核阳性", "P63": "弥漫核阳性", "CK5/6": "弥漫阳性", "TTF-1": "阴性" },
+        "recommendedMarkers": [
+          "P40",
+          "P63",
+          "CK5/6",
+          "TTF-1"
+        ],
+        "results": {
+          "P40": "弥漫核阳性",
+          "P63": "弥漫核阳性",
+          "CK5/6": "弥漫阳性",
+          "TTF-1": "阴性"
+        },
         "explanation": "P40和P63是鳞状分化的高特异性标记物。CK5/6支持鳞状分化。TTF-1阴性排除腺癌。P40较P63对鳞癌更具特异性。"
       },
       {
         "step": 3,
         "prompt": "肺鳞状细胞癌常需做哪些分子检测？",
         "type": "multiple-choice",
-        "options": ["PD-L1检测（指导免疫治疗）", "EGFR突变检测（吉非替尼）", "ALK融合检测", "BRAF V600E检测"],
+        "options": [
+          "PD-L1检测（指导免疫治疗）",
+          "EGFR突变检测（吉非替尼）",
+          "ALK融合检测",
+          "BRAF V600E检测"
+        ],
         "correctIndex": 0,
         "explanation": "肺鳞癌EGFR/ALK突变率极低，常规不做驱动基因检测。PD-L1 TPS评分指导免疫检查点抑制剂使用（TPS>=50%一线免疫单药，TPS 1-49%联合化疗）。"
       }
@@ -231,9 +561,77 @@
       "角化珠和细胞间桥是诊断鳞癌的形态学要点",
       "PD-L1检测是肺鳞癌必做的预测性检测"
     ],
-    "relatedDiseaseIds": ["lung-squamous-cell-carcinoma"],
-    "relatedMarkerIds": ["p40", "p63", "ck5-6", "ttf-1", "pd-l1"],
-    "expertCommentary": "角化型鳞癌形态学诊断较易。低分化鳞癌与低分化腺癌、大细胞癌的鉴别需要免疫组化。活检标本需合理使用组织做免疫组化和分子检测。"
+    "relatedDiseaseIds": [
+      "lung-squamous-cell-carcinoma"
+    ],
+    "relatedMarkerIds": [
+      "p40",
+      "p63",
+      "ck5-6",
+      "ttf-1",
+      "pd-l1"
+    ],
+    "expertCommentary": "角化型鳞癌形态学诊断较易。低分化鳞癌与低分化腺癌、大细胞癌的鉴别需要免疫组化。活检标本需合理使用组织做免疫组化和分子检测。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-005/gross.svg",
+          "caption": "大体：右肺中央型灰白色肿物，侵犯主支气管，直径约 4.2cm，切面实性、伴灶状坏死",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-005/lp-he.svg",
+          "caption": "低倍 HE：肿瘤呈实性巢状弥漫浸润性生长，伴广泛地图状坏死及周围挤压性支气管黏膜",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-005/hp-he.svg",
+          "caption": "高倍 HE：瘤细胞小至中等大小，胞浆稀少，核深染呈椒盐样染色质，核仁不明显，核分裂象多见（>10/2mm²）",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-005/ihc-ck.svg",
+          "caption": "IHC CK(AE1/AE3)：胞浆点状/核旁逗点样阳性，提示上皮源性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-005/ihc-syn.svg",
+          "caption": "IHC Syn：瘤细胞胞浆弥漫阳性，支持神经内分泌分化",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-005/ihc-cga.svg",
+          "caption": "IHC CgA：胞浆颗粒状阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-005/ihc-ttf1.svg",
+          "caption": "IHC TTF-1：瘤细胞核弥漫阳性，支持肺原发",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-005/ihc-ki67.svg",
+          "caption": "IHC Ki-67：核增殖指数约 80%，符合高级别神经内分泌癌",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 小细胞肺癌诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "局限期小细胞肺癌标准治疗为依托泊苷联合铂类（EP/EC 方案）同步或序贯胸部放疗，完全缓解或部分缓解者推荐预防性全脑放疗（PCI）；广泛期一线推荐含铂化疗联合免疫检查点抑制剂（阿替利珠单抗或度伐利尤单抗）。"
+        },
+        {
+          "title": "CSCO 非小细胞肺癌诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "中央型肺肿物活检小标本病理诊断需结合形态学与免疫组化（TTF-1、Napsin A、p40、CK5/6、Syn、CgA、CD56、INSM1、Ki-67）鉴别腺癌、鳞癌与神经内分泌癌；确诊 NSCLC 后须常规检测 EGFR、ALK、ROS1、BRAF、KRAS、MET、RET、HER2 及 PD-L1 表达。"
+        }
+      ]
+    }
   },
   {
     "id": "case-006",
@@ -252,7 +650,13 @@
         "step": 1,
         "prompt": "最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["直肠腺癌（中分化）", "直肠类癌", "直肠间质瘤", "直肠淋巴瘤", "增生性息肉"],
+        "options": [
+          "直肠腺癌（中分化）",
+          "直肠类癌",
+          "直肠间质瘤",
+          "直肠淋巴瘤",
+          "增生性息肉"
+        ],
         "correctIndex": 0,
         "explanation": "异型腺体浸润性生长伴脏层坏死是结直肠腺癌的典型特征。类癌呈巢状排列，间质瘤呈梭形细胞，淋巴瘤为弥漫小细胞浸润。"
       },
@@ -260,15 +664,30 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化检测来评估错配修复蛋白状态？",
         "type": "marker-select",
-        "recommendedMarkers": ["MLH1", "MSH2", "MSH6", "PMS2"],
-        "results": { "MLH1": "弥漫阳性（保留表达）", "MSH2": "弥漫阳性（保留表达）", "MSH6": "弥漫阳性（保留表达）", "PMS2": "弥漫阳性（保留表达）" },
+        "recommendedMarkers": [
+          "MLH1",
+          "MSH2",
+          "MSH6",
+          "PMS2"
+        ],
+        "results": {
+          "MLH1": "弥漫阳性（保留表达）",
+          "MSH2": "弥漫阳性（保留表达）",
+          "MSH6": "弥漫阳性（保留表达）",
+          "PMS2": "弥漫阳性（保留表达）"
+        },
         "explanation": "错配修复蛋白（MMR）四项均保留表达（pMMR），提示微卫星稳定（MSS）型。若任一蛋白缺失（dMMR），则提示微卫星不稳定（MSI-H），可能与Lynch综合征相关，并可从免疫治疗获益。"
       },
       {
         "step": 3,
         "prompt": "该患者还需做哪些分子检测指导治疗？",
         "type": "multiple-choice",
-        "options": ["RAS/BRAF基因突变检测", "EGFR基因突变检测", "ALK融合检测", "BCR-ABL融合检测"],
+        "options": [
+          "RAS/BRAF基因突变检测",
+          "EGFR基因突变检测",
+          "ALK融合检测",
+          "BCR-ABL融合检测"
+        ],
         "correctIndex": 0,
         "explanation": "结直肠癌需检测KRAS/NRAS/BRAF突变状态。RAS野生型可使用抗EGFR靶向药（西妥昔单抗/帕尼单抗）。BRAF V600E突变提示预后差但可用靶向联合治疗。"
       }
@@ -280,9 +699,67 @@
       "脏层坏死（dirty necrosis）是结直肠腺癌的特征",
       "RAS/BRAF突变状态指导靶向治疗选择"
     ],
-    "relatedDiseaseIds": ["colorectal-adenocarcinoma", "colorectal-adenoma"],
-    "relatedMarkerIds": ["cdx2", "ck20", "ck7", "ki-67"],
-    "expertCommentary": "结直肠腺癌诊断相对直接。关键在于准确的MMR免疫组化评估和分子检测。活检标本需保留足够组织用于分子检测。"
+    "relatedDiseaseIds": [
+      "colorectal-adenocarcinoma",
+      "colorectal-adenoma"
+    ],
+    "relatedMarkerIds": [
+      "cdx2",
+      "ck20",
+      "ck7",
+      "ki-67"
+    ],
+    "expertCommentary": "结直肠腺癌诊断相对直接。关键在于准确的MMR免疫组化评估和分子检测。活检标本需保留足够组织用于分子检测。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-006/gross.svg",
+          "caption": "大体：直肠溃疡型肿物，约 4.5cm，边缘堤状隆起，切面灰白质硬浸润肠壁全层",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-006/lp-he.svg",
+          "caption": "低倍 HE：肿瘤性腺管呈不规则浸润性生长，穿透黏膜肌层侵及肌层，伴促纤维增生反应",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-006/hp-he.svg",
+          "caption": "高倍 HE：中分化腺癌，腺管结构不规则，细胞核深染、核分裂象易见，腔内可见\"污秽性\"坏死",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-006/ihc-cdx2.svg",
+          "caption": "IHC CDX2：肿瘤细胞核弥漫强阳性，支持结直肠来源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-006/ihc-ck20.svg",
+          "caption": "IHC CK20：肿瘤细胞胞浆弥漫阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-006/ihc-mmr.svg",
+          "caption": "IHC 错配修复蛋白（MLH1/MSH2/MSH6/PMS2）：核表达保留，提示 pMMR/MSS",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 结直肠癌诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "所有转移性结直肠癌患者均应检测 RAS（KRAS/NRAS）、BRAF V600E 基因状态及错配修复蛋白/微卫星不稳定（MMR/MSI）；RAS/BRAF 野生型的左半结肠及直肠癌推荐一线化疗联合抗 EGFR 单抗。"
+        },
+        {
+          "title": "中国临床肿瘤学会（CSCO）结直肠癌诊疗指南 2024 病理评估章节",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "直肠癌根治标本病理报告需包含肿瘤分化程度、浸润深度（pT）、区域淋巴结状态（pN，需至少检出 12 枚）、脉管及神经侵犯、环周切缘（CRM，≤1 mm 为阳性）及 TRG 分级（如接受新辅助治疗）。"
+        }
+      ]
+    }
   },
   {
     "id": "case-007",
@@ -301,7 +778,13 @@
         "step": 1,
         "prompt": "该黏膜下梭形细胞肿瘤最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["胃肠间质瘤（GIST）", "平滑肌瘤", "神经鞘瘤", "纤维瘤病", "炎性肌纤维母细胞瘤"],
+        "options": [
+          "胃肠间质瘤（GIST）",
+          "平滑肌瘤",
+          "神经鞘瘤",
+          "纤维瘤病",
+          "炎性肌纤维母细胞瘤"
+        ],
         "correctIndex": 0,
         "explanation": "胃壁固有肌层起源的梭形细胞肿瘤首先考虑GIST。平滑肌瘤在胃中罕见（食管多见），神经鞘瘤S-100阳性但CD117阴性。需要免疫组化鉴别。"
       },
@@ -309,15 +792,34 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来确认诊断？",
         "type": "marker-select",
-        "recommendedMarkers": ["CD117", "DOG1", "CD34", "SMA", "S-100", "Desmin"],
-        "results": { "CD117": "弥漫强阳性", "DOG1": "弥漫强阳性", "CD34": "阳性(约70%)", "SMA": "灶性弱阳性", "S-100": "阴性", "Desmin": "阴性" },
+        "recommendedMarkers": [
+          "CD117",
+          "DOG1",
+          "CD34",
+          "SMA",
+          "S-100",
+          "Desmin"
+        ],
+        "results": {
+          "CD117": "弥漫强阳性",
+          "DOG1": "弥漫强阳性",
+          "CD34": "阳性(约70%)",
+          "SMA": "灶性弱阳性",
+          "S-100": "阴性",
+          "Desmin": "阴性"
+        },
         "explanation": "CD117和DOG1双阳性是GIST的诊断标准。CD117（KIT蛋白）约95%的GIST阳性，DOG1敏感性更高。S-100阴性排除神经鞘瘤，Desmin阴性排除平滑肌瘤。"
       },
       {
         "step": 3,
         "prompt": "该GIST的NIH风险分级属于哪一级？（胃，大小3.8cm，核分裂象2/5mm2）",
         "type": "multiple-choice",
-        "options": ["极低风险", "低风险", "中等风险", "高风险"],
+        "options": [
+          "极低风险",
+          "低风险",
+          "中等风险",
+          "高风险"
+        ],
         "correctIndex": 1,
         "explanation": "根据NIH改良风险分级，胃来源GIST，大小2-5cm，核分裂象<=5/5mm2属于低风险。若>5cm或核分裂象>5/5mm2则升级为中等或高风险。"
       }
@@ -329,9 +831,68 @@
       "风险分级依据肿瘤部位、大小和核分裂象计数",
       "KIT/PDGFRA基因突变检测指导伊马替尼靶向治疗"
     ],
-    "relatedDiseaseIds": ["gist"],
-    "relatedMarkerIds": ["cd117", "dog1", "cd34", "sma", "s-100", "desmin"],
-    "expertCommentary": "GIST的诊断依赖免疫组化。需注意约5%的GIST CD117阴性，此时DOG1有助于诊断。基因突变类型（KIT外显子11/9/13/17，PDGFRA外显子18）影响伊马替尼疗效。"
+    "relatedDiseaseIds": [
+      "gist"
+    ],
+    "relatedMarkerIds": [
+      "cd117",
+      "dog1",
+      "cd34",
+      "sma",
+      "s-100",
+      "desmin"
+    ],
+    "expertCommentary": "GIST的诊断依赖免疫组化。需注意约5%的GIST CD117阴性，此时DOG1有助于诊断。基因突变类型（KIT外显子11/9/13/17，PDGFRA外显子18）影响伊马替尼疗效。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-007/gross.svg",
+          "caption": "大体：胃壁黏膜下类圆形肿物，直径约 4.5cm，切面灰白色，质中等偏韧，边界清楚，呈膨胀性生长，局部黏膜面可见浅表溃疡",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-007/lp-he.svg",
+          "caption": "低倍 HE：肿瘤位于黏膜下及固有肌层内，由梭形细胞束状、编织状排列构成，边界推挤性，未见正常胃壁结构",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-007/hp-he.svg",
+          "caption": "高倍 HE：梭形细胞胞浆嗜酸性、核呈雪茄状、核端钝圆，核分裂象计数 <5/50HPF，未见明显坏死",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-007/ihc-cd117.svg",
+          "caption": "IHC CD117：肿瘤细胞胞膜及胞浆弥漫强阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-007/ihc-dog1.svg",
+          "caption": "IHC DOG1：肿瘤细胞胞膜阳性，支持 GIST 诊断",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-007/ihc-cd34.svg",
+          "caption": "IHC CD34：肿瘤细胞胞浆弥漫阳性",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 胃肠道间质瘤诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "直径>2cm 的胃 GIST 原则上建议手术切除；危险度分级依据肿瘤部位、大小、核分裂象及有无破裂综合评估，中高危患者术后需接受伊马替尼辅助治疗，胃来源中危至少 1 年、高危至少 3 年。"
+        },
+        {
+          "title": "中国胃肠间质瘤诊断治疗共识（2017 年版）",
+          "org": "中国临床肿瘤学会 CSCO 胃肠间质瘤专家委员会",
+          "year": 2017,
+          "relevantPoint": "GIST 免疫组化诊断应常规检测 CD117、DOG1、CD34、SMA、S-100 及 Ki-67；CD117 和/或 DOG1 阳性是 GIST 诊断的关键依据，对疑难病例推荐进行 KIT 及 PDGFRA 基因突变检测以指导靶向治疗及预后判断。"
+        }
+      ]
+    }
   },
   {
     "id": "case-008",
@@ -350,7 +911,13 @@
         "step": 1,
         "prompt": "该组织学形态最符合哪种诊断？",
         "type": "multiple-choice",
-        "options": ["弥漫型胃癌（印戒细胞癌/低黏附性癌）", "肠型胃腺癌", "胃淋巴瘤", "胃神经内分泌肿瘤", "胃间质瘤"],
+        "options": [
+          "弥漫型胃癌（印戒细胞癌/低黏附性癌）",
+          "肠型胃腺癌",
+          "胃淋巴瘤",
+          "胃神经内分泌肿瘤",
+          "胃间质瘤"
+        ],
         "correctIndex": 0,
         "explanation": "印戒细胞形态（胞浆内黏液空泡将核推向一侧）、弥漫浸润无腺管形成是Lauren弥漫型胃癌的特征。肠型胃癌形成腺管结构。淋巴瘤需要免疫组化鉴别。"
       },
@@ -358,15 +925,34 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物进行鉴别？",
         "type": "marker-select",
-        "recommendedMarkers": ["CK", "E-cadherin", "CD20", "CD3", "HER2", "PD-L1"],
-        "results": { "CK": "弥漫阳性", "E-cadherin": "表达缺失", "CD20": "阴性", "CD3": "阴性", "HER2": "阴性(0)", "PD-L1": "CPS 5" },
+        "recommendedMarkers": [
+          "CK",
+          "E-cadherin",
+          "CD20",
+          "CD3",
+          "HER2",
+          "PD-L1"
+        ],
+        "results": {
+          "CK": "弥漫阳性",
+          "E-cadherin": "表达缺失",
+          "CD20": "阴性",
+          "CD3": "阴性",
+          "HER2": "阴性(0)",
+          "PD-L1": "CPS 5"
+        },
         "explanation": "CK阳性确认上皮来源。E-cadherin表达缺失是弥漫型/印戒细胞癌的特征（CDH1基因失活）。CD20/CD3阴性排除淋巴瘤。HER2阴性。"
       },
       {
         "step": 3,
         "prompt": "E-cadherin（CDH1）基因胚系突变与哪种遗传性综合征相关？",
         "type": "multiple-choice",
-        "options": ["遗传性弥漫型胃癌（HDGC）综合征", "Lynch综合征", "Li-Fraumeni综合征", "家族性腺瘤性息肉病"],
+        "options": [
+          "遗传性弥漫型胃癌（HDGC）综合征",
+          "Lynch综合征",
+          "Li-Fraumeni综合征",
+          "家族性腺瘤性息肉病"
+        ],
         "correctIndex": 0,
         "explanation": "CDH1胚系突变导致遗传性弥漫型胃癌（HDGC）综合征，终生胃癌风险高达80%。患者年轻、有家族史时应进行遗传咨询和CDH1基因检测。女性携带者同时有乳腺小叶癌风险增高。"
       }
@@ -378,9 +964,61 @@
       "E-cadherin缺失是弥漫型胃癌的分子特征",
       "CDH1胚系突变导致HDGC综合征，需遗传咨询"
     ],
-    "relatedDiseaseIds": ["gastric-adenocarcinoma"],
-    "relatedMarkerIds": ["e-cadherin", "ck7", "her2", "pd-l1"],
-    "expertCommentary": "皮革胃表现的弥漫型胃癌活检有时可能取到正常黏膜。多点深取活检至关重要。需注意印戒细胞癌与淋巴瘤在活检中的鉴别。"
+    "relatedDiseaseIds": [
+      "gastric-adenocarcinoma"
+    ],
+    "relatedMarkerIds": [
+      "e-cadherin",
+      "ck7",
+      "her2",
+      "pd-l1"
+    ],
+    "expertCommentary": "皮革胃表现的弥漫型胃癌活检有时可能取到正常黏膜。多点深取活检至关重要。需注意印戒细胞癌与淋巴瘤在活检中的鉴别。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-008/gross.svg",
+          "caption": "大体：胃壁弥漫性增厚呈革囊胃（linitis plastica）外观，黏膜皱襞消失，切面灰白质韧",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-008/lp-he.svg",
+          "caption": "低倍 HE：肿瘤细胞弥漫浸润胃壁全层，累及黏膜下层及肌层，伴显著促纤维增生",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-008/hp-he.svg",
+          "caption": "高倍 HE：散在印戒细胞，胞浆富含黏液将细胞核挤压至一侧，呈单个或小巢状浸润",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-008/ihc-ecad.svg",
+          "caption": "IHC E-cadherin：肿瘤细胞膜表达缺失，提示 CDH1 失活，符合低黏附性癌/印戒细胞癌",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-008/ihc-ck.svg",
+          "caption": "IHC CK（AE1/AE3）：印戒样肿瘤细胞胞浆弥漫强阳性，证实上皮来源",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 胃癌诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "弥漫型（Lauren 分型）或印戒细胞癌病例常表现为胃壁弥漫增厚（皮革胃），推荐完善 HER2、MMR/MSI、PD-L1 CPS、EBER 及 Claudin 18.2 检测；HER2 阴性且 CPS≥5 者一线推荐化疗联合 PD-1 单抗，Claudin 18.2 阳性者可考虑 zolbetuximab 联合化疗。"
+        },
+        {
+          "title": "胃癌规范化病理诊断专家共识",
+          "org": "中华医学会病理学分会",
+          "year": 2022,
+          "relevantPoint": "活检或手术标本诊断低黏附性癌/印戒细胞癌时，应常规加做 E-cadherin、CK（AE1/AE3）免疫组化以识别散在浸润细胞，并评估 Lauren 分型；弥漫型胃癌需警惕 CDH1 胚系突变，建议结合家族史进行遗传咨询。"
+        }
+      ]
+    }
   },
   {
     "id": "case-009",
@@ -399,7 +1037,13 @@
         "step": 1,
         "prompt": "根据临床及形态学特征，最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["肝细胞癌（中分化）", "胆管细胞癌", "肝转移癌", "肝细胞腺瘤", "局灶性结节增生"],
+        "options": [
+          "肝细胞癌（中分化）",
+          "胆管细胞癌",
+          "肝转移癌",
+          "肝细胞腺瘤",
+          "局灶性结节增生"
+        ],
         "correctIndex": 0,
         "explanation": "乙肝肝硬化背景、AFP显著升高、典型影像学表现（快进快出），结合粗梁状排列、多角形嗜酸性肿瘤细胞、含胆汁，高度支持肝细胞癌。胆管癌形成腺管伴纤维间质。"
       },
@@ -407,8 +1051,22 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来确认肝细胞来源？",
         "type": "marker-select",
-        "recommendedMarkers": ["Hepatocyte(Hep Par-1)", "Arginase-1", "GPC-3", "CD34", "CK7", "CK19"],
-        "results": { "Hepatocyte(Hep Par-1)": "弥漫阳性", "Arginase-1": "弥漫阳性", "GPC-3": "阳性(约60%)", "CD34": "窦隙内皮弥漫阳性（毛细血管化）", "CK7": "阴性", "CK19": "阴性" },
+        "recommendedMarkers": [
+          "Hepatocyte(Hep Par-1)",
+          "Arginase-1",
+          "GPC-3",
+          "CD34",
+          "CK7",
+          "CK19"
+        ],
+        "results": {
+          "Hepatocyte(Hep Par-1)": "弥漫阳性",
+          "Arginase-1": "弥漫阳性",
+          "GPC-3": "阳性(约60%)",
+          "CD34": "窦隙内皮弥漫阳性（毛细血管化）",
+          "CK7": "阴性",
+          "CK19": "阴性"
+        },
         "explanation": "Hep Par-1和Arginase-1确认肝细胞分化。GPC-3是HCC的肿瘤标记物（良性肝细胞病变通常阴性）。CD34弥漫阳性示窦隙毛细血管化，是HCC的特征。CK7/CK19阴性排除胆管分化。"
       }
     ],
@@ -420,9 +1078,64 @@
       "CD34弥漫阳性示窦隙毛细血管化，支持HCC诊断",
       "网状纤维染色辅助评估肝板增厚"
     ],
-    "relatedDiseaseIds": ["hepatocellular-carcinoma", "focal-nodular-hyperplasia"],
-    "relatedMarkerIds": ["arginase-1", "glypican-3", "hepar1", "cd34", "ck7", "ck19"],
-    "expertCommentary": "HCC诊断需结合临床（肝炎史、AFP）、影像学（快进快出）和病理学。高分化HCC与异型增生结节的鉴别可能困难，GPC-3和网状纤维染色有帮助。"
+    "relatedDiseaseIds": [
+      "hepatocellular-carcinoma",
+      "focal-nodular-hyperplasia"
+    ],
+    "relatedMarkerIds": [
+      "arginase-1",
+      "glypican-3",
+      "hepar1",
+      "cd34",
+      "ck7",
+      "ck19"
+    ],
+    "expertCommentary": "HCC诊断需结合临床（肝炎史、AFP）、影像学（快进快出）和病理学。高分化HCC与异型增生结节的鉴别可能困难，GPC-3和网状纤维染色有帮助。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-009/gross.svg",
+          "caption": "大体：肝右叶单发结节型肿物，切面灰黄色，可见出血坏死及假包膜",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-009/lp-he.svg",
+          "caption": "低倍 HE：肿瘤呈梁索状排列，被血窦分隔，周围可见假包膜",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-009/hp-he.svg",
+          "caption": "高倍 HE：多角形肿瘤细胞，胞浆嗜酸性丰富，核仁明显，可见胆汁分泌",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-009/ihc-heppar1.svg",
+          "caption": "IHC Hep Par-1：胞浆颗粒状弥漫强阳性，支持肝细胞起源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-009/ihc-gpc3.svg",
+          "caption": "IHC Glypican-3：胞浆/膜阳性，提示肝细胞癌",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "原发性肝癌诊疗指南",
+          "org": "国家卫生健康委员会",
+          "year": 2024,
+          "relevantPoint": "肝细胞癌的病理诊断需常规开展免疫组化检测，推荐组合包括 Hep Par-1、Arginase-1、GPC-3、AFP、CK7、CK19、CD34（窦状血管化）及 Ki-67；对于分化较差或不典型病例，建议加做 GS、HSP70 以辅助鉴别高级别异型增生结节与早期肝细胞癌。"
+        },
+        {
+          "title": "CSCO 原发性肝癌诊疗指南",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "HCC 病理报告应包含肿瘤大小、数目、分化程度（Edmondson-Steiner 分级）、微血管侵犯（MVI）分级（M0/M1/M2）、卫星结节及切缘情况；MVI 是术后复发的独立危险因素，M1/M2 级患者推荐术后辅助治疗。"
+        }
+      ]
+    }
   },
   {
     "id": "case-010",
@@ -441,7 +1154,13 @@
         "step": 1,
         "prompt": "最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["肝内胆管细胞癌", "肝细胞癌", "转移性腺癌", "肝脓肿", "肝内胆管乳头状瘤"],
+        "options": [
+          "肝内胆管细胞癌",
+          "肝细胞癌",
+          "转移性腺癌",
+          "肝脓肿",
+          "肝内胆管乳头状瘤"
+        ],
         "correctIndex": 0,
         "explanation": "无肝硬化背景、AFP正常、CA19-9升高、延迟强化影像特点，结合腺管状结构伴丰富纤维间质和黏液分泌，高度支持胆管细胞癌。HCC通常有肝硬化背景和AFP升高。"
       },
@@ -449,8 +1168,22 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物进行鉴别？",
         "type": "marker-select",
-        "recommendedMarkers": ["CK7", "CK19", "Hep Par-1", "Arginase-1", "CK20", "CDX2"],
-        "results": { "CK7": "弥漫强阳性", "CK19": "弥漫强阳性", "Hep Par-1": "阴性", "Arginase-1": "阴性", "CK20": "灶性阳性", "CDX2": "阴性" },
+        "recommendedMarkers": [
+          "CK7",
+          "CK19",
+          "Hep Par-1",
+          "Arginase-1",
+          "CK20",
+          "CDX2"
+        ],
+        "results": {
+          "CK7": "弥漫强阳性",
+          "CK19": "弥漫强阳性",
+          "Hep Par-1": "阴性",
+          "Arginase-1": "阴性",
+          "CK20": "灶性阳性",
+          "CDX2": "阴性"
+        },
         "explanation": "CK7/CK19强阳性支持胆管分化。Hep Par-1/Arginase-1阴性排除肝细胞癌。CDX2阴性降低胃肠道转移癌可能。胆管癌的免疫表型与胰腺癌相似，需结合临床鉴别。"
       }
     ],
@@ -461,9 +1194,67 @@
       "CK7/CK19阳性是胆管分化的免疫组化特征",
       "延迟强化的影像学表现反映了丰富的纤维间质"
     ],
-    "relatedDiseaseIds": ["cholangiocarcinoma", "hepatocellular-carcinoma"],
-    "relatedMarkerIds": ["ck7", "ck19", "arginase-1", "hepar1"],
-    "expertCommentary": "胆管癌与转移性腺癌（尤其是胰腺癌）的鉴别有时十分困难，需综合影像学和临床信息。混合型肝癌（HCC-CCA）也需纳入鉴别。"
+    "relatedDiseaseIds": [
+      "cholangiocarcinoma",
+      "hepatocellular-carcinoma"
+    ],
+    "relatedMarkerIds": [
+      "ck7",
+      "ck19",
+      "arginase-1",
+      "hepar1"
+    ],
+    "expertCommentary": "胆管癌与转移性腺癌（尤其是胰腺癌）的鉴别有时十分困难，需综合影像学和临床信息。混合型肝癌（HCC-CCA）也需纳入鉴别。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-010/gross.svg",
+          "caption": "大体：肝内灰白色质硬肿物，边界不清，切面呈分叶状伴中央纤维化",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-010/lp-he.svg",
+          "caption": "低倍 HE：不规则腺管状结构浸润性生长，伴显著促纤维增生性间质",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-010/hp-he.svg",
+          "caption": "高倍 HE：立方至柱状异型上皮形成小腺管，核仁明显，可见神经周围侵犯",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-010/ihc-ck19.svg",
+          "caption": "IHC CK19：肿瘤细胞胞浆弥漫强阳性，支持胆管上皮来源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-010/ihc-ck7.svg",
+          "caption": "IHC CK7：肿瘤细胞弥漫阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-010/ihc-heppar1.svg",
+          "caption": "IHC HepPar-1：阴性，排除肝细胞癌",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 胆道恶性肿瘤诊疗指南",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "肝内胆管癌根治性切除术后病理确认淋巴结转移或切缘阳性者，推荐辅助卡培他滨化疗 6 个月；对晚期或不可切除者，推荐 NGS 检测 FGFR2 融合、IDH1 突变、HER2 扩增、BRAF V600E 及 MSI/dMMR，以指导靶向及免疫治疗选择。"
+        },
+        {
+          "title": "原发性肝癌诊疗指南（2022 年版）",
+          "org": "国家卫健委",
+          "year": 2022,
+          "relevantPoint": "肝内胆管癌病理诊断需与肝细胞癌及转移性腺癌鉴别，推荐联合 CK7、CK19、CK20、Hep Par-1、Arginase-1、GPC-3、CDX2 等免疫组化标记；明确组织学亚型（大胆管型 vs 小胆管型）并报告神经、脉管及切缘状态。"
+        }
+      ]
+    }
   },
   {
     "id": "case-011",
@@ -482,7 +1273,13 @@
         "step": 1,
         "prompt": "该组织学形态最符合哪种诊断？",
         "type": "multiple-choice",
-        "options": ["甲状腺乳头状癌（经典型）", "甲状腺滤泡性腺瘤", "甲状腺滤泡癌", "甲状腺髓样癌", "结节性甲状腺肿"],
+        "options": [
+          "甲状腺乳头状癌（经典型）",
+          "甲状腺滤泡性腺瘤",
+          "甲状腺滤泡癌",
+          "甲状腺髓样癌",
+          "结节性甲状腺肿"
+        ],
         "correctIndex": 0,
         "explanation": "分支乳头状结构伴特征性核改变（毛玻璃样核、核沟、核内假包涵体）和砂粒体是甲状腺乳头状癌经典型的诊断要点。核特征是诊断PTC最重要的依据。"
       },
@@ -490,15 +1287,30 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化/分子检测来评估？",
         "type": "marker-select",
-        "recommendedMarkers": ["CK19", "Galectin-3", "HBME-1", "TTF-1"],
-        "results": { "CK19": "弥漫强阳性", "Galectin-3": "弥漫阳性", "HBME-1": "弥漫阳性", "TTF-1": "弥漫阳性" },
+        "recommendedMarkers": [
+          "CK19",
+          "Galectin-3",
+          "HBME-1",
+          "TTF-1"
+        ],
+        "results": {
+          "CK19": "弥漫强阳性",
+          "Galectin-3": "弥漫阳性",
+          "HBME-1": "弥漫阳性",
+          "TTF-1": "弥漫阳性"
+        },
         "explanation": "CK19弥漫强阳性、Galectin-3阳性和HBME-1阳性是PTC的辅助诊断标记物。良性甲状腺结节CK19仅灶性弱阳性或阴性。TTF-1确认甲状腺来源。"
       },
       {
         "step": 3,
         "prompt": "甲状腺乳头状癌最常见的基因改变是什么？",
         "type": "multiple-choice",
-        "options": ["BRAF V600E突变", "RAS突变", "RET/PTC重排", "PAX8/PPARγ融合"],
+        "options": [
+          "BRAF V600E突变",
+          "RAS突变",
+          "RET/PTC重排",
+          "PAX8/PPARγ融合"
+        ],
         "correctIndex": 0,
         "explanation": "BRAF V600E突变见于约45-50%的PTC，是最常见的驱动基因改变。与经典型和高细胞型相关，可能提示较差预后。RAS突变更多见于滤泡亚型。RET/PTC重排见于约15%。"
       }
@@ -510,9 +1322,66 @@
       "CK19/Galectin-3/HBME-1三联组合辅助诊断",
       "BRAF V600E是最常见的驱动基因突变"
     ],
-    "relatedDiseaseIds": ["papillary-thyroid-carcinoma", "follicular-adenoma"],
-    "relatedMarkerIds": ["ck19", "ttf-1", "calcitonin"],
-    "expertCommentary": "经典型PTC形态学诊断通常不困难。困难在于滤泡亚型PTC与滤泡性肿瘤的鉴别，以及NIFTP（非浸润性滤泡型甲状腺乳头状肿瘤）的识别。"
+    "relatedDiseaseIds": [
+      "papillary-thyroid-carcinoma",
+      "follicular-adenoma"
+    ],
+    "relatedMarkerIds": [
+      "ck19",
+      "ttf-1",
+      "calcitonin"
+    ],
+    "expertCommentary": "经典型PTC形态学诊断通常不困难。困难在于滤泡亚型PTC与滤泡性肿瘤的鉴别，以及NIFTP（非浸润性滤泡型甲状腺乳头状肿瘤）的识别。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-011/gross.svg",
+          "caption": "大体：甲状腺右叶灰白色实性结节，直径约 1.5cm，边界不清，切面呈颗粒状",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-011/lp-he.svg",
+          "caption": "低倍 HE：肿瘤呈乳头状结构，乳头轴心纤维血管，伴有砂粒体",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-011/hp-he.svg",
+          "caption": "高倍 HE：瘤细胞核增大、拥挤重叠，核呈毛玻璃样，可见核沟及核内假包涵体",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-011/ihc-ck19.svg",
+          "caption": "IHC CK19：肿瘤细胞胞浆弥漫强阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-011/ihc-galectin3.svg",
+          "caption": "IHC Galectin-3：肿瘤细胞胞浆及胞核阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-011/ihc-tg.svg",
+          "caption": "IHC Tg（甲状腺球蛋白）：肿瘤细胞胞浆阳性，提示甲状腺滤泡上皮来源",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 甲状腺癌诊疗指南",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "甲状腺结节首选高分辨率超声评估，采用 C-TIRADS 分级系统；对 C-TIRADS 4 类及以上或直径 ≥1cm 的可疑结节推荐超声引导下细针穿刺活检（FNA），细胞学报告采用 Bethesda 系统分类。"
+        },
+        {
+          "title": "甲状腺细针穿刺细胞学诊断中国专家共识",
+          "org": "中华医学会病理学分会",
+          "year": 2020,
+          "relevantPoint": "Bethesda Ⅲ/Ⅳ 类（意义不明的非典型病变/滤泡性病变、滤泡性肿瘤）建议行 BRAF V600E、RAS、RET/PTC 等分子检测以辅助良恶性判断；Bethesda Ⅴ/Ⅵ 类（可疑恶性/恶性）推荐手术治疗。"
+        }
+      ]
+    }
   },
   {
     "id": "case-012",
@@ -531,7 +1400,12 @@
         "step": 1,
         "prompt": "区分滤泡性腺瘤和滤泡癌的关键依据是什么？",
         "type": "multiple-choice",
-        "options": ["包膜侵犯和/或血管侵犯", "肿瘤大小", "细胞异型性程度", "Ki-67增殖指数"],
+        "options": [
+          "包膜侵犯和/或血管侵犯",
+          "肿瘤大小",
+          "细胞异型性程度",
+          "Ki-67增殖指数"
+        ],
         "correctIndex": 0,
         "explanation": "滤泡性腺瘤与滤泡癌的区别在于是否有包膜侵犯（肿瘤穿透整个包膜厚度）和/或血管侵犯（包膜血管或包膜外血管内有肿瘤栓子）。细胞形态学不能可靠区分两者。"
       },
@@ -539,15 +1413,30 @@
         "step": 2,
         "prompt": "你会选择哪些辅助检查来评估包膜和血管侵犯？",
         "type": "marker-select",
-        "recommendedMarkers": ["CD34", "CD31", "CK", "TTF-1"],
-        "results": { "CD34": "内皮标记：确认2处为包膜内真性血管侵犯", "CD31": "内皮标记：与CD34一致", "CK": "肿瘤细胞弥漫阳性，确认血管内为肿瘤成分", "TTF-1": "弥漫阳性" },
+        "recommendedMarkers": [
+          "CD34",
+          "CD31",
+          "CK",
+          "TTF-1"
+        ],
+        "results": {
+          "CD34": "内皮标记：确认2处为包膜内真性血管侵犯",
+          "CD31": "内皮标记：与CD34一致",
+          "CK": "肿瘤细胞弥漫阳性，确认血管内为肿瘤成分",
+          "TTF-1": "弥漫阳性"
+        },
         "explanation": "CD34/CD31标记血管内皮，确认可疑灶为真性血管腔。CK标记肿瘤上皮，确认管腔内为肿瘤栓子而非人工假象。该例有2处血管侵犯，属于微浸润型滤泡癌。"
       },
       {
         "step": 3,
         "prompt": "该病例确认血管侵犯后，最终诊断为？",
         "type": "multiple-choice",
-        "options": ["甲状腺滤泡癌（微浸润型，血管侵犯<4处）", "甲状腺滤泡癌（广泛浸润型）", "甲状腺滤泡性腺瘤", "甲状腺乳头状癌滤泡亚型"],
+        "options": [
+          "甲状腺滤泡癌（微浸润型，血管侵犯<4处）",
+          "甲状腺滤泡癌（广泛浸润型）",
+          "甲状腺滤泡性腺瘤",
+          "甲状腺乳头状癌滤泡亚型"
+        ],
         "correctIndex": 0,
         "explanation": "包裹性滤泡癌有2处血管侵犯（<4处），分类为微浸润型滤泡癌。广泛浸润型需有广泛的包膜和/或血管侵犯（>=4处血管侵犯）。微浸润型预后好，广泛浸润型预后较差。"
       }
@@ -559,9 +1448,61 @@
       "微浸润型（血管侵犯<4处）预后好，广泛浸润型预后差",
       "细针穿刺不能区分滤泡性腺瘤和滤泡癌"
     ],
-    "relatedDiseaseIds": ["follicular-thyroid-carcinoma", "follicular-adenoma", "niftp"],
-    "relatedMarkerIds": ["ttf-1", "cd34"],
-    "expertCommentary": "滤泡性肿瘤的诊断是病理学中最具挑战性的领域之一。充分的包膜取材至关重要。需注意区分真性血管侵犯与术中操作造成的人工假象。"
+    "relatedDiseaseIds": [
+      "follicular-thyroid-carcinoma",
+      "follicular-adenoma",
+      "niftp"
+    ],
+    "relatedMarkerIds": [
+      "ttf-1",
+      "cd34"
+    ],
+    "expertCommentary": "滤泡性肿瘤的诊断是病理学中最具挑战性的领域之一。充分的包膜取材至关重要。需注意区分真性血管侵犯与术中操作造成的人工假象。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-012/gross.svg",
+          "caption": "大体：甲状腺叶内单发包裹性结节，直径约 2.5cm，切面灰白质韧，包膜完整",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-012/lp-he.svg",
+          "caption": "低倍 HE：肿瘤呈滤泡状结构，周围见完整纤维性包膜",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-012/hp-he.svg",
+          "caption": "高倍 HE：滤泡上皮细胞核增大、毛玻璃样核、核沟及核内假包涵体",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-012/ihc-ck19.svg",
+          "caption": "IHC CK19：肿瘤细胞胞浆弥漫强阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-012/ihc-galectin3.svg",
+          "caption": "IHC Galectin-3：肿瘤细胞胞浆/核阳性",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 甲状腺癌诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "对于包裹性甲状腺滤泡性病变，应在包膜及血管处充分取材（至少每 1cm 包膜取 1 块），评估有无包膜浸润或脉管侵犯，以鉴别滤泡性腺瘤、滤泡性癌与具有乳头状核特征的非浸润性滤泡性甲状腺肿瘤（NIFTP）；NIFTP 的诊断需排除包膜及血管侵犯，并以滤泡结构为主（乳头<1%）、无肿瘤性坏死、Ki-67<5%。"
+        },
+        {
+          "title": "甲状腺滤泡性肿瘤诊断与治疗中国专家共识（2022）",
+          "org": "中华医学会病理学分会",
+          "year": 2022,
+          "relevantPoint": "包裹性滤泡性肿瘤若仅具有乳头状癌核特征而无浸润证据，应诊断为 NIFTP，采用腺叶切除即可，不建议术后放射性碘治疗；若存在包膜全层穿透或血管侵犯，则诊断为浸润性包裹型滤泡亚型乳头状癌或微浸润性滤泡癌，需按分化型甲状腺癌处理并行危险分层。"
+        }
+      ]
+    }
   },
   {
     "id": "case-013",
@@ -580,7 +1521,13 @@
         "step": 1,
         "prompt": "根据组织学特征，最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["子宫内膜样腺癌（FIGO 1级）", "子宫内膜单纯增生", "子宫内膜不典型增生", "浆液性子宫内膜癌", "子宫内膜间质肉瘤"],
+        "options": [
+          "子宫内膜样腺癌（FIGO 1级）",
+          "子宫内膜单纯增生",
+          "子宫内膜不典型增生",
+          "浆液性子宫内膜癌",
+          "子宫内膜间质肉瘤"
+        ],
         "correctIndex": 0,
         "explanation": "融合的、回对背排列的腺体伴间质减少是子宫内膜样腺癌的特征。FIGO 1级（<5%实性成分）。单纯增生和不典型增生的腺体未达融合程度。浆液性癌核异型性更高。"
       },
@@ -588,8 +1535,24 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物评估该肿瘤？",
         "type": "marker-select",
-        "recommendedMarkers": ["ER", "PR", "P53", "MLH1", "MSH2", "MSH6", "PMS2"],
-        "results": { "ER": "弥漫强阳性", "PR": "弥漫强阳性", "P53": "野生型表达模式", "MLH1": "缺失", "MSH2": "保留", "MSH6": "保留", "PMS2": "缺失" },
+        "recommendedMarkers": [
+          "ER",
+          "PR",
+          "P53",
+          "MLH1",
+          "MSH2",
+          "MSH6",
+          "PMS2"
+        ],
+        "results": {
+          "ER": "弥漫强阳性",
+          "PR": "弥漫强阳性",
+          "P53": "野生型表达模式",
+          "MLH1": "缺失",
+          "MSH2": "保留",
+          "MSH6": "保留",
+          "PMS2": "缺失"
+        },
         "explanation": "ER/PR强阳性支持子宫内膜样腺癌（I型）。P53野生型排除浆液性癌（通常P53异常型）。MLH1/PMS2缺失提示微卫星不稳定，需进一步排除Lynch综合征或MLH1启动子甲基化。"
       }
     ],
@@ -600,9 +1563,66 @@
       "MMR蛋白检测是子宫内膜癌的常规项目",
       "MLH1/PMS2缺失需区分Lynch综合征和散发性（MLH1启动子甲基化）"
     ],
-    "relatedDiseaseIds": ["endometrial-adenocarcinoma", "endometrial-hyperplasia"],
-    "relatedMarkerIds": ["er", "pr", "ki-67"],
-    "expertCommentary": "子宫内膜样腺癌的诊断要点在于与不典型增生的鉴别。融合性腺体生长（间质消失）是癌的判断标准。MMR免疫组化是目前所有子宫内膜癌的推荐常规检测。"
+    "relatedDiseaseIds": [
+      "endometrial-adenocarcinoma",
+      "endometrial-hyperplasia"
+    ],
+    "relatedMarkerIds": [
+      "er",
+      "pr",
+      "ki-67"
+    ],
+    "expertCommentary": "子宫内膜样腺癌的诊断要点在于与不典型增生的鉴别。融合性腺体生长（间质消失）是癌的判断标准。MMR免疫组化是目前所有子宫内膜癌的推荐常规检测。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-013/gross.svg",
+          "caption": "大体：子宫内膜增厚，宫腔内见灰白色息肉样肿物，部分区域浸润浅肌层",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-013/lp-he.svg",
+          "caption": "低倍 HE：子宫内膜腺体密集拥挤，腺体背靠背排列，间质稀少",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-013/hp-he.svg",
+          "caption": "高倍 HE：腺上皮细胞复层化，核增大深染，可见核仁，符合子宫内膜样腺癌",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-013/ihc-er.svg",
+          "caption": "IHC ER：肿瘤细胞核弥漫强阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-013/ihc-pax8.svg",
+          "caption": "IHC PAX8：肿瘤细胞核阳性，支持苗勒管源性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-013/ihc-p53.svg",
+          "caption": "IHC p53：野生型表达模式（散在弱阳性）",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 子宫内膜癌诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "围绝经期及绝经后女性出现异常子宫出血应首先排除子宫内膜癌，推荐经阴道超声测量内膜厚度（绝经后 >5mm 需警惕），并行诊断性刮宫或宫腔镜下分段诊刮获取组织学诊断；病理确诊后应进行 MMR/MSI、POLE、p53、ER/PR 免疫组化及分子分型，以指导辅助治疗及免疫治疗决策。"
+        },
+        {
+          "title": "中国子宫内膜癌诊断与治疗指南（2022年版）",
+          "org": "中华医学会妇科肿瘤学分会",
+          "year": 2022,
+          "relevantPoint": "推荐采用 TCGA 分子分型（POLE 超突变型、MSI-H/dMMR、低拷贝数型、高拷贝数型/p53 异常型）整合病理诊断；早期低危患者以手术为主，高危及晚期患者需结合分子分型选择放化疗或免疫联合治疗。"
+        }
+      ]
+    }
   },
   {
     "id": "case-014",
@@ -621,7 +1641,13 @@
         "step": 1,
         "prompt": "最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["卵巢高级别浆液性癌", "卵巢子宫内膜样癌", "卵巢黏液性癌", "卵巢透明细胞癌", "卵巢颗粒细胞瘤"],
+        "options": [
+          "卵巢高级别浆液性癌",
+          "卵巢子宫内膜样癌",
+          "卵巢黏液性癌",
+          "卵巢透明细胞癌",
+          "卵巢颗粒细胞瘤"
+        ],
         "correctIndex": 0,
         "explanation": "双侧卵巢受累、CA-125显著升高、腹膜广泛转移、乳头状结构伴砂粒体和高级别核异型性，是高级别浆液性癌的典型表现。是最常见的卵巢恶性肿瘤。"
       },
@@ -629,15 +1655,34 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来确认诊断？",
         "type": "marker-select",
-        "recommendedMarkers": ["WT1", "PAX8", "P53", "P16", "ER", "Ki-67"],
-        "results": { "WT1": "弥漫核阳性", "PAX8": "弥漫核阳性", "P53": "异常型（弥漫强阳性，突变型）", "P16": "弥漫阳性（block staining）", "ER": "弥漫阳性", "Ki-67": "约70%" },
+        "recommendedMarkers": [
+          "WT1",
+          "PAX8",
+          "P53",
+          "P16",
+          "ER",
+          "Ki-67"
+        ],
+        "results": {
+          "WT1": "弥漫核阳性",
+          "PAX8": "弥漫核阳性",
+          "P53": "异常型（弥漫强阳性，突变型）",
+          "P16": "弥漫阳性（block staining）",
+          "ER": "弥漫阳性",
+          "Ki-67": "约70%"
+        },
         "explanation": "WT1和PAX8弥漫阳性确认苗勒管/卵巢来源。P53异常型（弥漫强阳性或完全缺失）是高级别浆液性癌的特征性改变，反映TP53突变。P16 block staining也是典型表现。"
       },
       {
         "step": 3,
         "prompt": "高级别浆液性癌患者应考虑哪种遗传学检测？",
         "type": "multiple-choice",
-        "options": ["BRCA1/BRCA2基因检测", "CDH1基因检测", "RET基因检测", "VHL基因检测"],
+        "options": [
+          "BRCA1/BRCA2基因检测",
+          "CDH1基因检测",
+          "RET基因检测",
+          "VHL基因检测"
+        ],
         "correctIndex": 0,
         "explanation": "约20%的高级别浆液性卵巢癌与BRCA1/2胚系突变相关。BRCA突变患者可使用PARP抑制剂（奥拉帕利、尼拉帕利）维持治疗，显著改善无进展生存期。所有高级别浆液性癌患者均应接受BRCA检测。"
       }
@@ -650,9 +1695,67 @@
       "所有患者应接受BRCA检测，指导PARP抑制剂治疗",
       "多数患者诊断时已为晚期（III-IV期）"
     ],
-    "relatedDiseaseIds": ["ovarian-serous-carcinoma"],
-    "relatedMarkerIds": ["wt1", "pax8", "er", "ki-67"],
-    "expertCommentary": "高级别浆液性癌的起源目前认为多来自输卵管上皮（STIC病变）。病理报告需注明P53免疫组化结果和建议进行BRCA遗传学检测。"
+    "relatedDiseaseIds": [
+      "ovarian-serous-carcinoma"
+    ],
+    "relatedMarkerIds": [
+      "wt1",
+      "pax8",
+      "er",
+      "ki-67"
+    ],
+    "expertCommentary": "高级别浆液性癌的起源目前认为多来自输卵管上皮（STIC病变）。病理报告需注明P53免疫组化结果和建议进行BRCA遗传学检测。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-014/gross.svg",
+          "caption": "大体：盆腔囊实性肿物，切面灰白灰黄，伴出血坏死区",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-014/lp-he.svg",
+          "caption": "低倍 HE：肿瘤呈乳头状及实性巢状排列，伴裂隙样腔隙",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-014/hp-he.svg",
+          "caption": "高倍 HE：肿瘤细胞异型明显，核分裂象易见，可见砂粒体",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-014/ihc-pax8.svg",
+          "caption": "IHC PAX8：肿瘤细胞核弥漫强阳性，支持 Müllerian 来源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-014/ihc-wt1.svg",
+          "caption": "IHC WT1：肿瘤细胞核阳性，提示高级别浆液性癌",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-014/ihc-p53.svg",
+          "caption": "IHC p53：弥漫强阳性（突变型表达模式）",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 卵巢恶性肿瘤诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "绝经后女性盆腔囊实性肿物应首先考虑卵巢上皮性肿瘤，术前推荐 CA125、HE4 联合 ROMA 评分评估恶性风险；一旦确诊上皮性卵巢癌，推荐全面分期手术（含全子宫 + 双附件 + 大网膜 + 盆腔及腹主动脉旁淋巴结清扫 + 腹膜多点活检），术后根据 FIGO 分期及病理亚型（高级别浆液性癌首选）行铂类联合紫杉醇辅助化疗，BRCA1/2 及 HRD 检测用于指导 PARP 抑制剂维持治疗。"
+        },
+        {
+          "title": "中华医学会病理学分会《卵巢上皮性肿瘤病理诊断共识》",
+          "org": "中华医学会病理学分会",
+          "year": 2022,
+          "relevantPoint": "卵巢囊实性肿物病理诊断需明确组织学亚型（高级别浆液性癌 HGSC、低级别浆液性癌、子宫内膜样癌、透明细胞癌、黏液性癌），推荐免疫组化套餐 PAX8 + WT1 + p53 + Napsin A + ER/PR 以鉴别；HGSC 典型表现为 p53 异常表达（弥漫强阳或完全缺失）与 WT1 阳性，并常规进行 BRCA1/2 基因检测以指导靶向治疗。",
+          "_low_confidence": true
+        }
+      ]
+    }
   },
   {
     "id": "case-015",
@@ -671,7 +1774,13 @@
         "step": 1,
         "prompt": "该淋巴结病变最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["弥漫性大B细胞淋巴瘤（DLBCL）", "滤泡性淋巴瘤", "经典型霍奇金淋巴瘤", "伯基特淋巴瘤", "反应性淋巴结增生"],
+        "options": [
+          "弥漫性大B细胞淋巴瘤（DLBCL）",
+          "滤泡性淋巴瘤",
+          "经典型霍奇金淋巴瘤",
+          "伯基特淋巴瘤",
+          "反应性淋巴结增生"
+        ],
         "correctIndex": 0,
         "explanation": "弥漫性大细胞浸润完全破坏淋巴结结构，细胞呈中心母/免疫母细胞形态，是DLBCL的典型表现。滤泡性淋巴瘤保留滤泡结构，霍奇金淋巴瘤有R-S细胞，伯基特有星空现象。"
       },
@@ -679,15 +1788,36 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来确诊和分型？",
         "type": "marker-select",
-        "recommendedMarkers": ["CD20", "CD3", "CD10", "BCL-6", "MUM1", "BCL-2", "Ki-67"],
-        "results": { "CD20": "弥漫强阳性", "CD3": "阴性（散在T细胞背景）", "CD10": "阴性", "BCL-6": "阳性(约40%)", "MUM1": "弥漫阳性", "BCL-2": "阳性(约60%)", "Ki-67": "约80%" },
+        "recommendedMarkers": [
+          "CD20",
+          "CD3",
+          "CD10",
+          "BCL-6",
+          "MUM1",
+          "BCL-2",
+          "Ki-67"
+        ],
+        "results": {
+          "CD20": "弥漫强阳性",
+          "CD3": "阴性（散在T细胞背景）",
+          "CD10": "阴性",
+          "BCL-6": "阳性(约40%)",
+          "MUM1": "弥漫阳性",
+          "BCL-2": "阳性(约60%)",
+          "Ki-67": "约80%"
+        },
         "explanation": "CD20弥漫阳性确认B细胞来源。根据Hans分类：CD10(-)/BCL-6(+)/MUM1(+)=非生发中心B细胞型（non-GCB/ABC型）。ABC型预后较GCB型差。Ki-67高增殖活性。"
       },
       {
         "step": 3,
         "prompt": "DLBCL Hans分型中，该例属于？",
         "type": "multiple-choice",
-        "options": ["非生发中心B细胞型（non-GCB/ABC型）", "生发中心B细胞型（GCB型）", "无法分型", "T细胞来源"],
+        "options": [
+          "非生发中心B细胞型（non-GCB/ABC型）",
+          "生发中心B细胞型（GCB型）",
+          "无法分型",
+          "T细胞来源"
+        ],
         "correctIndex": 0,
         "explanation": "Hans算法：CD10(-)→BCL-6(+)→MUM1(+)→non-GCB型。GCB型需满足CD10(+)或CD10(-)/BCL-6(+)/MUM1(-)。non-GCB型与活化B细胞型(ABC)大致对应，预后较差。"
       }
@@ -700,9 +1830,64 @@
       "R-CHOP方案是标准一线治疗",
       "需排除双打击/三打击淋巴瘤（MYC+BCL2/BCL6重排）"
     ],
-    "relatedDiseaseIds": ["dlbcl", "burkitt-lymphoma"],
-    "relatedMarkerIds": ["cd20", "cd3", "cd10", "bcl2", "bcl6", "ki-67"],
-    "expertCommentary": "DLBCL的病理诊断需要完整的免疫组化panel和FISH检测（MYC/BCL2/BCL6重排）。双打击淋巴瘤预后极差，需在报告中明确。"
+    "relatedDiseaseIds": [
+      "dlbcl",
+      "burkitt-lymphoma"
+    ],
+    "relatedMarkerIds": [
+      "cd20",
+      "cd3",
+      "cd10",
+      "bcl2",
+      "bcl6",
+      "ki-67"
+    ],
+    "expertCommentary": "DLBCL的病理诊断需要完整的免疫组化panel和FISH检测（MYC/BCL2/BCL6重排）。双打击淋巴瘤预后极差，需在报告中明确。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-015/gross.svg",
+          "caption": "大体：颈部淋巴结肿大，切面鱼肉样灰白色，质地均匀，直径 3.5cm",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-015/lp-he.svg",
+          "caption": "低倍 HE：淋巴结结构破坏，弥漫性大细胞浸润取代正常滤泡结构",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-015/hp-he.svg",
+          "caption": "高倍 HE：瘤细胞体积大，核空泡状，核仁明显，胞浆中等量嗜碱性，核分裂象易见",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-015/ihc-cd20.svg",
+          "caption": "IHC CD20：瘤细胞膜弥漫强阳性，支持 B 细胞来源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-015/ihc-ki67.svg",
+          "caption": "IHC Ki-67：核阳性指数约 80%，提示高增殖活性",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 恶性淋巴瘤诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "浅表淋巴结持续肿大（≥2cm、质韧、无痛）且抗感染治疗无效者，推荐首选完整切除活检而非细针穿刺，病理需完成 CD20、CD3、CD5、CD10、BCL2、BCL6、MUM1、Ki-67、MYC 等一线免疫组化及必要时 FISH 检测，以明确淋巴瘤分型。"
+        },
+        {
+          "title": "中国抗癌协会淋巴瘤诊治指南（CACA）2022",
+          "org": "CACA",
+          "year": 2022,
+          "relevantPoint": "老年（≥60 岁）弥漫大 B 细胞淋巴瘤患者需按 IPI/NCCN-IPI 评分分层，并在治疗前常规完善心脏功能（LVEF）、HBV 血清学及乙肝 DNA 检测，HBsAg 或 HBcAb 阳性者需预防性抗病毒治疗以降低利妥昔单抗相关 HBV 再激活风险。"
+        }
+      ]
+    }
   },
   {
     "id": "case-016",
@@ -721,7 +1906,13 @@
         "step": 1,
         "prompt": "该淋巴结的组织学特征最符合哪种诊断？",
         "type": "multiple-choice",
-        "options": ["滤泡性淋巴瘤", "反应性滤泡增生", "套细胞淋巴瘤", "边缘区淋巴瘤", "弥漫性大B细胞淋巴瘤"],
+        "options": [
+          "滤泡性淋巴瘤",
+          "反应性滤泡增生",
+          "套细胞淋巴瘤",
+          "边缘区淋巴瘤",
+          "弥漫性大B细胞淋巴瘤"
+        ],
         "correctIndex": 0,
         "explanation": "密集排列的、大小均匀的肿瘤性滤泡，极性消失，滤泡间区受压，以中心细胞为主，是滤泡性淋巴瘤的典型表现。反应性增生的滤泡大小不等且保留极性。"
       },
@@ -729,15 +1920,36 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来确诊？",
         "type": "marker-select",
-        "recommendedMarkers": ["CD20", "CD10", "BCL-2", "BCL-6", "CD3", "CD5", "Ki-67"],
-        "results": { "CD20": "弥漫阳性", "CD10": "滤泡内阳性", "BCL-2": "滤泡内强阳性", "BCL-6": "滤泡内阳性", "CD3": "滤泡间散在阳性", "CD5": "阴性", "Ki-67": "滤泡内低（<20%）" },
+        "recommendedMarkers": [
+          "CD20",
+          "CD10",
+          "BCL-2",
+          "BCL-6",
+          "CD3",
+          "CD5",
+          "Ki-67"
+        ],
+        "results": {
+          "CD20": "弥漫阳性",
+          "CD10": "滤泡内阳性",
+          "BCL-2": "滤泡内强阳性",
+          "BCL-6": "滤泡内阳性",
+          "CD3": "滤泡间散在阳性",
+          "CD5": "阴性",
+          "Ki-67": "滤泡内低（<20%）"
+        },
         "explanation": "BCL-2在肿瘤性滤泡中阳性是关键诊断依据（正常生发中心BCL-2阴性）。CD10/BCL-6阳性确认生发中心表型。CD5阴性排除套细胞淋巴瘤。Ki-67低符合低级别滤泡性淋巴瘤。"
       },
       {
         "step": 3,
         "prompt": "滤泡性淋巴瘤最常见的分子遗传学改变是什么？",
         "type": "multiple-choice",
-        "options": ["t(14;18)(q32;q21) BCL2-IGH融合", "t(11;14)(q13;q32) CCND1-IGH融合", "t(8;14)(q24;q32) MYC-IGH融合", "t(11;18)(q21;q21) API2-MALT1融合"],
+        "options": [
+          "t(14;18)(q32;q21) BCL2-IGH融合",
+          "t(11;14)(q13;q32) CCND1-IGH融合",
+          "t(8;14)(q24;q32) MYC-IGH融合",
+          "t(11;18)(q21;q21) API2-MALT1融合"
+        ],
         "correctIndex": 0,
         "explanation": "t(14;18)导致BCL-2基因与IGH融合是滤泡性淋巴瘤的标志性改变（约85%），使BCL-2蛋白过表达，抑制细胞凋亡。t(11;14)见于套细胞淋巴瘤，t(8;14)见于伯基特淋巴瘤。"
       }
@@ -750,9 +1962,68 @@
       "通常为惰性病程，可观察等待（watch and wait）",
       "需警惕向DLBCL转化（约每年2-3%风险）"
     ],
-    "relatedDiseaseIds": ["follicular-lymphoma", "dlbcl"],
-    "relatedMarkerIds": ["cd20", "cd10", "bcl2", "bcl6", "ki-67"],
-    "expertCommentary": "滤泡性淋巴瘤与反应性滤泡增生的鉴别是常见的诊断挑战。BCL-2免疫组化和t(14;18) FISH检测是可靠的鉴别手段。分级依据每HPF中心母细胞数量。"
+    "relatedDiseaseIds": [
+      "follicular-lymphoma",
+      "dlbcl"
+    ],
+    "relatedMarkerIds": [
+      "cd20",
+      "cd10",
+      "bcl2",
+      "bcl6",
+      "ki-67"
+    ],
+    "expertCommentary": "滤泡性淋巴瘤与反应性滤泡增生的鉴别是常见的诊断挑战。BCL-2免疫组化和t(14;18) FISH检测是可靠的鉴别手段。分级依据每HPF中心母细胞数量。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-016/gross.svg",
+          "caption": "大体：腹股沟淋巴结肿大，切面灰白鱼肉样，质中，包膜完整，最大径 2.8cm",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-016/lp-he.svg",
+          "caption": "低倍 HE：淋巴结结构破坏，弥漫性单一形态大细胞浸润，正常淋巴滤泡消失",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-016/hp-he.svg",
+          "caption": "高倍 HE：瘤细胞体积大，胞质中等量，核圆形或不规则，核仁明显，核分裂象易见",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-016/ihc-cd20.svg",
+          "caption": "IHC CD20：瘤细胞膜弥漫强阳性，支持 B 细胞来源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-016/ihc-cd3.svg",
+          "caption": "IHC CD3：瘤细胞阴性，仅背景反应性 T 细胞阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-016/ihc-ki67.svg",
+          "caption": "IHC Ki-67：核增殖指数约 80%，提示高增殖活性",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 恶性淋巴瘤诊疗指南 2024",
+          "org": "CSCO",
+          "year": 2024,
+          "relevantPoint": "腹股沟、颈部、腋窝等浅表淋巴结无痛性进行性肿大应首选完整淋巴结切除活检，送检标本需同时行 HE 形态学、免疫组化（CD20、CD3、CD10、BCL2、BCL6、MUM1、Ki-67 等基础套餐）及必要的分子检测（IGH/TCR 克隆性重排、MYC/BCL2/BCL6 FISH），避免仅凭粗针穿刺或细针抽吸细胞学确立淋巴瘤亚型诊断。"
+        },
+        {
+          "title": "淋巴瘤病理诊断规范（2017 版）",
+          "org": "中华医学会病理学分会",
+          "year": 2017,
+          "relevantPoint": "成人浅表淋巴结肿大活检病理报告须明确区分反应性增生、霍奇金淋巴瘤与非霍奇金淋巴瘤，并依据 WHO 造血与淋巴组织肿瘤分类进行亚型划分；对弥漫大 B 细胞淋巴瘤须加做 Hans 分型（CD10/BCL6/MUM1）及 MYC、BCL2 双表达评估。"
+        }
+      ]
+    }
   },
   {
     "id": "case-017",
@@ -771,7 +2042,13 @@
         "step": 1,
         "prompt": "根据形态学特征，最可能的诊断是什么？",
         "type": "multiple-choice",
-        "options": ["透明细胞性肾细胞癌", "乳头状肾细胞癌", "嫌色细胞性肾细胞癌", "嗜酸细胞腺瘤", "血管平滑肌脂肪瘤"],
+        "options": [
+          "透明细胞性肾细胞癌",
+          "乳头状肾细胞癌",
+          "嫌色细胞性肾细胞癌",
+          "嗜酸细胞腺瘤",
+          "血管平滑肌脂肪瘤"
+        ],
         "correctIndex": 0,
         "explanation": "金黄色切面、透明细胞形态、腺泡状排列伴鸡笼样丰富血管网是透明细胞性肾细胞癌的经典表现。乳头状RCC呈乳头结构，嫌色细胞RCC细胞膜明显。"
       },
@@ -779,8 +2056,20 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来确认？",
         "type": "marker-select",
-        "recommendedMarkers": ["CA-IX", "PAX8", "CD10", "Vimentin", "CK7"],
-        "results": { "CA-IX": "弥漫强膜阳性（box-like）", "PAX8": "弥漫核阳性", "CD10": "弥漫阳性", "Vimentin": "弥漫阳性", "CK7": "阴性" },
+        "recommendedMarkers": [
+          "CA-IX",
+          "PAX8",
+          "CD10",
+          "Vimentin",
+          "CK7"
+        ],
+        "results": {
+          "CA-IX": "弥漫强膜阳性（box-like）",
+          "PAX8": "弥漫核阳性",
+          "CD10": "弥漫阳性",
+          "Vimentin": "弥漫阳性",
+          "CK7": "阴性"
+        },
         "explanation": "CA-IX弥漫强膜阳性（box-like pattern）是透明细胞RCC的高度特异性标记物，反映VHL基因失活导致的HIF通路激活。PAX8确认肾脏来源。CK7阴性排除嫌色细胞RCC和乳头状RCC。"
       }
     ],
@@ -792,9 +2081,69 @@
       "WHO/ISUP核分级取代了Fuhrman分级系统",
       "术后可能需要靶向治疗（抗VEGF/mTOR）或免疫治疗"
     ],
-    "relatedDiseaseIds": ["clear-cell-rcc", "papillary-rcc", "chromophobe-rcc"],
-    "relatedMarkerIds": ["ca9", "pax8", "cd10", "vimentin", "ck7"],
-    "expertCommentary": "透明细胞RCC的诊断通常较为直接。需注意与透明细胞型乳头状肾细胞癌和TFE3融合肾细胞癌的鉴别。CA-IX的box-like膜阳性模式具有诊断价值。"
+    "relatedDiseaseIds": [
+      "clear-cell-rcc",
+      "papillary-rcc",
+      "chromophobe-rcc"
+    ],
+    "relatedMarkerIds": [
+      "ca9",
+      "pax8",
+      "cd10",
+      "vimentin",
+      "ck7"
+    ],
+    "expertCommentary": "透明细胞RCC的诊断通常较为直接。需注意与透明细胞型乳头状肾细胞癌和TFE3融合肾细胞癌的鉴别。CA-IX的box-like膜阳性模式具有诊断价值。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-017/gross.svg",
+          "caption": "大体：肾脏金黄色肿物，直径约 5cm，边界清楚，可见出血灶",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-017/lp-he.svg",
+          "caption": "低倍 HE：肿瘤呈巢状/腺泡状结构，富含薄壁血管网",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-017/hp-he.svg",
+          "caption": "高倍 HE：瘤细胞胞质透明，核圆形居中，核仁可见（ISUP/WHO 2 级）",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-017/ihc-cd10.svg",
+          "caption": "IHC CD10：瘤细胞膜阳性，支持肾细胞起源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-017/ihc-pax8.svg",
+          "caption": "IHC PAX8：瘤细胞核强阳性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-017/ihc-ck7.svg",
+          "caption": "IHC CK7：瘤细胞阴性（透明细胞型肾细胞癌常见表型）",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 肾癌诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "肾透明细胞癌病理诊断需报告 WHO/ISUP 核分级、肿瘤坏死、肉瘤样/横纹肌样分化及微血管浸润；局限期（cT1-2N0M0）首选根治性或保留肾单位手术，术后按复发风险分层随访，中高危患者可考虑辅助治疗临床研究入组。"
+        },
+        {
+          "title": "中国抗癌协会肾癌诊治指南（CACA 指南·肾癌）2022",
+          "org": "CACA",
+          "year": 2022,
+          "relevantPoint": "对于直径 ≤4 cm 的 T1a 期肾肿物推荐优先行保留肾单位手术（部分肾切除）；病理报告须包含切缘状态、脂肪/肾窦/肾静脉侵犯及 pTNM 分期，疑难病例建议加做 CK7、CAIX、CD10、AMACR、TFE3 等免疫组化以鉴别肾细胞癌各亚型。"
+        }
+      ]
+    }
   },
   {
     "id": "case-018",
@@ -813,7 +2162,13 @@
         "step": 1,
         "prompt": "该色素性病变的组织学特征最支持哪种诊断？",
         "type": "multiple-choice",
-        "options": ["恶性黑色素瘤", "不典型痣（发育不良痣）", "普通型复合痣", "蓝痣", "Spitz痣"],
+        "options": [
+          "恶性黑色素瘤",
+          "不典型痣（发育不良痣）",
+          "普通型复合痣",
+          "蓝痣",
+          "Spitz痣"
+        ],
         "correctIndex": 0,
         "explanation": "不对称性、细胞异型性明显、Pagetoid扩散、真皮内核分裂象、无成熟现象等均支持恶性黑色素瘤。不典型痣虽有轻度异型但保持对称性和成熟。"
       },
@@ -821,15 +2176,32 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化标记物来评估？",
         "type": "marker-select",
-        "recommendedMarkers": ["S-100", "SOX10", "Melan-A", "HMB-45", "Ki-67"],
-        "results": { "S-100": "弥漫强阳性", "SOX10": "弥漫核阳性", "Melan-A": "弥漫阳性", "HMB-45": "阳性，真皮深部不减弱（无成熟）", "Ki-67": "约25%（真皮成分）" },
+        "recommendedMarkers": [
+          "S-100",
+          "SOX10",
+          "Melan-A",
+          "HMB-45",
+          "Ki-67"
+        ],
+        "results": {
+          "S-100": "弥漫强阳性",
+          "SOX10": "弥漫核阳性",
+          "Melan-A": "弥漫阳性",
+          "HMB-45": "阳性，真皮深部不减弱（无成熟）",
+          "Ki-67": "约25%（真皮成分）"
+        },
         "explanation": "S-100和SOX10是黑色素细胞最敏感的标记物。HMB-45在黑色素瘤中真皮深部不减弱（无成熟），而良性痣HMB-45在真皮深部减弱至阴性。Ki-67在黑色素瘤中高于良性痣。"
       },
       {
         "step": 3,
         "prompt": "Breslow厚度测量为1.8mm，无溃疡。该黑色素瘤的T分期是？",
         "type": "multiple-choice",
-        "options": ["pT2a", "pT1a", "pT3a", "pT4a"],
+        "options": [
+          "pT2a",
+          "pT1a",
+          "pT3a",
+          "pT4a"
+        ],
         "correctIndex": 0,
         "explanation": "根据AJCC第8版：Breslow厚度>1.0-2.0mm为T2；无溃疡为a。因此pT2a。T1<=1.0mm，T3>2.0-4.0mm，T4>4.0mm。Breslow厚度是最重要的预后因素。"
       }
@@ -842,9 +2214,69 @@
       "BRAF V600E突变检测指导靶向治疗（约50%阳性）",
       "前哨淋巴结活检适用于Breslow>=0.8mm的患者"
     ],
-    "relatedDiseaseIds": ["melanoma", "dysplastic-nevus"],
-    "relatedMarkerIds": ["s-100", "sox10", "melan-a", "hmb45", "ki-67"],
-    "expertCommentary": "黑色素瘤与不典型痣的鉴别是皮肤病理中最常见的疑难问题。需综合评估对称性、边界、成熟度、核分裂象等多项特征。BRAF/NRAS/KIT突变检测对于治疗指导至关重要。"
+    "relatedDiseaseIds": [
+      "melanoma",
+      "dysplastic-nevus"
+    ],
+    "relatedMarkerIds": [
+      "s-100",
+      "sox10",
+      "melan-a",
+      "hmb45",
+      "ki-67"
+    ],
+    "expertCommentary": "黑色素瘤与不典型痣的鉴别是皮肤病理中最常见的疑难问题。需综合评估对称性、边界、成熟度、核分裂象等多项特征。BRAF/NRAS/KIT突变检测对于治疗指导至关重要。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-018/gross.svg",
+          "caption": "大体：背部皮肤不规则色素性斑块，最大径 1.2cm，边界不规则，色泽不均（黑褐相间），局部隆起",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-018/lp-he.svg",
+          "caption": "低倍 HE：表皮内非典型黑色素细胞呈 Paget 样上行播散，真皮乳头层见非典型黑色素细胞巢状及单个浸润",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-018/hp-he.svg",
+          "caption": "高倍 HE：肿瘤细胞核大、深染、核仁明显，胞浆内可见粗大黑色素颗粒，可见病理性核分裂象",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-018/ihc-sox10.svg",
+          "caption": "IHC SOX10：肿瘤细胞核弥漫强阳性，证实黑色素细胞起源",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-018/ihc-hmb45.svg",
+          "caption": "IHC HMB45：真皮浸润灶肿瘤细胞胞浆弥漫阳性，无成熟现象",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-018/ihc-ki67.svg",
+          "caption": "IHC Ki-67：增殖指数约 25%，提示高增殖活性",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 黑色素瘤诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "原发皮肤黑色素瘤推荐完整切除后行病理评估，报告应包含Breslow厚度、溃疡、有丝分裂率、切缘状态；Breslow>0.8mm或伴溃疡者推荐行前哨淋巴结活检以完成准确分期。"
+        },
+        {
+          "title": "中国黑色素瘤规范化病理诊断专家共识",
+          "org": "中华医学会病理学分会",
+          "year": 2021,
+          "relevantPoint": "皮肤黑色素瘤病理诊断应结合HE形态与免疫组化（S-100、SOX10、HMB45、Melan-A），并建议对原发灶行BRAF V600突变检测以指导靶向治疗，必要时加测NRAS、KIT。",
+          "_low_confidence": true
+        }
+      ]
+    }
   },
   {
     "id": "case-019",
@@ -863,7 +2295,13 @@
         "step": 1,
         "prompt": "年轻患者关节旁深部软组织肿物，双相分化（梭形+上皮样），最可能的诊断是？",
         "type": "multiple-choice",
-        "options": ["滑膜肉瘤", "恶性周围神经鞘瘤", "横纹肌肉瘤", "纤维肉瘤", "上皮样肉瘤"],
+        "options": [
+          "滑膜肉瘤",
+          "恶性周围神经鞘瘤",
+          "横纹肌肉瘤",
+          "纤维肉瘤",
+          "上皮样肉瘤"
+        ],
         "correctIndex": 0,
         "explanation": "年轻患者关节旁深部肿物，双相分化（梭形细胞+上皮/腺样分化），高度提示滑膜肉瘤。尽管名字含滑膜，但实际并非起源于滑膜。双相型和单相型是两种主要亚型。"
       },
@@ -871,15 +2309,34 @@
         "step": 2,
         "prompt": "确诊滑膜肉瘤需要做哪些辅助检查？",
         "type": "marker-select",
-        "recommendedMarkers": ["TLE1", "CK", "EMA", "CD34", "S-100", "SS18-SSX FISH"],
-        "results": { "TLE1": "弥漫核强阳性", "CK": "上皮样区域阳性，梭形区灶性阳性", "EMA": "上皮样区域阳性", "CD34": "阴性", "S-100": "阴性", "SS18-SSX FISH": "SS18基因断裂信号阳性" },
+        "recommendedMarkers": [
+          "TLE1",
+          "CK",
+          "EMA",
+          "CD34",
+          "S-100",
+          "SS18-SSX FISH"
+        ],
+        "results": {
+          "TLE1": "弥漫核强阳性",
+          "CK": "上皮样区域阳性，梭形区灶性阳性",
+          "EMA": "上皮样区域阳性",
+          "CD34": "阴性",
+          "S-100": "阴性",
+          "SS18-SSX FISH": "SS18基因断裂信号阳性"
+        },
         "explanation": "TLE1是滑膜肉瘤最敏感的免疫组化标记物（但非完全特异）。CK/EMA在上皮成分阳性证实双相分化。SS18(SYT)基因重排（SS18-SSX融合）是滑膜肉瘤的特征性分子改变，确诊依据。"
       },
       {
         "step": 3,
         "prompt": "t(X;18)(p11;q11)导致的融合基因是什么？",
         "type": "multiple-choice",
-        "options": ["SS18-SSX融合", "EWS-FLI1融合", "PAX3-FOXO1融合", "COL1A1-PDGFB融合"],
+        "options": [
+          "SS18-SSX融合",
+          "EWS-FLI1融合",
+          "PAX3-FOXO1融合",
+          "COL1A1-PDGFB融合"
+        ],
         "correctIndex": 0,
         "explanation": "t(X;18)(p11;q11)导致SS18(SYT)基因与SSX1、SSX2或SSX4基因融合，是滑膜肉瘤的特征性分子改变，见于>95%病例。EWS-FLI1见于尤文肉瘤，PAX3-FOXO1见于腺泡状横纹肌肉瘤。"
       }
@@ -892,9 +2349,56 @@
       "t(X;18)(SS18-SSX)融合见于>95%病例",
       "治疗以手术+化疗为主（异环磷酰胺/多柔比星方案）"
     ],
-    "relatedDiseaseIds": ["synovial-sarcoma"],
-    "relatedMarkerIds": ["ck7", "s-100", "cd34", "desmin"],
-    "expertCommentary": "单相梭形型滑膜肉瘤的诊断更具挑战性，形态学上需与MPNST、纤维肉瘤等鉴别。分子检测（SS18重排）在疑难病例中是确诊的金标准。"
+    "relatedDiseaseIds": [
+      "synovial-sarcoma"
+    ],
+    "relatedMarkerIds": [
+      "ck7",
+      "s-100",
+      "cd34",
+      "desmin"
+    ],
+    "expertCommentary": "单相梭形型滑膜肉瘤的诊断更具挑战性，形态学上需与MPNST、纤维肉瘤等鉴别。分子检测（SS18重排）在疑难病例中是确诊的金标准。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-019/gross.svg",
+          "caption": "大体：股骨远端偏心性溶骨性病灶，切面呈红褐色，质软伴局灶出血，累及骨骺下骨，最大径约 6cm",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-019/lp-he.svg",
+          "caption": "低倍 HE：病变由均匀分布的单核基质细胞与大量破骨样多核巨细胞构成，未见成骨现象",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-019/hp-he.svg",
+          "caption": "高倍 HE：多核巨细胞核形与周围单核基质细胞核形相似，基质细胞核呈卵圆形，核仁不明显，未见病理性核分裂",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-019/ihc-h3f3a.svg",
+          "caption": "IHC H3F3A G34W：单核基质细胞核弥漫阳性，多核巨细胞阴性，支持骨巨细胞瘤诊断",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 恶性骨肿瘤诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "青少年及青年好发于长骨干骺端（股骨远端、胫骨近端即膝关节周围最常见）的成骨性肿瘤，确诊需结合影像（X 线 Codman 三角、日光放射状骨膜反应）与穿刺活检病理；经典型骨肉瘤治疗推荐 MAP 方案（大剂量甲氨蝶呤 + 多柔比星 + 顺铂）新辅助化疗后保肢手术，术后根据肿瘤坏死率（Huvos 分级）调整辅助化疗方案。"
+        },
+        {
+          "title": "CSCO 软组织肉瘤诊疗指南 2023",
+          "org": "CSCO",
+          "year": 2023,
+          "relevantPoint": "对膝关节周围软组织肿物，影像提示 >5 cm、深筋膜下或生长迅速者应行空芯针活检明确病理；术前须进行 FNCLCC 分级及分子检测（如 SS18-SSX 融合除外滑膜肉瘤），R0 切除为首要治疗目标，高级别或切缘不足者加行术后放疗。"
+        }
+      ]
+    }
   },
   {
     "id": "case-020",
@@ -913,7 +2417,13 @@
         "step": 1,
         "prompt": "该脑肿瘤的形态学特征最符合哪种诊断？",
         "type": "multiple-choice",
-        "options": ["胶质母细胞瘤（GBM）", "弥漫性星形细胞瘤（IDH突变型）", "少突胶质细胞瘤", "脑膜瘤", "脑转移癌"],
+        "options": [
+          "胶质母细胞瘤（GBM）",
+          "弥漫性星形细胞瘤（IDH突变型）",
+          "少突胶质细胞瘤",
+          "脑膜瘤",
+          "脑转移癌"
+        ],
         "correctIndex": 0,
         "explanation": "高度富于细胞、显著多形性、栅栏状坏死和微血管增生（肾小球样）是胶质母细胞瘤的经典组织学特征。栅栏状坏死和微血管增生是WHO 4级胶质瘤的诊断标准。"
       },
@@ -921,15 +2431,32 @@
         "step": 2,
         "prompt": "你会选择哪些免疫组化/分子标记物进行分型？",
         "type": "marker-select",
-        "recommendedMarkers": ["GFAP", "IDH1 R132H", "ATRX", "P53", "Ki-67"],
-        "results": { "GFAP": "弥漫阳性", "IDH1 R132H": "阴性", "ATRX": "保留表达", "P53": "散在阳性（野生型模式）", "Ki-67": "约40%" },
+        "recommendedMarkers": [
+          "GFAP",
+          "IDH1 R132H",
+          "ATRX",
+          "P53",
+          "Ki-67"
+        ],
+        "results": {
+          "GFAP": "弥漫阳性",
+          "IDH1 R132H": "阴性",
+          "ATRX": "保留表达",
+          "P53": "散在阳性（野生型模式）",
+          "Ki-67": "约40%"
+        },
         "explanation": "GFAP阳性确认胶质分化。IDH1 R132H阴性，在>55岁患者中高度支持IDH野生型GBM（占GBM的90%以上）。ATRX保留表达。IDH野生型GBM是最具侵袭性的胶质瘤。"
       },
       {
         "step": 3,
         "prompt": "根据WHO 2021 CNS肿瘤分类，该例的完整诊断名称是？",
         "type": "multiple-choice",
-        "options": ["胶质母细胞瘤，IDH野生型，WHO 4级", "星形细胞瘤，IDH突变型，WHO 4级", "少突胶质细胞瘤，IDH突变1p/19q共缺失，WHO 3级", "弥漫中线胶质瘤，H3 K27M突变型"],
+        "options": [
+          "胶质母细胞瘤，IDH野生型，WHO 4级",
+          "星形细胞瘤，IDH突变型，WHO 4级",
+          "少突胶质细胞瘤，IDH突变1p/19q共缺失，WHO 3级",
+          "弥漫中线胶质瘤，H3 K27M突变型"
+        ],
         "correctIndex": 0,
         "explanation": "WHO 2021分类中，胶质母细胞瘤仅指IDH野生型。IDH突变型高级别星形细胞瘤不再称为GBM，而称为星形细胞瘤IDH突变型4级。分子分型已成为CNS肿瘤分类的基础。"
       }
@@ -942,8 +2469,65 @@
       "MGMT启动子甲基化预测替莫唑胺疗效",
       "中位生存期约14-16个月（标准Stupp方案治疗后）"
     ],
-    "relatedDiseaseIds": ["glioblastoma-multiforme", "diffuse-astrocytoma-idh-mutant"],
-    "relatedMarkerIds": ["ki-67", "synaptophysin", "cd56"],
-    "expertCommentary": "GBM的诊断在2021 WHO分类后增加了分子要求。IDH状态是最关键的分子指标。对于年龄>55岁的典型形态GBM，IDH1 R132H免疫组化阴性即可确定IDH野生型。年轻患者需做IDH测序。"
+    "relatedDiseaseIds": [
+      "glioblastoma-multiforme",
+      "diffuse-astrocytoma-idh-mutant"
+    ],
+    "relatedMarkerIds": [
+      "ki-67",
+      "synaptophysin",
+      "cd56"
+    ],
+    "expertCommentary": "GBM的诊断在2021 WHO分类后增加了分子要求。IDH状态是最关键的分子指标。对于年龄>55岁的典型形态GBM，IDH1 R132H免疫组化阴性即可确定IDH野生型。年轻患者需做IDH测序。",
+    "_enhance_case_images": {
+      "images": [
+        {
+          "url": "/cases/case-020/gross.svg",
+          "caption": "大体：颞叶切面灰红灰黄相间肿物，边界不清，可见坏死及出血灶",
+          "type": "gross"
+        },
+        {
+          "url": "/cases/case-020/lp-he.svg",
+          "caption": "低倍 HE：弥漫浸润性胶质肿瘤，细胞密度显著增高伴地图状坏死",
+          "type": "LP"
+        },
+        {
+          "url": "/cases/case-020/hp-he.svg",
+          "caption": "高倍 HE：肿瘤细胞异型明显，核分裂活跃，可见假栅栏状坏死及微血管增生",
+          "type": "HP"
+        },
+        {
+          "url": "/cases/case-020/ihc-gfap.svg",
+          "caption": "IHC GFAP：肿瘤细胞胞浆弥漫阳性，提示星形细胞源性",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-020/ihc-idh1.svg",
+          "caption": "IHC IDH1 R132H：肿瘤细胞阴性，支持 IDH 野生型胶质母细胞瘤",
+          "type": "IHC"
+        },
+        {
+          "url": "/cases/case-020/ihc-ki67.svg",
+          "caption": "IHC Ki-67：核增殖指数热点区约 30%",
+          "type": "IHC"
+        }
+      ]
+    },
+    "_enhance_case_cn_reference": {
+      "cnReferences": [
+        {
+          "title": "CSCO 中枢神经系统恶性肿瘤诊疗指南",
+          "org": "CSCO",
+          "year": 2022,
+          "relevantPoint": "成人幕上弥漫性胶质瘤的分子病理诊断应常规检测 IDH1/2 突变、1p/19q 共缺失、ATRX、TERT 启动子突变、H3 K27/G34、MGMT 启动子甲基化及 EGFR 扩增等；IDH 野生型、具备 TERT 启动子突变或 EGFR 扩增或 +7/-10 者即便组织学为 WHO 2-3 级，也应诊断为胶质母细胞瘤 IDH 野生型（WHO 4 级）。"
+        },
+        {
+          "title": "脑胶质瘤诊疗指南（2022 版）",
+          "org": "国家卫生健康委员会",
+          "year": 2022,
+          "relevantPoint": "推荐对怀疑胶质瘤的颅内占位行最大安全范围切除，术后依据整合诊断（组织学+分子分型）进行分层治疗；GBM IDH 野生型标准方案为 Stupp 方案（术后同步放化疗 + 替莫唑胺 6 周期辅助化疗），MGMT 启动子甲基化者获益更显著。"
+        }
+      ]
+    }
   }
 ]

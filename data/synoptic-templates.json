@@ -9,96 +9,521 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "lumpectomy", "label": "局部切除 (Lumpectomy)" },
-            { "value": "mastectomy", "label": "全乳切除 (Mastectomy)" },
-            { "value": "mastectomy-axillary", "label": "全乳+腋窝清扫" }
-          ], "required": true },
-          { "id": "laterality", "label": "侧别", "labelEn": "Laterality", "type": "select", "options": [
-            { "value": "left", "label": "左侧" }, { "value": "right", "label": "右侧" }
-          ], "required": true },
-          { "id": "tumor-site", "label": "肿瘤部位", "labelEn": "Tumor Site", "type": "text", "required": true },
-          { "id": "tumor-size", "label": "肿瘤最大径 (cm)", "labelEn": "Greatest Dimension (cm)", "type": "number", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "lumpectomy",
+                "label": "局部切除 (Lumpectomy)"
+              },
+              {
+                "value": "mastectomy",
+                "label": "全乳切除 (Mastectomy)"
+              },
+              {
+                "value": "mastectomy-axillary",
+                "label": "全乳+腋窝清扫"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "laterality",
+            "label": "侧别",
+            "labelEn": "Laterality",
+            "type": "select",
+            "options": [
+              {
+                "value": "left",
+                "label": "左侧"
+              },
+              {
+                "value": "right",
+                "label": "右侧"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-site",
+            "label": "肿瘤部位",
+            "labelEn": "Tumor Site",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "tumor-size",
+            "label": "肿瘤最大径 (cm)",
+            "labelEn": "Greatest Dimension (cm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "histologic-type", "label": "组织学类型", "labelEn": "Histologic Type", "type": "select", "options": [
-            { "value": "idc-nst", "label": "浸润性导管癌 NST" },
-            { "value": "ilc", "label": "浸润性小叶癌" },
-            { "value": "mucinous", "label": "黏液癌" },
-            { "value": "tubular", "label": "管状癌" },
-            { "value": "medullary", "label": "髓样癌" },
-            { "value": "micropapillary", "label": "微乳头状癌" },
-            { "value": "metaplastic", "label": "化生性癌" },
-            { "value": "other", "label": "其他" }
-          ], "required": true },
-          { "id": "nottingham-tubule", "label": "腺管形成评分", "labelEn": "Tubule Formation", "type": "select", "options": [
-            { "value": "1", "label": "1分 (>75%)" }, { "value": "2", "label": "2分 (10-75%)" }, { "value": "3", "label": "3分 (<10%)" }
-          ], "required": true },
-          { "id": "nottingham-nuclear", "label": "核多形性评分", "labelEn": "Nuclear Pleomorphism", "type": "select", "options": [
-            { "value": "1", "label": "1分" }, { "value": "2", "label": "2分" }, { "value": "3", "label": "3分" }
-          ], "required": true },
-          { "id": "nottingham-mitosis", "label": "核分裂评分", "labelEn": "Mitotic Count", "type": "select", "options": [
-            { "value": "1", "label": "1分" }, { "value": "2", "label": "2分" }, { "value": "3", "label": "3分" }
-          ], "required": true },
-          { "id": "dcis-present", "label": "伴DCIS成分", "labelEn": "Associated DCIS", "type": "boolean", "required": false },
-          { "id": "lvi", "label": "脉管侵犯", "labelEn": "Lymphovascular Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }, { "value": "indeterminate", "label": "不确定" }
-          ], "required": true }
+          {
+            "id": "histologic-type",
+            "label": "组织学类型",
+            "labelEn": "Histologic Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "idc-nst",
+                "label": "浸润性导管癌 NST"
+              },
+              {
+                "value": "ilc",
+                "label": "浸润性小叶癌"
+              },
+              {
+                "value": "mucinous",
+                "label": "黏液癌"
+              },
+              {
+                "value": "tubular",
+                "label": "管状癌"
+              },
+              {
+                "value": "medullary",
+                "label": "髓样癌"
+              },
+              {
+                "value": "micropapillary",
+                "label": "微乳头状癌"
+              },
+              {
+                "value": "metaplastic",
+                "label": "化生性癌"
+              },
+              {
+                "value": "other",
+                "label": "其他"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "nottingham-tubule",
+            "label": "腺管形成评分",
+            "labelEn": "Tubule Formation",
+            "type": "select",
+            "options": [
+              {
+                "value": "1",
+                "label": "1分 (>75%)"
+              },
+              {
+                "value": "2",
+                "label": "2分 (10-75%)"
+              },
+              {
+                "value": "3",
+                "label": "3分 (<10%)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "nottingham-nuclear",
+            "label": "核多形性评分",
+            "labelEn": "Nuclear Pleomorphism",
+            "type": "select",
+            "options": [
+              {
+                "value": "1",
+                "label": "1分"
+              },
+              {
+                "value": "2",
+                "label": "2分"
+              },
+              {
+                "value": "3",
+                "label": "3分"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "nottingham-mitosis",
+            "label": "核分裂评分",
+            "labelEn": "Mitotic Count",
+            "type": "select",
+            "options": [
+              {
+                "value": "1",
+                "label": "1分"
+              },
+              {
+                "value": "2",
+                "label": "2分"
+              },
+              {
+                "value": "3",
+                "label": "3分"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "dcis-present",
+            "label": "伴DCIS成分",
+            "labelEn": "Associated DCIS",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "id": "lvi",
+            "label": "脉管侵犯",
+            "labelEn": "Lymphovascular Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              },
+              {
+                "value": "indeterminate",
+                "label": "不确定"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "margins",
         "title": "切缘",
         "fields": [
-          { "id": "margin-status", "label": "切缘状态", "labelEn": "Margin Status", "type": "select", "options": [
-            { "value": "negative", "label": "阴性 (>2mm)" }, { "value": "close", "label": "近切缘 (≤2mm)" }, { "value": "positive", "label": "阳性" }
-          ], "required": true },
-          { "id": "closest-margin", "label": "最近切缘距离 (mm)", "labelEn": "Closest Margin (mm)", "type": "number", "required": false },
-          { "id": "closest-margin-location", "label": "最近切缘方位", "labelEn": "Closest Margin Location", "type": "text", "required": false }
+          {
+            "id": "margin-status",
+            "label": "切缘状态",
+            "labelEn": "Margin Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "negative",
+                "label": "阴性 (>2mm)"
+              },
+              {
+                "value": "close",
+                "label": "近切缘 (≤2mm)"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "closest-margin",
+            "label": "最近切缘距离 (mm)",
+            "labelEn": "Closest Margin (mm)",
+            "type": "number",
+            "required": false
+          },
+          {
+            "id": "closest-margin-location",
+            "label": "最近切缘方位",
+            "labelEn": "Closest Margin Location",
+            "type": "text",
+            "required": false
+          }
         ]
       },
       {
         "id": "biomarkers",
         "title": "生物标志物",
         "fields": [
-          { "id": "er-status", "label": "ER状态", "labelEn": "ER Status", "type": "select", "options": [
-            { "value": "positive", "label": "阳性" }, { "value": "negative", "label": "阴性" }
-          ], "required": true },
-          { "id": "er-percent", "label": "ER阳性率 (%)", "labelEn": "ER Percentage", "type": "number", "required": false },
-          { "id": "pr-status", "label": "PR状态", "labelEn": "PR Status", "type": "select", "options": [
-            { "value": "positive", "label": "阳性" }, { "value": "negative", "label": "阴性" }
-          ], "required": true },
-          { "id": "her2-ihc", "label": "HER2 IHC", "labelEn": "HER2 IHC Score", "type": "select", "options": [
-            { "value": "0", "label": "0" }, { "value": "1+", "label": "1+" }, { "value": "2+", "label": "2+" }, { "value": "3+", "label": "3+" }
-          ], "required": true },
-          { "id": "her2-fish", "label": "HER2 FISH", "labelEn": "HER2 FISH", "type": "select", "options": [
-            { "value": "amplified", "label": "扩增" }, { "value": "not-amplified", "label": "未扩增" }, { "value": "na", "label": "未做" }
-          ], "required": false },
-          { "id": "ki67", "label": "Ki-67指数 (%)", "labelEn": "Ki-67 Index (%)", "type": "number", "required": true }
+          {
+            "id": "er-status",
+            "label": "ER状态",
+            "labelEn": "ER Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "positive",
+                "label": "阳性"
+              },
+              {
+                "value": "negative",
+                "label": "阴性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "er-percent",
+            "label": "ER阳性率 (%)",
+            "labelEn": "ER Percentage",
+            "type": "number",
+            "required": false
+          },
+          {
+            "id": "pr-status",
+            "label": "PR状态",
+            "labelEn": "PR Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "positive",
+                "label": "阳性"
+              },
+              {
+                "value": "negative",
+                "label": "阴性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "her2-ihc",
+            "label": "HER2 IHC",
+            "labelEn": "HER2 IHC Score",
+            "type": "select",
+            "options": [
+              {
+                "value": "0",
+                "label": "0"
+              },
+              {
+                "value": "1+",
+                "label": "1+"
+              },
+              {
+                "value": "2+",
+                "label": "2+"
+              },
+              {
+                "value": "3+",
+                "label": "3+"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "her2-fish",
+            "label": "HER2 FISH",
+            "labelEn": "HER2 FISH",
+            "type": "select",
+            "options": [
+              {
+                "value": "amplified",
+                "label": "扩增"
+              },
+              {
+                "value": "not-amplified",
+                "label": "未扩增"
+              },
+              {
+                "value": "na",
+                "label": "未做"
+              }
+            ],
+            "required": false
+          },
+          {
+            "id": "ki67",
+            "label": "Ki-67指数 (%)",
+            "labelEn": "Ki-67 Index (%)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期 (pTNM 8th)",
         "fields": [
-          { "id": "pt", "label": "pT", "labelEn": "pT", "type": "select", "options": [
-            { "value": "pTis", "label": "pTis" }, { "value": "pT1mi", "label": "pT1mi (≤1mm)" }, { "value": "pT1a", "label": "pT1a (>1-5mm)" },
-            { "value": "pT1b", "label": "pT1b (>5-10mm)" }, { "value": "pT1c", "label": "pT1c (>10-20mm)" },
-            { "value": "pT2", "label": "pT2 (>20-50mm)" }, { "value": "pT3", "label": "pT3 (>50mm)" }, { "value": "pT4", "label": "pT4" }
-          ], "required": true },
-          { "id": "pn", "label": "pN", "labelEn": "pN", "type": "select", "options": [
-            { "value": "pN0", "label": "pN0" }, { "value": "pN0i+", "label": "pN0(i+)" }, { "value": "pN1mi", "label": "pN1mi" },
-            { "value": "pN1a", "label": "pN1a (1-3个)" }, { "value": "pN2a", "label": "pN2a (4-9个)" }, { "value": "pN3a", "label": "pN3a (≥10个)" }
-          ], "required": true },
-          { "id": "lymph-nodes-examined", "label": "检出淋巴结总数", "labelEn": "Total Lymph Nodes Examined", "type": "number", "required": true },
-          { "id": "lymph-nodes-positive", "label": "阳性淋巴结数", "labelEn": "Positive Lymph Nodes", "type": "number", "required": true }
+          {
+            "id": "pt",
+            "label": "pT",
+            "labelEn": "pT",
+            "type": "select",
+            "options": [
+              {
+                "value": "pTis",
+                "label": "pTis"
+              },
+              {
+                "value": "pT1mi",
+                "label": "pT1mi (≤1mm)"
+              },
+              {
+                "value": "pT1a",
+                "label": "pT1a (>1-5mm)"
+              },
+              {
+                "value": "pT1b",
+                "label": "pT1b (>5-10mm)"
+              },
+              {
+                "value": "pT1c",
+                "label": "pT1c (>10-20mm)"
+              },
+              {
+                "value": "pT2",
+                "label": "pT2 (>20-50mm)"
+              },
+              {
+                "value": "pT3",
+                "label": "pT3 (>50mm)"
+              },
+              {
+                "value": "pT4",
+                "label": "pT4"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "pn",
+            "label": "pN",
+            "labelEn": "pN",
+            "type": "select",
+            "options": [
+              {
+                "value": "pN0",
+                "label": "pN0"
+              },
+              {
+                "value": "pN0i+",
+                "label": "pN0(i+)"
+              },
+              {
+                "value": "pN1mi",
+                "label": "pN1mi"
+              },
+              {
+                "value": "pN1a",
+                "label": "pN1a (1-3个)"
+              },
+              {
+                "value": "pN2a",
+                "label": "pN2a (4-9个)"
+              },
+              {
+                "value": "pN3a",
+                "label": "pN3a (≥10个)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "lymph-nodes-examined",
+            "label": "检出淋巴结总数",
+            "labelEn": "Total Lymph Nodes Examined",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "lymph-nodes-positive",
+            "label": "阳性淋巴结数",
+            "labelEn": "Positive Lymph Nodes",
+            "type": "number",
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Breast Invasive Carcinoma 4.8.0.1 (2024)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "标本类型（空芯针穿刺/肿块切除/保乳/全乳切除）",
+          "coveredBy": "specimen"
+        },
+        {
+          "cnField": "肿瘤部位与象限",
+          "coveredBy": "tumor-site"
+        },
+        {
+          "cnField": "肿瘤最大径（mm）及多灶性",
+          "coveredBy": "tumor-size"
+        },
+        {
+          "cnField": "组织学类型（WHO 5th）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "组织学分级（Nottingham / 改良 SBR）",
+          "coveredBy": "histologic-grade"
+        },
+        {
+          "cnField": "导管原位癌（DCIS）范围与核级",
+          "coveredBy": "dcis"
+        },
+        {
+          "cnField": "脉管侵犯（LVI）",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "神经侵犯",
+          "coveredBy": null,
+          "_low_confidence": true,
+          "_reason": "CAP 乳腺浸润癌 protocol 未单独列神经侵犯字段"
+        },
+        {
+          "cnField": "切缘状态与最近切缘距离（mm）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "淋巴结受累数/清扫总数、最大转移灶直径、结外侵犯",
+          "coveredBy": "lymph-nodes"
+        },
+        {
+          "cnField": "新辅助治疗后反应（RCB / MP 分级）",
+          "coveredBy": "treatment-effect"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 8th）",
+          "coveredBy": "ptnm"
+        },
+        {
+          "cnField": "ER/PR 定量（阳性率+强度，Allred/H-score）",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "HER2 检测（IHC 0/1+/2+/3+，ISH 比值与拷贝数）",
+          "coveredBy": "her2"
+        },
+        {
+          "cnField": "Ki-67 增殖指数（%）",
+          "coveredBy": "ki67"
+        },
+        {
+          "cnField": "PD-L1 检测（适用三阴性）",
+          "coveredBy": "pd-l1"
+        },
+        {
+          "cnField": "BRCA1/2 胚系/体系检测（适用时）",
+          "coveredBy": null,
+          "_low_confidence": true,
+          "_reason": "CAP 主模板未强制，列于附加分子检测"
+        },
+        {
+          "cnField": "中国病理医师双签名（报告医师+审核医师）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "标本接收/取材/报告日期（三时间戳）",
+          "coveredBy": null
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP Breast Invasive protocol 版本号需以 CAP 官网最新发布为准，4.8.0.1 为近期高置信版本但未现场核验"
+    }
   },
   {
     "id": "breast-dcis",
@@ -110,48 +535,230 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "excision", "label": "切除活检" }, { "value": "mastectomy", "label": "全乳切除" }
-          ], "required": true },
-          { "id": "dcis-size", "label": "DCIS范围 (cm)", "labelEn": "DCIS Extent (cm)", "type": "number", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "excision",
+                "label": "切除活检"
+              },
+              {
+                "value": "mastectomy",
+                "label": "全乳切除"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "dcis-size",
+            "label": "DCIS范围 (cm)",
+            "labelEn": "DCIS Extent (cm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "nuclear-grade", "label": "核级别", "labelEn": "Nuclear Grade", "type": "select", "options": [
-            { "value": "low", "label": "低级别" }, { "value": "intermediate", "label": "中级别" }, { "value": "high", "label": "高级别" }
-          ], "required": true },
-          { "id": "architecture", "label": "结构类型", "labelEn": "Architectural Pattern", "type": "multiselect", "options": [
-            { "value": "comedo", "label": "粉刺型" }, { "value": "cribriform", "label": "筛孔型" },
-            { "value": "micropapillary", "label": "微乳头型" }, { "value": "papillary", "label": "乳头型" }, { "value": "solid", "label": "实性" }
-          ], "required": true },
-          { "id": "necrosis", "label": "坏死", "labelEn": "Necrosis", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true }
+          {
+            "id": "nuclear-grade",
+            "label": "核级别",
+            "labelEn": "Nuclear Grade",
+            "type": "select",
+            "options": [
+              {
+                "value": "low",
+                "label": "低级别"
+              },
+              {
+                "value": "intermediate",
+                "label": "中级别"
+              },
+              {
+                "value": "high",
+                "label": "高级别"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "architecture",
+            "label": "结构类型",
+            "labelEn": "Architectural Pattern",
+            "type": "multiselect",
+            "options": [
+              {
+                "value": "comedo",
+                "label": "粉刺型"
+              },
+              {
+                "value": "cribriform",
+                "label": "筛孔型"
+              },
+              {
+                "value": "micropapillary",
+                "label": "微乳头型"
+              },
+              {
+                "value": "papillary",
+                "label": "乳头型"
+              },
+              {
+                "value": "solid",
+                "label": "实性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "necrosis",
+            "label": "坏死",
+            "labelEn": "Necrosis",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "margins",
         "title": "切缘",
         "fields": [
-          { "id": "margin-status", "label": "切缘状态", "labelEn": "Margin Status", "type": "select", "options": [
-            { "value": "negative", "label": "阴性 (≥2mm)" }, { "value": "close", "label": "近切缘 (<2mm)" }, { "value": "positive", "label": "阳性" }
-          ], "required": true },
-          { "id": "closest-margin-mm", "label": "最近切缘 (mm)", "labelEn": "Closest Margin (mm)", "type": "number", "required": false }
+          {
+            "id": "margin-status",
+            "label": "切缘状态",
+            "labelEn": "Margin Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "negative",
+                "label": "阴性 (≥2mm)"
+              },
+              {
+                "value": "close",
+                "label": "近切缘 (<2mm)"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "closest-margin-mm",
+            "label": "最近切缘 (mm)",
+            "labelEn": "Closest Margin (mm)",
+            "type": "number",
+            "required": false
+          }
         ]
       },
       {
         "id": "biomarkers",
         "title": "生物标志物",
         "fields": [
-          { "id": "er-status", "label": "ER状态", "labelEn": "ER Status", "type": "select", "options": [
-            { "value": "positive", "label": "阳性" }, { "value": "negative", "label": "阴性" }
-          ], "required": true }
+          {
+            "id": "er-status",
+            "label": "ER状态",
+            "labelEn": "ER Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "positive",
+                "label": "阳性"
+              },
+              {
+                "value": "negative",
+                "label": "阴性"
+              }
+            ],
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Breast DCIS 4.3.0.0 (2023)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "标本类型及部位",
+          "coveredBy": "specimen"
+        },
+        {
+          "cnField": "肿瘤大小/病变范围（mm）",
+          "coveredBy": "tumor-size"
+        },
+        {
+          "cnField": "组织学类型（导管原位癌）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "核级别（低/中/高级别）",
+          "coveredBy": "nuclear-grade"
+        },
+        {
+          "cnField": "坏死（有无/粉刺型）",
+          "coveredBy": "necrosis"
+        },
+        {
+          "cnField": "结构类型（粉刺、筛状、实性、乳头状、微乳头状）",
+          "coveredBy": "architectural-patterns"
+        },
+        {
+          "cnField": "微钙化",
+          "coveredBy": "calcifications"
+        },
+        {
+          "cnField": "切缘状态及最近切缘距离（mm）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "是否存在微浸润（≤1mm）",
+          "coveredBy": "microinvasion"
+        },
+        {
+          "cnField": "ER/PR 状态（阳性百分比及强度）",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "HER2 检测（DCIS 非强制）",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "前哨淋巴结状态（若送检）",
+          "coveredBy": "lymph-nodes"
+        },
+        {
+          "cnField": "pTis (DCIS) 分期",
+          "coveredBy": "pTNM"
+        },
+        {
+          "cnField": "中国病理医师双签及报告日期",
+          "coveredBy": null
+        },
+        {
+          "cnField": "送检医师/临床信息与既往活检对照",
+          "coveredBy": null
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP Breast DCIS protocol 具体版本号（4.3.0.0）及发布年份为近似回忆，国内《乳腺癌病理诊断报告规范》对 DCIS 的具体字段列表以中华医学会病理学分会最新版为准，部分 coveredBy 字段名依赖于 synoptic-templates.json 中 breast-dcis 模板的实际字段 ID，需人工核对。"
+    }
   },
   {
     "id": "lung",
@@ -163,66 +770,374 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "wedge", "label": "楔形切除" }, { "value": "segmentectomy", "label": "肺段切除" },
-            { "value": "lobectomy", "label": "肺叶切除" }, { "value": "pneumonectomy", "label": "全肺切除" }, { "value": "biopsy", "label": "活检" }
-          ], "required": true },
-          { "id": "tumor-site", "label": "肿瘤部位", "labelEn": "Tumor Site", "type": "text", "required": true },
-          { "id": "tumor-size", "label": "肿瘤最大径 (cm)", "labelEn": "Greatest Dimension (cm)", "type": "number", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "wedge",
+                "label": "楔形切除"
+              },
+              {
+                "value": "segmentectomy",
+                "label": "肺段切除"
+              },
+              {
+                "value": "lobectomy",
+                "label": "肺叶切除"
+              },
+              {
+                "value": "pneumonectomy",
+                "label": "全肺切除"
+              },
+              {
+                "value": "biopsy",
+                "label": "活检"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-site",
+            "label": "肿瘤部位",
+            "labelEn": "Tumor Site",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "tumor-size",
+            "label": "肿瘤最大径 (cm)",
+            "labelEn": "Greatest Dimension (cm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "histologic-type", "label": "组织学类型", "labelEn": "Histologic Type", "type": "select", "options": [
-            { "value": "adenocarcinoma", "label": "腺癌" }, { "value": "squamous", "label": "鳞状细胞癌" },
-            { "value": "large-cell", "label": "大细胞癌" }, { "value": "sclc", "label": "小细胞癌" },
-            { "value": "adenosquamous", "label": "腺鳞癌" }, { "value": "sarcomatoid", "label": "肉瘤样癌" }
-          ], "required": true },
-          { "id": "adeno-pattern", "label": "腺癌主要亚型", "labelEn": "Predominant Pattern (Adenocarcinoma)", "type": "select", "options": [
-            { "value": "lepidic", "label": "贴壁型" }, { "value": "acinar", "label": "腺泡型" }, { "value": "papillary", "label": "乳头型" },
-            { "value": "micropapillary", "label": "微乳头型" }, { "value": "solid", "label": "实性型" }
-          ], "required": false },
-          { "id": "pleural-invasion", "label": "胸膜侵犯", "labelEn": "Visceral Pleural Invasion", "type": "select", "options": [
-            { "value": "pl0", "label": "PL0 (无)" }, { "value": "pl1", "label": "PL1 (弹力层)" }, { "value": "pl2", "label": "PL2 (胸膜表面)" }, { "value": "pl3", "label": "PL3 (壁层)" }
-          ], "required": true },
-          { "id": "stas", "label": "气腔播散 (STAS)", "labelEn": "Spread Through Air Spaces", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }
-          ], "required": true },
-          { "id": "lvi", "label": "脉管侵犯", "labelEn": "LVI", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }
-          ], "required": true }
+          {
+            "id": "histologic-type",
+            "label": "组织学类型",
+            "labelEn": "Histologic Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "adenocarcinoma",
+                "label": "腺癌"
+              },
+              {
+                "value": "squamous",
+                "label": "鳞状细胞癌"
+              },
+              {
+                "value": "large-cell",
+                "label": "大细胞癌"
+              },
+              {
+                "value": "sclc",
+                "label": "小细胞癌"
+              },
+              {
+                "value": "adenosquamous",
+                "label": "腺鳞癌"
+              },
+              {
+                "value": "sarcomatoid",
+                "label": "肉瘤样癌"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "adeno-pattern",
+            "label": "腺癌主要亚型",
+            "labelEn": "Predominant Pattern (Adenocarcinoma)",
+            "type": "select",
+            "options": [
+              {
+                "value": "lepidic",
+                "label": "贴壁型"
+              },
+              {
+                "value": "acinar",
+                "label": "腺泡型"
+              },
+              {
+                "value": "papillary",
+                "label": "乳头型"
+              },
+              {
+                "value": "micropapillary",
+                "label": "微乳头型"
+              },
+              {
+                "value": "solid",
+                "label": "实性型"
+              }
+            ],
+            "required": false
+          },
+          {
+            "id": "pleural-invasion",
+            "label": "胸膜侵犯",
+            "labelEn": "Visceral Pleural Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "pl0",
+                "label": "PL0 (无)"
+              },
+              {
+                "value": "pl1",
+                "label": "PL1 (弹力层)"
+              },
+              {
+                "value": "pl2",
+                "label": "PL2 (胸膜表面)"
+              },
+              {
+                "value": "pl3",
+                "label": "PL3 (壁层)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "stas",
+            "label": "气腔播散 (STAS)",
+            "labelEn": "Spread Through Air Spaces",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "lvi",
+            "label": "脉管侵犯",
+            "labelEn": "LVI",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "margins",
         "title": "切缘",
         "fields": [
-          { "id": "bronchial-margin", "label": "支气管切缘", "labelEn": "Bronchial Margin", "type": "select", "options": [
-            { "value": "negative", "label": "阴性" }, { "value": "positive", "label": "阳性" }
-          ], "required": true },
-          { "id": "parenchymal-margin", "label": "肺实质切缘 (mm)", "labelEn": "Parenchymal Margin (mm)", "type": "number", "required": false }
+          {
+            "id": "bronchial-margin",
+            "label": "支气管切缘",
+            "labelEn": "Bronchial Margin",
+            "type": "select",
+            "options": [
+              {
+                "value": "negative",
+                "label": "阴性"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "parenchymal-margin",
+            "label": "肺实质切缘 (mm)",
+            "labelEn": "Parenchymal Margin (mm)",
+            "type": "number",
+            "required": false
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期 (pTNM 8th)",
         "fields": [
-          { "id": "pt", "label": "pT", "labelEn": "pT", "type": "select", "options": [
-            { "value": "pTis", "label": "pTis (AIS)" }, { "value": "pT1mi", "label": "pT1mi (MIA)" },
-            { "value": "pT1a", "label": "pT1a (≤1cm)" }, { "value": "pT1b", "label": "pT1b (>1-2cm)" }, { "value": "pT1c", "label": "pT1c (>2-3cm)" },
-            { "value": "pT2a", "label": "pT2a (>3-4cm)" }, { "value": "pT2b", "label": "pT2b (>4-5cm)" },
-            { "value": "pT3", "label": "pT3 (>5-7cm)" }, { "value": "pT4", "label": "pT4 (>7cm或侵犯)" }
-          ], "required": true },
-          { "id": "pn", "label": "pN", "labelEn": "pN", "type": "select", "options": [
-            { "value": "pN0", "label": "pN0" }, { "value": "pN1", "label": "pN1" }, { "value": "pN2", "label": "pN2" }, { "value": "pN3", "label": "pN3" }
-          ], "required": true },
-          { "id": "nodes-examined", "label": "淋巴结总数", "labelEn": "Nodes Examined", "type": "number", "required": true },
-          { "id": "nodes-positive", "label": "阳性淋巴结数", "labelEn": "Positive Nodes", "type": "number", "required": true }
+          {
+            "id": "pt",
+            "label": "pT",
+            "labelEn": "pT",
+            "type": "select",
+            "options": [
+              {
+                "value": "pTis",
+                "label": "pTis (AIS)"
+              },
+              {
+                "value": "pT1mi",
+                "label": "pT1mi (MIA)"
+              },
+              {
+                "value": "pT1a",
+                "label": "pT1a (≤1cm)"
+              },
+              {
+                "value": "pT1b",
+                "label": "pT1b (>1-2cm)"
+              },
+              {
+                "value": "pT1c",
+                "label": "pT1c (>2-3cm)"
+              },
+              {
+                "value": "pT2a",
+                "label": "pT2a (>3-4cm)"
+              },
+              {
+                "value": "pT2b",
+                "label": "pT2b (>4-5cm)"
+              },
+              {
+                "value": "pT3",
+                "label": "pT3 (>5-7cm)"
+              },
+              {
+                "value": "pT4",
+                "label": "pT4 (>7cm或侵犯)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "pn",
+            "label": "pN",
+            "labelEn": "pN",
+            "type": "select",
+            "options": [
+              {
+                "value": "pN0",
+                "label": "pN0"
+              },
+              {
+                "value": "pN1",
+                "label": "pN1"
+              },
+              {
+                "value": "pN2",
+                "label": "pN2"
+              },
+              {
+                "value": "pN3",
+                "label": "pN3"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "nodes-examined",
+            "label": "淋巴结总数",
+            "labelEn": "Nodes Examined",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "nodes-positive",
+            "label": "阳性淋巴结数",
+            "labelEn": "Positive Nodes",
+            "type": "number",
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Lung 4.2.0.0 (2024)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "组织学类型（WHO 2021 分类）",
+          "coveredBy": "histologicType"
+        },
+        {
+          "cnField": "组织学分级",
+          "coveredBy": "histologicGrade"
+        },
+        {
+          "cnField": "肿瘤大小（最大径 cm）",
+          "coveredBy": "tumorSize"
+        },
+        {
+          "cnField": "肿瘤部位（肺叶/段）",
+          "coveredBy": "tumorSite"
+        },
+        {
+          "cnField": "脏层胸膜侵犯（PL0-PL3，弹力纤维染色）",
+          "coveredBy": "visceralPleuralInvasion"
+        },
+        {
+          "cnField": "支气管切缘",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "血管侵犯",
+          "coveredBy": "lymphovascularInvasion"
+        },
+        {
+          "cnField": "气道播散（STAS）",
+          "coveredBy": "stas"
+        },
+        {
+          "cnField": "淋巴结受累数与清扫总数（按站别）",
+          "coveredBy": "lymphNodes"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 第 8 版）",
+          "coveredBy": "pTNM"
+        },
+        {
+          "cnField": "腺癌亚型定量（贴壁/腺泡/乳头/微乳头/实性 %）",
+          "coveredBy": "adenocarcinomaSubtypePattern"
+        },
+        {
+          "cnField": "EGFR/ALK/ROS1/BRAF/KRAS/MET/RET/HER2/NTRK 分子检测",
+          "coveredBy": "molecularTesting"
+        },
+        {
+          "cnField": "PD-L1 TPS 定量（22C3/SP263 克隆号标注）",
+          "coveredBy": "pdl1"
+        },
+        {
+          "cnField": "神经内分泌标记（Syn/CgA/INSM1/Ki-67）",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "新辅助治疗后病理反应评估（MPR/pCR，残留肿瘤百分比）",
+          "coveredBy": "treatmentEffect"
+        },
+        {
+          "cnField": "中国病理医师签名（双签制度）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "标本固定时间与冷缺血时间记录",
+          "coveredBy": null
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP Lung protocol 具体版本号（4.2.0.0）需核实，截至 2024 年底 CAP 肺癌 protocol 最新版本存在不确定；国内《肿瘤病理诊断报告规范》具体条目以中华医学会病理学分会肺癌病理诊断共识与国家卫健委《原发性肺癌诊疗指南（2022）》病理报告附录为准。"
+    }
   },
   {
     "id": "colorectal",
@@ -234,84 +1149,428 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "right-hemi", "label": "右半结肠" }, { "value": "left-hemi", "label": "左半结肠" },
-            { "value": "sigmoid", "label": "乙状结肠" }, { "value": "lar", "label": "低位前切除" },
-            { "value": "apr", "label": "腹会阴联合切除" }, { "value": "polypectomy", "label": "息肉切除" }
-          ], "required": true },
-          { "id": "tumor-site", "label": "肿瘤部位", "labelEn": "Tumor Site", "type": "text", "required": true },
-          { "id": "tumor-size", "label": "肿瘤最大径 (cm)", "labelEn": "Greatest Dimension (cm)", "type": "number", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "right-hemi",
+                "label": "右半结肠"
+              },
+              {
+                "value": "left-hemi",
+                "label": "左半结肠"
+              },
+              {
+                "value": "sigmoid",
+                "label": "乙状结肠"
+              },
+              {
+                "value": "lar",
+                "label": "低位前切除"
+              },
+              {
+                "value": "apr",
+                "label": "腹会阴联合切除"
+              },
+              {
+                "value": "polypectomy",
+                "label": "息肉切除"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-site",
+            "label": "肿瘤部位",
+            "labelEn": "Tumor Site",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "tumor-size",
+            "label": "肿瘤最大径 (cm)",
+            "labelEn": "Greatest Dimension (cm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "histologic-type", "label": "组织学类型", "labelEn": "Histologic Type", "type": "select", "options": [
-            { "value": "adenocarcinoma", "label": "腺癌 NOS" }, { "value": "mucinous", "label": "黏液腺癌" },
-            { "value": "signet-ring", "label": "印戒细胞癌" }, { "value": "medullary", "label": "髓样癌" },
-            { "value": "micropapillary", "label": "微乳头状腺癌" }
-          ], "required": true },
-          { "id": "grade", "label": "分化程度", "labelEn": "Grade", "type": "select", "options": [
-            { "value": "low", "label": "低级别 (G1-G2)" }, { "value": "high", "label": "高级别 (G3-G4)" }
-          ], "required": true },
-          { "id": "depth", "label": "浸润深度", "labelEn": "Depth of Invasion", "type": "select", "options": [
-            { "value": "tis", "label": "黏膜内 (Tis)" }, { "value": "t1", "label": "黏膜下层 (T1)" },
-            { "value": "t2", "label": "固有肌层 (T2)" }, { "value": "t3", "label": "浆膜下/外膜 (T3)" }, { "value": "t4a", "label": "穿透浆膜 (T4a)" },
-            { "value": "t4b", "label": "侵犯邻近器官 (T4b)" }
-          ], "required": true },
-          { "id": "lvi", "label": "脉管侵犯", "labelEn": "LVI", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }
-          ], "required": true },
-          { "id": "pni", "label": "神经侵犯", "labelEn": "Perineural Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }
-          ], "required": true },
-          { "id": "tumor-deposits", "label": "肿瘤结节", "labelEn": "Tumor Deposits", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": false }
+          {
+            "id": "histologic-type",
+            "label": "组织学类型",
+            "labelEn": "Histologic Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "adenocarcinoma",
+                "label": "腺癌 NOS"
+              },
+              {
+                "value": "mucinous",
+                "label": "黏液腺癌"
+              },
+              {
+                "value": "signet-ring",
+                "label": "印戒细胞癌"
+              },
+              {
+                "value": "medullary",
+                "label": "髓样癌"
+              },
+              {
+                "value": "micropapillary",
+                "label": "微乳头状腺癌"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "grade",
+            "label": "分化程度",
+            "labelEn": "Grade",
+            "type": "select",
+            "options": [
+              {
+                "value": "low",
+                "label": "低级别 (G1-G2)"
+              },
+              {
+                "value": "high",
+                "label": "高级别 (G3-G4)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "depth",
+            "label": "浸润深度",
+            "labelEn": "Depth of Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "tis",
+                "label": "黏膜内 (Tis)"
+              },
+              {
+                "value": "t1",
+                "label": "黏膜下层 (T1)"
+              },
+              {
+                "value": "t2",
+                "label": "固有肌层 (T2)"
+              },
+              {
+                "value": "t3",
+                "label": "浆膜下/外膜 (T3)"
+              },
+              {
+                "value": "t4a",
+                "label": "穿透浆膜 (T4a)"
+              },
+              {
+                "value": "t4b",
+                "label": "侵犯邻近器官 (T4b)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "lvi",
+            "label": "脉管侵犯",
+            "labelEn": "LVI",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "pni",
+            "label": "神经侵犯",
+            "labelEn": "Perineural Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-deposits",
+            "label": "肿瘤结节",
+            "labelEn": "Tumor Deposits",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": false
+          }
         ]
       },
       {
         "id": "margins",
         "title": "切缘",
         "fields": [
-          { "id": "proximal-margin", "label": "近端切缘", "labelEn": "Proximal Margin", "type": "select", "options": [
-            { "value": "negative", "label": "阴性" }, { "value": "positive", "label": "阳性" }
-          ], "required": true },
-          { "id": "distal-margin", "label": "远端切缘", "labelEn": "Distal Margin", "type": "select", "options": [
-            { "value": "negative", "label": "阴性" }, { "value": "positive", "label": "阳性" }
-          ], "required": true },
-          { "id": "crm", "label": "环周切缘 (mm)", "labelEn": "Circumferential Resection Margin (mm)", "type": "number", "required": false }
+          {
+            "id": "proximal-margin",
+            "label": "近端切缘",
+            "labelEn": "Proximal Margin",
+            "type": "select",
+            "options": [
+              {
+                "value": "negative",
+                "label": "阴性"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "distal-margin",
+            "label": "远端切缘",
+            "labelEn": "Distal Margin",
+            "type": "select",
+            "options": [
+              {
+                "value": "negative",
+                "label": "阴性"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "crm",
+            "label": "环周切缘 (mm)",
+            "labelEn": "Circumferential Resection Margin (mm)",
+            "type": "number",
+            "required": false
+          }
         ]
       },
       {
         "id": "biomarkers",
         "title": "生物标志物",
         "fields": [
-          { "id": "msi-status", "label": "MSI/MMR状态", "labelEn": "MSI/MMR Status", "type": "select", "options": [
-            { "value": "mss", "label": "MSS/pMMR" }, { "value": "msi-h", "label": "MSI-H/dMMR" }
-          ], "required": true },
-          { "id": "kras", "label": "KRAS状态", "labelEn": "KRAS Status", "type": "select", "options": [
-            { "value": "wild", "label": "野生型" }, { "value": "mutant", "label": "突变型" }, { "value": "pending", "label": "待检" }
-          ], "required": false },
-          { "id": "braf", "label": "BRAF V600E", "labelEn": "BRAF V600E", "type": "select", "options": [
-            { "value": "wild", "label": "野生型" }, { "value": "mutant", "label": "突变型" }, { "value": "pending", "label": "待检" }
-          ], "required": false }
+          {
+            "id": "msi-status",
+            "label": "MSI/MMR状态",
+            "labelEn": "MSI/MMR Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "mss",
+                "label": "MSS/pMMR"
+              },
+              {
+                "value": "msi-h",
+                "label": "MSI-H/dMMR"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "kras",
+            "label": "KRAS状态",
+            "labelEn": "KRAS Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "wild",
+                "label": "野生型"
+              },
+              {
+                "value": "mutant",
+                "label": "突变型"
+              },
+              {
+                "value": "pending",
+                "label": "待检"
+              }
+            ],
+            "required": false
+          },
+          {
+            "id": "braf",
+            "label": "BRAF V600E",
+            "labelEn": "BRAF V600E",
+            "type": "select",
+            "options": [
+              {
+                "value": "wild",
+                "label": "野生型"
+              },
+              {
+                "value": "mutant",
+                "label": "突变型"
+              },
+              {
+                "value": "pending",
+                "label": "待检"
+              }
+            ],
+            "required": false
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期",
         "fields": [
-          { "id": "pn", "label": "pN", "labelEn": "pN", "type": "select", "options": [
-            { "value": "pN0", "label": "pN0" }, { "value": "pN1a", "label": "pN1a (1个)" }, { "value": "pN1b", "label": "pN1b (2-3个)" },
-            { "value": "pN2a", "label": "pN2a (4-6个)" }, { "value": "pN2b", "label": "pN2b (≥7个)" }
-          ], "required": true },
-          { "id": "nodes-examined", "label": "淋巴结总数", "labelEn": "Nodes Examined", "type": "number", "required": true },
-          { "id": "nodes-positive", "label": "阳性淋巴结数", "labelEn": "Positive Nodes", "type": "number", "required": true }
+          {
+            "id": "pn",
+            "label": "pN",
+            "labelEn": "pN",
+            "type": "select",
+            "options": [
+              {
+                "value": "pN0",
+                "label": "pN0"
+              },
+              {
+                "value": "pN1a",
+                "label": "pN1a (1个)"
+              },
+              {
+                "value": "pN1b",
+                "label": "pN1b (2-3个)"
+              },
+              {
+                "value": "pN2a",
+                "label": "pN2a (4-6个)"
+              },
+              {
+                "value": "pN2b",
+                "label": "pN2b (≥7个)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "nodes-examined",
+            "label": "淋巴结总数",
+            "labelEn": "Nodes Examined",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "nodes-positive",
+            "label": "阳性淋巴结数",
+            "labelEn": "Positive Nodes",
+            "type": "number",
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Colon and Rectum Resection 4.2.0.0 (2023)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "肿瘤部位（解剖学分段）",
+          "coveredBy": "tumor-site"
+        },
+        {
+          "cnField": "肿瘤大体类型（隆起型/溃疡型/浸润型）",
+          "coveredBy": "macroscopic-type"
+        },
+        {
+          "cnField": "组织学类型（WHO 5th）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "组织学分级",
+          "coveredBy": "histologic-grade"
+        },
+        {
+          "cnField": "肿瘤浸润深度（pT）",
+          "coveredBy": "tumor-extension"
+        },
+        {
+          "cnField": "近端、远端及环周切缘（CRM，mm）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "淋巴结转移数/清扫总数（含系膜淋巴结）",
+          "coveredBy": "regional-lymph-nodes"
+        },
+        {
+          "cnField": "脉管内癌栓（LVI）",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "神经侵犯（PNI）",
+          "coveredBy": "perineural-invasion"
+        },
+        {
+          "cnField": "肿瘤出芽（Tumor budding, ITBCC 2016 分级）",
+          "coveredBy": "tumor-budding"
+        },
+        {
+          "cnField": "系膜完整性评估（TME 分级，直肠癌）",
+          "coveredBy": "mesorectum-quality"
+        },
+        {
+          "cnField": "新辅助治疗后反应（TRG，AJCC/CAP 四级）",
+          "coveredBy": "treatment-effect"
+        },
+        {
+          "cnField": "错配修复蛋白（MLH1/MSH2/MSH6/PMS2）免疫组化或 MSI 状态",
+          "coveredBy": "ancillary-studies"
+        },
+        {
+          "cnField": "KRAS/NRAS/BRAF/HER2 分子检测",
+          "coveredBy": "ancillary-studies"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 第 8 版）",
+          "coveredBy": "pathologic-stage"
+        },
+        {
+          "cnField": "中国病理医师签名（双人审核）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "送检标本完整性及固定时间记录",
+          "coveredBy": null
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP colon/rectum resection protocol 版本号为近似记忆（4.2.0.0, 2023 年 6 月更新），具体小版本号请人工核对 CAP 官网最新发布。"
+    }
   },
   {
     "id": "gastric",
@@ -323,62 +1582,341 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "distal", "label": "远端胃切除" }, { "value": "proximal", "label": "近端胃切除" },
-            { "value": "total", "label": "全胃切除" }, { "value": "wedge", "label": "楔形切除" }
-          ], "required": true },
-          { "id": "tumor-site", "label": "肿瘤部位", "labelEn": "Tumor Site", "type": "text", "required": true },
-          { "id": "tumor-size", "label": "肿瘤最大径 (cm)", "labelEn": "Greatest Dimension (cm)", "type": "number", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "distal",
+                "label": "远端胃切除"
+              },
+              {
+                "value": "proximal",
+                "label": "近端胃切除"
+              },
+              {
+                "value": "total",
+                "label": "全胃切除"
+              },
+              {
+                "value": "wedge",
+                "label": "楔形切除"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-site",
+            "label": "肿瘤部位",
+            "labelEn": "Tumor Site",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "tumor-size",
+            "label": "肿瘤最大径 (cm)",
+            "labelEn": "Greatest Dimension (cm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "histologic-type", "label": "WHO分型", "labelEn": "WHO Histologic Type", "type": "select", "options": [
-            { "value": "tubular", "label": "管状腺癌" }, { "value": "papillary", "label": "乳头状腺癌" },
-            { "value": "mucinous", "label": "黏液腺癌" }, { "value": "poorly-cohesive", "label": "低黏附性癌/印戒细胞癌" },
-            { "value": "mixed", "label": "混合型" }
-          ], "required": true },
-          { "id": "lauren-type", "label": "Lauren分型", "labelEn": "Lauren Classification", "type": "select", "options": [
-            { "value": "intestinal", "label": "肠型" }, { "value": "diffuse", "label": "弥漫型" }, { "value": "mixed", "label": "混合型" }
-          ], "required": true },
-          { "id": "depth", "label": "浸润深度", "labelEn": "Depth of Invasion", "type": "select", "options": [
-            { "value": "t1a", "label": "黏膜层 (T1a)" }, { "value": "t1b", "label": "黏膜下层 (T1b)" },
-            { "value": "t2", "label": "固有肌层 (T2)" }, { "value": "t3", "label": "浆膜下 (T3)" },
-            { "value": "t4a", "label": "穿透浆膜 (T4a)" }, { "value": "t4b", "label": "侵犯邻近器官 (T4b)" }
-          ], "required": true },
-          { "id": "lvi", "label": "脉管侵犯", "labelEn": "LVI", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }
-          ], "required": true }
+          {
+            "id": "histologic-type",
+            "label": "WHO分型",
+            "labelEn": "WHO Histologic Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "tubular",
+                "label": "管状腺癌"
+              },
+              {
+                "value": "papillary",
+                "label": "乳头状腺癌"
+              },
+              {
+                "value": "mucinous",
+                "label": "黏液腺癌"
+              },
+              {
+                "value": "poorly-cohesive",
+                "label": "低黏附性癌/印戒细胞癌"
+              },
+              {
+                "value": "mixed",
+                "label": "混合型"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "lauren-type",
+            "label": "Lauren分型",
+            "labelEn": "Lauren Classification",
+            "type": "select",
+            "options": [
+              {
+                "value": "intestinal",
+                "label": "肠型"
+              },
+              {
+                "value": "diffuse",
+                "label": "弥漫型"
+              },
+              {
+                "value": "mixed",
+                "label": "混合型"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "depth",
+            "label": "浸润深度",
+            "labelEn": "Depth of Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "t1a",
+                "label": "黏膜层 (T1a)"
+              },
+              {
+                "value": "t1b",
+                "label": "黏膜下层 (T1b)"
+              },
+              {
+                "value": "t2",
+                "label": "固有肌层 (T2)"
+              },
+              {
+                "value": "t3",
+                "label": "浆膜下 (T3)"
+              },
+              {
+                "value": "t4a",
+                "label": "穿透浆膜 (T4a)"
+              },
+              {
+                "value": "t4b",
+                "label": "侵犯邻近器官 (T4b)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "lvi",
+            "label": "脉管侵犯",
+            "labelEn": "LVI",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "biomarkers",
         "title": "生物标志物",
         "fields": [
-          { "id": "her2", "label": "HER2状态", "labelEn": "HER2 Status", "type": "select", "options": [
-            { "value": "0", "label": "0" }, { "value": "1+", "label": "1+" }, { "value": "2+", "label": "2+" }, { "value": "3+", "label": "3+" }
-          ], "required": true },
-          { "id": "msi", "label": "MSI/MMR", "labelEn": "MSI/MMR Status", "type": "select", "options": [
-            { "value": "mss", "label": "MSS/pMMR" }, { "value": "msi-h", "label": "MSI-H/dMMR" }
-          ], "required": true },
-          { "id": "pd-l1-cps", "label": "PD-L1 CPS", "labelEn": "PD-L1 CPS Score", "type": "number", "required": false }
+          {
+            "id": "her2",
+            "label": "HER2状态",
+            "labelEn": "HER2 Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "0",
+                "label": "0"
+              },
+              {
+                "value": "1+",
+                "label": "1+"
+              },
+              {
+                "value": "2+",
+                "label": "2+"
+              },
+              {
+                "value": "3+",
+                "label": "3+"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "msi",
+            "label": "MSI/MMR",
+            "labelEn": "MSI/MMR Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "mss",
+                "label": "MSS/pMMR"
+              },
+              {
+                "value": "msi-h",
+                "label": "MSI-H/dMMR"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "pd-l1-cps",
+            "label": "PD-L1 CPS",
+            "labelEn": "PD-L1 CPS Score",
+            "type": "number",
+            "required": false
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期",
         "fields": [
-          { "id": "pn", "label": "pN", "labelEn": "pN", "type": "select", "options": [
-            { "value": "pN0", "label": "pN0" }, { "value": "pN1", "label": "pN1 (1-2个)" },
-            { "value": "pN2", "label": "pN2 (3-6个)" }, { "value": "pN3a", "label": "pN3a (7-15个)" }, { "value": "pN3b", "label": "pN3b (≥16个)" }
-          ], "required": true },
-          { "id": "nodes-examined", "label": "淋巴结总数 (推荐≥16)", "labelEn": "Nodes Examined", "type": "number", "required": true },
-          { "id": "nodes-positive", "label": "阳性淋巴结数", "labelEn": "Positive Nodes", "type": "number", "required": true }
+          {
+            "id": "pn",
+            "label": "pN",
+            "labelEn": "pN",
+            "type": "select",
+            "options": [
+              {
+                "value": "pN0",
+                "label": "pN0"
+              },
+              {
+                "value": "pN1",
+                "label": "pN1 (1-2个)"
+              },
+              {
+                "value": "pN2",
+                "label": "pN2 (3-6个)"
+              },
+              {
+                "value": "pN3a",
+                "label": "pN3a (7-15个)"
+              },
+              {
+                "value": "pN3b",
+                "label": "pN3b (≥16个)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "nodes-examined",
+            "label": "淋巴结总数 (推荐≥16)",
+            "labelEn": "Nodes Examined",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "nodes-positive",
+            "label": "阳性淋巴结数",
+            "labelEn": "Positive Nodes",
+            "type": "number",
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Stomach 4.2.0.1 (2023)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "肿瘤部位（贲门/胃底/胃体/胃窦/幽门）",
+          "coveredBy": "tumor-site"
+        },
+        {
+          "cnField": "肿瘤大小（三维测量，cm）",
+          "coveredBy": "tumor-size"
+        },
+        {
+          "cnField": "大体分型（Borrmann 分型）",
+          "coveredBy": "macroscopic-type"
+        },
+        {
+          "cnField": "组织学类型（WHO/Lauren 分型）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "组织学分级",
+          "coveredBy": "histologic-grade"
+        },
+        {
+          "cnField": "浸润深度（pT 分期）",
+          "coveredBy": "tumor-invasion"
+        },
+        {
+          "cnField": "脉管侵犯（LVI）",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "神经侵犯（PNI）",
+          "coveredBy": "perineural-invasion"
+        },
+        {
+          "cnField": "淋巴结受累数与清扫总数（阳性/总数）",
+          "coveredBy": "lymph-nodes"
+        },
+        {
+          "cnField": "近端/远端/环周切缘状态与距离（mm）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 第 8 版）",
+          "coveredBy": "tnm-stage"
+        },
+        {
+          "cnField": "HER2 免疫组化与 FISH 检测",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "错配修复蛋白（MMR）/MSI 检测",
+          "coveredBy": "mmr-msi"
+        },
+        {
+          "cnField": "PD-L1 CPS 评分",
+          "coveredBy": "pd-l1"
+        },
+        {
+          "cnField": "EBER 原位杂交（EBV 相关胃癌）",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "Claudin 18.2 检测",
+          "coveredBy": null
+        },
+        {
+          "cnField": "新辅助治疗反应评估（TRG 分级）",
+          "coveredBy": "treatment-response"
+        },
+        {
+          "cnField": "中国病理医师签名（双签/审核制）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "送检医师与临床信息核对",
+          "coveredBy": null
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP Stomach protocol 版本号与 Claudin 18.2 是否纳入最新 CAP 模板存在不确定性；国内《肿瘤病理诊断报告规范》具体字段以中华医学会病理学分会最新版为准"
+    }
   },
   {
     "id": "prostate-rp",
@@ -390,56 +1928,325 @@
         "id": "histology",
         "title": "组织学与分级",
         "fields": [
-          { "id": "gleason-primary", "label": "Gleason主要模式", "labelEn": "Primary Pattern", "type": "select", "options": [
-            { "value": "3", "label": "3" }, { "value": "4", "label": "4" }, { "value": "5", "label": "5" }
-          ], "required": true },
-          { "id": "gleason-secondary", "label": "Gleason次要模式", "labelEn": "Secondary Pattern", "type": "select", "options": [
-            { "value": "3", "label": "3" }, { "value": "4", "label": "4" }, { "value": "5", "label": "5" }
-          ], "required": true },
-          { "id": "gleason-tertiary", "label": "Gleason第三模式", "labelEn": "Tertiary Pattern", "type": "select", "options": [
-            { "value": "none", "label": "无" }, { "value": "4", "label": "4" }, { "value": "5", "label": "5" }
-          ], "required": false },
-          { "id": "isup-grade", "label": "ISUP Grade Group", "labelEn": "ISUP Grade Group", "type": "select", "options": [
-            { "value": "1", "label": "GG1 (≤6)" }, { "value": "2", "label": "GG2 (3+4)" }, { "value": "3", "label": "GG3 (4+3)" },
-            { "value": "4", "label": "GG4 (8)" }, { "value": "5", "label": "GG5 (9-10)" }
-          ], "required": true },
-          { "id": "tumor-volume", "label": "肿瘤体积百分比 (%)", "labelEn": "Tumor Volume (%)", "type": "number", "required": false }
+          {
+            "id": "gleason-primary",
+            "label": "Gleason主要模式",
+            "labelEn": "Primary Pattern",
+            "type": "select",
+            "options": [
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+              {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "gleason-secondary",
+            "label": "Gleason次要模式",
+            "labelEn": "Secondary Pattern",
+            "type": "select",
+            "options": [
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+              {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "gleason-tertiary",
+            "label": "Gleason第三模式",
+            "labelEn": "Tertiary Pattern",
+            "type": "select",
+            "options": [
+              {
+                "value": "none",
+                "label": "无"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+              {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "required": false
+          },
+          {
+            "id": "isup-grade",
+            "label": "ISUP Grade Group",
+            "labelEn": "ISUP Grade Group",
+            "type": "select",
+            "options": [
+              {
+                "value": "1",
+                "label": "GG1 (≤6)"
+              },
+              {
+                "value": "2",
+                "label": "GG2 (3+4)"
+              },
+              {
+                "value": "3",
+                "label": "GG3 (4+3)"
+              },
+              {
+                "value": "4",
+                "label": "GG4 (8)"
+              },
+              {
+                "value": "5",
+                "label": "GG5 (9-10)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-volume",
+            "label": "肿瘤体积百分比 (%)",
+            "labelEn": "Tumor Volume (%)",
+            "type": "number",
+            "required": false
+          }
         ]
       },
       {
         "id": "extent",
         "title": "侵犯范围",
         "fields": [
-          { "id": "epe", "label": "前列腺外侵犯 (EPE)", "labelEn": "Extraprostatic Extension", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "focal", "label": "局灶" }, { "value": "established", "label": "确立" }
-          ], "required": true },
-          { "id": "svi", "label": "精囊侵犯", "labelEn": "Seminal Vesicle Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "bladder-neck", "label": "膀胱颈侵犯", "labelEn": "Bladder Neck Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "margin-status", "label": "切缘状态", "labelEn": "Margin Status", "type": "select", "options": [
-            { "value": "negative", "label": "阴性" }, { "value": "positive", "label": "阳性" }
-          ], "required": true },
-          { "id": "margin-location", "label": "阳性切缘部位", "labelEn": "Positive Margin Location", "type": "text", "required": false }
+          {
+            "id": "epe",
+            "label": "前列腺外侵犯 (EPE)",
+            "labelEn": "Extraprostatic Extension",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "focal",
+                "label": "局灶"
+              },
+              {
+                "value": "established",
+                "label": "确立"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "svi",
+            "label": "精囊侵犯",
+            "labelEn": "Seminal Vesicle Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "bladder-neck",
+            "label": "膀胱颈侵犯",
+            "labelEn": "Bladder Neck Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "margin-status",
+            "label": "切缘状态",
+            "labelEn": "Margin Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "negative",
+                "label": "阴性"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "margin-location",
+            "label": "阳性切缘部位",
+            "labelEn": "Positive Margin Location",
+            "type": "text",
+            "required": false
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期",
         "fields": [
-          { "id": "pt", "label": "pT", "labelEn": "pT", "type": "select", "options": [
-            { "value": "pT2", "label": "pT2 (限于前列腺)" }, { "value": "pT3a", "label": "pT3a (EPE)" },
-            { "value": "pT3b", "label": "pT3b (精囊侵犯)" }, { "value": "pT4", "label": "pT4 (膀胱/直肠)" }
-          ], "required": true },
-          { "id": "pn", "label": "pN", "labelEn": "pN", "type": "select", "options": [
-            { "value": "pNx", "label": "pNx" }, { "value": "pN0", "label": "pN0" }, { "value": "pN1", "label": "pN1" }
-          ], "required": true },
-          { "id": "nodes-examined", "label": "淋巴结总数", "labelEn": "Nodes Examined", "type": "number", "required": false }
+          {
+            "id": "pt",
+            "label": "pT",
+            "labelEn": "pT",
+            "type": "select",
+            "options": [
+              {
+                "value": "pT2",
+                "label": "pT2 (限于前列腺)"
+              },
+              {
+                "value": "pT3a",
+                "label": "pT3a (EPE)"
+              },
+              {
+                "value": "pT3b",
+                "label": "pT3b (精囊侵犯)"
+              },
+              {
+                "value": "pT4",
+                "label": "pT4 (膀胱/直肠)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "pn",
+            "label": "pN",
+            "labelEn": "pN",
+            "type": "select",
+            "options": [
+              {
+                "value": "pNx",
+                "label": "pNx"
+              },
+              {
+                "value": "pN0",
+                "label": "pN0"
+              },
+              {
+                "value": "pN1",
+                "label": "pN1"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "nodes-examined",
+            "label": "淋巴结总数",
+            "labelEn": "Nodes Examined",
+            "type": "number",
+            "required": false
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Prostate Radical Prostatectomy 4.2.0.0 (2024)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "组织学类型（腺泡腺癌/导管内癌等）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "Gleason 评分与分级分组（ISUP Grade Group）",
+          "coveredBy": "gleason-grade-group"
+        },
+        {
+          "cnField": "肿瘤体积/累及百分比",
+          "coveredBy": "tumor-quantitation"
+        },
+        {
+          "cnField": "肿瘤部位（左叶/右叶/尖部/基底/移行带）",
+          "coveredBy": "tumor-location"
+        },
+        {
+          "cnField": "包膜外侵犯（EPE）范围（局灶/非局灶）",
+          "coveredBy": "extraprostatic-extension"
+        },
+        {
+          "cnField": "精囊侵犯",
+          "coveredBy": "seminal-vesicle-invasion"
+        },
+        {
+          "cnField": "膀胱颈侵犯",
+          "coveredBy": "bladder-neck-invasion"
+        },
+        {
+          "cnField": "切缘状态、部位与阳性长度（mm）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "淋巴血管侵犯（LVI）",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "神经周侵犯（PNI）",
+          "coveredBy": "perineural-invasion"
+        },
+        {
+          "cnField": "淋巴结受累数与清扫总数",
+          "coveredBy": "regional-lymph-nodes"
+        },
+        {
+          "cnField": "导管内癌（IDC-P）",
+          "coveredBy": "intraductal-carcinoma"
+        },
+        {
+          "cnField": "前列腺上皮内瘤变（HGPIN）",
+          "coveredBy": "additional-findings"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 第 8 版）",
+          "coveredBy": "pathologic-stage"
+        },
+        {
+          "cnField": "术前治疗反应（新辅助内分泌/放疗后改变）",
+          "coveredBy": "treatment-effect"
+        },
+        {
+          "cnField": "中国病理医师签名（双签）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "报告签发日期与报告编号",
+          "coveredBy": null
+        }
+      ]
+    }
   },
   {
     "id": "prostate-biopsy",
@@ -451,33 +2258,717 @@
         "id": "grading",
         "title": "分级",
         "fields": [
-          { "id": "gleason-primary", "label": "Gleason主要模式", "labelEn": "Primary Pattern", "type": "select", "options": [
-            { "value": "3", "label": "3" }, { "value": "4", "label": "4" }, { "value": "5", "label": "5" }
-          ], "required": true },
-          { "id": "gleason-secondary", "label": "Gleason次要模式", "labelEn": "Secondary Pattern", "type": "select", "options": [
-            { "value": "3", "label": "3" }, { "value": "4", "label": "4" }, { "value": "5", "label": "5" }
-          ], "required": true },
-          { "id": "isup-grade", "label": "ISUP Grade Group", "labelEn": "ISUP Grade Group", "type": "select", "options": [
-            { "value": "1", "label": "GG1 (≤6)" }, { "value": "2", "label": "GG2 (3+4)" }, { "value": "3", "label": "GG3 (4+3)" },
-            { "value": "4", "label": "GG4 (8)" }, { "value": "5", "label": "GG5 (9-10)" }
-          ], "required": true },
-          { "id": "percent-pattern4-5", "label": "Pattern 4/5 百分比 (%)", "labelEn": "% Pattern 4/5", "type": "number", "required": false }
+          {
+            "id": "gleason-primary",
+            "label": "Gleason主要模式",
+            "labelEn": "Primary Pattern",
+            "type": "select",
+            "options": [
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+              {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "gleason-secondary",
+            "label": "Gleason次要模式",
+            "labelEn": "Secondary Pattern",
+            "type": "select",
+            "options": [
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+              {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "isup-grade",
+            "label": "ISUP Grade Group",
+            "labelEn": "ISUP Grade Group",
+            "type": "select",
+            "options": [
+              {
+                "value": "1",
+                "label": "GG1 (≤6)"
+              },
+              {
+                "value": "2",
+                "label": "GG2 (3+4)"
+              },
+              {
+                "value": "3",
+                "label": "GG3 (4+3)"
+              },
+              {
+                "value": "4",
+                "label": "GG4 (8)"
+              },
+              {
+                "value": "5",
+                "label": "GG5 (9-10)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "percent-pattern4-5",
+            "label": "Pattern 4/5 百分比 (%)",
+            "labelEn": "% Pattern 4/5",
+            "type": "number",
+            "required": false
+          }
         ]
       },
       {
         "id": "extent",
         "title": "累及范围",
         "fields": [
-          { "id": "cores-total", "label": "穿刺针数 (总)", "labelEn": "Total Cores", "type": "number", "required": true },
-          { "id": "cores-positive", "label": "阳性针数", "labelEn": "Positive Cores", "type": "number", "required": true },
-          { "id": "max-involvement", "label": "单针最大累及百分比 (%)", "labelEn": "Max Core Involvement (%)", "type": "number", "required": true },
-          { "id": "max-length-mm", "label": "单针最大癌灶长度 (mm)", "labelEn": "Max Cancer Length (mm)", "type": "number", "required": false },
-          { "id": "pni", "label": "神经侵犯", "labelEn": "Perineural Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }
-          ], "required": true }
+          {
+            "id": "cores-total",
+            "label": "穿刺针数 (总)",
+            "labelEn": "Total Cores",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "cores-positive",
+            "label": "阳性针数",
+            "labelEn": "Positive Cores",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "max-involvement",
+            "label": "单针最大累及百分比 (%)",
+            "labelEn": "Max Core Involvement (%)",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "max-length-mm",
+            "label": "单针最大癌灶长度 (mm)",
+            "labelEn": "Max Cancer Length (mm)",
+            "type": "number",
+            "required": false
+          },
+          {
+            "id": "pni",
+            "label": "神经侵犯",
+            "labelEn": "Perineural Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              }
+            ],
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Prostate Needle Biopsy 4.2.0.0 (2024)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "穿刺针数与阳性针数",
+          "coveredBy": "cores-positive"
+        },
+        {
+          "cnField": "肿瘤组织占穿刺组织百分比",
+          "coveredBy": "tumor-percentage"
+        },
+        {
+          "cnField": "Gleason 评分（主要+次要=总分）",
+          "coveredBy": "gleason-score"
+        },
+        {
+          "cnField": "Grade Group（WHO/ISUP 分级分组 1–5）",
+          "coveredBy": "grade-group"
+        },
+        {
+          "cnField": "组织学类型（腺泡腺癌/导管内癌/导管腺癌等）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "神经周围侵犯（PNI）",
+          "coveredBy": "perineural-invasion"
+        },
+        {
+          "cnField": "脉管侵犯（LVI）",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "包膜外侵犯（EPE）",
+          "coveredBy": "extraprostatic-extension"
+        },
+        {
+          "cnField": "精囊腺侵犯",
+          "coveredBy": "seminal-vesicle-invasion"
+        },
+        {
+          "cnField": "导管内癌（IDC-P）",
+          "coveredBy": "intraductal-carcinoma"
+        },
+        {
+          "cnField": "筛状结构",
+          "coveredBy": "cribriform-pattern"
+        },
+        {
+          "cnField": "高级别前列腺上皮内瘤变（HGPIN）",
+          "coveredBy": "hgpin"
+        },
+        {
+          "cnField": "非典型小腺泡增生（ASAP）",
+          "coveredBy": "atypical-small-acinar-proliferation"
+        },
+        {
+          "cnField": "免疫组化辅助诊断（p63/p504s/AMACR/HMWCK）",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "穿刺部位标注（左/右，基底/中部/尖部）",
+          "coveredBy": "biopsy-site"
+        },
+        {
+          "cnField": "中国病理医师双签名",
+          "coveredBy": null
+        },
+        {
+          "cnField": "报告发出时限（常规 5 个工作日）",
+          "coveredBy": null
+        }
+      ]
+    },
+    "_enhance_synoptic_new_entry": {
+      "id": "prostate-biopsy",
+      "capProtocol": "CAP Prostate Needle Biopsy 4.2.0.0",
+      "sections": [
+        {
+          "id": "specimen",
+          "title": "标本信息",
+          "fields": [
+            {
+              "id": "specimen-type",
+              "label": "标本类型",
+              "type": "select",
+              "options": [
+                "经直肠超声引导穿刺活检",
+                "经会阴穿刺活检",
+                "MRI-超声融合靶向穿刺",
+                "经尿道电切标本(TURP)"
+              ]
+            },
+            {
+              "id": "core-number",
+              "label": "穿刺针数",
+              "type": "number"
+            },
+            {
+              "id": "core-labeling",
+              "label": "穿刺部位标识",
+              "type": "select",
+              "options": [
+                "双侧六分区(左/右底、中、尖)",
+                "12针系统穿刺",
+                "靶向+系统联合穿刺",
+                "其他"
+              ]
+            },
+            {
+              "id": "clinical-info",
+              "label": "临床信息",
+              "type": "text"
+            },
+            {
+              "id": "psa-value",
+              "label": "血清PSA(ng/mL)",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "gross",
+          "title": "大体描述",
+          "fields": [
+            {
+              "id": "core-length",
+              "label": "组织条总长度(mm)",
+              "type": "number"
+            },
+            {
+              "id": "core-count-received",
+              "label": "送检组织条数",
+              "type": "number"
+            },
+            {
+              "id": "core-color",
+              "label": "组织颜色与质地",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "id": "microscopic",
+          "title": "镜下描述",
+          "fields": [
+            {
+              "id": "histologic-pattern",
+              "label": "组织学形态",
+              "type": "text"
+            },
+            {
+              "id": "gleason-primary",
+              "label": "Gleason 主要分级",
+              "type": "select",
+              "options": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "id": "gleason-secondary",
+              "label": "Gleason 次要分级",
+              "type": "select",
+              "options": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "id": "gleason-tertiary",
+              "label": "Gleason 第三级别(若存在)",
+              "type": "select",
+              "options": [
+                "无",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "id": "gleason-score",
+              "label": "Gleason 总分",
+              "type": "select",
+              "options": [
+                "6(3+3)",
+                "7(3+4)",
+                "7(4+3)",
+                "8(4+4/3+5/5+3)",
+                "9(4+5/5+4)",
+                "10(5+5)"
+              ]
+            },
+            {
+              "id": "grade-group",
+              "label": "ISUP/WHO 分级分组",
+              "type": "select",
+              "options": [
+                "1组",
+                "2组",
+                "3组",
+                "4组",
+                "5组"
+              ]
+            },
+            {
+              "id": "pattern4-percent",
+              "label": "4级形态百分比(%)",
+              "type": "number"
+            },
+            {
+              "id": "cribriform",
+              "label": "是否存在筛状结构",
+              "type": "select",
+              "options": [
+                "有",
+                "无",
+                "不能评估"
+              ]
+            },
+            {
+              "id": "intraductal-carcinoma",
+              "label": "导管内癌(IDC-P)",
+              "type": "select",
+              "options": [
+                "存在",
+                "不存在",
+                "可疑"
+              ]
+            },
+            {
+              "id": "perineural-invasion",
+              "label": "神经周围侵犯",
+              "type": "select",
+              "options": [
+                "有",
+                "无"
+              ]
+            },
+            {
+              "id": "lymphovascular-invasion",
+              "label": "脉管侵犯",
+              "type": "select",
+              "options": [
+                "有",
+                "无",
+                "不能评估"
+              ]
+            },
+            {
+              "id": "extraprostatic-extension",
+              "label": "前列腺外侵犯",
+              "type": "select",
+              "options": [
+                "有",
+                "无",
+                "不能评估"
+              ]
+            },
+            {
+              "id": "tumor-involvement-cores",
+              "label": "受累组织条数/总条数",
+              "type": "text"
+            },
+            {
+              "id": "tumor-length",
+              "label": "肿瘤累及长度(mm)",
+              "type": "number"
+            },
+            {
+              "id": "tumor-percent",
+              "label": "肿瘤累及百分比(%)",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "diagnosis",
+          "title": "病理诊断",
+          "fields": [
+            {
+              "id": "diagnosis-text",
+              "label": "诊断结论",
+              "type": "text"
+            },
+            {
+              "id": "histologic-type",
+              "label": "组织学类型",
+              "type": "select",
+              "options": [
+                "前列腺腺泡腺癌",
+                "导管腺癌",
+                "导管内癌",
+                "尿路上皮癌",
+                "鳞状细胞癌",
+                "基底细胞癌",
+                "神经内分泌癌(小细胞癌)",
+                "良性前列腺组织",
+                "高级别上皮内瘤变(HGPIN)",
+                "非典型小腺泡增生(ASAP)"
+              ]
+            },
+            {
+              "id": "associated-lesion",
+              "label": "伴随病变",
+              "type": "select",
+              "options": [
+                "无",
+                "HGPIN",
+                "ASAP",
+                "炎症",
+                "萎缩",
+                "前列腺增生"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "margins",
+          "title": "切缘情况",
+          "fields": [
+            {
+              "id": "margin-status",
+              "label": "切缘评估",
+              "type": "select",
+              "options": [
+                "不适用(穿刺标本)",
+                "阴性",
+                "阳性"
+              ]
+            },
+            {
+              "id": "margin-comment",
+              "label": "备注",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "id": "lymphNodes",
+          "title": "淋巴结",
+          "fields": [
+            {
+              "id": "ln-status",
+              "label": "淋巴结评估",
+              "type": "select",
+              "options": [
+                "不适用(穿刺标本未送检淋巴结)",
+                "送检无转移",
+                "送检有转移"
+              ]
+            },
+            {
+              "id": "ln-comment",
+              "label": "备注",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "id": "ajcc",
+          "title": "分期(AJCC 第8版)",
+          "fields": [
+            {
+              "id": "cT",
+              "label": "cT 临床分期",
+              "type": "select",
+              "options": [
+                "cTX",
+                "cT1a",
+                "cT1b",
+                "cT1c",
+                "cT2a",
+                "cT2b",
+                "cT2c",
+                "cT3a",
+                "cT3b",
+                "cT4"
+              ]
+            },
+            {
+              "id": "cN",
+              "label": "cN 临床分期",
+              "type": "select",
+              "options": [
+                "cNX",
+                "cN0",
+                "cN1"
+              ]
+            },
+            {
+              "id": "cM",
+              "label": "cM 临床分期",
+              "type": "select",
+              "options": [
+                "cM0",
+                "cM1a",
+                "cM1b",
+                "cM1c"
+              ]
+            },
+            {
+              "id": "risk-group",
+              "label": "NCCN/CSCO 风险分组",
+              "type": "select",
+              "options": [
+                "极低危",
+                "低危",
+                "中危(预后良好)",
+                "中危(预后不良)",
+                "高危",
+                "极高危"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ihc",
+          "title": "免疫组化",
+          "fields": [
+            {
+              "id": "p63",
+              "label": "p63",
+              "type": "select",
+              "options": [
+                "阳性(基底细胞保留)",
+                "阴性(基底细胞缺失)",
+                "局灶阳性"
+              ]
+            },
+            {
+              "id": "ck5-6",
+              "label": "CK5/6 或 34βE12(HMWCK)",
+              "type": "select",
+              "options": [
+                "阳性(基底细胞保留)",
+                "阴性(基底细胞缺失)",
+                "局灶阳性"
+              ]
+            },
+            {
+              "id": "amacr",
+              "label": "AMACR(P504S)",
+              "type": "select",
+              "options": [
+                "阳性",
+                "阴性",
+                "弱阳性"
+              ]
+            },
+            {
+              "id": "psa-ihc",
+              "label": "PSA",
+              "type": "select",
+              "options": [
+                "阳性",
+                "阴性",
+                "弱阳性"
+              ]
+            },
+            {
+              "id": "psma",
+              "label": "PSMA",
+              "type": "select",
+              "options": [
+                "阳性",
+                "阴性",
+                "未做"
+              ]
+            },
+            {
+              "id": "nkx3-1",
+              "label": "NKX3.1",
+              "type": "select",
+              "options": [
+                "阳性",
+                "阴性",
+                "未做"
+              ]
+            },
+            {
+              "id": "ar",
+              "label": "AR(雄激素受体)",
+              "type": "select",
+              "options": [
+                "阳性",
+                "阴性",
+                "未做"
+              ]
+            },
+            {
+              "id": "syn-cga",
+              "label": "Syn/CgA(神经内分泌)",
+              "type": "select",
+              "options": [
+                "阴性",
+                "局灶阳性",
+                "弥漫阳性",
+                "未做"
+              ]
+            },
+            {
+              "id": "ki67",
+              "label": "Ki-67(%)",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "molecular",
+          "title": "分子检测",
+          "fields": [
+            {
+              "id": "brca1-2",
+              "label": "BRCA1/2 突变",
+              "type": "select",
+              "options": [
+                "未检测",
+                "野生型",
+                "胚系突变",
+                "体细胞突变",
+                "意义未明"
+              ]
+            },
+            {
+              "id": "hrr-genes",
+              "label": "HRR 通路基因(ATM/PALB2/CHEK2 等)",
+              "type": "select",
+              "options": [
+                "未检测",
+                "野生型",
+                "突变(注明基因)",
+                "意义未明"
+              ]
+            },
+            {
+              "id": "msi-mmr",
+              "label": "MSI/MMR 状态",
+              "type": "select",
+              "options": [
+                "未检测",
+                "MSS/pMMR",
+                "MSI-H/dMMR"
+              ]
+            },
+            {
+              "id": "tmprss2-erg",
+              "label": "TMPRSS2-ERG 融合",
+              "type": "select",
+              "options": [
+                "未检测",
+                "阳性",
+                "阴性"
+              ]
+            },
+            {
+              "id": "pten",
+              "label": "PTEN 缺失",
+              "type": "select",
+              "options": [
+                "未检测",
+                "保留",
+                "缺失"
+              ]
+            },
+            {
+              "id": "tmb",
+              "label": "肿瘤突变负荷(TMB, mut/Mb)",
+              "type": "number"
+            },
+            {
+              "id": "molecular-comment",
+              "label": "分子检测备注",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "bladder-turbt",
@@ -489,27 +2980,179 @@
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "histologic-type", "label": "组织学类型", "labelEn": "Histologic Type", "type": "select", "options": [
-            { "value": "urothelial", "label": "尿路上皮癌" }, { "value": "squamous", "label": "鳞状细胞癌" },
-            { "value": "adenocarcinoma", "label": "腺癌" }, { "value": "small-cell", "label": "小细胞癌" },
-            { "value": "urothelial-variant", "label": "尿路上皮癌伴变异分化" }
-          ], "required": true },
-          { "id": "grade", "label": "WHO分级", "labelEn": "WHO Grade", "type": "select", "options": [
-            { "value": "punlmp", "label": "PUNLMP" }, { "value": "low", "label": "低级别" }, { "value": "high", "label": "高级别" }
-          ], "required": true },
-          { "id": "muscularis-propria", "label": "固有肌层是否包含", "labelEn": "Muscularis Propria Present", "type": "select", "options": [
-            { "value": "present-uninvolved", "label": "有，未受累" }, { "value": "present-involved", "label": "有，受累" },
-            { "value": "absent", "label": "未取到" }
-          ], "required": true },
-          { "id": "cis", "label": "伴原位癌 (CIS)", "labelEn": "Associated CIS", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "lvi", "label": "脉管侵犯", "labelEn": "LVI", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "present", "label": "可见" }
-          ], "required": true }
+          {
+            "id": "histologic-type",
+            "label": "组织学类型",
+            "labelEn": "Histologic Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "urothelial",
+                "label": "尿路上皮癌"
+              },
+              {
+                "value": "squamous",
+                "label": "鳞状细胞癌"
+              },
+              {
+                "value": "adenocarcinoma",
+                "label": "腺癌"
+              },
+              {
+                "value": "small-cell",
+                "label": "小细胞癌"
+              },
+              {
+                "value": "urothelial-variant",
+                "label": "尿路上皮癌伴变异分化"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "grade",
+            "label": "WHO分级",
+            "labelEn": "WHO Grade",
+            "type": "select",
+            "options": [
+              {
+                "value": "punlmp",
+                "label": "PUNLMP"
+              },
+              {
+                "value": "low",
+                "label": "低级别"
+              },
+              {
+                "value": "high",
+                "label": "高级别"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "muscularis-propria",
+            "label": "固有肌层是否包含",
+            "labelEn": "Muscularis Propria Present",
+            "type": "select",
+            "options": [
+              {
+                "value": "present-uninvolved",
+                "label": "有，未受累"
+              },
+              {
+                "value": "present-involved",
+                "label": "有，受累"
+              },
+              {
+                "value": "absent",
+                "label": "未取到"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "cis",
+            "label": "伴原位癌 (CIS)",
+            "labelEn": "Associated CIS",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "lvi",
+            "label": "脉管侵犯",
+            "labelEn": "LVI",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "present",
+                "label": "可见"
+              }
+            ],
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Urinary Bladder Biopsy/TURBT 4.2.0.0 (2024)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "肿瘤组织学类型（WHO 2022 泌尿系统分类）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "组织学分级（低级别/高级别，WHO/ISUP）",
+          "coveredBy": "histologic-grade"
+        },
+        {
+          "cnField": "肿瘤浸润深度（pT 分期，是否累及固有层/肌层）",
+          "coveredBy": "tumor-extent"
+        },
+        {
+          "cnField": "固有肌层（逼尿肌）是否取材",
+          "coveredBy": "muscularis-propria"
+        },
+        {
+          "cnField": "是否伴原位癌（CIS）",
+          "coveredBy": "associated-epithelial-lesions"
+        },
+        {
+          "cnField": "脉管/淋巴管侵犯（LVI）",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "神经侵犯（PNI）",
+          "coveredBy": "perineural-invasion"
+        },
+        {
+          "cnField": "变异型/伴随亚型（鳞状、腺样、微乳头、浆细胞样、肉瘤样等）",
+          "coveredBy": "histologic-variants"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 第 8 版）",
+          "coveredBy": "pathologic-stage"
+        },
+        {
+          "cnField": "免疫组化（GATA3、CK20、p53、CK5/6 等）",
+          "coveredBy": "ancillary-studies"
+        },
+        {
+          "cnField": "分子检测（FGFR3、TERT 启动子突变，必要时）",
+          "coveredBy": "ancillary-studies"
+        },
+        {
+          "cnField": "标本类型与送检方式（TURBT/活检）",
+          "coveredBy": "specimen"
+        },
+        {
+          "cnField": "中国病理医师签名（双签及报告日期）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "临床信息与既往膀胱肿瘤病史",
+          "coveredBy": "clinical-information"
+        },
+        {
+          "cnField": "大体描述（碎组织总量、最大径）",
+          "coveredBy": null
+        }
+      ]
+    }
   },
   {
     "id": "kidney",
@@ -521,61 +3164,322 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "partial", "label": "部分肾切除" }, { "value": "radical", "label": "根治性肾切除" }
-          ], "required": true },
-          { "id": "tumor-size", "label": "肿瘤最大径 (cm)", "labelEn": "Greatest Dimension (cm)", "type": "number", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "partial",
+                "label": "部分肾切除"
+              },
+              {
+                "value": "radical",
+                "label": "根治性肾切除"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-size",
+            "label": "肿瘤最大径 (cm)",
+            "labelEn": "Greatest Dimension (cm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "histologic-subtype", "label": "组织学亚型", "labelEn": "Histologic Subtype", "type": "select", "options": [
-            { "value": "clear-cell", "label": "透明细胞" }, { "value": "papillary-1", "label": "乳头状I型" },
-            { "value": "papillary-2", "label": "乳头状II型" }, { "value": "chromophobe", "label": "嫌色" },
-            { "value": "collecting-duct", "label": "集合管" }, { "value": "unclassified", "label": "未分类" }
-          ], "required": true },
-          { "id": "isup-grade", "label": "ISUP/WHO核分级", "labelEn": "ISUP/WHO Grade", "type": "select", "options": [
-            { "value": "1", "label": "Grade 1" }, { "value": "2", "label": "Grade 2" },
-            { "value": "3", "label": "Grade 3" }, { "value": "4", "label": "Grade 4" }
-          ], "required": true },
-          { "id": "sarcomatoid", "label": "肉瘤样分化", "labelEn": "Sarcomatoid Features", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "necrosis", "label": "坏死", "labelEn": "Tumor Necrosis", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "renal-sinus", "label": "肾窦侵犯", "labelEn": "Renal Sinus Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "renal-vein", "label": "肾静脉侵犯", "labelEn": "Renal Vein Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true }
+          {
+            "id": "histologic-subtype",
+            "label": "组织学亚型",
+            "labelEn": "Histologic Subtype",
+            "type": "select",
+            "options": [
+              {
+                "value": "clear-cell",
+                "label": "透明细胞"
+              },
+              {
+                "value": "papillary-1",
+                "label": "乳头状I型"
+              },
+              {
+                "value": "papillary-2",
+                "label": "乳头状II型"
+              },
+              {
+                "value": "chromophobe",
+                "label": "嫌色"
+              },
+              {
+                "value": "collecting-duct",
+                "label": "集合管"
+              },
+              {
+                "value": "unclassified",
+                "label": "未分类"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "isup-grade",
+            "label": "ISUP/WHO核分级",
+            "labelEn": "ISUP/WHO Grade",
+            "type": "select",
+            "options": [
+              {
+                "value": "1",
+                "label": "Grade 1"
+              },
+              {
+                "value": "2",
+                "label": "Grade 2"
+              },
+              {
+                "value": "3",
+                "label": "Grade 3"
+              },
+              {
+                "value": "4",
+                "label": "Grade 4"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "sarcomatoid",
+            "label": "肉瘤样分化",
+            "labelEn": "Sarcomatoid Features",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "necrosis",
+            "label": "坏死",
+            "labelEn": "Tumor Necrosis",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "renal-sinus",
+            "label": "肾窦侵犯",
+            "labelEn": "Renal Sinus Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "renal-vein",
+            "label": "肾静脉侵犯",
+            "labelEn": "Renal Vein Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "margins",
         "title": "切缘",
         "fields": [
-          { "id": "margin-status", "label": "切缘状态", "labelEn": "Margin Status", "type": "select", "options": [
-            { "value": "negative", "label": "阴性" }, { "value": "positive", "label": "阳性" }
-          ], "required": true }
+          {
+            "id": "margin-status",
+            "label": "切缘状态",
+            "labelEn": "Margin Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "negative",
+                "label": "阴性"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期 (pTNM 8th)",
         "fields": [
-          { "id": "pt", "label": "pT", "labelEn": "pT", "type": "select", "options": [
-            { "value": "pT1a", "label": "pT1a (≤4cm)" }, { "value": "pT1b", "label": "pT1b (>4-7cm)" },
-            { "value": "pT2a", "label": "pT2a (>7-10cm)" }, { "value": "pT2b", "label": "pT2b (>10cm)" },
-            { "value": "pT3a", "label": "pT3a (肾窦/肾周脂肪)" }, { "value": "pT3b", "label": "pT3b (腔静脉)" },
-            { "value": "pT4", "label": "pT4 (Gerota筋膜外)" }
-          ], "required": true }
+          {
+            "id": "pt",
+            "label": "pT",
+            "labelEn": "pT",
+            "type": "select",
+            "options": [
+              {
+                "value": "pT1a",
+                "label": "pT1a (≤4cm)"
+              },
+              {
+                "value": "pT1b",
+                "label": "pT1b (>4-7cm)"
+              },
+              {
+                "value": "pT2a",
+                "label": "pT2a (>7-10cm)"
+              },
+              {
+                "value": "pT2b",
+                "label": "pT2b (>10cm)"
+              },
+              {
+                "value": "pT3a",
+                "label": "pT3a (肾窦/肾周脂肪)"
+              },
+              {
+                "value": "pT3b",
+                "label": "pT3b (腔静脉)"
+              },
+              {
+                "value": "pT4",
+                "label": "pT4 (Gerota筋膜外)"
+              }
+            ],
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Kidney 4.3.0.0 (2024)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "肿瘤组织学类型（WHO 2022 肾肿瘤分类）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "WHO/ISUP 核分级",
+          "coveredBy": "nuclear-grade"
+        },
+        {
+          "cnField": "肿瘤大小（三维测量，cm）",
+          "coveredBy": "tumor-size"
+        },
+        {
+          "cnField": "肿瘤部位（左/右肾、上/中/下极）",
+          "coveredBy": "tumor-site"
+        },
+        {
+          "cnField": "肉瘤样/横纹肌样分化及比例",
+          "coveredBy": "sarcomatoid-rhabdoid"
+        },
+        {
+          "cnField": "肿瘤性坏死",
+          "coveredBy": "tumor-necrosis"
+        },
+        {
+          "cnField": "肾被膜及肾周脂肪侵犯",
+          "coveredBy": "perinephric-invasion"
+        },
+        {
+          "cnField": "肾窦脂肪侵犯",
+          "coveredBy": "renal-sinus-invasion"
+        },
+        {
+          "cnField": "肾静脉/下腔静脉癌栓",
+          "coveredBy": "venous-invasion"
+        },
+        {
+          "cnField": "肾盂肾盏侵犯",
+          "coveredBy": "pelvicalyceal-invasion"
+        },
+        {
+          "cnField": "肾上腺受累（直接侵犯或转移）",
+          "coveredBy": "adrenal-involvement"
+        },
+        {
+          "cnField": "Gerota 筋膜侵犯",
+          "coveredBy": "gerota-fascia"
+        },
+        {
+          "cnField": "手术切缘状态（输尿管、血管、软组织）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "区域淋巴结受累数/检出总数",
+          "coveredBy": "lymph-nodes"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 第 8 版）",
+          "coveredBy": "ptnm"
+        },
+        {
+          "cnField": "淋巴血管侵犯（LVI）",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "免疫组化结果（PAX8、CAIX、CK7、CD10、AMACR、TFE3 等）",
+          "coveredBy": "ihc"
+        },
+        {
+          "cnField": "分子检测结果（VHL、FH、SDHB、TFE3/TFEB 融合等）",
+          "coveredBy": "molecular"
+        },
+        {
+          "cnField": "非肿瘤肾组织病变（肾小球硬化、间质纤维化、动脉硬化）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "中国病理医师双签名与报告日期",
+          "coveredBy": null
+        },
+        {
+          "cnField": "标本类型与手术方式（根治性/部分肾切除）",
+          "coveredBy": "specimen"
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP Kidney protocol 最新版本号（4.3.0.0/2024）凭记忆标注，具体小版本号可能有差异；国内《肿瘤病理诊断报告规范》肾脏章节的条目以中华医学会病理学分会发布内容与 CSCO 肾癌诊疗指南 2024 版病理报告要求合并列出，部分条目（如非肿瘤肾实质评估、双签名）在 CAP protocol 中无对应必填字段，已标注 coveredBy=null。"
+    }
   },
   {
     "id": "endometrial",
@@ -587,72 +3491,393 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "tah-bso", "label": "全子宫+双附件切除" }, { "value": "tah", "label": "全子宫切除" },
-            { "value": "radical", "label": "广泛子宫切除" }
-          ], "required": true },
-          { "id": "tumor-size", "label": "肿瘤最大径 (cm)", "labelEn": "Greatest Dimension (cm)", "type": "number", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "tah-bso",
+                "label": "全子宫+双附件切除"
+              },
+              {
+                "value": "tah",
+                "label": "全子宫切除"
+              },
+              {
+                "value": "radical",
+                "label": "广泛子宫切除"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "tumor-size",
+            "label": "肿瘤最大径 (cm)",
+            "labelEn": "Greatest Dimension (cm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "histologic-type", "label": "组织学类型", "labelEn": "Histologic Type", "type": "select", "options": [
-            { "value": "endometrioid", "label": "子宫内膜样癌" }, { "value": "serous", "label": "浆液性癌" },
-            { "value": "clear-cell", "label": "透明细胞癌" }, { "value": "carcinosarcoma", "label": "癌肉瘤" },
-            { "value": "mixed", "label": "混合型" }, { "value": "undifferentiated", "label": "未分化癌" }
-          ], "required": true },
-          { "id": "figo-grade", "label": "FIGO分级（内膜样癌）", "labelEn": "FIGO Grade", "type": "select", "options": [
-            { "value": "1", "label": "G1 (≤5%实性)" }, { "value": "2", "label": "G2 (6-50%实性)" }, { "value": "3", "label": "G3 (>50%实性)" },
-            { "value": "na", "label": "不适用（非内膜样）" }
-          ], "required": true },
-          { "id": "myometrial-invasion", "label": "肌层浸润", "labelEn": "Myometrial Invasion", "type": "select", "options": [
-            { "value": "none", "label": "无浸润" }, { "value": "less-50", "label": "<50%肌层" }, { "value": "50-or-more", "label": "≥50%肌层" }
-          ], "required": true },
-          { "id": "cervical-stroma", "label": "宫颈间质侵犯", "labelEn": "Cervical Stromal Invasion", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "lvi", "label": "脉管侵犯 (LVSI)", "labelEn": "LVSI", "type": "select", "options": [
-            { "value": "absent", "label": "未见" }, { "value": "focal", "label": "局灶" }, { "value": "substantial", "label": "大量" }
-          ], "required": true }
+          {
+            "id": "histologic-type",
+            "label": "组织学类型",
+            "labelEn": "Histologic Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "endometrioid",
+                "label": "子宫内膜样癌"
+              },
+              {
+                "value": "serous",
+                "label": "浆液性癌"
+              },
+              {
+                "value": "clear-cell",
+                "label": "透明细胞癌"
+              },
+              {
+                "value": "carcinosarcoma",
+                "label": "癌肉瘤"
+              },
+              {
+                "value": "mixed",
+                "label": "混合型"
+              },
+              {
+                "value": "undifferentiated",
+                "label": "未分化癌"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "figo-grade",
+            "label": "FIGO分级（内膜样癌）",
+            "labelEn": "FIGO Grade",
+            "type": "select",
+            "options": [
+              {
+                "value": "1",
+                "label": "G1 (≤5%实性)"
+              },
+              {
+                "value": "2",
+                "label": "G2 (6-50%实性)"
+              },
+              {
+                "value": "3",
+                "label": "G3 (>50%实性)"
+              },
+              {
+                "value": "na",
+                "label": "不适用（非内膜样）"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "myometrial-invasion",
+            "label": "肌层浸润",
+            "labelEn": "Myometrial Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "none",
+                "label": "无浸润"
+              },
+              {
+                "value": "less-50",
+                "label": "<50%肌层"
+              },
+              {
+                "value": "50-or-more",
+                "label": "≥50%肌层"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "cervical-stroma",
+            "label": "宫颈间质侵犯",
+            "labelEn": "Cervical Stromal Invasion",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "lvi",
+            "label": "脉管侵犯 (LVSI)",
+            "labelEn": "LVSI",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "未见"
+              },
+              {
+                "value": "focal",
+                "label": "局灶"
+              },
+              {
+                "value": "substantial",
+                "label": "大量"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "molecular",
         "title": "分子分型 (2023 FIGO)",
         "fields": [
-          { "id": "mmr-status", "label": "MMR/MSI状态", "labelEn": "MMR/MSI Status", "type": "select", "options": [
-            { "value": "pmmr", "label": "pMMR/MSS" }, { "value": "dmmr", "label": "dMMR/MSI-H" }
-          ], "required": true },
-          { "id": "pole-status", "label": "POLE EDM", "labelEn": "POLE Exonuclease Domain Mutation", "type": "select", "options": [
-            { "value": "wild", "label": "野生型" }, { "value": "mutant", "label": "突变型" }, { "value": "pending", "label": "待检" }
-          ], "required": true },
-          { "id": "p53-status", "label": "p53状态 (IHC)", "labelEn": "p53 Status", "type": "select", "options": [
-            { "value": "wild-type", "label": "野生型表达" }, { "value": "abnormal", "label": "异常表达（弥漫强阳性或完全阴性）" }
-          ], "required": true },
-          { "id": "molecular-subtype", "label": "分子分型结论", "labelEn": "Molecular Classification", "type": "select", "options": [
-            { "value": "pole", "label": "POLE ultramutated" }, { "value": "mmrd", "label": "MMRd/MSI-H" },
-            { "value": "nsmp", "label": "NSMP (无特异分子谱)" }, { "value": "p53abn", "label": "p53 abnormal" }
-          ], "required": true }
+          {
+            "id": "mmr-status",
+            "label": "MMR/MSI状态",
+            "labelEn": "MMR/MSI Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "pmmr",
+                "label": "pMMR/MSS"
+              },
+              {
+                "value": "dmmr",
+                "label": "dMMR/MSI-H"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "pole-status",
+            "label": "POLE EDM",
+            "labelEn": "POLE Exonuclease Domain Mutation",
+            "type": "select",
+            "options": [
+              {
+                "value": "wild",
+                "label": "野生型"
+              },
+              {
+                "value": "mutant",
+                "label": "突变型"
+              },
+              {
+                "value": "pending",
+                "label": "待检"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "p53-status",
+            "label": "p53状态 (IHC)",
+            "labelEn": "p53 Status",
+            "type": "select",
+            "options": [
+              {
+                "value": "wild-type",
+                "label": "野生型表达"
+              },
+              {
+                "value": "abnormal",
+                "label": "异常表达（弥漫强阳性或完全阴性）"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "molecular-subtype",
+            "label": "分子分型结论",
+            "labelEn": "Molecular Classification",
+            "type": "select",
+            "options": [
+              {
+                "value": "pole",
+                "label": "POLE ultramutated"
+              },
+              {
+                "value": "mmrd",
+                "label": "MMRd/MSI-H"
+              },
+              {
+                "value": "nsmp",
+                "label": "NSMP (无特异分子谱)"
+              },
+              {
+                "value": "p53abn",
+                "label": "p53 abnormal"
+              }
+            ],
+            "required": true
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期",
         "fields": [
-          { "id": "pt", "label": "pT", "labelEn": "pT", "type": "select", "options": [
-            { "value": "pT1a", "label": "pT1a (<50%肌层)" }, { "value": "pT1b", "label": "pT1b (≥50%肌层)" },
-            { "value": "pT2", "label": "pT2 (宫颈间质)" }, { "value": "pT3a", "label": "pT3a (浆膜/附件)" },
-            { "value": "pT3b", "label": "pT3b (阴道/宫旁)" }, { "value": "pT4", "label": "pT4 (膀胱/直肠)" }
-          ], "required": true },
-          { "id": "pn", "label": "pN", "labelEn": "pN", "type": "select", "options": [
-            { "value": "pNx", "label": "pNx" }, { "value": "pN0", "label": "pN0" },
-            { "value": "pN1", "label": "pN1 (盆腔)" }, { "value": "pN2", "label": "pN2 (腹主动脉)" }
-          ], "required": true }
+          {
+            "id": "pt",
+            "label": "pT",
+            "labelEn": "pT",
+            "type": "select",
+            "options": [
+              {
+                "value": "pT1a",
+                "label": "pT1a (<50%肌层)"
+              },
+              {
+                "value": "pT1b",
+                "label": "pT1b (≥50%肌层)"
+              },
+              {
+                "value": "pT2",
+                "label": "pT2 (宫颈间质)"
+              },
+              {
+                "value": "pT3a",
+                "label": "pT3a (浆膜/附件)"
+              },
+              {
+                "value": "pT3b",
+                "label": "pT3b (阴道/宫旁)"
+              },
+              {
+                "value": "pT4",
+                "label": "pT4 (膀胱/直肠)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "pn",
+            "label": "pN",
+            "labelEn": "pN",
+            "type": "select",
+            "options": [
+              {
+                "value": "pNx",
+                "label": "pNx"
+              },
+              {
+                "value": "pN0",
+                "label": "pN0"
+              },
+              {
+                "value": "pN1",
+                "label": "pN1 (盆腔)"
+              },
+              {
+                "value": "pN2",
+                "label": "pN2 (腹主动脉)"
+              }
+            ],
+            "required": true
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Endometrium 4.3.0.0 (2021)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "组织学类型（WHO 2020 女性生殖系统肿瘤分类）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "组织学分级（FIGO 分级）",
+          "coveredBy": "histologic-grade"
+        },
+        {
+          "cnField": "肌层浸润深度（浸润深度/肌层全层厚度，mm）",
+          "coveredBy": "myometrial-invasion"
+        },
+        {
+          "cnField": "宫颈间质受累",
+          "coveredBy": "cervical-stromal-involvement"
+        },
+        {
+          "cnField": "淋巴脉管侵犯（LVSI，含局灶/广泛）",
+          "coveredBy": "lvsi"
+        },
+        {
+          "cnField": "附件受累（卵巢/输卵管）",
+          "coveredBy": "adnexal-involvement"
+        },
+        {
+          "cnField": "浆膜/腹膜受累",
+          "coveredBy": "serosal-involvement"
+        },
+        {
+          "cnField": "切缘情况（宫颈/阴道/宫旁）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "淋巴结受累数与清扫总数（含前哨淋巴结 ITC/微转移）",
+          "coveredBy": "lymph-nodes"
+        },
+        {
+          "cnField": "FIGO 分期与 AJCC pTNM 分期",
+          "coveredBy": "pathologic-stage"
+        },
+        {
+          "cnField": "错配修复蛋白免疫组化（MLH1/MSH2/MSH6/PMS2）",
+          "coveredBy": "ihc-mmr"
+        },
+        {
+          "cnField": "p53 免疫组化模式（野生型/突变型）",
+          "coveredBy": "ihc-p53"
+        },
+        {
+          "cnField": "ER/PR 免疫组化",
+          "coveredBy": "ihc-hormone"
+        },
+        {
+          "cnField": "POLE 核酸外切酶域突变检测（TCGA 四分子分型）",
+          "coveredBy": "molecular-pole"
+        },
+        {
+          "cnField": "MSI/MLH1 启动子甲基化检测",
+          "coveredBy": "molecular-msi"
+        },
+        {
+          "cnField": "HER2 检测（浆液性癌）",
+          "coveredBy": "ihc-her2"
+        },
+        {
+          "cnField": "中国病理医师签名（双签制度）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "标本接收与固定时间记录（符合国家卫健委规范）",
+          "coveredBy": null
+        },
+        {
+          "cnField": "Lynch 综合征遗传咨询转诊建议",
+          "coveredBy": null
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP Endometrium protocol 最新版本号需核实；中文字段与 CAP 模板字段的精确 ID 映射（coveredBy 值）为根据 CAP protocol 结构推断，具体字段 key 命名以 CAP 官方电子版为准"
+    }
   },
   {
     "id": "melanoma",
@@ -664,66 +3889,353 @@
         "id": "specimen",
         "title": "标本信息",
         "fields": [
-          { "id": "specimen-type", "label": "标本类型", "labelEn": "Specimen Type", "type": "select", "options": [
-            { "value": "excision", "label": "切除" }, { "value": "wide-excision", "label": "扩大切除" },
-            { "value": "punch", "label": "环钻活检" }, { "value": "shave", "label": "刮除活检" }
-          ], "required": true },
-          { "id": "anatomic-site", "label": "解剖部位", "labelEn": "Anatomic Site", "type": "text", "required": true }
+          {
+            "id": "specimen-type",
+            "label": "标本类型",
+            "labelEn": "Specimen Type",
+            "type": "select",
+            "options": [
+              {
+                "value": "excision",
+                "label": "切除"
+              },
+              {
+                "value": "wide-excision",
+                "label": "扩大切除"
+              },
+              {
+                "value": "punch",
+                "label": "环钻活检"
+              },
+              {
+                "value": "shave",
+                "label": "刮除活检"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "anatomic-site",
+            "label": "解剖部位",
+            "labelEn": "Anatomic Site",
+            "type": "text",
+            "required": true
+          }
         ]
       },
       {
         "id": "histology",
         "title": "组织学",
         "fields": [
-          { "id": "melanoma-subtype", "label": "亚型", "labelEn": "Histologic Subtype", "type": "select", "options": [
-            { "value": "ssm", "label": "浅表扩散型" }, { "value": "nodular", "label": "结节型" },
-            { "value": "lmm", "label": "恶性雀斑样" }, { "value": "alm", "label": "肢端雀斑样" },
-            { "value": "desmoplastic", "label": "促结缔组织增生型" }
-          ], "required": true },
-          { "id": "breslow", "label": "Breslow厚度 (mm)", "labelEn": "Breslow Thickness (mm)", "type": "number", "required": true },
-          { "id": "clark-level", "label": "Clark分级", "labelEn": "Clark Level", "type": "select", "options": [
-            { "value": "I", "label": "I (表皮内)" }, { "value": "II", "label": "II (乳头层)" },
-            { "value": "III", "label": "III (充满乳头层)" }, { "value": "IV", "label": "IV (网状层)" }, { "value": "V", "label": "V (皮下)" }
-          ], "required": true },
-          { "id": "ulceration", "label": "溃疡", "labelEn": "Ulceration", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "mitotic-rate", "label": "核分裂率 (/mm²)", "labelEn": "Mitotic Rate (/mm²)", "type": "number", "required": true },
-          { "id": "microsatellites", "label": "微卫星灶/卫星灶", "labelEn": "Microsatellites", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": true },
-          { "id": "til", "label": "肿瘤浸润淋巴细胞 (TIL)", "labelEn": "TILs", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "non-brisk", "label": "稀疏" }, { "value": "brisk", "label": "活跃" }
-          ], "required": false },
-          { "id": "regression", "label": "消退", "labelEn": "Regression", "type": "select", "options": [
-            { "value": "absent", "label": "无" }, { "value": "present", "label": "有" }
-          ], "required": false }
+          {
+            "id": "melanoma-subtype",
+            "label": "亚型",
+            "labelEn": "Histologic Subtype",
+            "type": "select",
+            "options": [
+              {
+                "value": "ssm",
+                "label": "浅表扩散型"
+              },
+              {
+                "value": "nodular",
+                "label": "结节型"
+              },
+              {
+                "value": "lmm",
+                "label": "恶性雀斑样"
+              },
+              {
+                "value": "alm",
+                "label": "肢端雀斑样"
+              },
+              {
+                "value": "desmoplastic",
+                "label": "促结缔组织增生型"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "breslow",
+            "label": "Breslow厚度 (mm)",
+            "labelEn": "Breslow Thickness (mm)",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "clark-level",
+            "label": "Clark分级",
+            "labelEn": "Clark Level",
+            "type": "select",
+            "options": [
+              {
+                "value": "I",
+                "label": "I (表皮内)"
+              },
+              {
+                "value": "II",
+                "label": "II (乳头层)"
+              },
+              {
+                "value": "III",
+                "label": "III (充满乳头层)"
+              },
+              {
+                "value": "IV",
+                "label": "IV (网状层)"
+              },
+              {
+                "value": "V",
+                "label": "V (皮下)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "ulceration",
+            "label": "溃疡",
+            "labelEn": "Ulceration",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "mitotic-rate",
+            "label": "核分裂率 (/mm²)",
+            "labelEn": "Mitotic Rate (/mm²)",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "microsatellites",
+            "label": "微卫星灶/卫星灶",
+            "labelEn": "Microsatellites",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "til",
+            "label": "肿瘤浸润淋巴细胞 (TIL)",
+            "labelEn": "TILs",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "non-brisk",
+                "label": "稀疏"
+              },
+              {
+                "value": "brisk",
+                "label": "活跃"
+              }
+            ],
+            "required": false
+          },
+          {
+            "id": "regression",
+            "label": "消退",
+            "labelEn": "Regression",
+            "type": "select",
+            "options": [
+              {
+                "value": "absent",
+                "label": "无"
+              },
+              {
+                "value": "present",
+                "label": "有"
+              }
+            ],
+            "required": false
+          }
         ]
       },
       {
         "id": "margins",
         "title": "切缘",
         "fields": [
-          { "id": "peripheral-margin", "label": "外周切缘 (mm)", "labelEn": "Peripheral Margin (mm)", "type": "number", "required": true },
-          { "id": "deep-margin", "label": "深部切缘 (mm)", "labelEn": "Deep Margin (mm)", "type": "number", "required": true }
+          {
+            "id": "peripheral-margin",
+            "label": "外周切缘 (mm)",
+            "labelEn": "Peripheral Margin (mm)",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": "deep-margin",
+            "label": "深部切缘 (mm)",
+            "labelEn": "Deep Margin (mm)",
+            "type": "number",
+            "required": true
+          }
         ]
       },
       {
         "id": "staging",
         "title": "分期 (pTNM 8th)",
         "fields": [
-          { "id": "pt", "label": "pT", "labelEn": "pT", "type": "select", "options": [
-            { "value": "pTis", "label": "pTis (原位)" }, { "value": "pT1a", "label": "pT1a (≤0.8mm 无溃疡)" },
-            { "value": "pT1b", "label": "pT1b (≤0.8mm+溃疡 或 0.8-1mm)" }, { "value": "pT2a", "label": "pT2a (>1-2mm 无溃疡)" },
-            { "value": "pT2b", "label": "pT2b (>1-2mm+溃疡)" }, { "value": "pT3a", "label": "pT3a (>2-4mm 无溃疡)" },
-            { "value": "pT3b", "label": "pT3b (>2-4mm+溃疡)" }, { "value": "pT4a", "label": "pT4a (>4mm 无溃疡)" },
-            { "value": "pT4b", "label": "pT4b (>4mm+溃疡)" }
-          ], "required": true },
-          { "id": "sln", "label": "前哨淋巴结", "labelEn": "Sentinel Lymph Node", "type": "select", "options": [
-            { "value": "not-done", "label": "未做" }, { "value": "negative", "label": "阴性" }, { "value": "positive", "label": "阳性" }
-          ], "required": false }
+          {
+            "id": "pt",
+            "label": "pT",
+            "labelEn": "pT",
+            "type": "select",
+            "options": [
+              {
+                "value": "pTis",
+                "label": "pTis (原位)"
+              },
+              {
+                "value": "pT1a",
+                "label": "pT1a (≤0.8mm 无溃疡)"
+              },
+              {
+                "value": "pT1b",
+                "label": "pT1b (≤0.8mm+溃疡 或 0.8-1mm)"
+              },
+              {
+                "value": "pT2a",
+                "label": "pT2a (>1-2mm 无溃疡)"
+              },
+              {
+                "value": "pT2b",
+                "label": "pT2b (>1-2mm+溃疡)"
+              },
+              {
+                "value": "pT3a",
+                "label": "pT3a (>2-4mm 无溃疡)"
+              },
+              {
+                "value": "pT3b",
+                "label": "pT3b (>2-4mm+溃疡)"
+              },
+              {
+                "value": "pT4a",
+                "label": "pT4a (>4mm 无溃疡)"
+              },
+              {
+                "value": "pT4b",
+                "label": "pT4b (>4mm+溃疡)"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "sln",
+            "label": "前哨淋巴结",
+            "labelEn": "Sentinel Lymph Node",
+            "type": "select",
+            "options": [
+              {
+                "value": "not-done",
+                "label": "未做"
+              },
+              {
+                "value": "negative",
+                "label": "阴性"
+              },
+              {
+                "value": "positive",
+                "label": "阳性"
+              }
+            ],
+            "required": false
+          }
         ]
       }
-    ]
+    ],
+    "_enhance_synoptic_cn_align": {
+      "capVersion": "Skin Melanoma 4.2.0.0 (2024)",
+      "cnRegulationAlign": [
+        {
+          "cnField": "组织学类型（浅表扩散型/结节型/恶性雀斑样/肢端雀斑样等）",
+          "coveredBy": "histologic-type"
+        },
+        {
+          "cnField": "Breslow 厚度（mm）",
+          "coveredBy": "breslow-thickness"
+        },
+        {
+          "cnField": "Clark 分级",
+          "coveredBy": "clark-level"
+        },
+        {
+          "cnField": "溃疡（有/无）",
+          "coveredBy": "ulceration"
+        },
+        {
+          "cnField": "核分裂象计数（/mm²）",
+          "coveredBy": "mitotic-rate"
+        },
+        {
+          "cnField": "切缘状态及距离（mm）",
+          "coveredBy": "margins"
+        },
+        {
+          "cnField": "脉管侵犯",
+          "coveredBy": "lymphovascular-invasion"
+        },
+        {
+          "cnField": "神经侵犯",
+          "coveredBy": "perineural-invasion"
+        },
+        {
+          "cnField": "微卫星灶/卫星灶/移行转移",
+          "coveredBy": "microsatellites"
+        },
+        {
+          "cnField": "肿瘤浸润淋巴细胞（TIL）",
+          "coveredBy": "tumor-infiltrating-lymphocytes"
+        },
+        {
+          "cnField": "消退现象",
+          "coveredBy": "regression"
+        },
+        {
+          "cnField": "前哨淋巴结状态及转移灶大小",
+          "coveredBy": "lymph-nodes"
+        },
+        {
+          "cnField": "pTNM 分期（AJCC 第 8 版）",
+          "coveredBy": "ptnm-stage"
+        },
+        {
+          "cnField": "BRAF/NRAS/KIT 分子检测",
+          "coveredBy": "ancillary-studies"
+        },
+        {
+          "cnField": "中国病理医师双签及报告签发日期",
+          "coveredBy": null
+        },
+        {
+          "cnField": "标本院内唯一编号与患者身份信息核对",
+          "coveredBy": null
+        }
+      ],
+      "_low_confidence": true,
+      "_reason": "CAP Skin Melanoma protocol 最新版本号（4.2.0.0/2024）需核实；《肿瘤病理诊断报告规范》具体字段表述以最新中华医学会病理学分会发布版本为准"
+    }
   }
 ]

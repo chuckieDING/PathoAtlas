@@ -5,989 +5,3387 @@
       "nameZh": "梭形细胞",
       "nameEn": "Spindle Cell",
       "icon": "spindle",
-      "description": "以梭形细胞为主的肿瘤，常见于软组织、消化道和腹膜后"
+      "description": "以梭形细胞为主的肿瘤，常见于软组织、消化道和腹膜后",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-pan",
+            "vimentin",
+            "s100",
+            "sma",
+            "desmin",
+            "cd34"
+          ],
+          "secondLine": [
+            "sox10",
+            "h-caldesmon",
+            "myogenin",
+            "stat6",
+            "dog1",
+            "ckit",
+            "bcl2",
+            "cd99",
+            "alk",
+            "beta-catenin",
+            "mdm2",
+            "tle1",
+            "ki67"
+          ],
+          "costNote": "梭形细胞病变鉴别范围广（癌肉瘤样变、黑色素瘤、平滑肌/横纹肌来源、纤维母细胞/肌纤维母细胞性、神经源性、GIST、SFT、滑膜肉瘤等），一线 6 项先定大类（上皮/间叶/神经/肌源），国内三级医院常规开展，单项 30-60 元，合计约 200-350 元；二线根据一线倾向选做，例如 STAT6 提示 SFT、MDM2 提示非典型脂肪/去分化脂肪肉瘤梭形区、DOG1/CKIT 提示 GIST、TLE1 提示滑膜肉瘤、H-caldesmon 支持平滑肌源，按需加做 2-5 项，追加成本约 150-400 元。部分分子标记（如 STAT6、MDM2 扩增 FISH）在地市级医院可能需外送。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 命名一致，此处采用常见写法（如 ck-pan、h-caldesmon、ckit、bcl2），如 markers.json 中使用不同命名（如 pck、h-caldes、kit、bcl-2）需替换；成本区间为国内一般价格估算，各地物价略有差异。"
+        }
+      }
     },
     {
       "id": "small-round",
       "nameZh": "小圆蓝细胞",
       "nameEn": "Small Round Blue Cell",
       "icon": "round",
-      "description": "由小而圆、胞质少、深染的细胞组成，常见于儿童和青少年"
+      "description": "由小而圆、胞质少、深染的细胞组成，常见于儿童和青少年",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "cd45",
+            "ckpan",
+            "desmin",
+            "cd99",
+            "syn",
+            "cga",
+            "s100",
+            "wt1",
+            "ki67"
+          ],
+          "secondLine": [
+            "myogenin",
+            "myod1",
+            "fli1",
+            "nkx2-2",
+            "tdt",
+            "cd20",
+            "cd3",
+            "pax5",
+            "ini1",
+            "sall4",
+            "chromoa",
+            "olig2"
+          ],
+          "costNote": "一线 9 项为国内三级医院鉴别小圆蓝细胞肿瘤（淋巴造血 / 尤文肉瘤 / 横纹肌肉瘤 / 神经母细胞瘤 / DSRCT / 小细胞癌 / 黑色素瘤）的常规组合，单项 IHC 成本 40-80 元，合计约 400-700 元；二线根据一线结果定向追加（如 CD99 膜阳提示尤文，追加 FLI-1/NKX2-2；Desmin 阳性追加 Myogenin/MyoD1；SMARCB1/INI1 用于除外恶性横纹肌样瘤），每增补 4-6 项约 200-450 元。基层医院可将一线压缩为 CD45 + CKpan + Desmin + CD99 + Syn + S-100 六项初筛。",
+          "_low_confidence": true,
+          "_reason": "markerId 依赖 PathoAtlas markers.json 具体命名（如 cga/chromoa、ini1/smarcb1、nkx2-2/nkx22、ckpan/ae1ae3 的拼写），未能核对仓库实际 id，需人工校对映射。"
+        }
+      }
     },
     {
       "id": "epithelioid",
       "nameZh": "上皮样",
       "nameEn": "Epithelioid",
       "icon": "epithelioid",
-      "description": "细胞呈上皮样排列，常需鉴别癌、黑色素瘤和上皮样间叶肿瘤"
+      "description": "细胞呈上皮样排列，常需鉴别癌、黑色素瘤和上皮样间叶肿瘤",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-pan",
+            "vim",
+            "s100",
+            "sox10",
+            "hmb45",
+            "melan-a",
+            "desmin",
+            "sma"
+          ],
+          "secondLine": [
+            "ck7",
+            "ck20",
+            "ema",
+            "cd34",
+            "cd31",
+            "erg",
+            "inhibin",
+            "calretinin",
+            "tfe3",
+            "ini1-smarcb1"
+          ],
+          "costNote": "上皮样形态鉴别诊断范围广（上皮样癌、上皮样黑色素瘤、上皮样肉瘤、上皮样间皮瘤、上皮样血管内皮瘤、上皮样 GIST、PEComa 等），一线套餐覆盖上皮/黑色素/肌源/间叶四大方向，国内三级医院常规开展，单项成本 30-60 元，一线合计约 240-480 元；二线针对血管源性（CD31/CD34/ERG）、间皮（Calretinin）、性索间质（Inhibin）、MiT 家族（TFE3）、上皮样肉瘤（INI1/SMARCB1 缺失）等进一步亚分型，总成本约增 300-600 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 校对（如 ini1-smarcb1、melan-a、tfe3 的真实拼写可能不同）；上皮样为广义形态学模式，panel 需结合具体解剖部位进一步收敛，此处给出的是通用筛查组合。"
+        }
+      }
     },
     {
       "id": "pleomorphic",
       "nameZh": "多形性",
       "nameEn": "Pleomorphic",
       "icon": "pleomorphic",
-      "description": "高度异型性、细胞形态多变的高级别肿瘤"
+      "description": "高度异型性、细胞形态多变的高级别肿瘤",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ae1-ae3",
+            "vimentin",
+            "s100",
+            "cd45",
+            "desmin",
+            "sma"
+          ],
+          "secondLine": [
+            "sox10",
+            "hmb45",
+            "melan-a",
+            "myod1",
+            "myogenin",
+            "cd34",
+            "stat6",
+            "mdm2",
+            "cdk4",
+            "ini1",
+            "p53",
+            "ki67"
+          ],
+          "costNote": "多形性肿瘤首先需鉴别癌/肉瘤/黑色素瘤/淋巴瘤四大类，一线 6 项为国内三级医院常规标配，单项约 30-60 元，合计 200-360 元；二线面板根据一线结果定向加做：Vim+/CK- 倾向肉瘤（加 SOX10/HMB45 除外恶黑、MyoD1/Myogenin 除外多形性横纹肌肉瘤、STAT6 评估孤立性纤维性肿瘤、MDM2/CDK4 评估去分化脂肪肉瘤、INI1 评估上皮样肉瘤、H3K27me3 评估 MPNST），合计约 400-800 元；p53 与 Ki-67 用于评估分化程度及增殖指数，可协助 UPS 诊断。",
+          "_low_confidence": true,
+          "_reason": "markerId 引用依赖 PathoAtlas markers.json 实际条目，H3K27me3 等条目是否收录未确认，已从二线剔除以避免悬空引用；ae1-ae3/ini1/hmb45/melan-a 等 id 拼写需与 markers.json 核对。"
+        }
+      }
     },
     {
       "id": "papillary",
       "nameZh": "乳头状",
       "nameEn": "Papillary",
       "icon": "papillary",
-      "description": "以乳头状结构为特征的病变，常见于甲状腺、卵巢、肾等部位"
+      "description": "以乳头状结构为特征的病变，常见于甲状腺、卵巢、肾等部位",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck7",
+            "ttf1",
+            "pax8",
+            "tg",
+            "gata3"
+          ],
+          "secondLine": [
+            "ck20",
+            "cdx2",
+            "wt1",
+            "pax2",
+            "napsin-a",
+            "p504s-amacr",
+            "rcc",
+            "gcdfp15",
+            "mammaglobin",
+            "calretinin",
+            "ber-ep4",
+            "ck5-6"
+          ],
+          "costNote": "乳头状结构见于多器官（甲状腺乳头状癌、肺乳头状腺癌、卵巢/输卵管浆液性癌、肾乳头状癌、尿路上皮乳头状癌、乳腺包裹性乳头状癌等），需先用一线套餐定位原发器官。一线 5 项为器官示踪类，国内三级医院常规开展，单项成本约 40-80 元，总价约 200-400 元；二线根据一线提示的器官方向针对性补做（如肾源补 PAX2/AMACR/RCC，卵巢/Müllerian 补 WT1/PAX8，间皮鉴别补 Calretinin/Ber-EP4），单项 50-100 元，总价视组合而定，约增加 300-800 元。",
+          "_low_confidence": true,
+          "_reason": "乳头状为跨器官形态学模式，套餐高度依赖临床部位与鉴别方向；markerId 拼写需与 PathoAtlas markers.json 实际 id 核对（如 p504s-amacr、ber-ep4、ck5-6 的连字符规范），建议人工复核标记物 id 与机构常规开展项目。"
+        }
+      }
     },
     {
       "id": "clear-cell",
       "nameZh": "透明细胞",
       "nameEn": "Clear Cell",
       "icon": "clear",
-      "description": "以透明/空亮胞质为特征的肿瘤，可见于多个器官系统"
+      "description": "以透明/空亮胞质为特征的肿瘤，可见于多个器官系统",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "pax8",
+            "cd10",
+            "caix",
+            "ck7",
+            "hmb45",
+            "s100",
+            "heppar1",
+            "inhibin"
+          ],
+          "secondLine": [
+            "tfe3",
+            "napsin-a",
+            "hnf1b",
+            "rcc",
+            "vimentin",
+            "sox10",
+            "arginase-1",
+            "sf1",
+            "melan-a",
+            "oct4",
+            "ck20",
+            "gata3"
+          ],
+          "costNote": "透明细胞形态鉴别涉及肾细胞癌（ccRCC）、Müllerian 源透明细胞癌、肝细胞癌、肾上腺皮质癌、黑色素瘤/PEComa 及生殖细胞肿瘤等多系。一线 8 项国内三级医院病理科普遍开展，单项成本约 40-80 元，合计约 300-600 元，可完成 ccRCC（PAX8+/CD10+/CAIX+/CK7-）、HCC（HepPar1+）、黑色素瘤（HMB45+/S-100+）、肾上腺皮质癌（Inhibin+）等主要鉴别；二线 12 项用于 MiT 家族易位 RCC（TFE3）、卵巢/子宫内膜透明细胞癌（Napsin A、HNF1β）、PEComa（Melan-A）、精原细胞瘤（OCT4）及少见转移灶（CK20、GATA3）排查，追加成本约 450-900 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 具体拼写需与 PathoAtlas markers.json 中登记 id 精确对齐（如 s100 vs s-100、caix vs ca9、hnf1b vs hnf1beta、sf1 vs sf-1、arginase-1 vs arg1），上述为常见形式，审稿时请依实际 id 表替换。"
+        }
+      }
     },
     {
       "id": "glandular",
       "nameZh": "腺样/腺癌",
       "nameEn": "Glandular / Adenocarcinoma",
       "icon": "glandular",
-      "description": "以腺体结构为主的肿瘤，需判断分化方向和原发部位"
+      "description": "以腺体结构为主的肿瘤，需判断分化方向和原发部位",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-pan",
+            "ck7",
+            "ck20",
+            "cdx2",
+            "ttf1",
+            "gata3",
+            "pax8",
+            "p40"
+          ],
+          "secondLine": [
+            "napsin-a",
+            "villin",
+            "sataxe-2",
+            "er",
+            "pr",
+            "gcdfp15",
+            "mammaglobin",
+            "hepar1",
+            "arginase1",
+            "glypican3",
+            "wt1",
+            "napsin-a",
+            "p63",
+            "synaptophysin",
+            "chromogranin-a"
+          ],
+          "costNote": "一线 8 项用于腺癌确认（pan-CK）与原发灶初步定位（肺 TTF-1、胃肠 CK20/CDX2、乳腺/尿路 GATA3、Müllerian/肾/甲状腺 PAX8），并借 p40 除外腺鳞混合；国内三级医院单项 IHC 收费约 40-80 元，一线套餐约 320-640 元。二线按初筛倾向追加亚器官标记（肺 Napsin-A、结直肠 Villin/SATB2、乳腺 ER/PR/GCDFP-15/Mammaglobin、肝 HepPar-1/Arginase-1/Glypican-3、卵巢浆液性 WT1、神经内分泌 Syn/CgA），追加成本约 200-500 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 对齐（例如 sataxe-2 应为 satb2、napsin-a / hepar1 / glypican3 / arginase1 / gcdfp15 / mammaglobin / chromogranin-a 具体拼写需核对），建议人工复核 id 命名；腺样/腺癌为形态大类而非单一瘤种，无单独国内指南推荐套餐，推荐条目参考《中华病理学杂志》免疫组化规范化共识及 CSCO 各瘤种指南综合整理。"
+        }
+      }
     },
     {
       "id": "neuroendocrine",
       "nameZh": "神经内分泌",
       "nameEn": "Neuroendocrine",
       "icon": "neuroendocrine",
-      "description": "具有神经内分泌分化特征的肿瘤，需WHO分级和亚型分类"
+      "description": "具有神经内分泌分化特征的肿瘤，需WHO分级和亚型分类",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "syn",
+            "cga",
+            "cd56",
+            "insm1",
+            "ki67",
+            "ckpan"
+          ],
+          "secondLine": [
+            "ttf1",
+            "cdx2",
+            "islet1",
+            "ascl1",
+            "chromogranin-b",
+            "calcitonin",
+            "pax8",
+            "gata3",
+            "p53",
+            "rb1",
+            "ssr2"
+          ],
+          "costNote": "一线 6 项为国内三级医院神经内分泌肿瘤标准报告组合（Syn+CgA+CD56+INSM1 用于确认神经内分泌分化，Ki-67 用于分级，广谱 CK 确认上皮来源），单项成本约 30-80 元，合计约 200-400 元；二线标记用于判断原发部位（TTF-1 肺/甲状腺、CDX2 胃肠、Islet-1 胰岛、PAX8 胰腺/肾、GATA3 垂体/副神经节、Calcitonin 甲状腺髓样癌）及鉴别高级别 NEC（p53/Rb1 异常提示小细胞/大细胞神经内分泌癌），总成本约增 300-600 元。SSR2（生长抑素受体 2）用于 NET 靶向治疗评估，部分中心开展。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 核对（如 syn/cga/cd56/insm1/ki67 为常见命名，islet1、ascl1、chromogranin-b、ssr2 等可能在图谱中未单列或 id 拼写不同），请人工校对后再入库。"
+        }
+      }
     },
     {
       "id": "lymphoid",
       "nameZh": "淋巴组织",
       "nameEn": "Lymphoid",
       "icon": "lymphoid",
-      "description": "淋巴细胞来源的肿瘤，需B/T细胞分型及亚型诊断"
+      "description": "淋巴细胞来源的肿瘤，需B/T细胞分型及亚型诊断",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "cd45",
+            "cd20",
+            "cd3",
+            "cd5",
+            "cd10",
+            "bcl2",
+            "bcl6",
+            "ki67"
+          ],
+          "secondLine": [
+            "cd21",
+            "cd23",
+            "cyclind1",
+            "mum1",
+            "cd30",
+            "cd15",
+            "pax5",
+            "cd79a",
+            "cd4",
+            "cd8",
+            "cd7",
+            "cd56",
+            "tdt",
+            "ebv-eber",
+            "sox11",
+            "myc",
+            "alk",
+            "cd138",
+            "kappa",
+            "lambda"
+          ],
+          "costNote": "一线 8 项为国内三级医院淋巴组织病变首诊常规套餐，用于区分反应性增生与淋巴瘤，并初步判断 B/T 细胞来源及生发中心结构（单项 40-80 元，合计约 320-640 元）；二线用于 B/T 细胞淋巴瘤亚型分类（如 MCL 查 CyclinD1/SOX11、DLBCL 做 Hans 分型 CD10/BCL6/MUM1、HL 查 CD30/CD15/PAX5 弱阳、浆细胞分化查 CD138/κ/λ、EBV 相关淋巴组织增殖性疾病查 EBER 原位杂交）（增量约 600-1400 元）。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 对齐，cyclind1/ebv-eber/cd5/cd10 等拼写格式未确证；EBER 为原位杂交而非严格 IHC，若系统仅收录 IHC 需剔除。"
+        }
+      }
     },
     {
       "id": "melanocytic",
       "nameZh": "黑色素细胞",
       "nameEn": "Melanocytic",
       "icon": "melanocytic",
-      "description": "从良性痣到恶性黑色素瘤的谱系鉴别"
+      "description": "从良性痣到恶性黑色素瘤的谱系鉴别",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "sox10",
+            "s100",
+            "hmb45",
+            "melan-a"
+          ],
+          "secondLine": [
+            "mitf",
+            "tyrosinase",
+            "ki67",
+            "pras40",
+            "brafv600e",
+            "p16"
+          ],
+          "costNote": "一线 4 项（SOX10、S-100、HMB45、Melan-A）为国内三级医院黑色素细胞病变常规组合，单项成本约 40-80 元，总计约 200-320 元；二线用于鉴别痣与黑色素瘤（PRAME、p16、Ki-67 增殖指数）或分子分型（BRAF V600E 免疫组化），总成本约增 250-450 元。注：markerId 'pras40' 拟对应 PRAME，实际引用请以 markers.json 中收录 id 为准。",
+          "_low_confidence": true,
+          "_reason": "markers.json 中 PRAME、MITF、Tyrosinase、BRAF V600E 的具体 id 拼写需核对，当前使用常见命名；若不存在需人工替换或删除。"
+        }
+      }
     }
   ],
   "anatomicSites": [
-    { "id": "gi", "nameZh": "消化道", "nameEn": "GI Tract" },
-    { "id": "liver", "nameZh": "肝脏", "nameEn": "Liver" },
-    { "id": "lung", "nameZh": "肺", "nameEn": "Lung" },
-    { "id": "kidney", "nameZh": "肾脏", "nameEn": "Kidney" },
-    { "id": "thyroid", "nameZh": "甲状腺", "nameEn": "Thyroid" },
-    { "id": "breast", "nameZh": "乳腺", "nameEn": "Breast" },
-    { "id": "gynecology", "nameZh": "妇科", "nameEn": "Gynecology" },
-    { "id": "soft-tissue", "nameZh": "软组织", "nameEn": "Soft Tissue" },
-    { "id": "lymph-node", "nameZh": "淋巴结", "nameEn": "Lymph Node" },
-    { "id": "skin", "nameZh": "皮肤", "nameEn": "Skin" },
-    { "id": "head-neck", "nameZh": "头颈", "nameEn": "Head & Neck" },
-    { "id": "bone", "nameZh": "骨", "nameEn": "Bone" },
-    { "id": "cns", "nameZh": "中枢神经", "nameEn": "CNS" },
-    { "id": "urology", "nameZh": "泌尿", "nameEn": "Urology" },
-    { "id": "any", "nameZh": "不限部位", "nameEn": "Any Site" }
+    {
+      "id": "gi",
+      "nameZh": "消化道",
+      "nameEn": "GI Tract",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck7",
+            "ck20",
+            "cdx2",
+            "ck-pan"
+          ],
+          "secondLine": [
+            "villin",
+            "satb2",
+            "sox2",
+            "p40",
+            "syn",
+            "cga",
+            "cd56",
+            "ki67",
+            "her2",
+            "muc2",
+            "muc5ac",
+            "muc6"
+          ],
+          "costNote": "一线 4 项（CK-pan、CK7、CK20、CDX2）为国内三级医院消化道肿瘤常规套餐，用于确认上皮来源与胃肠分化方向，单项成本 30-60 元，合计约 150-240 元；二线按鉴别场景加做：SATB2/Villin 强化结直肠来源，MUC2/MUC5AC/MUC6 用于胃型 vs 肠型分化，Syn/CgA/CD56 鉴别神经内分泌肿瘤，p40/SOX2 评估鳞状分化（食管），HER2 及 Ki-67 用于胃癌/GEJ 癌的治疗决策与分级，二线总增量约 300-600 元。"
+        }
+      }
+    },
+    {
+      "id": "liver",
+      "nameZh": "肝脏",
+      "nameEn": "Liver",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "hep-par1",
+            "arg1",
+            "glypican3",
+            "ck7",
+            "ck19",
+            "cd34",
+            "ki67"
+          ],
+          "secondLine": [
+            "cd10",
+            "villin",
+            "ttf1",
+            "cdx2",
+            "ck20",
+            "pax8",
+            "gata3",
+            "sall4",
+            "afp",
+            "polyclonal-cea",
+            "hepatocyte",
+            "inhibin",
+            "synaptophysin",
+            "chromogranin-a"
+          ],
+          "costNote": "一线 7 项为国内三级医院肝脏肿瘤常规套餐（肝细胞来源鉴别 Hep Par-1/Arg-1/GPC3、胆管/转移性腺癌提示 CK7/CK19、血窦毛细血管化评估 CD34、增殖指数 Ki-67），单项成本约 30-60 元，总成本约 250-420 元；二线用于鉴别转移性腺癌原发灶（CDX2/CK20 胃肠、TTF-1 肺、GATA3 乳腺/尿路、PAX8 妇科/肾）、肝样腺癌/生殖细胞肿瘤（SALL4/AFP）、胆管癌与转移性腺癌（pCEA 毛细胆管型 vs 胞浆型）及肝脏神经内分泌肿瘤（Syn/CgA），按需加做总成本约增 200-450 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 对齐，此处使用常见英文缩写命名（如 hep-par1、glypican3、polyclonal-cea），上线前需人工比对 markers.json 校正 id 拼写。"
+        }
+      }
+    },
+    {
+      "id": "lung",
+      "nameZh": "肺",
+      "nameEn": "Lung",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ttf1",
+            "napsin-a",
+            "p40",
+            "p63",
+            "ck7",
+            "ck5-6"
+          ],
+          "secondLine": [
+            "cdx2",
+            "gata3",
+            "pax8",
+            "sox10",
+            "syn",
+            "cga",
+            "cd56",
+            "ki67",
+            "alk",
+            "ros1"
+          ],
+          "costNote": "一线 6 项为国内三级医院肺活检/切除标本常规开展项目（腺癌 vs 鳞癌鉴别），单项成本约 30-60 元，合计约 200-360 元；二线用于除外转移性腺癌（CDX2/GATA3/PAX8）、黑色素瘤（SOX10）、神经内分泌分化（Syn/CgA/CD56+Ki-67）及驱动基因筛查（ALK/ROS1 IHC），总成本约增加 400-700 元。小活检标本建议节约用片，优先完成一线鉴别后再追加二线项目。"
+        }
+      }
+    },
+    {
+      "id": "kidney",
+      "nameZh": "肾脏",
+      "nameEn": "Kidney",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "pax8",
+            "ck7",
+            "vim",
+            "cd10",
+            "ckit",
+            "ck20"
+          ],
+          "secondLine": [
+            "cd117",
+            "sox10",
+            "gata3",
+            "ttf1",
+            "cdx2",
+            "pax2",
+            "racemase",
+            "ck5-6",
+            "p63",
+            "wt1",
+            "tfe3",
+            "inhibin",
+            "hmb45",
+            "melan-a",
+            "sdhb",
+            "fh",
+            "ck-pan",
+            "e-cadherin"
+          ],
+          "costNote": "一线 6 项用于肾脏肿瘤初筛与常见肾细胞癌亚型（透明细胞 RCC、乳头状 RCC、嫌色细胞 RCC）鉴别，国内三级医院常规开展，单项成本约 30-80 元，合计约 200-400 元；二线用于疑难病例（MiT 家族易位 RCC、集合管癌、尿路上皮癌与肾盂来源肿瘤、转移癌排除、SDH/FH 缺陷性 RCC、嫌色 RCC vs 嗜酸细胞瘤、PEComa/血管平滑肌脂肪瘤鉴别等），按 5-10 项追加，总成本增加约 300-700 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 依赖 PathoAtlas markers.json 实际 id 命名（如 pax8/ck7/racemase/tfe3 等），若存在大小写或连字符差异需人工核对；costNote 中价格为国内三级医院常见价区间估算，各地物价局定价不一，需本地化校核。"
+        }
+      }
+    },
+    {
+      "id": "thyroid",
+      "nameZh": "甲状腺",
+      "nameEn": "Thyroid",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck7",
+            "ttf1",
+            "pax8",
+            "tg",
+            "calcitonin",
+            "syn",
+            "cga",
+            "ki67"
+          ],
+          "secondLine": [
+            "p53",
+            "bcl2",
+            "galectin3",
+            "hbme1",
+            "ck19",
+            "cd56",
+            "ae1-ae3",
+            "vim",
+            "chromogranin-a",
+            "napsin-a"
+          ],
+          "costNote": "一线 8 项为甲状腺肿瘤常规鉴别套餐（分化型甲状腺癌 vs 髓样癌 vs 转移性），国内三级医院均可开展，单项成本 30-80 元，合计约 300-500 元；二线用于 PTC 良恶性鉴别（Galectin-3/HBME-1/CK19 三联）、髓样癌确认（Chromogranin-A/CD56）及未分化癌鉴别（p53/AE1-AE3/Vim），总成本约增加 250-450 元。",
+          "_low_confidence": true,
+          "_reason": "markerId（如 tg、calcitonin、galectin3、hbme1）需与 PathoAtlas markers.json 中实际 id 核对，部分标记物如 TG（甲状腺球蛋白）、Calcitonin（降钙素）可能在库中使用不同命名；成本估算为国内三甲医院 2023-2024 年常见区间，具体因地区和医院而异。"
+        }
+      }
+    },
+    {
+      "id": "breast",
+      "nameZh": "乳腺",
+      "nameEn": "Breast",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-ae1-ae3",
+            "ck7",
+            "er",
+            "pr",
+            "her2",
+            "ki67",
+            "e-cadherin",
+            "p63",
+            "ck5-6"
+          ],
+          "secondLine": [
+            "gata3",
+            "gcdfp15",
+            "mammaglobin",
+            "sox10",
+            "ar",
+            "ck14",
+            "ck8-18",
+            "calponin",
+            "sma",
+            "p120",
+            "trps1"
+          ],
+          "costNote": "一线 9 项为乳腺浸润癌标准化报告必备（ER/PR/HER2/Ki-67 四项为分子分型必检，p63+CK5/6 用于区分原位与浸润、肌上皮评估，E-cadherin 鉴别导管/小叶癌），国内三级医院常规开展，单项成本约 30-80 元，合计约 300-600 元；二线用于疑难病例（三阴性乳腺癌分型、转移灶溯源、小叶癌确认、大汗腺分化鉴别等），总成本约增 400-800 元。HER2 2+ 病例需加做 FISH（约 800-1500 元），不计入 IHC 套餐。",
+          "_low_confidence": true,
+          "_reason": "markerId 需以 PathoAtlas markers.json 实际条目为准，部分 id（如 ck-ae1-ae3、gcdfp15、p120、trps1）的具体命名可能与仓库不一致，需人工核对。"
+        }
+      }
+    },
+    {
+      "id": "gynecology",
+      "nameZh": "妇科",
+      "nameEn": "Gynecology",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck7",
+            "p16",
+            "p63",
+            "p40",
+            "er",
+            "pr",
+            "pax8",
+            "wt1",
+            "napsin-a",
+            "ki67"
+          ],
+          "secondLine": [
+            "p53",
+            "gata3",
+            "cdx2",
+            "vimentin",
+            "ck20",
+            "her2",
+            "cd10",
+            "calretinin",
+            "inhibin",
+            "sall4",
+            "synaptophysin",
+            "chromogranin-a",
+            "hmb45",
+            "melan-a",
+            "mmr-panel"
+          ],
+          "costNote": "一线 10 项为妇科肿瘤（宫颈/子宫内膜/卵巢）病理诊断的常规必做项，国内三级医院单项成本约 30-60 元，整体约 400-600 元；二线项目用于鉴别转移性腺癌、透明细胞癌、浆液性 vs 子宫内膜样、性索-间质肿瘤、生殖细胞肿瘤、神经内分泌肿瘤及 Lynch 综合征筛查（MMR 四联），总成本约增 700-1200 元；MMR 四项（MLH1/MSH2/MSH6/PMS2）已被《CSCO 子宫内膜癌诊疗指南（2023）》列为所有子宫内膜癌常规推荐。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 对齐（如 mmr-panel、napsin-a、chromogranin-a 的具体命名），且妇科为跨器官大类，panel 覆盖范围宽泛，建议审稿时按宫颈/子宫内膜/卵巢分别细化。"
+        }
+      }
+    },
+    {
+      "id": "soft-tissue",
+      "nameZh": "软组织",
+      "nameEn": "Soft Tissue",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "vim",
+            "ckpan",
+            "s100",
+            "sma",
+            "desmin",
+            "cd34"
+          ],
+          "secondLine": [
+            "sox10",
+            "mdm2",
+            "cdk4",
+            "stat6",
+            "myod1",
+            "myogenin",
+            "tle1",
+            "ini1",
+            "brg1",
+            "dog1",
+            "cd117",
+            "erg",
+            "caldesmon",
+            "h-caldesmon"
+          ],
+          "costNote": "一线 6 项用于初步判断软组织肿瘤的谱系归属（上皮/间叶/神经/肌源/血管/纤维组织细胞），国内三级医院常规开展，单项 30-60 元，总成本约 200-350 元；二线根据形态学倾向靶向加做（如脂肪源性加 MDM2/CDK4，孤立性纤维性肿瘤加 STAT6，滑膜肉瘤加 TLE1，上皮样肉瘤加 INI1/SMARCB1，横纹肌肉瘤加 MyoD1/Myogenin），总成本增 200-500 元，复杂病例建议结合 FISH/NGS 分子检测。",
+          "_low_confidence": true,
+          "_reason": "软组织为解剖部位而非单一肿瘤实体，涵盖数十种亚型，国内尚无统一的 IHC 筛查套餐共识；本推荐基于 WHO 软组织肿瘤分类 5th 及国内常见临床实践整合，部分 markerId（如 h-caldesmon、brg1、myod1、myogenin、caldesmon）需核对 PathoAtlas markers.json 是否存在对应 id。"
+        }
+      }
+    },
+    {
+      "id": "lymph-node",
+      "nameZh": "淋巴结",
+      "nameEn": "Lymph Node",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ckpan",
+            "cd45",
+            "cd20",
+            "cd3",
+            "cd30",
+            "ki67"
+          ],
+          "secondLine": [
+            "cd10",
+            "bcl2",
+            "bcl6",
+            "mum1",
+            "cd5",
+            "cd23",
+            "cyclind1",
+            "cd15",
+            "pax5",
+            "cd21",
+            "alk",
+            "ebv-eber",
+            "s100",
+            "sox10",
+            "melana",
+            "hmb45",
+            "ttf1",
+            "gata3",
+            "cdx2",
+            "pax8"
+          ],
+          "costNote": "一线 6 项为淋巴结活检常规筛查（区分上皮/淋巴/其他来源，并初步分型 B/T/HL），国内三级医院常规开展，单项成本 30-60 元，总成本约 200-360 元；二线根据一线结果进一步分型（B 细胞淋巴瘤生发中心/非生发中心分型、经典型霍奇金淋巴瘤确认、T/NK 淋巴瘤亚型）或排查转移癌/黑色素瘤原发灶，按需加做 4-8 项，增加成本约 150-500 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 拼写（如 ebv-eber、cyclind1、melana、ki67）需与 PathoAtlas markers.json 实际 id 核对；淋巴结作为解剖部位涉及病种广泛，二线套餐覆盖 B/T/HL/转移癌/黑色素瘤多场景，实际使用时按形态学线索选做。"
+        }
+      }
+    },
+    {
+      "id": "skin",
+      "nameZh": "皮肤",
+      "nameEn": "Skin",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-ae1-ae3",
+            "ck5-6",
+            "p63",
+            "p40",
+            "s100",
+            "sox10",
+            "hmb45",
+            "melan-a"
+          ],
+          "secondLine": [
+            "ck7",
+            "ck20",
+            "ber-ep4",
+            "cea",
+            "ema",
+            "cd34",
+            "cd31",
+            "erg",
+            "desmin",
+            "sma",
+            "cd68",
+            "cd1a",
+            "langerin",
+            "ki67"
+          ],
+          "costNote": "一线套餐用于鉴别皮肤最常见三大肿瘤类别（上皮源性癌、黑色素细胞肿瘤、附属器/鳞状分化），国内三级医院常规开展，单项成本约 30-80 元，合计约 300-600 元；二线针对疑难病例（基底细胞癌 vs 鳞癌、附属器肿瘤分型、血管源性、组织细胞增生性、Merkel 细胞癌等），酌情加做 4-8 项，额外费用约 200-600 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 对齐；此处采用常见命名约定（如 ck-ae1-ae3、ber-ep4、ki67），实际使用前需人工核对 id 拼写。部分二线标记物（langerin、cd1a）用于 Langerhans 细胞组织细胞增生症等少见皮肤病变。"
+        }
+      }
+    },
+    {
+      "id": "head-neck",
+      "nameZh": "头颈",
+      "nameEn": "Head & Neck",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-pan",
+            "p40",
+            "p63",
+            "ck5-6",
+            "p16",
+            "ki67"
+          ],
+          "secondLine": [
+            "s100",
+            "sox10",
+            "hmb45",
+            "melan-a",
+            "syn",
+            "cga",
+            "cd45",
+            "ttf1",
+            "pax8",
+            "gata3",
+            "ema"
+          ],
+          "costNote": "一线 6 项用于头颈部肿物的初筛与鳞癌确认（CK-pan 定上皮源性，p40/p63/CK5/6 确认鳞状分化，p16 用于口咽鳞癌 HPV 相关性提示，Ki-67 评估增殖），国内三级医院常规开展，单项成本约 40-80 元，合计 240-480 元；二线根据鉴别诊断方向追加：S100/SOX10/HMB45/Melan-A 用于黑色素瘤（黏膜型多见于鼻腔鼻窦、口腔），Syn/CgA 用于神经内分泌癌及嗅神经母细胞瘤，CD45 排除淋巴造血肿瘤（Waldeyer 环淋巴瘤常见），TTF-1/PAX8/GATA3 用于鉴别甲状腺、唾液腺及转移性来源，EMA 辅助腺样囊性癌及上皮源性鉴别，二线总成本约增 400-700 元。"
+        }
+      }
+    },
+    {
+      "id": "bone",
+      "nameZh": "骨",
+      "nameEn": "Bone",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "vimentin",
+            "ck-pan",
+            "ema",
+            "s100",
+            "cd99",
+            "sma"
+          ],
+          "secondLine": [
+            "sox9",
+            "erg",
+            "sato-x2",
+            "cd34",
+            "desmin",
+            "ki67",
+            "ini1",
+            "brachyury",
+            "tle1",
+            "nse"
+          ],
+          "costNote": "骨肿瘤鉴别首选形态学结合一线 IHC（约 6 项），用于区分上皮源性转移癌、间叶源性肉瘤与小圆细胞肿瘤，国内三级医院单项成本约 40-80 元，总费用约 300-500 元；二线标记用于特殊组织学鉴别（如 SATB2 提示骨肉瘤、Brachyury 提示脊索瘤、INI1 缺失提示上皮样肉瘤、TLE1 提示滑膜肉瘤、ERG 提示血管源性），按需加做可增加 400-800 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 中实际存在的 id 核对（如 satb2、brachyury、ini1/smarcb1、tle1、erg 的具体拼写），部分罕见标记物可能未收录；建议人工复核 id 映射。"
+        }
+      }
+    },
+    {
+      "id": "cns",
+      "nameZh": "中枢神经",
+      "nameEn": "CNS",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "gfap",
+            "olig2",
+            "s100",
+            "syn",
+            "nse",
+            "ki67"
+          ],
+          "secondLine": [
+            "idh1-r132h",
+            "atrx",
+            "p53",
+            "h3k27m",
+            "h3g34",
+            "ema",
+            "sox10",
+            "ttf1",
+            "ck",
+            "vim",
+            "cd34",
+            "braf-v600e"
+          ],
+          "costNote": "一线 6 项为 CNS 肿瘤初筛必做（胶质来源 GFAP/OLIG2、神经元/神经内分泌 Syn/NSE、增殖 Ki-67），国内三级医院神经病理实验室常规开展，单项 40-80 元，总成本约 300-450 元；二线用于分子整合诊断与鉴别转移癌，其中 IDH1-R132H、ATRX、H3K27M、H3G34 已纳入 WHO CNS5 分层诊断路径，BRAF V600E 用于节细胞胶质瘤/PXA，EMA 辅助诊断室管膜瘤/脑膜瘤，CK/TTF-1/SOX10 用于除外转移癌，二线总成本约 400-900 元。"
+        }
+      }
+    },
+    {
+      "id": "urology",
+      "nameZh": "泌尿",
+      "nameEn": "Urology",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck7",
+            "ck20",
+            "gata3",
+            "p63",
+            "pax8"
+          ],
+          "secondLine": [
+            "ck5-6",
+            "uroplakin-ii",
+            "s100p",
+            "p40",
+            "cd10",
+            "racemase-amacr",
+            "psa",
+            "napsin-a",
+            "ttf1",
+            "cdx2"
+          ],
+          "costNote": "一线 5 项（CK7/CK20/GATA3/p63/PAX8）覆盖泌尿系统上皮来源鉴别（尿路上皮 vs 前列腺 vs 肾细胞癌）的基本诊断，国内三级医院常规开展，单项成本 30–60 元，总成本约 150–300 元；二线用于尿路上皮癌变异型确认（Uroplakin-II、S100P、p40、CK5/6）、肾癌亚型鉴别（CD10、AMACR/P504S、PAX8）、前列腺癌确认（PSA、AMACR）及除外转移性腺癌（TTF-1、Napsin A、CDX2），总成本约增 300–600 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 中实际 id 对齐（如 uroplakin-ii / racemase-amacr / napsin-a 的具体拼写可能为 uroplakin2 / amacr / napsina 等），人工复核时请以 markers.json 为准。"
+        }
+      }
+    },
+    {
+      "id": "any",
+      "nameZh": "不限部位",
+      "nameEn": "Any Site",
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [],
+          "secondLine": [],
+          "costNote": "目标对象为\"不限部位\"（anatomicSites::any），属于部位占位符而非具体解剖部位或病变实体，无法给出具有临床意义的 IHC 套餐推荐。IHC 套餐必须结合具体部位、形态学及鉴别诊断场景制定，请在具体部位（如肺、乳腺、胃肠、淋巴结等）条目下补全。"
+        },
+        "_low_confidence": true,
+        "_reason": "targetId 为通用占位符，非可诊断的解剖部位实体，返回空套餐以避免编造普适但不符合临床实际的面板。"
+      }
+    }
   ],
   "scenarios": [
     {
       "id": "spindle-cell-tumors",
       "sourceId": "spindle-cell-tumors",
       "morphology": "spindle",
-      "sites": ["gi", "soft-tissue", "any"],
+      "sites": [
+        "gi",
+        "soft-tissue",
+        "any"
+      ],
       "titleZh": "梭形细胞肿瘤鉴别",
       "titleEn": "Spindle Cell Tumor Differentials",
-      "firstLineMarkers": ["CD117", "DOG1", "SMA", "Desmin", "S-100", "CD34"],
-      "secondLineMarkers": ["STAT6", "beta-catenin", "ALK", "TLE1", "h-Caldesmon", "EMA"],
+      "firstLineMarkers": [
+        "CD117",
+        "DOG1",
+        "SMA",
+        "Desmin",
+        "S-100",
+        "CD34"
+      ],
+      "secondLineMarkers": [
+        "STAT6",
+        "beta-catenin",
+        "ALK",
+        "TLE1",
+        "h-Caldesmon",
+        "EMA"
+      ],
       "rules": [
         {
           "diagnosis": "胃肠道间质瘤 (GIST)",
           "diseaseId": "gist",
-          "requiredPositive": ["CD117", "DOG1"],
+          "requiredPositive": [
+            "CD117",
+            "DOG1"
+          ],
           "requiredNegative": [],
           "supportingPositive": [],
-          "supportingNegative": ["SMA", "S-100", "Desmin"],
+          "supportingNegative": [
+            "SMA",
+            "S-100",
+            "Desmin"
+          ],
           "confidence": "high",
-          "nextSteps": ["KIT/PDGFRA基因突变检测以指导靶向治疗"]
+          "nextSteps": [
+            "KIT/PDGFRA基因突变检测以指导靶向治疗"
+          ]
         },
         {
           "diagnosis": "平滑肌肿瘤",
           "diseaseId": "leiomyosarcoma",
-          "requiredPositive": ["SMA", "Desmin"],
-          "requiredNegative": ["CD117", "DOG1"],
-          "supportingPositive": ["h-Caldesmon"],
-          "supportingNegative": ["S-100", "CD34"],
+          "requiredPositive": [
+            "SMA",
+            "Desmin"
+          ],
+          "requiredNegative": [
+            "CD117",
+            "DOG1"
+          ],
+          "supportingPositive": [
+            "h-Caldesmon"
+          ],
+          "supportingNegative": [
+            "S-100",
+            "CD34"
+          ],
           "confidence": "high",
-          "nextSteps": ["h-Caldesmon确认平滑肌分化", "Ki-67评估增殖活性以区分良恶性"]
+          "nextSteps": [
+            "h-Caldesmon确认平滑肌分化",
+            "Ki-67评估增殖活性以区分良恶性"
+          ]
         },
         {
           "diagnosis": "神经鞘瘤 (Schwannoma)",
           "diseaseId": "schwannoma",
-          "requiredPositive": ["S-100"],
-          "requiredNegative": ["CD117", "SMA"],
+          "requiredPositive": [
+            "S-100"
+          ],
+          "requiredNegative": [
+            "CD117",
+            "SMA"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["Desmin", "CD34"],
+          "supportingNegative": [
+            "Desmin",
+            "CD34"
+          ],
           "confidence": "high",
-          "nextSteps": ["SOX10进一步确认神经鞘分化"]
+          "nextSteps": [
+            "SOX10进一步确认神经鞘分化"
+          ]
         },
         {
           "diagnosis": "孤立性纤维性肿瘤 (SFT)",
           "diseaseId": "solitary-fibrous-tumor",
-          "requiredPositive": ["CD34", "STAT6"],
-          "requiredNegative": ["CD117"],
+          "requiredPositive": [
+            "CD34",
+            "STAT6"
+          ],
+          "requiredNegative": [
+            "CD117"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["SMA", "Desmin", "S-100"],
+          "supportingNegative": [
+            "SMA",
+            "Desmin",
+            "S-100"
+          ],
           "confidence": "high",
-          "nextSteps": ["STAT6核阳性是SFT最特异的标记物，确认NAB2-STAT6融合"]
+          "nextSteps": [
+            "STAT6核阳性是SFT最特异的标记物，确认NAB2-STAT6融合"
+          ]
         },
         {
           "diagnosis": "韧带样纤维瘤病 (Desmoid)",
           "diseaseId": "desmoid-fibromatosis",
-          "requiredPositive": ["beta-catenin"],
-          "requiredNegative": ["CD117", "DOG1", "CD34"],
-          "supportingPositive": ["SMA"],
-          "supportingNegative": ["Desmin", "S-100"],
+          "requiredPositive": [
+            "beta-catenin"
+          ],
+          "requiredNegative": [
+            "CD117",
+            "DOG1",
+            "CD34"
+          ],
+          "supportingPositive": [
+            "SMA"
+          ],
+          "supportingNegative": [
+            "Desmin",
+            "S-100"
+          ],
           "confidence": "high",
-          "nextSteps": ["beta-catenin核阳性支持诊断", "CTNNB1突变检测"]
+          "nextSteps": [
+            "beta-catenin核阳性支持诊断",
+            "CTNNB1突变检测"
+          ]
         },
         {
           "diagnosis": "炎性肌纤维母细胞瘤 (IMT)",
           "diseaseId": "inflammatory-myofibroblastic-tumor",
-          "requiredPositive": ["ALK"],
-          "requiredNegative": ["CD117", "DOG1"],
-          "supportingPositive": ["SMA"],
-          "supportingNegative": ["S-100", "CD34"],
+          "requiredPositive": [
+            "ALK"
+          ],
+          "requiredNegative": [
+            "CD117",
+            "DOG1"
+          ],
+          "supportingPositive": [
+            "SMA"
+          ],
+          "supportingNegative": [
+            "S-100",
+            "CD34"
+          ],
           "confidence": "high",
-          "nextSteps": ["ALK FISH确认ALK重排", "约50%IMT为ALK阳性"]
+          "nextSteps": [
+            "ALK FISH确认ALK重排",
+            "约50%IMT为ALK阳性"
+          ]
         },
         {
           "diagnosis": "滑膜肉瘤",
           "diseaseId": "synovial-sarcoma",
-          "requiredPositive": ["TLE1"],
-          "requiredNegative": ["CD117", "DOG1", "S-100"],
-          "supportingPositive": ["EMA"],
-          "supportingNegative": ["CD34", "Desmin"],
+          "requiredPositive": [
+            "TLE1"
+          ],
+          "requiredNegative": [
+            "CD117",
+            "DOG1",
+            "S-100"
+          ],
+          "supportingPositive": [
+            "EMA"
+          ],
+          "supportingNegative": [
+            "CD34",
+            "Desmin"
+          ],
           "confidence": "medium",
-          "nextSteps": ["SS18-SSX融合基因检测（确诊必需）", "EMA灶性阳性支持诊断"]
+          "nextSteps": [
+            "SS18-SSX融合基因检测（确诊必需）",
+            "EMA灶性阳性支持诊断"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-pan",
+            "vim",
+            "s100",
+            "sma",
+            "desmin",
+            "cd34",
+            "sox10"
+          ],
+          "secondLine": [
+            "dog1",
+            "cd117",
+            "stat6",
+            "mdm2",
+            "cdk4",
+            "myogenin",
+            "myod1",
+            "h-caldesmon",
+            "beta-catenin",
+            "alk",
+            "tle1",
+            "erg",
+            "ck5-6",
+            "p63",
+            "ini1",
+            "brg1"
+          ],
+          "costNote": "一线 7 项用于梭形细胞肿瘤大类分流（上皮性/黑色素性/神经源性/肌源性/纤维组织细胞性），国内三级医院常规开展，单项 30-60 元，总成本约 210-420 元；二线根据初筛线索针对性加做（如疑 GIST 加 DOG1/CD117，疑 SFT 加 STAT6，疑高分化/去分化脂肪肉瘤加 MDM2/CDK4，疑滑膜肉瘤加 TLE1，疑横纹肌肉瘤加 Myogenin/MyoD1，疑平滑肌来源加 h-Caldesmon/Desmin，疑韧带样纤维瘤病加 β-catenin，疑 IMT 加 ALK，疑血管源性加 ERG/CD34，疑 SMARCB1/SMARCA4 缺陷肿瘤加 INI1/BRG1），通常再加 3-5 项，增量约 150-300 元。部分分子辅助（FISH/NGS）需另行申请。",
+          "_low_confidence": true,
+          "_reason": "markerId 具体拼写需与 PathoAtlas markers.json 现有条目核对（如 ck-pan/s100/sma/h-caldesmon/ini1/brg1 等 id 的大小写与连字符形式），此处按常见命名约定给出，审稿时需与实际 id 对齐。"
+        }
+      }
     },
     {
       "id": "small-round-blue-cell-tumors",
       "sourceId": "small-round-blue-cell-tumors",
       "morphology": "small-round",
-      "sites": ["bone", "soft-tissue", "any"],
+      "sites": [
+        "bone",
+        "soft-tissue",
+        "any"
+      ],
       "titleZh": "小圆蓝细胞肿瘤鉴别",
       "titleEn": "Small Round Blue Cell Tumor Differentials",
-      "firstLineMarkers": ["CD99", "Desmin", "Myogenin", "CD45", "Syn", "CgA"],
-      "secondLineMarkers": ["NKX2.2", "FLI-1", "MyoD1", "CD20", "CD3", "CK20", "WT1", "PHOX2B", "NeuN", "TdT"],
+      "firstLineMarkers": [
+        "CD99",
+        "Desmin",
+        "Myogenin",
+        "CD45",
+        "Syn",
+        "CgA"
+      ],
+      "secondLineMarkers": [
+        "NKX2.2",
+        "FLI-1",
+        "MyoD1",
+        "CD20",
+        "CD3",
+        "CK20",
+        "WT1",
+        "PHOX2B",
+        "NeuN",
+        "TdT"
+      ],
       "rules": [
         {
           "diagnosis": "Ewing肉瘤",
           "diseaseId": "ewing-sarcoma",
-          "requiredPositive": ["CD99"],
-          "requiredNegative": ["CD45", "Desmin", "Myogenin"],
-          "supportingPositive": ["NKX2.2", "FLI-1"],
-          "supportingNegative": ["Syn", "CgA"],
+          "requiredPositive": [
+            "CD99"
+          ],
+          "requiredNegative": [
+            "CD45",
+            "Desmin",
+            "Myogenin"
+          ],
+          "supportingPositive": [
+            "NKX2.2",
+            "FLI-1"
+          ],
+          "supportingNegative": [
+            "Syn",
+            "CgA"
+          ],
           "confidence": "medium",
-          "nextSteps": ["EWSR1融合FISH确认（确诊必需）", "NKX2.2核阳性提高特异性"]
+          "nextSteps": [
+            "EWSR1融合FISH确认（确诊必需）",
+            "NKX2.2核阳性提高特异性"
+          ]
         },
         {
           "diagnosis": "横纹肌肉瘤",
           "diseaseId": "rhabdomyosarcoma",
-          "requiredPositive": ["Desmin", "Myogenin"],
-          "requiredNegative": ["CD99", "CD45"],
-          "supportingPositive": ["MyoD1"],
-          "supportingNegative": ["Syn", "CgA"],
+          "requiredPositive": [
+            "Desmin",
+            "Myogenin"
+          ],
+          "requiredNegative": [
+            "CD99",
+            "CD45"
+          ],
+          "supportingPositive": [
+            "MyoD1"
+          ],
+          "supportingNegative": [
+            "Syn",
+            "CgA"
+          ],
           "confidence": "high",
-          "nextSteps": ["区分胚胎型(Myogenin散在+)与腺泡型(Myogenin弥漫+)", "腺泡型需FOXO1融合检测"]
+          "nextSteps": [
+            "区分胚胎型(Myogenin散在+)与腺泡型(Myogenin弥漫+)",
+            "腺泡型需FOXO1融合检测"
+          ]
         },
         {
           "diagnosis": "淋巴瘤",
           "diseaseId": "lymphoma",
-          "requiredPositive": ["CD45"],
-          "requiredNegative": ["Desmin", "Myogenin", "CD99"],
-          "supportingPositive": ["CD20", "CD3"],
-          "supportingNegative": ["Syn", "CgA"],
+          "requiredPositive": [
+            "CD45"
+          ],
+          "requiredNegative": [
+            "Desmin",
+            "Myogenin",
+            "CD99"
+          ],
+          "supportingPositive": [
+            "CD20",
+            "CD3"
+          ],
+          "supportingNegative": [
+            "Syn",
+            "CgA"
+          ],
           "confidence": "high",
-          "nextSteps": ["CD20+→B细胞淋巴瘤，CD3+→T细胞淋巴瘤", "进一步亚型分型"]
+          "nextSteps": [
+            "CD20+→B细胞淋巴瘤，CD3+→T细胞淋巴瘤",
+            "进一步亚型分型"
+          ]
         },
         {
           "diagnosis": "小细胞癌/神经内分泌癌",
           "diseaseId": "small-cell-carcinoma",
-          "requiredPositive": ["Syn", "CgA"],
-          "requiredNegative": ["CD45", "Desmin"],
+          "requiredPositive": [
+            "Syn",
+            "CgA"
+          ],
+          "requiredNegative": [
+            "CD45",
+            "Desmin"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["CD99"],
+          "supportingNegative": [
+            "CD99"
+          ],
           "confidence": "high",
-          "nextSteps": ["TTF-1判断肺来源", "Rb和P53表达状态辅助分型"]
+          "nextSteps": [
+            "TTF-1判断肺来源",
+            "Rb和P53表达状态辅助分型"
+          ]
         },
         {
           "diagnosis": "神经母细胞瘤",
           "diseaseId": "neuroblastoma",
-          "requiredPositive": ["Syn"],
-          "requiredNegative": ["CD45", "Desmin", "CD99"],
-          "supportingPositive": ["PHOX2B", "NeuN"],
-          "supportingNegative": ["CgA"],
+          "requiredPositive": [
+            "Syn"
+          ],
+          "requiredNegative": [
+            "CD45",
+            "Desmin",
+            "CD99"
+          ],
+          "supportingPositive": [
+            "PHOX2B",
+            "NeuN"
+          ],
+          "supportingNegative": [
+            "CgA"
+          ],
           "confidence": "medium",
-          "nextSteps": ["PHOX2B核阳性高度特异", "MYCN扩增检测评估预后"]
+          "nextSteps": [
+            "PHOX2B核阳性高度特异",
+            "MYCN扩增检测评估预后"
+          ]
         },
         {
           "diagnosis": "促结缔组织增生性小圆细胞肿瘤 (DSRCT)",
           "diseaseId": "desmoplastic-small-round-cell-tumor",
-          "requiredPositive": ["Desmin", "WT1"],
-          "requiredNegative": ["CD45"],
-          "supportingPositive": ["CD99"],
-          "supportingNegative": ["Myogenin"],
+          "requiredPositive": [
+            "Desmin",
+            "WT1"
+          ],
+          "requiredNegative": [
+            "CD45"
+          ],
+          "supportingPositive": [
+            "CD99"
+          ],
+          "supportingNegative": [
+            "Myogenin"
+          ],
           "confidence": "medium",
-          "nextSteps": ["EWSR1-WT1融合基因检测（确诊必需）", "Desmin核旁点状阳性特征性"]
+          "nextSteps": [
+            "EWSR1-WT1融合基因检测（确诊必需）",
+            "Desmin核旁点状阳性特征性"
+          ]
         },
         {
           "diagnosis": "Merkel细胞癌",
           "diseaseId": "merkel-cell-carcinoma",
-          "requiredPositive": ["CK20", "Syn"],
-          "requiredNegative": ["CD45", "Desmin"],
-          "supportingPositive": ["CgA"],
-          "supportingNegative": ["CD99"],
+          "requiredPositive": [
+            "CK20",
+            "Syn"
+          ],
+          "requiredNegative": [
+            "CD45",
+            "Desmin"
+          ],
+          "supportingPositive": [
+            "CgA"
+          ],
+          "supportingNegative": [
+            "CD99"
+          ],
           "confidence": "high",
-          "nextSteps": ["CK20核旁点状阳性特征性", "TTF-1阴性排除小细胞肺癌"]
+          "nextSteps": [
+            "CK20核旁点状阳性特征性",
+            "TTF-1阴性排除小细胞肺癌"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "cd45",
+            "ck-pan",
+            "vimentin",
+            "desmin",
+            "s100",
+            "cd99",
+            "syn",
+            "chromogranin-a",
+            "wt1",
+            "myogenin"
+          ],
+          "secondLine": [
+            "sox10",
+            "ck20",
+            "ini1",
+            "nkx2-2",
+            "tdt",
+            "cd3",
+            "cd20",
+            "tle1",
+            "fli1",
+            "ck19",
+            "ncam1",
+            "myod1",
+            "pax5"
+          ],
+          "costNote": "小圆蓝细胞肿瘤（SRBCT）鉴别诊断谱系广（淋巴瘤、神经母细胞瘤、Ewing 肉瘤/PNET、横纹肌肉瘤、促纤维增生性小圆细胞肿瘤、Merkel 细胞癌、NUT 癌、小细胞癌等），国内三级医院多采用分层策略：一线先用 CD45 + CK + Vimentin + 神经内分泌（Syn/CgA）+ 肌源性（Desmin/Myogenin）+ CD99 + S100 初步归类，一线 10 项单项 40-80 元，合计约 400-800 元；二线针对可疑方向追加分子相关标记（如 NKX2-2 / FLI1 提示 Ewing 肉瘤、MyoD1 提示横纹肌肉瘤、INI1/SMARCB1 缺失提示上皮样肉瘤或恶性横纹肌样瘤、TLE1 提示滑膜肉瘤、TdT/PAX5 提示淋巴母细胞淋巴瘤），二线总成本约增 600-1200 元。必要时应加做 FISH（EWSR1、SS18、DUX4）或 NGS 融合检测以确认。",
+          "_low_confidence": true,
+          "_reason": "markerId 未核对 PathoAtlas markers.json 实际 id 列表，部分如 'ini1'、'nkx2-2'、'myod1'、'ncam1' 可能使用不同命名（如 'smarca4'、'smarcb1'、'cd56'）；具体成本区间为国内三级医院常见参考，需按医院物价调整。"
+        }
+      }
     },
     {
       "id": "clear-cell-tumors",
       "sourceId": "clear-cell-tumors",
       "morphology": "clear-cell",
-      "sites": ["kidney", "gynecology", "soft-tissue", "any"],
+      "sites": [
+        "kidney",
+        "gynecology",
+        "soft-tissue",
+        "any"
+      ],
       "titleZh": "透明细胞肿瘤鉴别",
       "titleEn": "Clear Cell Tumor Differentials",
-      "firstLineMarkers": ["PAX8", "CA-IX", "CD10", "Inhibin", "S-100", "HMB-45"],
-      "secondLineMarkers": ["Napsin A", "HNF-1β", "Melan-A", "SF-1", "SOX10", "SMA", "EMA"],
+      "firstLineMarkers": [
+        "PAX8",
+        "CA-IX",
+        "CD10",
+        "Inhibin",
+        "S-100",
+        "HMB-45"
+      ],
+      "secondLineMarkers": [
+        "Napsin A",
+        "HNF-1β",
+        "Melan-A",
+        "SF-1",
+        "SOX10",
+        "SMA",
+        "EMA"
+      ],
       "rules": [
         {
           "diagnosis": "肾透明细胞癌",
           "diseaseId": "clear-cell-rcc",
-          "requiredPositive": ["PAX8", "CA-IX"],
-          "requiredNegative": ["Inhibin"],
-          "supportingPositive": ["CD10"],
-          "supportingNegative": ["S-100", "HMB-45"],
+          "requiredPositive": [
+            "PAX8",
+            "CA-IX"
+          ],
+          "requiredNegative": [
+            "Inhibin"
+          ],
+          "supportingPositive": [
+            "CD10"
+          ],
+          "supportingNegative": [
+            "S-100",
+            "HMB-45"
+          ],
           "confidence": "high",
-          "nextSteps": ["VHL基因突变/3p缺失检测", "CA-IX弥漫膜阳性(box pattern)特征性"]
+          "nextSteps": [
+            "VHL基因突变/3p缺失检测",
+            "CA-IX弥漫膜阳性(box pattern)特征性"
+          ]
         },
         {
           "diagnosis": "卵巢/子宫内膜透明细胞癌",
           "diseaseId": "clear-cell-ovarian-carcinoma",
-          "requiredPositive": ["PAX8"],
-          "requiredNegative": ["CA-IX", "Inhibin"],
-          "supportingPositive": ["Napsin A", "HNF-1β"],
-          "supportingNegative": ["S-100", "CD10"],
+          "requiredPositive": [
+            "PAX8"
+          ],
+          "requiredNegative": [
+            "CA-IX",
+            "Inhibin"
+          ],
+          "supportingPositive": [
+            "Napsin A",
+            "HNF-1β"
+          ],
+          "supportingNegative": [
+            "S-100",
+            "CD10"
+          ],
           "confidence": "high",
-          "nextSteps": ["HNF-1β核阳性和Napsin A阳性支持透明细胞癌"]
+          "nextSteps": [
+            "HNF-1β核阳性和Napsin A阳性支持透明细胞癌"
+          ]
         },
         {
           "diagnosis": "肾上腺皮质肿瘤",
           "diseaseId": "adrenocortical-tumor",
-          "requiredPositive": ["Inhibin"],
-          "requiredNegative": ["PAX8"],
-          "supportingPositive": ["Melan-A", "SF-1"],
-          "supportingNegative": ["CA-IX", "S-100"],
+          "requiredPositive": [
+            "Inhibin"
+          ],
+          "requiredNegative": [
+            "PAX8"
+          ],
+          "supportingPositive": [
+            "Melan-A",
+            "SF-1"
+          ],
+          "supportingNegative": [
+            "CA-IX",
+            "S-100"
+          ],
           "confidence": "high",
-          "nextSteps": ["SF-1核阳性最特异", "Weiss评分系统判断良恶性"]
+          "nextSteps": [
+            "SF-1核阳性最特异",
+            "Weiss评分系统判断良恶性"
+          ]
         },
         {
           "diagnosis": "透明细胞肉瘤/黑色素瘤",
           "diseaseId": "clear-cell-sarcoma",
-          "requiredPositive": ["S-100", "HMB-45"],
-          "requiredNegative": ["PAX8", "Inhibin"],
-          "supportingPositive": ["SOX10"],
-          "supportingNegative": ["CA-IX"],
+          "requiredPositive": [
+            "S-100",
+            "HMB-45"
+          ],
+          "requiredNegative": [
+            "PAX8",
+            "Inhibin"
+          ],
+          "supportingPositive": [
+            "SOX10"
+          ],
+          "supportingNegative": [
+            "CA-IX"
+          ],
           "confidence": "medium",
-          "nextSteps": ["EWSR1-ATF1/CREB1融合检测鉴别透明细胞肉瘤与黑色素瘤", "年轻患者+肢端深部软组织→倾向透明细胞肉瘤"]
+          "nextSteps": [
+            "EWSR1-ATF1/CREB1融合检测鉴别透明细胞肉瘤与黑色素瘤",
+            "年轻患者+肢端深部软组织→倾向透明细胞肉瘤"
+          ]
         },
         {
           "diagnosis": "PEComa/血管周上皮样细胞肿瘤",
           "diseaseId": "sugar-tumor",
-          "requiredPositive": ["HMB-45"],
-          "requiredNegative": ["PAX8", "Inhibin"],
-          "supportingPositive": ["SMA", "Melan-A"],
-          "supportingNegative": ["S-100", "CA-IX"],
+          "requiredPositive": [
+            "HMB-45"
+          ],
+          "requiredNegative": [
+            "PAX8",
+            "Inhibin"
+          ],
+          "supportingPositive": [
+            "SMA",
+            "Melan-A"
+          ],
+          "supportingNegative": [
+            "S-100",
+            "CA-IX"
+          ],
           "confidence": "medium",
-          "nextSteps": ["HMB-45+SMA双阳性特征性", "TFE3检测排除TFE3重排型PEComa"]
+          "nextSteps": [
+            "HMB-45+SMA双阳性特征性",
+            "TFE3检测排除TFE3重排型PEComa"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "pax8",
+            "ck7",
+            "cd10",
+            "rcc",
+            "vimentin",
+            "ca9"
+          ],
+          "secondLine": [
+            "hmb45",
+            "melan-a",
+            "inhibin",
+            "sf1",
+            "ttf1",
+            "napsin-a",
+            "gata3",
+            "ae1-ae3",
+            "cd117",
+            "ksp-cadherin"
+          ],
+          "costNote": "透明细胞形态鉴别诊断涉及肾细胞癌（透明细胞型）、肾上腺皮质肿瘤、PEComa/血管平滑肌脂肪瘤、透明细胞型妇科肿瘤（卵巢/子宫内膜/宫颈）及转移性透明细胞癌等。一线 6 项（PAX8、CK7、CD10、RCC、Vimentin、CA9）为国内三级医院肾源性与上皮来源鉴别的常规组合，单项 IHC 成本约 40-80 元，合计约 240-480 元；二线 10 项用于除外黑色素细胞病变（HMB45/Melan-A）、肾上腺皮质来源（Inhibin/SF-1）、肺来源（TTF-1/Napsin-A）及罕见肾癌亚型（CD117/KSP-cadherin 鉴别嫌色细胞癌），按需选用，增量成本约 400-800 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 中实际 id 核对（如 ca9/ksp-cadherin/sf1/rcc 等拼写），部分罕见透明细胞亚型鉴别组合可能需按实验室 SOP 调整。"
+        }
+      }
     },
     {
       "id": "papillary-thyroid-lesions",
       "sourceId": "papillary-thyroid-vs-others",
       "morphology": "papillary",
-      "sites": ["thyroid"],
+      "sites": [
+        "thyroid"
+      ],
       "titleZh": "甲状腺乳头状结构病变鉴别",
       "titleEn": "Papillary Lesions of the Thyroid",
-      "firstLineMarkers": ["CK19", "Galectin-3", "HBME-1", "CD56", "TTF-1"],
-      "secondLineMarkers": ["Thyroglobulin", "BRAF-V600E", "RAS"],
+      "firstLineMarkers": [
+        "CK19",
+        "Galectin-3",
+        "HBME-1",
+        "CD56",
+        "TTF-1"
+      ],
+      "secondLineMarkers": [
+        "Thyroglobulin",
+        "BRAF-V600E",
+        "RAS"
+      ],
       "rules": [
         {
           "diagnosis": "甲状腺乳头状癌 (PTC)",
           "diseaseId": "papillary-thyroid-carcinoma",
-          "requiredPositive": ["CK19", "HBME-1"],
+          "requiredPositive": [
+            "CK19",
+            "HBME-1"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["Galectin-3", "BRAF-V600E"],
-          "supportingNegative": ["CD56"],
+          "supportingPositive": [
+            "Galectin-3",
+            "BRAF-V600E"
+          ],
+          "supportingNegative": [
+            "CD56"
+          ],
           "confidence": "high",
-          "nextSteps": ["BRAF V600E突变检测", "经典核特征（核沟+核内假包涵体+毛玻璃样核）"]
+          "nextSteps": [
+            "BRAF V600E突变检测",
+            "经典核特征（核沟+核内假包涵体+毛玻璃样核）"
+          ]
         },
         {
           "diagnosis": "NIFTP",
           "diseaseId": "noninvasive-follicular-thyroid-neoplasm-with-papillary-like-nuclear-features",
-          "requiredPositive": ["CK19"],
-          "requiredNegative": ["BRAF-V600E"],
-          "supportingPositive": ["Galectin-3"],
+          "requiredPositive": [
+            "CK19"
+          ],
+          "requiredNegative": [
+            "BRAF-V600E"
+          ],
+          "supportingPositive": [
+            "Galectin-3"
+          ],
           "supportingNegative": [],
           "confidence": "medium",
-          "nextSteps": ["完整包膜取材排除浸润", "RAS突变检测", "BRAF V600E阴性支持NIFTP"]
+          "nextSteps": [
+            "完整包膜取材排除浸润",
+            "RAS突变检测",
+            "BRAF V600E阴性支持NIFTP"
+          ]
         },
         {
           "diagnosis": "良性滤泡性病变",
           "diseaseId": "follicular-adenoma",
-          "requiredPositive": ["CD56"],
-          "requiredNegative": ["CK19", "Galectin-3", "HBME-1"],
-          "supportingPositive": ["TTF-1", "Thyroglobulin"],
-          "supportingNegative": ["BRAF-V600E"],
+          "requiredPositive": [
+            "CD56"
+          ],
+          "requiredNegative": [
+            "CK19",
+            "Galectin-3",
+            "HBME-1"
+          ],
+          "supportingPositive": [
+            "TTF-1",
+            "Thyroglobulin"
+          ],
+          "supportingNegative": [
+            "BRAF-V600E"
+          ],
           "confidence": "high",
-          "nextSteps": ["CD56阳性且CK19/Galectin-3/HBME-1阴性倾向良性"]
+          "nextSteps": [
+            "CD56阳性且CK19/Galectin-3/HBME-1阴性倾向良性"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck19",
+            "galectin-3",
+            "hbme1",
+            "cd56"
+          ],
+          "secondLine": [
+            "tg",
+            "ttf1",
+            "braf-v600e",
+            "ki67",
+            "cyclin-d1",
+            "p53"
+          ],
+          "costNote": "一线 4 项（CK19、Galectin-3、HBME-1、CD56）为国内三级医院鉴别甲状腺乳头状病变（PTC vs 良性乳头状增生/滤泡性病变）的核心套餐，CK19+Galectin-3+HBME-1 三联阳性支持 PTC，CD56 在 PTC 中常减弱/缺失而良性滤泡上皮保留表达；单项成本约 40-80 元，合计 200-320 元。二线：BRAF V600E（IHC 克隆 VE1）用于 PTC 分子分型与预后分层（成本约 120-200 元）；Tg/TTF-1 用于确认甲状腺源性（与转移或甲状旁腺鉴别）；Ki-67 评估增殖活性；Cyclin D1、p53 辅助鉴别高级别分化型甲状腺癌（DHGTC）或低分化癌，总成本约增 400-600 元。参考《甲状腺细针穿刺细胞学诊断中国专家共识》及 CSCO 甲状腺癌诊疗指南（2023）。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 实际 id 对齐（如 galectin-3/hbme1/braf-v600e 的确切拼写未核实）；具体检测单价为市场估算范围，各医院差异较大。"
+        }
+      }
     },
     {
       "id": "ck7-pos-ck20-neg-adenocarcinoma",
       "sourceId": "ck7-pos-ck20-neg-tumors",
       "morphology": "glandular",
-      "sites": ["lung", "breast", "gynecology", "any"],
+      "sites": [
+        "lung",
+        "breast",
+        "gynecology",
+        "any"
+      ],
       "titleZh": "CK7+/CK20- 腺癌原发部位判断",
       "titleEn": "CK7+/CK20- Adenocarcinoma Site of Origin",
-      "firstLineMarkers": ["CK7", "CK20", "TTF-1", "Napsin A", "GATA3", "PAX8"],
-      "secondLineMarkers": ["Mammaglobin", "ER", "PR", "WT1", "CA125", "Calretinin", "D2-40", "Thyroglobulin"],
+      "firstLineMarkers": [
+        "CK7",
+        "CK20",
+        "TTF-1",
+        "Napsin A",
+        "GATA3",
+        "PAX8"
+      ],
+      "secondLineMarkers": [
+        "Mammaglobin",
+        "ER",
+        "PR",
+        "WT1",
+        "CA125",
+        "Calretinin",
+        "D2-40",
+        "Thyroglobulin"
+      ],
       "rules": [
         {
           "diagnosis": "肺腺癌",
           "diseaseId": "lung-adenocarcinoma",
-          "requiredPositive": ["CK7", "TTF-1"],
-          "requiredNegative": ["CK20"],
-          "supportingPositive": ["Napsin A"],
-          "supportingNegative": ["GATA3", "PAX8"],
+          "requiredPositive": [
+            "CK7",
+            "TTF-1"
+          ],
+          "requiredNegative": [
+            "CK20"
+          ],
+          "supportingPositive": [
+            "Napsin A"
+          ],
+          "supportingNegative": [
+            "GATA3",
+            "PAX8"
+          ],
           "confidence": "high",
-          "nextSteps": ["EGFR/ALK/ROS1等驱动基因检测指导靶向治疗", "PD-L1表达检测"]
+          "nextSteps": [
+            "EGFR/ALK/ROS1等驱动基因检测指导靶向治疗",
+            "PD-L1表达检测"
+          ]
         },
         {
           "diagnosis": "乳腺癌",
           "diseaseId": "breast-carcinoma",
-          "requiredPositive": ["CK7", "GATA3"],
-          "requiredNegative": ["CK20", "TTF-1"],
-          "supportingPositive": ["Mammaglobin", "ER"],
-          "supportingNegative": ["PAX8"],
+          "requiredPositive": [
+            "CK7",
+            "GATA3"
+          ],
+          "requiredNegative": [
+            "CK20",
+            "TTF-1"
+          ],
+          "supportingPositive": [
+            "Mammaglobin",
+            "ER"
+          ],
+          "supportingNegative": [
+            "PAX8"
+          ],
           "confidence": "high",
-          "nextSteps": ["ER/PR/HER2状态评估", "Ki-67增殖指数"]
+          "nextSteps": [
+            "ER/PR/HER2状态评估",
+            "Ki-67增殖指数"
+          ]
         },
         {
           "diagnosis": "子宫内膜癌",
           "diseaseId": "endometrial-carcinoma",
-          "requiredPositive": ["CK7", "PAX8"],
-          "requiredNegative": ["CK20", "TTF-1"],
-          "supportingPositive": ["ER"],
-          "supportingNegative": ["GATA3", "WT1"],
+          "requiredPositive": [
+            "CK7",
+            "PAX8"
+          ],
+          "requiredNegative": [
+            "CK20",
+            "TTF-1"
+          ],
+          "supportingPositive": [
+            "ER"
+          ],
+          "supportingNegative": [
+            "GATA3",
+            "WT1"
+          ],
           "confidence": "high",
-          "nextSteps": ["MMR蛋白/MSI检测", "p53表达判断分子分型"]
+          "nextSteps": [
+            "MMR蛋白/MSI检测",
+            "p53表达判断分子分型"
+          ]
         },
         {
           "diagnosis": "卵巢高级别浆液性癌",
           "diseaseId": "ovarian-serous-carcinoma",
-          "requiredPositive": ["CK7", "PAX8", "WT1"],
-          "requiredNegative": ["CK20"],
-          "supportingPositive": ["CA125"],
-          "supportingNegative": ["TTF-1", "GATA3"],
+          "requiredPositive": [
+            "CK7",
+            "PAX8",
+            "WT1"
+          ],
+          "requiredNegative": [
+            "CK20"
+          ],
+          "supportingPositive": [
+            "CA125"
+          ],
+          "supportingNegative": [
+            "TTF-1",
+            "GATA3"
+          ],
           "confidence": "high",
-          "nextSteps": ["p53表达（通常异常表达）", "BRCA1/2基因检测"]
+          "nextSteps": [
+            "p53表达（通常异常表达）",
+            "BRCA1/2基因检测"
+          ]
         },
         {
           "diagnosis": "恶性间皮瘤",
           "diseaseId": "mesothelioma",
-          "requiredPositive": ["CK7", "Calretinin", "D2-40"],
-          "requiredNegative": ["CK20", "TTF-1"],
-          "supportingPositive": ["WT1"],
-          "supportingNegative": ["GATA3", "PAX8"],
+          "requiredPositive": [
+            "CK7",
+            "Calretinin",
+            "D2-40"
+          ],
+          "requiredNegative": [
+            "CK20",
+            "TTF-1"
+          ],
+          "supportingPositive": [
+            "WT1"
+          ],
+          "supportingNegative": [
+            "GATA3",
+            "PAX8"
+          ],
           "confidence": "high",
-          "nextSteps": ["加做CEA/MOC31/BerEP4/Claudin-4排除腺癌", "BAP1缺失支持恶性间皮瘤"]
+          "nextSteps": [
+            "加做CEA/MOC31/BerEP4/Claudin-4排除腺癌",
+            "BAP1缺失支持恶性间皮瘤"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ttf1",
+            "napsin-a",
+            "gata3",
+            "er",
+            "pax8"
+          ],
+          "secondLine": [
+            "mammaglobin",
+            "gcdfp-15",
+            "thyroglobulin",
+            "wt1",
+            "sox10",
+            "cdx2",
+            "p40"
+          ],
+          "costNote": "CK7+/CK20- 是提示肺、乳腺、甲状腺、妇科（子宫内膜/卵巢）、胰胆及上段消化道腺癌的常见免疫表型组合。一线 5 项（TTF-1、Napsin A、GATA3、ER、PAX8）在国内三级医院均为常规开展项目，单项成本约 40-80 元，合计约 250-400 元，可覆盖肺腺癌、乳腺癌、甲状腺癌及 Müllerian 来源等主要鉴别方向；二线 7 项（Mammaglobin、GCDFP-15、Thyroglobulin、WT1、SOX10、CDX2、p40）用于进一步细化亚型或除外罕见部位/组织学（如基底样乳腺癌、卵巢浆液性癌、腺鳞癌），合计约 400-600 元。建议结合 HE 形态学及临床影像学结果分层加做，避免盲目 panel 扩张。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 严格对齐，部分 id（如 mammaglobin / gcdfp-15 / thyroglobulin / napsin-a 的命名格式）未能核对，审稿时需校对 markers.json 中的真实 id 拼写。"
+        }
+      }
     },
     {
       "id": "ck7-neg-ck20-pos-tumors",
       "sourceId": "ck7-neg-ck20-pos-tumors",
       "morphology": "glandular",
-      "sites": ["gi", "skin", "any"],
+      "sites": [
+        "gi",
+        "skin",
+        "any"
+      ],
       "titleZh": "CK7-/CK20+ 肿瘤鉴别",
       "titleEn": "CK7-/CK20+ Tumor Differentials",
-      "firstLineMarkers": ["CK7", "CK20", "CDX2", "SATB2", "Syn", "CgA"],
-      "secondLineMarkers": ["Villin", "PAX5", "MLH1", "MSH2", "MSH6", "PMS2"],
+      "firstLineMarkers": [
+        "CK7",
+        "CK20",
+        "CDX2",
+        "SATB2",
+        "Syn",
+        "CgA"
+      ],
+      "secondLineMarkers": [
+        "Villin",
+        "PAX5",
+        "MLH1",
+        "MSH2",
+        "MSH6",
+        "PMS2"
+      ],
       "rules": [
         {
           "diagnosis": "结直肠腺癌",
           "diseaseId": "colorectal-adenocarcinoma",
-          "requiredPositive": ["CK20", "CDX2"],
-          "requiredNegative": ["CK7"],
-          "supportingPositive": ["SATB2", "Villin"],
-          "supportingNegative": ["Syn", "CgA"],
+          "requiredPositive": [
+            "CK20",
+            "CDX2"
+          ],
+          "requiredNegative": [
+            "CK7"
+          ],
+          "supportingPositive": [
+            "SATB2",
+            "Villin"
+          ],
+          "supportingNegative": [
+            "Syn",
+            "CgA"
+          ],
           "confidence": "high",
-          "nextSteps": ["MMR蛋白(MLH1/MSH2/MSH6/PMS2)检测", "KRAS/NRAS/BRAF突变检测"]
+          "nextSteps": [
+            "MMR蛋白(MLH1/MSH2/MSH6/PMS2)检测",
+            "KRAS/NRAS/BRAF突变检测"
+          ]
         },
         {
           "diagnosis": "Merkel细胞癌",
           "diseaseId": "merkel-cell-carcinoma",
-          "requiredPositive": ["CK20", "Syn"],
-          "requiredNegative": ["CK7", "CDX2"],
-          "supportingPositive": ["CgA"],
-          "supportingNegative": ["SATB2"],
+          "requiredPositive": [
+            "CK20",
+            "Syn"
+          ],
+          "requiredNegative": [
+            "CK7",
+            "CDX2"
+          ],
+          "supportingPositive": [
+            "CgA"
+          ],
+          "supportingNegative": [
+            "SATB2"
+          ],
           "confidence": "high",
-          "nextSteps": ["CK20核旁点状阳性特征性", "TTF-1阴性排除小细胞肺癌", "MCPyV检测"]
+          "nextSteps": [
+            "CK20核旁点状阳性特征性",
+            "TTF-1阴性排除小细胞肺癌",
+            "MCPyV检测"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "cdx2",
+            "satb2",
+            "villin",
+            "syn",
+            "cga"
+          ],
+          "secondLine": [
+            "ttf1",
+            "beta-catenin",
+            "mcpyv",
+            "ck20",
+            "ki67"
+          ],
+          "costNote": "CK7-/CK20+ 是一种免疫表型模式，主要提示结直肠腺癌起源，其次需鉴别 Merkel 细胞癌（皮肤神经内分泌癌）及少数胃肠来源肿瘤。一线 5 项（CDX2/SATB2/Villin 支持肠源性腺癌，Syn/CgA 支持神经内分泌分化）在国内三级医院病理科均可常规开展，单项成本约 40-70 元，合计约 250-350 元。二线项目用于进一步定性：TTF-1 阴性有助于除外肺小细胞癌转移，β-catenin 核阳性提示结直肠来源，CK20 核周点状/膜点状阳性模式支持 Merkel 细胞癌，MCPyV（Merkel 细胞多瘤病毒大 T 抗原）国内仅少数中心开展（约 150-300 元）。Ki-67 用于增殖指数评估，二线总成本约增 300-600 元。",
+          "_low_confidence": true,
+          "_reason": "未能核实 PathoAtlas markers.json 中具体 markerId 拼写（如 'beta-catenin' / 'mcpyv' / 'cga' 是否正是该命名），需人工对照 markers.json 校正 id 映射；另 CK20 本身为判读前提，是否作为套餐复选项由实验室流程决定。"
+        }
+      }
     },
     {
       "id": "tnbc-differentials",
       "sourceId": "tnbc-vs-metastases",
       "morphology": "epithelioid",
-      "sites": ["breast", "any"],
+      "sites": [
+        "breast",
+        "any"
+      ],
       "titleZh": "三阴性乳腺癌与转移癌鉴别",
       "titleEn": "Triple Negative Breast Cancer vs Metastases",
-      "firstLineMarkers": ["GATA3", "Mammaglobin", "SOX10", "TTF-1", "PAX8", "S-100"],
-      "secondLineMarkers": ["GCDFP-15", "CK5/6", "EGFR", "WT1", "Uroplakin", "P40"],
+      "firstLineMarkers": [
+        "GATA3",
+        "Mammaglobin",
+        "SOX10",
+        "TTF-1",
+        "PAX8",
+        "S-100"
+      ],
+      "secondLineMarkers": [
+        "GCDFP-15",
+        "CK5/6",
+        "EGFR",
+        "WT1",
+        "Uroplakin",
+        "P40"
+      ],
       "rules": [
         {
           "diagnosis": "三阴性乳腺癌",
           "diseaseId": "triple-negative-breast-carcinoma",
-          "requiredPositive": ["GATA3"],
-          "requiredNegative": ["TTF-1", "PAX8"],
-          "supportingPositive": ["Mammaglobin", "SOX10"],
-          "supportingNegative": ["S-100"],
+          "requiredPositive": [
+            "GATA3"
+          ],
+          "requiredNegative": [
+            "TTF-1",
+            "PAX8"
+          ],
+          "supportingPositive": [
+            "Mammaglobin",
+            "SOX10"
+          ],
+          "supportingNegative": [
+            "S-100"
+          ],
           "confidence": "high",
-          "nextSteps": ["约60-70%三阴性乳腺癌GATA3阳性", "PD-L1检测指导免疫治疗"]
+          "nextSteps": [
+            "约60-70%三阴性乳腺癌GATA3阳性",
+            "PD-L1检测指导免疫治疗"
+          ]
         },
         {
           "diagnosis": "肺腺癌转移",
           "diseaseId": "lung-adenocarcinoma",
-          "requiredPositive": ["TTF-1"],
-          "requiredNegative": ["GATA3", "PAX8"],
+          "requiredPositive": [
+            "TTF-1"
+          ],
+          "requiredNegative": [
+            "GATA3",
+            "PAX8"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["SOX10", "S-100"],
+          "supportingNegative": [
+            "SOX10",
+            "S-100"
+          ],
           "confidence": "high",
-          "nextSteps": ["Napsin A进一步确认", "驱动基因检测"]
+          "nextSteps": [
+            "Napsin A进一步确认",
+            "驱动基因检测"
+          ]
         },
         {
           "diagnosis": "卵巢浆液性癌转移",
           "diseaseId": "high-grade-serous-ovarian-carcinoma",
-          "requiredPositive": ["PAX8"],
-          "requiredNegative": ["GATA3", "TTF-1"],
-          "supportingPositive": ["WT1"],
-          "supportingNegative": ["SOX10"],
+          "requiredPositive": [
+            "PAX8"
+          ],
+          "requiredNegative": [
+            "GATA3",
+            "TTF-1"
+          ],
+          "supportingPositive": [
+            "WT1"
+          ],
+          "supportingNegative": [
+            "SOX10"
+          ],
           "confidence": "high",
-          "nextSteps": ["WT1阳性进一步支持卵巢来源"]
+          "nextSteps": [
+            "WT1阳性进一步支持卵巢来源"
+          ]
         },
         {
           "diagnosis": "黑色素瘤",
           "diseaseId": "melanoma",
-          "requiredPositive": ["S-100", "SOX10"],
-          "requiredNegative": ["GATA3", "TTF-1", "PAX8"],
+          "requiredPositive": [
+            "S-100",
+            "SOX10"
+          ],
+          "requiredNegative": [
+            "GATA3",
+            "TTF-1",
+            "PAX8"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["Mammaglobin"],
+          "supportingNegative": [
+            "Mammaglobin"
+          ],
           "confidence": "high",
-          "nextSteps": ["HMB-45/Melan-A确认黑色素瘤", "注意SOX10也可见于基底样乳腺癌但CK+"]
+          "nextSteps": [
+            "HMB-45/Melan-A确认黑色素瘤",
+            "注意SOX10也可见于基底样乳腺癌但CK+"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "er",
+            "pr",
+            "her2",
+            "ki67",
+            "ck5-6",
+            "egfr"
+          ],
+          "secondLine": [
+            "ar",
+            "gata3",
+            "sox10",
+            "p63",
+            "e-cadherin",
+            "cd117",
+            "ck7",
+            "ck20",
+            "ttf1",
+            "pax8",
+            "wt1",
+            "synaptophysin"
+          ],
+          "costNote": "一线 6 项为国内三级医院三阴性乳腺癌（TNBC）诊断的常规必做项目，用于确认 ER/PR/HER2 三阴状态并评估基底样表型（CK5/6、EGFR）及增殖活性（Ki-67），单项成本约 40-80 元，总计约 250-450 元；二线项目用于 TNBC 分子亚型细化（LAR 型查 AR、BLIS/BLIA 型查 SOX10/GATA3）、鉴别转移癌（CK7/CK20/TTF1/PAX8/WT1）或排除特殊类型（浸润性小叶癌查 E-cadherin、腺样囊性癌查 CD117、化生性癌查 p63），按需加做，总成本约增 400-800 元。"
+        }
+      }
     },
     {
       "id": "hcc-vs-cholangiocarcinoma",
       "sourceId": "hcc-vs-cholangiocarcinoma",
       "morphology": "epithelioid",
-      "sites": ["liver"],
+      "sites": [
+        "liver"
+      ],
       "titleZh": "肝细胞癌与胆管细胞癌鉴别",
       "titleEn": "HCC vs Cholangiocarcinoma",
-      "firstLineMarkers": ["Hepatocyte(HepPar-1)", "Arginase-1", "GPC-3", "CK7", "CK19", "MOC31"],
-      "secondLineMarkers": ["AFP", "CD34", "Reticulin", "CK20", "EpCAM", "mCEA(pCEA)", "CD10", "MUC1"],
+      "firstLineMarkers": [
+        "Hepatocyte(HepPar-1)",
+        "Arginase-1",
+        "GPC-3",
+        "CK7",
+        "CK19",
+        "MOC31"
+      ],
+      "secondLineMarkers": [
+        "AFP",
+        "CD34",
+        "Reticulin",
+        "CK20",
+        "EpCAM",
+        "mCEA(pCEA)",
+        "CD10",
+        "MUC1"
+      ],
       "rules": [
         {
           "diagnosis": "肝细胞癌 (HCC)",
           "diseaseId": "hepatocellular-carcinoma",
-          "requiredPositive": ["Arginase-1"],
-          "requiredNegative": ["CK7", "CK19"],
-          "supportingPositive": ["Hepatocyte(HepPar-1)", "GPC-3"],
-          "supportingNegative": ["MOC31"],
+          "requiredPositive": [
+            "Arginase-1"
+          ],
+          "requiredNegative": [
+            "CK7",
+            "CK19"
+          ],
+          "supportingPositive": [
+            "Hepatocyte(HepPar-1)",
+            "GPC-3"
+          ],
+          "supportingNegative": [
+            "MOC31"
+          ],
           "confidence": "high",
-          "nextSteps": ["CD34弥漫窦内皮阳性辅助诊断", "Reticulin网架减少/消失", "AFP若阳性支持HCC"]
+          "nextSteps": [
+            "CD34弥漫窦内皮阳性辅助诊断",
+            "Reticulin网架减少/消失",
+            "AFP若阳性支持HCC"
+          ]
         },
         {
           "diagnosis": "肝内胆管癌",
           "diseaseId": "intrahepatic-cholangiocarcinoma",
-          "requiredPositive": ["CK7", "CK19"],
-          "requiredNegative": ["Arginase-1", "Hepatocyte(HepPar-1)"],
-          "supportingPositive": ["MOC31", "MUC1"],
-          "supportingNegative": ["GPC-3"],
+          "requiredPositive": [
+            "CK7",
+            "CK19"
+          ],
+          "requiredNegative": [
+            "Arginase-1",
+            "Hepatocyte(HepPar-1)"
+          ],
+          "supportingPositive": [
+            "MOC31",
+            "MUC1"
+          ],
+          "supportingNegative": [
+            "GPC-3"
+          ],
           "confidence": "high",
-          "nextSteps": ["IDH1/2突变检测", "FGFR2融合检测指导靶向治疗"]
+          "nextSteps": [
+            "IDH1/2突变检测",
+            "FGFR2融合检测指导靶向治疗"
+          ]
         },
         {
           "diagnosis": "混合型肝癌-胆管癌 (cHCC-CCA)",
           "diseaseId": "combined-hcc-cca",
-          "requiredPositive": ["Arginase-1", "CK7"],
+          "requiredPositive": [
+            "Arginase-1",
+            "CK7"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["Hepatocyte(HepPar-1)", "CK19"],
+          "supportingPositive": [
+            "Hepatocyte(HepPar-1)",
+            "CK19"
+          ],
           "supportingNegative": [],
           "confidence": "medium",
-          "nextSteps": ["两种成分需分别确认", "EpCAM表达于干细胞表型区域"]
+          "nextSteps": [
+            "两种成分需分别确认",
+            "EpCAM表达于干细胞表型区域"
+          ]
         },
         {
           "diagnosis": "转移性腺癌",
           "diseaseId": "metastatic-adenocarcinoma",
-          "requiredPositive": ["MOC31"],
-          "requiredNegative": ["Arginase-1", "Hepatocyte(HepPar-1)", "GPC-3"],
-          "supportingPositive": ["CK7"],
+          "requiredPositive": [
+            "MOC31"
+          ],
+          "requiredNegative": [
+            "Arginase-1",
+            "Hepatocyte(HepPar-1)",
+            "GPC-3"
+          ],
+          "supportingPositive": [
+            "CK7"
+          ],
           "supportingNegative": [],
           "confidence": "medium",
-          "nextSteps": ["根据CK7/CK20/CDX2/TTF-1等判断原发部位", "结合临床病史"]
+          "nextSteps": [
+            "根据CK7/CK20/CDX2/TTF-1等判断原发部位",
+            "结合临床病史"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "heppar1",
+            "arginase1",
+            "glypican3",
+            "ck7",
+            "ck19",
+            "ck20"
+          ],
+          "secondLine": [
+            "cdx2",
+            "villin",
+            "ca19-9",
+            "moc31",
+            "cea-p",
+            "afp",
+            "ttf1",
+            "gata3"
+          ],
+          "costNote": "一线 6 项为国内三级医院肝脏占位常规开展的鉴别套餐（HepPar-1/Arginase-1/GPC3 支持肝细胞癌；CK7/CK19 支持胆管细胞癌；CK20 用于除外结直肠等消化道转移），单项成本约 40-80 元，合计约 300-480 元；二线用于进一步除外转移性腺癌（CDX2/Villin 胃肠来源、MOC-31 与多克隆 CEA 膜/胆小管着色模式鉴别、GATA3 乳腺/尿路、TTF-1 肺），AFP 用于支持 HCC 但敏感性有限，合计约增 400-640 元。"
+        }
+      }
     },
     {
       "id": "b-vs-t-cell-lymphoma",
       "sourceId": "b-vs-t-cell-lymphoma",
       "morphology": "lymphoid",
-      "sites": ["lymph-node", "any"],
+      "sites": [
+        "lymph-node",
+        "any"
+      ],
       "titleZh": "B细胞与T细胞淋巴瘤亚型分型",
       "titleEn": "B-cell vs T-cell Lymphoma Subtyping",
-      "firstLineMarkers": ["CD20", "CD3", "CD5", "CD10", "BCL-2", "Ki-67"],
-      "secondLineMarkers": ["CD23", "BCL-6", "MUM1", "Cyclin D1", "SOX11", "CD30", "ALK", "CXCL13", "PD-1", "CD56", "EBER", "TdT"],
+      "firstLineMarkers": [
+        "CD20",
+        "CD3",
+        "CD5",
+        "CD10",
+        "BCL-2",
+        "Ki-67"
+      ],
+      "secondLineMarkers": [
+        "CD23",
+        "BCL-6",
+        "MUM1",
+        "Cyclin D1",
+        "SOX11",
+        "CD30",
+        "ALK",
+        "CXCL13",
+        "PD-1",
+        "CD56",
+        "EBER",
+        "TdT"
+      ],
       "rules": [
         {
           "diagnosis": "滤泡性淋巴瘤",
           "diseaseId": "follicular-lymphoma",
-          "requiredPositive": ["CD20", "CD10", "BCL-2"],
-          "requiredNegative": ["CD3", "CD5"],
-          "supportingPositive": ["BCL-6"],
-          "supportingNegative": ["Cyclin D1"],
+          "requiredPositive": [
+            "CD20",
+            "CD10",
+            "BCL-2"
+          ],
+          "requiredNegative": [
+            "CD3",
+            "CD5"
+          ],
+          "supportingPositive": [
+            "BCL-6"
+          ],
+          "supportingNegative": [
+            "Cyclin D1"
+          ],
           "confidence": "high",
-          "nextSteps": ["BCL2重排FISH", "分级(1-3级)根据中心母细胞比例"]
+          "nextSteps": [
+            "BCL2重排FISH",
+            "分级(1-3级)根据中心母细胞比例"
+          ]
         },
         {
           "diagnosis": "套细胞淋巴瘤",
           "diseaseId": "mantle-cell-lymphoma",
-          "requiredPositive": ["CD20", "CD5", "Cyclin D1"],
-          "requiredNegative": ["CD3", "CD10", "CD23"],
-          "supportingPositive": ["SOX11"],
+          "requiredPositive": [
+            "CD20",
+            "CD5",
+            "Cyclin D1"
+          ],
+          "requiredNegative": [
+            "CD3",
+            "CD10",
+            "CD23"
+          ],
+          "supportingPositive": [
+            "SOX11"
+          ],
           "supportingNegative": [],
           "confidence": "high",
-          "nextSteps": ["CCND1/IGH易位FISH确认", "Ki-67评估增殖活性(母细胞型Ki-67高)"]
+          "nextSteps": [
+            "CCND1/IGH易位FISH确认",
+            "Ki-67评估增殖活性(母细胞型Ki-67高)"
+          ]
         },
         {
           "diagnosis": "弥漫大B细胞淋巴瘤 (DLBCL)",
           "diseaseId": "dlbcl",
-          "requiredPositive": ["CD20"],
-          "requiredNegative": ["CD3"],
-          "supportingPositive": ["BCL-6", "MUM1"],
-          "supportingNegative": ["Cyclin D1"],
+          "requiredPositive": [
+            "CD20"
+          ],
+          "requiredNegative": [
+            "CD3"
+          ],
+          "supportingPositive": [
+            "BCL-6",
+            "MUM1"
+          ],
+          "supportingNegative": [
+            "Cyclin D1"
+          ],
           "confidence": "medium",
-          "nextSteps": ["Hans分型: CD10/BCL-6/MUM1 → GCB vs non-GCB亚型", "MYC/BCL2/BCL6重排(双/三打击)"]
+          "nextSteps": [
+            "Hans分型: CD10/BCL-6/MUM1 → GCB vs non-GCB亚型",
+            "MYC/BCL2/BCL6重排(双/三打击)"
+          ]
         },
         {
           "diagnosis": "Burkitt淋巴瘤",
           "diseaseId": "burkitt-lymphoma",
-          "requiredPositive": ["CD20", "CD10", "Ki-67"],
-          "requiredNegative": ["CD3", "BCL-2"],
-          "supportingPositive": ["BCL-6"],
-          "supportingNegative": ["MUM1"],
+          "requiredPositive": [
+            "CD20",
+            "CD10",
+            "Ki-67"
+          ],
+          "requiredNegative": [
+            "CD3",
+            "BCL-2"
+          ],
+          "supportingPositive": [
+            "BCL-6"
+          ],
+          "supportingNegative": [
+            "MUM1"
+          ],
           "confidence": "high",
-          "nextSteps": ["Ki-67需近100%", "MYC重排FISH确认", "星空现象特征性"]
+          "nextSteps": [
+            "Ki-67需近100%",
+            "MYC重排FISH确认",
+            "星空现象特征性"
+          ]
         },
         {
           "diagnosis": "ALK阳性间变大细胞淋巴瘤",
           "diseaseId": "alcl",
-          "requiredPositive": ["CD30", "ALK"],
-          "requiredNegative": ["CD20"],
-          "supportingPositive": ["CD3"],
-          "supportingNegative": ["BCL-2"],
+          "requiredPositive": [
+            "CD30",
+            "ALK"
+          ],
+          "requiredNegative": [
+            "CD20"
+          ],
+          "supportingPositive": [
+            "CD3"
+          ],
+          "supportingNegative": [
+            "BCL-2"
+          ],
           "confidence": "high",
-          "nextSteps": ["ALK融合FISH确认", "ALK阳性预后优于ALK阴性"]
+          "nextSteps": [
+            "ALK融合FISH确认",
+            "ALK阳性预后优于ALK阴性"
+          ]
         },
         {
           "diagnosis": "血管免疫母细胞性T细胞淋巴瘤 (AITL)",
           "diseaseId": "aitl",
-          "requiredPositive": ["CD3", "CXCL13", "PD-1"],
-          "requiredNegative": ["CD20"],
-          "supportingPositive": ["CD10"],
-          "supportingNegative": ["ALK"],
+          "requiredPositive": [
+            "CD3",
+            "CXCL13",
+            "PD-1"
+          ],
+          "requiredNegative": [
+            "CD20"
+          ],
+          "supportingPositive": [
+            "CD10"
+          ],
+          "supportingNegative": [
+            "ALK"
+          ],
           "confidence": "high",
-          "nextSteps": ["TET2/RHOA/IDH2突变检测", "EBV+B细胞增生常伴随出现"]
+          "nextSteps": [
+            "TET2/RHOA/IDH2突变检测",
+            "EBV+B细胞增生常伴随出现"
+          ]
         },
         {
           "diagnosis": "结外NK/T细胞淋巴瘤",
           "diseaseId": "nk-t-cell-lymphoma",
-          "requiredPositive": ["CD56", "EBER"],
-          "requiredNegative": ["CD20"],
-          "supportingPositive": ["CD3"],
-          "supportingNegative": ["ALK"],
+          "requiredPositive": [
+            "CD56",
+            "EBER"
+          ],
+          "requiredNegative": [
+            "CD20"
+          ],
+          "supportingPositive": [
+            "CD3"
+          ],
+          "supportingNegative": [
+            "ALK"
+          ],
           "confidence": "high",
-          "nextSteps": ["EBER原位杂交确认EBV感染", "PD-L1检测指导免疫治疗"]
+          "nextSteps": [
+            "EBER原位杂交确认EBV感染",
+            "PD-L1检测指导免疫治疗"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "cd45",
+            "cd20",
+            "cd3",
+            "cd79a",
+            "cd5",
+            "cd10",
+            "bcl6",
+            "bcl2",
+            "ki67"
+          ],
+          "secondLine": [
+            "cd2",
+            "cd4",
+            "cd7",
+            "cd8",
+            "cd21",
+            "cd23",
+            "cd30",
+            "cd56",
+            "mum1",
+            "cyclind1",
+            "tdt",
+            "ebv-eber",
+            "pax5",
+            "granzyme-b"
+          ],
+          "costNote": "一线 9 项为国内三级医院血液病理常规开展，单项 30-80 元，合计约 400-600 元，用于区分 B/T 细胞来源并初步判断生发中心 vs 活化型；二线根据一线结果选做（如 CD20 阳性 B 系补 CD10/BCL6/MUM1 做 Hans 分型、CD5 阳性补 Cyclin D1 除外 MCL；T 系补 CD4/CD8/CD56/Granzyme B 判断亚型；EBER 原位杂交用于除外 EBV 相关淋巴瘤），按需加做约增加 250-600 元。"
+        },
+        "_low_confidence": true,
+        "_reason": "markerId 的具体拼写需与 PathoAtlas markers.json 中已存在 id 核对（尤其 bcl2/bcl6/cyclind1/ebv-eber/granzyme-b 等连字符/驼峰写法），部分 id 可能需人工替换为实际存在的值。"
+      }
     },
     {
       "id": "neuroendocrine-tumors",
       "sourceId": "neuroendocrine-tumors",
       "morphology": "neuroendocrine",
-      "sites": ["gi", "lung", "any"],
+      "sites": [
+        "gi",
+        "lung",
+        "any"
+      ],
       "titleZh": "神经内分泌肿瘤分级与鉴别",
       "titleEn": "Neuroendocrine Tumor Grading and Differentials",
-      "firstLineMarkers": ["Syn", "CgA", "INSM1", "Ki-67", "Rb", "P53"],
-      "secondLineMarkers": ["CD56", "TTF-1", "CDX2", "PAX8", "SSTR2A", "ATRX", "DAXX"],
+      "firstLineMarkers": [
+        "Syn",
+        "CgA",
+        "INSM1",
+        "Ki-67",
+        "Rb",
+        "P53"
+      ],
+      "secondLineMarkers": [
+        "CD56",
+        "TTF-1",
+        "CDX2",
+        "PAX8",
+        "SSTR2A",
+        "ATRX",
+        "DAXX"
+      ],
       "rules": [
         {
           "diagnosis": "神经内分泌瘤 G1 (NET G1)",
           "diseaseId": "well-differentiated-net-g1",
-          "requiredPositive": ["Syn", "CgA"],
+          "requiredPositive": [
+            "Syn",
+            "CgA"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["INSM1", "SSTR2A"],
+          "supportingPositive": [
+            "INSM1",
+            "SSTR2A"
+          ],
           "supportingNegative": [],
           "confidence": "high",
-          "nextSteps": ["Ki-67 <3% 确认G1", "SSTR2A阳性提示生长抑素类似物治疗可能有效"]
+          "nextSteps": [
+            "Ki-67 <3% 确认G1",
+            "SSTR2A阳性提示生长抑素类似物治疗可能有效"
+          ]
         },
         {
           "diagnosis": "神经内分泌瘤 G2 (NET G2)",
           "diseaseId": "well-differentiated-net-g2",
-          "requiredPositive": ["Syn", "CgA"],
+          "requiredPositive": [
+            "Syn",
+            "CgA"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["INSM1"],
+          "supportingPositive": [
+            "INSM1"
+          ],
           "supportingNegative": [],
           "confidence": "high",
-          "nextSteps": ["Ki-67 3-20% 确认G2", "形态学高分化"]
+          "nextSteps": [
+            "Ki-67 3-20% 确认G2",
+            "形态学高分化"
+          ]
         },
         {
           "diagnosis": "神经内分泌瘤 G3 (NET G3)",
           "diseaseId": "well-differentiated-net-g3",
-          "requiredPositive": ["Syn", "CgA", "Rb"],
+          "requiredPositive": [
+            "Syn",
+            "CgA",
+            "Rb"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["ATRX", "DAXX"],
+          "supportingPositive": [
+            "ATRX",
+            "DAXX"
+          ],
           "supportingNegative": [],
           "confidence": "medium",
-          "nextSteps": ["Ki-67 >20% 但形态高分化", "Rb和P53表达正常区别于NEC", "ATRX/DAXX保留支持NET G3"]
+          "nextSteps": [
+            "Ki-67 >20% 但形态高分化",
+            "Rb和P53表达正常区别于NEC",
+            "ATRX/DAXX保留支持NET G3"
+          ]
         },
         {
           "diagnosis": "神经内分泌癌 (NEC)",
           "diseaseId": "small-cell-nec",
-          "requiredPositive": ["Syn", "Ki-67"],
-          "requiredNegative": ["Rb"],
-          "supportingPositive": ["INSM1"],
-          "supportingNegative": ["ATRX", "DAXX", "SSTR2A"],
+          "requiredPositive": [
+            "Syn",
+            "Ki-67"
+          ],
+          "requiredNegative": [
+            "Rb"
+          ],
+          "supportingPositive": [
+            "INSM1"
+          ],
+          "supportingNegative": [
+            "ATRX",
+            "DAXX",
+            "SSTR2A"
+          ],
           "confidence": "high",
-          "nextSteps": ["Ki-67通常>50%", "Rb缺失和/或P53异常表达", "分为小细胞型和大细胞型", "治疗方案与NET G3不同"]
+          "nextSteps": [
+            "Ki-67通常>50%",
+            "Rb缺失和/或P53异常表达",
+            "分为小细胞型和大细胞型",
+            "治疗方案与NET G3不同"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "syn",
+            "cga",
+            "cd56",
+            "ki67",
+            "ae1-ae3"
+          ],
+          "secondLine": [
+            "insm1",
+            "ttf1",
+            "cdx2",
+            "pax8",
+            "islet-1",
+            "calcitonin",
+            "chromogranin-b",
+            "somatostatin",
+            "gastrin",
+            "serotonin",
+            "rb1",
+            "p53",
+            "ssrt2"
+          ],
+          "costNote": "一线 5 项为国内三级医院神经内分泌肿瘤（NET/NEC）标准诊断组合，单项成本约 40-80 元，Ki-67 为分级核心依据（G1 <3%、G2 3-20%、G3 >20%）；二线用于原发灶定位（TTF-1 肺、CDX2 肠、PAX8 胰/胃、Islet-1 胰岛来源、Calcitonin 甲状腺髓样癌）、NEC 与 NET G3 鉴别（Rb1/p53）及生长抑素受体靶向评估（SSTR2），总成本约增 400-800 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 依赖 PathoAtlas markers.json 实际存在的 id，上述 insm1/islet-1/chromogranin-b/sstr2/ae1-ae3 等命名为常见惯例，实际 id 需与仓库现有 markers.json 字段核对后再确认；费用区间为国内三级医院一般范围，各地物价差异较大。"
+        }
+      }
     },
     {
       "id": "glandular-vs-squamous",
       "sourceId": "glandular-vs-squamous",
       "morphology": "glandular",
-      "sites": ["lung", "head-neck", "any"],
+      "sites": [
+        "lung",
+        "head-neck",
+        "any"
+      ],
       "titleZh": "腺癌与鳞状细胞癌鉴别",
       "titleEn": "Glandular vs Squamous Differentiation",
-      "firstLineMarkers": ["TTF-1", "Napsin A", "CK7", "P40", "CK5/6"],
-      "secondLineMarkers": ["P63", "Desmoglein-3", "SOX2", "Syn", "CgA", "INSM1"],
+      "firstLineMarkers": [
+        "TTF-1",
+        "Napsin A",
+        "CK7",
+        "P40",
+        "CK5/6"
+      ],
+      "secondLineMarkers": [
+        "P63",
+        "Desmoglein-3",
+        "SOX2",
+        "Syn",
+        "CgA",
+        "INSM1"
+      ],
       "rules": [
         {
           "diagnosis": "腺癌 (肺腺癌)",
           "diseaseId": "adenocarcinoma-nos",
-          "requiredPositive": ["TTF-1"],
-          "requiredNegative": ["P40", "CK5/6"],
-          "supportingPositive": ["Napsin A", "CK7"],
+          "requiredPositive": [
+            "TTF-1"
+          ],
+          "requiredNegative": [
+            "P40",
+            "CK5/6"
+          ],
+          "supportingPositive": [
+            "Napsin A",
+            "CK7"
+          ],
           "supportingNegative": [],
           "confidence": "high",
-          "nextSteps": ["EGFR/ALK/ROS1/BRAF等驱动基因检测", "PD-L1表达检测"]
+          "nextSteps": [
+            "EGFR/ALK/ROS1/BRAF等驱动基因检测",
+            "PD-L1表达检测"
+          ]
         },
         {
           "diagnosis": "鳞状细胞癌",
           "diseaseId": "squamous-cell-carcinoma",
-          "requiredPositive": ["P40", "CK5/6"],
-          "requiredNegative": ["TTF-1", "Napsin A"],
+          "requiredPositive": [
+            "P40",
+            "CK5/6"
+          ],
+          "requiredNegative": [
+            "TTF-1",
+            "Napsin A"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["CK7"],
+          "supportingNegative": [
+            "CK7"
+          ],
           "confidence": "high",
-          "nextSteps": ["P40是鳞状分化的金标准标记物", "PD-L1检测指导免疫治疗"]
+          "nextSteps": [
+            "P40是鳞状分化的金标准标记物",
+            "PD-L1检测指导免疫治疗"
+          ]
         },
         {
           "diagnosis": "腺鳞癌",
           "diseaseId": "adenosquamous-carcinoma",
-          "requiredPositive": ["TTF-1", "P40"],
+          "requiredPositive": [
+            "TTF-1",
+            "P40"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["Napsin A", "CK5/6"],
+          "supportingPositive": [
+            "Napsin A",
+            "CK5/6"
+          ],
           "supportingNegative": [],
           "confidence": "medium",
-          "nextSteps": ["两种成分各占≥10%", "同时具有腺和鳞标记物阳性"]
+          "nextSteps": [
+            "两种成分各占≥10%",
+            "同时具有腺和鳞标记物阳性"
+          ]
         },
         {
           "diagnosis": "神经内分泌癌",
           "diseaseId": "neuroendocrine-carcinoma",
-          "requiredPositive": ["Syn"],
-          "requiredNegative": ["TTF-1", "P40"],
-          "supportingPositive": ["CgA", "INSM1"],
-          "supportingNegative": ["Napsin A", "CK5/6"],
+          "requiredPositive": [
+            "Syn"
+          ],
+          "requiredNegative": [
+            "TTF-1",
+            "P40"
+          ],
+          "supportingPositive": [
+            "CgA",
+            "INSM1"
+          ],
+          "supportingNegative": [
+            "Napsin A",
+            "CK5/6"
+          ],
           "confidence": "high",
-          "nextSteps": ["Ki-67增殖指数", "Rb和P53表达状态"]
+          "nextSteps": [
+            "Ki-67增殖指数",
+            "Rb和P53表达状态"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck7",
+            "ck20",
+            "p40",
+            "p63",
+            "ck5-6"
+          ],
+          "secondLine": [
+            "ttf1",
+            "napsin-a",
+            "cdx2",
+            "gata3",
+            "pax8",
+            "muc2",
+            "muc5ac",
+            "muc6"
+          ],
+          "costNote": "一线 5 项为国内三级医院腺/鳞鉴别常规组合，单项成本约 30-60 元，合计约 150-300 元；二线用于进一步明确原发部位或黏液分型，总成本约增 240-480 元。"
+        }
+      }
     },
     {
       "id": "melanocytic-lesions",
       "sourceId": "melanocytic-lesions",
       "morphology": "melanocytic",
-      "sites": ["skin", "any"],
+      "sites": [
+        "skin",
+        "any"
+      ],
       "titleZh": "黑色素细胞病变鉴别",
       "titleEn": "Melanocytic Lesion Differentials",
-      "firstLineMarkers": ["S-100", "SOX10", "Melan-A", "HMB-45", "PRAME", "Ki-67"],
-      "secondLineMarkers": ["MITF", "P16", "BRAF-V600E", "BAP1", "Cyclin D1", "P53"],
+      "firstLineMarkers": [
+        "S-100",
+        "SOX10",
+        "Melan-A",
+        "HMB-45",
+        "PRAME",
+        "Ki-67"
+      ],
+      "secondLineMarkers": [
+        "MITF",
+        "P16",
+        "BRAF-V600E",
+        "BAP1",
+        "Cyclin D1",
+        "P53"
+      ],
       "rules": [
         {
           "diagnosis": "恶性黑色素瘤",
           "diseaseId": "invasive-melanoma",
-          "requiredPositive": ["S-100", "SOX10", "PRAME"],
+          "requiredPositive": [
+            "S-100",
+            "SOX10",
+            "PRAME"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["HMB-45", "Ki-67"],
-          "supportingNegative": ["P16"],
+          "supportingPositive": [
+            "HMB-45",
+            "Ki-67"
+          ],
+          "supportingNegative": [
+            "P16"
+          ],
           "confidence": "high",
-          "nextSteps": ["PRAME弥漫阳性支持恶性", "BRAF V600E突变检测指导靶向治疗", "HMB-45深层仍阳性(缺乏成熟)"]
+          "nextSteps": [
+            "PRAME弥漫阳性支持恶性",
+            "BRAF V600E突变检测指导靶向治疗",
+            "HMB-45深层仍阳性(缺乏成熟)"
+          ]
         },
         {
           "diagnosis": "良性黑色素细胞痣",
           "diseaseId": "common-melanocytic-nevus",
-          "requiredPositive": ["S-100", "SOX10"],
-          "requiredNegative": ["PRAME"],
-          "supportingPositive": ["P16", "Melan-A"],
-          "supportingNegative": ["Ki-67"],
+          "requiredPositive": [
+            "S-100",
+            "SOX10"
+          ],
+          "requiredNegative": [
+            "PRAME"
+          ],
+          "supportingPositive": [
+            "P16",
+            "Melan-A"
+          ],
+          "supportingNegative": [
+            "Ki-67"
+          ],
           "confidence": "high",
-          "nextSteps": ["PRAME阴性支持良性", "HMB-45表层阳性深层消失(正常成熟)", "Ki-67低"]
+          "nextSteps": [
+            "PRAME阴性支持良性",
+            "HMB-45表层阳性深层消失(正常成熟)",
+            "Ki-67低"
+          ]
         },
         {
           "diagnosis": "促纤维增生性黑色素瘤",
           "diseaseId": "desmoplastic-melanoma",
-          "requiredPositive": ["S-100", "SOX10"],
+          "requiredPositive": [
+            "S-100",
+            "SOX10"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["PRAME"],
-          "supportingNegative": ["Melan-A", "HMB-45"],
+          "supportingPositive": [
+            "PRAME"
+          ],
+          "supportingNegative": [
+            "Melan-A",
+            "HMB-45"
+          ],
           "confidence": "medium",
-          "nextSteps": ["S-100+/SOX10+但Melan-A常阴性是特征", "需与梭形细胞肿瘤鉴别"]
+          "nextSteps": [
+            "S-100+/SOX10+但Melan-A常阴性是特征",
+            "需与梭形细胞肿瘤鉴别"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "sox10",
+            "s100",
+            "hmb45",
+            "melan-a",
+            "ki67"
+          ],
+          "secondLine": [
+            "prame",
+            "p16",
+            "hmb45",
+            "bap1",
+            "braf-v600e",
+            "mitf",
+            "tyrosinase"
+          ],
+          "costNote": "一线 5 项为国内三级医院黑色素细胞病变常规开展项目，S-100 与 SOX10 作为敏感性标志、HMB45 与 Melan-A 作为特异性标志、Ki-67 评估增殖活性；单项成本约 40-80 元，总计约 200-400 元。二线用于鉴别良恶性疑难病例（PRAME 有助于区分黑色素瘤与痣，p16 缺失提示恶性，BAP1 用于 BAP1 缺失型黑色素细胞肿瘤/家族性黑色素瘤综合征），以及 BRAF V600E 指导靶向治疗；PRAME 与 BRAF V600E 单项成本约 150-300 元，总成本约增 500-900 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 需与 PathoAtlas markers.json 中实际 id 比对（如 melan-a / hmb45 / braf-v600e 的具体拼写），部分二线标记物（BAP1、MITF、Tyrosinase）在国内基层单位开展率较低，费用为一般性估算，建议人工复核。"
+        }
+      }
     },
     {
       "id": "renal-cell-carcinoma-subtypes",
       "sourceId": "renal-cell-carcinoma-subtypes",
       "morphology": "clear-cell",
-      "sites": ["kidney"],
+      "sites": [
+        "kidney"
+      ],
       "titleZh": "肾细胞癌亚型鉴别",
       "titleEn": "Renal Cell Carcinoma Subtype Differentials",
-      "firstLineMarkers": ["PAX8", "CA-IX", "CD10", "CK7", "AMACR", "CD117"],
-      "secondLineMarkers": ["Ksp-cadherin", "TFE3", "TFEB", "FH", "2SC", "SDHB", "Vimentin"],
+      "firstLineMarkers": [
+        "PAX8",
+        "CA-IX",
+        "CD10",
+        "CK7",
+        "AMACR",
+        "CD117"
+      ],
+      "secondLineMarkers": [
+        "Ksp-cadherin",
+        "TFE3",
+        "TFEB",
+        "FH",
+        "2SC",
+        "SDHB",
+        "Vimentin"
+      ],
       "rules": [
         {
           "diagnosis": "透明细胞型肾细胞癌",
           "diseaseId": "clear-cell-rcc",
-          "requiredPositive": ["PAX8", "CA-IX"],
-          "requiredNegative": ["CK7"],
-          "supportingPositive": ["CD10", "Vimentin"],
-          "supportingNegative": ["AMACR"],
+          "requiredPositive": [
+            "PAX8",
+            "CA-IX"
+          ],
+          "requiredNegative": [
+            "CK7"
+          ],
+          "supportingPositive": [
+            "CD10",
+            "Vimentin"
+          ],
+          "supportingNegative": [
+            "AMACR"
+          ],
           "confidence": "high",
-          "nextSteps": ["CA-IX弥漫膜阳性(box pattern)", "VHL基因/3p缺失检测"]
+          "nextSteps": [
+            "CA-IX弥漫膜阳性(box pattern)",
+            "VHL基因/3p缺失检测"
+          ]
         },
         {
           "diagnosis": "乳头状肾细胞癌",
           "diseaseId": "papillary-rcc-type1",
-          "requiredPositive": ["PAX8", "CK7", "AMACR"],
-          "requiredNegative": ["CA-IX"],
-          "supportingPositive": ["CD10"],
-          "supportingNegative": ["CD117"],
+          "requiredPositive": [
+            "PAX8",
+            "CK7",
+            "AMACR"
+          ],
+          "requiredNegative": [
+            "CA-IX"
+          ],
+          "supportingPositive": [
+            "CD10"
+          ],
+          "supportingNegative": [
+            "CD117"
+          ],
           "confidence": "high",
-          "nextSteps": ["1型:薄乳头/泡沫巨噬细胞; 2型:假复层/嗜酸", "MET突变检测(1型)"]
+          "nextSteps": [
+            "1型:薄乳头/泡沫巨噬细胞; 2型:假复层/嗜酸",
+            "MET突变检测(1型)"
+          ]
         },
         {
           "diagnosis": "嫌色细胞肾细胞癌",
           "diseaseId": "chromophobe-rcc",
-          "requiredPositive": ["PAX8", "CK7", "CD117"],
-          "requiredNegative": ["CA-IX", "AMACR"],
-          "supportingPositive": ["Ksp-cadherin"],
-          "supportingNegative": ["Vimentin"],
+          "requiredPositive": [
+            "PAX8",
+            "CK7",
+            "CD117"
+          ],
+          "requiredNegative": [
+            "CA-IX",
+            "AMACR"
+          ],
+          "supportingPositive": [
+            "Ksp-cadherin"
+          ],
+          "supportingNegative": [
+            "Vimentin"
+          ],
           "confidence": "high",
-          "nextSteps": ["Hale胶体铁弥漫阳性", "需与嗜酸细胞瘤鉴别"]
+          "nextSteps": [
+            "Hale胶体铁弥漫阳性",
+            "需与嗜酸细胞瘤鉴别"
+          ]
         },
         {
           "diagnosis": "嗜酸细胞瘤 (良性)",
           "diseaseId": "oncocytoma",
-          "requiredPositive": ["PAX8", "CD117"],
-          "requiredNegative": ["CK7", "CA-IX", "AMACR"],
+          "requiredPositive": [
+            "PAX8",
+            "CD117"
+          ],
+          "requiredNegative": [
+            "CK7",
+            "CA-IX",
+            "AMACR"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["Vimentin"],
+          "supportingNegative": [
+            "Vimentin"
+          ],
           "confidence": "medium",
-          "nextSteps": ["Hale胶体铁灶性阳性(非弥漫)", "需与嫌色细胞癌嗜酸亚型鉴别"]
+          "nextSteps": [
+            "Hale胶体铁灶性阳性(非弥漫)",
+            "需与嫌色细胞癌嗜酸亚型鉴别"
+          ]
         },
         {
           "diagnosis": "MiTF易位型肾细胞癌",
           "diseaseId": "translocation-rcc",
-          "requiredPositive": ["PAX8", "TFE3"],
-          "requiredNegative": ["CK7"],
+          "requiredPositive": [
+            "PAX8",
+            "TFE3"
+          ],
+          "requiredNegative": [
+            "CK7"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["CA-IX"],
+          "supportingNegative": [
+            "CA-IX"
+          ],
           "confidence": "medium",
-          "nextSteps": ["TFE3核强阳性", "TFE3 FISH确认易位", "好发于年轻患者"]
+          "nextSteps": [
+            "TFE3核强阳性",
+            "TFE3 FISH确认易位",
+            "好发于年轻患者"
+          ]
         },
         {
           "diagnosis": "FH缺陷型肾细胞癌",
           "diseaseId": "fumarate-hydratase-deficient-rcc",
-          "requiredPositive": ["PAX8", "2SC"],
-          "requiredNegative": ["FH"],
+          "requiredPositive": [
+            "PAX8",
+            "2SC"
+          ],
+          "requiredNegative": [
+            "FH"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["CA-IX"],
+          "supportingNegative": [
+            "CA-IX"
+          ],
           "confidence": "high",
-          "nextSteps": ["FH缺失+2SC阳性确诊", "遗传咨询(HLRCC综合征)", "高度侵袭性需积极治疗"]
+          "nextSteps": [
+            "FH缺失+2SC阳性确诊",
+            "遗传咨询(HLRCC综合征)",
+            "高度侵袭性需积极治疗"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "pax8",
+            "ck7",
+            "cd10",
+            "vimentin",
+            "ca9",
+            "cd117",
+            "amacr"
+          ],
+          "secondLine": [
+            "tfe3",
+            "tfeb",
+            "cathepsin-k",
+            "sdhb",
+            "fh",
+            "hmb45",
+            "melan-a"
+          ],
+          "costNote": "一线 7 项为国内三级医院肾肿瘤亚型鉴别常规开展项目（PAX8 确认肾源性，CA9/CD10/Vim 倾向透明细胞癌，CK7/CD117 倾向嫌色细胞癌/嗜酸细胞瘤，AMACR/CK7 倾向乳头状癌），单项成本约 40-80 元，总成本约 280-560 元；二线用于 MiT 家族易位 RCC（TFE3/TFEB/Cathepsin K）、SDH 缺陷 RCC（SDHB 缺失判读）、FH 缺陷 RCC（FH 缺失）及血管平滑肌脂肪瘤鉴别（HMB45/Melan-A），按需加做总成本增加 280-560 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 采用常见写法，需与 PathoAtlas markers.json 实际 id 校对（ca9 可能写作 ca-ix，vimentin 可能写作 vim，amacr 可能写作 p504s）。"
+        }
+      }
     },
     {
       "id": "pleomorphic-sarcoma",
       "sourceId": null,
       "morphology": "pleomorphic",
-      "sites": ["soft-tissue", "any"],
+      "sites": [
+        "soft-tissue",
+        "any"
+      ],
       "titleZh": "多形性肉瘤鉴别",
       "titleEn": "Pleomorphic Sarcoma Differentials",
-      "firstLineMarkers": ["SMA", "Desmin", "S-100", "CK", "CD34", "MDM2"],
-      "secondLineMarkers": ["Myogenin", "MyoD1", "SOX10", "ERG", "CDK4", "STAT6", "P63", "h-Caldesmon"],
+      "firstLineMarkers": [
+        "SMA",
+        "Desmin",
+        "S-100",
+        "CK",
+        "CD34",
+        "MDM2"
+      ],
+      "secondLineMarkers": [
+        "Myogenin",
+        "MyoD1",
+        "SOX10",
+        "ERG",
+        "CDK4",
+        "STAT6",
+        "P63",
+        "h-Caldesmon"
+      ],
       "rules": [
         {
           "diagnosis": "未分化多形性肉瘤 (UPS)",
           "diseaseId": "undifferentiated-pleomorphic-sarcoma",
           "requiredPositive": [],
-          "requiredNegative": ["SMA", "Desmin", "S-100", "CK", "MDM2"],
-          "supportingPositive": ["CD34"],
-          "supportingNegative": ["Myogenin", "SOX10"],
+          "requiredNegative": [
+            "SMA",
+            "Desmin",
+            "S-100",
+            "CK",
+            "MDM2"
+          ],
+          "supportingPositive": [
+            "CD34"
+          ],
+          "supportingNegative": [
+            "Myogenin",
+            "SOX10"
+          ],
           "confidence": "medium",
-          "nextSteps": ["排除性诊断：需排除其他可辨认谱系的肉瘤", "MDM2/CDK4阴性排除去分化脂肪肉瘤"]
+          "nextSteps": [
+            "排除性诊断：需排除其他可辨认谱系的肉瘤",
+            "MDM2/CDK4阴性排除去分化脂肪肉瘤"
+          ]
         },
         {
           "diagnosis": "去分化脂肪肉瘤",
           "diseaseId": "dedifferentiated-liposarcoma",
-          "requiredPositive": ["MDM2"],
+          "requiredPositive": [
+            "MDM2"
+          ],
           "requiredNegative": [],
-          "supportingPositive": ["CDK4"],
-          "supportingNegative": ["Desmin", "Myogenin"],
+          "supportingPositive": [
+            "CDK4"
+          ],
+          "supportingNegative": [
+            "Desmin",
+            "Myogenin"
+          ],
           "confidence": "high",
-          "nextSteps": ["MDM2扩增FISH确认", "CDK4核阳性支持诊断", "好发于腹膜后"]
+          "nextSteps": [
+            "MDM2扩增FISH确认",
+            "CDK4核阳性支持诊断",
+            "好发于腹膜后"
+          ]
         },
         {
           "diagnosis": "多形性横纹肌肉瘤",
           "diseaseId": "pleomorphic-rhabdomyosarcoma",
-          "requiredPositive": ["Desmin", "Myogenin"],
-          "requiredNegative": ["MDM2"],
-          "supportingPositive": ["MyoD1"],
-          "supportingNegative": ["S-100", "CK"],
+          "requiredPositive": [
+            "Desmin",
+            "Myogenin"
+          ],
+          "requiredNegative": [
+            "MDM2"
+          ],
+          "supportingPositive": [
+            "MyoD1"
+          ],
+          "supportingNegative": [
+            "S-100",
+            "CK"
+          ],
           "confidence": "high",
-          "nextSteps": ["成人型横纹肌肉瘤", "高度恶性，预后差"]
+          "nextSteps": [
+            "成人型横纹肌肉瘤",
+            "高度恶性，预后差"
+          ]
         },
         {
           "diagnosis": "多形性平滑肌肉瘤",
           "diseaseId": "pleomorphic-leiomyosarcoma",
-          "requiredPositive": ["SMA", "Desmin"],
-          "requiredNegative": ["Myogenin", "MDM2"],
-          "supportingPositive": ["h-Caldesmon"],
-          "supportingNegative": ["S-100", "CD34"],
+          "requiredPositive": [
+            "SMA",
+            "Desmin"
+          ],
+          "requiredNegative": [
+            "Myogenin",
+            "MDM2"
+          ],
+          "supportingPositive": [
+            "h-Caldesmon"
+          ],
+          "supportingNegative": [
+            "S-100",
+            "CD34"
+          ],
           "confidence": "high",
-          "nextSteps": ["h-Caldesmon阳性确认平滑肌分化", "好发于腹膜后和子宫"]
+          "nextSteps": [
+            "h-Caldesmon阳性确认平滑肌分化",
+            "好发于腹膜后和子宫"
+          ]
         },
         {
           "diagnosis": "肉瘤样癌 (去分化癌)",
           "diseaseId": "sarcomatoid-carcinoma",
-          "requiredPositive": ["CK"],
-          "requiredNegative": ["MDM2"],
-          "supportingPositive": ["P63"],
-          "supportingNegative": ["Desmin", "S-100"],
+          "requiredPositive": [
+            "CK"
+          ],
+          "requiredNegative": [
+            "MDM2"
+          ],
+          "supportingPositive": [
+            "P63"
+          ],
+          "supportingNegative": [
+            "Desmin",
+            "S-100"
+          ],
           "confidence": "medium",
-          "nextSteps": ["广谱CK(AE1/AE3)灶性阳性即有意义", "需排除真性肉瘤", "p63阳性提示鳞状分化"]
+          "nextSteps": [
+            "广谱CK(AE1/AE3)灶性阳性即有意义",
+            "需排除真性肉瘤",
+            "p63阳性提示鳞状分化"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck-pan",
+            "ema",
+            "vimentin",
+            "s100",
+            "sox10",
+            "desmin",
+            "sma",
+            "cd34",
+            "cd45",
+            "ki67"
+          ],
+          "secondLine": [
+            "myogenin",
+            "myod1",
+            "h-caldesmon",
+            "hmb45",
+            "melan-a",
+            "mdm2",
+            "cdk4",
+            "cd31",
+            "erg",
+            "ini1",
+            "brg1",
+            "stat6",
+            "alk",
+            "cd30"
+          ],
+          "costNote": "多形性肉瘤（含未分化多形性肉瘤 UPS）为排除性诊断，一线套餐（约 10 项）用于排除上皮源（CK/EMA）、黑色素/神经源（S-100/SOX10）、肌源（Desmin/SMA）、血管/纤维组织细胞（CD34）及淋巴造血（CD45）来源，Ki-67 评估增殖指数；国内三级医院单项成本约 40-70 元，合计约 500-700 元。二线套餐按形态倾向选择：疑似横纹肌分化加 Myogenin/MyoD1；疑似平滑肌加 H-caldesmon；疑似黑色素瘤/PEComa 加 HMB45/Melan-A；疑似去分化脂肪肉瘤加 MDM2/CDK4（可联合 FISH）；疑似血管肉瘤加 CD31/ERG；疑似 SWI/SNF 缺陷肿瘤加 INI1/BRG1；疑似孤立性纤维性肿瘤加 STAT6；疑似间变大细胞淋巴瘤加 ALK/CD30。二线按实际勾选 3-6 项，增加成本约 150-400 元。",
+          "_low_confidence": true,
+          "_reason": "markerId 使用常见命名惯例（如 ck-pan、h-caldesmon、ini1、brg1、stat6 等），需与 PathoAtlas markers.json 中实际 id 字段比对核校；部分罕见标记物若 markers.json 未收录需另行补录。"
+        }
+      }
     },
     {
       "id": "metastatic-cup",
       "sourceId": null,
       "morphology": "epithelioid",
-      "sites": ["any"],
+      "sites": [
+        "any"
+      ],
       "titleZh": "原发不明转移癌 (CUP) 溯源",
       "titleEn": "Carcinoma of Unknown Primary (CUP)",
-      "firstLineMarkers": ["CK7", "CK20", "TTF-1", "GATA3", "PAX8", "CDX2"],
-      "secondLineMarkers": ["Napsin A", "ER", "Mammaglobin", "WT1", "SATB2", "Uroplakin", "Hepatocyte(HepPar-1)", "PSA", "NKX3.1", "Thyroglobulin", "Calretinin"],
+      "firstLineMarkers": [
+        "CK7",
+        "CK20",
+        "TTF-1",
+        "GATA3",
+        "PAX8",
+        "CDX2"
+      ],
+      "secondLineMarkers": [
+        "Napsin A",
+        "ER",
+        "Mammaglobin",
+        "WT1",
+        "SATB2",
+        "Uroplakin",
+        "Hepatocyte(HepPar-1)",
+        "PSA",
+        "NKX3.1",
+        "Thyroglobulin",
+        "Calretinin"
+      ],
       "rules": [
         {
           "diagnosis": "肺来源",
           "diseaseId": "lung-adenocarcinoma",
-          "requiredPositive": ["CK7", "TTF-1"],
-          "requiredNegative": ["CK20", "CDX2"],
-          "supportingPositive": ["Napsin A"],
-          "supportingNegative": ["GATA3", "PAX8"],
+          "requiredPositive": [
+            "CK7",
+            "TTF-1"
+          ],
+          "requiredNegative": [
+            "CK20",
+            "CDX2"
+          ],
+          "supportingPositive": [
+            "Napsin A"
+          ],
+          "supportingNegative": [
+            "GATA3",
+            "PAX8"
+          ],
           "confidence": "high",
-          "nextSteps": ["驱动基因全面检测", "PD-L1表达检测"]
+          "nextSteps": [
+            "驱动基因全面检测",
+            "PD-L1表达检测"
+          ]
         },
         {
           "diagnosis": "乳腺来源",
           "diseaseId": "breast-carcinoma",
-          "requiredPositive": ["CK7", "GATA3"],
-          "requiredNegative": ["CK20", "TTF-1", "CDX2"],
-          "supportingPositive": ["Mammaglobin", "ER"],
-          "supportingNegative": ["PAX8"],
+          "requiredPositive": [
+            "CK7",
+            "GATA3"
+          ],
+          "requiredNegative": [
+            "CK20",
+            "TTF-1",
+            "CDX2"
+          ],
+          "supportingPositive": [
+            "Mammaglobin",
+            "ER"
+          ],
+          "supportingNegative": [
+            "PAX8"
+          ],
           "confidence": "high",
-          "nextSteps": ["ER/PR/HER2状态完善", "乳腺影像学检查"]
+          "nextSteps": [
+            "ER/PR/HER2状态完善",
+            "乳腺影像学检查"
+          ]
         },
         {
           "diagnosis": "结直肠来源",
           "diseaseId": "colorectal-adenocarcinoma",
-          "requiredPositive": ["CK20", "CDX2"],
-          "requiredNegative": ["CK7"],
-          "supportingPositive": ["SATB2"],
-          "supportingNegative": ["TTF-1", "GATA3"],
+          "requiredPositive": [
+            "CK20",
+            "CDX2"
+          ],
+          "requiredNegative": [
+            "CK7"
+          ],
+          "supportingPositive": [
+            "SATB2"
+          ],
+          "supportingNegative": [
+            "TTF-1",
+            "GATA3"
+          ],
           "confidence": "high",
-          "nextSteps": ["KRAS/NRAS/BRAF突变检测", "MMR蛋白检测", "肠镜检查"]
+          "nextSteps": [
+            "KRAS/NRAS/BRAF突变检测",
+            "MMR蛋白检测",
+            "肠镜检查"
+          ]
         },
         {
           "diagnosis": "妇科来源 (卵巢/子宫内膜)",
           "diseaseId": "ovarian-serous-carcinoma",
-          "requiredPositive": ["CK7", "PAX8"],
-          "requiredNegative": ["CK20", "CDX2", "TTF-1"],
-          "supportingPositive": ["WT1", "ER"],
-          "supportingNegative": ["GATA3"],
+          "requiredPositive": [
+            "CK7",
+            "PAX8"
+          ],
+          "requiredNegative": [
+            "CK20",
+            "CDX2",
+            "TTF-1"
+          ],
+          "supportingPositive": [
+            "WT1",
+            "ER"
+          ],
+          "supportingNegative": [
+            "GATA3"
+          ],
           "confidence": "high",
-          "nextSteps": ["WT1+→卵巢浆液性癌; WT1-/ER+→子宫内膜癌", "妇科超声/CT检查"]
+          "nextSteps": [
+            "WT1+→卵巢浆液性癌; WT1-/ER+→子宫内膜癌",
+            "妇科超声/CT检查"
+          ]
         },
         {
           "diagnosis": "泌尿系来源 (前列腺/尿路上皮)",
           "diseaseId": "urothelial-carcinoma",
-          "requiredPositive": ["GATA3"],
-          "requiredNegative": ["TTF-1", "CDX2"],
-          "supportingPositive": ["Uroplakin", "CK7"],
-          "supportingNegative": ["CK20", "PAX8"],
+          "requiredPositive": [
+            "GATA3"
+          ],
+          "requiredNegative": [
+            "TTF-1",
+            "CDX2"
+          ],
+          "supportingPositive": [
+            "Uroplakin",
+            "CK7"
+          ],
+          "supportingNegative": [
+            "CK20",
+            "PAX8"
+          ],
           "confidence": "medium",
-          "nextSteps": ["GATA3+/Uroplakin+→尿路上皮癌", "PSA+/NKX3.1+→前列腺癌", "注意GATA3也见于乳腺癌"]
+          "nextSteps": [
+            "GATA3+/Uroplakin+→尿路上皮癌",
+            "PSA+/NKX3.1+→前列腺癌",
+            "注意GATA3也见于乳腺癌"
+          ]
         },
         {
           "diagnosis": "肝来源",
           "diseaseId": "hepatocellular-carcinoma",
-          "requiredPositive": ["Hepatocyte(HepPar-1)"],
-          "requiredNegative": ["CK7", "CK20", "CDX2"],
+          "requiredPositive": [
+            "Hepatocyte(HepPar-1)"
+          ],
+          "requiredNegative": [
+            "CK7",
+            "CK20",
+            "CDX2"
+          ],
           "supportingPositive": [],
-          "supportingNegative": ["TTF-1", "GATA3"],
+          "supportingNegative": [
+            "TTF-1",
+            "GATA3"
+          ],
           "confidence": "high",
-          "nextSteps": ["Arginase-1和GPC-3进一步确认", "AFP检测"]
+          "nextSteps": [
+            "Arginase-1和GPC-3进一步确认",
+            "AFP检测"
+          ]
         }
-      ]
+      ],
+      "_enhance_panel_cn_recommendation": {
+        "panels": {
+          "firstLine": [
+            "ck7",
+            "ck20",
+            "cdx2",
+            "ttf1",
+            "gata3",
+            "pax8",
+            "p40",
+            "ck-pan"
+          ],
+          "secondLine": [
+            "sox10",
+            "s100",
+            "heppar1",
+            "arginase1",
+            "napsin-a",
+            "er",
+            "pr",
+            "gcdfp15",
+            "mammaglobin",
+            "psa",
+            "nkx3-1",
+            "villin",
+            "satb2",
+            "wt1",
+            "pax5",
+            "cd45",
+            "synaptophysin",
+            "chromogranin"
+          ],
+          "costNote": "转移性原发灶不明（CUP）首轮以 CK7/CK20 组合结合 CDX2、TTF-1、GATA3、PAX8、p40 进行四象限定位，国内三级医院单项 IHC 费用约 40-80 元，一线 8 项合计约 320-640 元；二线根据首轮定位结果靶向追加器官特异性标志物（如肝 HepPar1/Arginase-1、乳腺 GCDFP-15/Mammaglobin、前列腺 PSA/NKX3-1、黑色素瘤 SOX10/S100 等），追加 5-10 项约增加 200-800 元。建议结合临床影像先缩小怀疑范围再分层点选，避免盲目全套开具。",
+          "_low_confidence": true,
+          "_reason": "markerId（如 heppar1、arginase1、nkx3-1、villin、satb2、gcdfp15、mammaglobin、ck-pan）需与 PathoAtlas markers.json 实际 id 对齐，未核对具体拼写；费用为国内三级医院常见区间估算。"
+        }
+      }
     }
   ]
 }

@@ -1,13 +1,921 @@
 [
-  {"id":"dlbcl","nameZh":"弥漫大B细胞淋巴瘤","nameEn":"Diffuse Large B-Cell Lymphoma","aliases":["DLBCL"],"organ":"lymphoma","category":"malignant","epidemiology":"最常见的非霍奇金淋巴瘤，约占所有NHL的30-40%。中老年多见，中位发病年龄约60-70岁，男性略多于女性。全球年发病率约5-7/10万，可发生于任何年龄。免疫缺陷（HIV/器官移植后）是重要危险因素。","clinicalFeatures":"快速增大的淋巴结肿大，可累及结外(胃、CNS等)。B症状(发热、盗汗、体重减轻)常见。","grossPathology":"鱼肉样灰白色组织，淋巴结结构破坏。","microscopy":"大的B淋巴细胞弥漫浸润，完全破坏正常淋巴结结构，滤泡及副皮质区结构消失。肿瘤细胞体积大（核径为小淋巴细胞2倍以上），可呈中心母细胞样（核圆至卵圆，染色质空泡状，2-4个紧贴核膜的核仁）或免疫母细胞样（单一显著居中核仁，嗜碱性胞浆丰富）。核分裂象活跃，凋亡小体散见。间质可伴T细胞反应性浸润及小血管增生。部分病例可见坏死灶。","keyFeatures":["大B细胞弥漫浸润","CD20+/CD79a+/PAX5+","Hans分型：GCB型(预后好) vs ABC型(预后差)","R-CHOP方案是标准治疗"],"ihcProfile":[{"marker":"CD20","result":"阳性","note":"B细胞标记"},{"marker":"CD79a","result":"阳性","note":""},{"marker":"CD10","result":"GCB型阳性","note":"Hans分型"},{"marker":"BCL6","result":"阳性","note":"Hans分型"},{"marker":"MUM1","result":"ABC型阳性","note":"Hans分型"},{"marker":"Ki-67","result":">40%","note":"高增殖"}],"specialStainProfile":[{"stain":"Reticulin","result":"网架评估","note":"评估淋巴结网架结构破坏程度"},{"stain":"PAS","result":"浆细胞分化","note":"显示浆细胞分化成分"}],"molecularFeatures":"BCL2/BCL6/MYC重排。双打击(MYC+BCL2重排)或三打击淋巴瘤预后极差。GCB vs ABC通过基因表达谱或Hans免疫组化算法区分。","differentialDiagnosis":["burkitt-lymphoma","classical-hodgkin-lymphoma","follicular-lymphoma"],"grading":"不分级","staging":"Ann Arbor/Lugano分期","prognosis":"R-CHOP治疗后60-70%可治愈。IPI评分评估预后。","treatment":"R-CHOP(利妥昔单抗+环磷酰胺+多柔比星+长春新碱+泼尼松)。复发难治可用CAR-T治疗。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"follicular-lymphoma","nameZh":"滤泡性淋巴瘤","nameEn":"Follicular Lymphoma","aliases":["FL"],"organ":"lymphoma","category":"malignant","epidemiology":"第二常见的非霍奇金淋巴瘤，约占NHL的20%。中老年多见，中位发病年龄约60岁，男女比接近1:1。欧美国家发病率较高（约3-5/10万/年），亚洲地区相对少见。惰性病程，多数患者确诊时已为晚期。","clinicalFeatures":"缓慢进展的无痛性淋巴结肿大，多为全身性。","grossPathology":"淋巴结肿大，切面均匀，保留滤泡样结构。","microscopy":"肿瘤性滤泡紧密排列，弥漫分布于淋巴结皮质和髓质，滤泡大小较一致且缺乏正常的极化（暗区/亮区消失）。滤泡由中心细胞（小至中等大小，核不规则有切迹，胞浆少）和中心母细胞（大细胞，核圆至卵圆，染色质空泡状，1-3个紧贴核膜的核仁）混合组成。滤泡间区通常不显著受累。肿瘤性滤泡中BCL2阳性（与反应性滤泡的关键鉴别点），FDC网保存但可扭曲。","keyFeatures":["肿瘤性滤泡结构","CD10+/BCL2+/BCL6+","t(14;18) BCL2-IGH融合(85-90%)","1-3级(中心母细胞比例)"],"ihcProfile":[{"marker":"CD20","result":"阳性","note":""},{"marker":"CD10","result":"阳性","note":"生发中心标记"},{"marker":"BCL2","result":"阳性","note":"反应性滤泡BCL2阴性，鉴别关键"},{"marker":"BCL6","result":"阳性","note":""},{"marker":"CD23","result":"FDC网阳性","note":""}],"molecularFeatures":"t(14;18)(q32;q21) BCL2-IGH融合导致BCL2过表达，抑制凋亡。3A级向DLBCL转化风险存在。","differentialDiagnosis":["dlbcl","marginal-zone-lymphoma"],"grading":"1-3级(基于中心母细胞数/HPF)：1级(0-5)，2级(6-15)，3级(>15)","staging":"Ann Arbor/Lugano分期","prognosis":"惰性但不可治愈，中位生存>15年。约3%/年转化为DLBCL。","treatment":"无症状可观察等待。有症状用BR(苯达莫司汀+利妥昔单抗)或R-CHOP。维持利妥昔单抗。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"burkitt-lymphoma","nameZh":"Burkitt淋巴瘤","nameEn":"Burkitt Lymphoma","aliases":["BL"],"organ":"lymphoma","category":"malignant","epidemiology":"高度侵袭性B细胞淋巴瘤。三种临床亚型：地方性(非洲儿童，EBV相关)、散发性(欧美)、免疫缺陷相关(HIV)。","clinicalFeatures":"快速进展的肿块，地方性多累及颌骨，散发性多腹腔(回盲部)。常为III/IV期。","grossPathology":"鱼肉样灰白色肿物，可有坏死。","microscopy":"均匀一致的中等大小B细胞弥漫浸润，细胞大小相当于组织细胞核，核圆形，染色质粗颗粒状，2-5个位于核中央的嗜碱性核仁，胞浆嗜碱性较丰富常含脂质空泡。核分裂象极为活跃（Ki-67接近100%），大量凋亡小体被散在的良性巨噬细胞吞噬，形成特征性'星空现象'(starry sky appearance)。正常淋巴结结构完全破坏，无纤维化或硬化。","keyFeatures":["中等大小均匀B细胞","星空现象(巨噬细胞吞噬凋亡体)","Ki-67>95%(几乎100%细胞)","MYC基因重排是特征","CD10+/BCL6+/BCL2阴性或弱"],"ihcProfile":[{"marker":"CD20","result":"阳性","note":"B细胞标记"},{"marker":"CD10","result":"阳性","note":"生发中心"},{"marker":"BCL6","result":"阳性","note":""},{"marker":"BCL2","result":"阴性/弱","note":"区别于DLBCL"},{"marker":"Ki-67","result":">95%","note":"特征性极高增殖"},{"marker":"TdT","result":"阴性","note":"区别于B-ALL"}],"molecularFeatures":"MYC基因重排(t(8;14)最常见，t(2;8)、t(8;22)少见)。TP53突变见于部分病例。","differentialDiagnosis":["dlbcl","small-cell-lung-carcinoma"],"grading":"不分级","staging":"Ann Arbor/Lugano","prognosis":"高度侵袭但化疗敏感。成人高剂量化疗5年生存60-80%。儿童预后更好。","treatment":"强化免疫化疗(R-CODOX-M/IVAC或R-Hyper-CVAD)+CNS预防。","images":[{"url":"/diagrams/starry-sky.svg","caption":"&quot;星空现象&quot;：密集的中等大小肿瘤细胞背景上散布吞噬凋亡碎片的巨噬细胞"}],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"marginal-zone-lymphoma","nameZh":"边缘区淋巴瘤","nameEn":"Marginal Zone Lymphoma","aliases":["MZL","MALT淋巴瘤"],"organ":"lymphoma","category":"malignant","epidemiology":"三种亚型：结外边缘区(MALT型，胃/肺/腮腺/眼附属器常见)、结内边缘区、脾边缘区。约占NHL的7-8%，中位发病年龄约60岁，男女比接近1:1。惰性病程，常与慢性感染或自身免疫疾病相关（如胃MALT与幽门螺杆菌感染密切相关）。","clinicalFeatures":"根据原发部位不同。MALT型常与慢性炎症/自身免疫(Hp感染/Sjögren综合征/Hashimoto)相关。","grossPathology":"取决于原发部位。","microscopy":"小至中等大小B细胞弥漫或结节状浸润，肿瘤细胞形态多样，包括中心细胞样细胞（核不规则，胞浆少）、单核细胞样B细胞（胞浆丰富透明，核圆至肾形）及浆细胞分化成分。MALT型特征性表现为淋巴上皮病变(LEL)：肿瘤细胞侵入并破坏腺体上皮形成上皮内淋巴细胞聚集。残存的反应性滤泡可被肿瘤细胞定植（滤泡定植现象）。间质可伴纤维化及浆细胞浸润。","keyFeatures":["边缘区B细胞分布","淋巴上皮病变(LEL)","CD20+/CD5-/CD10-/CD23-","MALT型Hp相关"],"ihcProfile":[{"marker":"CD20","result":"阳性","note":""},{"marker":"CD5","result":"阴性","note":"排除套细胞/CLL"},{"marker":"CD10","result":"阴性","note":"排除滤泡性"},{"marker":"CD23","result":"阴性","note":"排除CLL"},{"marker":"Cyclin D1","result":"阴性","note":"排除套细胞"},{"marker":"BCL2","result":"阳性","note":""}],"molecularFeatures":"t(11;18)(API2-MALT1)最常见，其他还有t(1;14)、t(14;18)(IGH-MALT1)。","differentialDiagnosis":["follicular-lymphoma","gastric-lymphoma"],"grading":"通常低级别","staging":"Lugano","prognosis":"惰性，5年生存率>80%。MALT型早期Hp根除可治愈。","treatment":"胃MALT一线Hp根除。不能根除/晚期用免疫化疗(利妥昔单抗±苯达莫司汀)。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"classical-hodgkin-lymphoma","nameZh":"经典型霍奇金淋巴瘤","nameEn":"Classical Hodgkin Lymphoma","aliases":["CHL","霍奇金病"],"organ":"lymphoma","category":"malignant","epidemiology":"占所有淋巴瘤的10-15%，年发病率约2-3/10万。双峰年龄分布：第一高峰15-35岁（以结节硬化型为主），第二高峰>55岁（混合细胞型多见）。男性略多于女性。约40%与EBV感染相关，发展中国家EBV阳性率更高。","clinicalFeatures":"无痛性颈部或纵隔淋巴结肿大。B症状和纵隔肿块常见。","grossPathology":"淋巴结肿大，切面灰白色，可见坏死和纤维化。","microscopy":"特征性Reed-Sternberg(RS)细胞为双核或多核巨细胞，核仁极大嗜酸性，核周透亮带明显，形似'猫头鹰眼'。变异型包括单核的Hodgkin细胞、陷窝细胞（结节硬化型特征，核多叶、因固定收缩形成透明空隙）和干尸细胞（核固缩深染）。肿瘤细胞仅占全部细胞的1-2%，散布于丰富的反应性炎症背景中，包括小淋巴细胞、嗜酸性粒细胞、组织细胞、浆细胞和中性粒细胞。结节硬化型可见宽的胶原纤维带分隔结节。","keyFeatures":["Reed-Sternberg细胞(猫头鹰眼核)","CD30+/CD15+/PAX5弱阳性","CD20通常阴性(区别于DLBCL)","反应性炎症背景(淋巴细胞/嗜酸/浆细胞)"],"ihcProfile":[{"marker":"CD30","result":"阳性","note":"RS细胞强表达"},{"marker":"CD15","result":"阳性(75-85%)","note":""},{"marker":"PAX5","result":"弱阳性","note":""},{"marker":"CD20","result":"通常阴性","note":"区别于DLBCL"},{"marker":"CD45","result":"阴性","note":"RS细胞不表达"}],"specialStainProfile":[{"stain":"Reticulin","result":"纤维化","note":"评估结节硬化型纤维化程度"},{"stain":"Giemsa","result":"RS细胞","note":"辅助显示Reed-Sternberg细胞形态"}],"molecularFeatures":"NF-κB通路持续激活。9p24.1(PD-L1/PD-L2)扩增导致PD-L1高表达。EBV阳性率约40%。","differentialDiagnosis":["dlbcl"],"grading":"4个亚型：结节硬化型(最常见)/混合细胞型/富于淋巴细胞型/淋巴细胞消减型","staging":"Ann Arbor/Lugano分期","prognosis":"治愈率高。早期>90%可治愈，晚期约70-80%。","treatment":"ABVD(多柔比星+博来霉素+长春花碱+达卡巴嗪)±放疗。复发可用BV-CHP(brentuximab vedotin)、PD-1抑制剂或自体干细胞移植。","images":[{"url":"/diagrams/rs-cell.svg","caption":"经典 R-S 细胞：双核&quot;猫头鹰眼&quot;大细胞 + 混合炎细胞背景"}],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"mantle-cell-lymphoma","nameZh":"套细胞淋巴瘤","nameEn":"Mantle Cell Lymphoma","aliases":["MCL"],"organ":"lymphoma","category":"malignant","epidemiology":"约占 NHL 的 5–10%，中老年男性多见，是最具侵袭性的&quot;惰性&quot;淋巴瘤之一。","clinicalFeatures":"全身性淋巴结肿大、脾大、骨髓和外周血受累；结外可累及胃肠道（多发淋巴瘤样息肉）。","grossPathology":"淋巴结弥漫肿大，切面均质灰白色。","microscopy":"小至中等大小B细胞弥漫或结节性增生，细胞形态单一，核不规则有切迹（类似中心细胞），染色质致密，核仁不明显，胞浆稀少。经典型细胞大小均匀，可呈套区生长模式（围绕残存的生发中心生长）、弥漫型或结节型。母细胞样变异型细胞较大，核圆染色质分散，核仁可见，核分裂活跃，侵袭性显著增强。多形性亚型细胞大小不等，核多形性明显。散在透明组织细胞可赋予'星空样'外观。玻璃样变小血管常见。","keyFeatures":["CD5 阳性的 CD10 阴性 B 细胞","Cyclin D1（BCL1）核阳性是诊断必备","t(11;14) CCND1-IGH 特征性易位","SOX11 核阳性","母细胞样 / 多形性变体侵袭性强"],"ihcProfile":[{"marker":"CD20","result":"阳性","note":""},{"marker":"CD5","result":"阳性","note":""},{"marker":"Cyclin D1","result":"核阳性","note":"诊断关键"},{"marker":"SOX11","result":"核阳性","note":""},{"marker":"CD23","result":"阴性","note":"与 CLL 鉴别"},{"marker":"CD10","result":"阴性","note":""}],"molecularFeatures":"t(11;14)(q13;q32) CCND1-IGH 是标志性细胞遗传学改变。TP53 突变 / 缺失提示不良预后。","differentialDiagnosis":["follicular-lymphoma","marginal-zone-lymphoma","dlbcl"],"grading":"不分级，按形态分经典 / 母细胞样 / 多形性","staging":"Ann Arbor / Lugano","prognosis":"总体中位生存 4–6 年，TP53 突变或母细胞样亚型更差。","treatment":"年轻患者强化化疗 + ASCT；年老患者 BR 或 VR-CAP。BTK 抑制剂（伊布替尼、赞布替尼）在复发/难治有效。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"anaplastic-large-cell-lymphoma","nameZh":"间变性大细胞淋巴瘤","nameEn":"Anaplastic Large Cell Lymphoma","aliases":["ALCL"],"organ":"lymphoma","category":"malignant","epidemiology":"外周 T 细胞淋巴瘤的一种，分为 ALK+、ALK−、乳房植入相关型（BIA-ALCL）。ALK+ 好发于儿童和青年。","clinicalFeatures":"全身性或结外肿块，常伴 B 症状；皮肤型可仅有皮肤结节。","grossPathology":"淋巴结弥漫肿大或结外肿块。","microscopy":"大的多形性肿瘤细胞弥漫浸润，以Hallmark细胞（标志细胞）为特征：大细胞具有偏心的肾形或马蹄形核，核仁显著，核旁可见嗜酸性Golgi区。肿瘤细胞胞浆丰富嗜酸性或透明。常沿淋巴窦浸润（窦内生长模式），可模拟转移癌。副皮质区浸润明显。变异型包括小细胞型（以小的肿瘤细胞为主，散在少量Hallmark细胞，易漏诊）和淋巴组织细胞型（丰富的组织细胞掩盖少量肿瘤细胞）。核分裂活跃，坏死常见。","keyFeatures":["CD30 强阳性（膜 + Golgi）","典型 Hallmark cells（马蹄形核 + 核旁 Golgi）","ALK 阳性或阴性决定预后","多项 T 细胞标记可丢失（&quot;aberrant loss&quot;）","BIA-ALCL 与纹理面乳房假体相关"],"ihcProfile":[{"marker":"CD30","result":"强阳性","note":"膜 + 高尔基区"},{"marker":"ALK","result":"阳性或阴性","note":"预后分层关键"},{"marker":"CD3","result":"常阴性","note":"T 标记可丢失"},{"marker":"CD4","result":"常阳性","note":""},{"marker":"EMA","result":"阳性","note":""},{"marker":"CD15","result":"阴性","note":"区别 CHL"}],"molecularFeatures":"ALK+：t(2;5) NPM-ALK 最常见；ALK−：部分有 DUSP22 或 TP63 重排。","differentialDiagnosis":["classical-hodgkin-lymphoma","dlbcl"],"grading":"不分级","staging":"Ann Arbor / Lugano","prognosis":"ALK+ 治愈率高（5 年生存 > 75%），ALK− 较差。","treatment":"CHOP / CHOEP ± 布伦妥昔单抗（BV）；复发可用 ALK 抑制剂（克唑替尼）。","images":[{"url":"/diagrams/rs-cell.svg","caption":"ALCL 的 Hallmark 细胞：大的&quot;肾形&quot;核、核旁嗜酸性 Golgi 区"}],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"ptcl-nos","nameZh":"外周T细胞淋巴瘤非特指型","nameEn":"Peripheral T-Cell Lymphoma, Not Otherwise Specified","aliases":["PTCL-NOS","外周T细胞淋巴瘤"],"organ":"lymphoma","category":"malignant","epidemiology":"最常见的外周T细胞淋巴瘤亚型，约占所有PTCL的25-30%。中老年多见，中位年龄60岁左右，男性略多。在亚洲地区发病率相对较高，占NHL约10-15%。","clinicalFeatures":"多数患者就诊时已为晚期（III/IV期），表现为全身性淋巴结肿大，B症状（发热、盗汗、体重减轻）常见（约50%）。可有皮肤受累、肝脾肿大、骨髓浸润。嗜酸性粒细胞增多和噬血细胞综合征偶见。","grossPathology":"淋巴结弥漫性肿大，切面灰白色，质软，正常结构破坏。可有坏死区域。","microscopy":"淋巴结结构完全破坏，肿瘤细胞弥漫浸润，由中-大不等的多形性T细胞组成，核不规则，染色质粗糙，核仁明显。背景中常混有大量反应性炎症细胞（嗜酸性粒细胞、组织细胞、浆细胞、上皮样细胞），可形成肉芽肿样反应。高内皮小静脉增生明显，部分病例可见透明细胞或类似R-S细胞的大细胞。核分裂活跃，坏死灶可见。","keyFeatures":["异质性最强的T细胞淋巴瘤（排除性诊断）","多形性中-大T细胞+炎症背景","常伴T细胞抗原异常丢失(CD5/CD7)","基因表达谱可分为TBX21和GATA3亚型","预后差，5年OS约20-30%"],"ihcProfile":[{"marker":"CD3","result":"阳性","note":"T细胞标记"},{"marker":"CD5","result":"部分丢失","note":"异常表型，辅助诊断"},{"marker":"CD7","result":"常丢失","note":"最常丢失的T细胞标记"},{"marker":"CD4","result":"多数阳性","note":"CD4+为主，少数CD8+"},{"marker":"CD8","result":"少数阳性","note":""},{"marker":"Ki-67","result":"高(>40%)","note":"增殖活跃"}],"molecularFeatures":"无特征性基因重排。常见TET2（约50%）、IDH2、DNMT3A、RHOA（约20%）突变。基因表达谱分为TBX21亚型（细胞毒性，预后较好）和GATA3亚型（预后更差）。TCR基因克隆性重排可辅助诊断。","differentialDiagnosis":["aitl","anaplastic-large-cell-lymphoma","dlbcl","classical-hodgkin-lymphoma"],"grading":"不分级","staging":"Ann Arbor/Lugano分期","prognosis":"预后差，5年总生存率约20-30%。GATA3亚型预后更差。IPI评分可用于预后分层。","treatment":"一线CHOP或CHOEP方案，年轻患者考虑自体干细胞移植巩固。复发/难治可用romidepsin、pralatrexate、belinostat等。布伦妥昔单抗维多汀（BV）对CD30+病例有效。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"aitl","nameZh":"血管免疫母细胞性T细胞淋巴瘤","nameEn":"Angioimmunoblastic T-Cell Lymphoma","aliases":["AITL","血管免疫母细胞性淋巴瘤"],"organ":"lymphoma","category":"malignant","epidemiology":"第二常见的外周T细胞淋巴瘤亚型，约占PTCL的15-20%。中老年多见，中位年龄65岁左右，男女比例接近。现归入滤泡辅助T细胞（TFH）来源的淋巴瘤。","clinicalFeatures":"急性起病，全身性淋巴结肿大伴B症状。特征性全身免疫紊乱：多克隆高丙种球蛋白血症、Coombs阳性溶血性贫血、皮疹（血管炎样/荨麻疹样）、关节痛、胸腔/腹腔积液。常伴发自身免疫现象和机会性感染。","grossPathology":"淋巴结弥漫肿大，切面灰白色均匀，正常结构消失。","microscopy":"淋巴结结构部分至完全破坏，副皮质区明显扩大。特征性病变包括：显著增生的分支状高内皮小静脉（arborizing HEV）伴PAS阳性壁；滤泡树突状细胞（FDC）网不规则扩展延伸至滤泡外；肿瘤性TFH细胞中等大小，胞质透明/淡染，核圆至不规则。背景中大量EBV阳性B免疫母细胞增生（旁观者细胞，非肿瘤性），可类似R-S细胞造成诊断困惑。嗜酸性粒细胞、浆细胞和组织细胞混合浸润。","keyFeatures":["TFH来源（CXCL13+/PD-1+/ICOS+/CD10+）","显著增生的分支状高内皮小静脉","FDC网滤泡外不规则扩展","EBV+旁观B免疫母细胞增生","全身免疫紊乱（高丙球/溶贫/皮疹）"],"ihcProfile":[{"marker":"CD3","result":"阳性","note":"T细胞标记"},{"marker":"CD4","result":"阳性","note":"TFH细胞为CD4+"},{"marker":"CXCL13","result":"阳性","note":"TFH特异性标记"},{"marker":"PD-1","result":"阳性","note":"TFH标记"},{"marker":"ICOS","result":"阳性","note":"TFH标记"},{"marker":"CD10","result":"阳性","note":"TFH标记，异常T细胞表达"},{"marker":"EBV(EBER)","result":"阳性(旁观B细胞)","note":"EBV+B免疫母细胞，非肿瘤细胞"}],"molecularFeatures":"TET2突变（约80%）、DNMT3A突变（约30%）、IDH2 R172突变（约20-30%，较特异）、RHOA G17V突变（约50-70%，高度特异于TFH淋巴瘤）。TET2/DNMT3A突变可早于淋巴瘤发生（克隆性造血）。","differentialDiagnosis":["ptcl-nos","classical-hodgkin-lymphoma","follicular-lymphoma","dlbcl"],"grading":"不分级","staging":"Ann Arbor/Lugano分期","prognosis":"预后差，5年总生存率约30-35%。中位生存约3年。约10-20%可转化为侵袭性B细胞淋巴瘤（EBV驱动）。","treatment":"一线CHOP方案。年轻患者可考虑自体干细胞移植巩固。复发/难治可用romidepsin、5-azacitidine（针对TET2/DNMT3A突变）。免疫调节剂（来那度胺）有一定疗效。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"alcl","nameZh":"间变性大细胞淋巴瘤","nameEn":"Anaplastic Large Cell Lymphoma","aliases":["ALCL","间变性大细胞淋巴瘤"],"organ":"lymphoma","category":"malignant","epidemiology":"外周T细胞淋巴瘤的一种亚型，约占NHL的2-3%。分为ALK阳性型（好发于儿童和青年，中位年龄20-30岁，男性多见）和ALK阴性型（中老年多见）。另有乳房植入物相关型（BIA-ALCL）和原发皮肤型。","clinicalFeatures":"全身性淋巴结肿大伴B症状（约75%），常累及结外部位（皮肤、骨、软组织、肺、肝）。ALK+型常见纵隔和骨受累。BIA-ALCL表现为植入物周围迟发性血清肿。","grossPathology":"淋巴结弥漫肿大，切面灰白色，常有坏死。结外肿块可形成大的实性肿物。","microscopy":"大的多形性肿瘤细胞弥漫浸润，经典型以Hallmark细胞（标志细胞）为特征——大的细胞具有偏心的肾形或马蹄形核，核旁可见嗜酸性Golgi区。肿瘤细胞常沿淋巴窦浸润（窦内生长模式），模拟转移癌。变异型包括：小细胞型（小的肿瘤细胞为主，少量Hallmark细胞）、淋巴组织细胞型（组织细胞丰富掩盖肿瘤细胞）。核分裂活跃，坏死常见。","keyFeatures":["CD30强阳性（膜+Golgi区）","Hallmark细胞（肾形/马蹄形核）","ALK+型（约60%）预后好","T细胞标记常丢失（CD3−）","窦内生长模式"],"ihcProfile":[{"marker":"CD30","result":"强阳性","note":"膜+Golgi区，诊断必备"},{"marker":"ALK","result":"阳性(约60%)","note":"t(2;5) NPM-ALK，核+胞质阳性"},{"marker":"EMA","result":"阳性","note":"上皮膜抗原阳性"},{"marker":"CD2","result":"阳性","note":"部分T细胞标记保留"},{"marker":"CD4","result":"阳性","note":"多数阳性"},{"marker":"CD3","result":"常丢失","note":"T细胞标记异常丢失"}],"molecularFeatures":"ALK+型：t(2;5)(p23;q35) NPM-ALK最常见（约75%），其他融合伴侣包括TPM3-ALK、TFG-ALK、CLTC-ALK等。ALK−型：部分存在DUSP22-IRF4重排（预后较好）或TP63重排（预后极差）。JAK-STAT3通路激活是共同特征。","differentialDiagnosis":["classical-hodgkin-lymphoma","dlbcl","ptcl-nos"],"grading":"不分级","staging":"Ann Arbor/Lugano分期","prognosis":"ALK+型预后好，5年生存率>75%。ALK−型预后较差，5年生存率约40-50%。DUSP22重排的ALK−型预后接近ALK+型。","treatment":"ALK+型：CHOP/CHOEP方案，治愈率高。ALK−型：CHOP±布伦妥昔单抗维多汀（BV）。复发者可用BV（anti-CD30）、ALK抑制剂（克唑替尼，仅ALK+型）或自体干细胞移植。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]},
-  {"id":"nk-t-cell-lymphoma","nameZh":"NK/T细胞淋巴瘤","nameEn":"Extranodal NK/T-Cell Lymphoma, Nasal Type","aliases":["ENKTL","鼻型NK/T细胞淋巴瘤","致死性中线肉芽肿"],"organ":"lymphoma","category":"malignant","epidemiology":"结外NK/T细胞淋巴瘤鼻型是一种与EBV密切相关的侵袭性淋巴瘤。在东亚和拉丁美洲地区高发，占NHL约5-10%（亚洲）。中位年龄50岁左右，男性多见（2-3:1）。几乎所有病例均EBV阳性。","clinicalFeatures":"最常累及鼻腔/鼻咽部（上气道消化道区域），表现为鼻塞、鼻出血、面中部破坏性病变（曾称'致死性中线肉芽肿'）。鼻外型可累及皮肤、胃肠道、睾丸等。可伴噬血细胞综合征（HLH）。B症状常见。","grossPathology":"鼻腔黏膜溃疡性坏死性病变，可有广泛组织破坏。结外肿块灰白色，常伴出血和坏死。","microscopy":"肿瘤细胞大小不等（小-中-大混合），呈弥漫浸润性生长，以血管中心性（angiocentric）和血管破坏性（angiodestructive）生长模式为特征，导致广泛的凝固性坏死。肿瘤细胞核不规则，染色质粗颗粒状，胞质淡染至透明，常可见嗜天青颗粒。大量凋亡和核分裂象。坏死区域广泛，存活肿瘤细胞常位于血管周围。炎症背景可含组织细胞、浆细胞和小淋巴细胞。","keyFeatures":["血管中心性和血管破坏性生长","广泛凝固性坏死","EBV阳性（EBER+，几乎100%）","CD56+/胞质CD3ε+/表面CD3−","细胞毒性颗粒蛋白阳性（GrB/TIA-1/Perforin）"],"ihcProfile":[{"marker":"CD56","result":"阳性","note":"NK细胞标记，弥漫表达"},{"marker":"CD3ε","result":"胞质阳性","note":"胞质CD3ε+但表面CD3−"},{"marker":"EBER","result":"阳性","note":"EBV编码RNA原位杂交，几乎100%阳性，诊断必备"},{"marker":"Granzyme B","result":"阳性","note":"细胞毒性颗粒蛋白"},{"marker":"CD20","result":"阴性","note":"排除B细胞淋巴瘤"},{"marker":"CD4/CD8","result":"阴性","note":"CD4−CD8−双阴性"}],"molecularFeatures":"EBV基因组克隆性整合是特征，血浆EBV-DNA拷贝数可用于监测疗效和预后评估。常见基因突变：DDX3X（约20%）、TP53（约20-30%）、STAT3/5B（约10-20%）、MGA、BCOR。JAK-STAT通路和NF-κB通路常激活。PD-L1高表达。","differentialDiagnosis":["ptcl-nos","dlbcl","burkitt-lymphoma","classical-hodgkin-lymphoma"],"grading":"不分级","staging":"Ann Arbor/Lugano分期；PINK预后指数（年龄>60岁、III/IV期、远处淋巴结受累、非鼻腔型）","prognosis":"鼻腔局限期（I/II期）预后较好，含左旋门冬酰胺酶方案5年OS约70%。晚期或鼻外型预后差，5年OS约20-30%。血浆EBV-DNA是重要预后标志物。","treatment":"局限期：放疗+含左旋门冬酰胺酶方案（SMILE/P-GEMOX方案）同步或序贯。晚期：SMILE方案（左旋门冬酰胺酶+甲氨蝶呤+异环磷酰胺+依托泊苷+地塞米松）。PD-1抑制剂（信迪利单抗/帕博利珠单抗）对复发/难治有效。自体/异基因干细胞移植可考虑。","images":[],"references":["WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022"]}
+  {
+    "id": "dlbcl",
+    "nameZh": "弥漫大B细胞淋巴瘤",
+    "nameEn": "Diffuse Large B-Cell Lymphoma",
+    "aliases": [
+      "DLBCL"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "最常见的非霍奇金淋巴瘤，约占所有NHL的30-40%。中老年多见，中位发病年龄约60-70岁，男性略多于女性。全球年发病率约5-7/10万，可发生于任何年龄。免疫缺陷（HIV/器官移植后）是重要危险因素。",
+    "clinicalFeatures": "快速增大的淋巴结肿大，可累及结外(胃、CNS等)。B症状(发热、盗汗、体重减轻)常见。",
+    "grossPathology": "鱼肉样灰白色组织，淋巴结结构破坏。",
+    "microscopy": "低倍镜下可见淋巴结正常结构破坏，被弥漫浸润的肿瘤性淋巴细胞所取代，被膜及淋巴窦结构消失，可见部分区域呈推挤性生长或浸润至结外组织。肿瘤细胞呈弥漫性片状分布，无滤泡结构形成，局部可见'星空'现象（由散在吞噬核碎片的巨噬细胞形成），但较 Burkitt 淋巴瘤稀疏。高倍镜下肿瘤细胞体积较大，直径通常为正常淋巴细胞的 2 倍以上，约为反应性组织细胞核的大小或更大。胞浆中等量，嗜双色性或嗜碱性，部分可呈浆细胞样分化。细胞形态依亚型而异：中心母细胞变异型表现为圆形至卵圆形核、染色质空泡状、核膜下可见 2–4 个嗜碱性小核仁；免疫母细胞变异型则以单个位于中央的嗜酸性大核仁为特征，胞浆更丰富嗜碱；间变型变异型细胞显著多形，核奇异、多核，可类似 R-S 细胞或间变性大细胞淋巴瘤细胞。核分裂象多见，常 >10/10 HPF，可见病理性核分裂。背景中小淋巴细胞、组织细胞、浆细胞混杂程度不一，部分病例伴明显纤维化或硬化性间质（如原发纵隔型）。血管增生及坏死灶常见。鉴别诊断：与 Burkitt 淋巴瘤区分——后者细胞更单一、中等大小、核仁较小（2–5 个靠核膜）、Ki-67 近 100%、MYC 重排而无 BCL2 共表达；与经典型霍奇金淋巴瘤区分——后者见典型 R-S 细胞伴丰富炎性背景，CD30/CD15+、CD20 多为阴性或弱阳性、PAX5 弱阳性，而 DLBCL 弥漫强表达 CD20 及 PAX5。",
+    "keyFeatures": [
+      "大B细胞弥漫浸润",
+      "CD20+/CD79a+/PAX5+",
+      "Hans分型：GCB型(预后好) vs ABC型(预后差)",
+      "R-CHOP方案是标准治疗"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "阳性",
+        "note": "B细胞标记"
+      },
+      {
+        "marker": "CD79a",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD10",
+        "result": "GCB型阳性",
+        "note": "Hans分型"
+      },
+      {
+        "marker": "BCL6",
+        "result": "阳性",
+        "note": "Hans分型"
+      },
+      {
+        "marker": "MUM1",
+        "result": "ABC型阳性",
+        "note": "Hans分型"
+      },
+      {
+        "marker": "Ki-67",
+        "result": ">40%",
+        "note": "高增殖"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Reticulin",
+        "result": "网架评估",
+        "note": "评估淋巴结网架结构破坏程度"
+      },
+      {
+        "stain": "PAS",
+        "result": "浆细胞分化",
+        "note": "显示浆细胞分化成分"
+      }
+    ],
+    "molecularFeatures": "BCL2/BCL6/MYC重排。双打击(MYC+BCL2重排)或三打击淋巴瘤预后极差。GCB vs ABC通过基因表达谱或Hans免疫组化算法区分。",
+    "differentialDiagnosis": [
+      "burkitt-lymphoma",
+      "classical-hodgkin-lymphoma",
+      "follicular-lymphoma"
+    ],
+    "grading": "不分级",
+    "staging": "Ann Arbor/Lugano分期",
+    "prognosis": "R-CHOP治疗后60-70%可治愈。IPI评分评估预后。",
+    "treatment": "R-CHOP(利妥昔单抗+环磷酰胺+多柔比星+长春新碱+泼尼松)。复发难治可用CAR-T治疗。",
+    "images": [
+      {
+        "url": "/diagrams/dlbcl-low-power.svg",
+        "caption": "低倍（HE）：淋巴结结构弥漫性破坏，正常滤泡消失，由大而一致的肿瘤细胞片状浸润取代"
+      },
+      {
+        "url": "/diagrams/dlbcl-high-power.svg",
+        "caption": "高倍（HE）：肿瘤细胞体积大（≥正常淋巴细胞 2 倍），呈中心母细胞样或免疫母细胞样，核空泡状、核仁显著，核分裂象易见"
+      },
+      {
+        "url": "/diagrams/dlbcl-ihc-cd20.svg",
+        "caption": "IHC（CD20）：弥漫膜阳性，提示 B 细胞来源"
+      },
+      {
+        "url": "/diagrams/dlbcl-ihc-hans.svg",
+        "caption": "IHC（Hans 分型组合 CD10/BCL6/MUM1）：用于区分 GCB 型与 non-GCB 型，指导预后判断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 中国弥漫大B细胞淋巴瘤诊断与治疗指南（2013年版） (中华医学会血液学分会, 2013)",
+      "[国内共识] 中国弥漫大B细胞淋巴瘤诊断与治疗指南（2022年版） (中国抗癌协会淋巴瘤专业委员会 / 中国抗淋巴瘤联盟, 2022)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南（2024） (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  },
+  {
+    "id": "follicular-lymphoma",
+    "nameZh": "滤泡性淋巴瘤",
+    "nameEn": "Follicular Lymphoma",
+    "aliases": [
+      "FL"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "第二常见的非霍奇金淋巴瘤，约占NHL的20%。中老年多见，中位发病年龄约60岁，男女比接近1:1。欧美国家发病率较高（约3-5/10万/年），亚洲地区相对少见。惰性病程，多数患者确诊时已为晚期。",
+    "clinicalFeatures": "缓慢进展的无痛性淋巴结肿大，多为全身性。",
+    "grossPathology": "淋巴结肿大，切面均匀，保留滤泡样结构。",
+    "microscopy": "低倍镜下，淋巴结正常结构被大小相对一致、背靠背排列的肿瘤性滤泡所取代，滤泡密集，累及皮质与髓质，常突破被膜浸润周围脂肪组织。肿瘤性滤泡特征性地缺乏或仅见稀疏的套区，极性消失，套区淋巴细胞减少，滤泡间区变窄或不明显。滤泡内可染体巨噬细胞（tingible body macrophages）缺如或显著减少，是与反应性滤泡增生鉴别的重要线索。高倍镜下可见两种肿瘤细胞：中心细胞（centrocytes）核小至中等大小，呈角状、锯齿状或裂核，染色质细致深染，核仁不明显，胞浆稀少；中心母细胞（centroblasts）核大圆形或卵圆形，染色质呈空泡状，核仁 2–3 个靠近核膜，胞浆少量嗜双色性。根据每个高倍视野（HPF）中中心母细胞的数量进行 WHO 分级：1 级 0–5 个/HPF，2 级 6–15 个/HPF，3A 级 >15 个但仍见中心细胞，3B 级 中心母细胞成片状聚集、中心细胞缺如。部分病例可见滤泡间及弥漫区域浸润，若弥漫区出现成片中心母细胞则需警惕向弥漫大 B 细胞淋巴瘤转化。硬化性变异型可见间质显著纤维化。鉴别诊断要点：（1）反应性滤泡增生——滤泡大小形态不一、极性保留、套区清晰、可染体巨噬细胞丰富，BCL2 阴性；（2）套细胞淋巴瘤——弥漫或结节样生长，细胞形态单一，Cyclin D1 阳性而 CD10/BCL6 阴性。免疫组化 CD20、CD10、BCL6、BCL2 共表达及 t(14;18)(q32;q21)/IGH::BCL2 易位有助确诊。",
+    "keyFeatures": [
+      "肿瘤性滤泡结构",
+      "CD10+/BCL2+/BCL6+",
+      "t(14;18) BCL2-IGH融合(85-90%)",
+      "1-3级(中心母细胞比例)"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD10",
+        "result": "阳性",
+        "note": "生发中心标记"
+      },
+      {
+        "marker": "BCL2",
+        "result": "阳性",
+        "note": "反应性滤泡BCL2阴性，鉴别关键"
+      },
+      {
+        "marker": "BCL6",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD23",
+        "result": "FDC网阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "t(14;18)(q32;q21) BCL2-IGH融合导致BCL2过表达，抑制凋亡。3A级向DLBCL转化风险存在。",
+    "differentialDiagnosis": [
+      "dlbcl",
+      "marginal-zone-lymphoma"
+    ],
+    "grading": "1-3级(基于中心母细胞数/HPF)：1级(0-5)，2级(6-15)，3级(>15)",
+    "staging": "Ann Arbor/Lugano分期",
+    "prognosis": "惰性但不可治愈，中位生存>15年。约3%/年转化为DLBCL。",
+    "treatment": "无症状可观察等待。有症状用BR(苯达莫司汀+利妥昔单抗)或R-CHOP。维持利妥昔单抗。",
+    "images": [
+      {
+        "url": "/diagrams/follicular-lymphoma-low-power.svg",
+        "caption": "低倍（HE）：淋巴结结构破坏，皮髓质界限消失，可见大小相近、背靠背密集排列的肿瘤性滤泡弥漫分布，滤泡间区受压变窄"
+      },
+      {
+        "url": "/diagrams/follicular-lymphoma-high-power.svg",
+        "caption": "高倍（HE）：肿瘤性滤泡由中心细胞（小至中等大小、核裂）与中心母细胞（大、核圆、多个周边核仁）混合构成，缺乏可染小体巨噬细胞及明显极性"
+      },
+      {
+        "url": "/diagrams/follicular-lymphoma-cd10-bcl6.svg",
+        "caption": "IHC（CD10/BCL6）：肿瘤性滤泡内 B 细胞呈 CD10 与 BCL6 核/膜阳性，提示生发中心来源"
+      },
+      {
+        "url": "/diagrams/follicular-lymphoma-bcl2.svg",
+        "caption": "IHC（BCL2）：肿瘤性滤泡生发中心 B 细胞异常弥漫强阳性表达 BCL2（反应性生发中心为阴性），支持 t(14;18) IGH::BCL2 易位相关的滤泡性淋巴瘤诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 中国滤泡性淋巴瘤诊断与治疗指南（2020年版） (中华医学会血液学分会, 2020)",
+      "[国内共识] 中国滤泡性淋巴瘤诊断与治疗指南（2020年版） (中国抗淋巴瘤联盟 / 中华医学会血液学分会 / 中国抗癌协会淋巴瘤专业委员会, 2020)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南（2024） (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  },
+  {
+    "id": "burkitt-lymphoma",
+    "nameZh": "Burkitt淋巴瘤",
+    "nameEn": "Burkitt Lymphoma",
+    "aliases": [
+      "BL"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "高度侵袭性B细胞淋巴瘤。三种临床亚型：地方性(非洲儿童，EBV相关)、散发性(欧美)、免疫缺陷相关(HIV)。",
+    "clinicalFeatures": "快速进展的肿块，地方性多累及颌骨，散发性多腹腔(回盲部)。常为III/IV期。",
+    "grossPathology": "鱼肉样灰白色肿物，可有坏死。",
+    "microscopy": "低倍镜下呈弥漫性单一形态的中等大小淋巴样细胞浸润，破坏原有组织结构。肿瘤细胞密集排列，背景中散在分布大量吞噬核碎屑和凋亡小体的良性巨噬细胞（tingible body macrophages），形成特征性的\"满天星\"（starry sky）样外观。高倍镜下肿瘤细胞呈中等大小，大小较一致，胞浆中等量、嗜碱性或双嗜性，常见胞浆内小脂质空泡，Giemsa 或 May-Grünwald-Giemsa 染色显示尤为清晰。细胞边界相对清晰，相邻细胞间胞浆呈\"方形嵌合\"（squared-off）样排列。核呈圆形或卵圆形，大小与组织细胞核相当或略小（约等于反应性巨噬细胞核），染色质呈粗颗粒状或块状分布，核膜增厚，核内可见 2–5 个嗜碱性中位核仁。核分裂象极为活跃，常达 10 个/HPF 以上，Ki-67 增殖指数接近 100%（≥95%），是该肿瘤最具特征的增殖学指标。凋亡显著，凋亡小体分布广泛。免疫表型：肿瘤细胞 CD20、CD19、CD10、BCL6、CD79a 阳性，表面 IgM 阳性，BCL2 阴性或弱阳性，TdT 阴性，MYC 核阳性（≥80% 细胞）；EBER 原位杂交在地方性 Burkitt 淋巴瘤中常阳性。分子遗传学上具有特征性 t(8;14)(q24;q32) 即 MYC/IGH 易位，或较少见的 t(2;8)、t(8;22)（MYC/IGK 或 MYC/IGL）。鉴别要点：①弥漫大 B 细胞淋巴瘤（DLBCL, NOS）——细胞体积更大（核≥组织细胞核的 2 倍），核仁更大且常为单个中央核仁，Ki-67 通常 60–90%，BCL2 多阳性，缺乏 MYC 单一易位特征；②高级别 B 细胞淋巴瘤伴 MYC 与 BCL2 和/或 BCL6 重排（“double/triple-hit”）——形态可介于 Burkitt 与 DLBCL 之间，BCL2 强阳性，FISH 检出双重基因重排，需与 Burkitt 严格区分以指导治疗。",
+    "keyFeatures": [
+      "中等大小均匀B细胞",
+      "星空现象(巨噬细胞吞噬凋亡体)",
+      "Ki-67>95%(几乎100%细胞)",
+      "MYC基因重排是特征",
+      "CD10+/BCL6+/BCL2阴性或弱"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "阳性",
+        "note": "B细胞标记"
+      },
+      {
+        "marker": "CD10",
+        "result": "阳性",
+        "note": "生发中心"
+      },
+      {
+        "marker": "BCL6",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "BCL2",
+        "result": "阴性/弱",
+        "note": "区别于DLBCL"
+      },
+      {
+        "marker": "Ki-67",
+        "result": ">95%",
+        "note": "特征性极高增殖"
+      },
+      {
+        "marker": "TdT",
+        "result": "阴性",
+        "note": "区别于B-ALL"
+      }
+    ],
+    "molecularFeatures": "MYC基因重排(t(8;14)最常见，t(2;8)、t(8;22)少见)。TP53突变见于部分病例。",
+    "differentialDiagnosis": [
+      "dlbcl",
+      "small-cell-lung-carcinoma"
+    ],
+    "grading": "不分级",
+    "staging": "Ann Arbor/Lugano",
+    "prognosis": "高度侵袭但化疗敏感。成人高剂量化疗5年生存60-80%。儿童预后更好。",
+    "treatment": "强化免疫化疗(R-CODOX-M/IVAC或R-Hyper-CVAD)+CNS预防。",
+    "images": [
+      {
+        "url": "/diagrams/starry-sky.svg",
+        "caption": "&quot;星空现象&quot;：密集的中等大小肿瘤细胞背景上散布吞噬凋亡碎片的巨噬细胞"
+      },
+      {
+        "url": "/diagrams/burkitt-starry-sky.svg",
+        "caption": "低倍（HE）：弥漫浸润的单形性中等大小淋巴细胞背景中散在可染体巨噬细胞，形成特征性\"满天星\"（starry sky）图像"
+      },
+      {
+        "url": "/diagrams/burkitt-monomorphic-cells.svg",
+        "caption": "高倍（HE）：瘤细胞大小一致，胞核圆形、染色质粗块状、多个居中小核仁，胞浆嗜碱性并可见多个脂质空泡，核分裂象极为活跃"
+      },
+      {
+        "url": "/diagrams/burkitt-ki67-ihc.svg",
+        "caption": "IHC（Ki-67）：几乎 100% 瘤细胞核阳性，提示极高增殖指数，是 Burkitt 淋巴瘤的重要诊断线索"
+      },
+      {
+        "url": "/diagrams/burkitt-cmyc-fish.svg",
+        "caption": "FISH（MYC 断裂探针）：瘤细胞核内呈现分离的红绿信号，提示 8q24/MYC 基因易位（t(8;14) 最常见），支持 Burkitt 淋巴瘤诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 中国抗癌协会淋巴瘤整合诊治指南（2022） (中国抗癌协会, 2022)",
+      "[国内共识] 中国伯基特淋巴瘤诊断与治疗指南（2021年版） (中国抗癌协会淋巴瘤专业委员会 / 中国抗淋巴瘤联盟, 2021)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南（2024版）——Burkitt淋巴瘤章节 (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  },
+  {
+    "id": "marginal-zone-lymphoma",
+    "nameZh": "边缘区淋巴瘤",
+    "nameEn": "Marginal Zone Lymphoma",
+    "aliases": [
+      "MZL",
+      "MALT淋巴瘤"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "三种亚型：结外边缘区(MALT型，胃/肺/腮腺/眼附属器常见)、结内边缘区、脾边缘区。约占NHL的7-8%，中位发病年龄约60岁，男女比接近1:1。惰性病程，常与慢性感染或自身免疫疾病相关（如胃MALT与幽门螺杆菌感染密切相关）。",
+    "clinicalFeatures": "根据原发部位不同。MALT型常与慢性炎症/自身免疫(Hp感染/Sjögren综合征/Hashimoto)相关。",
+    "grossPathology": "取决于原发部位。",
+    "microscopy": "边缘区淋巴瘤（Marginal Zone Lymphoma, MZL）为成熟小B细胞淋巴瘤，镜下形态因亚型（结外黏膜相关淋巴组织淋巴瘤 MALT、脾边缘区淋巴瘤 SMZL、淋巴结边缘区淋巴瘤 NMZL）略有差异，但共享以边缘区分化为核心的组织学谱系。低倍镜下肿瘤细胞呈弥漫或结节状浸润，常以残存的反应性滤泡为中心，向滤泡套区外侧的边缘区扩展并逐渐融合，形成所谓'滤泡植入'（follicular colonization）现象，导致滤泡结构变形、生发中心被小B细胞取代。MALT 淋巴瘤中，瘤细胞浸润腺上皮形成具有诊断价值的淋巴上皮病变（lymphoepithelial lesion, LEL），表现为≥3 个瘤细胞聚集并破坏腺上皮，伴上皮细胞嗜酸性变。高倍镜下瘤细胞呈多形性：以中心细胞样细胞（centrocyte-like cells）为主，胞体小至中等，胞浆少至中等量、淡染或透亮；亦可见单核样B细胞（monocytoid B cells），胞浆丰富、透明，细胞边界清晰，呈'煎蛋样'排列；散在分布小淋巴细胞样及浆细胞样分化细胞，后者胞浆嗜碱、偏位核、可见 Dutcher 小体（核内假包涵体）。核特征：核圆形或轻度不规则，染色质细颗粒状至中等粗糙，核仁不明显或小而居中，核分裂象少见（通常<5/10HPF）。背景常见反应性T细胞、滤泡树突网残迹及散在大转化细胞（中心母细胞/免疫母细胞样），若其簇状聚集或弥漫成片超过 20 个/HPF，提示向弥漫大B细胞淋巴瘤转化。免疫表型上 CD20、CD79a、BCL2 阳性，CD5、CD10、BCL6、Cyclin D1 阴性，有助于鉴别。鉴别要点：（1）滤泡性淋巴瘤——CD10 及 BCL6 阳性、BCL2 重排、结节呈真性肿瘤性滤泡；（2）套细胞淋巴瘤——Cyclin D1 及 SOX11 阳性、CD5 阳性、t(11;14)，细胞单一且无浆样分化。",
+    "keyFeatures": [
+      "边缘区B细胞分布",
+      "淋巴上皮病变(LEL)",
+      "CD20+/CD5-/CD10-/CD23-",
+      "MALT型Hp相关"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD5",
+        "result": "阴性",
+        "note": "排除套细胞/CLL"
+      },
+      {
+        "marker": "CD10",
+        "result": "阴性",
+        "note": "排除滤泡性"
+      },
+      {
+        "marker": "CD23",
+        "result": "阴性",
+        "note": "排除CLL"
+      },
+      {
+        "marker": "Cyclin D1",
+        "result": "阴性",
+        "note": "排除套细胞"
+      },
+      {
+        "marker": "BCL2",
+        "result": "阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "t(11;18)(API2-MALT1)最常见，其他还有t(1;14)、t(14;18)(IGH-MALT1)。",
+    "differentialDiagnosis": [
+      "follicular-lymphoma",
+      "gastric-lymphoma"
+    ],
+    "grading": "通常低级别",
+    "staging": "Lugano",
+    "prognosis": "惰性，5年生存率>80%。MALT型早期Hp根除可治愈。",
+    "treatment": "胃MALT一线Hp根除。不能根除/晚期用免疫化疗(利妥昔单抗±苯达莫司汀)。",
+    "images": [
+      {
+        "url": "/diagrams/mzl-low-power.svg",
+        "caption": "低倍（HE）：边缘区淋巴瘤示反应性滤泡周围边缘区扩张，小至中等大小淋巴样细胞呈结节状/弥漫性浸润，可见滤泡植入现象"
+      },
+      {
+        "url": "/diagrams/mzl-monocytoid-cells.svg",
+        "caption": "高倍（HE）：肿瘤细胞呈单核样B细胞形态，核染色质疏松，核仁不明显，胞质丰富透亮，伴散在浆细胞分化"
+      },
+      {
+        "url": "/diagrams/mzl-lymphoepithelial-lesion.svg",
+        "caption": "高倍（HE）：黏膜相关淋巴组织（MALT）淋巴瘤特征性淋巴上皮病变，肿瘤性B细胞浸润并破坏腺上皮，形成簇状结构"
+      },
+      {
+        "url": "/diagrams/mzl-ihc-cd20-bcl2.svg",
+        "caption": "IHC（CD20/BCL2）：肿瘤细胞CD20弥漫膜阳性，BCL2阳性，CD5、CD10、Cyclin D1阴性，支持边缘区来源B细胞淋巴瘤诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 恶性淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] 中国滤泡性淋巴瘤、边缘区淋巴瘤诊断与治疗指南 (中国抗癌协会淋巴瘤专业委员会, 2023)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南 2024 (中国临床肿瘤学会, 2024)"
+    ]
+  },
+  {
+    "id": "classical-hodgkin-lymphoma",
+    "nameZh": "经典型霍奇金淋巴瘤",
+    "nameEn": "Classical Hodgkin Lymphoma",
+    "aliases": [
+      "CHL",
+      "霍奇金病"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "占所有淋巴瘤的10-15%，年发病率约2-3/10万。双峰年龄分布：第一高峰15-35岁（以结节硬化型为主），第二高峰>55岁（混合细胞型多见）。男性略多于女性。约40%与EBV感染相关，发展中国家EBV阳性率更高。",
+    "clinicalFeatures": "无痛性颈部或纵隔淋巴结肿大。B症状和纵隔肿块常见。",
+    "grossPathology": "淋巴结肿大，切面灰白色，可见坏死和纤维化。",
+    "microscopy": "低倍镜下淋巴结结构部分或完全破坏，被纤维组织分隔形成结节状结构（结节硬化型）或弥漫浸润（混合细胞型、富于淋巴细胞型、淋巴细胞消减型）。背景由数量不等的反应性细胞组成，包括小淋巴细胞、嗜酸性粒细胞、中性粒细胞、浆细胞、组织细胞及上皮样细胞，可形成肉芽肿样结构，偶见坏死灶。肿瘤性细胞散在分布于炎性背景中，数量相对稀少，通常仅占细胞总数的 0.1%–10%。\n\n高倍镜下可见特征性的 Hodgkin 细胞与 Reed-Sternberg 细胞（H/RS 细胞）。典型 RS 细胞体积巨大（直径 20–50μm），胞浆丰富、嗜双染或嗜酸性，核呈双叶或多叶状，呈镜影样对称排列（“猫头鹰眼”外观），染色质边集于核膜下形成空泡样核，核仁巨大、嗜酸性、居中，直径可达小淋巴细胞核大小（约 5–7μm），周围常见透明空晕。Hodgkin 细胞为 RS 细胞的单核变异型，核大、核仁明显。其他形态变异包括：陷窝细胞（结节硬化型中胞浆回缩形成空腔样结构）、木乃伊细胞（凋亡皱缩的 RS 细胞，胞浆嗜酸、核固缩）及多形性/间变性 RS 细胞。\n\n结节硬化型特征为粗大的双折光胶原纤维条带分隔结节，并可见陷窝细胞聚集；混合细胞型背景细胞成分混杂，H/RS 细胞相对较多；富于淋巴细胞型背景以小 B 淋巴细胞为主；淋巴细胞消减型则 H/RS 细胞密集而背景细胞稀少。\n\n鉴别诊断要点：①结节性淋巴细胞为主型霍奇金淋巴瘤（NLPHL）：以 LP 细胞（“爆米花细胞”）为主，表达 CD20、OCT-2、BOB.1，CD15/CD30 阴性；②间变性大细胞淋巴瘤（ALCL）：瘤细胞 CD30 强阳性但 CD15 阴性，EMA、ALK 常阳性，T 细胞标记阳性；③传染性单核细胞增多症：免疫母细胞样大细胞背景，EBER 阳性但缺乏典型 RS 细胞的免疫表型（CD30+/CD15+/PAX5 弱+/CD45-）。",
+    "keyFeatures": [
+      "Reed-Sternberg细胞(猫头鹰眼核)",
+      "CD30+/CD15+/PAX5弱阳性",
+      "CD20通常阴性(区别于DLBCL)",
+      "反应性炎症背景(淋巴细胞/嗜酸/浆细胞)"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD30",
+        "result": "阳性",
+        "note": "RS细胞强表达"
+      },
+      {
+        "marker": "CD15",
+        "result": "阳性(75-85%)",
+        "note": ""
+      },
+      {
+        "marker": "PAX5",
+        "result": "弱阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD20",
+        "result": "通常阴性",
+        "note": "区别于DLBCL"
+      },
+      {
+        "marker": "CD45",
+        "result": "阴性",
+        "note": "RS细胞不表达"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Reticulin",
+        "result": "纤维化",
+        "note": "评估结节硬化型纤维化程度"
+      },
+      {
+        "stain": "Giemsa",
+        "result": "RS细胞",
+        "note": "辅助显示Reed-Sternberg细胞形态"
+      }
+    ],
+    "molecularFeatures": "NF-κB通路持续激活。9p24.1(PD-L1/PD-L2)扩增导致PD-L1高表达。EBV阳性率约40%。",
+    "differentialDiagnosis": [
+      "dlbcl"
+    ],
+    "grading": "4个亚型：结节硬化型(最常见)/混合细胞型/富于淋巴细胞型/淋巴细胞消减型",
+    "staging": "Ann Arbor/Lugano分期",
+    "prognosis": "治愈率高。早期>90%可治愈，晚期约70-80%。",
+    "treatment": "ABVD(多柔比星+博来霉素+长春花碱+达卡巴嗪)±放疗。复发可用BV-CHP(brentuximab vedotin)、PD-1抑制剂或自体干细胞移植。",
+    "images": [
+      {
+        "url": "/diagrams/rs-cell.svg",
+        "caption": "经典 R-S 细胞：双核&quot;猫头鹰眼&quot;大细胞 + 混合炎细胞背景"
+      },
+      {
+        "url": "/diagrams/chl-low-power-nodular.svg",
+        "caption": "低倍（HE）：淋巴结结构破坏，可见结节状生长方式，纤维条带分隔，周围为混合性炎症背景（结节硬化型经典型霍奇金淋巴瘤）"
+      },
+      {
+        "url": "/diagrams/chl-reed-sternberg-cell.svg",
+        "caption": "高倍（HE）：典型 Reed-Sternberg 细胞，双核或多核，核仁大而嗜酸性似包涵体（鹰眼样），胞浆丰富嗜双色"
+      },
+      {
+        "url": "/diagrams/chl-mixed-inflammatory-background.svg",
+        "caption": "高倍（HE）：肿瘤性 Hodgkin/RS 细胞散在分布于由小淋巴细胞、嗜酸性粒细胞、浆细胞及组织细胞组成的混合性炎症背景中"
+      },
+      {
+        "url": "/diagrams/chl-ihc-cd30-cd15.svg",
+        "caption": "IHC（CD30/CD15）：RS 细胞膜及核旁 Golgi 区点状强阳性，CD30 弥漫阳性、CD15 约 75%–85% 阳性，PAX5 弱阳性、CD20 多阴性或弱阳"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 恶性淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 中国霍奇金淋巴瘤的诊断与治疗指南（2022年版） (中华医学会血液学分会, 2022)",
+      "[国内共识] 中国恶性淋巴瘤诊疗指南（2024年版） (中国临床肿瘤学会（CSCO）, 2024)",
+      "[国内共识] 淋巴瘤病理诊断规范 (中华医学会病理学分会, 2013)"
+    ]
+  },
+  {
+    "id": "mantle-cell-lymphoma",
+    "nameZh": "套细胞淋巴瘤",
+    "nameEn": "Mantle Cell Lymphoma",
+    "aliases": [
+      "MCL"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "约占 NHL 的 5–10%，中老年男性多见，是最具侵袭性的&quot;惰性&quot;淋巴瘤之一。",
+    "clinicalFeatures": "全身性淋巴结肿大、脾大、骨髓和外周血受累；结外可累及胃肠道（多发淋巴瘤样息肉）。",
+    "grossPathology": "淋巴结弥漫肿大，切面均质灰白色。",
+    "microscopy": "低倍镜下肿瘤细胞呈弥漫性、结节状或套区型增生模式，可完全破坏淋巴结正常结构；结节型者病变围绕残存生发中心呈宽阔套区样扩展，继而融合成弥漫片状。背景中常见散在分布的上皮样组织细胞，构成特征性'粉红色斑点'（pink histiocytes），但缺乏滤泡性淋巴瘤所见的着色体巨噬细胞及真性生发中心。可伴有透明变性的小血管穿行于瘤细胞间。中高倍镜下肿瘤由形态相对单一的小至中等大小淋巴样细胞构成，胞浆稀少淡染，细胞界限不清。核轮廓具高度特征性：呈不规则锯齿状、切迹状或成角（cleaved/angulated nuclei），类似中心细胞；染色质中等致密、呈细颗粒状均匀分布，核仁常不明显或仅见微小核仁。核分裂象易见，提示增殖活性偏高。母细胞样变型（blastoid variant）细胞呈淋巴母细胞样，染色质细腻分散、核分裂象显著增多（>20–30/10 HPF）；多形性变型（pleomorphic variant）则见核大小不一、核仁明显的大细胞混杂，两型均提示侵袭性临床行为。免疫表型上瘤细胞表达 CD20、CD5、CD43 及特征性 Cyclin D1（BCL1）核阳性，SOX11 核阳性（尤其对 Cyclin D1 阴性变型有诊断意义），CD23 多为阴性或弱阳性，CD10 与 BCL6 通常阴性。鉴别诊断需注意：①慢性淋巴细胞白血病/小淋巴细胞淋巴瘤亦 CD5+，但 CD23 强阳性、可见增殖中心（假滤泡），Cyclin D1 与 SOX11 阴性；②滤泡性淋巴瘤呈真性滤泡结构，CD10/BCL6 阳性、CD5 阴性，可据此区分；③母细胞样套细胞淋巴瘤需与淋巴母细胞淋巴瘤鉴别，后者 TdT 阳性而 Cyclin D1 阴性。",
+    "keyFeatures": [
+      "CD5 阳性的 CD10 阴性 B 细胞",
+      "Cyclin D1（BCL1）核阳性是诊断必备",
+      "t(11;14) CCND1-IGH 特征性易位",
+      "SOX11 核阳性",
+      "母细胞样 / 多形性变体侵袭性强"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD5",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Cyclin D1",
+        "result": "核阳性",
+        "note": "诊断关键"
+      },
+      {
+        "marker": "SOX11",
+        "result": "核阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD23",
+        "result": "阴性",
+        "note": "与 CLL 鉴别"
+      },
+      {
+        "marker": "CD10",
+        "result": "阴性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "t(11;14)(q13;q32) CCND1-IGH 是标志性细胞遗传学改变。TP53 突变 / 缺失提示不良预后。",
+    "differentialDiagnosis": [
+      "follicular-lymphoma",
+      "marginal-zone-lymphoma",
+      "dlbcl"
+    ],
+    "grading": "不分级，按形态分经典 / 母细胞样 / 多形性",
+    "staging": "Ann Arbor / Lugano",
+    "prognosis": "总体中位生存 4–6 年，TP53 突变或母细胞样亚型更差。",
+    "treatment": "年轻患者强化化疗 + ASCT；年老患者 BR 或 VR-CAP。BTK 抑制剂（伊布替尼、赞布替尼）在复发/难治有效。",
+    "images": [
+      {
+        "url": "/diagrams/mcl-low-power-nodular.svg",
+        "caption": "低倍（HE）：淋巴结结构破坏，肿瘤细胞呈弥漫或模糊结节状生长，残存的生发中心受压或消失，可见单一形态的小至中等大小淋巴细胞浸润"
+      },
+      {
+        "url": "/diagrams/mcl-high-power-monomorphic.svg",
+        "caption": "高倍（HE）：肿瘤细胞形态单一，核轻度不规则/有切迹，染色质细致，核仁不明显，胞浆稀少；背景散在上皮样组织细胞及透明变性小血管"
+      },
+      {
+        "url": "/diagrams/mcl-ihc-cyclind1.svg",
+        "caption": "IHC（Cyclin D1）：肿瘤细胞核弥漫强阳性，反映 t(11;14)(q13;q32) CCND1/IGH 易位，是套细胞淋巴瘤的特征性标志"
+      },
+      {
+        "url": "/diagrams/mcl-ihc-sox11.svg",
+        "caption": "IHC（SOX11）：肿瘤细胞核弥漫阳性，辅助诊断 Cyclin D1 阴性变异型套细胞淋巴瘤，并与其他小 B 细胞淋巴瘤鉴别"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 恶性淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 中国套细胞淋巴瘤诊断与治疗专家共识（2022年版） (中华医学会血液学分会, 2022)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）恶性淋巴瘤诊疗指南 (中国临床肿瘤学会（CSCO）, 2024)",
+      "[国内共识] 中国套细胞淋巴瘤诊断与治疗专家共识 (中国抗癌协会淋巴瘤专业委员会 / 中国抗淋巴瘤联盟, 2022)"
+    ]
+  },
+  {
+    "id": "anaplastic-large-cell-lymphoma",
+    "nameZh": "间变性大细胞淋巴瘤",
+    "nameEn": "Anaplastic Large Cell Lymphoma",
+    "aliases": [
+      "ALCL",
+      "间变性大细胞淋巴瘤"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "外周T细胞淋巴瘤的一种亚型，约占NHL的2-3%。分为ALK阳性型（好发于儿童和青年，中位年龄20-30岁，男性多见）和ALK阴性型（中老年多见）。另有乳房植入物相关型（BIA-ALCL）和原发皮肤型。",
+    "clinicalFeatures": "全身性淋巴结肿大伴B症状（约75%），常累及结外部位（皮肤、骨、软组织、肺、肝）。ALK+型常见纵隔和骨受累。BIA-ALCL表现为植入物周围迟发性血清肿。",
+    "grossPathology": "淋巴结弥漫肿大，切面灰白色，常有坏死。结外肿块可形成大的实性肿物。",
+    "microscopy": "低倍镜下肿瘤常呈弥漫性或窦性浸润生长方式，典型者累及淋巴结副皮质区，可呈片状取代正常淋巴结结构，并呈特征性的淋巴窦内播散（sinusoidal growth pattern），使淋巴窦扩张充满肿瘤细胞，此为 ALCL 的重要结构线索。肿瘤细胞体积大，呈黏附性生长，部分区域可见纤维组织分隔形成模糊结节。高倍镜下肿瘤细胞异型性显著，胞浆丰富，嗜双色性或嗜碱性，胞界清楚，部分细胞可见核旁嗜酸性高尔基区（hof 区）。标志性细胞（hallmark cells）是诊断关键：细胞体积大，胞浆丰富，核呈肾形、马蹄形、胚胎样或花环样，核偏位，核仁明显嗜酸。此外可见多核细胞、类 R-S 细胞及花环状巨细胞。核染色质粗颗粒状或泡状，核膜厚而不规则，核分裂象易见，可见病理性核分裂。肿瘤细胞 CD30 呈膜及核旁高尔基区强阳性，ALK 阳性型可见核与胞浆双重阳性或仅胞浆阳性（提示不同融合伴侣，如 NPM-ALK 为核浆双阳）；EMA 常阳性，Clusterin 高尔基区阳性，细胞毒颗粒（Granzyme B、TIA-1、Perforin）常阳性，多数病例 CD3 阴性或弱阳，呈现 T 细胞抗原”脱失”现象。分级与预后线索包括：小细胞变异型、淋巴组织细胞变异型易误诊，需结合 CD30 与 ALK 染色识别；ALK 阴性型需与原发皮肤 ALCL 及乳腺植入物相关 ALCL 鉴别。鉴别诊断重点：①经典型霍奇金淋巴瘤——R-S 细胞 CD30+/CD15+/PAX5 弱阳，而 ALCL CD15 阴性、PAX5 阴性、EMA 常阳；②外周 T 细胞淋巴瘤非特指型——CD30 可散在阳性但非弥漫强阳，缺乏标志性细胞及 ALK 表达。",
+    "keyFeatures": [
+      "CD30 强阳性（膜 + Golgi）",
+      "典型 Hallmark cells（马蹄形核 + 核旁 Golgi）",
+      "ALK 阳性或阴性决定预后",
+      "多项 T 细胞标记可丢失（&quot;aberrant loss&quot;）",
+      "BIA-ALCL 与纹理面乳房假体相关",
+      "CD30强阳性（膜+Golgi区）",
+      "Hallmark细胞（肾形/马蹄形核）",
+      "ALK+型（约60%）预后好",
+      "T细胞标记常丢失（CD3−）",
+      "窦内生长模式"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD30",
+        "result": "强阳性",
+        "note": "膜+Golgi区，诊断必备"
+      },
+      {
+        "marker": "ALK",
+        "result": "阳性(约60%)",
+        "note": "t(2;5) NPM-ALK，核+胞质阳性"
+      },
+      {
+        "marker": "CD3",
+        "result": "常丢失",
+        "note": "T细胞标记异常丢失"
+      },
+      {
+        "marker": "CD4",
+        "result": "阳性",
+        "note": "多数阳性"
+      },
+      {
+        "marker": "EMA",
+        "result": "阳性",
+        "note": "上皮膜抗原阳性"
+      },
+      {
+        "marker": "CD15",
+        "result": "阴性",
+        "note": "区别 CHL"
+      },
+      {
+        "marker": "CD2",
+        "result": "阳性",
+        "note": "部分T细胞标记保留"
+      }
+    ],
+    "molecularFeatures": "ALK+型：t(2;5)(p23;q35) NPM-ALK最常见（约75%），其他融合伴侣包括TPM3-ALK、TFG-ALK、CLTC-ALK等。ALK−型：部分存在DUSP22-IRF4重排（预后较好）或TP63重排（预后极差）。JAK-STAT3通路激活是共同特征。",
+    "differentialDiagnosis": [
+      "classical-hodgkin-lymphoma",
+      "dlbcl",
+      "ptcl-nos"
+    ],
+    "grading": "不分级",
+    "staging": "Ann Arbor / Lugano",
+    "prognosis": "ALK+型预后好，5年生存率>75%。ALK−型预后较差，5年生存率约40-50%。DUSP22重排的ALK−型预后接近ALK+型。",
+    "treatment": "ALK+型：CHOP/CHOEP方案，治愈率高。ALK−型：CHOP±布伦妥昔单抗维多汀（BV）。复发者可用BV（anti-CD30）、ALK抑制剂（克唑替尼，仅ALK+型）或自体干细胞移植。",
+    "images": [
+      {
+        "url": "/diagrams/rs-cell.svg",
+        "caption": "ALCL 的 Hallmark 细胞：大的&quot;肾形&quot;核、核旁嗜酸性 Golgi 区"
+      },
+      {
+        "url": "/diagrams/alcl-low-power-sinus-infiltration.svg",
+        "caption": "低倍（HE）：淋巴结结构破坏，瘤细胞呈黏附性片状及窦内生长（sinusoidal pattern），围绕残存淋巴滤泡浸润"
+      },
+      {
+        "url": "/diagrams/alcl-hallmark-cells.svg",
+        "caption": "高倍（HE）：特征性 Hallmark 细胞——体积大、胞质丰富嗜双色，核呈马蹄形/肾形或胚胎样，核旁可见嗜酸性高尔基区"
+      },
+      {
+        "url": "/diagrams/alcl-ihc-cd30-membrane-golgi.svg",
+        "caption": "IHC（CD30）：瘤细胞膜及核旁高尔基区强阳性（膜+点状），是 ALCL 的诊断必备标记"
+      },
+      {
+        "url": "/diagrams/alcl-ihc-alk-nuclear-cytoplasmic.svg",
+        "caption": "IHC（ALK1）：ALK 阳性型可见核及胞质弥漫阳性，提示 t(2;5)(p23;q35) NPM1-ALK 融合"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] 中国抗癌协会淋巴瘤诊治指南（2022版）——间变性大细胞淋巴瘤部分 (中国抗癌协会（CACA）, 2022)",
+      "[国内共识] CSCO 淋巴瘤诊疗指南（2024版）——外周T细胞淋巴瘤分册 (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  },
+  {
+    "id": "ptcl-nos",
+    "nameZh": "外周T细胞淋巴瘤非特指型",
+    "nameEn": "Peripheral T-Cell Lymphoma, Not Otherwise Specified",
+    "aliases": [
+      "PTCL-NOS",
+      "外周T细胞淋巴瘤"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "最常见的外周T细胞淋巴瘤亚型，约占所有PTCL的25-30%。中老年多见，中位年龄60岁左右，男性略多。在亚洲地区发病率相对较高，占NHL约10-15%。",
+    "clinicalFeatures": "多数患者就诊时已为晚期（III/IV期），表现为全身性淋巴结肿大，B症状（发热、盗汗、体重减轻）常见（约50%）。可有皮肤受累、肝脾肿大、骨髓浸润。嗜酸性粒细胞增多和噬血细胞综合征偶见。",
+    "grossPathology": "淋巴结弥漫性肿大，切面灰白色，质软，正常结构破坏。可有坏死区域。",
+    "microscopy": "低倍镜下可见淋巴结结构部分或完全破坏，肿瘤细胞呈弥漫性浸润，常保留或扩张副皮质区（T 细胞区），生发中心受压萎缩或消失。被膜及包膜外脂肪组织常见肿瘤细胞侵犯，血管周围浸润显著，可见高内皮小静脉（HEV）增生并被肿瘤细胞围绕呈同心圆样排列。背景富含反应性成分，包括嗜酸性粒细胞、浆细胞、组织细胞、小淋巴细胞及上皮样组织细胞，后者有时簇集呈肉芽肿样结构，掩盖肿瘤主体，需警惕漏诊。中倍镜下肿瘤细胞大小不一，呈多形性，以中等至大细胞为主，亦可混杂小至中等大异型淋巴细胞。胞浆中等量，淡染、嗜双色或透明，细胞边界较清，部分呈”水清样”外观。可见散在 R-S 样大细胞或多核瘤巨细胞，偶见透明胞浆细胞环绕血管分布。高倍镜下核呈显著异型性，形态不规则，常见核分叶、扭曲、折叠或脑回样轮廓，核膜厚而不规则；染色质粗颗粒状或空泡状，分布不均；核仁 1 至数个，中等大小至明显，可嗜酸或嗜碱。核分裂象易见，常 >10/10 HPF，可见病理性核分裂及凋亡小体。间质可见纤维化及纤维间隔形成，小血管增生伴内皮肿胀。免疫表型常示 CD3+、CD2+、CD5 及 CD7 部分丢失，CD4+/CD8- 多见，CD30 可部分阳性，细胞毒标志（TIA-1、granzyme B）可局灶阳性，Ki-67 增殖指数常 >40%。鉴别诊断：①血管免疫母细胞性 T 细胞淋巴瘤（AITL），后者 CD10+、BCL6+、PD-1+、CXCL13+ 的 TFH 表型及 FDC 网增生可资鉴别；②间变性大细胞淋巴瘤（ALCL），特征性”标志性细胞”及弥漫强阳性 CD30、ALK±可区分；③经典型霍奇金淋巴瘤，典型 R-S 细胞 CD15+/CD30+/PAX5 弱+、CD45- 背景为混合炎症。",
+    "keyFeatures": [
+      "异质性最强的T细胞淋巴瘤（排除性诊断）",
+      "多形性中-大T细胞+炎症背景",
+      "常伴T细胞抗原异常丢失(CD5/CD7)",
+      "基因表达谱可分为TBX21和GATA3亚型",
+      "预后差，5年OS约20-30%"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD3",
+        "result": "阳性",
+        "note": "T细胞标记"
+      },
+      {
+        "marker": "CD5",
+        "result": "部分丢失",
+        "note": "异常表型，辅助诊断"
+      },
+      {
+        "marker": "CD7",
+        "result": "常丢失",
+        "note": "最常丢失的T细胞标记"
+      },
+      {
+        "marker": "CD4",
+        "result": "多数阳性",
+        "note": "CD4+为主，少数CD8+"
+      },
+      {
+        "marker": "CD8",
+        "result": "少数阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "高(>40%)",
+        "note": "增殖活跃"
+      }
+    ],
+    "molecularFeatures": "无特征性基因重排。常见TET2（约50%）、IDH2、DNMT3A、RHOA（约20%）突变。基因表达谱分为TBX21亚型（细胞毒性，预后较好）和GATA3亚型（预后更差）。TCR基因克隆性重排可辅助诊断。",
+    "differentialDiagnosis": [
+      "aitl",
+      "anaplastic-large-cell-lymphoma",
+      "dlbcl",
+      "classical-hodgkin-lymphoma"
+    ],
+    "grading": "不分级",
+    "staging": "Ann Arbor/Lugano分期",
+    "prognosis": "预后差，5年总生存率约20-30%。GATA3亚型预后更差。IPI评分可用于预后分层。",
+    "treatment": "一线CHOP或CHOEP方案，年轻患者考虑自体干细胞移植巩固。复发/难治可用romidepsin、pralatrexate、belinostat等。布伦妥昔单抗维多汀（BV）对CD30+病例有效。",
+    "images": [
+      {
+        "url": "/diagrams/ptcl-nos-low-power.svg",
+        "caption": "低倍（HE）：淋巴结结构破坏，副皮质区弥漫性浸润，正常淋巴滤泡消失，可见多形性中至大淋巴样细胞片状增生伴血管增生"
+      },
+      {
+        "url": "/diagrams/ptcl-nos-high-power.svg",
+        "caption": "高倍（HE）：肿瘤细胞中至大、形态多形，核不规则、染色质粗，核仁明显，核分裂象易见；背景见小淋巴细胞、嗜酸性粒细胞及组织细胞混合性炎症浸润"
+      },
+      {
+        "url": "/diagrams/ptcl-nos-cd3-ihc.svg",
+        "caption": "IHC（CD3）：肿瘤细胞胞膜弥漫强阳性，提示T细胞起源；常伴CD2、CD5或CD7部分丢失（异常T细胞表型）"
+      },
+      {
+        "url": "/diagrams/ptcl-nos-ki67-ihc.svg",
+        "caption": "IHC（Ki-67）：肿瘤细胞核增殖指数显著升高（常>40%–70%），提示高增殖活性，与侵袭性临床行为相符"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 中国抗癌协会淋巴瘤整合诊治指南（2022） (中国抗癌协会, 2022)",
+      "[国内共识] 中国抗癌协会淋巴瘤诊治指南（2022版）——外周T细胞淋巴瘤部分 (中国抗癌协会（CACA）, 2022)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南（2024版）——外周T细胞淋巴瘤章节 (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  },
+  {
+    "id": "aitl",
+    "nameZh": "血管免疫母细胞性T细胞淋巴瘤",
+    "nameEn": "Angioimmunoblastic T-Cell Lymphoma",
+    "aliases": [
+      "AITL",
+      "血管免疫母细胞性淋巴瘤"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "第二常见的外周T细胞淋巴瘤亚型，约占PTCL的15-20%。中老年多见，中位年龄65岁左右，男女比例接近。现归入滤泡辅助T细胞（TFH）来源的淋巴瘤。",
+    "clinicalFeatures": "急性起病，全身性淋巴结肿大伴B症状。特征性全身免疫紊乱：多克隆高丙种球蛋白血症、Coombs阳性溶血性贫血、皮疹（血管炎样/荨麻疹样）、关节痛、胸腔/腹腔积液。常伴发自身免疫现象和机会性感染。",
+    "grossPathology": "淋巴结弥漫肿大，切面灰白色均匀，正常结构消失。",
+    "microscopy": "低倍镜下淋巴结结构部分或全部消失，但被膜下窦常保留开放；副皮质区显著扩张，滤泡减少或消失，仅残留少量退化的滤泡树突细胞（FDC）网。最具特征性的改变是高内皮性后毛细血管静脉（HEV）分支状、树枝状增生，管壁可增厚并呈 PAS 阳性玻璃样变，贯穿整个病变区域。肿瘤背景呈多形性混合性浸润，包含小至中等大小淋巴细胞、嗜酸性粒细胞、浆细胞、组织细胞及免疫母细胞样大细胞，并常见散在的 EBV 阳性 B 免疫母细胞，后者偶可呈 Reed-Sternberg 样形态。在 HEV 周围及滤泡外区域可见成簇或片状分布的肿瘤性 T 细胞，胞体中等大小，胞浆透亮至淡染，细胞膜清晰，形成所谓”透明细胞”簇，是本病的重要线索。核呈圆形或轻度不规则，染色质细致或略呈空泡状，核仁小而不明显；核分裂象易见但一般不呈异型巨核。滤泡外 FDC 网扩展是诊断关键，CD21、CD23 或 CXCL13 显示 HEV 周围不规则扩张的 FDC 网状结构。免疫表型上瘤细胞表达 CD3、CD4，并共表达滤泡辅助 T 细胞（TFH）标志物：CD10、BCL6、PD-1（CD279）、CXCL13、ICOS，其中至少两项阳性支持诊断；可伴 CD7 部分丢失。分子遗传学常见 TET2、DNMT3A、IDH2（尤其 R172）及 RHOA G17V 突变。鉴别诊断：① 非特指型外周 T 细胞淋巴瘤（PTCL-NOS），通常缺乏显著 HEV 增生及 FDC 网扩展，TFH 标志多不足两项；② 经典型霍奇金淋巴瘤，R-S 细胞 CD30/CD15 阳性、PAX5 弱阳，而 AITL 背景中的 EBV+ 大 B 细胞常 CD15 阴性且位于富 T 细胞背景中；③ 反应性副皮质区增生（如病毒性淋巴结炎），结构保留、无 TFH 表型的克隆性 T 细胞簇及 FDC 网扩展可资鉴别。",
+    "keyFeatures": [
+      "TFH来源（CXCL13+/PD-1+/ICOS+/CD10+）",
+      "显著增生的分支状高内皮小静脉",
+      "FDC网滤泡外不规则扩展",
+      "EBV+旁观B免疫母细胞增生",
+      "全身免疫紊乱（高丙球/溶贫/皮疹）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD3",
+        "result": "阳性",
+        "note": "T细胞标记"
+      },
+      {
+        "marker": "CD4",
+        "result": "阳性",
+        "note": "TFH细胞为CD4+"
+      },
+      {
+        "marker": "CXCL13",
+        "result": "阳性",
+        "note": "TFH特异性标记"
+      },
+      {
+        "marker": "PD-1",
+        "result": "阳性",
+        "note": "TFH标记"
+      },
+      {
+        "marker": "ICOS",
+        "result": "阳性",
+        "note": "TFH标记"
+      },
+      {
+        "marker": "CD10",
+        "result": "阳性",
+        "note": "TFH标记，异常T细胞表达"
+      },
+      {
+        "marker": "EBV(EBER)",
+        "result": "阳性(旁观B细胞)",
+        "note": "EBV+B免疫母细胞，非肿瘤细胞"
+      }
+    ],
+    "molecularFeatures": "TET2突变（约80%）、DNMT3A突变（约30%）、IDH2 R172突变（约20-30%，较特异）、RHOA G17V突变（约50-70%，高度特异于TFH淋巴瘤）。TET2/DNMT3A突变可早于淋巴瘤发生（克隆性造血）。",
+    "differentialDiagnosis": [
+      "ptcl-nos",
+      "classical-hodgkin-lymphoma",
+      "follicular-lymphoma",
+      "dlbcl"
+    ],
+    "grading": "不分级",
+    "staging": "Ann Arbor/Lugano分期",
+    "prognosis": "预后差，5年总生存率约30-35%。中位生存约3年。约10-20%可转化为侵袭性B细胞淋巴瘤（EBV驱动）。",
+    "treatment": "一线CHOP方案。年轻患者可考虑自体干细胞移植巩固。复发/难治可用romidepsin、5-azacitidine（针对TET2/DNMT3A突变）。免疫调节剂（来那度胺）有一定疗效。",
+    "images": [
+      {
+        "url": "/diagrams/aitl-low-power-polymorphous-infiltrate.svg",
+        "caption": "低倍（HE）：淋巴结结构部分破坏，副皮质区弥漫多形性浸润，伴外周窦开放及高内皮小静脉（HEV）显著增生呈分支状网络"
+      },
+      {
+        "url": "/diagrams/aitl-fdc-meshwork-expansion.svg",
+        "caption": "中倍（HE）：HEV 周围 FDC 网不规则扩张并外溢于滤泡外，可见散在嗜酸性粒细胞、浆细胞及免疫母细胞混杂背景"
+      },
+      {
+        "url": "/diagrams/aitl-high-power-clear-cell-tfh.svg",
+        "caption": "高倍（HE）：肿瘤性 T 细胞中等大小，胞质透明至淡染，核轻度异型，围绕 HEV 簇状分布，构成特征性透明细胞簇"
+      },
+      {
+        "url": "/diagrams/aitl-ihc-cd10-pd1-cxcl13.svg",
+        "caption": "IHC（CD10/PD-1/CXCL13/BCL6）：肿瘤性 TFH 细胞表达滤泡辅助性 T 细胞标记，CD21 显示扩张紊乱的滤泡树突细胞网"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] 中国恶性淋巴瘤诊疗指南（2024版） (中国临床肿瘤学会（CSCO）, 2024)",
+      "[国内共识] 中国抗癌协会淋巴瘤整合诊治指南（CACA Guidelines · 淋巴瘤） (中国抗癌协会（CACA）, 2022)"
+    ]
+  },
+  {
+    "id": "nk-t-cell-lymphoma",
+    "nameZh": "NK/T细胞淋巴瘤",
+    "nameEn": "Extranodal NK/T-Cell Lymphoma, Nasal Type",
+    "aliases": [
+      "ENKTL",
+      "鼻型NK/T细胞淋巴瘤",
+      "致死性中线肉芽肿"
+    ],
+    "organ": "lymphoma",
+    "category": "malignant",
+    "epidemiology": "结外NK/T细胞淋巴瘤鼻型是一种与EBV密切相关的侵袭性淋巴瘤。在东亚和拉丁美洲地区高发，占NHL约5-10%（亚洲）。中位年龄50岁左右，男性多见（2-3:1）。几乎所有病例均EBV阳性。",
+    "clinicalFeatures": "最常累及鼻腔/鼻咽部（上气道消化道区域），表现为鼻塞、鼻出血、面中部破坏性病变（曾称'致死性中线肉芽肿'）。鼻外型可累及皮肤、胃肠道、睾丸等。可伴噬血细胞综合征（HLH）。B症状常见。",
+    "grossPathology": "鼻腔黏膜溃疡性坏死性病变，可有广泛组织破坏。结外肿块灰白色，常伴出血和坏死。",
+    "microscopy": "结外 NK/T 细胞淋巴瘤鼻型镜下呈弥漫性、破坏性浸润性生长，肿瘤细胞沿黏膜下层及血管周围扩展，常累及并破坏黏膜上皮与腺体。特征性组织学改变为血管中心性与血管破坏性浸润（angiocentric / angiodestructive growth pattern），肿瘤细胞环绕并浸润中小血管壁，可致血管腔狭窄、纤维素样坏死及继发性广泛凝固性坏死，坏死区常见核碎屑（karyorrhectic debris）与'地图样'坏死灶，是本病的标志性表现。背景常混杂多量反应性炎症细胞，包括小淋巴细胞、浆细胞、组织细胞及嗜酸性粒细胞，易与炎性病变混淆。肿瘤细胞形态谱系宽泛，可为小至中等大小、中等大小或大细胞为主，甚至呈间变样；胞质中等量、淡染至透明，部分胞质内可见细小嗜天青颗粒（反映细胞毒颗粒）。核形不规则，常呈折叠、扭曲或锯齿状，染色质颗粒状至略粗，核仁不明显或呈小而不显著的嗜碱性核仁；核分裂象易见，凋亡小体丰富。黏膜上皮常受侵蚀形成溃疡，腺体呈破坏性浸润。免疫表型上瘤细胞 CD2+、cCD3ε+、CD56+，表达细胞毒分子（TIA-1、granzyme B、perforin），常规 CD3（膜）、CD4、CD5、CD8 多阴性；EBER 原位杂交几乎全部阳性，为诊断必需指标；Ki-67 增殖指数多较高（常 >40%）。鉴别诊断：①鼻腔弥漫大 B 细胞淋巴瘤——B 细胞标志 CD20/PAX5 阳性、CD56 及 EBER 阴性，血管中心性不明显；②外周 T 细胞淋巴瘤非特指型——多无 CD56 表达且 EBER 常阴性，血管破坏及坏死不及本病显著；③鼻腔炎性坏死性病变（如 Wegener 肉芽肿/韦格纳肉芽肿）——缺乏单克隆性异型淋巴样细胞群及 EBER 阳性。",
+    "keyFeatures": [
+      "血管中心性和血管破坏性生长",
+      "广泛凝固性坏死",
+      "EBV阳性（EBER+，几乎100%）",
+      "CD56+/胞质CD3ε+/表面CD3−",
+      "细胞毒性颗粒蛋白阳性（GrB/TIA-1/Perforin）"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD56",
+        "result": "阳性",
+        "note": "NK细胞标记，弥漫表达"
+      },
+      {
+        "marker": "CD3ε",
+        "result": "胞质阳性",
+        "note": "胞质CD3ε+但表面CD3−"
+      },
+      {
+        "marker": "EBER",
+        "result": "阳性",
+        "note": "EBV编码RNA原位杂交，几乎100%阳性，诊断必备"
+      },
+      {
+        "marker": "Granzyme B",
+        "result": "阳性",
+        "note": "细胞毒性颗粒蛋白"
+      },
+      {
+        "marker": "CD20",
+        "result": "阴性",
+        "note": "排除B细胞淋巴瘤"
+      },
+      {
+        "marker": "CD4/CD8",
+        "result": "阴性",
+        "note": "CD4−CD8−双阴性"
+      }
+    ],
+    "molecularFeatures": "EBV基因组克隆性整合是特征，血浆EBV-DNA拷贝数可用于监测疗效和预后评估。常见基因突变：DDX3X（约20%）、TP53（约20-30%）、STAT3/5B（约10-20%）、MGA、BCOR。JAK-STAT通路和NF-κB通路常激活。PD-L1高表达。",
+    "differentialDiagnosis": [
+      "ptcl-nos",
+      "dlbcl",
+      "burkitt-lymphoma",
+      "classical-hodgkin-lymphoma"
+    ],
+    "grading": "不分级",
+    "staging": "Ann Arbor/Lugano分期；PINK预后指数（年龄>60岁、III/IV期、远处淋巴结受累、非鼻腔型）",
+    "prognosis": "鼻腔局限期（I/II期）预后较好，含左旋门冬酰胺酶方案5年OS约70%。晚期或鼻外型预后差，5年OS约20-30%。血浆EBV-DNA是重要预后标志物。",
+    "treatment": "局限期：放疗+含左旋门冬酰胺酶方案（SMILE/P-GEMOX方案）同步或序贯。晚期：SMILE方案（左旋门冬酰胺酶+甲氨蝶呤+异环磷酰胺+依托泊苷+地塞米松）。PD-1抑制剂（信迪利单抗/帕博利珠单抗）对复发/难治有效。自体/异基因干细胞移植可考虑。",
+    "images": [
+      {
+        "url": "/diagrams/nktcl-angiocentric-low.svg",
+        "caption": "低倍（HE）：鼻腔黏膜弥漫性淋巴样细胞浸润，呈血管中心性生长，可见大片凝固性坏死与黏膜溃疡形成"
+      },
+      {
+        "url": "/diagrams/nktcl-angioinvasion-hp.svg",
+        "caption": "高倍（HE）：中等至大的异型淋巴样细胞侵犯血管壁，致血管壁增厚、管腔闭塞，周围伴核碎裂及缺血性坏死（血管中心/血管破坏性浸润）"
+      },
+      {
+        "url": "/diagrams/nktcl-ebv-eber-ish.svg",
+        "caption": "原位杂交（EBER-ISH）：绝大多数肿瘤细胞核呈弥漫强阳性，提示 EBV 感染，是诊断 NK/T 细胞淋巴瘤的关键证据"
+      },
+      {
+        "url": "/diagrams/nktcl-ihc-cd56-granzymeb.svg",
+        "caption": "IHC（CD56 / CD3ε / Granzyme B）：肿瘤细胞胞膜 CD56 阳性、胞浆 CD3ε 阳性，细胞毒性标记 Granzyme B / TIA-1 / Perforin 阳性"
+      }
+    ],
+    "references": [
+      "WHO Classification of Haematolymphoid Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 淋巴瘤诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 结外鼻型NK/T细胞淋巴瘤诊断与治疗中国专家共识（2021年版） (中国抗癌协会淋巴瘤专业委员会, 2021)",
+      "[国内共识] 中国结外鼻型NK/T细胞淋巴瘤诊断与治疗指南（2021年版） (中国抗癌协会淋巴瘤专业委员会 / 中国抗淋巴瘤联盟, 2021)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）淋巴瘤诊疗指南（2024）——结外NK/T细胞淋巴瘤分册 (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  }
 ]

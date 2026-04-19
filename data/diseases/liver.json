@@ -1,9 +1,606 @@
 [
-  {"id":"hepatocellular-carcinoma","nameZh":"肝细胞癌","nameEn":"Hepatocellular Carcinoma","aliases":["HCC","肝癌"],"organ":"liver","category":"malignant","epidemiology":"全球第六大常见癌症、第三大癌症死因，东亚和撒哈拉以南非洲高发。约90%发生于肝硬化基础上，主要危险因素为HBV/HCV慢性感染、酒精性肝病、NASH和黄曲霉毒素暴露。男性显著多于女性（约3-4:1），中位发病年龄50-60岁（HBV地区更年轻）。","clinicalFeatures":"右上腹痛、肝大、体重减轻、AFP升高。肝硬化患者定期超声筛查。","grossPathology":"单发或多发结节，切面黄褐色或绿色(胆汁染色)，可伴出血坏死。","microscopy":"肿瘤细胞形态类似肝细胞，胞浆丰富嗜酸性或含脂质/糖原而透明，排列成板状/梁状结构（>3层细胞厚，正常肝板为1-2层，Reticulin染色可证实网架消失）。板梁间衬以扁平内皮细胞形成窦样血管间隙。核增大，核浆比升高，核仁明显，可见双核或多核细胞。可见胆汁产生（胞浆内或毛细胆管内棕绿色色素，是HCC最特异的形态学证据）、Mallory-Denk小体和苍白小体。分化好者与正常肝细胞区分困难，需结合Reticulin网架缺失和Glypican-3阳性诊断。分化差者核异型明显、核分裂活跃。","keyFeatures":["板状/梁状结构>3层细胞","HepPar-1/Arginase-1/Glypican-3阳性","可产生胆汁","多在肝硬化基础上发生"],"ihcProfile":[{"marker":"HepPar-1","result":"阳性","note":"肝细胞标记"},{"marker":"Arginase-1","result":"阳性","note":"最特异肝标记"},{"marker":"Glypican-3","result":"阳性(70-80%)","note":"恶性肝细胞标记"},{"marker":"CK7","result":"通常阴性","note":"区别于胆管癌"},{"marker":"CK19","result":"通常阴性","note":"阳性提示预后差"}],"specialStainProfile":[{"stain":"Reticulin","result":"网架消失/缺损","note":"HCC特征：正常网架结构丧失，板梁>3层细胞"},{"stain":"Masson","result":"间质纤维化","note":"背景肝硬化纤维化评估"},{"stain":"PAS","result":"可见糖原","note":"PAS-D消化后可显示Mallory-Denk小体"},{"stain":"普鲁士蓝","result":"可阳性","note":"评估铁沉积（血色病相关HCC）"}],"molecularFeatures":"TERT启动子突变最常见(60%)，TP53、CTNNB1(β-catenin)突变也常见。","differentialDiagnosis":["cholangiocarcinoma","hepatic-adenoma","focal-nodular-hyperplasia"],"grading":"Edmondson-Steiner分级(I-IV级)","staging":"BCLC分期系统/AJCC TNM","prognosis":"早期(BCLC 0-A)5年生存率50-70%；晚期预后差。","treatment":"早期：手术切除/肝移植/射频消融。中晚期：TACE/索拉非尼/仑伐替尼/阿替利珠单抗+贝伐珠单抗。","images":[{"url":"/diagrams/tubular.svg","caption":"HCC 板梁状结构（>3 层）：肿瘤细胞模拟肝板但缺乏正常小叶结构"}],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"cholangiocarcinoma","nameZh":"胆管癌","nameEn":"Cholangiocarcinoma","aliases":["肝内胆管癌","ICC"],"organ":"liver","category":"malignant","epidemiology":"第二常见的原发性肝脏恶性肿瘤，约占原发性肝癌的10-15%。肝内型在西方国家发病率近年持续上升。危险因素包括原发性硬化性胆管炎、肝吸虫感染（华支睾吸虫/泰国肝吸虫，东南亚高发）、胆道结石、肝硬化及慢性肝炎。中位发病年龄约65岁，男女比例接近。","clinicalFeatures":"黄疸、上腹痛、体重减轻。肝内型多无黄疸。","grossPathology":"灰白色硬性肿块，边界不清，伴广泛纤维化。","microscopy":"分化程度不等的腺管结构浸润于丰富的促纤维增生间质（desmoplastic stroma）中，这是胆管癌最显著的组织学特征之一。高分化者形成规则的小腺管或大腺管结构，衬覆柱状黏液上皮，核轻度异型。中分化者腺管不规则，核异型增加，腺腔内可见黏液。低分化者仅残存少量腺管或完全呈实性生长，核深染多形，核分裂活跃。间质纤维化致密，可伴慢性炎细胞浸润。肿瘤周围常见神经侵犯和脉管侵犯。肝内型需与转移性腺癌鉴别（CK7+/CK19+/HepPar-1-/Arginase-1-支持胆管来源）。","keyFeatures":["丰富纤维间质中的腺管结构","CK7+/CK19+/CK20-","HepPar-1/Arginase-1阴性(区别于HCC)","IDH1/2突变见于肝内型"],"ihcProfile":[{"marker":"CK7","result":"阳性","note":""},{"marker":"CK19","result":"阳性","note":""},{"marker":"HepPar-1","result":"阴性","note":"排除HCC"},{"marker":"Arginase-1","result":"阴性","note":"排除HCC"}],"specialStainProfile":[{"stain":"Masson","result":"促纤维增生","note":"显示肿瘤周围丰富的纤维间质"},{"stain":"PAS","result":"黏液","note":"腺体内黏液成分显示"},{"stain":"阿利新蓝","result":"酸性黏多糖","note":"证实酸性黏液分泌分化"}],"molecularFeatures":"肝内型：IDH1/2突变(15-20%)、FGFR2融合(10-15%)；肝外型：KRAS突变(40%)。","differentialDiagnosis":["hepatocellular-carcinoma"],"grading":"高/中/低分化","staging":"AJCC TNM","prognosis":"预后较差，总体5年生存率10-20%。","treatment":"手术切除是唯一根治手段。化疗以吉西他滨+顺铂为主。IDH突变者可用ivosidenib，FGFR融合者可用pemigatinib。","images":[{"url":"/diagrams/tubular.svg","caption":"胆管癌：在致密纤维间质中浸润生长的腺管结构"}],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"focal-nodular-hyperplasia","nameZh":"肝脏局灶性结节增生","nameEn":"Focal Nodular Hyperplasia","aliases":["FNH"],"organ":"liver","category":"benign","epidemiology":"第二常见的肝脏良性肿瘤（仅次于肝血管瘤），年轻女性多见（女男比约8:1），中位年龄约30-40岁。与口服避孕药无明确因果关系。发病率约0.3-3%（影像学偶然发现），多为孤立性结节。","clinicalFeatures":"多无症状，偶然发现。影像学特征性中央瘢痕。","grossPathology":"边界清楚的结节，中央星状瘢痕是特征，切面黄褐色。","microscopy":"结节状增生的肝细胞被纤维间隔分隔成不规则结节状小叶结构。肝细胞形态正常，板梁结构保持（1-2层细胞厚），Reticulin网架完整。中央星状瘢痕含有异常厚壁动脉（壁内纤维肌层增厚）和增生的细胆管反应（CK7阳性的小胆管围绕于纤维间隔中）。无包膜，与周围正常肝实质移行过渡。肝窦内可见Kupffer细胞。Glutamine Synthetase呈特征性地图样不规则阳性（区别于肝腺瘤的弥漫阳性或正常中央静脉周围带状阳性），是诊断FNH最关键的免疫组化特征。","keyFeatures":["特征性中央星状瘢痕","异常厚壁动脉和增生胆管反应","非肿瘤性增生(血管畸形导致)","无恶变风险"],"ihcProfile":[{"marker":"Glutamine Synthetase","result":"地图样阳性","note":"FNH特征性表达模式"},{"marker":"CK7","result":"胆管反应阳性","note":"增生的细胆管"}],"molecularFeatures":"非克隆性增生，无特征性基因突变。与异常血管畸形的血流改变有关。","differentialDiagnosis":["hepatic-adenoma","hepatocellular-carcinoma"],"grading":"不适用","staging":"不适用","prognosis":"预后极好，无恶变风险。","treatment":"无症状者随访观察即可，有症状的巨大FNH可手术切除。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"hepatic-adenoma","nameZh":"肝细胞腺瘤","nameEn":"Hepatocellular Adenoma","aliases":["HCA","肝腺瘤"],"organ":"liver","category":"benign","epidemiology":"罕见良性肝肿瘤，年发病率约3-4/100万。与口服避孕药（长期使用风险增加）、合成类固醇、糖原累积病I/III型和肥胖/代谢综合征相关。育龄女性多见（女男比约10:1），中位年龄约30-40岁。","clinicalFeatures":"多无症状偶然发现，较大者可出血甚至破裂。罕见恶变为HCC。","grossPathology":"边界清楚的单发或多发结节，切面黄褐色，可伴出血坏死。无包膜或假包膜。","microscopy":"单克隆增生的肝细胞呈梁索状排列（1-2层细胞厚），Reticulin网架保存完整（区别于HCC的网架消失）。最重要的结构特征是缺乏门管区（无门静脉、肝动脉和胆管三联体），代之以孤立的厚壁动脉散布于肝实质中。细胞形态温和无明显异型性，核分裂象罕见。HNF1α失活型：肝细胞弥漫脂肪变，L-FABP免疫组化缺失。β-catenin激活型：细胞可有轻度异型、假腺样结构，Glutamine Synthetase弥漫强阳性，有恶变为HCC的风险。炎症型：肝窦扩张伴炎性浸润、SAA/CRP阳性。Glypican-3阴性有助于排除HCC。","keyFeatures":["分子分型：HNF1α失活型(L-FABP缺失)/β-catenin激活型(GS弥漫+，有恶变风险)/炎症型(SAA+CRP+)/未分类型","1-2层细胞厚梁索","无门管区","可出血/破裂、恶变(β-catenin型高危)"],"ihcProfile":[{"marker":"L-FABP","result":"HNF1α失活型缺失","note":"分子分型标记"},{"marker":"Glutamine Synthetase","result":"β-catenin激活型弥漫阳性","note":"提示恶变风险"},{"marker":"SAA","result":"炎症型阳性","note":""},{"marker":"Glypican-3","result":"阴性","note":"区别于HCC"}],"molecularFeatures":"4种亚型：HNF1A突变、β-catenin(CTNNB1)激活、炎症型(IL6ST/STAT3)、未分类型。β-catenin激活型恶变风险最高。","differentialDiagnosis":["hepatocellular-carcinoma","focal-nodular-hyperplasia"],"grading":"不适用","staging":"不适用","prognosis":"良性但可出血、恶变。β-catenin激活型有恶变风险。","treatment":"停用诱因药物(口服避孕药)。>5cm或β-catenin型建议手术切除。妊娠前切除以防破裂。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"liver-metastasis","nameZh":"肝转移性腺癌","nameEn":"Metastatic Adenocarcinoma to Liver","aliases":["转移癌","肝转移"],"organ":"liver","category":"malignant","epidemiology":"肝转移癌远比原发性肝癌常见（西方国家肝恶性肿瘤中转移癌占比>90%），最常见的原发灶为结直肠、胰腺、胃、乳腺和肺。发病率取决于原发肿瘤类型和分期，结直肠癌约50%在病程中出现肝转移。无特定年龄或性别偏好，随原发肿瘤分布而定。","clinicalFeatures":"可无症状，或表现为原发肿瘤的症状 + 肝大 / 黄疸 / 腹水。影像上多发结节常见。","grossPathology":"多发灰白色结节，多有中央脐凹，边界相对清楚，与周围肝实质差异明显。","microscopy":"组织形态与原发灶一致，是判断来源的首要线索。结直肠来源表现为不规则腺管结构伴坏死（dirty necrosis），高柱状上皮细胞核拉长、假复层排列。乳腺来源可见巢状或条索状排列的肿瘤细胞，需注意小叶癌的列兵样浸润。肺腺癌来源可见腺泡或乳头状结构。转移灶常沿肝窦和门管区扩散（窦样浸润），也可形成边界清楚的实性结节伴中央坏死。肿瘤周围肝实质常见受压萎缩。HepPar-1/Arginase-1阴性排除HCC后，需用CK7/CK20/CDX2/TTF-1/GATA3/PAX8等免疫panel系统判断原发灶来源。","keyFeatures":["肝内多发结节（常&gt;原发性 HCC）","中央脐凹是影像学特征","需要&quot;免疫 panel&quot;系统判断原发灶（CK7/CK20/CDX2/TTF-1/GATA3/PAX8 等）","HepPar-1 / Arginase-1 阴性排除 HCC"],"ihcProfile":[{"marker":"CK7","result":"可变","note":"与 CK20 组合判断来源"},{"marker":"CK20","result":"结直肠 + 上消化道常阳性","note":""},{"marker":"CDX2","result":"下消化道 + 胰胆管常阳性","note":""},{"marker":"TTF-1","result":"肺腺癌阳性","note":""},{"marker":"GATA3","result":"乳腺 / 尿路上皮阳性","note":""},{"marker":"HepPar-1","result":"阴性","note":"排除 HCC"}],"molecularFeatures":"取决于原发灶。结直肠转移常做 RAS/BRAF/MSI 检测以指导治疗。","differentialDiagnosis":["hepatocellular-carcinoma","cholangiocarcinoma"],"grading":"按原发灶评估","staging":"属原发灶 IV 期","prognosis":"取决于原发灶、肝受累程度和治疗反应。结直肠癌孤立性肝转移者手术切除可显著改善生存。","treatment":"原发灶治疗 ± 肝部分切除 / 射频 / HAI / 局部治疗。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]},
-  {"id":"nash","nameZh":"非酒精性脂肪性肝炎","nameEn":"Nonalcoholic Steatohepatitis","aliases":["NASH","MASH","代谢相关脂肪性肝炎"],"organ":"liver","category":"inflammatory","epidemiology":"全球最常见的慢性肝病之一，影响全球约25%的成人（NAFLD谱），其中约20-30%为NASH。与肥胖、2型糖尿病、代谢综合征密切相关。近年改称MASH（代谢相关脂肪性肝炎），发病率随全球肥胖流行呈上升趋势，男女均可发病，中位年龄约50岁。","clinicalFeatures":"多无症状，体检发现 ALT / AST 轻度升高。少数可进展为肝硬化及 HCC。","grossPathology":"肝脏肿大、边缘钝圆、切面黄色（脂肪变）。","microscopy":"**NAS 评分包含 3 项**：\n1. **脂肪变**（大泡性，3 带开始）\n2. **小叶内炎症**（淋巴细胞、嗜中性粒细胞）\n3. **肝细胞气球样变**（细胞肿大、胞浆淡染、伴 Mallory-Denk 小体）\n\n可进展为 3 带周围纤维化（&quot;链条样&quot;）、桥接纤维化直至肝硬化。","keyFeatures":["脂肪变 + 炎症 + 气球样变三联征（区别于单纯脂肪肝）","典型纤维化模式：3 带周围 → 桥接 → 肝硬化","Mallory-Denk 小体（嗜酸性细胞质内聚集）","评分系统：NAS / SAF / FLIP","是 HCC 的重要危险因素，尤其在糖尿病人群"],"ihcProfile":[{"marker":"Ubiquitin","result":"Mallory-Denk 小体阳性","note":""},{"marker":"K8/18","result":"Mallory-Denk 小体阳性","note":""}],"specialStainProfile":[{"stain":"Masson","result":"纤维化分期","note":"评估肝纤维化程度和分布模式"},{"stain":"普鲁士蓝","result":"铁沉积","note":"评估肝内铁沉积情况"},{"stain":"油红O","result":"脂肪定量","note":"冰冻切片定量评估脂肪变程度"}],"molecularFeatures":"PNPLA3、TM6SF2 等基因多态性影响易感性。","differentialDiagnosis":["hepatocellular-carcinoma"],"grading":"NAS 0-8 分：脂肪变 0-3 + 炎症 0-3 + 气球样变 0-2","staging":"纤维化 F0–F4（F4 = 肝硬化）","prognosis":"约 20% 单纯脂肪肝进展为 NASH，NASH 10–20 年累计肝硬化 10–30%。","treatment":"减重 ≥ 10%、控制代谢风险，新近 resmetirom（THR-β agonist）获批用于 NASH 伴纤维化。","images":[],"references":["EASL Clinical Practice Guidelines on NAFLD 2024","WHO Classification of Digestive System Tumours, 5th Edition"]},
-  {"id":"combined-hcc-cca","nameZh":"混合型肝细胞-胆管细胞癌","nameEn":"Combined Hepatocellular-Cholangiocarcinoma","aliases":["cHCC-CCA","混合型肝癌"],"organ":"liver","category":"malignant","epidemiology":"占原发性肝癌约2-5%，发病危险因素与HCC和CCA重叠，包括HBV/HCV感染、肝硬化、原发性硬化性胆管炎等，男性多见。","clinicalFeatures":"临床表现类似HCC或CCA，包括右上腹痛、肝大、体重减轻、黄疸。AFP可升高（HCC成分）或CA19-9升高（CCA成分）。影像学表现不典型，常需活检确诊。","grossPathology":"单发或多发肝内肿块，切面灰白至灰黄色，质地不均匀，可见HCC样区域（黄褐色或绿色胆汁染色）与CCA样区域（灰白色致密纤维化）共存。","microscopy":"同一肿瘤内同时含有明确的肝细胞癌（HCC）和胆管癌（CCA）两种成分，且各成分需在形态学和免疫组化上明确证实。HCC成分表现为板梁状结构、胆汁产生、窦样血管；CCA成分表现为腺管结构浸润于纤维间质中伴促纤维增生反应。两种成分可以界限分明或相互混杂，还可见中间表型细胞（干细胞特征）。","keyFeatures":["同一肿瘤内同时含HCC和CCA两种明确成分","HCC成分：HepPar-1+/Arginase-1+/GPC-3+","CCA成分：CK7+/CK19+/MUC1+","可含干细胞表型中间区域（CK19+/EpCAM+）","预后介于HCC和CCA之间，手术是唯一根治手段"],"ihcProfile":[{"marker":"HepPar-1","result":"HCC成分阳性","note":"肝细胞分化标记"},{"marker":"Arginase-1","result":"HCC成分阳性","note":"最特异肝细胞标记"},{"marker":"GPC-3","result":"HCC成分阳性","note":"恶性肝细胞标记"},{"marker":"CK7","result":"CCA成分阳性","note":"胆管分化标记"},{"marker":"CK19","result":"CCA成分阳性","note":"胆管分化标记"},{"marker":"EpCAM","result":"干细胞区域阳性","note":"干细胞/祖细胞标记"}],"molecularFeatures":"分子特征兼具HCC和CCA的改变：TERT启动子突变、TP53突变（HCC样）、IDH1/2突变、FGFR2融合（CCA样）。基因组分析显示为克隆性起源。","differentialDiagnosis":["hepatocellular-carcinoma","cholangiocarcinoma","liver-metastasis"],"grading":"按各成分分别评估分化程度","staging":"AJCC TNM（按肝内胆管癌分期系统）","prognosis":"预后介于HCC和CCA之间，总体5年生存率约20-35%，较纯HCC差。CCA成分比例越高预后越差。","treatment":"手术切除（R0切除）是唯一根治手段。肝移植效果不确定。化疗方案参考CCA（吉西他滨+顺铂），或结合HCC方案（阿替利珠单抗+贝伐珠单抗）。","images":[],"references":["WHO Classification of Digestive System Tumours, 5th Edition, 2019"]}
+  {
+    "id": "hepatocellular-carcinoma",
+    "nameZh": "肝细胞癌",
+    "nameEn": "Hepatocellular Carcinoma",
+    "aliases": [
+      "HCC",
+      "肝癌"
+    ],
+    "organ": "liver",
+    "category": "malignant",
+    "epidemiology": "全球第六大常见癌症、第三大癌症死因，东亚和撒哈拉以南非洲高发。约90%发生于肝硬化基础上，主要危险因素为HBV/HCV慢性感染、酒精性肝病、NASH和黄曲霉毒素暴露。男性显著多于女性（约3-4:1），中位发病年龄50-60岁（HBV地区更年轻）。",
+    "clinicalFeatures": "右上腹痛、肝大、体重减轻、AFP升高。肝硬化患者定期超声筛查。",
+    "grossPathology": "单发或多发结节，切面黄褐色或绿色(胆汁染色)，可伴出血坏死。",
+    "microscopy": "肿瘤细胞形态类似肝细胞，胞浆丰富嗜酸性或含脂质/糖原而透明，排列成板状/梁状结构（>3层细胞厚，正常肝板为1-2层，Reticulin染色可证实网架消失）。板梁间衬以扁平内皮细胞形成窦样血管间隙。核增大，核浆比升高，核仁明显，可见双核或多核细胞。可见胆汁产生（胞浆内或毛细胆管内棕绿色色素，是HCC最特异的形态学证据）、Mallory-Denk小体和苍白小体。分化好者与正常肝细胞区分困难，需结合Reticulin网架缺失和Glypican-3阳性诊断。分化差者核异型明显、核分裂活跃。",
+    "keyFeatures": [
+      "板状/梁状结构>3层细胞",
+      "HepPar-1/Arginase-1/Glypican-3阳性",
+      "可产生胆汁",
+      "多在肝硬化基础上发生"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "HepPar-1",
+        "result": "阳性",
+        "note": "肝细胞标记"
+      },
+      {
+        "marker": "Arginase-1",
+        "result": "阳性",
+        "note": "最特异肝标记"
+      },
+      {
+        "marker": "Glypican-3",
+        "result": "阳性(70-80%)",
+        "note": "恶性肝细胞标记"
+      },
+      {
+        "marker": "CK7",
+        "result": "通常阴性",
+        "note": "区别于胆管癌"
+      },
+      {
+        "marker": "CK19",
+        "result": "通常阴性",
+        "note": "阳性提示预后差"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Reticulin",
+        "result": "网架消失/缺损",
+        "note": "HCC特征：正常网架结构丧失，板梁>3层细胞"
+      },
+      {
+        "stain": "Masson",
+        "result": "间质纤维化",
+        "note": "背景肝硬化纤维化评估"
+      },
+      {
+        "stain": "PAS",
+        "result": "可见糖原",
+        "note": "PAS-D消化后可显示Mallory-Denk小体"
+      },
+      {
+        "stain": "普鲁士蓝",
+        "result": "可阳性",
+        "note": "评估铁沉积（血色病相关HCC）"
+      }
+    ],
+    "molecularFeatures": "TERT启动子突变最常见(60%)，TP53、CTNNB1(β-catenin)突变也常见。",
+    "differentialDiagnosis": [
+      "cholangiocarcinoma",
+      "hepatic-adenoma",
+      "focal-nodular-hyperplasia"
+    ],
+    "grading": "Edmondson-Steiner分级(I-IV级)",
+    "staging": "BCLC分期系统/AJCC TNM",
+    "prognosis": "早期(BCLC 0-A)5年生存率50-70%；晚期预后差。",
+    "treatment": "早期：手术切除/肝移植/射频消融。中晚期：TACE/索拉非尼/仑伐替尼/阿替利珠单抗+贝伐珠单抗。",
+    "images": [
+      {
+        "url": "/diagrams/tubular.svg",
+        "caption": "HCC 板梁状结构（>3 层）：肿瘤细胞模拟肝板但缺乏正常小叶结构"
+      },
+      {
+        "url": "/diagrams/hcc-gross.svg",
+        "caption": "大体：肝硬化背景上见结节状肿物，切面呈黄褐色伴出血、坏死，可见卫星结节及门静脉分支内癌栓"
+      },
+      {
+        "url": "/diagrams/hcc-trabecular-he-lp.svg",
+        "caption": "低倍（HE）：梁索型生长模式，肿瘤细胞排列成增厚的肝细胞板（≥3 层），被覆衬以扁平内皮细胞的血窦样腔隙"
+      },
+      {
+        "url": "/diagrams/hcc-he-hp.svg",
+        "caption": "高倍（HE）：多角形肿瘤细胞，胞浆嗜酸性，核质比增高，核仁明显，可见胆汁小滴及 Mallory-Denk 小体"
+      },
+      {
+        "url": "/diagrams/hcc-ihc-glypican3.svg",
+        "caption": "IHC（Glypican-3）：肿瘤细胞胞浆弥漫颗粒状阳性，提示肝细胞癌；联合 HepPar-1、Arginase-1 及 CD34 血窦化有助于鉴别诊断"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 原发性肝癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 原发性肝癌诊疗指南（2022年版） (国家卫健委, 2022)",
+      "[国内指南] 中国肿瘤整合诊治指南（CACA）——肝癌 (中国抗癌协会, 2022)",
+      "[国内共识] 原发性肝癌诊疗指南（2024版） (国家卫生健康委员会, 2024)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）原发性肝癌诊疗指南（2024） (中国临床肿瘤学会, 2024)"
+    ]
+  },
+  {
+    "id": "cholangiocarcinoma",
+    "nameZh": "胆管癌",
+    "nameEn": "Cholangiocarcinoma",
+    "aliases": [
+      "肝内胆管癌",
+      "ICC"
+    ],
+    "organ": "liver",
+    "category": "malignant",
+    "epidemiology": "第二常见的原发性肝脏恶性肿瘤，约占原发性肝癌的10-15%。肝内型在西方国家发病率近年持续上升。危险因素包括原发性硬化性胆管炎、肝吸虫感染（华支睾吸虫/泰国肝吸虫，东南亚高发）、胆道结石、肝硬化及慢性肝炎。中位发病年龄约65岁，男女比例接近。",
+    "clinicalFeatures": "黄疸、上腹痛、体重减轻。肝内型多无黄疸。",
+    "grossPathology": "灰白色硬性肿块，边界不清，伴广泛纤维化。",
+    "microscopy": "分化程度不等的腺管结构浸润于丰富的促纤维增生间质（desmoplastic stroma）中，这是胆管癌最显著的组织学特征之一。高分化者形成规则的小腺管或大腺管结构，衬覆柱状黏液上皮，核轻度异型。中分化者腺管不规则，核异型增加，腺腔内可见黏液。低分化者仅残存少量腺管或完全呈实性生长，核深染多形，核分裂活跃。间质纤维化致密，可伴慢性炎细胞浸润。肿瘤周围常见神经侵犯和脉管侵犯。肝内型需与转移性腺癌鉴别（CK7+/CK19+/HepPar-1-/Arginase-1-支持胆管来源）。",
+    "keyFeatures": [
+      "丰富纤维间质中的腺管结构",
+      "CK7+/CK19+/CK20-",
+      "HepPar-1/Arginase-1阴性(区别于HCC)",
+      "IDH1/2突变见于肝内型"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK19",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "HepPar-1",
+        "result": "阴性",
+        "note": "排除HCC"
+      },
+      {
+        "marker": "Arginase-1",
+        "result": "阴性",
+        "note": "排除HCC"
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Masson",
+        "result": "促纤维增生",
+        "note": "显示肿瘤周围丰富的纤维间质"
+      },
+      {
+        "stain": "PAS",
+        "result": "黏液",
+        "note": "腺体内黏液成分显示"
+      },
+      {
+        "stain": "阿利新蓝",
+        "result": "酸性黏多糖",
+        "note": "证实酸性黏液分泌分化"
+      }
+    ],
+    "molecularFeatures": "肝内型：IDH1/2突变(15-20%)、FGFR2融合(10-15%)；肝外型：KRAS突变(40%)。",
+    "differentialDiagnosis": [
+      "hepatocellular-carcinoma"
+    ],
+    "grading": "高/中/低分化",
+    "staging": "AJCC TNM",
+    "prognosis": "预后较差，总体5年生存率10-20%。",
+    "treatment": "手术切除是唯一根治手段。化疗以吉西他滨+顺铂为主。IDH突变者可用ivosidenib，FGFR融合者可用pemigatinib。",
+    "images": [
+      {
+        "url": "/diagrams/tubular.svg",
+        "caption": "胆管癌：在致密纤维间质中浸润生长的腺管结构"
+      },
+      {
+        "url": "/diagrams/cholangiocarcinoma-gross.svg",
+        "caption": "大体：肝内胆管癌呈灰白色质硬肿块，边界不清，切面可见纤维化及胆管扩张"
+      },
+      {
+        "url": "/diagrams/cholangiocarcinoma-low-power.svg",
+        "caption": "低倍（HE）：中-高分化腺癌呈不规则小腺管及管状结构浸润性生长，伴显著促纤维增生性间质反应"
+      },
+      {
+        "url": "/diagrams/cholangiocarcinoma-high-power.svg",
+        "caption": "高倍（HE）：肿瘤细胞呈立方或柱状，核深染、核仁明显，胞浆嗜酸或透明，可见神经周围浸润"
+      },
+      {
+        "url": "/diagrams/cholangiocarcinoma-ihc-ck19.svg",
+        "caption": "IHC（CK19）：肿瘤细胞胞浆弥漫强阳性，联合 CK7 阳性、HepPar-1 阴性支持胆管上皮分化"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] CSCO 胆道恶性肿瘤诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 原发性肝癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内共识] CSCO 胆道恶性肿瘤诊疗指南（2023版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 肝内胆管癌外科治疗中国专家共识（2020版） (中华医学会外科学分会肝脏外科学组, 2020)"
+    ]
+  },
+  {
+    "id": "focal-nodular-hyperplasia",
+    "nameZh": "肝脏局灶性结节增生",
+    "nameEn": "Focal Nodular Hyperplasia",
+    "aliases": [
+      "FNH"
+    ],
+    "organ": "liver",
+    "category": "benign",
+    "epidemiology": "第二常见的肝脏良性肿瘤（仅次于肝血管瘤），年轻女性多见（女男比约8:1），中位年龄约30-40岁。与口服避孕药无明确因果关系。发病率约0.3-3%（影像学偶然发现），多为孤立性结节。",
+    "clinicalFeatures": "多无症状，偶然发现。影像学特征性中央瘢痕。",
+    "grossPathology": "边界清楚的结节，中央星状瘢痕是特征，切面黄褐色。",
+    "microscopy": "结节状增生的肝细胞被纤维间隔分隔成不规则结节状小叶结构。肝细胞形态正常，板梁结构保持（1-2层细胞厚），Reticulin网架完整。中央星状瘢痕含有异常厚壁动脉（壁内纤维肌层增厚）和增生的细胆管反应（CK7阳性的小胆管围绕于纤维间隔中）。无包膜，与周围正常肝实质移行过渡。肝窦内可见Kupffer细胞。Glutamine Synthetase呈特征性地图样不规则阳性（区别于肝腺瘤的弥漫阳性或正常中央静脉周围带状阳性），是诊断FNH最关键的免疫组化特征。",
+    "keyFeatures": [
+      "特征性中央星状瘢痕",
+      "异常厚壁动脉和增生胆管反应",
+      "非肿瘤性增生(血管畸形导致)",
+      "无恶变风险"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Glutamine Synthetase",
+        "result": "地图样阳性",
+        "note": "FNH特征性表达模式"
+      },
+      {
+        "marker": "CK7",
+        "result": "胆管反应阳性",
+        "note": "增生的细胆管"
+      }
+    ],
+    "molecularFeatures": "非克隆性增生，无特征性基因突变。与异常血管畸形的血流改变有关。",
+    "differentialDiagnosis": [
+      "hepatic-adenoma",
+      "hepatocellular-carcinoma"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "预后极好，无恶变风险。",
+    "treatment": "无症状者随访观察即可，有症状的巨大FNH可手术切除。",
+    "images": [
+      {
+        "url": "/diagrams/fnh-gross-central-scar.svg",
+        "caption": "大体：边界清楚的无包膜结节，切面呈分叶状，中央可见星状纤维瘢痕向周边放射分隔实质"
+      },
+      {
+        "url": "/diagrams/fnh-low-power-he.svg",
+        "caption": "低倍（HE）：肝实质被纤维间隔分隔为多个结节，中央瘢痕区含畸形厚壁动脉及胆管反应，无正常汇管区结构"
+      },
+      {
+        "url": "/diagrams/fnh-high-power-ductular-reaction.svg",
+        "caption": "高倍（HE）：纤维间隔边缘可见胆管反应（ductular reaction）及轻度炎细胞浸润，肝细胞板排列规则、无异型"
+      },
+      {
+        "url": "/diagrams/fnh-ihc-gs-maplike.svg",
+        "caption": "IHC（Glutamine Synthetase）：特征性地图样（map-like）阳性表达，沿纤维间隔周围肝细胞呈不规则片状着色，为 FNH 诊断性免疫组化特征"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019"
+    ]
+  },
+  {
+    "id": "hepatic-adenoma",
+    "nameZh": "肝细胞腺瘤",
+    "nameEn": "Hepatocellular Adenoma",
+    "aliases": [
+      "HCA",
+      "肝腺瘤"
+    ],
+    "organ": "liver",
+    "category": "benign",
+    "epidemiology": "罕见良性肝肿瘤，年发病率约3-4/100万。与口服避孕药（长期使用风险增加）、合成类固醇、糖原累积病I/III型和肥胖/代谢综合征相关。育龄女性多见（女男比约10:1），中位年龄约30-40岁。",
+    "clinicalFeatures": "多无症状偶然发现，较大者可出血甚至破裂。罕见恶变为HCC。",
+    "grossPathology": "边界清楚的单发或多发结节，切面黄褐色，可伴出血坏死。无包膜或假包膜。",
+    "microscopy": "单克隆增生的肝细胞呈梁索状排列（1-2层细胞厚），Reticulin网架保存完整（区别于HCC的网架消失）。最重要的结构特征是缺乏门管区（无门静脉、肝动脉和胆管三联体），代之以孤立的厚壁动脉散布于肝实质中。细胞形态温和无明显异型性，核分裂象罕见。HNF1α失活型：肝细胞弥漫脂肪变，L-FABP免疫组化缺失。β-catenin激活型：细胞可有轻度异型、假腺样结构，Glutamine Synthetase弥漫强阳性，有恶变为HCC的风险。炎症型：肝窦扩张伴炎性浸润、SAA/CRP阳性。Glypican-3阴性有助于排除HCC。",
+    "keyFeatures": [
+      "分子分型：HNF1α失活型(L-FABP缺失)/β-catenin激活型(GS弥漫+，有恶变风险)/炎症型(SAA+CRP+)/未分类型",
+      "1-2层细胞厚梁索",
+      "无门管区",
+      "可出血/破裂、恶变(β-catenin型高危)"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "L-FABP",
+        "result": "HNF1α失活型缺失",
+        "note": "分子分型标记"
+      },
+      {
+        "marker": "Glutamine Synthetase",
+        "result": "β-catenin激活型弥漫阳性",
+        "note": "提示恶变风险"
+      },
+      {
+        "marker": "SAA",
+        "result": "炎症型阳性",
+        "note": ""
+      },
+      {
+        "marker": "Glypican-3",
+        "result": "阴性",
+        "note": "区别于HCC"
+      }
+    ],
+    "molecularFeatures": "4种亚型：HNF1A突变、β-catenin(CTNNB1)激活、炎症型(IL6ST/STAT3)、未分类型。β-catenin激活型恶变风险最高。",
+    "differentialDiagnosis": [
+      "hepatocellular-carcinoma",
+      "focal-nodular-hyperplasia"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "良性但可出血、恶变。β-catenin激活型有恶变风险。",
+    "treatment": "停用诱因药物(口服避孕药)。>5cm或β-catenin型建议手术切除。妊娠前切除以防破裂。",
+    "images": [
+      {
+        "url": "/diagrams/hepatic-adenoma-gross.svg",
+        "caption": "大体：肝实质内境界清楚的单发结节，切面呈黄褐色至棕黄色，无包膜或具假包膜，无门静脉及胆管结构，可见灶性出血"
+      },
+      {
+        "url": "/diagrams/hepatic-adenoma-low-power-he.svg",
+        "caption": "低倍（HE）：由类似正常肝细胞的单层或双层肝细胞索构成，无汇管区结构，可见孤立的薄壁动脉（unpaired arteries）散布于瘤组织内"
+      },
+      {
+        "url": "/diagrams/hepatic-adenoma-high-power-he.svg",
+        "caption": "高倍（HE）：肿瘤性肝细胞形态温和，胞浆嗜酸或透明（糖原/脂肪沉积），核圆、核浆比低，无核分裂象，肝板厚度≤2 层细胞"
+      },
+      {
+        "url": "/diagrams/hepatic-adenoma-ihc-lfabp.svg",
+        "caption": "IHC（L-FABP）：HNF1α 失活型腺瘤中 L-FABP 表达缺失，而周围非肿瘤肝组织呈弥漫胞浆强阳性，提示 HNF1A 双等位基因失活亚型"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019"
+    ]
+  },
+  {
+    "id": "liver-metastasis",
+    "nameZh": "肝转移性腺癌",
+    "nameEn": "Metastatic Adenocarcinoma to Liver",
+    "aliases": [
+      "转移癌",
+      "肝转移"
+    ],
+    "organ": "liver",
+    "category": "malignant",
+    "epidemiology": "肝转移癌远比原发性肝癌常见（西方国家肝恶性肿瘤中转移癌占比>90%），最常见的原发灶为结直肠、胰腺、胃、乳腺和肺。发病率取决于原发肿瘤类型和分期，结直肠癌约50%在病程中出现肝转移。无特定年龄或性别偏好，随原发肿瘤分布而定。",
+    "clinicalFeatures": "可无症状，或表现为原发肿瘤的症状 + 肝大 / 黄疸 / 腹水。影像上多发结节常见。",
+    "grossPathology": "多发灰白色结节，多有中央脐凹，边界相对清楚，与周围肝实质差异明显。",
+    "microscopy": "组织形态与原发灶一致，是判断来源的首要线索。结直肠来源表现为不规则腺管结构伴坏死（dirty necrosis），高柱状上皮细胞核拉长、假复层排列。乳腺来源可见巢状或条索状排列的肿瘤细胞，需注意小叶癌的列兵样浸润。肺腺癌来源可见腺泡或乳头状结构。转移灶常沿肝窦和门管区扩散（窦样浸润），也可形成边界清楚的实性结节伴中央坏死。肿瘤周围肝实质常见受压萎缩。HepPar-1/Arginase-1阴性排除HCC后，需用CK7/CK20/CDX2/TTF-1/GATA3/PAX8等免疫panel系统判断原发灶来源。",
+    "keyFeatures": [
+      "肝内多发结节（常&gt;原发性 HCC）",
+      "中央脐凹是影像学特征",
+      "需要&quot;免疫 panel&quot;系统判断原发灶（CK7/CK20/CDX2/TTF-1/GATA3/PAX8 等）",
+      "HepPar-1 / Arginase-1 阴性排除 HCC"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK7",
+        "result": "可变",
+        "note": "与 CK20 组合判断来源"
+      },
+      {
+        "marker": "CK20",
+        "result": "结直肠 + 上消化道常阳性",
+        "note": ""
+      },
+      {
+        "marker": "CDX2",
+        "result": "下消化道 + 胰胆管常阳性",
+        "note": ""
+      },
+      {
+        "marker": "TTF-1",
+        "result": "肺腺癌阳性",
+        "note": ""
+      },
+      {
+        "marker": "GATA3",
+        "result": "乳腺 / 尿路上皮阳性",
+        "note": ""
+      },
+      {
+        "marker": "HepPar-1",
+        "result": "阴性",
+        "note": "排除 HCC"
+      }
+    ],
+    "molecularFeatures": "取决于原发灶。结直肠转移常做 RAS/BRAF/MSI 检测以指导治疗。",
+    "differentialDiagnosis": [
+      "hepatocellular-carcinoma",
+      "cholangiocarcinoma"
+    ],
+    "grading": "按原发灶评估",
+    "staging": "属原发灶 IV 期",
+    "prognosis": "取决于原发灶、肝受累程度和治疗反应。结直肠癌孤立性肝转移者手术切除可显著改善生存。",
+    "treatment": "原发灶治疗 ± 肝部分切除 / 射频 / HAI / 局部治疗。",
+    "images": [
+      {
+        "url": "/diagrams/liver-metastasis-gross.svg",
+        "caption": "大体：肝实质内多发圆形灰白色结节，边界相对清楚，部分结节中央可见脐凹样坏死（典型转移癌'牛眼征'）"
+      },
+      {
+        "url": "/diagrams/liver-metastasis-low-power.svg",
+        "caption": "低倍（HE）：肝小叶结构内见异型腺体团巢呈推挤性或浸润性生长，与周围非肿瘤性肝组织分界清楚，可见残存汇管区结构"
+      },
+      {
+        "url": "/diagrams/liver-metastasis-high-power.svg",
+        "caption": "高倍（HE）：异型腺管结构衬覆柱状上皮，核大深染、核仁明显，腔内可见'脏'性坏死碎屑（提示结直肠来源），周围伴促纤维结缔组织增生"
+      },
+      {
+        "url": "/diagrams/liver-metastasis-ihc-ck20-cdx2.svg",
+        "caption": "IHC（CK20 + CDX2）：肿瘤细胞胞浆 CK20 弥漫强阳性、核 CDX2 弥漫阳性，CK7 阴性，支持结直肠腺癌肝转移；非肿瘤性肝细胞 HepPar-1 阳性作内对照"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] 中国结直肠癌肝转移诊断和综合治疗指南（2023版） (中华医学会外科学分会胃肠外科学组, 2023)",
+      "[国内指南] CSCO 结直肠癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] 结直肠癌肝转移诊断和综合治疗指南（2023版） (中国医师协会外科医师分会 / 中华医学会外科学分会, 2023)",
+      "[国内共识] CSCO 结直肠癌诊疗指南（2024版） (中国临床肿瘤学会（CSCO）, 2024)"
+    ]
+  },
+  {
+    "id": "nash",
+    "nameZh": "非酒精性脂肪性肝炎",
+    "nameEn": "Nonalcoholic Steatohepatitis",
+    "aliases": [
+      "NASH",
+      "MASH",
+      "代谢相关脂肪性肝炎"
+    ],
+    "organ": "liver",
+    "category": "inflammatory",
+    "epidemiology": "全球最常见的慢性肝病之一，影响全球约25%的成人（NAFLD谱），其中约20-30%为NASH。与肥胖、2型糖尿病、代谢综合征密切相关。近年改称MASH（代谢相关脂肪性肝炎），发病率随全球肥胖流行呈上升趋势，男女均可发病，中位年龄约50岁。",
+    "clinicalFeatures": "多无症状，体检发现 ALT / AST 轻度升高。少数可进展为肝硬化及 HCC。",
+    "grossPathology": "肝脏肿大、边缘钝圆、切面黄色（脂肪变）。",
+    "microscopy": "低倍镜下，非酒精性脂肪性肝炎（NASH）的病变以肝小叶中央区（3 带）为主，表现为大泡性脂肪变性、小叶内炎症、肝细胞气球样变及窦周纤维化四联征。肝细胞内可见大小不等的脂滴，以单个大脂滴将细胞核挤至边缘的大泡性为主，亦可混合中、小泡性脂变，累及 ≥5% 的肝细胞方可诊断脂肪肝。气球样变是 NASH 区别于单纯性脂肪变（NAFL）的关键形态学特征：受累肝细胞体积显著增大，胞浆疏松淡染呈网状或絮状，细胞轮廓变圆，常见 Mallory-Denk 小体（嗜酸性、不规则绳索状胞浆内包涵体），免疫组化 CK8/18 丢失、p62 和泛素阳性有助于识别。小叶内炎症以中性粒细胞和淋巴细胞混合浸润为特征，常围绕气球样变肝细胞形成”卫星现象”，汇管区可有轻-中度慢性炎症浸润。窦周/细胞周纤维化呈典型”鸡笼样（chicken-wire）”分布于 3 带中央静脉周围，Masson 三色或网状纤维染色显示纤维沿肝窦铺展，随病程进展可出现桥接纤维化乃至肝硬化。核特征方面，肝细胞核可见糖原核（空泡状透明核，以 1 带为著）、核大小不等及偶见双核。其他辅助所见包括脂肪肉芽肿、巨线粒体（胞浆内嗜酸性圆形小体）及轻度铁沉积。分级/分期采用 NAS 评分（脂变 0–3、小叶炎症 0–3、气球样变 0–2，总分 ≥5 支持 NASH）及 Brunt/SAF 分期（F0–F4）。鉴别诊断需与酒精性脂肪性肝炎（ASH）区分：后者气球样变和 Mallory-Denk 小体更显著、胆汁淤积及静脉周围硬化更常见，需结合饮酒史；与自身免疫性肝炎鉴别的关键在于后者以界面性肝炎、浆细胞浸润和玫瑰花结形成为主，而汇管区界面炎和小叶中央 3 带损伤的分布差异是 NASH 的重要识别线索。",
+    "keyFeatures": [
+      "脂肪变 + 炎症 + 气球样变三联征（区别于单纯脂肪肝）",
+      "典型纤维化模式：3 带周围 → 桥接 → 肝硬化",
+      "Mallory-Denk 小体（嗜酸性细胞质内聚集）",
+      "评分系统：NAS / SAF / FLIP",
+      "是 HCC 的重要危险因素，尤其在糖尿病人群"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Ubiquitin",
+        "result": "Mallory-Denk 小体阳性",
+        "note": ""
+      },
+      {
+        "marker": "K8/18",
+        "result": "Mallory-Denk 小体阳性",
+        "note": ""
+      }
+    ],
+    "specialStainProfile": [
+      {
+        "stain": "Masson",
+        "result": "纤维化分期",
+        "note": "评估肝纤维化程度和分布模式"
+      },
+      {
+        "stain": "普鲁士蓝",
+        "result": "铁沉积",
+        "note": "评估肝内铁沉积情况"
+      },
+      {
+        "stain": "油红O",
+        "result": "脂肪定量",
+        "note": "冰冻切片定量评估脂肪变程度"
+      }
+    ],
+    "molecularFeatures": "PNPLA3、TM6SF2 等基因多态性影响易感性。",
+    "differentialDiagnosis": [
+      "hepatocellular-carcinoma"
+    ],
+    "grading": "NAS 0-8 分：脂肪变 0-3 + 炎症 0-3 + 气球样变 0-2",
+    "staging": "纤维化 F0–F4（F4 = 肝硬化）",
+    "prognosis": "约 20% 单纯脂肪肝进展为 NASH，NASH 10–20 年累计肝硬化 10–30%。",
+    "treatment": "减重 ≥ 10%、控制代谢风险，新近 resmetirom（THR-β agonist）获批用于 NASH 伴纤维化。",
+    "images": [
+      {
+        "url": "/diagrams/nash-low-power-steatosis.svg",
+        "caption": "低倍（HE）：肝小叶结构紊乱，大泡性脂肪变性以3区（中央静脉周围）为主，伴小叶内散在炎细胞浸润"
+      },
+      {
+        "url": "/diagrams/nash-ballooning-mallory.svg",
+        "caption": "高倍（HE）：肝细胞气球样变，胞浆疏松淡染，可见嗜酸性Mallory-Denk小体，周围中性粒细胞卫星现象"
+      },
+      {
+        "url": "/diagrams/nash-pericellular-fibrosis.svg",
+        "caption": "高倍（Masson三色）：3区窦周/细胞周'鸡笼样'纤维化，蓝染胶原沿Disse间隙沉积，为NASH特征性纤维化模式"
+      },
+      {
+        "url": "/diagrams/nash-ck18-ihc.svg",
+        "caption": "IHC（CK8/18）：气球样变肝细胞内角蛋白细胞骨架丢失呈阴性，背景肝细胞胞浆阳性，辅助识别气球样变"
+      }
+    ],
+    "references": [
+      "EASL Clinical Practice Guidelines on NAFLD 2024",
+      "WHO Classification of Digestive System Tumours, 5th Edition",
+      "[国内指南] 非酒精性脂肪性肝病防治指南（2018更新版） (中华医学会肝病学分会, 2018)",
+      "[国内指南] 非酒精性脂肪性肝病防治指南（2024年版） (中华医学会肝病学分会, 2024)",
+      "[国内共识] 非酒精性脂肪性肝病防治指南（2018 更新版） (中华医学会肝病学分会脂肪肝和酒精性肝病学组, 2018)",
+      "[国内共识] 非酒精性脂肪性肝病与相关代谢紊乱诊疗共识（第二版） (中华医学会内分泌学分会, 2018)"
+    ]
+  },
+  {
+    "id": "combined-hcc-cca",
+    "nameZh": "混合型肝细胞-胆管细胞癌",
+    "nameEn": "Combined Hepatocellular-Cholangiocarcinoma",
+    "aliases": [
+      "cHCC-CCA",
+      "混合型肝癌"
+    ],
+    "organ": "liver",
+    "category": "malignant",
+    "epidemiology": "占原发性肝癌约2-5%，发病危险因素与HCC和CCA重叠，包括HBV/HCV感染、肝硬化、原发性硬化性胆管炎等，男性多见。",
+    "clinicalFeatures": "临床表现类似HCC或CCA，包括右上腹痛、肝大、体重减轻、黄疸。AFP可升高（HCC成分）或CA19-9升高（CCA成分）。影像学表现不典型，常需活检确诊。",
+    "grossPathology": "单发或多发肝内肿块，切面灰白至灰黄色，质地不均匀，可见HCC样区域（黄褐色或绿色胆汁染色）与CCA样区域（灰白色致密纤维化）共存。",
+    "microscopy": "镜下见肿瘤由肝细胞癌（HCC）和肝内胆管细胞癌（iCCA）两种成分在同一瘤结节内混合存在，两者之间可见移行过渡区或相互交织的分界。HCC 成分呈梁索状、小梁状或假腺样排列，梁间被衬覆内皮的血窦样血管分隔，瘤细胞呈多边形，胞浆丰富嗜酸性或略嗜碱性，可含脂滴、胆色素或 Mallory-Denk 小体；核圆形居中，染色质细颗粒状，核仁嗜酸性显著，核质比增高，可见胆汁分泌及毛细胆管样腔隙。iCCA 成分呈腺管状、小管状或筛状结构，衬覆立方或柱状上皮，胞浆相对淡染或透亮，常伴明显的促纤维组织增生性间质反应（desmoplastic stroma），腔内可见嗜酸性黏液而非胆汁，黏液卡红及 AB-PAS 染色阳性。过渡区细胞形态介于两者之间，可呈巢状、梁-管混合结构，提示双向分化。核分级多为中-高级别，核多形性明显，核分裂象易见，可伴凝固性坏死及微血管侵犯，部分病例于腺样成分周围可见干细胞样（stem cell-like）小细胞灶，胞体小、核质比高、呈巢团状排列。免疫组化上 HCC 区 HepPar-1、Arginase-1、Glypican-3 及 pCEA/CD10 毛细胆管样阳性，iCCA 区 CK7、CK19、MUC1 阳性，过渡细胞可共表达上述标记及 EpCAM、CD56、CK19 等祖细胞标志。鉴别诊断：（1）低分化 HCC 伴假腺样结构——仅表达肝细胞标志、腔内为胆汁而非黏液、缺乏真性腺腔与促纤维间质；（2）肝内胆管细胞癌伴嗜酸性变——全程 CK7/CK19 弥漫阳性、HepPar-1/Arginase-1 阴性、无梁索状血窦结构及胆汁分泌，可资区别。诊断须在两种成分均占一定比例（通常≥肿瘤的少量可辨识区域）并排除碰撞瘤后方可成立。",
+    "keyFeatures": [
+      "同一肿瘤内同时含HCC和CCA两种明确成分",
+      "HCC成分：HepPar-1+/Arginase-1+/GPC-3+",
+      "CCA成分：CK7+/CK19+/MUC1+",
+      "可含干细胞表型中间区域（CK19+/EpCAM+）",
+      "预后介于HCC和CCA之间，手术是唯一根治手段"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "HepPar-1",
+        "result": "HCC成分阳性",
+        "note": "肝细胞分化标记"
+      },
+      {
+        "marker": "Arginase-1",
+        "result": "HCC成分阳性",
+        "note": "最特异肝细胞标记"
+      },
+      {
+        "marker": "GPC-3",
+        "result": "HCC成分阳性",
+        "note": "恶性肝细胞标记"
+      },
+      {
+        "marker": "CK7",
+        "result": "CCA成分阳性",
+        "note": "胆管分化标记"
+      },
+      {
+        "marker": "CK19",
+        "result": "CCA成分阳性",
+        "note": "胆管分化标记"
+      },
+      {
+        "marker": "EpCAM",
+        "result": "干细胞区域阳性",
+        "note": "干细胞/祖细胞标记"
+      }
+    ],
+    "molecularFeatures": "分子特征兼具HCC和CCA的改变：TERT启动子突变、TP53突变（HCC样）、IDH1/2突变、FGFR2融合（CCA样）。基因组分析显示为克隆性起源。",
+    "differentialDiagnosis": [
+      "hepatocellular-carcinoma",
+      "cholangiocarcinoma",
+      "liver-metastasis"
+    ],
+    "grading": "按各成分分别评估分化程度",
+    "staging": "AJCC TNM（按肝内胆管癌分期系统）",
+    "prognosis": "预后介于HCC和CCA之间，总体5年生存率约20-35%，较纯HCC差。CCA成分比例越高预后越差。",
+    "treatment": "手术切除（R0切除）是唯一根治手段。肝移植效果不确定。化疗方案参考CCA（吉西他滨+顺铂），或结合HCC方案（阿替利珠单抗+贝伐珠单抗）。",
+    "images": [
+      {
+        "url": "/diagrams/combined-hcc-cca-gross.svg",
+        "caption": "大体：肝切面见单一肿块，内部可见两种质地区域——褐色出血坏死区（HCC 样）与灰白质硬区（CCA 样），境界欠清"
+      },
+      {
+        "url": "/diagrams/combined-hcc-cca-low-power.svg",
+        "caption": "低倍（HE）：同一肿瘤内双相分化，一侧为梁索状肝细胞癌样结构，另一侧为腺管状胆管癌样结构伴促纤维结缔组织增生，两种成分相互移行"
+      },
+      {
+        "url": "/diagrams/combined-hcc-cca-high-power.svg",
+        "caption": "高倍（HE）：HCC 成分示多角形瘤细胞排列成梁索、胞质嗜酸、核仁明显；CCA 成分示立方状瘤细胞形成不规则腺管、管腔内可见黏液分泌"
+      },
+      {
+        "url": "/diagrams/combined-hcc-cca-ihc.svg",
+        "caption": "IHC（HepPar-1 / CK19）：HCC 区域 HepPar-1 阳性而 CK19 阴性；CCA 区域 CK19 / CK7 阳性而 HepPar-1 阴性，证实双向分化"
+      }
+    ],
+    "references": [
+      "WHO Classification of Digestive System Tumours, 5th Edition, 2019",
+      "[国内指南] 原发性肝癌诊疗指南（2022年版） (国家卫健委, 2022)",
+      "[国内指南] CSCO 原发性肝癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] 原发性肝癌诊疗指南（2022年版） (国家卫生健康委员会, 2022)",
+      "[国内共识] 原发性肝癌规范化病理诊断指南（2015年版） (中华医学会病理学分会 / 中国抗癌协会肝癌专业委员会, 2015)"
+    ]
+  }
 ]

@@ -1,13 +1,860 @@
 [
-  {"id":"papillary-thyroid-carcinoma","nameZh":"甲状腺乳头状癌","nameEn":"Papillary Thyroid Carcinoma","aliases":["PTC","乳头状癌"],"organ":"thyroid","category":"malignant","epidemiology":"最常见的甲状腺恶性肿瘤，约占所有甲状腺癌的80-85%。女性显著多于男性（女:男=3:1），30-50岁为发病高峰。全球发病率持续上升（部分归因于影像学筛查的普及），年发病率约10-15/10万。儿童期头颈部放射线暴露和碘充足地区是已知危险因素。","clinicalFeatures":"无痛性甲状腺结节，可伴颈部淋巴结肿大。超声示低回声、微钙化、边界不规则。","grossPathology":"白色硬性肿物，边界不规则，切面可见砂粒体样钙化。","microscopy":"经典型以真性乳头状结构为主（具纤维血管轴心的分支乳头），表面覆盖单层至假复层肿瘤细胞。核特征是诊断的核心：核增大重叠拥挤、毛玻璃样核透亮(Orphan Annie eyes，核内染色质边缘化)、核沟（纵行线状核膜内折）、核内假包涵体（胞浆突入核内形成的嗜酸性圆形包涵体）。砂粒体（同心层状钙化小体）高度提示PTC。组织学亚型包括经典型、滤泡亚型、高细胞亚型（细胞高度为宽度3倍、胞浆嗜酸性，侵袭性更强）、弥漫硬化型和柱状细胞亚型等。","keyFeatures":["特征性核改变(毛玻璃核/核沟/核内假包涵体)","砂粒体(同心层状钙化)","BRAF V600E突变(45-60%)","淋巴道转移为主"],"ihcProfile":[{"marker":"TTF-1","result":"阳性","note":"甲状腺标记"},{"marker":"Thyroglobulin","result":"阳性","note":"滤泡分化标记"},{"marker":"CK19","result":"弥漫强阳性","note":"PTC中特征性弥漫强表达"},{"marker":"BRAF V600E","result":"约60%阳性","note":"免疫组化可检测突变蛋白"}],"molecularFeatures":"BRAF V600E突变最常见(45-60%)，RET/PTC融合(10-20%)，RAS突变(10-15%)。BRAF突变与较高侵袭性和RAI抵抗相关。","differentialDiagnosis":["follicular-thyroid-carcinoma","follicular-adenoma"],"grading":"不常规分级","staging":"AJCC TNM第8版(55岁为年龄分界)","prognosis":"预后极好，10年生存率>95%。少数高危亚型(高细胞亚型/柱状细胞亚型)预后较差。","treatment":"手术(甲状腺全切或腺叶切除)+放射性碘(RAI)治疗+TSH抑制治疗。BRAF突变的晚期难治性可用达拉非尼+曲美替尼。","images":[{"url":"/diagrams/papillary.svg","caption":"真性乳头结构（纤维血管轴心）是 PTC 的基本生长模式"},{"url":"/diagrams/psammoma-body.svg","caption":"砂粒体：同心圆状层状钙化，是 PTC 非常有帮助的&quot;线索&quot;"}],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"follicular-thyroid-carcinoma","nameZh":"甲状腺滤泡癌","nameEn":"Follicular Thyroid Carcinoma","aliases":["FTC"],"organ":"thyroid","category":"malignant","epidemiology":"第二常见的甲状腺恶性肿瘤，约占所有甲状腺癌的10-15%。女性多于男性（约3:1），好发年龄40-60岁，较PTC略偏大。碘缺乏地区发病率更高。年发病率约1-3/10万，既往头颈部放射线暴露是危险因素。","clinicalFeatures":"甲状腺结节，FNA不能明确诊断(与滤泡腺瘤细胞学相同)。血行转移多见(骨、肺)。","grossPathology":"有包膜的肿物，需仔细取材观察包膜和血管侵犯。","microscopy":"肿瘤以滤泡结构为主（微滤泡、正常滤泡或大滤泡），由均匀的立方至低柱状上皮细胞构成，核圆形，染色质深，核仁小，胞浆嗜酸性。细胞学上不能与滤泡腺瘤区分，诊断完全依赖于组织学上的包膜侵犯（肿瘤细胞穿透全层纤维包膜）和/或血管侵犯（包膜内或包膜外血管腔内肿瘤栓子，需与固定伪影鉴别）。微浸润型仅有局灶包膜侵犯，广泛浸润型则包膜广泛破坏伴弥漫血管侵犯，间质可有纤维化和出血。","keyFeatures":["诊断依赖包膜和/或血管侵犯","细胞学(FNA)无法鉴别良恶性","血行转移(骨/肺)，淋巴结转移少见","RAS突变或PAX8-PPARγ融合"],"ihcProfile":[{"marker":"TTF-1","result":"阳性","note":""},{"marker":"Thyroglobulin","result":"阳性","note":""},{"marker":"CK19","result":"阴性或局灶弱阳","note":"区别于PTC"}],"molecularFeatures":"RAS突变(NRAS/HRAS/KRAS，40-50%)和PAX8-PPARγ融合(30-35%)是特征性改变。","differentialDiagnosis":["follicular-adenoma","papillary-thyroid-carcinoma"],"grading":"微浸润型/包膜内血管侵犯型/广泛浸润型","staging":"AJCC TNM","prognosis":"微浸润型预后极好(接近100%生存)；广泛浸润型预后差。","treatment":"甲状腺全切+RAI治疗。晚期可用仑伐替尼/索拉非尼。","images":[{"url":"/diagrams/follicular.svg","caption":"滤泡结构由单层上皮环绕胶质组成——滤泡腺瘤与滤泡癌的共同基础"}],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"medullary-thyroid-carcinoma","nameZh":"甲状腺髓样癌","nameEn":"Medullary Thyroid Carcinoma","aliases":["MTC"],"organ":"thyroid","category":"malignant","epidemiology":"约占甲状腺癌的3-5%，来源于甲状腺C细胞（滤泡旁细胞）。约75%为散发性（中位年龄50岁），25%为遗传性（MEN2A/MEN2B综合征，发病更早，可在20-30岁甚至儿童期发生）。女性略多于男性（散发性），遗传性男女比接近1:1。年发病率约0.5-1/10万。","clinicalFeatures":"甲状腺结节，血清降钙素和CEA升高。MEN2者可伴嗜铬细胞瘤和甲状旁腺亢进。","grossPathology":"灰白色至黄色硬性肿物，边界较清。","microscopy":"肿瘤由圆形至梭形、多角形的C细胞组成，呈实性巢状、束状、小梁状或散在排列。细胞核圆至卵圆，染色质呈'胡椒盐'状（神经内分泌型），核仁小，胞浆含细颗粒，嗜酸性至双嗜性。间质含特征性淀粉样物质沉积（刚果红阳性，偏振光下呈苹果绿双折射），为降钙素前体蛋白聚集形成。间质可伴纤维化。部分病例可见多核巨细胞和钙化。需注意变异型形态：乳头状、滤泡样、小细胞型和嗜酸细胞型，可导致误诊。","keyFeatures":["C细胞来源，分泌降钙素","间质淀粉样沉积是特征","Calcitonin/CgA/Syn阳性，TTF-1阳性","RET原癌基因点突变(遗传性100%，散发性50%)"],"ihcProfile":[{"marker":"Calcitonin","result":"阳性","note":"最特异标记"},{"marker":"Chromogranin A","result":"阳性","note":""},{"marker":"Synaptophysin","result":"阳性","note":""},{"marker":"CEA","result":"阳性","note":""},{"marker":"TTF-1","result":"阳性","note":""},{"marker":"Thyroglobulin","result":"阴性","note":"C细胞不表达"}],"molecularFeatures":"RET原癌基因激活突变：遗传性100%(MEN2A: 外显子10/11密码子634最常见；MEN2B: M918T)，散发性约50%。","differentialDiagnosis":["papillary-thyroid-carcinoma","anaplastic-thyroid-carcinoma"],"grading":"不常规分级","staging":"AJCC TNM","prognosis":"总体10年生存率约75%。早期手术可治愈。","treatment":"甲状腺全切+中央区淋巴结清扫。RAI无效(C细胞不摄碘)。晚期可用凡德他尼/卡博替尼(RET抑制剂)或selpercatinib/pralsetinib(选择性RET抑制剂)。","images":[],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"follicular-adenoma","nameZh":"甲状腺滤泡腺瘤","nameEn":"Follicular Adenoma","aliases":["FA","腺瘤"],"organ":"thyroid","category":"benign","epidemiology":"常见的甲状腺良性肿瘤，女性显著多于男性（约4:1），好发于30-50岁。在碘缺乏地区更为常见。人群中甲状腺结节的超声检出率可达50%以上，其中多数为良性滤泡性病变。无明显种族差异。","clinicalFeatures":"孤立性、缓慢生长的无痛性结节。FNA不能区分滤泡腺瘤与滤泡癌。","grossPathology":"有完整包膜的孤立结节，切面均匀红褐色。","microscopy":"肿瘤由大小不等的滤泡结构组成（微滤泡型、正常滤泡型或大滤泡型），滤泡腔内含胶质，上皮为均匀的立方至低柱状细胞。核圆形、大小一致，染色质均匀，核仁小而不明显，无PTC样核特征。完整的纤维包膜将肿瘤与周围正常甲状腺组织分隔。最关键的诊断标准是无包膜侵犯和无血管侵犯——这是与滤泡癌鉴别的唯一可靠依据。需多处取材（每1cm肿瘤至少取1个蜡块）以充分评估包膜完整性。间质可见水肿或出血。","keyFeatures":["完整包膜","纤维包膜内的滤泡结构","无包膜和血管侵犯(区别于滤泡癌)","FNA无法区分良恶性"],"ihcProfile":[{"marker":"TTF-1","result":"阳性","note":""},{"marker":"Thyroglobulin","result":"阳性","note":""},{"marker":"CK19","result":"阴性或局灶","note":"区别于PTC"},{"marker":"HBME-1","result":"阴性","note":""}],"molecularFeatures":"RAS突变见于部分病例。PAX8-PPARγ融合罕见。","differentialDiagnosis":["follicular-thyroid-carcinoma","papillary-thyroid-carcinoma"],"grading":"不适用(良性)","staging":"不适用","prognosis":"良性，预后极好。","treatment":"手术腺叶切除是诊断性也是治疗性处理(排除滤泡癌)。","images":[{"url":"/diagrams/follicular.svg","caption":"有完整包膜的滤泡性肿瘤需仔细评估包膜和血管侵犯以区分腺瘤与癌"}],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"anaplastic-thyroid-carcinoma","nameZh":"甲状腺未分化癌","nameEn":"Anaplastic Thyroid Carcinoma","aliases":["ATC","间变性癌"],"organ":"thyroid","category":"malignant","epidemiology":"罕见但极恶性的甲状腺癌，约占所有甲状腺癌的1-2%。好发于老年人，中位年龄65-70岁，女性略多于男性（约1.5:1）。常在长期存在的分化型甲状腺癌或结节性甲状腺肿基础上去分化而来。年发病率约0.1-0.2/10万，碘缺乏地区更常见。","clinicalFeatures":"快速增大的颈部肿块，伴声音嘶哑、呼吸困难、吞咽困难。就诊时常已累及周围结构。","grossPathology":"大的浸润性灰白色肿物，可伴广泛出血坏死。","microscopy":"高度多形性肿瘤细胞弥漫浸润并破坏甲状腺实质，可呈三种主要形态：梭形细胞型（肉瘤样，束状排列）、多形性巨细胞型（怪异大细胞，含多个不规则核）和上皮样型（片状排列，类似癌）。广泛的地图样坏死是突出特征。核分裂象极为活跃，包括大量病理性核分裂。血管侵犯普遍，可见肿瘤细胞浸润甲状腺周围软组织和邻近器官。肿瘤完全失去滤泡分化特征，但仔细寻找可能发现残存的分化型癌成分（PTC或FTC），提示去分化来源。中性粒细胞浸润常见。","keyFeatures":["高度恶性的未分化/去分化形态","广泛坏死+大量核分裂","可来自分化型甲状腺癌去分化","Thyroglobulin常阴性","BRAF V600E突变常见(40%)"],"ihcProfile":[{"marker":"PAX8","result":"阳性(可能部分保留)","note":"甲状腺源标记"},{"marker":"TTF-1","result":"通常阴性","note":"去分化"},{"marker":"Thyroglobulin","result":"阴性","note":"去分化"},{"marker":"p53","result":"突变型","note":""},{"marker":"Ki-67","result":">50%","note":"极高增殖"}],"molecularFeatures":"TP53突变、BRAF V600E突变(40%)、TERT启动子突变常见。可由分化型癌去分化而来(保留原突变)。","differentialDiagnosis":["papillary-thyroid-carcinoma","medullary-thyroid-carcinoma"],"grading":"均为高级别","staging":"AJCC TNM(所有ATC均为IV期)","prognosis":"极差，中位生存<6个月。","treatment":"多学科综合治疗：手术(如可能)+放化疗。BRAF V600E突变者可用达拉非尼+曲美替尼显著改善预后。","images":[],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"hashimoto-thyroiditis","nameZh":"桥本甲状腺炎","nameEn":"Hashimoto Thyroiditis","aliases":["慢性淋巴细胞性甲状腺炎","CLT"],"organ":"thyroid","category":"inflammatory","epidemiology":"最常见的自身免疫性甲状腺疾病，也是甲状腺功能减退最常见的原因。女性显著多于男性（女:男=10-20:1），好发于30-50岁，但各年龄段均可发生。在碘充足地区患病率约5-10%（女性），日本和欧美地区高发。常与其他自身免疫疾病共存（1型糖尿病、Addison病等），有明显家族聚集性。","clinicalFeatures":"甲状腺弥漫性肿大，质地硬，抗TPO抗体和抗TG抗体阳性。可导致甲减。","grossPathology":"甲状腺弥漫肿大，切面灰白色，分叶状，质韧。","microscopy":"甲状腺实质广泛破坏，被密集的淋巴细胞和浆细胞浸润替代，形成显著的淋巴滤泡及生发中心（继发性淋巴滤泡）。残存的滤泡上皮发生嗜酸性变（Hürthle细胞/嗜酸细胞化生）：细胞体积增大，胞浆充满嗜酸性颗粒状线粒体，核增大圆形，核仁明显。正常甲状腺滤泡萎缩变小，胶质减少。间质纤维化可从轻到重不等。晚期可见广泛纤维化替代甲状腺实质（纤维化变异型）。Hürthle细胞可呈乳头状增生，需注意与PTC鉴别。","keyFeatures":["弥漫性淋巴细胞浸润伴生发中心","滤泡上皮嗜酸性变(Hürthle细胞)","甲状腺功能减退最常见原因","轻度增加甲状腺淋巴瘤和PTC风险"],"ihcProfile":[{"marker":"CD20","result":"B细胞浸润阳性","note":"生发中心"},{"marker":"CD3","result":"T细胞浸润阳性","note":""},{"marker":"IgG4","result":"部分升高","note":"需排除IgG4相关疾病"}],"molecularFeatures":"自身免疫机制，与HLA-DR3/DR5相关。可伴其他自身免疫疾病(1型糖尿病、Addison病等)。","differentialDiagnosis":["follicular-adenoma","papillary-thyroid-carcinoma"],"grading":"不适用","staging":"不适用","prognosis":"慢性病程，多数需长期左甲状腺素替代治疗。极少数发展为甲状腺淋巴瘤。","treatment":"甲状腺功能减退者左甲状腺素替代治疗。","images":[],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"niftp","nameZh":"具有乳头状癌核特征的非浸润性滤泡性肿瘤","nameEn":"Noninvasive Follicular Thyroid Neoplasm with Papillary-like Nuclear Features","aliases":["NIFTP"],"organ":"thyroid","category":"other","epidemiology":"2016年由Nikiforov等提出的新分类实体，从既往诊断为PTC滤泡亚型（包膜内/非浸润性）的病例中重新归类而来，约占既往PTC诊断的10-20%。各年龄段均可发生，女性多见（约3:1），中位年龄约40-50岁。全球分布，碘缺乏和碘充足地区均可见。","clinicalFeatures":"多为孤立、有包膜、临床惰性的甲状腺结节。","grossPathology":"有完整包膜的圆形或卵圆形结节，切面均匀棕褐色。","microscopy":"**诊断 3 要素**：\n1. 有包膜 / 边界清楚的滤泡生长模式\n2. 具有 PTC 核特征（核增大、拥挤、毛玻璃样、核沟）\n3. 无包膜侵犯、无血管侵犯、无真性乳头、无砂粒体、肿瘤性坏死 & 高核分裂象均不允许\n\n满足以上才能诊断为 NIFTP。","keyFeatures":["既不是腺瘤也不是经典癌的中间性肿瘤","有 PTC 核特征但完全无侵袭","诊断严格依赖充分取材以排除包膜/血管侵犯","报告中使用&quot;肿瘤&quot;而非&quot;癌&quot;有助于避免过度治疗","预后极好，仅需腺叶切除即可"],"ihcProfile":[{"marker":"TTF-1","result":"阳性","note":""},{"marker":"Thyroglobulin","result":"阳性","note":""},{"marker":"CK19","result":"可阳性","note":"较 PTC 为弱"},{"marker":"HBME-1","result":"可阳性","note":""}],"molecularFeatures":"以 RAS 突变为主（类似滤泡癌谱系），BRAF V600E 罕见。","differentialDiagnosis":["papillary-thyroid-carcinoma","follicular-adenoma","follicular-thyroid-carcinoma"],"grading":"不适用","staging":"不适用","prognosis":"预后极好，复发率 < 1%。","treatment":"腺叶切除即可，无需 RAI 或 TSH 抑制。","images":[{"url":"/diagrams/follicular.svg","caption":"NIFTP 保持滤泡生长模式，但上皮细胞核具有 PTC 核特征"}],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022","Nikiforov YE et al. JAMA Oncol 2016"]},
-  {"id":"graves-disease","nameZh":"Graves 病","nameEn":"Graves Disease","aliases":["弥漫性毒性甲状腺肿","GD"],"organ":"thyroid","category":"inflammatory","epidemiology":"最常见的甲状腺功能亢进原因，约占所有甲亢病例的60-80%。女性是男性的5-10倍，20-40岁为发病高峰。年发病率约20-50/10万（女性），有明显家族倾向和遗传易感性（与HLA-DR3等相关）。吸烟、心理应激和碘摄入过量可为诱因。","clinicalFeatures":"甲亢症状（心悸、多汗、消瘦、手抖）、弥漫性甲状腺肿大、突眼、胫前黏液性水肿。TRAb 阳性。","grossPathology":"甲状腺弥漫、对称性肿大，切面暗红色，质地较软（未经治疗）。","microscopy":"甲状腺滤泡弥漫性增生，滤泡上皮由正常扁平-立方状变为高柱状，细胞核圆形、位于基底部。滤泡腔内胶质显著减少甚至消失，胶质周边出现特征性'扇贝样'吸收空泡（scalloping），反映TSH受体抗体刺激下的过度胶质吸收和摄取。上皮向腔内形成乳头状或伪乳头状皱褶（Sanderson极体），与PTC真性乳头的区别在于缺乏纤维血管轴心。间质可见不同程度的淋巴细胞浸润，偶伴生发中心形成。经抗甲状腺药物治疗后，滤泡可恢复接近正常形态（胶质重新充盈、上皮变低平），形态学解读需结合治疗史。","keyFeatures":["上皮高柱状 + 胶质减少（&quot;扇贝样&quot;空泡）","腔内伪乳头皱褶（与真性 PTC 乳头不同，无纤维血管轴心）","TRAb 抗体介导（TSH 受体激活性自身抗体）","间质淋巴细胞浸润但较桥本轻","术前药物治疗可使形态接近正常"],"ihcProfile":[{"marker":"CD20","result":"B 细胞浸润可见","note":""},{"marker":"TTF-1","result":"阳性","note":""}],"molecularFeatures":"自身免疫性疾病，TRAb 是病因性自身抗体。与 HLA-DR3 等相关。","differentialDiagnosis":["hashimoto-thyroiditis","papillary-thyroid-carcinoma"],"grading":"不适用","staging":"不适用","prognosis":"预后良好。治疗方式包括抗甲状腺药物、RAI、手术。","treatment":"甲巯咪唑 / 丙硫氧嘧啶、放射性碘、手术次全切。眼病需单独处理。","images":[],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"noninvasive-follicular-thyroid-neoplasm-with-papillary-like-nuclear-features","nameZh":"具有乳头状核特征的非浸润性甲状腺滤泡性肿瘤（NIFTP）","nameEn":"Noninvasive Follicular Thyroid Neoplasm with Papillary-like Nuclear Features","aliases":["NIFTP","非浸润性滤泡性甲状腺肿瘤伴乳头状核特征"],"organ":"thyroid","category":"other","epidemiology":"2016年由Nikiforov等提出的新分类实体，从既往诊断为甲状腺乳头状癌滤泡亚型（包膜内/非浸润性）的病例中重新归类而来，约占既往PTC诊断的10-20%。各年龄段均可发生，女性多见。","clinicalFeatures":"通常为影像学偶然发现的孤立性甲状腺结节，超声可表现为等回声至低回声结节，边界清楚。FNA细胞学常报告为Bethesda III-V类（不确定类别）。患者甲状腺功能正常。","grossPathology":"有完整或部分包膜的圆形或卵圆形结节，边界清楚，切面均匀棕褐色至灰白色，质地较周围甲状腺组织稍硬。","microscopy":"诊断需满足严格的纳入与排除标准。纳入标准：(1)有包膜或边界清楚；(2)滤泡生长模式（>99%为滤泡结构，允许极少量微乳头但不允许真性乳头>1%）；(3)具有PTC核特征（核增大、拥挤重叠、毛玻璃样透亮、核沟、核内假包涵体）且核特征评分>=2分（3组特征中至少2组存在）。排除标准：包膜侵犯、血管侵犯、真性乳头（>1%）、砂粒体、实性/小梁/岛状生长>30%、肿瘤性坏死、高核分裂活性(>=3/10HPF)。需充分取材（每1cm肿瘤取1个蜡块）以排除侵犯。","keyFeatures":["严格的纳入/排除标准定义的低风险肿瘤","有PTC核特征但完全无侵袭行为","从\"癌\"重新分类为\"肿瘤\"以避免过度治疗","充分取材是诊断的前提","预后极好，腺叶切除即足够"],"ihcProfile":[{"marker":"CK19","result":"灶状阳性","note":"较经典PTC表达弱且不弥漫"},{"marker":"HBME-1","result":"灶状阳性","note":"可部分表达"},{"marker":"Galectin-3","result":"灶状阳性","note":"表达不如经典PTC强和弥漫"},{"marker":"BRAF V600E","result":"阴性","note":"BRAF V600E突变基本不见于NIFTP（若阳性应重新审视诊断）"},{"marker":"RAS","result":"突变阳性","note":"RAS突变（NRAS/HRAS）是主要驱动突变，分子谱系类似滤泡肿瘤"}],"molecularFeatures":"以RAS突变为主（NRAS Q61R/K最常见，约40-50%），PAX8-PPARγ融合偶见。BRAF V600E突变基本不存在于真正的NIFTP中——若检测到BRAF V600E应高度怀疑诊断是否正确。TERT启动子突变罕见。分子特征整体类似滤泡肿瘤谱系而非乳头状癌谱系。","differentialDiagnosis":["papillary-thyroid-carcinoma","follicular-adenoma","follicular-thyroid-carcinoma","niftp"],"grading":"不适用","staging":"不适用（非恶性肿瘤）","prognosis":"预后极好，复发率<1%，远处转移极罕见。腺叶切除后无需RAI治疗或TSH抑制。","treatment":"甲状腺腺叶切除即可。无需甲状腺全切、放射性碘治疗或TSH抑制治疗。长期随访即可。","images":[],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022","Nikiforov YE et al. JAMA Oncol 2016"]},
-  {"id":"graves-disease-hyperplasia","nameZh":"Graves病甲状腺弥漫性增生","nameEn":"Graves Disease Thyroid Diffuse Hyperplasia","aliases":["Graves病增生","弥漫性毒性甲状腺肿增生"],"organ":"thyroid","category":"other","epidemiology":"Graves病是最常见的甲状腺功能亢进原因，累及约0.5%的人口，女性是男性的5-10倍，20-40岁为高发年龄段。甲状腺弥漫性增生是Graves病的特征性病理改变。","clinicalFeatures":"甲状腺功能亢进症状（心悸、多汗、消瘦、手抖、焦虑）、甲状腺弥漫对称性肿大、Graves眼病（突眼、眶周水肿）、胫前黏液性水肿。实验室检查：TSH降低、FT3/FT4升高、TSH受体抗体（TRAb）阳性。","grossPathology":"甲状腺弥漫、对称性肿大（可达正常2-3倍），质地较软（未经治疗）或较韧（治疗后）。切面暗红色至棕褐色，呈分叶状，缺乏结节性改变。胶质减少使切面失去正常的光泽。","microscopy":"甲状腺滤泡弥漫性增生，滤泡上皮由正常的扁平-立方状变为高柱状，细胞核圆形、位于基底部。滤泡腔内胶质显著减少甚至消失，胶质周边出现特征性的\"扇贝样\"吸收空泡（scalloping），反映TSH受体抗体刺激下的过度胶质吸收。滤泡上皮向腔内形成乳头状或伪乳头状皱褶（Sanderson极体），与真性PTC乳头不同的是缺乏纤维血管轴心。间质可见不同程度的淋巴细胞浸润，偶伴生发中心形成。经抗甲状腺药物治疗后，滤泡可恢复接近正常形态（胶质重新充盈、上皮变低），此时称为\"退化性变化\"。","keyFeatures":["滤泡上皮高柱状增生+胶质减少","扇贝样吸收空泡是特征性表现","腔内伪乳头（Sanderson极体）无纤维血管轴心","TSH受体抗体（TRAb）驱动的弥漫性增生","术前药物治疗可改变形态，需结合临床"],"ihcProfile":[{"marker":"TG","result":"阳性","note":"甲状腺球蛋白，滤泡上皮保留正常表达"},{"marker":"TTF-1","result":"阳性","note":"甲状腺转录因子，滤泡上皮弥漫表达"},{"marker":"Ki-67","result":"低","note":"增殖指数低，非肿瘤性增生"},{"marker":"TSH受体抗体","result":"阳性（血清）","note":"病因性自身抗体，刺激甲状腺增生"}],"molecularFeatures":"非肿瘤性自身免疫性疾病，由TSH受体激活性自身抗体（TRAb/TSI）驱动。与HLA-DR3、CTLA-4基因多态性等遗传易感性相关。可伴其他自身免疫疾病。长期未控制的Graves增生极少数可合并甲状腺癌（PTC为主）。","differentialDiagnosis":["hashimoto-thyroiditis","papillary-thyroid-carcinoma","follicular-adenoma","graves-disease"],"grading":"不适用","staging":"不适用","prognosis":"预后良好。多数通过药物治疗可控制甲亢。复发率约50-60%（停药后）。RAI或手术可根治。","treatment":"一线抗甲状腺药物（甲巯咪唑/丙硫氧嘧啶）疗程12-18个月。复发或药物不耐受者选择放射性碘（RAI）或手术（甲状腺次全/全切除）。Graves眼病需单独评估和处理。","images":[],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]},
-  {"id":"hyalinizing-trabecular-tumor","nameZh":"透明变梁状肿瘤","nameEn":"Hyalinizing Trabecular Tumor","aliases":["HTT","透明变小梁状肿瘤","透明化小梁状腺瘤"],"organ":"thyroid","category":"benign","epidemiology":"罕见的甲状腺良性肿瘤，约占甲状腺肿瘤的不到1%。女性多见（女:男约4-5:1），中位年龄约45-50岁。可与桥本甲状腺炎共存。","clinicalFeatures":"通常为偶然发现的孤立性甲状腺结节，临床表现为无痛性肿块。超声可表现为实性低回声结节。FNA细胞学常被误诊为PTC（因核特征相似）或甲状腺髓样癌。","grossPathology":"有包膜或边界清楚的实性结节，切面灰白色至黄褐色，质地硬，可见透明样变区域。通常直径1-3cm。","microscopy":"肿瘤由细长的上皮细胞呈小梁状（trabeculae）或器官样排列，细胞之间和小梁周围有丰富的透明样变间质（PAS阳性的基底膜样物质沉积）。肿瘤细胞呈梭形至多角形，胞浆嗜酸性，核可出现类似PTC的特征（核沟、核内假包涵体、毛玻璃样核透亮），这是导致FNA误诊为PTC的主要原因。细胞内和细胞间可见特征性的黄色\"小体\"（与基底膜物质相关）。无包膜侵犯和血管侵犯。核分裂象罕见。","keyFeatures":["小梁状排列+透明样变间质是特征性组合","核特征可类似PTC（易误诊）","Ki-67膜着色模式（MIB-1 membranous pattern）是独特且诊断性的特征","良性肿瘤，无需扩大手术","FNA常误诊为PTC或MTC"],"ihcProfile":[{"marker":"TTF-1","result":"阳性","note":"甲状腺滤泡上皮标记"},{"marker":"TG","result":"阳性","note":"甲状腺球蛋白阳性，证实滤泡来源"},{"marker":"Ki-67","result":"膜阳性（特征性）","note":"MIB-1呈独特的细胞膜着色模式，而非常见的核着色，是HTT最具诊断价值的特征"},{"marker":"MIB-1","result":"膜着色","note":"与Ki-67相同，膜着色模式具有高度特异性"},{"marker":"CK19","result":"阴性","note":"阴性，有助于与PTC鉴别"}],"molecularFeatures":"部分病例可见RET/PTC重排（与PTC共有），但无BRAF V600E突变和RAS突变。分子特征支持其与PTC有部分重叠但为独立实体。近年来基因表达谱分析证实HTT是不同于PTC和FTC的独立肿瘤。","differentialDiagnosis":["papillary-thyroid-carcinoma","medullary-thyroid-carcinoma","follicular-adenoma"],"grading":"不适用（良性）","staging":"不适用","prognosis":"良性肿瘤，预后极好。目前无确切的恶性转化或转移报道。腺叶切除即可治愈。","treatment":"甲状腺腺叶切除即为诊断性和治疗性处理。无需甲状腺全切或RAI治疗。术后无需额外治疗或密切随访。","images":[],"references":["WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"]}
+  {
+    "id": "papillary-thyroid-carcinoma",
+    "nameZh": "甲状腺乳头状癌",
+    "nameEn": "Papillary Thyroid Carcinoma",
+    "aliases": [
+      "PTC",
+      "乳头状癌"
+    ],
+    "organ": "thyroid",
+    "category": "malignant",
+    "epidemiology": "最常见的甲状腺恶性肿瘤，约占所有甲状腺癌的80-85%。女性显著多于男性（女:男=3:1），30-50岁为发病高峰。全球发病率持续上升（部分归因于影像学筛查的普及），年发病率约10-15/10万。儿童期头颈部放射线暴露和碘充足地区是已知危险因素。",
+    "clinicalFeatures": "无痛性甲状腺结节，可伴颈部淋巴结肿大。超声示低回声、微钙化、边界不规则。",
+    "grossPathology": "白色硬性肿物，边界不规则，切面可见砂粒体样钙化。",
+    "microscopy": "经典型以真性乳头状结构为主（具纤维血管轴心的分支乳头），表面覆盖单层至假复层肿瘤细胞。核特征是诊断的核心：核增大重叠拥挤、毛玻璃样核透亮(Orphan Annie eyes，核内染色质边缘化)、核沟（纵行线状核膜内折）、核内假包涵体（胞浆突入核内形成的嗜酸性圆形包涵体）。砂粒体（同心层状钙化小体）高度提示PTC。组织学亚型包括经典型、滤泡亚型、高细胞亚型（细胞高度为宽度3倍、胞浆嗜酸性，侵袭性更强）、弥漫硬化型和柱状细胞亚型等。",
+    "keyFeatures": [
+      "特征性核改变(毛玻璃核/核沟/核内假包涵体)",
+      "砂粒体(同心层状钙化)",
+      "BRAF V600E突变(45-60%)",
+      "淋巴道转移为主"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": "甲状腺标记"
+      },
+      {
+        "marker": "Thyroglobulin",
+        "result": "阳性",
+        "note": "滤泡分化标记"
+      },
+      {
+        "marker": "CK19",
+        "result": "弥漫强阳性",
+        "note": "PTC中特征性弥漫强表达"
+      },
+      {
+        "marker": "BRAF V600E",
+        "result": "约60%阳性",
+        "note": "免疫组化可检测突变蛋白"
+      }
+    ],
+    "molecularFeatures": "BRAF V600E突变最常见(45-60%)，RET/PTC融合(10-20%)，RAS突变(10-15%)。BRAF突变与较高侵袭性和RAI抵抗相关。",
+    "differentialDiagnosis": [
+      "follicular-thyroid-carcinoma",
+      "follicular-adenoma"
+    ],
+    "grading": "不常规分级",
+    "staging": "AJCC TNM第8版(55岁为年龄分界)",
+    "prognosis": "预后极好，10年生存率>95%。少数高危亚型(高细胞亚型/柱状细胞亚型)预后较差。",
+    "treatment": "手术(甲状腺全切或腺叶切除)+放射性碘(RAI)治疗+TSH抑制治疗。BRAF突变的晚期难治性可用达拉非尼+曲美替尼。",
+    "images": [
+      {
+        "url": "/diagrams/papillary.svg",
+        "caption": "真性乳头结构（纤维血管轴心）是 PTC 的基本生长模式"
+      },
+      {
+        "url": "/diagrams/psammoma-body.svg",
+        "caption": "砂粒体：同心圆状层状钙化，是 PTC 非常有帮助的&quot;线索&quot;"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 甲状腺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 甲状腺癌诊疗指南（2022年版） (国家卫健委, 2022)",
+      "[国内指南] 甲状腺细针穿刺细胞学诊断中国专家共识 (中华医学会病理学分会, 2023)",
+      "[国内共识] 甲状腺癌诊疗指南（2023） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 甲状腺细针穿刺细胞学诊断中国专家共识 (中华医学会病理学分会, 2020)"
+    ]
+  },
+  {
+    "id": "follicular-thyroid-carcinoma",
+    "nameZh": "甲状腺滤泡癌",
+    "nameEn": "Follicular Thyroid Carcinoma",
+    "aliases": [
+      "FTC"
+    ],
+    "organ": "thyroid",
+    "category": "malignant",
+    "epidemiology": "第二常见的甲状腺恶性肿瘤，约占所有甲状腺癌的10-15%。女性多于男性（约3:1），好发年龄40-60岁，较PTC略偏大。碘缺乏地区发病率更高。年发病率约1-3/10万，既往头颈部放射线暴露是危险因素。",
+    "clinicalFeatures": "甲状腺结节，FNA不能明确诊断(与滤泡腺瘤细胞学相同)。血行转移多见(骨、肺)。",
+    "grossPathology": "有包膜的肿物，需仔细取材观察包膜和血管侵犯。",
+    "microscopy": "低倍镜下肿瘤呈膨胀性生长，多数具有完整或不完整的纤维性包膜，肿瘤组织以滤泡结构为主，可见微滤泡、正常滤泡及大滤泡等多种构型，胶质含量多少不一，部分区域可呈实性、梁索状或小管状排列。诊断的核心在于识别包膜侵犯和/或血管侵犯：包膜侵犯要求肿瘤细胞完全穿透包膜全层，常呈蘑菇状突出；血管侵犯须发生于包膜内或包膜外的中等口径血管（静脉），瘤栓附着于血管壁并被覆内皮，单纯腔内漂浮的瘤细胞团不能确诊。高倍镜下肿瘤细胞呈立方形至低柱状，胞浆中等量，嗜酸或双嗜性，胞界清楚；核圆形、大小较一致，染色质细颗粒状致密深染（即'暗核'），核仁不明显，核分裂象通常稀少。根据侵犯范围分为微小浸润型（仅镜下包膜侵犯）、包膜内血管浸润型及广泛浸润型三类，广泛浸润型常伴坏死、核异型及核分裂象增多，提示向低分化滤泡癌演进。鉴别要点：①滤泡性腺瘤有完整包膜且无任何包膜或血管侵犯，需对包膜全周取材方可排除；②甲状腺乳头状癌滤泡亚型显示毛玻璃核、核沟和核内假包涵体等核特征，而滤泡癌缺乏上述核特征；③低分化（岛状）癌呈岛状/梁状/实性生长，核分裂象≥3/10 HPF 或伴肿瘤性坏死，并具卷曲核特征。",
+    "keyFeatures": [
+      "诊断依赖包膜和/或血管侵犯",
+      "细胞学(FNA)无法鉴别良恶性",
+      "血行转移(骨/肺)，淋巴结转移少见",
+      "RAS突变或PAX8-PPARγ融合"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Thyroglobulin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK19",
+        "result": "阴性或局灶弱阳",
+        "note": "区别于PTC"
+      }
+    ],
+    "molecularFeatures": "RAS突变(NRAS/HRAS/KRAS，40-50%)和PAX8-PPARγ融合(30-35%)是特征性改变。",
+    "differentialDiagnosis": [
+      "follicular-adenoma",
+      "papillary-thyroid-carcinoma"
+    ],
+    "grading": "微浸润型/包膜内血管侵犯型/广泛浸润型",
+    "staging": "AJCC TNM",
+    "prognosis": "微浸润型预后极好(接近100%生存)；广泛浸润型预后差。",
+    "treatment": "甲状腺全切+RAI治疗。晚期可用仑伐替尼/索拉非尼。",
+    "images": [
+      {
+        "url": "/diagrams/follicular.svg",
+        "caption": "滤泡结构由单层上皮环绕胶质组成——滤泡腺瘤与滤泡癌的共同基础"
+      },
+      {
+        "url": "/diagrams/ftc-gross.svg",
+        "caption": "大体：甲状腺内可见单发、有完整包膜的实性结节，切面呈均质肉色至褐色，可见局灶出血及包膜增厚，提示包膜侵犯可能"
+      },
+      {
+        "url": "/diagrams/ftc-capsular-invasion.svg",
+        "caption": "低倍（HE）：肿瘤呈微滤泡及实性结构，肿瘤细胞穿透纤维性包膜全层呈蘑菇样突出，符合包膜侵犯（capsular invasion）诊断标准"
+      },
+      {
+        "url": "/diagrams/ftc-vascular-invasion.svg",
+        "caption": "中倍（HE）：包膜内或包膜外中等口径血管腔内见被覆内皮的肿瘤细胞簇，伴附壁血栓，诊断为血管侵犯（angioinvasion）"
+      },
+      {
+        "url": "/diagrams/ftc-microfollicular-hp.svg",
+        "caption": "高倍（HE）：肿瘤由密集微滤泡构成，滤泡细胞呈立方形，核圆形、深染、核仁不明显，缺乏乳头状癌的核特征（无核沟、无核内包涵体、无毛玻璃核）"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 甲状腺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 甲状腺滤泡状癌诊治中国专家共识（2023版） (中国抗癌协会甲状腺癌专业委员会, 2023)",
+      "[国内共识] 甲状腺癌诊疗指南（2023版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 甲状腺肿瘤诊断的免疫组织化学标志物专家共识 (中华医学会病理学分会, 2021)"
+    ]
+  },
+  {
+    "id": "medullary-thyroid-carcinoma",
+    "nameZh": "甲状腺髓样癌",
+    "nameEn": "Medullary Thyroid Carcinoma",
+    "aliases": [
+      "MTC"
+    ],
+    "organ": "thyroid",
+    "category": "malignant",
+    "epidemiology": "约占甲状腺癌的3-5%，来源于甲状腺C细胞（滤泡旁细胞）。约75%为散发性（中位年龄50岁），25%为遗传性（MEN2A/MEN2B综合征，发病更早，可在20-30岁甚至儿童期发生）。女性略多于男性（散发性），遗传性男女比接近1:1。年发病率约0.5-1/10万。",
+    "clinicalFeatures": "甲状腺结节，血清降钙素和CEA升高。MEN2者可伴嗜铬细胞瘤和甲状旁腺亢进。",
+    "grossPathology": "灰白色至黄色硬性肿物，边界较清。",
+    "microscopy": "低倍镜下肿瘤呈实性巢状、小梁状、腺泡状或器官样排列，间质内可见特征性的淀粉样物质沉积（刚果红染色阳性，偏振光下呈苹果绿双折光），此为诊断的重要线索。肿瘤与周围甲状腺组织分界相对清楚但无真正包膜，常见多灶性及双侧性（尤其遗传性病例）。高倍镜下瘤细胞形态多样，可呈圆形、多边形、梭形或浆细胞样，胞浆中等量至丰富，嗜酸性细颗粒状，细胞边界清楚。核呈圆形或卵圆形，染色质呈粗颗粒状（所谓椒盐样 salt-and-pepper 染色质），核仁不明显，可见双核或多核，核分裂象一般较少。部分病例可见梭形细胞区、巨细胞、透明细胞、黑色素沉积或腺样结构等形态变异。C 细胞增生（C-cell hyperplasia）常见于遗传性 MTC 的背景甲状腺组织中，为重要线索。免疫组化降钙素（calcitonin）、CEA、嗜铬粒蛋白 A（CgA）、突触素（Syn）、TTF-1 阳性，而甲状腺球蛋白（Tg）阴性，这是区别于滤泡上皮来源癌的关键。鉴别要点：①甲状腺低分化癌/未分化癌——Tg 可阳性或灶阳、calcitonin 阴性、无淀粉样间质；②透明变梁状肿瘤（HTT）——具有特殊核沟及核内包涵体，MIB-1 胞膜样染色，calcitonin 阴性；③甲状旁腺癌异位——PTH 阳性、calcitonin 阴性。",
+    "keyFeatures": [
+      "C细胞来源，分泌降钙素",
+      "间质淀粉样沉积是特征",
+      "Calcitonin/CgA/Syn阳性，TTF-1阳性",
+      "RET原癌基因点突变(遗传性100%，散发性50%)"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Calcitonin",
+        "result": "阳性",
+        "note": "最特异标记"
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CEA",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Thyroglobulin",
+        "result": "阴性",
+        "note": "C细胞不表达"
+      }
+    ],
+    "molecularFeatures": "RET原癌基因激活突变：遗传性100%(MEN2A: 外显子10/11密码子634最常见；MEN2B: M918T)，散发性约50%。",
+    "differentialDiagnosis": [
+      "papillary-thyroid-carcinoma",
+      "anaplastic-thyroid-carcinoma"
+    ],
+    "grading": "不常规分级",
+    "staging": "AJCC TNM",
+    "prognosis": "总体10年生存率约75%。早期手术可治愈。",
+    "treatment": "甲状腺全切+中央区淋巴结清扫。RAI无效(C细胞不摄碘)。晚期可用凡德他尼/卡博替尼(RET抑制剂)或selpercatinib/pralsetinib(选择性RET抑制剂)。",
+    "images": [
+      {
+        "url": "/diagrams/mtc-gross.svg",
+        "caption": "大体：甲状腺实质内边界尚清的实性结节，切面灰白至灰褐色，质地较硬，多位于腺叶中上部（C 细胞分布密集区）"
+      },
+      {
+        "url": "/diagrams/mtc-low-power-he.svg",
+        "caption": "低倍（HE）：肿瘤细胞呈实性片状、巢状及小梁状排列，被纤细纤维血管间质分隔，间质内可见均质粉染的淀粉样物质沉积"
+      },
+      {
+        "url": "/diagrams/mtc-high-power-he.svg",
+        "caption": "高倍（HE）：瘤细胞呈多边形、梭形或浆细胞样，胞浆嗜酸性细颗粒状，核染色质呈神经内分泌样\"椒盐状\"，核分裂象少见"
+      },
+      {
+        "url": "/diagrams/mtc-ihc-calcitonin.svg",
+        "caption": "IHC（Calcitonin）：肿瘤细胞胞浆弥漫强阳性表达降钙素，为 MTC 的特征性标记；同时 CEA、Syn、CgA、TTF-1 阳性，Tg 阴性"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 甲状腺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 甲状腺髓样癌诊治专家共识 (中国医师协会外科医师分会甲状腺外科医师委员会, 2020)",
+      "[国内共识] 甲状腺髓样癌诊断与治疗中国专家共识 (中国医师协会外科医师分会甲状腺外科医师委员会 / 中国抗癌协会甲状腺癌专业委员会, 2020)",
+      "[国内共识] CSCO 持续/复发及转移性分化型甲状腺癌诊疗指南（含髓样癌章节） (中国临床肿瘤学会（CSCO）, 2023)"
+    ]
+  },
+  {
+    "id": "follicular-adenoma",
+    "nameZh": "甲状腺滤泡腺瘤",
+    "nameEn": "Follicular Adenoma",
+    "aliases": [
+      "FA",
+      "腺瘤"
+    ],
+    "organ": "thyroid",
+    "category": "benign",
+    "epidemiology": "常见的甲状腺良性肿瘤，女性显著多于男性（约4:1），好发于30-50岁。在碘缺乏地区更为常见。人群中甲状腺结节的超声检出率可达50%以上，其中多数为良性滤泡性病变。无明显种族差异。",
+    "clinicalFeatures": "孤立性、缓慢生长的无痛性结节。FNA不能区分滤泡腺瘤与滤泡癌。",
+    "grossPathology": "有完整包膜的孤立结节，切面均匀红褐色。",
+    "microscopy": "低倍镜下肿瘤呈膨胀性生长，具完整、纤细的纤维性包膜，肿瘤内部结构单一，与周围受压的正常甲状腺组织形成鲜明反差。滤泡结构排列多样，可呈正常滤泡型、大滤泡型（胶质型）、微滤泡型（胎儿型）或实性/梁状（胚胎型），常以某一种模式为主，少数可见多种模式混合。滤泡腔内多含致密均质的嗜酸性胶质，边缘可见扇形收缩空隙。肿瘤细胞为单层立方或低柱状滤泡上皮，核极性良好，胞浆中等量，嗜酸性或嗜双色性；部分病例胞浆呈嗜酸颗粒状，提示嗜酸细胞（Hürthle cell/oncocytic）亚型。核圆形或卵圆形，大小较一致，染色质细颗粒状、均匀分布，核仁多不明显；不应出现毛玻璃样核、核膜增厚、核沟或核内假包涵体等乳头状癌核特征。核分裂象罕见（通常少于 1/10 HPF），无凝固性坏死，无普遍性核异型。肿瘤包膜完整，须在完整取材下仔细排除包膜全层穿透及血管侵犯。鉴别要点：①滤泡癌——形态学与腺瘤可高度相似，关键在包膜及包膜外血管内寻找全层穿透或肿瘤性血管内瘤栓，需沿包膜完整取材；②具有乳头状核特征的非浸润性滤泡性甲状腺肿瘤（NIFTP）——包膜完整且无浸润，但核显示乳头状癌样改变（核评分≥2 分）；③滤泡亚型乳头状癌——兼具乳头状癌核特征与包膜/血管侵犯，可资区分。",
+    "keyFeatures": [
+      "完整包膜",
+      "纤维包膜内的滤泡结构",
+      "无包膜和血管侵犯(区别于滤泡癌)",
+      "FNA无法区分良恶性"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Thyroglobulin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK19",
+        "result": "阴性或局灶",
+        "note": "区别于PTC"
+      },
+      {
+        "marker": "HBME-1",
+        "result": "阴性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "RAS突变见于部分病例。PAX8-PPARγ融合罕见。",
+    "differentialDiagnosis": [
+      "follicular-thyroid-carcinoma",
+      "papillary-thyroid-carcinoma"
+    ],
+    "grading": "不适用(良性)",
+    "staging": "不适用",
+    "prognosis": "良性，预后极好。",
+    "treatment": "手术腺叶切除是诊断性也是治疗性处理(排除滤泡癌)。",
+    "images": [
+      {
+        "url": "/diagrams/follicular.svg",
+        "caption": "有完整包膜的滤泡性肿瘤需仔细评估包膜和血管侵犯以区分腺瘤与癌"
+      },
+      {
+        "url": "/diagrams/follicular-adenoma-gross.svg",
+        "caption": "大体：甲状腺单发结节，圆形或卵圆形，包膜完整，切面实性、灰白至棕褐色，质地均匀，与周围甲状腺组织分界清楚"
+      },
+      {
+        "url": "/diagrams/follicular-adenoma-capsule-lp.svg",
+        "caption": "低倍（HE）：肿瘤具有完整纤维性包膜，包膜内外滤泡结构差异明显，未见包膜侵犯及血管侵犯"
+      },
+      {
+        "url": "/diagrams/follicular-adenoma-microfollicular-hp.svg",
+        "caption": "高倍（HE）：瘤细胞排列呈微滤泡或正常大小滤泡结构，滤泡上皮单层立方状，核圆形、染色质均匀，无核沟、核内假包涵体及核重叠等乳头状癌核特征"
+      },
+      {
+        "url": "/diagrams/follicular-adenoma-ihc-tg.svg",
+        "caption": "IHC（TG / TTF-1）：滤泡上皮弥漫强阳性，提示甲状腺滤泡上皮起源；Ki-67 增殖指数低（通常 <3%）"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"
+    ]
+  },
+  {
+    "id": "anaplastic-thyroid-carcinoma",
+    "nameZh": "甲状腺未分化癌",
+    "nameEn": "Anaplastic Thyroid Carcinoma",
+    "aliases": [
+      "ATC",
+      "间变性癌"
+    ],
+    "organ": "thyroid",
+    "category": "malignant",
+    "epidemiology": "罕见但极恶性的甲状腺癌，约占所有甲状腺癌的1-2%。好发于老年人，中位年龄65-70岁，女性略多于男性（约1.5:1）。常在长期存在的分化型甲状腺癌或结节性甲状腺肿基础上去分化而来。年发病率约0.1-0.2/10万，碘缺乏地区更常见。",
+    "clinicalFeatures": "快速增大的颈部肿块，伴声音嘶哑、呼吸困难、吞咽困难。就诊时常已累及周围结构。",
+    "grossPathology": "大的浸润性灰白色肿物，可伴广泛出血坏死。",
+    "microscopy": "高度多形性肿瘤细胞弥漫浸润并破坏甲状腺实质，可呈三种主要形态：梭形细胞型（肉瘤样，束状排列）、多形性巨细胞型（怪异大细胞，含多个不规则核）和上皮样型（片状排列，类似癌）。广泛的地图样坏死是突出特征。核分裂象极为活跃，包括大量病理性核分裂。血管侵犯普遍，可见肿瘤细胞浸润甲状腺周围软组织和邻近器官。肿瘤完全失去滤泡分化特征，但仔细寻找可能发现残存的分化型癌成分（PTC或FTC），提示去分化来源。中性粒细胞浸润常见。",
+    "keyFeatures": [
+      "高度恶性的未分化/去分化形态",
+      "广泛坏死+大量核分裂",
+      "可来自分化型甲状腺癌去分化",
+      "Thyroglobulin常阴性",
+      "BRAF V600E突变常见(40%)"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "PAX8",
+        "result": "阳性(可能部分保留)",
+        "note": "甲状腺源标记"
+      },
+      {
+        "marker": "TTF-1",
+        "result": "通常阴性",
+        "note": "去分化"
+      },
+      {
+        "marker": "Thyroglobulin",
+        "result": "阴性",
+        "note": "去分化"
+      },
+      {
+        "marker": "p53",
+        "result": "突变型",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": ">50%",
+        "note": "极高增殖"
+      }
+    ],
+    "molecularFeatures": "TP53突变、BRAF V600E突变(40%)、TERT启动子突变常见。可由分化型癌去分化而来(保留原突变)。",
+    "differentialDiagnosis": [
+      "papillary-thyroid-carcinoma",
+      "medullary-thyroid-carcinoma"
+    ],
+    "grading": "均为高级别",
+    "staging": "AJCC TNM(所有ATC均为IV期)",
+    "prognosis": "极差，中位生存<6个月。",
+    "treatment": "多学科综合治疗：手术(如可能)+放化疗。BRAF V600E突变者可用达拉非尼+曲美替尼显著改善预后。",
+    "images": [
+      {
+        "url": "/diagrams/anaplastic-thyroid-gross.svg",
+        "caption": "大体：甲状腺区巨大灰白色肿块，切面鱼肉样，可见广泛出血、坏死，常侵犯周围脂肪组织、气管及带状肌"
+      },
+      {
+        "url": "/diagrams/anaplastic-thyroid-low-power-he.svg",
+        "caption": "低倍（HE）：肿瘤呈片状、弥漫浸润性生长，破坏正常甲状腺滤泡结构，伴广泛凝固性坏死及促纤维组织增生"
+      },
+      {
+        "url": "/diagrams/anaplastic-thyroid-high-power-he.svg",
+        "caption": "高倍（HE）：高度异型的梭形细胞、上皮样细胞及多核瘤巨细胞混合存在，核分裂象多见（常含病理性核分裂），背景见中性粒细胞浸润"
+      },
+      {
+        "url": "/diagrams/anaplastic-thyroid-ihc-pax8.svg",
+        "caption": "IHC（PAX8）：肿瘤细胞核局灶阳性，提示甲状腺起源；同组常伴 TTF-1/Tg 阴性、p53 弥漫强阳性及 Ki-67 增殖指数显著升高（>30%）"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "[国内指南] CSCO 持续/复发及转移性分化型甲状腺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 甲状腺未分化癌综合治疗专家共识（2022版） (中国抗癌协会甲状腺癌专业委员会, 2022)",
+      "[国内共识] 甲状腺癌诊疗指南（2023） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 甲状腺低分化癌和未分化癌病理诊断共识 (中华医学会病理学分会, 2021)"
+    ]
+  },
+  {
+    "id": "hashimoto-thyroiditis",
+    "nameZh": "桥本甲状腺炎",
+    "nameEn": "Hashimoto Thyroiditis",
+    "aliases": [
+      "慢性淋巴细胞性甲状腺炎",
+      "CLT"
+    ],
+    "organ": "thyroid",
+    "category": "inflammatory",
+    "epidemiology": "最常见的自身免疫性甲状腺疾病，也是甲状腺功能减退最常见的原因。女性显著多于男性（女:男=10-20:1），好发于30-50岁，但各年龄段均可发生。在碘充足地区患病率约5-10%（女性），日本和欧美地区高发。常与其他自身免疫疾病共存（1型糖尿病、Addison病等），有明显家族聚集性。",
+    "clinicalFeatures": "甲状腺弥漫性肿大，质地硬，抗TPO抗体和抗TG抗体阳性。可导致甲减。",
+    "grossPathology": "甲状腺弥漫肿大，切面灰白色，分叶状，质韧。",
+    "microscopy": "低倍镜下甲状腺组织结构弥漫性破坏，正常滤泡明显减少、萎缩，间质内大量淋巴细胞及浆细胞弥漫浸润，并形成具有生发中心的淋巴滤泡，是本病的标志性结构。浸润可累及小叶间及滤泡间，使甲状腺实质呈分叶状重塑。残存滤泡体积缩小、胶质稀少或缺失，部分滤泡上皮可见萎缩或破裂。高倍镜下特征性地可见 Hürthle 细胞（嗜酸性变滤泡上皮细胞，又称 Askanazy 细胞或嗜酸细胞）化生：胞体增大、胞浆丰富呈深嗜酸颗粒状（富含线粒体），核增大、深染，核仁明显，可见轻度核沟及核增大不规则，需警惕与乳头状癌核特征重叠。间质纤维化程度不一，纤维型变异（fibrous variant）可见广泛间质致密胶原化，但不突破甲状腺被膜。浸润的淋巴细胞以 B 细胞为主（滤泡中心及套区），滤泡间及上皮内可见 CD8 阳性 T 细胞，浆细胞散在分布，IgG4 阳性浆细胞增多者归入 IgG4 相关型。核特征方面，Hürthle 细胞核虽可增大深染，但一般不具有真正的毛玻璃样核、核沟密集及核内假包涵体。鉴别要点：①乳头状癌（尤其经典型及弥漫硬化型）——具有真性乳头结构、砂粒体、毛玻璃核、核沟及核内假包涵体，BRAF V600E 常阳性；②MALT 淋巴瘤——单克隆 B 细胞弥漫浸润并破坏滤泡形成淋巴上皮病变，流式或 IGH 基因重排检测可证实克隆性；③Riedel 甲状腺炎——广泛席纹状纤维化突破被膜累及周围软组织，淋巴细胞浸润较稀疏。",
+    "keyFeatures": [
+      "弥漫性淋巴细胞浸润伴生发中心",
+      "滤泡上皮嗜酸性变(Hürthle细胞)",
+      "甲状腺功能减退最常见原因",
+      "轻度增加甲状腺淋巴瘤和PTC风险"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "B细胞浸润阳性",
+        "note": "生发中心"
+      },
+      {
+        "marker": "CD3",
+        "result": "T细胞浸润阳性",
+        "note": ""
+      },
+      {
+        "marker": "IgG4",
+        "result": "部分升高",
+        "note": "需排除IgG4相关疾病"
+      }
+    ],
+    "molecularFeatures": "自身免疫机制，与HLA-DR3/DR5相关。可伴其他自身免疫疾病(1型糖尿病、Addison病等)。",
+    "differentialDiagnosis": [
+      "follicular-adenoma",
+      "papillary-thyroid-carcinoma"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "慢性病程，多数需长期左甲状腺素替代治疗。极少数发展为甲状腺淋巴瘤。",
+    "treatment": "甲状腺功能减退者左甲状腺素替代治疗。",
+    "images": [
+      {
+        "url": "/diagrams/hashimoto-low-power.svg",
+        "caption": "低倍（HE）：甲状腺实质弥漫性淋巴浆细胞浸润，伴多个具有生发中心的淋巴滤泡形成，甲状腺滤泡萎缩"
+      },
+      {
+        "url": "/diagrams/hashimoto-hurthle-cells.svg",
+        "caption": "高倍（HE）：残存甲状腺滤泡上皮呈嗜酸性变（Hürthle/Askanazy 细胞），胞浆丰富嗜酸、颗粒状，核增大深染"
+      },
+      {
+        "url": "/diagrams/hashimoto-lymphoid-follicle.svg",
+        "caption": "高倍（HE）：淋巴滤泡伴活跃生发中心，周围可见浆细胞及小淋巴细胞浸润，间质纤维化"
+      },
+      {
+        "url": "/diagrams/hashimoto-ihc-cd20-cd3.svg",
+        "caption": "IHC（CD20/CD3）：CD20 阳性 B 细胞聚集于淋巴滤泡中心，CD3 阳性 T 细胞弥漫分布于滤泡间区，支持反应性淋巴组织增生"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "[国内指南] 成人甲状腺功能减退症诊治指南 (中华医学会内分泌学分会, 2017)",
+      "[国内指南] 妊娠和产后甲状腺疾病诊治指南（第2版） (中华医学会内分泌学分会, 2019)",
+      "[国内共识] 桥本甲状腺炎诊治专家共识 (中华医学会内分泌学分会, 2021)"
+    ]
+  },
+  {
+    "id": "niftp",
+    "nameZh": "具有乳头状癌核特征的非浸润性滤泡性肿瘤",
+    "nameEn": "Noninvasive Follicular Thyroid Neoplasm with Papillary-like Nuclear Features",
+    "aliases": [
+      "NIFTP"
+    ],
+    "organ": "thyroid",
+    "category": "other",
+    "epidemiology": "2016年由Nikiforov等提出的新分类实体，从既往诊断为PTC滤泡亚型（包膜内/非浸润性）的病例中重新归类而来，约占既往PTC诊断的10-20%。各年龄段均可发生，女性多见（约3:1），中位年龄约40-50岁。全球分布，碘缺乏和碘充足地区均可见。",
+    "clinicalFeatures": "多为孤立、有包膜、临床惰性的甲状腺结节。",
+    "grossPathology": "有完整包膜的圆形或卵圆形结节，切面均匀棕褐色。",
+    "microscopy": "低倍镜下肿瘤呈境界清楚的结节状病灶，周围常见纤细的纤维性假包膜，肿瘤与周围甲状腺实质分界锐利，但无包膜浸润及血管侵犯，此为诊断的前提条件（需对包膜做完整取材评估）。组织结构以滤泡型生长为主，滤泡大小不一，多为小至中等大小，胶质常浓稠嗜酸、可见扇贝样边缘或泡沫状变性；肿瘤内乳头状结构应少于 1%，不应出现砂粒体、坏死及核分裂象增多（＜3 个／10 HPF）。高倍镜下肿瘤细胞呈立方至低柱状，胞浆中等量、嗜酸或嗜双色，胞界清楚。核特征是诊断的核心，须达到 2-3 分核评分体系中的至少 2 分，包括：①核增大、拉长、拥挤重叠；②核膜不规则，可见核沟及核膜凹凸（raisin-like 外观）；③染色质透亮呈粉尘状，可见核内假包涵体（数量少于经典型乳头状癌）。鉴别要点：①浸润性滤泡亚型乳头状癌（IFVPTC）——具有相同核特征但存在包膜／血管浸润，需全包膜多切片排查；②滤泡性腺瘤——核圆深染、染色质粗颗粒状、无核沟及假包涵体，核评分 0-1 分；③微小浸润性滤泡癌——核缺乏 PTC 样特征而以包膜全层穿透或血管浸润为特征，BRAF V600E 多阴性而 RAS 家族突变常见，可辅助鉴别。",
+    "keyFeatures": [
+      "既不是腺瘤也不是经典癌的中间性肿瘤",
+      "有 PTC 核特征但完全无侵袭",
+      "诊断严格依赖充分取材以排除包膜/血管侵犯",
+      "报告中使用&quot;肿瘤&quot;而非&quot;癌&quot;有助于避免过度治疗",
+      "预后极好，仅需腺叶切除即可"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Thyroglobulin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK19",
+        "result": "可阳性",
+        "note": "较 PTC 为弱"
+      },
+      {
+        "marker": "HBME-1",
+        "result": "可阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "以 RAS 突变为主（类似滤泡癌谱系），BRAF V600E 罕见。",
+    "differentialDiagnosis": [
+      "papillary-thyroid-carcinoma",
+      "follicular-adenoma",
+      "follicular-thyroid-carcinoma"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "预后极好，复发率 < 1%。",
+    "treatment": "腺叶切除即可，无需 RAI 或 TSH 抑制。",
+    "images": [
+      {
+        "url": "/diagrams/follicular.svg",
+        "caption": "NIFTP 保持滤泡生长模式，但上皮细胞核具有 PTC 核特征"
+      },
+      {
+        "url": "/diagrams/niftp-gross.svg",
+        "caption": "大体：甲状腺内边界清楚的结节，有完整薄纤维包膜，切面呈实性、淡黄褐色，质地均一，无出血坏死"
+      },
+      {
+        "url": "/diagrams/niftp-low-power-he.svg",
+        "caption": "低倍（HE）：肿瘤由滤泡结构构成，周围可见完整纤维包膜包绕，包膜及血管未见浸润，肿瘤细胞排列呈滤泡状/微滤泡状结构"
+      },
+      {
+        "url": "/diagrams/niftp-high-power-nuclei.svg",
+        "caption": "高倍（HE）：滤泡上皮细胞核增大、拥挤、重叠，核形不规则伴核沟和核膜皱褶，染色质淡染呈毛玻璃样（乳头状癌核特征 3 分法评分 ≥2 分）"
+      },
+      {
+        "url": "/diagrams/niftp-ihc-ck19.svg",
+        "caption": "IHC（CK19）：肿瘤细胞呈弱至局灶阳性，强度低于经典型乳头状癌，有助于辅助鉴别"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "Nikiforov YE et al. JAMA Oncol 2016",
+      "[国内指南] CSCO 持续/复发及转移性分化型甲状腺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）甲状腺癌诊疗指南（2023 版） (中国临床肿瘤学会, 2023)",
+      "[国内共识] 甲状腺细针穿刺细胞病理学诊断专家共识 (中华医学会病理学分会 头颈病理学组, 2019)"
+    ]
+  },
+  {
+    "id": "graves-disease",
+    "nameZh": "Graves 病",
+    "nameEn": "Graves Disease",
+    "aliases": [
+      "弥漫性毒性甲状腺肿",
+      "GD"
+    ],
+    "organ": "thyroid",
+    "category": "inflammatory",
+    "epidemiology": "最常见的甲状腺功能亢进原因，约占所有甲亢病例的60-80%。女性是男性的5-10倍，20-40岁为发病高峰。年发病率约20-50/10万（女性），有明显家族倾向和遗传易感性（与HLA-DR3等相关）。吸烟、心理应激和碘摄入过量可为诱因。",
+    "clinicalFeatures": "甲亢症状（心悸、多汗、消瘦、手抖）、弥漫性甲状腺肿大、突眼、胫前黏液性水肿。TRAb 阳性。",
+    "grossPathology": "甲状腺弥漫、对称性肿大，切面暗红色，质地较软（未经治疗）。",
+    "microscopy": "甲状腺滤泡弥漫性增生，滤泡上皮由正常扁平-立方状变为高柱状，细胞核圆形、位于基底部。滤泡腔内胶质显著减少甚至消失，胶质周边出现特征性'扇贝样'吸收空泡（scalloping），反映TSH受体抗体刺激下的过度胶质吸收和摄取。上皮向腔内形成乳头状或伪乳头状皱褶（Sanderson极体），与PTC真性乳头的区别在于缺乏纤维血管轴心。间质可见不同程度的淋巴细胞浸润，偶伴生发中心形成。经抗甲状腺药物治疗后，滤泡可恢复接近正常形态（胶质重新充盈、上皮变低平），形态学解读需结合治疗史。",
+    "keyFeatures": [
+      "上皮高柱状 + 胶质减少（&quot;扇贝样&quot;空泡）",
+      "腔内伪乳头皱褶（与真性 PTC 乳头不同，无纤维血管轴心）",
+      "TRAb 抗体介导（TSH 受体激活性自身抗体）",
+      "间质淋巴细胞浸润但较桥本轻",
+      "术前药物治疗可使形态接近正常"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CD20",
+        "result": "B 细胞浸润可见",
+        "note": ""
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "自身免疫性疾病，TRAb 是病因性自身抗体。与 HLA-DR3 等相关。",
+    "differentialDiagnosis": [
+      "hashimoto-thyroiditis",
+      "papillary-thyroid-carcinoma"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "预后良好。治疗方式包括抗甲状腺药物、RAI、手术。",
+    "treatment": "甲巯咪唑 / 丙硫氧嘧啶、放射性碘、手术次全切。眼病需单独处理。",
+    "images": [
+      {
+        "url": "/diagrams/graves-gross.svg",
+        "caption": "大体：甲状腺弥漫性对称性肿大，表面光滑，切面呈红褐色肉样、富血管，胶质稀少"
+      },
+      {
+        "url": "/diagrams/graves-hyperplastic-follicles.svg",
+        "caption": "低倍（HE）：甲状腺滤泡弥漫性增生，滤泡腔变小、胶质稀薄并见周边扇贝样吸收空泡（scalloping）"
+      },
+      {
+        "url": "/diagrams/graves-papillary-infoldings.svg",
+        "caption": "高倍（HE）：滤泡上皮呈高柱状，伴乳头状内褶突入滤泡腔，间质可见淋巴细胞浸润及淋巴滤泡形成"
+      },
+      {
+        "url": "/diagrams/graves-ihc-tg.svg",
+        "caption": "IHC（Tg）：增生滤泡上皮胞浆及腔内稀薄胶质 Tg 阳性，提示甲状腺滤泡上皮源性"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "[国内指南] 中国甲状腺功能亢进症和其他原因所致甲状腺毒症诊治指南（2022） (中华医学会内分泌学分会, 2022)",
+      "[国内共识] 成人甲状腺功能亢进症诊治指南 (中华医学会内分泌学分会, 2022)",
+      "[国内共识] 妊娠和产后甲状腺疾病诊治指南（第2版） (中华医学会内分泌学分会 / 中华医学会围产医学分会, 2019)"
+    ]
+  },
+  {
+    "id": "noninvasive-follicular-thyroid-neoplasm-with-papillary-like-nuclear-features",
+    "nameZh": "具有乳头状核特征的非浸润性甲状腺滤泡性肿瘤（NIFTP）",
+    "nameEn": "Noninvasive Follicular Thyroid Neoplasm with Papillary-like Nuclear Features",
+    "aliases": [
+      "NIFTP",
+      "非浸润性滤泡性甲状腺肿瘤伴乳头状核特征"
+    ],
+    "organ": "thyroid",
+    "category": "other",
+    "epidemiology": "2016年由Nikiforov等提出的新分类实体，从既往诊断为甲状腺乳头状癌滤泡亚型（包膜内/非浸润性）的病例中重新归类而来，约占既往PTC诊断的10-20%。各年龄段均可发生，女性多见。",
+    "clinicalFeatures": "通常为影像学偶然发现的孤立性甲状腺结节，超声可表现为等回声至低回声结节，边界清楚。FNA细胞学常报告为Bethesda III-V类（不确定类别）。患者甲状腺功能正常。",
+    "grossPathology": "有完整或部分包膜的圆形或卵圆形结节，边界清楚，切面均匀棕褐色至灰白色，质地较周围甲状腺组织稍硬。",
+    "microscopy": "诊断需满足严格的纳入与排除标准。纳入标准：(1)有包膜或边界清楚；(2)滤泡生长模式（>99%为滤泡结构，允许极少量微乳头但不允许真性乳头>1%）；(3)具有PTC核特征（核增大、拥挤重叠、毛玻璃样透亮、核沟、核内假包涵体）且核特征评分>=2分（3组特征中至少2组存在）。排除标准：包膜侵犯、血管侵犯、真性乳头（>1%）、砂粒体、实性/小梁/岛状生长>30%、肿瘤性坏死、高核分裂活性(>=3/10HPF)。需充分取材（每1cm肿瘤取1个蜡块）以排除侵犯。",
+    "keyFeatures": [
+      "严格的纳入/排除标准定义的低风险肿瘤",
+      "有PTC核特征但完全无侵袭行为",
+      "从\"癌\"重新分类为\"肿瘤\"以避免过度治疗",
+      "充分取材是诊断的前提",
+      "预后极好，腺叶切除即足够"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "CK19",
+        "result": "灶状阳性",
+        "note": "较经典PTC表达弱且不弥漫"
+      },
+      {
+        "marker": "HBME-1",
+        "result": "灶状阳性",
+        "note": "可部分表达"
+      },
+      {
+        "marker": "Galectin-3",
+        "result": "灶状阳性",
+        "note": "表达不如经典PTC强和弥漫"
+      },
+      {
+        "marker": "BRAF V600E",
+        "result": "阴性",
+        "note": "BRAF V600E突变基本不见于NIFTP（若阳性应重新审视诊断）"
+      },
+      {
+        "marker": "RAS",
+        "result": "突变阳性",
+        "note": "RAS突变（NRAS/HRAS）是主要驱动突变，分子谱系类似滤泡肿瘤"
+      }
+    ],
+    "molecularFeatures": "以RAS突变为主（NRAS Q61R/K最常见，约40-50%），PAX8-PPARγ融合偶见。BRAF V600E突变基本不存在于真正的NIFTP中——若检测到BRAF V600E应高度怀疑诊断是否正确。TERT启动子突变罕见。分子特征整体类似滤泡肿瘤谱系而非乳头状癌谱系。",
+    "differentialDiagnosis": [
+      "papillary-thyroid-carcinoma",
+      "follicular-adenoma",
+      "follicular-thyroid-carcinoma",
+      "niftp"
+    ],
+    "grading": "不适用",
+    "staging": "不适用（非恶性肿瘤）",
+    "prognosis": "预后极好，复发率<1%，远处转移极罕见。腺叶切除后无需RAI治疗或TSH抑制。",
+    "treatment": "甲状腺腺叶切除即可。无需甲状腺全切、放射性碘治疗或TSH抑制治疗。长期随访即可。",
+    "images": [
+      {
+        "url": "/diagrams/niftp-low-power.svg",
+        "caption": "低倍（HE）：境界清楚的滤泡性结节，具有完整或部分完整的包膜，无包膜浸润及血管浸润，肿瘤完全由滤泡结构构成"
+      },
+      {
+        "url": "/diagrams/niftp-follicular-architecture.svg",
+        "caption": "中倍（HE）：肿瘤呈滤泡性生长方式，滤泡大小不等，腔内含胶质；无乳头结构（乳头成分需<1%），无砂粒体，无肿瘤性坏死"
+      },
+      {
+        "url": "/diagrams/niftp-nuclear-features.svg",
+        "caption": "高倍（HE）：滤泡上皮细胞具有乳头状癌样核特征——核增大拉长、核膜不规则（核沟、核内假包涵体）、染色质清亮（毛玻璃样），核评分 2–3 分"
+      },
+      {
+        "url": "/diagrams/niftp-capsule-interface.svg",
+        "caption": "高倍（HE）：包膜与周围甲状腺组织交界处，重点示无全层包膜浸润及无血管浸润（需充分取材包膜评估，排除浸润性滤泡亚型乳头状癌）"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "Nikiforov YE et al. JAMA Oncol 2016",
+      "[国内指南] CSCO 持续/复发及转移性分化型甲状腺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 甲状腺细针穿刺细胞病理学诊断专家共识 (中华医学会病理学分会, 2019)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）甲状腺癌诊疗指南（2023 版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 中国抗癌协会甲状腺癌整合诊治指南（CACA Guidelines：甲状腺癌） (中国抗癌协会（CACA）, 2022)"
+    ]
+  },
+  {
+    "id": "graves-disease-hyperplasia",
+    "nameZh": "Graves病甲状腺弥漫性增生",
+    "nameEn": "Graves Disease Thyroid Diffuse Hyperplasia",
+    "aliases": [
+      "Graves病增生",
+      "弥漫性毒性甲状腺肿增生"
+    ],
+    "organ": "thyroid",
+    "category": "other",
+    "epidemiology": "Graves病是最常见的甲状腺功能亢进原因，累及约0.5%的人口，女性是男性的5-10倍，20-40岁为高发年龄段。甲状腺弥漫性增生是Graves病的特征性病理改变。",
+    "clinicalFeatures": "甲状腺功能亢进症状（心悸、多汗、消瘦、手抖、焦虑）、甲状腺弥漫对称性肿大、Graves眼病（突眼、眶周水肿）、胫前黏液性水肿。实验室检查：TSH降低、FT3/FT4升高、TSH受体抗体（TRAb）阳性。",
+    "grossPathology": "甲状腺弥漫、对称性肿大（可达正常2-3倍），质地较软（未经治疗）或较韧（治疗后）。切面暗红色至棕褐色，呈分叶状，缺乏结节性改变。胶质减少使切面失去正常的光泽。",
+    "microscopy": "甲状腺滤泡弥漫性增生，滤泡上皮由正常的扁平-立方状变为高柱状，细胞核圆形、位于基底部。滤泡腔内胶质显著减少甚至消失，胶质周边出现特征性的\"扇贝样\"吸收空泡（scalloping），反映TSH受体抗体刺激下的过度胶质吸收。滤泡上皮向腔内形成乳头状或伪乳头状皱褶（Sanderson极体），与真性PTC乳头不同的是缺乏纤维血管轴心。间质可见不同程度的淋巴细胞浸润，偶伴生发中心形成。经抗甲状腺药物治疗后，滤泡可恢复接近正常形态（胶质重新充盈、上皮变低），此时称为\"退化性变化\"。",
+    "keyFeatures": [
+      "滤泡上皮高柱状增生+胶质减少",
+      "扇贝样吸收空泡是特征性表现",
+      "腔内伪乳头（Sanderson极体）无纤维血管轴心",
+      "TSH受体抗体（TRAb）驱动的弥漫性增生",
+      "术前药物治疗可改变形态，需结合临床"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TG",
+        "result": "阳性",
+        "note": "甲状腺球蛋白，滤泡上皮保留正常表达"
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": "甲状腺转录因子，滤泡上皮弥漫表达"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "低",
+        "note": "增殖指数低，非肿瘤性增生"
+      },
+      {
+        "marker": "TSH受体抗体",
+        "result": "阳性（血清）",
+        "note": "病因性自身抗体，刺激甲状腺增生"
+      }
+    ],
+    "molecularFeatures": "非肿瘤性自身免疫性疾病，由TSH受体激活性自身抗体（TRAb/TSI）驱动。与HLA-DR3、CTLA-4基因多态性等遗传易感性相关。可伴其他自身免疫疾病。长期未控制的Graves增生极少数可合并甲状腺癌（PTC为主）。",
+    "differentialDiagnosis": [
+      "hashimoto-thyroiditis",
+      "papillary-thyroid-carcinoma",
+      "follicular-adenoma",
+      "graves-disease"
+    ],
+    "grading": "不适用",
+    "staging": "不适用",
+    "prognosis": "预后良好。多数通过药物治疗可控制甲亢。复发率约50-60%（停药后）。RAI或手术可根治。",
+    "treatment": "一线抗甲状腺药物（甲巯咪唑/丙硫氧嘧啶）疗程12-18个月。复发或药物不耐受者选择放射性碘（RAI）或手术（甲状腺次全/全切除）。Graves眼病需单独评估和处理。",
+    "images": [
+      {
+        "url": "/diagrams/graves-gross-diffuse-goiter.svg",
+        "caption": "大体：甲状腺弥漫性对称性增大，包膜完整，切面呈红褐色肉样外观，胶质含量减少，无明显结节形成"
+      },
+      {
+        "url": "/diagrams/graves-low-power-hyperplastic-follicles.svg",
+        "caption": "低倍（HE）：滤泡弥漫性增生，滤泡大小不一且密集排列，腔内胶质稀少并可见特征性扇贝状（scalloping）边缘吸收空泡"
+      },
+      {
+        "url": "/diagrams/graves-high-power-papillary-infoldings.svg",
+        "caption": "高倍（HE）：滤泡上皮呈柱状增生，向滤泡腔内形成乳头状皱褶（无纤维血管轴心），上皮核位于基底，胞质淡染嗜酸"
+      },
+      {
+        "url": "/diagrams/graves-lymphocytic-infiltrate.svg",
+        "caption": "高倍（HE）：间质内散在淋巴细胞浸润并可见淋巴滤泡形成（伴生发中心），反映自身免疫性背景"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022",
+      "[国内指南] 中国甲状腺功能亢进症和其他病因甲状腺毒症诊治指南（2022） (中华医学会内分泌学分会, 2022)",
+      "[国内指南] 131I 治疗格雷夫斯甲亢指南（2021 版） (中华医学会核医学分会, 2021)",
+      "[国内共识] 中国甲状腺功能亢进症和其他原因所致甲状腺毒症诊治指南（2022） (中华医学会内分泌学分会, 2022)",
+      "[国内共识] 甲状腺细针穿刺细胞学诊断专家共识 (中华医学会病理学分会, 2020)"
+    ]
+  },
+  {
+    "id": "hyalinizing-trabecular-tumor",
+    "nameZh": "透明变梁状肿瘤",
+    "nameEn": "Hyalinizing Trabecular Tumor",
+    "aliases": [
+      "HTT",
+      "透明变小梁状肿瘤",
+      "透明化小梁状腺瘤"
+    ],
+    "organ": "thyroid",
+    "category": "benign",
+    "epidemiology": "罕见的甲状腺良性肿瘤，约占甲状腺肿瘤的不到1%。女性多见（女:男约4-5:1），中位年龄约45-50岁。可与桥本甲状腺炎共存。",
+    "clinicalFeatures": "通常为偶然发现的孤立性甲状腺结节，临床表现为无痛性肿块。超声可表现为实性低回声结节。FNA细胞学常被误诊为PTC（因核特征相似）或甲状腺髓样癌。",
+    "grossPathology": "有包膜或边界清楚的实性结节，切面灰白色至黄褐色，质地硬，可见透明样变区域。通常直径1-3cm。",
+    "microscopy": "低倍镜下肿瘤界清，常有纤细纤维包膜或呈境界清楚的浸润性生长方式，可见小叶状结构。肿瘤细胞排列成特征性的梁状、巢状或带状结构，梁索间及细胞间可见明显的嗜酸性透明变样物质沉积，PAS 染色阳性，此为命名由来。透明变物质为基底膜样物质，Masson 三色染色可呈特殊色调。高倍镜下肿瘤细胞呈中等大小至较大的多边形或梭形，胞浆中等量至丰富，嗜酸性或淡染细颗粒状，偶见胞浆内黄色小体（所谓黄色小体 yellow bodies，为巨大溶酶体）。细胞长轴多与梁索走行垂直排列，呈栅栏状。核呈卵圆形或细长梭形，核膜轻度不规则，可见核沟及核内假包涵体，染色质细腻呈粉尘样，核仁多不明显；这些核特征与甲状腺乳头状癌（PTC）高度相似，是鉴别诊断的主要难点。核分裂象罕见，无坏死。Ki-67 MIB-1 膜样(而非核)染色是本瘤特异性表型，具有重要诊断价值。免疫组化 TTF-1、Tg 阳性，CK19 多为阴性或弱阳性，HBME-1 多阴性，Galectin-3 可灶性阳性。鉴别要点：①甲状腺乳头状癌——具真正乳头结构、砂粒体多见、CK19 和 HBME-1 弥漫强阳性、Ki-67 呈核染色，且常有 BRAF V600E 突变，而 HTT 多见 PAX8-GLIS3 融合；②髓样癌——细胞呈浆细胞样、间质为真性淀粉样物（刚果红阳性），Calcitonin、CEA、CgA、Syn 阳性，Tg 阴性。",
+    "keyFeatures": [
+      "小梁状排列+透明样变间质是特征性组合",
+      "核特征可类似PTC（易误诊）",
+      "Ki-67膜着色模式（MIB-1 membranous pattern）是独特且诊断性的特征",
+      "良性肿瘤，无需扩大手术",
+      "FNA常误诊为PTC或MTC"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": "甲状腺滤泡上皮标记"
+      },
+      {
+        "marker": "TG",
+        "result": "阳性",
+        "note": "甲状腺球蛋白阳性，证实滤泡来源"
+      },
+      {
+        "marker": "Ki-67",
+        "result": "膜阳性（特征性）",
+        "note": "MIB-1呈独特的细胞膜着色模式，而非常见的核着色，是HTT最具诊断价值的特征"
+      },
+      {
+        "marker": "MIB-1",
+        "result": "膜着色",
+        "note": "与Ki-67相同，膜着色模式具有高度特异性"
+      },
+      {
+        "marker": "CK19",
+        "result": "阴性",
+        "note": "阴性，有助于与PTC鉴别"
+      }
+    ],
+    "molecularFeatures": "部分病例可见RET/PTC重排（与PTC共有），但无BRAF V600E突变和RAS突变。分子特征支持其与PTC有部分重叠但为独立实体。近年来基因表达谱分析证实HTT是不同于PTC和FTC的独立肿瘤。",
+    "differentialDiagnosis": [
+      "papillary-thyroid-carcinoma",
+      "medullary-thyroid-carcinoma",
+      "follicular-adenoma"
+    ],
+    "grading": "不适用（良性）",
+    "staging": "不适用",
+    "prognosis": "良性肿瘤，预后极好。目前无确切的恶性转化或转移报道。腺叶切除即可治愈。",
+    "treatment": "甲状腺腺叶切除即为诊断性和治疗性处理。无需甲状腺全切或RAI治疗。术后无需额外治疗或密切随访。",
+    "images": [
+      {
+        "url": "/diagrams/hyalinizing-trabecular-tumor-low.svg",
+        "caption": "低倍（HE）：肿瘤呈境界清楚的结节状，由梁状、巢状排列的上皮样细胞构成，间质内见显著透明变玻璃样物质沉积"
+      },
+      {
+        "url": "/diagrams/hyalinizing-trabecular-tumor-high.svg",
+        "caption": "高倍（HE）：梭形至多边形细胞呈小梁状排列，核沟、核内假包涵体及核旁黄色小体（yellow bodies）可见，细胞间充满均质嗜酸性透明变基质"
+      },
+      {
+        "url": "/diagrams/hyalinizing-trabecular-tumor-ki67.svg",
+        "caption": "IHC（Ki-67/MIB-1）：肿瘤细胞膜呈特征性线性胞膜阳性（MIB-1 细胞膜着色模式），为 HTT 的重要辅助诊断特征"
+      },
+      {
+        "url": "/diagrams/hyalinizing-trabecular-tumor-tg.svg",
+        "caption": "IHC（TG/TTF-1）：肿瘤细胞甲状腺球蛋白及 TTF-1 弥漫阳性，提示滤泡上皮源性，支持与甲状腺髓样癌及副神经节瘤的鉴别"
+      }
+    ],
+    "references": [
+      "WHO Classification of Endocrine and Neuroendocrine Tumours, 5th Edition, 2022"
+    ]
+  }
 ]

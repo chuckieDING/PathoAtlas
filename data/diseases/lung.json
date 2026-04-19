@@ -1,13 +1,972 @@
 [
-  {"id": "lung-adenocarcinoma", "nameZh": "肺腺癌", "nameEn": "Lung Adenocarcinoma", "aliases": ["腺癌"], "organ": "lung", "category": "malignant", "epidemiology": "最常见的肺癌类型，约占所有肺癌的40-50%。与吸烟相关但也常见于非吸烟者（尤其东亚女性），发病中位年龄约65岁，男女比例接近。危险因素包括吸烟、环境空气污染、氡暴露及家族史。东亚人群EGFR突变率高达50%。", "clinicalFeatures": "周围型多见，早期无症状，进展后咳嗽、胸痛、咯血。", "grossPathology": "肺周围灰白色结节，边界不清，可伴胸膜凹陷征。", "grossDescription": "**典型大体形态**：\n\n- **部位**：多数位于肺外周，以上叶多见；可单发或多灶\n- **大小与形状**：直径 1–6 cm 不等，多为类圆形/分叶状，边界模糊\n- **切面颜色**：灰白至灰黄色，常见条索状或放射状纤维化瘢痕\n- **质地**：较韧实，与纤维化相关；粘液型切面呈半透明胶冻样\n- **胸膜关系**：近胸膜病灶常引起&quot;胸膜凹陷征&quot;（胸膜被纤维化牵拉内陷）——这是 CT 影像学的经典线索\n- **继发改变**：可见中心坏死、空洞（少）、出血、肺萎陷和阻塞性肺炎\n- **磨玻璃结节（GGN）对应形态**：贴壁为主者肉眼可仅表现为局灶质地变实、苍白区，无明显肿块", "microscopy": "**WHO 2021 五种生长模式**（按侵袭性递增）：\n\n1. **贴壁型 Lepidic**：肿瘤细胞沿原有肺泡壁贴壁生长，肺泡结构保留，提示原位或微浸润成分\n2. **腺泡型 Acinar**：形成圆形或不规则腺样腔隙，是最常见的浸润模式\n3. **乳头型 Papillary**：具有纤维血管轴心的真性乳头\n4. **微乳头型 Micropapillary**：细胞簇团无纤维轴心，&quot;漂浮&quot;在腺腔或间质中，预后差\n5. **实性型 Solid**：实性巢团生长，需黏液染色或 TTF-1 证实腺性分化\n\n混合型最常见，报告需按 5% 为单位列出各模式百分比。\n\n**细胞学细节**：\n\n- **肿瘤细胞**：立方至柱状，胞浆中等丰富可呈嗜酸或空泡状（粘液分泌）\n- **胞核**：核增大、核膜不规则，染色质粗糙，核仁明显（多为单个嗜酸核仁）\n- **核分裂**：数量取决于分级，可见病理性核分裂\n- **间质反应**：中央常见致密&quot;促纤维结缔组织反应&quot;（desmoplastic stroma）和弹力纤维变性\n- **其他线索**：可见粘液湖、印戒样细胞、肿瘤浸润淋巴细胞（TIL）、气腔播散（STAS，预后差）", "keyFeatures": ["WHO 2021 五种生长模式（贴壁/腺泡/乳头/微乳头/实性）", "TTF-1 + / Napsin A + 是最关键的免疫标签", "EGFR（L858R、19 外显子缺失）/ ALK / ROS1 / KRAS G12C 均为可靶向驱动", "微乳头或实性成分 ≥20% 提示预后差", "PD-L1 TPS 分层指导免疫治疗一线选择"], "ihcProfile": [{"marker": "TTF-1", "result": "阳性(80%)", "note": "肺腺癌敏感标记"}, {"marker": "Napsin A", "result": "阳性(70-80%)", "note": "特异标记"}, {"marker": "CK7", "result": "阳性", "note": ""}, {"marker": "CK20", "result": "阴性", "note": "CK7+/CK20-"}, {"marker": "p40", "result": "阴性", "note": "排除鳞癌"}], "molecularFeatures": "EGFR突变率约50%(东亚)，ALK融合约5%，ROS1约1-2%，KRAS约30%。", "differentialDiagnosis": ["lung-squamous-cell-carcinoma", "mesothelioma"], "grading": "WHO 2021分级1-3级", "staging": "AJCC TNM第8版", "prognosis": "IA期>90%，IV期有靶向治疗中位>3年。", "treatment": "早期手术；晚期靶向(EGFR-TKI/ALK抑制剂)、免疫(PD-1)或化疗。", "images": [{"url": "/diagrams/papillary.svg", "caption": "乳头型肺腺癌：纤维血管轴心表面覆盖肿瘤上皮的真性乳头"}, {"url": "/diagrams/tubular.svg", "caption": "腺泡型生长模式：形成圆形腺样腔隙"}], "expertConsensus": [{"id": "nccn-nsclc", "title": "NCCN 非小细胞肺癌临床实践指南", "summary": "每年更新的非小细胞肺癌诊断、分期、基因检测与系统治疗路径标准；腺癌相关的分子检测（EGFR/ALK/ROS1/KRAS/BRAF/MET/RET/NTRK/HER2/PD-L1）全部列于一线必检项。", "organization": "NCCN", "year": 2024, "sourceUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1450", "viewUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1450"}, {"id": "who-thoracic-2021", "title": "WHO 胸部肿瘤分类（第 5 版）", "summary": "将肺腺癌划分为原位腺癌（AIS）、微浸润腺癌（MIA）、浸润性非黏液/黏液腺癌，并首次以 5% 为单位记录五大生长模式百分比，作为分级依据的核心。", "organization": "WHO/IARC", "year": 2021, "sourceUrl": "https://publications.iarc.fr/595", "viewUrl": "https://publications.iarc.fr/595"}, {"id": "csco-lung-2024", "title": "CSCO 原发性肺癌诊疗指南", "summary": "中国临床肿瘤学会发布的本土化指南，强调东亚人群 EGFR 突变高发（~50%）与一线 EGFR-TKI 选择（奥希替尼为首选）。", "organization": "CSCO", "year": 2024, "sourceUrl": "https://www.csco.org.cn/cn/index.aspx?m=20200110170853755910", "viewUrl": "https://www.csco.org.cn/cn/index.aspx?m=20200110170853755910"}], "literature": [{"id": "travis-2011-iaslc", "title": "International Association for the Study of Lung Cancer/American Thoracic Society/European Respiratory Society international multidisciplinary classification of lung adenocarcinoma", "summary": "IASLC/ATS/ERS 三学会 2011 年联合发布的肺腺癌多学科分类共识，首次系统确立贴壁/腺泡/乳头/微乳头/实性 5 类浸润性腺癌形态亚型及对应预后分级。", "authors": "Travis WD, et al.", "journal": "J Thorac Oncol", "year": 2011, "sourceUrl": "https://www.jto.org/article/S1556-0864(15)32435-1/fulltext", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/21252716/"}, {"id": "kadota-2014-stas", "title": "Tumor Spread through Air Spaces is an Important Pattern of Invasion and Impacts the Frequency and Location of Recurrences after Limited Resection", "summary": "首次定义&quot;气腔播散&quot;（STAS）为独立不良预后因素，亚肺叶切除后 STAS 阳性患者局部复发率显著升高。", "authors": "Kadota K, et al.", "journal": "J Thorac Oncol", "year": 2015, "sourceUrl": "https://www.jto.org/article/S1556-0864(15)30172-X/fulltext", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/25811921/"}, {"id": "herbst-2018-lancet", "title": "The biology and management of non-small cell lung cancer", "summary": "Nature 综述，系统介绍 NSCLC 分子分型与靶向/免疫治疗演进，是理解腺癌驱动基因与 PD-L1/TMB 分层策略的经典读物。", "authors": "Herbst RS, Morgensztern D, Boshoff C", "journal": "Nature", "year": 2018, "sourceUrl": "https://www.nature.com/articles/nature25183", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/29364287/"}], "references": ["WHO Thoracic Tumours, 5th Ed, 2021", "AJCC Cancer Staging Manual 8th Ed"], "differentialDiagnosisNotes": "**与肺鳞癌的鉴别**\n\n- **形态线索**：腺样/乳头/贴壁等腺性模式提示腺癌；角化珠 + 细胞间桥 + 单细胞角化提示鳞癌\n- **关键 IHC 组合**：TTF-1 + / Napsin A + / CK7 + / p40 − 支持腺癌；p40 + / CK5/6 + / TTF-1 − 支持鳞癌\n- **低分化情形**：组织学难分时完全依赖免疫分型，推荐首选 TTF-1 + p40 两联\n\n**与恶性胸膜间皮瘤的鉴别**\n\n- **影像/大体**：腺癌多为肺内占位 + 胸膜转移；间皮瘤弥漫性胸膜增厚呈盔甲样\n- **IHC**：Calretinin + / WT1 + / D2-40 + / Claudin-4 − 支持间皮瘤；TTF-1 + / Claudin-4 + / CEA + 支持腺癌（CEA 在间皮瘤几乎阴性）\n- **分子**：BAP1 / CDKN2A 缺失强提示间皮瘤\n\n**与转移性腺癌的鉴别**\n\n- 肺原发腺癌 TTF-1/Napsin A 阳性率 ~80%；结肠来源 CDX2 + / CK20 + / CK7 − ；乳腺来源 GATA3 + / ER +；甲状腺来源 TTF-1 + / Tg +（Tg 阴性可排除甲状腺）"},
-  {"id": "lung-squamous-cell-carcinoma", "nameZh": "肺鳞状细胞癌", "nameEn": "Lung Squamous Cell Carcinoma", "aliases": ["鳞癌", "SCC"], "organ": "lung", "category": "malignant", "epidemiology": "约占肺癌25-30%，与重度吸烟密切相关（>95%有吸烟史），男性显著多于女性。发病中位年龄约65-70岁，发病率在西方国家因戒烟运动呈下降趋势，在发展中国家仍保持高位。", "clinicalFeatures": "中央型多见，可引起阻塞性肺炎。", "grossPathology": "中央型灰白色肿块，常伴坏死空洞。", "grossDescription": "**典型大体形态**：\n\n- **部位**：~70% 为中央型，起源于段或亚段支气管上皮\n- **切面**：灰白色伴黄色坏死灶，常见大片地图样坏死与空洞（脆、易破碎）\n- **与支气管关系**：沿支气管腔内生长形成菜花状隆起或环周壁性增厚，常伴阻塞性肺炎/肺不张\n- **边界**：外周型者可见较清楚的分叶状边界\n- **角质化表现**：部分病例切面可见明显的灰白颗粒状或珍珠样角化灶", "microscopy": "**主要诊断线索**——鳞状分化：\n\n1. **角化（keratinization）**：单细胞角化（嗜酸性玻璃样胞浆）或形成角化珠（同心圆层状角质）\n2. **细胞间桥（intercellular bridges）**：棘细胞样连接，高倍下可见&quot;棘状&quot;突起\n3. **生长模式**：实性巢/条索，可伴中心坏死形成粉刺样结构\n\n**细胞学细节**：\n\n- 细胞大、多边形，胞浆丰富嗜酸\n- 核增大深染，染色质粗糙，核仁明显\n- 核分裂活跃，可见病理性核分裂\n- 分化程度：高分化者角化丰富；低分化者需 p40/p63 证实鳞状来源\n- **亚型**：角化型、非角化型、基底样鳞癌（core basaloid, predominant basaloid, 预后差）", "keyFeatures": ["鳞状分化(角化/细胞间桥)", "p40+/p63+/CK5/6+", "TTF-1阴性", "中央型，与吸烟强相关"], "ihcProfile": [{"marker": "p40", "result": "阳性", "note": "最特异鳞癌标记"}, {"marker": "p63", "result": "阳性", "note": ""}, {"marker": "CK5/6", "result": "阳性", "note": ""}, {"marker": "TTF-1", "result": "阴性", "note": "区别于腺癌"}, {"marker": "Napsin A", "result": "阴性", "note": "排除腺癌"}], "molecularFeatures": "TP53突变率>80%，FGFR1扩增约20%。", "differentialDiagnosis": ["lung-adenocarcinoma", "small-cell-lung-carcinoma"], "grading": "高/中/低分化", "staging": "AJCC TNM第8版", "prognosis": "预后较腺癌差。", "treatment": "手术、放化疗为主，免疫治疗效果好。", "images": [{"url": "/diagrams/keratin-pearl.svg", "caption": "鳞状细胞癌中心角化珠：同心圆状层状角化物是鳞状分化的标志"}], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"], "differentialDiagnosisNotes": "**与肺腺癌的鉴别**（见 lung-adenocarcinoma 条目）\n核心：p40/p63/CK5/6 + 支持鳞癌；TTF-1/Napsin A + 支持腺癌。低分化病例必须做免疫分型。\n\n**与大细胞神经内分泌癌（LCNEC）和小细胞肺癌（SCLC）的鉴别**\n\n- **形态**：鳞癌有明确角化或细胞间桥；NE 癌为器官样/菊形团/弥漫片状，细胞大小均一\n- **IHC**：Syn / CgA / CD56 / INSM1 中至少一项强阳性支持 NE 癌；单纯 CD56 轻度阳性不能诊断 NE 癌\n- **p40**：NE 癌通常阴性（少数 LCNEC 可灶性弱阳），鳞癌弥漫强阳\n\n**与基底样鳞癌和淋巴上皮癌的鉴别**\n\n- **基底样亚型**：细胞小且周围栅栏状排列，常伴坏死；仍保留 p40 弥漫 +\n- **淋巴上皮癌**：合胞状上皮 + 浓密 TIL 背景；EBER 原位杂交 + 支持诊断（亚裔高发）"},
-  {"id": "small-cell-lung-carcinoma", "nameZh": "小细胞肺癌", "nameEn": "Small Cell Lung Carcinoma", "aliases": ["SCLC"], "organ": "lung", "category": "malignant", "epidemiology": "约占肺癌13-15%，几乎均与重度吸烟有关（>95%），发病中位年龄约70岁，男性稍多见。近年发病率随戒烟运动有所下降。极罕见于非吸烟者。是侵袭性最强的肺癌亚型，确诊时60-70%已为广泛期。", "clinicalFeatures": "中央型，进展迅速，早期广泛转移，可伴副肿瘤综合征。", "grossPathology": "灰白色软性肿物，广泛坏死。", "grossDescription": "**典型大体形态**：\n\n- **部位**：>95% 为中央型，肺门区大块肿物常包绕并浸润大支气管\n- **外观**：切面灰白色至灰褐色，质软如&quot;鱼肉&quot;样，常有广泛坏死和出血\n- **边界**：侵袭性极强，边界不清，常沿淋巴管扩散形成多结节和肺门淋巴结巨大肿大（&quot;bulky N2/N3&quot;）\n- **特征**：发现时常已有广泛胸膜或对侧肺转移；约 60–70% 病人就诊时即为广泛期", "microscopy": "**经典 SCLC 镜下三要素**：\n\n1. **小细胞**：细胞直径 < 3 × 小淋巴细胞；胞浆极少似&quot;裸核&quot;\n2. **核特征**：\n   - 染色质细腻呈&quot;椒盐样&quot;（salt-and-pepper）\n   - 核仁不明显或缺如\n   - 核镶嵌（nuclear molding）——细胞相互挤压、核轮廓相互适配\n   - 核挤碎假象（crush artifact）——活检中常见，有鉴别价值\n3. **极高核分裂与坏死**：\n   - 核分裂 > 10/2 mm²（常 >60/2 mm²）\n   - 广泛地图样坏死\n   - **Azzopardi 现象**：坏死区血管壁嗜碱性沉积（DNA 溢出吸附）——SCLC 特征性所见\n\n**生长模式**：弥漫片状、巢状或少见的菊形团样；穿刺和粘膜活检样本中常成簇并伴明显核挤压假象。", "keyFeatures": ["小细胞，核染色质细腻", "神经内分泌标记阳性(Syn/CgA/CD56)", "Ki-67>80%", "TP53和RB1双失活"], "ihcProfile": [{"marker": "Synaptophysin", "result": "阳性", "note": ""}, {"marker": "Chromogranin A", "result": "阳性(70%)", "note": ""}, {"marker": "CD56", "result": "阳性", "note": "最敏感NE标记"}, {"marker": "TTF-1", "result": "阳性(85%)", "note": ""}, {"marker": "Ki-67", "result": ">80%", "note": "极高增殖"}], "molecularFeatures": "TP53+RB1双失活(近100%)。DLL3表达可作为ADC靶点。", "differentialDiagnosis": ["lung-adenocarcinoma", "carcinoid-tumor"], "grading": "不分级，均为高级别", "staging": "局限期/广泛期", "prognosis": "预后极差，局限期中位15-20月。", "treatment": "化疗(EP方案)+放疗，免疫治疗已纳入一线。", "images": [{"url": "/diagrams/starry-sky.svg", "caption": "SCLC 可在高倍下观察到&quot;椒盐样&quot;染色质；坏死广泛时背景常伴凋亡小体"}], "expertConsensus": [{"id": "nccn-sclc", "title": "NCCN 小细胞肺癌临床实践指南", "summary": "将 SCLC 划分为局限期（LS-SCLC）与广泛期（ES-SCLC）；LS 首选同步放化疗，ES 一线化疗（EP/EC 方案）联合 atezolizumab 或 durvalumab。", "organization": "NCCN", "year": 2024, "sourceUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1462", "viewUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1462"}, {"id": "who-thoracic-sclc", "title": "WHO 胸部肿瘤分类 · 神经内分泌肿瘤章", "summary": "将肺神经内分泌肿瘤分为典型类癌、不典型类癌、大细胞神经内分泌癌（LCNEC）和小细胞肺癌；SCLC 归为高级别 NE 癌，不再细分亚型。", "organization": "WHO/IARC", "year": 2021, "sourceUrl": "https://publications.iarc.fr/595", "viewUrl": "https://publications.iarc.fr/595"}, {"id": "csco-sclc", "title": "CSCO 小细胞肺癌诊疗指南", "summary": "本土化 SCLC 全程管理指南，特别关注 Atezo/Durva + 化疗一线免疫方案在中国人群中的适用性与后续耐药处理。", "organization": "CSCO", "year": 2024, "sourceUrl": "https://www.csco.org.cn/", "viewUrl": "https://www.csco.org.cn/"}], "literature": [{"id": "gazdar-2017-sclc", "title": "Small-cell lung cancer: what we know, what we need to know and the path forward", "summary": "Nature Reviews Cancer 权威综述，系统梳理 SCLC 分子分型（ASCL1/NEUROD1/POU2F3/YAP1）及其治疗靶点，是理解 SCLC 异质性的起点。", "authors": "Gazdar AF, Bunn PA, Minna JD", "journal": "Nat Rev Cancer", "year": 2017, "sourceUrl": "https://www.nature.com/articles/nrc.2017.87", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/28815533/"}, {"id": "horn-2018-impower133", "title": "First-Line Atezolizumab plus Chemotherapy in Extensive-Stage Small-Cell Lung Cancer", "summary": "IMPower133 Ⅲ 期随机对照，确立 atezolizumab + EC 作为 ES-SCLC 一线标准，OS 延长至 12.3 月 vs 10.3 月。", "authors": "Horn L, et al.", "journal": "N Engl J Med", "year": 2018, "sourceUrl": "https://www.nejm.org/doi/full/10.1056/NEJMoa1809064", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/30280641/"}, {"id": "rudin-2019-molecular", "title": "Molecular subtypes of small cell lung cancer: a synthesis of human and mouse model data", "summary": "提出基于关键转录因子（ASCL1/NEUROD1/POU2F3/YAP1）的 SCLC 四型分子分型，为后续治疗差异化提供框架。", "authors": "Rudin CM, et al.", "journal": "Nat Rev Cancer", "year": 2019, "sourceUrl": "https://www.nature.com/articles/s41568-019-0133-9", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/30926931/"}], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"], "differentialDiagnosisNotes": "**与大细胞神经内分泌癌（LCNEC）的鉴别**（最常见且最关键）\n\n- **细胞大小**：SCLC < 3× 淋巴细胞、胞浆极少近裸核；LCNEC 明显更大、胞浆中等、核仁突出\n- **核特征**：SCLC 染色质椒盐样、核仁不明显、核镶嵌常见；LCNEC 染色质粗、核仁显著\n- **Ki-67**：SCLC 常 > 80%；LCNEC 40–80%（两者都高，但 LCNEC 相对低）\n- **p40**：两者均 − ；若强 + 则考虑基底样鳞癌\n- **临床相关**：区分直接影响化疗方案（EP 方案对 SCLC 样 LCNEC 也有效）\n\n**与不典型类癌的鉴别**\n\n- **核分裂数**：不典型类癌 2–10 /2 mm²；SCLC > 10 /2 mm²（常 >60）\n- **坏死**：不典型类癌偶见点状坏死；SCLC 广泛地图样坏死\n- **Ki-67**：不典型类癌 < 20%；SCLC > 50%\n- **形态**：类癌细胞均匀、器官样/小梁；SCLC 核染色质细腻 + 核镶嵌\n\n**与慢性炎症 / 淋巴细胞浸润的鉴别**（小活检常见陷阱）\n\n- 粘膜活检标本中压碎假象 (crush artifact) 极常见，可误当作淋巴细胞\n- Pan-CK 阳性 + CD45 阴性可确诊上皮来源\n- 压碎区血管壁嗜碱性沉积（Azzopardi 现象）是 SCLC 特征"},
-  {"id": "mesothelioma", "nameZh": "恶性胸膜间皮瘤", "nameEn": "Malignant Pleural Mesothelioma", "aliases": ["间皮瘤"], "organ": "lung", "category": "malignant", "epidemiology": "与石棉暴露密切相关，潜伏期20-40年。发病中位年龄约70岁，男性多见（男女比约4:1），反映职业性石棉暴露的性别差异。年发病率约1-2/10万，在石棉高暴露地区（造船、建筑、矿业）显著升高。", "clinicalFeatures": "胸腔积液、胸痛、呼吸困难，胸膜弥漫增厚。", "grossPathology": "胸膜弥漫增厚呈盔甲样。", "grossDescription": "**典型大体形态**：\n\n- **分布**：自脏层/壁层胸膜弥漫性增厚并向肺实质生长，最终融合为厚 1–5 cm 的&quot;盔甲样&quot;（rind-like）外壳，紧紧包裹肺\n- **切面**：灰白色至黄色，质地韧实，可见多结节状颗粒\n- **伴随改变**：胸腔积液（常为血性）；肺实质可见间隔增厚和蜂窝样改变；心包和纵隔结构受压移位\n- **其他线索**：同侧膈面、叶间裂增厚，胸膜斑（asbestos plaques）常并存", "microscopy": "**三大组织亚型**：\n\n1. **上皮样型（~60%，预后最好）**：肿瘤细胞立方至多边形，胞浆嗜酸，呈管状、乳头状、腺样、实性或微乳头样排列；常见&quot;裂隙样&quot;腔隙和胶原间质包绕\n2. **肉瘤样型（~10–20%，预后最差）**：梭形细胞束状/鱼骨样排列，可伴异源性成分（软骨、骨）；易误诊为肉瘤或肉瘤样癌\n3. **双相型（~20–30%）**：上述两种成分并存，每一成分需 ≥ 10%\n\n**浸润判定**：胸膜下脂肪或肺实质浸润、&quot;胸膜下脂肪入侵&quot;是与良性胸膜反应性增生（Reactive mesothelial hyperplasia）鉴别的最重要结构学依据。", "keyFeatures": ["胸膜弥漫增厚", "石棉暴露史", "Calretinin+/WT1+/D2-40+", "需与肺腺癌胸膜转移鉴别"], "ihcProfile": [{"marker": "Calretinin", "result": "阳性", "note": "间皮标记"}, {"marker": "WT1", "result": "阳性(核)", "note": ""}, {"marker": "D2-40", "result": "阳性", "note": ""}, {"marker": "CEA", "result": "阴性", "note": "区别于腺癌"}, {"marker": "TTF-1", "result": "阴性", "note": "排除肺腺癌"}], "molecularFeatures": "BAP1缺失，CDKN2A纯合缺失(p16 FISH)。", "differentialDiagnosis": ["lung-adenocarcinoma"], "grading": "上皮样/双相/肉瘤样", "staging": "AJCC TNM", "prognosis": "中位生存12-18月。", "treatment": "手术+化疗(培美曲塞+铂类)+免疫治疗。", "images": [], "expertConsensus": [{"id": "nccn-mpm", "title": "NCCN 胸膜间皮瘤临床实践指南", "summary": "推荐以上皮样、肉瘤样、双相 3 大组织亚型结合 BAP1 与 CDKN2A 分子检测进行综合分层，并明确 nivolumab + ipilimumab 为 PM 一线免疫方案。", "organization": "NCCN", "year": 2024, "sourceUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1458", "viewUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1458"}, {"id": "iaslc-mpm-2018", "title": "IASLC 胸膜间皮瘤国际分期建议（第 8 版）", "summary": "引入新的 TNM 第 8 版分期，将胸膜厚度和受累深度标准化为 T 分期依据；I 期 5 年生存可达 33%。", "organization": "IASLC", "year": 2018, "sourceUrl": "https://www.jto.org/article/S1556-0864(16)31107-0/fulltext", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/27670821/"}, {"id": "esmo-mpm", "title": "ESMO 胸膜恶性间皮瘤临床实践指南", "summary": "欧洲肿瘤内科学会指南，推荐早期综合诊断需完善 Calretinin/WT1/D2-40/BAP1/CDKN2A 组套并强调 BAP1 缺失在诊断与遗传咨询中的双重意义。", "organization": "ESMO", "year": 2022, "sourceUrl": "https://www.annalsofoncology.org/article/S0923-7534(21)04876-1/fulltext", "viewUrl": "https://www.annalsofoncology.org/article/S0923-7534(21)04876-1/fulltext"}], "literature": [{"id": "baas-2021-checkmate743", "title": "First-line nivolumab plus ipilimumab in unresectable malignant pleural mesothelioma (CheckMate 743)", "summary": "CheckMate 743 Ⅲ 期试验确立双免一线标准，mOS 18.1 月 vs 化疗 14.1 月；肉瘤样/双相亚型获益尤为显著。", "authors": "Baas P, et al.", "journal": "Lancet", "year": 2021, "sourceUrl": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32714-8/fulltext", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/33485464/"}, {"id": "sauter-2022-bap1", "title": "BAP1 and MTAP Immunohistochemistry in Mesothelioma", "summary": "Modern Pathology 综述 BAP1 缺失与 MTAP 缺失组合免疫组化在胸膜增生与间皮瘤早期鉴别中的价值，明显优于单独使用。", "authors": "Sauter JL, et al.", "journal": "Mod Pathol", "year": 2022, "sourceUrl": "https://www.modernpathology.org/article/S0893-3952(22)00035-0/fulltext", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/34795397/"}, {"id": "husain-2018-consensus", "title": "Guidelines for Pathologic Diagnosis of Malignant Mesothelioma: 2017 Update of the Consensus Statement", "summary": "国际间皮瘤病理共识 2017 年更新版，明确上皮样、肉瘤样、双相亚型的最少成分比例与 IHC 判读流程，是日常诊断的权威操作手册。", "authors": "Husain AN, et al.", "journal": "Arch Pathol Lab Med", "year": 2018, "sourceUrl": "https://meridian.allenpress.com/aplm/article/142/1/89/194115/", "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/28686500/"}], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"], "differentialDiagnosisNotes": "**与肺腺癌胸膜转移的鉴别**（最常见且最关键）\n\n- **关键 IHC**（至少两两组合）：\n  - 间皮标记：Calretinin + / WT1 + / D2-40 + / CK5/6 +\n  - 腺癌标记：TTF-1 + / Napsin A + / CEA + / Claudin-4 + / BerEP4 +\n- **核心策略**：至少选 2 个间皮 + 2 个腺癌标记。间皮型 CEA 几乎恒定阴性，对鉴别价值最高\n- **分子**：BAP1 核表达缺失 + CDKN2A 纯合缺失（p16 FISH）强支持间皮瘤\n\n**与胸膜反应性增生的鉴别**（早期/小活检陷阱）\n\n- **结构**：间皮瘤有胸膜下脂肪或肺实质浸润；反应性增生不突破边界\n- **BAP1 IHC**：间皮瘤约 60% 失表达，反应性增生保留表达。是小活检鉴别的核心免疫指标\n- **MTAP IHC**：联合 BAP1 使用，两者任一阴性支持间皮瘤（CDKN2A/MTAP 共缺失）\n- **细胞学单独判断不足**：体腔液细胞学若间皮细胞增生要慎判，必要时行 FISH 验证\n\n**与滑膜肉瘤 / 肉瘤样癌的鉴别**\n\n- 上皮样型间皮瘤 vs 腺癌见上\n- 肉瘤样型间皮瘤需与肉瘤样癌、滑膜肉瘤鉴别：Calretinin + 和 SS18-SSX 融合阴性支持间皮瘤"},
-  {"id": "carcinoid-tumor", "nameZh": "肺类癌", "nameEn": "Pulmonary Carcinoid Tumor", "aliases": ["类癌", "分化好的神经内分泌肿瘤"], "organ": "lung", "category": "malignant", "epidemiology": "占肺肿瘤1-2%，年发病率约0.2-0.5/10万。典型类癌好发于年轻人（中位年龄约45岁），无明显性别差异，与吸烟无明确关系。不典型类癌发病年龄稍大，与吸烟可能相关。MEN1综合征患者需警惕类癌发生。", "clinicalFeatures": "可引起阻塞性症状或类癌综合征(面部潮红、腹泻)，Cushing综合征少见。", "grossPathology": "光滑息肉样或结节样肿物，血供丰富，切面黄褐色。", "grossDescription": "**典型大体形态**：\n\n- **部位**：典型类癌多为中央型（支气管内息肉样肿物），占 70%；不典型类癌更多位于外周\n- **大小**：通常 1–4 cm，边界清楚\n- **外观**：支气管内可见光滑圆形结节，表面完整的呼吸上皮覆盖；切面灰黄至黄褐色，质地较软\n- **血供**：血供极丰富，活检时易出血——术中或内镜操作需格外注意\n- **与支气管关系**：阻塞近端支气管可致远端阻塞性肺炎和肺不张\n- **继发改变**：不典型类癌可见灶状坏死，典型类癌几乎无坏死", "microscopy": "均匀一致的圆形至多边形细胞呈器官样巢状、小梁状、缎带状或菊形团样排列，被薄壁血管间隔分隔。核圆形居中，大小均匀，染色质细腻呈特征性'胡椒盐'样分布，核仁不明显。胞浆中等量嗜酸性颗粒状，含丰富神经内分泌颗粒。典型类癌：核分裂<2/2mm²，无坏死，细胞形态温和一致；不典型类癌：核分裂2-10/2mm²和/或伴局灶点状坏死，核异型性轻度增加。间质血管丰富，可见纤维化和淀粉样物质沉积。需与SCLC和LCNEC严格鉴别（核分裂数和Ki-67是关键）。", "keyFeatures": ["均匀细胞呈器官样/巢状排列", "典型类癌 vs 不典型类癌的关键是核分裂数和坏死", "Syn+/CgA+/CD56+", "Ki-67低(典型<5%，不典型5-20%)"], "ihcProfile": [{"marker": "Synaptophysin", "result": "阳性", "note": ""}, {"marker": "Chromogranin A", "result": "阳性", "note": ""}, {"marker": "CD56", "result": "阳性", "note": ""}, {"marker": "Ki-67", "result": "典型<5%，不典型5-20%", "note": "与SCLC鉴别关键"}, {"marker": "TTF-1", "result": "阳性(部分)", "note": ""}], "molecularFeatures": "MEN1基因突变见于部分病例。分子改变相对简单，TP53/RB1完整(区别于SCLC)。", "differentialDiagnosis": ["small-cell-lung-carcinoma", "lung-adenocarcinoma"], "grading": "典型类癌(低级别) vs 不典型类癌(中级别)", "staging": "AJCC TNM", "prognosis": "典型类癌5年生存率>90%，不典型类癌约60-70%。", "treatment": "手术切除为主。不典型类癌术后可考虑辅助治疗。", "images": [{"url": "/diagrams/tubular.svg", "caption": "类癌的器官样巢状结构：均匀细胞围成小巢团，被血管间隔分开"}], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"]},
-  {"id": "lung-adenocarcinoma-in-situ", "nameZh": "原位腺癌", "nameEn": "Adenocarcinoma In Situ", "aliases": ["AIS", "肺 AIS"], "organ": "lung", "category": "precancerous", "epidemiology": "多在低剂量 CT 筛查时以纯磨玻璃结节（pGGN）形式被发现，无明显性别差异，中位年龄约60岁。随CT筛查普及检出率逐年上升。东亚非吸烟女性中EGFR突变驱动的AIS比例较高。", "clinicalFeatures": "完全无症状，随访 CT 上呈长期稳定或缓慢增大的 ≤3 cm 纯磨玻璃结节。", "grossPathology": "肉眼常无明显肿块，可表现为局灶苍白变或轻度实变。", "grossDescription": "**大体特点**：\n\n- 多数病灶肉眼几乎看不到肿块：因肿瘤沿原有肺泡壁贴壁生长，不破坏结构\n- 可见局灶苍白区、轻度实变或轻微&quot;毛玻璃&quot;样改变\n- 病灶直径 ≤ 3 cm，多数 1–2 cm\n- 胸膜无凹陷，切面无明显纤维化瘢痕——与侵袭性腺癌明显不同\n- **取材建议**：对磨玻璃结节整体沿长轴纵切，间隔 2–3 mm 全部送检，以确认无微浸润成分", "microscopy": "肿瘤细胞纯贴壁生长（Lepidic-only）沿原有肺泡壁匍匐排列，保留原有肺泡结构框架不被破坏。细胞为立方至低柱状，核轻度增大、染色质均匀，核仁不明显或缺如，核分裂象极罕见。无间质浸润成分（无腺泡型、乳头型、微乳头型或实性型生长）、无胸膜侵犯、无脉管侵犯、无气腔播散（STAS），大小≤3cm。间质无促纤维增生反应，与浸润性腺癌的纤维化中心显著不同。需全部取材以排除微浸润灶。", "keyFeatures": ["≤ 3 cm 的纯贴壁生长（100% lepidic）", "无间质、血管、胸膜侵犯", "CT 上对应纯磨玻璃结节", "完全切除后 5 年无病生存 100%", "与微浸润腺癌（MIA，浸润灶 ≤ 5 mm）的区别在于是否出现非贴壁成分"], "ihcProfile": [{"marker": "TTF-1", "result": "阳性", "note": ""}, {"marker": "Napsin A", "result": "阳性", "note": ""}, {"marker": "Ki-67", "result": "极低(<2%)", "note": "区别于浸润癌"}], "molecularFeatures": "EGFR 突变已可在 AIS 出现，ALK 融合罕见。基因组改变数量远少于浸润癌。", "differentialDiagnosis": ["lung-adenocarcinoma"], "grading": "不分级", "staging": "pTis / cTis (第 8 版)", "prognosis": "完整切除后 5 年无病生存率 100%。", "treatment": "亚肺叶切除（楔形/段切）即可，无需辅助治疗。", "images": [{"url": "/diagrams/tubular.svg", "caption": "贴壁生长模式示意：肿瘤细胞沿原有肺泡壁排列，保留肺泡结构"}], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"]},
-  {"id": "large-cell-neuroendocrine-carcinoma", "nameZh": "大细胞神经内分泌癌", "nameEn": "Large Cell Neuroendocrine Carcinoma", "aliases": ["LCNEC"], "organ": "lung", "category": "malignant", "epidemiology": "约占肺癌 3%，重度吸烟者多见（>90%有吸烟史），以 60–70 岁男性为主（男女比约3:1）。是高级别肺神经内分泌癌之一，发病率低于SCLC但侵袭性相似，确诊时多为中晚期。", "clinicalFeatures": "外周型常见，发现时多为较大肿块，早期即易广泛转移。", "grossPathology": "较大的灰白色外周型肿块，切面常伴广泛坏死。", "grossDescription": "**典型大体形态**：\n\n- **部位**：多为外周型（区别于中央型 SCLC），右肺上叶最多\n- **大小**：肿瘤通常较大，3–10 cm 不等，发现时已多属较晚期\n- **切面**：灰白至灰黄色实性肿块，几乎均可见较广泛的中央&quot;地图样&quot;坏死（反映高增殖与高核分裂）\n- **质地**：较 SCLC 略硬，可伴出血灶\n- **边界**：与周围肺实质界限相对清楚但常有卫星结节和胸膜浸润", "microscopy": "肿瘤由大细胞组成（细胞体积>3倍小淋巴细胞，明显大于SCLC），排列呈器官样巢状、小梁状、菊形团样或栅栏状结构，具有神经内分泌形态特征。胞浆中等至丰富，嗜酸性或透明。核大，呈空泡状或粗颗粒状染色质，核仁1-2个显著（与SCLC缺乏核仁形成鲜明对比），核膜清晰。核分裂>10/2mm²（常>20/2mm²），地图样坏死广泛。免疫组化至少一项神经内分泌标记阳性（Syn/CgA/CD56/INSM1）方可诊断。Ki-67通常40-80%，介于类癌和SCLC之间。", "keyFeatures": ["细胞比 SCLC 大（≥ 3 倍小淋巴细胞），胞浆丰富", "必须同时具备 NE 形态（器官样/菊形团）与 NE 免疫表型", "核分裂 > 10 / 2 mm²，常伴坏死", "Ki-67 通常 40–80%，低于 SCLC", "与不典型类癌、SCLC 的鉴别是关键"], "ihcProfile": [{"marker": "Synaptophysin", "result": "阳性", "note": ""}, {"marker": "Chromogranin A", "result": "阳性", "note": ""}, {"marker": "CD56", "result": "阳性", "note": ""}, {"marker": "TTF-1", "result": "阳性(约 50%)", "note": ""}, {"marker": "Ki-67", "result": "40-80%", "note": "低于 SCLC"}, {"marker": "INSM1", "result": "阳性", "note": "近年推荐的 NE 标记"}], "molecularFeatures": "两大分子亚型：SCLC 样（TP53+RB1 双失活）和 NSCLC 样（KRAS、STK11 突变），决定化疗方案选择。", "differentialDiagnosis": ["small-cell-lung-carcinoma", "carcinoid-tumor", "lung-adenocarcinoma"], "grading": "高级别", "staging": "AJCC TNM 第 8 版", "prognosis": "侵袭性强，介于 SCLC 与腺癌之间，5 年生存约 15–25%。", "treatment": "早期手术 + 辅助化疗；SCLC 样者用 EP 方案效果较好，NSCLC 样者可考虑含铂双药。", "images": [{"url": "/diagrams/starry-sky.svg", "caption": "LCNEC 菊形团样/巢状结构伴广泛坏死，与 SCLC 的差别是胞浆和核仁更突出"}], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"]},
-  {"id": "pulmonary-hamartoma", "nameZh": "肺错构瘤", "nameEn": "Pulmonary Hamartoma", "aliases": ["错构瘤", "软骨样错构瘤"], "organ": "lung", "category": "benign", "epidemiology": "最常见的良性肺肿瘤，占肺孤立性结节约 8%，男性稍多于女性，发病年龄 40–60 岁。无种族差异，无明确危险因素，多为偶然影像学发现。不与吸烟相关。", "clinicalFeatures": "常为体检偶然发现的无症状&quot;硬币样&quot;病灶，极少出现症状。", "grossPathology": "外周型圆形/分叶状结节，边界清楚，切面灰白伴&quot;爆米花&quot;样钙化。", "grossDescription": "**典型大体形态**：\n\n- **部位**：外周型最常见（~90%），少数为支气管内息肉样（内生型错构瘤）\n- **大小**：多为 1–4 cm 的圆形/分叶状&quot;硬币样&quot;结节\n- **切面**：灰白色，质地硬韧，可见光泽状软骨灶、脂肪灶（黄色）和少量粘液样区\n- **钙化**：CT 典型&quot;爆米花&quot;钙化对应软骨岛内的营养不良性钙化\n- **包膜**：大体有明显包膜感，与周围肺实质分界清楚，手术易剜除\n- **大小稳定**：多年随访体积几乎不变，或生长非常缓慢", "microscopy": "由成熟的间叶组织成分无规则混合构成，以透明软骨岛为主（可伴营养不良性钙化或骨化），间杂脂肪组织、平滑肌束和纤维结缔组织。各成分均为成熟分化，无核异型性，核分裂象缺如。特征性地含有裂隙状被捕获的呼吸上皮（纤毛柱状上皮），散在于间叶成分之间。边界清楚，有薄层纤维包膜与周围正常肺实质分隔。无坏死、无浸润性生长，与低级别软骨肉瘤的鉴别在于缺乏异型性和浸润。", "keyFeatures": ["成熟间叶成分（软骨、脂肪、平滑肌）混合", "常含陷入的呼吸上皮，形成裂隙", "&quot;爆米花&quot;样钙化为 CT 特征", "边界光滑、生长缓慢", "需与低级别软骨肉瘤鉴别，但无异型及核分裂"], "ihcProfile": [{"marker": "S-100", "result": "软骨成分阳性", "note": ""}, {"marker": "Desmin", "result": "平滑肌阳性", "note": ""}], "molecularFeatures": "HMGA2 染色体易位（6p21, 12q13-15）常见，属良性间叶源性肿瘤。", "differentialDiagnosis": ["lung-adenocarcinoma", "carcinoid-tumor"], "grading": "无", "staging": "不适用", "prognosis": "良性，罕见复发或恶变。", "treatment": "无症状小结节可随访；较大或诊断不明者手术切除。", "images": [], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"]},
-  {"id": "squamous-cell-carcinoma", "nameZh": "肺鳞状细胞癌", "nameEn": "Lung Squamous Cell Carcinoma", "aliases": ["鳞癌", "肺鳞癌", "SCC"], "organ": "lung", "category": "malignant", "epidemiology": "占非小细胞肺癌约25-30%，与重度吸烟密切相关（>90%有吸烟史），男性显著多于女性（约3-5:1）。发病中位年龄约65岁，在西方国家发病率因戒烟呈下降趋势。非吸烟者罕见，可靶向驱动突变（EGFR/ALK）极少。", "clinicalFeatures": "多为中央型，起源于段及亚段支气管上皮，可引起阻塞性肺炎、肺不张，常伴咳嗽、咯血、胸痛。偶可伴高钙血症（PTHrP分泌）。", "grossPathology": "中央型灰白色肿块，常沿支气管腔内生长，伴大片坏死和空洞形成。", "microscopy": "鳞状分化是诊断基础，表现为角化（单细胞角化或角化珠）和/或细胞间桥。肿瘤细胞大，多边形，胞浆丰富嗜酸性。生长模式为实性巢状/条索状，中央可见粉刺样坏死。低分化者形态学鉴别困难，需免疫组化证实。亚型包括角化型、非角化型和基底样型。基底样亚型细胞小且周围栅栏状排列，预后差。", "keyFeatures": ["角化珠和/或细胞间桥是形态学诊断依据", "P40+/CK5/6+/SOX2+是鳞状分化的免疫标记组合", "TTF-1阴性/Napsin A阴性排除腺癌", "中央型为主，与重度吸烟强相关", "免疫治疗（PD-1/PD-L1抑制剂）效果好，PD-L1高表达者获益显著"], "ihcProfile": [{"marker": "P40", "result": "阳性", "note": "鳞状分化最特异标记物（优于P63）"}, {"marker": "CK5/6", "result": "阳性", "note": "鳞状上皮角蛋白"}, {"marker": "SOX2", "result": "阳性", "note": "鳞状分化转录因子"}, {"marker": "TTF-1", "result": "阴性", "note": "排除腺癌"}, {"marker": "Napsin A", "result": "阴性", "note": "排除腺癌"}, {"marker": "PD-L1", "result": "可变（需TPS评分）", "note": "指导免疫治疗选择"}], "molecularFeatures": "TP53突变率>80%，CDKN2A失活约30%，FGFR1扩增约20%，PIK3CA突变约10%。可靶向驱动突变（EGFR/ALK）罕见，与腺癌不同。", "differentialDiagnosis": ["lung-adenocarcinoma", "small-cell-lung-carcinoma", "adenosquamous-carcinoma"], "grading": "高分化/中分化/低分化", "staging": "AJCC TNM第8版", "prognosis": "总体预后较腺癌稍差，但PD-L1高表达者免疫治疗获益明显。I期5年生存率约60-70%。", "treatment": "早期手术切除。局部晚期同步放化疗。晚期一线化疗（含铂双药）+免疫治疗（帕博利珠单抗用于PD-L1 TPS>=50%可单药一线），无常见靶向突变。", "images": [], "references": ["WHO Thoracic Tumours, 5th Ed, 2021", "AJCC Cancer Staging Manual 8th Ed"]},
-  {"id": "adenosquamous-carcinoma", "nameZh": "肺腺鳞癌", "nameEn": "Lung Adenosquamous Carcinoma", "aliases": ["腺鳞癌", "ASC"], "organ": "lung", "category": "malignant", "epidemiology": "占非小细胞肺癌约2-4%，与吸烟相关但也见于非吸烟者，发病年龄与腺癌和鳞癌相似（中位约65岁）。男女比例接近，亚裔非吸烟患者中EGFR突变率较高。因需充分取材方能确诊，实际发病率可能被低估。", "clinicalFeatures": "可为中央型或周围型，临床表现与其他非小细胞肺癌相似，包括咳嗽、咯血、胸痛和呼吸困难。", "grossPathology": "灰白色肿块，可位于中央或周围，切面常伴坏死，形态介于腺癌和鳞癌之间。", "microscopy": "诊断标准为腺癌和鳞状细胞癌两种成分各占肿瘤总量的10%以上。腺癌成分表现为腺管、乳头或贴壁生长模式，TTF-1阳性区域；鳞癌成分表现为角化、细胞间桥，P40阳性区域。两种成分可明显分界或互相混杂。需充分取材以确保两种成分均被代表。低分化病例中免疫组化对识别双向分化至关重要。", "keyFeatures": ["腺癌和鳞癌成分各>=10%是诊断标准", "腺癌成分TTF-1+/Napsin A+，鳞癌成分P40+/CK5/6+", "可携带EGFR突变（尤其亚裔非吸烟患者）", "预后较纯腺癌或纯鳞癌差", "充分取材对正确诊断至关重要"], "ihcProfile": [{"marker": "TTF-1", "result": "腺癌成分阳性", "note": "腺性分化标记"}, {"marker": "Napsin A", "result": "腺癌成分阳性", "note": "腺性分化标记"}, {"marker": "P40", "result": "鳞癌成分阳性", "note": "鳞状分化标记"}, {"marker": "CK5/6", "result": "鳞癌成分阳性", "note": "鳞状上皮角蛋白"}, {"marker": "CK7", "result": "腺癌成分阳性", "note": ""}, {"marker": "PD-L1", "result": "可变", "note": "需TPS评分指导免疫治疗"}], "molecularFeatures": "EGFR突变率约15-30%（亚裔更高），可携带ALK融合（罕见）。TP53突变常见。因含腺癌成分，靶向治疗机会存在，应行全面分子检测。", "differentialDiagnosis": ["lung-adenocarcinoma", "lung-squamous-cell-carcinoma", "squamous-cell-carcinoma"], "grading": "不单独分级，参考各成分分化程度", "staging": "AJCC TNM第8版", "prognosis": "预后较纯腺癌和纯鳞癌差，侵袭性较高，复发和转移风险更大。", "treatment": "早期手术切除。晚期行全面分子检测（EGFR/ALK/ROS1等），有驱动突变者可用靶向治疗。无驱动突变者化疗+免疫治疗。", "images": [], "references": ["WHO Thoracic Tumours, 5th Ed, 2021"]},
-  {"id": "small-cell-carcinoma", "nameZh": "小细胞肺癌", "nameEn": "Small Cell Lung Carcinoma", "aliases": ["SCLC", "小细胞癌", "燕麦细胞癌"], "organ": "lung", "category": "malignant", "epidemiology": "约占肺癌13-15%，几乎均与重度吸烟有关（>95%有吸烟史），发病中位年龄约70岁，男性稍多见。极少见于非吸烟者。是所有实体肿瘤中增殖最快的类型之一，确诊时约60-70%已为广泛期。近年发病率随戒烟推广呈下降趋势。", "clinicalFeatures": "中央型，进展迅速，早期即广泛转移（脑、肝、骨、肾上腺），可伴副肿瘤综合征（SIADH、Cushing综合征、Lambert-Eaton综合征）。约60-70%确诊时为广泛期。", "grossPathology": "肺门区灰白色至灰褐色软性大肿块，质如鱼肉，常有广泛坏死和出血，侵犯纵隔和肺门淋巴结。", "microscopy": "经典三要素：(1)小细胞（直径<3倍小淋巴细胞），胞浆极少呈裸核状；(2)染色质细腻呈椒盐样（salt-and-pepper），核仁不明显或缺如，核镶嵌（nuclear molding）明显；(3)极高核分裂（常>60/2mm2）和广泛地图样坏死。Azzopardi现象（坏死区血管壁嗜碱性DNA沉积）为特征性所见。活检常见核挤碎假象（crush artifact）。生长模式为弥漫片状或巢状。", "keyFeatures": ["小细胞+椒盐样染色质+核镶嵌是形态学三联征", "Syn+/CgA+/TTF-1+/Ki-67>90%", "Rb蛋白丢失/p53异常表达（TP53+RB1双失活近100%）", "DLL3表达可作为ADC靶点", "局限期vs广泛期分期系统"], "ihcProfile": [{"marker": "Synaptophysin", "result": "阳性", "note": "神经内分泌标记"}, {"marker": "Chromogranin A", "result": "阳性(约70%)", "note": "特异性高但敏感性略低"}, {"marker": "TTF-1", "result": "阳性(约85%)", "note": "肺原发标记"}, {"marker": "Ki-67", "result": ">90%", "note": "极高增殖指数，诊断和鉴别关键"}, {"marker": "Rb", "result": "丢失", "note": "RB1双等位失活"}, {"marker": "p53", "result": "异常表达（弥漫强阳或完全缺失）", "note": "TP53突变"}], "molecularFeatures": "TP53+RB1双失活近100%。分子亚型基于转录因子：ASCL1（经典型）、NEUROD1（神经内分泌型）、POU2F3（tuft细胞型）、YAP1（间充质型）。DLL3表达约80%，为ADC药物靶点。", "differentialDiagnosis": ["lung-adenocarcinoma", "large-cell-neuroendocrine-carcinoma", "carcinoid-tumor", "merkel-cell-carcinoma"], "grading": "不分级，均为高级别神经内分泌癌", "staging": "局限期（Limited Stage）/广泛期（Extensive Stage），也可用AJCC TNM", "prognosis": "预后极差，局限期中位生存15-20个月（2年生存率约20-40%），广泛期中位生存8-13个月。免疫治疗联合化疗改善广泛期预后。", "treatment": "局限期：同步放化疗（EP方案：依托泊苷+顺铂）+预防性脑照射（PCI）。广泛期：化疗（EP/EC方案）+免疫治疗（阿替利珠单抗或度伐利尤单抗）。复发后可考虑拓扑替康或鲁比卡丁。", "images": [], "references": ["WHO Thoracic Tumours, 5th Ed, 2021", "NCCN SCLC Guidelines"]}
+  {
+    "id": "lung-adenocarcinoma",
+    "nameZh": "肺腺癌",
+    "nameEn": "Lung Adenocarcinoma",
+    "aliases": [
+      "腺癌"
+    ],
+    "organ": "lung",
+    "category": "malignant",
+    "epidemiology": "最常见的肺癌类型，约占所有肺癌的40-50%。与吸烟相关但也常见于非吸烟者（尤其东亚女性），发病中位年龄约65岁，男女比例接近。危险因素包括吸烟、环境空气污染、氡暴露及家族史。东亚人群EGFR突变率高达50%。",
+    "clinicalFeatures": "周围型多见，早期无症状，进展后咳嗽、胸痛、咯血。",
+    "grossPathology": "肺周围灰白色结节，边界不清，可伴胸膜凹陷征。",
+    "grossDescription": "**典型大体形态**：\n\n- **部位**：多数位于肺外周，以上叶多见；可单发或多灶\n- **大小与形状**：直径 1–6 cm 不等，多为类圆形/分叶状，边界模糊\n- **切面颜色**：灰白至灰黄色，常见条索状或放射状纤维化瘢痕\n- **质地**：较韧实，与纤维化相关；粘液型切面呈半透明胶冻样\n- **胸膜关系**：近胸膜病灶常引起&quot;胸膜凹陷征&quot;（胸膜被纤维化牵拉内陷）——这是 CT 影像学的经典线索\n- **继发改变**：可见中心坏死、空洞（少）、出血、肺萎陷和阻塞性肺炎\n- **磨玻璃结节（GGN）对应形态**：贴壁为主者肉眼可仅表现为局灶质地变实、苍白区，无明显肿块",
+    "microscopy": "**WHO 2021 五种生长模式**（按侵袭性递增）：\n\n1. **贴壁型 Lepidic**：肿瘤细胞沿原有肺泡壁贴壁生长，肺泡结构保留，提示原位或微浸润成分\n2. **腺泡型 Acinar**：形成圆形或不规则腺样腔隙，是最常见的浸润模式\n3. **乳头型 Papillary**：具有纤维血管轴心的真性乳头\n4. **微乳头型 Micropapillary**：细胞簇团无纤维轴心，&quot;漂浮&quot;在腺腔或间质中，预后差\n5. **实性型 Solid**：实性巢团生长，需黏液染色或 TTF-1 证实腺性分化\n\n混合型最常见，报告需按 5% 为单位列出各模式百分比。\n\n**细胞学细节**：\n\n- **肿瘤细胞**：立方至柱状，胞浆中等丰富可呈嗜酸或空泡状（粘液分泌）\n- **胞核**：核增大、核膜不规则，染色质粗糙，核仁明显（多为单个嗜酸核仁）\n- **核分裂**：数量取决于分级，可见病理性核分裂\n- **间质反应**：中央常见致密&quot;促纤维结缔组织反应&quot;（desmoplastic stroma）和弹力纤维变性\n- **其他线索**：可见粘液湖、印戒样细胞、肿瘤浸润淋巴细胞（TIL）、气腔播散（STAS，预后差）",
+    "keyFeatures": [
+      "WHO 2021 五种生长模式（贴壁/腺泡/乳头/微乳头/实性）",
+      "TTF-1 + / Napsin A + 是最关键的免疫标签",
+      "EGFR（L858R、19 外显子缺失）/ ALK / ROS1 / KRAS G12C 均为可靶向驱动",
+      "微乳头或实性成分 ≥20% 提示预后差",
+      "PD-L1 TPS 分层指导免疫治疗一线选择"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "阳性(80%)",
+        "note": "肺腺癌敏感标记"
+      },
+      {
+        "marker": "Napsin A",
+        "result": "阳性(70-80%)",
+        "note": "特异标记"
+      },
+      {
+        "marker": "CK7",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK20",
+        "result": "阴性",
+        "note": "CK7+/CK20-"
+      },
+      {
+        "marker": "p40",
+        "result": "阴性",
+        "note": "排除鳞癌"
+      }
+    ],
+    "molecularFeatures": "EGFR突变率约50%(东亚)，ALK融合约5%，ROS1约1-2%，KRAS约30%。",
+    "differentialDiagnosis": [
+      "lung-squamous-cell-carcinoma",
+      "mesothelioma"
+    ],
+    "grading": "WHO 2021分级1-3级",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "IA期>90%，IV期有靶向治疗中位>3年。",
+    "treatment": "早期手术；晚期靶向(EGFR-TKI/ALK抑制剂)、免疫(PD-1)或化疗。",
+    "images": [
+      {
+        "url": "/diagrams/papillary.svg",
+        "caption": "乳头型肺腺癌：纤维血管轴心表面覆盖肿瘤上皮的真性乳头"
+      },
+      {
+        "url": "/diagrams/tubular.svg",
+        "caption": "腺泡型生长模式：形成圆形腺样腔隙"
+      }
+    ],
+    "expertConsensus": [
+      {
+        "id": "nccn-nsclc",
+        "title": "NCCN 非小细胞肺癌临床实践指南",
+        "summary": "每年更新的非小细胞肺癌诊断、分期、基因检测与系统治疗路径标准；腺癌相关的分子检测（EGFR/ALK/ROS1/KRAS/BRAF/MET/RET/NTRK/HER2/PD-L1）全部列于一线必检项。",
+        "organization": "NCCN",
+        "year": 2024,
+        "sourceUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1450",
+        "viewUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1450"
+      },
+      {
+        "id": "who-thoracic-2021",
+        "title": "WHO 胸部肿瘤分类（第 5 版）",
+        "summary": "将肺腺癌划分为原位腺癌（AIS）、微浸润腺癌（MIA）、浸润性非黏液/黏液腺癌，并首次以 5% 为单位记录五大生长模式百分比，作为分级依据的核心。",
+        "organization": "WHO/IARC",
+        "year": 2021,
+        "sourceUrl": "https://publications.iarc.fr/595",
+        "viewUrl": "https://publications.iarc.fr/595"
+      },
+      {
+        "id": "csco-lung-2024",
+        "title": "CSCO 原发性肺癌诊疗指南",
+        "summary": "中国临床肿瘤学会发布的本土化指南，强调东亚人群 EGFR 突变高发（~50%）与一线 EGFR-TKI 选择（奥希替尼为首选）。",
+        "organization": "CSCO",
+        "year": 2024,
+        "sourceUrl": "https://www.csco.org.cn/cn/index.aspx?m=20200110170853755910",
+        "viewUrl": "https://www.csco.org.cn/cn/index.aspx?m=20200110170853755910"
+      }
+    ],
+    "literature": [
+      {
+        "id": "travis-2011-iaslc",
+        "title": "International Association for the Study of Lung Cancer/American Thoracic Society/European Respiratory Society international multidisciplinary classification of lung adenocarcinoma",
+        "summary": "IASLC/ATS/ERS 三学会 2011 年联合发布的肺腺癌多学科分类共识，首次系统确立贴壁/腺泡/乳头/微乳头/实性 5 类浸润性腺癌形态亚型及对应预后分级。",
+        "authors": "Travis WD, et al.",
+        "journal": "J Thorac Oncol",
+        "year": 2011,
+        "sourceUrl": "https://www.jto.org/article/S1556-0864(15)32435-1/fulltext",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/21252716/"
+      },
+      {
+        "id": "kadota-2014-stas",
+        "title": "Tumor Spread through Air Spaces is an Important Pattern of Invasion and Impacts the Frequency and Location of Recurrences after Limited Resection",
+        "summary": "首次定义&quot;气腔播散&quot;（STAS）为独立不良预后因素，亚肺叶切除后 STAS 阳性患者局部复发率显著升高。",
+        "authors": "Kadota K, et al.",
+        "journal": "J Thorac Oncol",
+        "year": 2015,
+        "sourceUrl": "https://www.jto.org/article/S1556-0864(15)30172-X/fulltext",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/25811921/"
+      },
+      {
+        "id": "herbst-2018-lancet",
+        "title": "The biology and management of non-small cell lung cancer",
+        "summary": "Nature 综述，系统介绍 NSCLC 分子分型与靶向/免疫治疗演进，是理解腺癌驱动基因与 PD-L1/TMB 分层策略的经典读物。",
+        "authors": "Herbst RS, Morgensztern D, Boshoff C",
+        "journal": "Nature",
+        "year": 2018,
+        "sourceUrl": "https://www.nature.com/articles/nature25183",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/29364287/"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "AJCC Cancer Staging Manual 8th Ed",
+      "[国内指南] CSCO 非小细胞肺癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 中华人民共和国国家卫生健康委员会 原发性肺癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中国临床肿瘤学会（CSCO）原发性肺癌诊断和全程管理中国胸部肿瘤研究协作组（CTONG）专家共识 (CSCO, 2023)",
+      "[国内共识] 中国非小细胞肺癌患者表皮生长因子受体基因突变和间变性淋巴瘤激酶融合基因及ROS1融合基因检测指南（2021版） (中华医学会病理学分会 / 中国抗癌协会肿瘤病理专业委员会分子病理协作组 / 中国医师协会病理科医师分会分子病理专业委员会, 2021)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）非小细胞肺癌诊疗指南2024 (中国临床肿瘤学会（CSCO）, 2024)"
+    ],
+    "differentialDiagnosisNotes": "**与肺鳞癌的鉴别**\n\n- **形态线索**：腺样/乳头/贴壁等腺性模式提示腺癌；角化珠 + 细胞间桥 + 单细胞角化提示鳞癌\n- **关键 IHC 组合**：TTF-1 + / Napsin A + / CK7 + / p40 − 支持腺癌；p40 + / CK5/6 + / TTF-1 − 支持鳞癌\n- **低分化情形**：组织学难分时完全依赖免疫分型，推荐首选 TTF-1 + p40 两联\n\n**与恶性胸膜间皮瘤的鉴别**\n\n- **影像/大体**：腺癌多为肺内占位 + 胸膜转移；间皮瘤弥漫性胸膜增厚呈盔甲样\n- **IHC**：Calretinin + / WT1 + / D2-40 + / Claudin-4 − 支持间皮瘤；TTF-1 + / Claudin-4 + / CEA + 支持腺癌（CEA 在间皮瘤几乎阴性）\n- **分子**：BAP1 / CDKN2A 缺失强提示间皮瘤\n\n**与转移性腺癌的鉴别**\n\n- 肺原发腺癌 TTF-1/Napsin A 阳性率 ~80%；结肠来源 CDX2 + / CK20 + / CK7 − ；乳腺来源 GATA3 + / ER +；甲状腺来源 TTF-1 + / Tg +（Tg 阴性可排除甲状腺）"
+  },
+  {
+    "id": "lung-squamous-cell-carcinoma",
+    "nameZh": "肺鳞状细胞癌",
+    "nameEn": "Lung Squamous Cell Carcinoma",
+    "aliases": [
+      "鳞癌",
+      "SCC",
+      "肺鳞癌"
+    ],
+    "organ": "lung",
+    "category": "malignant",
+    "epidemiology": "占非小细胞肺癌约25-30%，与重度吸烟密切相关（>90%有吸烟史），男性显著多于女性（约3-5:1）。发病中位年龄约65岁，在西方国家发病率因戒烟呈下降趋势。非吸烟者罕见，可靶向驱动突变（EGFR/ALK）极少。",
+    "clinicalFeatures": "多为中央型，起源于段及亚段支气管上皮，可引起阻塞性肺炎、肺不张，常伴咳嗽、咯血、胸痛。偶可伴高钙血症（PTHrP分泌）。",
+    "grossPathology": "中央型灰白色肿块，常沿支气管腔内生长，伴大片坏死和空洞形成。",
+    "grossDescription": "**典型大体形态**：\n\n- **部位**：~70% 为中央型，起源于段或亚段支气管上皮\n- **切面**：灰白色伴黄色坏死灶，常见大片地图样坏死与空洞（脆、易破碎）\n- **与支气管关系**：沿支气管腔内生长形成菜花状隆起或环周壁性增厚，常伴阻塞性肺炎/肺不张\n- **边界**：外周型者可见较清楚的分叶状边界\n- **角质化表现**：部分病例切面可见明显的灰白颗粒状或珍珠样角化灶",
+    "microscopy": "**主要诊断线索**——鳞状分化：\n\n1. **角化（keratinization）**：单细胞角化（嗜酸性玻璃样胞浆）或形成角化珠（同心圆层状角质）\n2. **细胞间桥（intercellular bridges）**：棘细胞样连接，高倍下可见&quot;棘状&quot;突起\n3. **生长模式**：实性巢/条索，可伴中心坏死形成粉刺样结构\n\n**细胞学细节**：\n\n- 细胞大、多边形，胞浆丰富嗜酸\n- 核增大深染，染色质粗糙，核仁明显\n- 核分裂活跃，可见病理性核分裂\n- 分化程度：高分化者角化丰富；低分化者需 p40/p63 证实鳞状来源\n- **亚型**：角化型、非角化型、基底样鳞癌（core basaloid, predominant basaloid, 预后差）",
+    "keyFeatures": [
+      "鳞状分化(角化/细胞间桥)",
+      "p40+/p63+/CK5/6+",
+      "TTF-1阴性",
+      "中央型，与吸烟强相关",
+      "角化珠和/或细胞间桥是形态学诊断依据",
+      "P40+/CK5/6+/SOX2+是鳞状分化的免疫标记组合",
+      "TTF-1阴性/Napsin A阴性排除腺癌",
+      "中央型为主，与重度吸烟强相关",
+      "免疫治疗（PD-1/PD-L1抑制剂）效果好，PD-L1高表达者获益显著"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "p40",
+        "result": "阳性",
+        "note": "最特异鳞癌标记"
+      },
+      {
+        "marker": "p63",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CK5/6",
+        "result": "阳性",
+        "note": "鳞状上皮角蛋白"
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阴性",
+        "note": "排除腺癌"
+      },
+      {
+        "marker": "Napsin A",
+        "result": "阴性",
+        "note": "排除腺癌"
+      },
+      {
+        "marker": "P40",
+        "result": "阳性",
+        "note": "鳞状分化最特异标记物（优于P63）"
+      },
+      {
+        "marker": "SOX2",
+        "result": "阳性",
+        "note": "鳞状分化转录因子"
+      },
+      {
+        "marker": "PD-L1",
+        "result": "可变（需TPS评分）",
+        "note": "指导免疫治疗选择"
+      }
+    ],
+    "molecularFeatures": "TP53突变率>80%，CDKN2A失活约30%，FGFR1扩增约20%，PIK3CA突变约10%。可靶向驱动突变（EGFR/ALK）罕见，与腺癌不同。",
+    "differentialDiagnosis": [
+      "lung-adenocarcinoma",
+      "small-cell-lung-carcinoma",
+      "adenosquamous-carcinoma"
+    ],
+    "grading": "高分化/中分化/低分化",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "总体预后较腺癌稍差，但PD-L1高表达者免疫治疗获益明显。I期5年生存率约60-70%。",
+    "treatment": "早期手术切除。局部晚期同步放化疗。晚期一线化疗（含铂双药）+免疫治疗（帕博利珠单抗用于PD-L1 TPS>=50%可单药一线），无常见靶向突变。",
+    "images": [
+      {
+        "url": "/diagrams/keratin-pearl.svg",
+        "caption": "鳞状细胞癌中心角化珠：同心圆状层状角化物是鳞状分化的标志"
+      },
+      {
+        "url": "/diagrams/lung-scc-keratin-pearl.svg",
+        "caption": "低倍（HE）：肺鳞状细胞癌呈巢团状浸润性生长，癌巢中央可见同心圆状角化珠形成，周边为多层鳞状上皮样细胞"
+      },
+      {
+        "url": "/diagrams/lung-scc-intercellular-bridge.svg",
+        "caption": "高倍（HE）：瘤细胞体积大、多边形，胞浆丰富嗜酸性，核仁明显，细胞间可见细胞间桥，符合角化型鳞状细胞癌形态"
+      },
+      {
+        "url": "/diagrams/lung-scc-p40-ihc.svg",
+        "caption": "IHC（p40）：肿瘤细胞核呈弥漫强阳性表达，支持鳞状细胞分化，可与肺腺癌（TTF-1/Napsin A 阳性）鉴别"
+      },
+      {
+        "url": "/diagrams/lung-scc-ck5-6-ihc.svg",
+        "caption": "IHC（CK5/6）：肿瘤细胞胞浆弥漫阳性，提示鳞状上皮来源，结合 p63/p40 阳性及 TTF-1 阴性可确诊肺鳞状细胞癌"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "AJCC Cancer Staging Manual 8th Ed",
+      "[国内指南] CSCO 非小细胞肺癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 原发性肺癌诊疗指南（2022年版） (国家卫健委, 2022)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）非小细胞肺癌诊疗指南（2024版） (中国临床肿瘤学会（CSCO）, 2024)",
+      "[国内共识] 非小细胞肺癌免疫组织化学和分子病理检测专家共识 (中华医学会病理学分会 / 中国抗癌协会肿瘤病理专业委员会, 2021)"
+    ],
+    "differentialDiagnosisNotes": "**与肺腺癌的鉴别**（见 lung-adenocarcinoma 条目）\n核心：p40/p63/CK5/6 + 支持鳞癌；TTF-1/Napsin A + 支持腺癌。低分化病例必须做免疫分型。\n\n**与大细胞神经内分泌癌（LCNEC）和小细胞肺癌（SCLC）的鉴别**\n\n- **形态**：鳞癌有明确角化或细胞间桥；NE 癌为器官样/菊形团/弥漫片状，细胞大小均一\n- **IHC**：Syn / CgA / CD56 / INSM1 中至少一项强阳性支持 NE 癌；单纯 CD56 轻度阳性不能诊断 NE 癌\n- **p40**：NE 癌通常阴性（少数 LCNEC 可灶性弱阳），鳞癌弥漫强阳\n\n**与基底样鳞癌和淋巴上皮癌的鉴别**\n\n- **基底样亚型**：细胞小且周围栅栏状排列，常伴坏死；仍保留 p40 弥漫 +\n- **淋巴上皮癌**：合胞状上皮 + 浓密 TIL 背景；EBER 原位杂交 + 支持诊断（亚裔高发）"
+  },
+  {
+    "id": "small-cell-lung-carcinoma",
+    "nameZh": "小细胞肺癌",
+    "nameEn": "Small Cell Lung Carcinoma",
+    "aliases": [
+      "SCLC",
+      "小细胞癌",
+      "燕麦细胞癌"
+    ],
+    "organ": "lung",
+    "category": "malignant",
+    "epidemiology": "约占肺癌13-15%，几乎均与重度吸烟有关（>95%有吸烟史），发病中位年龄约70岁，男性稍多见。极少见于非吸烟者。是所有实体肿瘤中增殖最快的类型之一，确诊时约60-70%已为广泛期。近年发病率随戒烟推广呈下降趋势。",
+    "clinicalFeatures": "中央型，进展迅速，早期即广泛转移（脑、肝、骨、肾上腺），可伴副肿瘤综合征（SIADH、Cushing综合征、Lambert-Eaton综合征）。约60-70%确诊时为广泛期。",
+    "grossPathology": "肺门区灰白色至灰褐色软性大肿块，质如鱼肉，常有广泛坏死和出血，侵犯纵隔和肺门淋巴结。",
+    "grossDescription": "**典型大体形态**：\n\n- **部位**：>95% 为中央型，肺门区大块肿物常包绕并浸润大支气管\n- **外观**：切面灰白色至灰褐色，质软如&quot;鱼肉&quot;样，常有广泛坏死和出血\n- **边界**：侵袭性极强，边界不清，常沿淋巴管扩散形成多结节和肺门淋巴结巨大肿大（&quot;bulky N2/N3&quot;）\n- **特征**：发现时常已有广泛胸膜或对侧肺转移；约 60–70% 病人就诊时即为广泛期",
+    "microscopy": "**经典 SCLC 镜下三要素**：\n\n1. **小细胞**：细胞直径 < 3 × 小淋巴细胞；胞浆极少似&quot;裸核&quot;\n2. **核特征**：\n   - 染色质细腻呈&quot;椒盐样&quot;（salt-and-pepper）\n   - 核仁不明显或缺如\n   - 核镶嵌（nuclear molding）——细胞相互挤压、核轮廓相互适配\n   - 核挤碎假象（crush artifact）——活检中常见，有鉴别价值\n3. **极高核分裂与坏死**：\n   - 核分裂 > 10/2 mm²（常 >60/2 mm²）\n   - 广泛地图样坏死\n   - **Azzopardi 现象**：坏死区血管壁嗜碱性沉积（DNA 溢出吸附）——SCLC 特征性所见\n\n**生长模式**：弥漫片状、巢状或少见的菊形团样；穿刺和粘膜活检样本中常成簇并伴明显核挤压假象。",
+    "keyFeatures": [
+      "小细胞，核染色质细腻",
+      "神经内分泌标记阳性(Syn/CgA/CD56)",
+      "Ki-67>80%",
+      "TP53和RB1双失活",
+      "小细胞+椒盐样染色质+核镶嵌是形态学三联征",
+      "Syn+/CgA+/TTF-1+/Ki-67>90%",
+      "Rb蛋白丢失/p53异常表达（TP53+RB1双失活近100%）",
+      "DLL3表达可作为ADC靶点",
+      "局限期vs广泛期分期系统"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": "神经内分泌标记"
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "阳性(约70%)",
+        "note": "特异性高但敏感性略低"
+      },
+      {
+        "marker": "CD56",
+        "result": "阳性",
+        "note": "最敏感NE标记"
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阳性(约85%)",
+        "note": "肺原发标记"
+      },
+      {
+        "marker": "Ki-67",
+        "result": ">90%",
+        "note": "极高增殖指数，诊断和鉴别关键"
+      },
+      {
+        "marker": "Rb",
+        "result": "丢失",
+        "note": "RB1双等位失活"
+      },
+      {
+        "marker": "p53",
+        "result": "异常表达（弥漫强阳或完全缺失）",
+        "note": "TP53突变"
+      }
+    ],
+    "molecularFeatures": "TP53+RB1双失活近100%。分子亚型基于转录因子：ASCL1（经典型）、NEUROD1（神经内分泌型）、POU2F3（tuft细胞型）、YAP1（间充质型）。DLL3表达约80%，为ADC药物靶点。",
+    "differentialDiagnosis": [
+      "lung-adenocarcinoma",
+      "carcinoid-tumor",
+      "large-cell-neuroendocrine-carcinoma",
+      "merkel-cell-carcinoma"
+    ],
+    "grading": "不分级，均为高级别神经内分泌癌",
+    "staging": "局限期（Limited Stage）/广泛期（Extensive Stage），也可用AJCC TNM",
+    "prognosis": "预后极差，局限期中位生存15-20个月（2年生存率约20-40%），广泛期中位生存8-13个月。免疫治疗联合化疗改善广泛期预后。",
+    "treatment": "局限期：同步放化疗（EP方案：依托泊苷+顺铂）+预防性脑照射（PCI）。广泛期：化疗（EP/EC方案）+免疫治疗（阿替利珠单抗或度伐利尤单抗）。复发后可考虑拓扑替康或鲁比卡丁。",
+    "images": [
+      {
+        "url": "/diagrams/starry-sky.svg",
+        "caption": "SCLC 可在高倍下观察到&quot;椒盐样&quot;染色质；坏死广泛时背景常伴凋亡小体"
+      },
+      {
+        "url": "/diagrams/scc-sheets-lowpower.svg",
+        "caption": "低倍（HE）：肿瘤细胞呈弥漫片状、巢状生长，广泛坏死及大片地图样坏死区，间质少"
+      },
+      {
+        "url": "/diagrams/scc-highpower-nuclear.svg",
+        "caption": "高倍（HE）：小至中等大小肿瘤细胞，胞质稀少，核染色质细颗粒状（椒盐样），核仁不明显，核质比极高，核分裂象活跃（≥10/2 mm²），可见细胞挤压变形与核铸型"
+      },
+      {
+        "url": "/diagrams/scc-crush-azzopardi.svg",
+        "caption": "高倍（HE）：显著挤压假象及 Azzopardi 现象（坏死灶血管壁嗜碱性 DNA 沉积）"
+      },
+      {
+        "url": "/diagrams/scc-ihc-panel.svg",
+        "caption": "IHC：TTF-1 核阳性，Syn、CgA、CD56 胞质/膜阳性，INSM1 核阳性，Ki-67 增殖指数通常 >50%（多数 >80%），CK 常呈核旁点状（dot-like）阳性"
+      }
+    ],
+    "expertConsensus": [
+      {
+        "id": "nccn-sclc",
+        "title": "NCCN 小细胞肺癌临床实践指南",
+        "summary": "将 SCLC 划分为局限期（LS-SCLC）与广泛期（ES-SCLC）；LS 首选同步放化疗，ES 一线化疗（EP/EC 方案）联合 atezolizumab 或 durvalumab。",
+        "organization": "NCCN",
+        "year": 2024,
+        "sourceUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1462",
+        "viewUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1462"
+      },
+      {
+        "id": "who-thoracic-sclc",
+        "title": "WHO 胸部肿瘤分类 · 神经内分泌肿瘤章",
+        "summary": "将肺神经内分泌肿瘤分为典型类癌、不典型类癌、大细胞神经内分泌癌（LCNEC）和小细胞肺癌；SCLC 归为高级别 NE 癌，不再细分亚型。",
+        "organization": "WHO/IARC",
+        "year": 2021,
+        "sourceUrl": "https://publications.iarc.fr/595",
+        "viewUrl": "https://publications.iarc.fr/595"
+      },
+      {
+        "id": "csco-sclc",
+        "title": "CSCO 小细胞肺癌诊疗指南",
+        "summary": "本土化 SCLC 全程管理指南，特别关注 Atezo/Durva + 化疗一线免疫方案在中国人群中的适用性与后续耐药处理。",
+        "organization": "CSCO",
+        "year": 2024,
+        "sourceUrl": "https://www.csco.org.cn/",
+        "viewUrl": "https://www.csco.org.cn/"
+      }
+    ],
+    "literature": [
+      {
+        "id": "gazdar-2017-sclc",
+        "title": "Small-cell lung cancer: what we know, what we need to know and the path forward",
+        "summary": "Nature Reviews Cancer 权威综述，系统梳理 SCLC 分子分型（ASCL1/NEUROD1/POU2F3/YAP1）及其治疗靶点，是理解 SCLC 异质性的起点。",
+        "authors": "Gazdar AF, Bunn PA, Minna JD",
+        "journal": "Nat Rev Cancer",
+        "year": 2017,
+        "sourceUrl": "https://www.nature.com/articles/nrc.2017.87",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/28815533/"
+      },
+      {
+        "id": "horn-2018-impower133",
+        "title": "First-Line Atezolizumab plus Chemotherapy in Extensive-Stage Small-Cell Lung Cancer",
+        "summary": "IMPower133 Ⅲ 期随机对照，确立 atezolizumab + EC 作为 ES-SCLC 一线标准，OS 延长至 12.3 月 vs 10.3 月。",
+        "authors": "Horn L, et al.",
+        "journal": "N Engl J Med",
+        "year": 2018,
+        "sourceUrl": "https://www.nejm.org/doi/full/10.1056/NEJMoa1809064",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/30280641/"
+      },
+      {
+        "id": "rudin-2019-molecular",
+        "title": "Molecular subtypes of small cell lung cancer: a synthesis of human and mouse model data",
+        "summary": "提出基于关键转录因子（ASCL1/NEUROD1/POU2F3/YAP1）的 SCLC 四型分子分型，为后续治疗差异化提供框架。",
+        "authors": "Rudin CM, et al.",
+        "journal": "Nat Rev Cancer",
+        "year": 2019,
+        "sourceUrl": "https://www.nature.com/articles/s41568-019-0133-9",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/30926931/"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "NCCN SCLC Guidelines",
+      "[国内指南] CSCO 小细胞肺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] 国家卫生健康委员会 原发性肺癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内共识] 小细胞肺癌诊疗指南（2023版） (中国临床肿瘤学会（CSCO）, 2023)",
+      "[国内共识] 肺癌组织学分型免疫组化标记物选择专家共识 (中华医学会病理学分会, 2021)"
+    ],
+    "differentialDiagnosisNotes": "**与大细胞神经内分泌癌（LCNEC）的鉴别**（最常见且最关键）\n\n- **细胞大小**：SCLC < 3× 淋巴细胞、胞浆极少近裸核；LCNEC 明显更大、胞浆中等、核仁突出\n- **核特征**：SCLC 染色质椒盐样、核仁不明显、核镶嵌常见；LCNEC 染色质粗、核仁显著\n- **Ki-67**：SCLC 常 > 80%；LCNEC 40–80%（两者都高，但 LCNEC 相对低）\n- **p40**：两者均 − ；若强 + 则考虑基底样鳞癌\n- **临床相关**：区分直接影响化疗方案（EP 方案对 SCLC 样 LCNEC 也有效）\n\n**与不典型类癌的鉴别**\n\n- **核分裂数**：不典型类癌 2–10 /2 mm²；SCLC > 10 /2 mm²（常 >60）\n- **坏死**：不典型类癌偶见点状坏死；SCLC 广泛地图样坏死\n- **Ki-67**：不典型类癌 < 20%；SCLC > 50%\n- **形态**：类癌细胞均匀、器官样/小梁；SCLC 核染色质细腻 + 核镶嵌\n\n**与慢性炎症 / 淋巴细胞浸润的鉴别**（小活检常见陷阱）\n\n- 粘膜活检标本中压碎假象 (crush artifact) 极常见，可误当作淋巴细胞\n- Pan-CK 阳性 + CD45 阴性可确诊上皮来源\n- 压碎区血管壁嗜碱性沉积（Azzopardi 现象）是 SCLC 特征"
+  },
+  {
+    "id": "mesothelioma",
+    "nameZh": "恶性胸膜间皮瘤",
+    "nameEn": "Malignant Pleural Mesothelioma",
+    "aliases": [
+      "间皮瘤"
+    ],
+    "organ": "lung",
+    "category": "malignant",
+    "epidemiology": "与石棉暴露密切相关，潜伏期20-40年。发病中位年龄约70岁，男性多见（男女比约4:1），反映职业性石棉暴露的性别差异。年发病率约1-2/10万，在石棉高暴露地区（造船、建筑、矿业）显著升高。",
+    "clinicalFeatures": "胸腔积液、胸痛、呼吸困难，胸膜弥漫增厚。",
+    "grossPathology": "胸膜弥漫增厚呈盔甲样。",
+    "grossDescription": "**典型大体形态**：\n\n- **分布**：自脏层/壁层胸膜弥漫性增厚并向肺实质生长，最终融合为厚 1–5 cm 的&quot;盔甲样&quot;（rind-like）外壳，紧紧包裹肺\n- **切面**：灰白色至黄色，质地韧实，可见多结节状颗粒\n- **伴随改变**：胸腔积液（常为血性）；肺实质可见间隔增厚和蜂窝样改变；心包和纵隔结构受压移位\n- **其他线索**：同侧膈面、叶间裂增厚，胸膜斑（asbestos plaques）常并存",
+    "microscopy": "**三大组织亚型**：\n\n1. **上皮样型（~60%，预后最好）**：肿瘤细胞立方至多边形，胞浆嗜酸，呈管状、乳头状、腺样、实性或微乳头样排列；常见&quot;裂隙样&quot;腔隙和胶原间质包绕\n2. **肉瘤样型（~10–20%，预后最差）**：梭形细胞束状/鱼骨样排列，可伴异源性成分（软骨、骨）；易误诊为肉瘤或肉瘤样癌\n3. **双相型（~20–30%）**：上述两种成分并存，每一成分需 ≥ 10%\n\n**浸润判定**：胸膜下脂肪或肺实质浸润、&quot;胸膜下脂肪入侵&quot;是与良性胸膜反应性增生（Reactive mesothelial hyperplasia）鉴别的最重要结构学依据。",
+    "keyFeatures": [
+      "胸膜弥漫增厚",
+      "石棉暴露史",
+      "Calretinin+/WT1+/D2-40+",
+      "需与肺腺癌胸膜转移鉴别"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Calretinin",
+        "result": "阳性",
+        "note": "间皮标记"
+      },
+      {
+        "marker": "WT1",
+        "result": "阳性(核)",
+        "note": ""
+      },
+      {
+        "marker": "D2-40",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CEA",
+        "result": "阴性",
+        "note": "区别于腺癌"
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阴性",
+        "note": "排除肺腺癌"
+      }
+    ],
+    "molecularFeatures": "BAP1缺失，CDKN2A纯合缺失(p16 FISH)。",
+    "differentialDiagnosis": [
+      "lung-adenocarcinoma"
+    ],
+    "grading": "上皮样/双相/肉瘤样",
+    "staging": "AJCC TNM",
+    "prognosis": "中位生存12-18月。",
+    "treatment": "手术+化疗(培美曲塞+铂类)+免疫治疗。",
+    "images": [
+      {
+        "url": "/diagrams/mesothelioma-gross.svg",
+        "caption": "大体：胸膜弥漫性增厚呈灰白色板状或结节状包壳样包绕肺脏，可见叶间裂增厚及胸壁侵犯"
+      },
+      {
+        "url": "/diagrams/mesothelioma-epithelioid-lp.svg",
+        "caption": "低倍（HE）：上皮样型恶性间皮瘤，肿瘤细胞呈管状-乳头状及实性巢状排列，侵犯脂肪及骨骼肌"
+      },
+      {
+        "url": "/diagrams/mesothelioma-epithelioid-hp.svg",
+        "caption": "高倍（HE）：肿瘤细胞多角形，胞质嗜酸，核圆形居中，核仁明显，可见'裸核'样脱落细胞"
+      },
+      {
+        "url": "/diagrams/mesothelioma-ihc-bap1.svg",
+        "caption": "IHC（BAP1）：肿瘤细胞核 BAP1 表达缺失（间质淋巴细胞及血管内皮核阳性作为内对照），支持恶性间皮瘤诊断"
+      }
+    ],
+    "expertConsensus": [
+      {
+        "id": "nccn-mpm",
+        "title": "NCCN 胸膜间皮瘤临床实践指南",
+        "summary": "推荐以上皮样、肉瘤样、双相 3 大组织亚型结合 BAP1 与 CDKN2A 分子检测进行综合分层，并明确 nivolumab + ipilimumab 为 PM 一线免疫方案。",
+        "organization": "NCCN",
+        "year": 2024,
+        "sourceUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1458",
+        "viewUrl": "https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1458"
+      },
+      {
+        "id": "iaslc-mpm-2018",
+        "title": "IASLC 胸膜间皮瘤国际分期建议（第 8 版）",
+        "summary": "引入新的 TNM 第 8 版分期，将胸膜厚度和受累深度标准化为 T 分期依据；I 期 5 年生存可达 33%。",
+        "organization": "IASLC",
+        "year": 2018,
+        "sourceUrl": "https://www.jto.org/article/S1556-0864(16)31107-0/fulltext",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/27670821/"
+      },
+      {
+        "id": "esmo-mpm",
+        "title": "ESMO 胸膜恶性间皮瘤临床实践指南",
+        "summary": "欧洲肿瘤内科学会指南，推荐早期综合诊断需完善 Calretinin/WT1/D2-40/BAP1/CDKN2A 组套并强调 BAP1 缺失在诊断与遗传咨询中的双重意义。",
+        "organization": "ESMO",
+        "year": 2022,
+        "sourceUrl": "https://www.annalsofoncology.org/article/S0923-7534(21)04876-1/fulltext",
+        "viewUrl": "https://www.annalsofoncology.org/article/S0923-7534(21)04876-1/fulltext"
+      }
+    ],
+    "literature": [
+      {
+        "id": "baas-2021-checkmate743",
+        "title": "First-line nivolumab plus ipilimumab in unresectable malignant pleural mesothelioma (CheckMate 743)",
+        "summary": "CheckMate 743 Ⅲ 期试验确立双免一线标准，mOS 18.1 月 vs 化疗 14.1 月；肉瘤样/双相亚型获益尤为显著。",
+        "authors": "Baas P, et al.",
+        "journal": "Lancet",
+        "year": 2021,
+        "sourceUrl": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32714-8/fulltext",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/33485464/"
+      },
+      {
+        "id": "sauter-2022-bap1",
+        "title": "BAP1 and MTAP Immunohistochemistry in Mesothelioma",
+        "summary": "Modern Pathology 综述 BAP1 缺失与 MTAP 缺失组合免疫组化在胸膜增生与间皮瘤早期鉴别中的价值，明显优于单独使用。",
+        "authors": "Sauter JL, et al.",
+        "journal": "Mod Pathol",
+        "year": 2022,
+        "sourceUrl": "https://www.modernpathology.org/article/S0893-3952(22)00035-0/fulltext",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/34795397/"
+      },
+      {
+        "id": "husain-2018-consensus",
+        "title": "Guidelines for Pathologic Diagnosis of Malignant Mesothelioma: 2017 Update of the Consensus Statement",
+        "summary": "国际间皮瘤病理共识 2017 年更新版，明确上皮样、肉瘤样、双相亚型的最少成分比例与 IHC 判读流程，是日常诊断的权威操作手册。",
+        "authors": "Husain AN, et al.",
+        "journal": "Arch Pathol Lab Med",
+        "year": 2018,
+        "sourceUrl": "https://meridian.allenpress.com/aplm/article/142/1/89/194115/",
+        "viewUrl": "https://pubmed.ncbi.nlm.nih.gov/28686500/"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "[国内指南] 恶性胸膜间皮瘤临床诊疗专家共识（2022年版） (中国抗癌协会, 2022)",
+      "[国内共识] 恶性胸膜间皮瘤诊断与治疗中国专家共识 (中国抗癌协会肿瘤呼吸病学专业委员会, 2022)"
+    ],
+    "differentialDiagnosisNotes": "**与肺腺癌胸膜转移的鉴别**（最常见且最关键）\n\n- **关键 IHC**（至少两两组合）：\n  - 间皮标记：Calretinin + / WT1 + / D2-40 + / CK5/6 +\n  - 腺癌标记：TTF-1 + / Napsin A + / CEA + / Claudin-4 + / BerEP4 +\n- **核心策略**：至少选 2 个间皮 + 2 个腺癌标记。间皮型 CEA 几乎恒定阴性，对鉴别价值最高\n- **分子**：BAP1 核表达缺失 + CDKN2A 纯合缺失（p16 FISH）强支持间皮瘤\n\n**与胸膜反应性增生的鉴别**（早期/小活检陷阱）\n\n- **结构**：间皮瘤有胸膜下脂肪或肺实质浸润；反应性增生不突破边界\n- **BAP1 IHC**：间皮瘤约 60% 失表达，反应性增生保留表达。是小活检鉴别的核心免疫指标\n- **MTAP IHC**：联合 BAP1 使用，两者任一阴性支持间皮瘤（CDKN2A/MTAP 共缺失）\n- **细胞学单独判断不足**：体腔液细胞学若间皮细胞增生要慎判，必要时行 FISH 验证\n\n**与滑膜肉瘤 / 肉瘤样癌的鉴别**\n\n- 上皮样型间皮瘤 vs 腺癌见上\n- 肉瘤样型间皮瘤需与肉瘤样癌、滑膜肉瘤鉴别：Calretinin + 和 SS18-SSX 融合阴性支持间皮瘤"
+  },
+  {
+    "id": "carcinoid-tumor",
+    "nameZh": "肺类癌",
+    "nameEn": "Pulmonary Carcinoid Tumor",
+    "aliases": [
+      "类癌",
+      "分化好的神经内分泌肿瘤"
+    ],
+    "organ": "lung",
+    "category": "malignant",
+    "epidemiology": "占肺肿瘤1-2%，年发病率约0.2-0.5/10万。典型类癌好发于年轻人（中位年龄约45岁），无明显性别差异，与吸烟无明确关系。不典型类癌发病年龄稍大，与吸烟可能相关。MEN1综合征患者需警惕类癌发生。",
+    "clinicalFeatures": "可引起阻塞性症状或类癌综合征(面部潮红、腹泻)，Cushing综合征少见。",
+    "grossPathology": "光滑息肉样或结节样肿物，血供丰富，切面黄褐色。",
+    "grossDescription": "**典型大体形态**：\n\n- **部位**：典型类癌多为中央型（支气管内息肉样肿物），占 70%；不典型类癌更多位于外周\n- **大小**：通常 1–4 cm，边界清楚\n- **外观**：支气管内可见光滑圆形结节，表面完整的呼吸上皮覆盖；切面灰黄至黄褐色，质地较软\n- **血供**：血供极丰富，活检时易出血——术中或内镜操作需格外注意\n- **与支气管关系**：阻塞近端支气管可致远端阻塞性肺炎和肺不张\n- **继发改变**：不典型类癌可见灶状坏死，典型类癌几乎无坏死",
+    "microscopy": "均匀一致的圆形至多边形细胞呈器官样巢状、小梁状、缎带状或菊形团样排列，被薄壁血管间隔分隔。核圆形居中，大小均匀，染色质细腻呈特征性'胡椒盐'样分布，核仁不明显。胞浆中等量嗜酸性颗粒状，含丰富神经内分泌颗粒。典型类癌：核分裂<2/2mm²，无坏死，细胞形态温和一致；不典型类癌：核分裂2-10/2mm²和/或伴局灶点状坏死，核异型性轻度增加。间质血管丰富，可见纤维化和淀粉样物质沉积。需与SCLC和LCNEC严格鉴别（核分裂数和Ki-67是关键）。",
+    "keyFeatures": [
+      "均匀细胞呈器官样/巢状排列",
+      "典型类癌 vs 不典型类癌的关键是核分裂数和坏死",
+      "Syn+/CgA+/CD56+",
+      "Ki-67低(典型<5%，不典型5-20%)"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD56",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "典型<5%，不典型5-20%",
+        "note": "与SCLC鉴别关键"
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阳性(部分)",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "MEN1基因突变见于部分病例。分子改变相对简单，TP53/RB1完整(区别于SCLC)。",
+    "differentialDiagnosis": [
+      "small-cell-lung-carcinoma",
+      "lung-adenocarcinoma"
+    ],
+    "grading": "典型类癌(低级别) vs 不典型类癌(中级别)",
+    "staging": "AJCC TNM",
+    "prognosis": "典型类癌5年生存率>90%，不典型类癌约60-70%。",
+    "treatment": "手术切除为主。不典型类癌术后可考虑辅助治疗。",
+    "images": [
+      {
+        "url": "/diagrams/tubular.svg",
+        "caption": "类癌的器官样巢状结构：均匀细胞围成小巢团，被血管间隔分开"
+      },
+      {
+        "url": "/diagrams/carcinoid-organoid-nests.svg",
+        "caption": "低倍（HE）：肿瘤细胞呈器官样、小梁状排列，形成界限清楚的实性巢团，巢团之间见富含血窦的纤细纤维血管间质"
+      },
+      {
+        "url": "/diagrams/carcinoid-uniform-cells.svg",
+        "caption": "高倍（HE）：典型类癌细胞大小一致，呈圆形或多边形，胞质中等嗜酸性，核染色质呈特征性\"椒盐样\"分布，核仁不明显，核分裂象罕见（<2/2mm²），无坏死"
+      },
+      {
+        "url": "/diagrams/carcinoid-atypical-mitosis.svg",
+        "caption": "高倍（HE）：不典型类癌可见核分裂象增多（2–10/2mm²）和/或点状坏死，细胞异型性较典型类癌略明显，为与典型类癌鉴别的关键形态学依据"
+      },
+      {
+        "url": "/diagrams/carcinoid-ihc-syn-cga.svg",
+        "caption": "IHC（Syn/CgA/INSM1）：肿瘤细胞胞质弥漫强阳性表达神经内分泌标记物 Syn 与 CgA，核 INSM1 阳性，Ki-67 增殖指数典型类癌常<5%、不典型类癌 5%–20%"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "[国内指南] CSCO 神经内分泌肿瘤诊疗指南 2022 (CSCO, 2022)",
+      "[国内指南] 中国胸部肿瘤神经内分泌肿瘤诊断和治疗专家共识 (中国抗癌协会, 2021)",
+      "[国内共识] 胃肠胰神经内分泌肿瘤病理诊断共识 (中华医学会病理学分会, 2020)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）神经内分泌肿瘤诊疗指南 (中国临床肿瘤学会（CSCO）, 2022)"
+    ]
+  },
+  {
+    "id": "lung-adenocarcinoma-in-situ",
+    "nameZh": "原位腺癌",
+    "nameEn": "Adenocarcinoma In Situ",
+    "aliases": [
+      "AIS",
+      "肺 AIS"
+    ],
+    "organ": "lung",
+    "category": "precancerous",
+    "epidemiology": "多在低剂量 CT 筛查时以纯磨玻璃结节（pGGN）形式被发现，无明显性别差异，中位年龄约60岁。随CT筛查普及检出率逐年上升。东亚非吸烟女性中EGFR突变驱动的AIS比例较高。",
+    "clinicalFeatures": "完全无症状，随访 CT 上呈长期稳定或缓慢增大的 ≤3 cm 纯磨玻璃结节。",
+    "grossPathology": "肉眼常无明显肿块，可表现为局灶苍白变或轻度实变。",
+    "grossDescription": "**大体特点**：\n\n- 多数病灶肉眼几乎看不到肿块：因肿瘤沿原有肺泡壁贴壁生长，不破坏结构\n- 可见局灶苍白区、轻度实变或轻微&quot;毛玻璃&quot;样改变\n- 病灶直径 ≤ 3 cm，多数 1–2 cm\n- 胸膜无凹陷，切面无明显纤维化瘢痕——与侵袭性腺癌明显不同\n- **取材建议**：对磨玻璃结节整体沿长轴纵切，间隔 2–3 mm 全部送检，以确认无微浸润成分",
+    "microscopy": "肺原位腺癌（Adenocarcinoma In Situ, AIS）为局限性病变，最大径≤3 cm，组织学以纯贴壁式（lepidic）生长为特征，肿瘤性 II 型肺泡上皮细胞及/或 Clara 细胞沿原有肺泡壁表面单层、连续性替代性生长，肺泡间隔保留原有解剖结构，无间质、血管或胸膜浸润，亦无腺泡状、乳头状、微乳头状或实性成分。低倍镜下肺泡结构大致完整，肺泡腔内空气仍存，间隔可轻度增宽伴少量淋巴细胞浸润及轻微弹力纤维增生，但不见纤维母细胞灶（fibroblastic focus）或促结缔组织增生性间质反应，此点为与微浸润腺癌（MIA）鉴别的关键。高倍镜下肿瘤细胞呈立方形至低柱状，胞浆淡染或轻度嗜酸，核呈圆形至卵圆形，核膜略不规则，染色质细颗粒状且分布均匀，可见小而不明显的核仁，核分裂象罕见或缺如。部分病例可出现核内嗜酸性假包涵体及核沟，非黏液型 AIS 多见上述改变；黏液型 AIS 则由高柱状含顶端黏液的杯状或柱状细胞构成，核位于基底，异型性极轻，易与反应性化生混淆，诊断需格外谨慎且罕见。肺泡腔内可见少量巨噬细胞聚集，但无肿瘤细胞脱落漂浮成团、无坏死、无气腔播散（STAS）。免疫组化 TTF-1 阳性（黏液型可阴性）、Napsin A 阳性，Ki-67 增殖指数通常<5%。【鉴别要点】①非典型腺瘤样增生（AAH）：病灶常<5 mm，细胞数量少、异型性更轻、连续性差，而 AIS 病灶>5 mm 且细胞密集连续；②微浸润腺癌（MIA）：在贴壁为主背景中出现≤5 mm 的浸润灶，伴纤维母细胞性间质反应，一旦识别浸润即排除 AIS 诊断。",
+    "keyFeatures": [
+      "≤ 3 cm 的纯贴壁生长（100% lepidic）",
+      "无间质、血管、胸膜侵犯",
+      "CT 上对应纯磨玻璃结节",
+      "完全切除后 5 年无病生存 100%",
+      "与微浸润腺癌（MIA，浸润灶 ≤ 5 mm）的区别在于是否出现非贴壁成分"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Napsin A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "极低(<2%)",
+        "note": "区别于浸润癌"
+      }
+    ],
+    "molecularFeatures": "EGFR 突变已可在 AIS 出现，ALK 融合罕见。基因组改变数量远少于浸润癌。",
+    "differentialDiagnosis": [
+      "lung-adenocarcinoma"
+    ],
+    "grading": "不分级",
+    "staging": "pTis / cTis (第 8 版)",
+    "prognosis": "完整切除后 5 年无病生存率 100%。",
+    "treatment": "亚肺叶切除（楔形/段切）即可，无需辅助治疗。",
+    "images": [
+      {
+        "url": "/diagrams/tubular.svg",
+        "caption": "贴壁生长模式示意：肿瘤细胞沿原有肺泡壁排列，保留肺泡结构"
+      },
+      {
+        "url": "/diagrams/ais-low-power-lepidic.svg",
+        "caption": "低倍（HE）：肿瘤细胞沿原有肺泡壁呈贴壁式（lepidic）生长，肺泡结构保留，无间质、血管或胸膜浸润，病灶直径≤3 cm。"
+      },
+      {
+        "url": "/diagrams/ais-high-power-atypical-pneumocytes.svg",
+        "caption": "高倍（HE）：异型Ⅱ型肺泡上皮/Clara 样细胞单层衬覆肺泡壁，核轻-中度异型，核仁不明显，未见乳头状结构及肿瘤性间质。"
+      },
+      {
+        "url": "/diagrams/ais-ihc-ttf1.svg",
+        "caption": "IHC（TTF-1）：贴壁生长的肿瘤细胞核弥漫强阳性，提示终末呼吸单位（TRU）来源。"
+      },
+      {
+        "url": "/diagrams/ais-gross-ggn.svg",
+        "caption": "大体/影像示意：孤立性纯磨玻璃结节（pGGN），边界清楚，切面呈灰白色斑片状实变区，无坏死及胸膜皱缩。"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "[国内指南] CSCO 非小细胞肺癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 国家卫生健康委员会 原发性肺癌诊疗指南（2022 年版） (国家卫健委, 2022)",
+      "[国内指南] 中华医学会肺癌临床诊疗指南（2023 版） (中华医学会肿瘤学分会, 2023)",
+      "[国内共识] 肺腺癌分子病理检测临床实践指南 (中华医学会病理学分会, 2021)",
+      "[国内共识] 早期肺腺癌（含原位腺癌、微浸润性腺癌）规范化诊断中国专家共识 (中华医学会病理学分会肺疾病学组, 2021)"
+    ]
+  },
+  {
+    "id": "large-cell-neuroendocrine-carcinoma",
+    "nameZh": "大细胞神经内分泌癌",
+    "nameEn": "Large Cell Neuroendocrine Carcinoma",
+    "aliases": [
+      "LCNEC"
+    ],
+    "organ": "lung",
+    "category": "malignant",
+    "epidemiology": "约占肺癌 3%，重度吸烟者多见（>90%有吸烟史），以 60–70 岁男性为主（男女比约3:1）。是高级别肺神经内分泌癌之一，发病率低于SCLC但侵袭性相似，确诊时多为中晚期。",
+    "clinicalFeatures": "外周型常见，发现时多为较大肿块，早期即易广泛转移。",
+    "grossPathology": "较大的灰白色外周型肿块，切面常伴广泛坏死。",
+    "grossDescription": "**典型大体形态**：\n\n- **部位**：多为外周型（区别于中央型 SCLC），右肺上叶最多\n- **大小**：肿瘤通常较大，3–10 cm 不等，发现时已多属较晚期\n- **切面**：灰白至灰黄色实性肿块，几乎均可见较广泛的中央&quot;地图样&quot;坏死（反映高增殖与高核分裂）\n- **质地**：较 SCLC 略硬，可伴出血灶\n- **边界**：与周围肺实质界限相对清楚但常有卫星结节和胸膜浸润",
+    "microscopy": "肿瘤由大细胞组成（细胞体积>3倍小淋巴细胞，明显大于SCLC），排列呈器官样巢状、小梁状、菊形团样或栅栏状结构，具有神经内分泌形态特征。胞浆中等至丰富，嗜酸性或透明。核大，呈空泡状或粗颗粒状染色质，核仁1-2个显著（与SCLC缺乏核仁形成鲜明对比），核膜清晰。核分裂>10/2mm²（常>20/2mm²），地图样坏死广泛。免疫组化至少一项神经内分泌标记阳性（Syn/CgA/CD56/INSM1）方可诊断。Ki-67通常40-80%，介于类癌和SCLC之间。",
+    "keyFeatures": [
+      "细胞比 SCLC 大（≥ 3 倍小淋巴细胞），胞浆丰富",
+      "必须同时具备 NE 形态（器官样/菊形团）与 NE 免疫表型",
+      "核分裂 > 10 / 2 mm²，常伴坏死",
+      "Ki-67 通常 40–80%，低于 SCLC",
+      "与不典型类癌、SCLC 的鉴别是关键"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "Synaptophysin",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "Chromogranin A",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "CD56",
+        "result": "阳性",
+        "note": ""
+      },
+      {
+        "marker": "TTF-1",
+        "result": "阳性(约 50%)",
+        "note": ""
+      },
+      {
+        "marker": "Ki-67",
+        "result": "40-80%",
+        "note": "低于 SCLC"
+      },
+      {
+        "marker": "INSM1",
+        "result": "阳性",
+        "note": "近年推荐的 NE 标记"
+      }
+    ],
+    "molecularFeatures": "两大分子亚型：SCLC 样（TP53+RB1 双失活）和 NSCLC 样（KRAS、STK11 突变），决定化疗方案选择。",
+    "differentialDiagnosis": [
+      "small-cell-lung-carcinoma",
+      "carcinoid-tumor",
+      "lung-adenocarcinoma"
+    ],
+    "grading": "高级别",
+    "staging": "AJCC TNM 第 8 版",
+    "prognosis": "侵袭性强，介于 SCLC 与腺癌之间，5 年生存约 15–25%。",
+    "treatment": "早期手术 + 辅助化疗；SCLC 样者用 EP 方案效果较好，NSCLC 样者可考虑含铂双药。",
+    "images": [
+      {
+        "url": "/diagrams/starry-sky.svg",
+        "caption": "LCNEC 菊形团样/巢状结构伴广泛坏死，与 SCLC 的差别是胞浆和核仁更突出"
+      },
+      {
+        "url": "/diagrams/lcnec-low-power.svg",
+        "caption": "低倍（HE）：肿瘤呈器官样、梁状及菊形团样排列，周边可见栅栏状结构，伴大片地图状坏死"
+      },
+      {
+        "url": "/diagrams/lcnec-high-power.svg",
+        "caption": "高倍（HE）：瘤细胞体积大，胞浆中等量，核仁明显，染色质粗颗粒状，核分裂象活跃（>10/2 mm²）"
+      },
+      {
+        "url": "/diagrams/lcnec-ihc-synaptophysin.svg",
+        "caption": "IHC（Syn/CgA/INSM1）：神经内分泌标记物胞浆/核阳性，支持神经内分泌分化诊断"
+      },
+      {
+        "url": "/diagrams/lcnec-ihc-ki67.svg",
+        "caption": "IHC（Ki-67）：核增殖指数显著升高（通常 >40%），提示高级别神经内分泌癌"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "[国内指南] CSCO 小细胞肺癌诊疗指南 2023 (CSCO, 2023)",
+      "[国内指南] CSCO 非小细胞肺癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内共识] 肺神经内分泌肿瘤病理诊断共识 (中华医学会病理学分会胸部疾病学组, 2021)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）小细胞肺癌诊疗指南（2023 版） (中国临床肿瘤学会（CSCO）, 2023)"
+    ]
+  },
+  {
+    "id": "pulmonary-hamartoma",
+    "nameZh": "肺错构瘤",
+    "nameEn": "Pulmonary Hamartoma",
+    "aliases": [
+      "错构瘤",
+      "软骨样错构瘤"
+    ],
+    "organ": "lung",
+    "category": "benign",
+    "epidemiology": "最常见的良性肺肿瘤，占肺孤立性结节约 8%，男性稍多于女性，发病年龄 40–60 岁。无种族差异，无明确危险因素，多为偶然影像学发现。不与吸烟相关。",
+    "clinicalFeatures": "常为体检偶然发现的无症状&quot;硬币样&quot;病灶，极少出现症状。",
+    "grossPathology": "外周型圆形/分叶状结节，边界清楚，切面灰白伴&quot;爆米花&quot;样钙化。",
+    "grossDescription": "**典型大体形态**：\n\n- **部位**：外周型最常见（~90%），少数为支气管内息肉样（内生型错构瘤）\n- **大小**：多为 1–4 cm 的圆形/分叶状&quot;硬币样&quot;结节\n- **切面**：灰白色，质地硬韧，可见光泽状软骨灶、脂肪灶（黄色）和少量粘液样区\n- **钙化**：CT 典型&quot;爆米花&quot;钙化对应软骨岛内的营养不良性钙化\n- **包膜**：大体有明显包膜感，与周围肺实质分界清楚，手术易剜除\n- **大小稳定**：多年随访体积几乎不变，或生长非常缓慢",
+    "microscopy": "肺错构瘤镜下呈境界清楚的结节状病变，无真正包膜，但与周围肺组织分界清晰。病变由多种间叶组织成分混合构成，典型者可见软骨、脂肪、平滑肌、纤维结缔组织及黏液样基质等成分，各成分相互交织但分布杂乱无序，呈现'组织错位'特征。\n\n组织结构上，成熟透明软骨小叶常位于结节中央，周围包绕疏松的纤维黏液样间质，其中可见成熟脂肪组织、束状排列的平滑肌及少量血管成分。软骨小叶周边可见软骨母细胞样细胞，偶见局灶钙化或骨化。间质中常见裂隙状或分支状腺管样结构，内衬单层立方至柱状纤毛上皮，部分区域可见杯状细胞及黏液分泌，这些上皮成分系被动陷入的呼吸道上皮，而非肿瘤性成分。\n\n细胞特征方面，软骨细胞位于陷窝内，胞浆淡染或空泡状；脂肪细胞呈单泡性成熟形态；平滑肌细胞呈梭形，胞浆嗜酸性细颗粒状；陷入的纤毛柱状上皮细胞呈单层排列，极性良好。核特征温和：软骨细胞核小而圆，染色质均匀；平滑肌核呈雪茄状，两端钝圆；上皮细胞核位于基底部，染色质细腻，核仁不明显。全病变无病理性核分裂象，无核多形性，无坏死。\n\n分级线索：肺错构瘤属良性病变，不进行分级；但若见明显细胞异型、核分裂活跃或坏死，应警惕软骨肉瘤或双相型肺母细胞瘤可能。\n\n鉴别要点：①软骨瘤：单一成熟透明软骨构成，缺乏脂肪、平滑肌及陷入上皮等多组织成分；②双相型肺母细胞瘤：具有原始间叶性胚基样成分及腺样上皮，细胞幼稚、核分裂活跃，患者年龄多较轻，而错构瘤成分均为成熟间叶组织且上皮为被动陷入。",
+    "keyFeatures": [
+      "成熟间叶成分（软骨、脂肪、平滑肌）混合",
+      "常含陷入的呼吸上皮，形成裂隙",
+      "&quot;爆米花&quot;样钙化为 CT 特征",
+      "边界光滑、生长缓慢",
+      "需与低级别软骨肉瘤鉴别，但无异型及核分裂"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "S-100",
+        "result": "软骨成分阳性",
+        "note": ""
+      },
+      {
+        "marker": "Desmin",
+        "result": "平滑肌阳性",
+        "note": ""
+      }
+    ],
+    "molecularFeatures": "HMGA2 染色体易位（6p21, 12q13-15）常见，属良性间叶源性肿瘤。",
+    "differentialDiagnosis": [
+      "lung-adenocarcinoma",
+      "carcinoid-tumor"
+    ],
+    "grading": "无",
+    "staging": "不适用",
+    "prognosis": "良性，罕见复发或恶变。",
+    "treatment": "无症状小结节可随访；较大或诊断不明者手术切除。",
+    "images": [
+      {
+        "url": "/diagrams/pulmonary-hamartoma-gross.svg",
+        "caption": "大体：肺实质内边界清楚的圆形结节，切面呈分叶状、灰白质韧，可见软骨样半透明区与脂肪样黄色区相间分布"
+      },
+      {
+        "url": "/diagrams/pulmonary-hamartoma-low-power.svg",
+        "caption": "低倍（HE）：病变由成熟透明软骨岛、脂肪组织、疏松黏液纤维间质及裂隙状呼吸上皮被覆腔隙混合构成，边界清楚但无真正包膜"
+      },
+      {
+        "url": "/diagrams/pulmonary-hamartoma-high-power.svg",
+        "caption": "高倍（HE）：成熟透明软骨小叶周围可见黏液样间质及平滑肌束，裂隙由单层纤毛柱状或立方型呼吸上皮被覆，上皮无异型性"
+      },
+      {
+        "url": "/diagrams/pulmonary-hamartoma-ihc-s100.svg",
+        "caption": "IHC（S-100）：软骨样成分及脂肪成分弥漫阳性，勾勒出间叶性组织混合分布，有助于与软骨瘤、硬化性肺细胞瘤鉴别"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021"
+    ]
+  },
+  {
+    "id": "adenosquamous-carcinoma",
+    "nameZh": "肺腺鳞癌",
+    "nameEn": "Lung Adenosquamous Carcinoma",
+    "aliases": [
+      "腺鳞癌",
+      "ASC"
+    ],
+    "organ": "lung",
+    "category": "malignant",
+    "epidemiology": "占非小细胞肺癌约2-4%，与吸烟相关但也见于非吸烟者，发病年龄与腺癌和鳞癌相似（中位约65岁）。男女比例接近，亚裔非吸烟患者中EGFR突变率较高。因需充分取材方能确诊，实际发病率可能被低估。",
+    "clinicalFeatures": "可为中央型或周围型，临床表现与其他非小细胞肺癌相似，包括咳嗽、咯血、胸痛和呼吸困难。",
+    "grossPathology": "灰白色肿块，可位于中央或周围，切面常伴坏死，形态介于腺癌和鳞癌之间。",
+    "microscopy": "肺腺鳞癌（Lung Adenosquamous Carcinoma）在镜下具有腺癌与鳞状细胞癌两种成分并存的双相性形态学特征，WHO 第 5 版肺肿瘤分类要求每种成分至少占肿瘤体积的 10% 方可诊断。低倍镜下肿瘤呈浸润性生长，边界不规则，常见促纤维结缔组织增生性间质反应及散在的炎细胞浸润，部分病例可见坏死灶及脉管侵犯。腺癌成分表现为腺泡状、乳头状、微乳头状、贴壁样或实性结构，腺腔内可见黏液及细颗粒状分泌物；细胞呈柱状或立方形，胞浆淡染或略嗜酸，可含胞内黏液空泡，PAS/AB 染色及黏液卡红染色阳性。鳞状细胞癌成分则以实性巢团或片状排列为主，可见角化珠形成、单细胞角化及细胞间桥；瘤细胞呈多边形，胞浆丰富嗜酸或透明，细胞境界清楚。核特征方面，腺癌细胞核圆形至卵圆形，染色质细颗粒状，核仁清晰嗜酸，核膜欠光滑；鳞癌细胞核则呈多形性，染色质粗糙深染，核仁显著，核分裂象及异常核分裂象易见。两种成分之间可呈突然过渡或相互交织，移行区形态模糊。分级线索包括：腺癌成分多为中至低分化（腺腔形成差、实性比例高），鳞癌成分常为中至低分化（角化不明显、核异型显著），Ki-67 增殖指数通常较高。免疫组化有助于识别双相性：腺癌区 TTF-1、Napsin A、CK7 阳性，鳞癌区 p40、p63、CK5/6 阳性，两者界面可见标记物表达的”镶嵌”现象。鉴别要点：（1）低分化腺癌伴鳞状化生——其鳞状成分不足 10% 且缺乏明确角化或细胞间桥，p40 仅局灶阳性；（2）大细胞癌伴双向免疫表型——无明确腺/鳞形态分化，TTF-1 与 p40 均可弱阳性但缺乏结构证据；（3）高级别黏液表皮样癌——常有支气管腔内生长、中间型细胞及缺乏角化珠，MAML2 重排阳性可资鉴别。",
+    "keyFeatures": [
+      "腺癌和鳞癌成分各>=10%是诊断标准",
+      "腺癌成分TTF-1+/Napsin A+，鳞癌成分P40+/CK5/6+",
+      "可携带EGFR突变（尤其亚裔非吸烟患者）",
+      "预后较纯腺癌或纯鳞癌差",
+      "充分取材对正确诊断至关重要"
+    ],
+    "ihcProfile": [
+      {
+        "marker": "TTF-1",
+        "result": "腺癌成分阳性",
+        "note": "腺性分化标记"
+      },
+      {
+        "marker": "Napsin A",
+        "result": "腺癌成分阳性",
+        "note": "腺性分化标记"
+      },
+      {
+        "marker": "P40",
+        "result": "鳞癌成分阳性",
+        "note": "鳞状分化标记"
+      },
+      {
+        "marker": "CK5/6",
+        "result": "鳞癌成分阳性",
+        "note": "鳞状上皮角蛋白"
+      },
+      {
+        "marker": "CK7",
+        "result": "腺癌成分阳性",
+        "note": ""
+      },
+      {
+        "marker": "PD-L1",
+        "result": "可变",
+        "note": "需TPS评分指导免疫治疗"
+      }
+    ],
+    "molecularFeatures": "EGFR突变率约15-30%（亚裔更高），可携带ALK融合（罕见）。TP53突变常见。因含腺癌成分，靶向治疗机会存在，应行全面分子检测。",
+    "differentialDiagnosis": [
+      "lung-adenocarcinoma",
+      "lung-squamous-cell-carcinoma"
+    ],
+    "grading": "不单独分级，参考各成分分化程度",
+    "staging": "AJCC TNM第8版",
+    "prognosis": "预后较纯腺癌和纯鳞癌差，侵袭性较高，复发和转移风险更大。",
+    "treatment": "早期手术切除。晚期行全面分子检测（EGFR/ALK/ROS1等），有驱动突变者可用靶向治疗。无驱动突变者化疗+免疫治疗。",
+    "images": [
+      {
+        "url": "/diagrams/adenosquamous-gross.svg",
+        "caption": "大体：肺叶切除标本示周围型灰白实性肿块，切面可见灰白质韧鳞癌样区与灰黄黏液样腺癌样区交错分布，边界不清"
+      },
+      {
+        "url": "/diagrams/adenosquamous-low-power.svg",
+        "caption": "低倍（HE）：肿瘤内同时可见腺癌成分（腺管/乳头状结构）与鳞癌成分（实性巢片伴角化），两种成分各占肿瘤至少 10%，交界处可见过渡区"
+      },
+      {
+        "url": "/diagrams/adenosquamous-high-power.svg",
+        "caption": "高倍（HE）：鳞癌区示细胞间桥及角化珠形成；腺癌区示柱状上皮形成腺腔并可见黏液分泌，背景为促纤维增生性间质"
+      },
+      {
+        "url": "/diagrams/adenosquamous-ihc.svg",
+        "caption": "IHC：腺癌成分 TTF-1 与 Napsin A 胞核/胞浆阳性；鳞癌成分 p40 与 CK5/6 弥漫核/浆阳性，双阳性分区对应 HE 中的双相分化区域"
+      }
+    ],
+    "references": [
+      "WHO Thoracic Tumours, 5th Ed, 2021",
+      "[国内指南] CSCO 非小细胞肺癌诊疗指南 2024 (CSCO, 2024)",
+      "[国内指南] 原发性肺癌诊疗指南（2022年版） (国家卫健委, 2022)",
+      "[国内共识] 中国临床肿瘤学会（CSCO）非小细胞肺癌诊疗指南（2024 版） (中国临床肿瘤学会（CSCO）, 2024)",
+      "[国内共识] 中华医学会病理学分会肺癌病理诊断规范化专家共识 (中华医学会病理学分会, 2021)"
+    ]
+  }
 ]

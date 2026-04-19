@@ -3,179 +3,566 @@
     "id": "breast-nottingham",
     "nameZh": "Nottingham组织学分级",
     "nameEn": "Nottingham Histologic Grade",
-    "applicableTo": ["invasive-ductal-carcinoma-nst", "invasive-lobular-carcinoma"],
+    "applicableTo": [
+      "invasive-ductal-carcinoma-nst",
+      "invasive-lobular-carcinoma"
+    ],
     "description": "基于腺管形成、核多形性、核分裂象三个参数的评分系统，是浸润性乳腺癌最常用的组织学分级方法",
     "criteria": [
-      { "parameter": "腺管形成", "score1": ">75%肿瘤面积", "score2": "10-75%肿瘤面积", "score3": "<10%肿瘤面积" },
-      { "parameter": "核多形性", "score1": "核小而规则，与正常上皮细胞核相似", "score2": "核中度增大，有一定异型性", "score3": "核明显多形性，核仁显著" },
-      { "parameter": "核分裂象(/10HPF)", "score1": "0-5个", "score2": "6-10个", "score3": "≥11个" }
+      {
+        "parameter": "腺管形成",
+        "score1": ">75%肿瘤面积",
+        "score2": "10-75%肿瘤面积",
+        "score3": "<10%肿瘤面积"
+      },
+      {
+        "parameter": "核多形性",
+        "score1": "核小而规则，与正常上皮细胞核相似",
+        "score2": "核中度增大，有一定异型性",
+        "score3": "核明显多形性，核仁显著"
+      },
+      {
+        "parameter": "核分裂象(/10HPF)",
+        "score1": "0-5个",
+        "score2": "6-10个",
+        "score3": "≥11个"
+      }
     ],
     "grades": [
-      { "grade": "I级（低级别/高分化）", "totalScore": "3-5分", "description": "分化好，预后较好，5年生存率约95%" },
-      { "grade": "II级（中级别/中分化）", "totalScore": "6-7分", "description": "中度分化，预后中等，5年生存率约75%" },
-      { "grade": "III级（高级别/低分化）", "totalScore": "8-9分", "description": "分化差，预后较差，5年生存率约50%" }
-    ]
+      {
+        "grade": "I级（低级别/高分化）",
+        "totalScore": "3-5分",
+        "description": "分化好，预后较好，5年生存率约95%"
+      },
+      {
+        "grade": "II级（中级别/中分化）",
+        "totalScore": "6-7分",
+        "description": "中度分化，预后中等，5年生存率约75%"
+      },
+      {
+        "grade": "III级（高级别/低分化）",
+        "totalScore": "8-9分",
+        "description": "分化差，预后较差，5年生存率约50%"
+      }
+    ],
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "WHO Classification of Tumours 5th ed. Breast Tumours（2019）推荐 Nottingham 组织学分级（Elston-Ellis 改良 Scarff-Bloom-Richardson 系统）作为浸润性乳腺癌标准组织学分级；AJCC 第 8 版（2017 起生效）在预后分期中将组织学分级（G1/G2/G3）作为必备参数，明确采用 Nottingham 系统评估腺管形成、核多形性与核分裂计数三项指标（总分 3–5 为 G1，6–7 为 G2，8–9 为 G3）。",
+      "cnAlternative": {
+        "name": "中国无独立替代分级系统；CSCO《乳腺癌诊疗指南 2024》及《中国抗癌协会乳腺癌诊治指南与规范（2024 年版）》均直接采纳 Nottingham 组织学分级",
+        "keyDifferences": "国内指南在判读要求上与国际一致：腺管形成比例（>75% 记 1 分、10–75% 记 2 分、<10% 记 3 分）、核多形性（轻/中/重度分别 1/2/3 分）、核分裂计数（按显微镜高倍视野面积换算，分 1/2/3 分）三项累加。核分裂计数须按所用显微镜高倍视野直径校正阈值，并在病理报告中注明视野面积；对于新辅助治疗后标本、针吸活检小标本或存在广泛坏死/挤压伪影时，国内规范建议注明分级受限或暂不分级，并在手术切除标本上重新评估。",
+        "_low_confidence": true,
+        "_reason": "目标对象为组织学分级系统而非 TNM 分期，严格意义上不在 AJCC/UICC TNM 体系内；此处将 verifiedAgainst 对齐至 WHO 5th 及 AJCC 8th 预后分期对分级的要求。国内并无独立替代分级系统，cnAlternative 记录国内指南对 Nottingham 的采纳情况供人工复核。"
+      }
+    }
   },
   {
     "id": "lung-adenocarcinoma-who",
     "nameZh": "WHO肺腺癌组织学亚型分类",
     "nameEn": "WHO Classification of Lung Adenocarcinoma Patterns",
-    "applicableTo": ["lung-adenocarcinoma"],
+    "applicableTo": [
+      "lung-adenocarcinoma"
+    ],
     "description": "根据肿瘤主要生长方式进行分类，2021年WHO第5版分类将肺腺癌分为不同的组织学亚型，与预后密切相关",
     "criteria": [
-      { "parameter": "贴壁生长型(Lepidic)", "description": "肿瘤细胞沿肺泡壁贴壁生长，无间质浸润", "prognosis": "预后最好" },
-      { "parameter": "腺泡型(Acinar)", "description": "肿瘤细胞形成圆形或卵圆形腺腔", "prognosis": "预后中等" },
-      { "parameter": "乳头型(Papillary)", "description": "肿瘤细胞沿纤维血管轴心乳头状生长", "prognosis": "预后中等" },
-      { "parameter": "微乳头型(Micropapillary)", "description": "肿瘤细胞形成无纤维血管轴心的簇状结构", "prognosis": "预后差，易转移" },
-      { "parameter": "实性型(Solid)", "description": "肿瘤细胞呈实性片状生长，缺乏腺管/乳头结构，需免疫组化证实腺分化", "prognosis": "预后差" }
+      {
+        "parameter": "贴壁生长型(Lepidic)",
+        "description": "肿瘤细胞沿肺泡壁贴壁生长，无间质浸润",
+        "prognosis": "预后最好"
+      },
+      {
+        "parameter": "腺泡型(Acinar)",
+        "description": "肿瘤细胞形成圆形或卵圆形腺腔",
+        "prognosis": "预后中等"
+      },
+      {
+        "parameter": "乳头型(Papillary)",
+        "description": "肿瘤细胞沿纤维血管轴心乳头状生长",
+        "prognosis": "预后中等"
+      },
+      {
+        "parameter": "微乳头型(Micropapillary)",
+        "description": "肿瘤细胞形成无纤维血管轴心的簇状结构",
+        "prognosis": "预后差，易转移"
+      },
+      {
+        "parameter": "实性型(Solid)",
+        "description": "肿瘤细胞呈实性片状生长，缺乏腺管/乳头结构，需免疫组化证实腺分化",
+        "prognosis": "预后差"
+      }
     ],
     "grades": [
-      { "grade": "低级别", "totalScore": "贴壁为主型", "description": "以贴壁生长为主（>5mm浸润灶则为微浸润腺癌或浸润性腺癌贴壁为主型）" },
-      { "grade": "中级别", "totalScore": "腺泡为主型/乳头为主型", "description": "腺泡或乳头为主要生长方式，高级别成分<20%" },
-      { "grade": "高级别", "totalScore": "微乳头为主型/实性为主型", "description": "微乳头或实性为主，或任何亚型中高级别成分≥20%（复杂腺体、筛状、实性、微乳头）" }
-    ]
+      {
+        "grade": "低级别",
+        "totalScore": "贴壁为主型",
+        "description": "以贴壁生长为主（>5mm浸润灶则为微浸润腺癌或浸润性腺癌贴壁为主型）"
+      },
+      {
+        "grade": "中级别",
+        "totalScore": "腺泡为主型/乳头为主型",
+        "description": "腺泡或乳头为主要生长方式，高级别成分<20%"
+      },
+      {
+        "grade": "高级别",
+        "totalScore": "微乳头为主型/实性为主型",
+        "description": "微乳头或实性为主，或任何亚型中高级别成分≥20%（复杂腺体、筛状、实性、微乳头）"
+      }
+    ],
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "WHO 胸部肿瘤分类第 5 版（2021）——肺腺癌组织学亚型分类（贴壁型/腺泡型/乳头型/微乳头型/实体型为主，以及变异型）；需注意本条目为组织学亚型分类而非 TNM 分期，TNM 分期请参照 AJCC 8th / UICC 8th（2017 年起生效，IASLC 第 8 版）。",
+      "cnAlternative": {
+        "name": "《CSCO 非小细胞肺癌诊疗指南 2024》及《中华医学会肺癌临床诊疗指南（2023 版）》组织学亚型判读要求",
+        "keyDifferences": "国内指南完全采纳 WHO 2021 第 5 版的五大主要亚型（贴壁、腺泡、乳头、微乳头、实体）及 IASLC 分级系统（G1 贴壁为主 <20% 高级别；G2 腺泡/乳头为主 <20% 高级别；G3 任何亚型伴 ≥20% 高级别成分——高级别指实体/微乳头/复杂腺体/气道播散），强调在手术切除标本中按 5% 递增定量报告各亚型比例；同时纳入原位腺癌（AIS）与微浸润腺癌（MIA）的独立诊断条目（WHO 2021 已将其从浸润性腺癌中分出），贴壁为主型腺癌≤3 cm 伴浸润灶≤5 mm 方可诊断 MIA。国内推荐对所有浸润性腺癌常规补充气道播散（STAS）评估并记入病理报告，用于指导亚肺叶切除病例的辅助治疗决策。",
+        "_low_confidence": true,
+        "_reason": "该条目本质为组织学亚型分类而非 TNM 分期；所述国内指南年份与 IASLC 分级细节属常识性总结，但具体条款请人工核对最新版 CSCO 指南原文。"
+      }
+    }
   },
   {
     "id": "prostate-gleason",
     "nameZh": "Gleason评分系统/ISUP分级分组",
     "nameEn": "Gleason Score / ISUP Grade Group",
-    "applicableTo": ["prostate-adenocarcinoma"],
+    "applicableTo": [
+      "prostate-adenocarcinoma"
+    ],
     "description": "前列腺腺癌最重要的分级系统，基于腺体结构的分化程度。2014年ISUP修订后采用Grade Group分组系统",
     "criteria": [
-      { "parameter": "Gleason 模式1", "description": "边界清楚的结节状，密集排列但分离的均匀腺体（现已极少使用）" },
-      { "parameter": "Gleason 模式2", "description": "边界较清，较疏松排列的均匀腺体（现已极少使用）" },
-      { "parameter": "Gleason 模式3", "description": "浸润性生长的分离的、大小不等的腺体，单个腺体边界清楚" },
-      { "parameter": "Gleason 模式4", "description": "融合腺体、筛状腺体、肾小球样结构或分化差的腺体", "subpatterns": ["融合性腺体", "筛状结构", "肾小球样结构"] },
-      { "parameter": "Gleason 模式5", "description": "几乎无腺管分化，呈实性片状、条索状或单个细胞浸润，可伴粉刺样坏死" }
+      {
+        "parameter": "Gleason 模式1",
+        "description": "边界清楚的结节状，密集排列但分离的均匀腺体（现已极少使用）"
+      },
+      {
+        "parameter": "Gleason 模式2",
+        "description": "边界较清，较疏松排列的均匀腺体（现已极少使用）"
+      },
+      {
+        "parameter": "Gleason 模式3",
+        "description": "浸润性生长的分离的、大小不等的腺体，单个腺体边界清楚"
+      },
+      {
+        "parameter": "Gleason 模式4",
+        "description": "融合腺体、筛状腺体、肾小球样结构或分化差的腺体",
+        "subpatterns": [
+          "融合性腺体",
+          "筛状结构",
+          "肾小球样结构"
+        ]
+      },
+      {
+        "parameter": "Gleason 模式5",
+        "description": "几乎无腺管分化，呈实性片状、条索状或单个细胞浸润，可伴粉刺样坏死"
+      }
     ],
     "grades": [
-      { "grade": "Grade Group 1", "totalScore": "Gleason ≤6 (3+3)", "description": "仅由模式3组成，预后极好，极低转移风险" },
-      { "grade": "Grade Group 2", "totalScore": "Gleason 3+4=7", "description": "主要成分为模式3，次要成分为模式4，预后较好" },
-      { "grade": "Grade Group 3", "totalScore": "Gleason 4+3=7", "description": "主要成分为模式4，次要成分为模式3，预后中等" },
-      { "grade": "Grade Group 4", "totalScore": "Gleason 8 (4+4/3+5/5+3)", "description": "主要由模式4组成或含模式5成分，预后较差" },
-      { "grade": "Grade Group 5", "totalScore": "Gleason 9-10 (4+5/5+4/5+5)", "description": "含大量模式5成分，预后最差" }
-    ]
+      {
+        "grade": "Grade Group 1",
+        "totalScore": "Gleason ≤6 (3+3)",
+        "description": "仅由模式3组成，预后极好，极低转移风险"
+      },
+      {
+        "grade": "Grade Group 2",
+        "totalScore": "Gleason 3+4=7",
+        "description": "主要成分为模式3，次要成分为模式4，预后较好"
+      },
+      {
+        "grade": "Grade Group 3",
+        "totalScore": "Gleason 4+3=7",
+        "description": "主要成分为模式4，次要成分为模式3，预后中等"
+      },
+      {
+        "grade": "Grade Group 4",
+        "totalScore": "Gleason 8 (4+4/3+5/5+3)",
+        "description": "主要由模式4组成或含模式5成分，预后较差"
+      },
+      {
+        "grade": "Grade Group 5",
+        "totalScore": "Gleason 9-10 (4+5/5+4/5+5)",
+        "description": "含大量模式5成分，预后最差"
+      }
+    ],
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "ISUP 2014 共识分级分组系统（Grade Group 1–5），已被 WHO 泌尿与男性生殖系统肿瘤分类第5版（2022）及 AJCC 第8版前列腺癌分期采纳；Gleason 评分原型为 Gleason 1966/1974，经 ISUP 2005 及 2014 两次修订",
+      "cnAlternative": {
+        "name": "《前列腺癌诊疗指南》（CSCO 2024）及《前列腺癌诊断治疗指南》（中国泌尿外科疾病诊断治疗指南，中华医学会泌尿外科学分会 CUA）推荐的 Gleason 评分 + ISUP 分级分组",
+        "keyDifferences": "国内 CSCO / CUA 指南完全采纳 ISUP 2014 分级分组（GG1: Gleason ≤6；GG2: 3+4=7；GG3: 4+3=7；GG4: Gleason 8；GG5: Gleason 9–10），并与 AJCC 第8版 TNM 及 PSA 共同构成预后分组（I–IV 期）；本土差异主要体现在穿刺活检规范（推荐 12+X 针系统穿刺、靶向+系统联合）、报告内容要求（需报告每针 Gleason 评分、阳性针数、癌组织占比、是否伴导管内癌 IDC-P、神经侵犯、淋巴血管侵犯）以及在高危/极高危定义中对 ISUP GG4–5、PSA>20 ng/mL、cT3–4 的组合界定，用于指导根治性治疗与新辅助/辅助内分泌治疗决策。国内尚无独立于 AJCC/ISUP 的原创前列腺癌分期系统。",
+        "_low_confidence": true,
+        "_reason": "CSCO 前列腺癌指南与 CUA 指南对 ISUP 分级分组的采纳及穿刺报告规范内容高置信；具体年度版本号（如 CSCO 2024）以实际发布为准，建议人工核对最新版本。"
+      }
+    }
   },
   {
     "id": "kidney-who-isup",
     "nameZh": "WHO/ISUP肾细胞癌核分级",
     "nameEn": "WHO/ISUP Nucleolar Grading System for Renal Cell Carcinoma",
-    "applicableTo": ["clear-cell-rcc", "papillary-rcc", "translocation-rcc"],
+    "applicableTo": [
+      "clear-cell-rcc",
+      "papillary-rcc",
+      "translocation-rcc"
+    ],
     "description": "取代Fuhrman分级的新系统，基于核仁显著程度进行分级，适用于透明细胞型和乳头状肾细胞癌",
     "criteria": [
-      { "parameter": "核仁显著程度", "score1": "400×下核仁不可见或不显著", "score2": "400×下核仁显著可见但10×下不突出", "score3": "100×下核仁即嗜酸性显著可见", "score4": "出现明显核多形性、瘤巨细胞、横纹肌样或肉瘤样分化" }
+      {
+        "parameter": "核仁显著程度",
+        "score1": "400×下核仁不可见或不显著",
+        "score2": "400×下核仁显著可见但10×下不突出",
+        "score3": "100×下核仁即嗜酸性显著可见",
+        "score4": "出现明显核多形性、瘤巨细胞、横纹肌样或肉瘤样分化"
+      }
     ],
     "grades": [
-      { "grade": "1级", "totalScore": "核仁400×不可见", "description": "低级别，预后好，5年癌症特异性生存率>90%" },
-      { "grade": "2级", "totalScore": "核仁400×可见", "description": "低级别，预后较好" },
-      { "grade": "3级", "totalScore": "核仁100×可见", "description": "高级别，预后中等" },
-      { "grade": "4级", "totalScore": "明显多形/肉瘤样", "description": "高级别，预后差，5年癌症特异性生存率约30%" }
+      {
+        "grade": "1级",
+        "totalScore": "核仁400×不可见",
+        "description": "低级别，预后好，5年癌症特异性生存率>90%"
+      },
+      {
+        "grade": "2级",
+        "totalScore": "核仁400×可见",
+        "description": "低级别，预后较好"
+      },
+      {
+        "grade": "3级",
+        "totalScore": "核仁100×可见",
+        "description": "高级别，预后中等"
+      },
+      {
+        "grade": "4级",
+        "totalScore": "明显多形/肉瘤样",
+        "description": "高级别，预后差，5年癌症特异性生存率约30%"
+      }
     ],
-    "notes": "嫌色细胞癌不适用此分级系统；Fuhrman分级已被WHO/ISUP系统取代"
+    "notes": "嫌色细胞癌不适用此分级系统；Fuhrman分级已被WHO/ISUP系统取代",
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "WHO Classification of Tumours of the Urinary System and Male Genital Organs 5th ed.（2022）；ISUP 2013 温哥华共识（Vancouver Classification）。适用于透明细胞肾细胞癌与乳头状肾细胞癌，取代既往 Fuhrman 分级（1982）。分级标准：G1 核仁 400× 不可见或不明显；G2 400× 可见核仁但不突出；G3 100× 即可见明显核仁；G4 显著核多形性、瘤巨细胞、肉瘤样和/或横纹肌样分化。",
+      "cnAlternative": {
+        "name": "CSCO 肾癌诊疗指南（2023）与国家卫健委《肾癌诊疗指南（2022 年版）》均直接采用 WHO/ISUP 核分级，无独立国内替代分级方案。",
+        "keyDifferences": "国内指南未针对透明细胞及乳头状肾细胞癌另行制定分级体系，病理报告要求严格遵循 WHO/ISUP 四级制；对嫌色细胞肾细胞癌明确不适用 WHO/ISUP，推荐使用 Paner 等提出的嫌色细胞核分级或在报告中注明不分级；MiT 家族易位 RCC、集合管癌、髓样癌、FH 缺陷型 RCC 等侵袭性组织学类型亦不推荐套用 WHO/ISUP。",
+        "_low_confidence": true,
+        "_reason": "WHO/ISUP 为核分级系统而非 TNM 分期，AJCC 8th / UICC 的 TNM 框架不直接适用；国内指南对嫌色细胞 RCC 分级的具体推荐表述版本间略有差异，需人工复核 CSCO 2023 与卫健委 2022 原文。"
+      }
+    }
   },
   {
     "id": "thyroid-bethesda",
     "nameZh": "Bethesda甲状腺细针穿刺细胞学报告系统",
     "nameEn": "The Bethesda System for Reporting Thyroid Cytopathology",
-    "applicableTo": ["papillary-thyroid-carcinoma", "follicular-adenoma", "follicular-thyroid-carcinoma"],
+    "applicableTo": [
+      "papillary-thyroid-carcinoma",
+      "follicular-adenoma",
+      "follicular-thyroid-carcinoma"
+    ],
     "description": "甲状腺细针穿刺活检(FNA)的标准化报告系统，2023年第三版更新，指导临床处理决策",
     "criteria": [
-      { "parameter": "标本量", "description": "至少6组甲状腺滤泡细胞，每组至少10个细胞" },
-      { "parameter": "核特征", "description": "评估核增大、核沟、核内假包涵体、毛玻璃样核等" },
-      { "parameter": "结构特征", "description": "评估乳头状结构、微滤泡、实性排列等" }
+      {
+        "parameter": "标本量",
+        "description": "至少6组甲状腺滤泡细胞，每组至少10个细胞"
+      },
+      {
+        "parameter": "核特征",
+        "description": "评估核增大、核沟、核内假包涵体、毛玻璃样核等"
+      },
+      {
+        "parameter": "结构特征",
+        "description": "评估乳头状结构、微滤泡、实性排列等"
+      }
     ],
     "grades": [
-      { "grade": "I类：标本不满意/无法诊断", "totalScore": "Bethesda I", "description": "标本量不足或质量差，恶性风险5-10%，建议在超声引导下重新穿刺" },
-      { "grade": "II类：良性", "totalScore": "Bethesda II", "description": "符合良性结节性甲状腺肿、桥本甲状腺炎等，恶性风险0-3%，临床随访" },
-      { "grade": "III类：意义不明确的非典型性(AUS/FLUS)", "totalScore": "Bethesda III", "description": "非典型细胞不足以归入其他明确类别，恶性风险6-18%，建议分子检测或重新穿刺" },
-      { "grade": "IV类：滤泡性肿瘤/可疑滤泡性肿瘤", "totalScore": "Bethesda IV", "description": "以微滤泡为主的细胞丰富标本，恶性风险10-40%，建议诊断性手术（叶切除）" },
-      { "grade": "V类：可疑恶性", "totalScore": "Bethesda V", "description": "高度可疑恶性但不能完全确诊，恶性风险45-60%，建议手术" },
-      { "grade": "VI类：恶性", "totalScore": "Bethesda VI", "description": "可明确诊断恶性（乳头状癌、髓样癌、未分化癌等），恶性风险94-96%，建议手术" }
-    ]
+      {
+        "grade": "I类：标本不满意/无法诊断",
+        "totalScore": "Bethesda I",
+        "description": "标本量不足或质量差，恶性风险5-10%，建议在超声引导下重新穿刺"
+      },
+      {
+        "grade": "II类：良性",
+        "totalScore": "Bethesda II",
+        "description": "符合良性结节性甲状腺肿、桥本甲状腺炎等，恶性风险0-3%，临床随访"
+      },
+      {
+        "grade": "III类：意义不明确的非典型性(AUS/FLUS)",
+        "totalScore": "Bethesda III",
+        "description": "非典型细胞不足以归入其他明确类别，恶性风险6-18%，建议分子检测或重新穿刺"
+      },
+      {
+        "grade": "IV类：滤泡性肿瘤/可疑滤泡性肿瘤",
+        "totalScore": "Bethesda IV",
+        "description": "以微滤泡为主的细胞丰富标本，恶性风险10-40%，建议诊断性手术（叶切除）"
+      },
+      {
+        "grade": "V类：可疑恶性",
+        "totalScore": "Bethesda V",
+        "description": "高度可疑恶性但不能完全确诊，恶性风险45-60%，建议手术"
+      },
+      {
+        "grade": "VI类：恶性",
+        "totalScore": "Bethesda VI",
+        "description": "可明确诊断恶性（乳头状癌、髓样癌、未分化癌等），恶性风险94-96%，建议手术"
+      }
+    ],
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "Bethesda 甲状腺细胞病理学报告系统（TBSRTC）第 3 版（2023 年更新，原 2009 首版、2017 第 2 版）；该系统为细胞学报告分类体系，非 AJCC/UICC TNM 分期，不适用于肿瘤解剖学分期核对。",
+      "cnAlternative": {
+        "name": "《甲状腺细针穿刺细胞学诊断专家共识及操作指南》（中华医学会病理学分会细胞病理学组）及《甲状腺结节细针穿刺活检和细胞学诊断规范》",
+        "keyDifferences": "国内共识整体沿用 Bethesda 六级分类（Ⅰ 标本无法诊断 / Ⅱ 良性 / Ⅲ 意义不明确的细胞非典型病变或滤泡性病变 AUS/FLUS / Ⅳ 滤泡性肿瘤或可疑滤泡性肿瘤 FN/SFN / Ⅴ 可疑恶性 / Ⅵ 恶性），差异主要在于：(1) 建议将 BRAF V600E、RAS、TERT 启动子、RET/PTC、PAX8/PPARγ 等分子检测纳入 Ⅲ–Ⅴ 类的辅助评估流程，以补充国内基因检测可及性；(2) 结合超声 C-TIRADS 分层共同决定随访或手术；(3) 强调 NIFTP 诊断需术后组织学确认，细胞学阶段仍归入 Ⅲ/Ⅳ/Ⅴ 类并提示风险下调；(4) 对 Ⅰ 类不满意标本的判读阈值和重复穿刺间隔给出本土化建议。"
+      },
+      "_low_confidence": true,
+      "_reason": "Bethesda 为细胞学报告系统而非 TNM 分期；国内虽有病理学分会发布的专家共识与操作规范，但不同版本的正式名称与最新更新年份需按官方文件核实，故未在输出中列出具体年份。"
+    }
   },
   {
     "id": "lymphoma-ann-arbor",
     "nameZh": "Ann Arbor分期（Lugano修订版）",
     "nameEn": "Ann Arbor Staging (Lugano Modification)",
-    "applicableTo": ["classical-hodgkin-lymphoma", "dlbcl", "follicular-lymphoma", "mantle-cell-lymphoma"],
+    "applicableTo": [
+      "classical-hodgkin-lymphoma",
+      "dlbcl",
+      "follicular-lymphoma",
+      "mantle-cell-lymphoma"
+    ],
     "description": "淋巴瘤最常用的临床分期系统，2014年Lugano分类对其进行了修订。结合影像学和病理学评估",
     "criteria": [
-      { "parameter": "淋巴结区域", "description": "评估受累淋巴结区域的数量及分布" },
-      { "parameter": "膈肌关系", "description": "受累区域与膈肌的位置关系" },
-      { "parameter": "结外受累", "description": "是否存在淋巴结外器官受累" },
-      { "parameter": "全身症状", "description": "A=无全身症状；B=有发热(>38°C)、盗汗或体重下降(>10%/6个月)" }
+      {
+        "parameter": "淋巴结区域",
+        "description": "评估受累淋巴结区域的数量及分布"
+      },
+      {
+        "parameter": "膈肌关系",
+        "description": "受累区域与膈肌的位置关系"
+      },
+      {
+        "parameter": "结外受累",
+        "description": "是否存在淋巴结外器官受累"
+      },
+      {
+        "parameter": "全身症状",
+        "description": "A=无全身症状；B=有发热(>38°C)、盗汗或体重下降(>10%/6个月)"
+      }
     ],
     "grades": [
-      { "grade": "I期", "totalScore": "单个淋巴结区域", "description": "受累限于单个淋巴结区域或单个结外器官局限性受累(IE)" },
-      { "grade": "II期", "totalScore": "膈肌同侧≥2个区域", "description": "膈肌同侧2个或以上淋巴结区域受累，或局限性结外受累伴膈肌同侧淋巴结受累(IIE)" },
-      { "grade": "III期", "totalScore": "膈肌两侧", "description": "膈肌两侧淋巴结区域均受累，可伴脾受累(IIIS)" },
-      { "grade": "IV期", "totalScore": "弥漫性结外受累", "description": "一个或多个结外器官弥漫性受累（肝、骨髓、肺等），不论淋巴结是否受累" }
+      {
+        "grade": "I期",
+        "totalScore": "单个淋巴结区域",
+        "description": "受累限于单个淋巴结区域或单个结外器官局限性受累(IE)"
+      },
+      {
+        "grade": "II期",
+        "totalScore": "膈肌同侧≥2个区域",
+        "description": "膈肌同侧2个或以上淋巴结区域受累，或局限性结外受累伴膈肌同侧淋巴结受累(IIE)"
+      },
+      {
+        "grade": "III期",
+        "totalScore": "膈肌两侧",
+        "description": "膈肌两侧淋巴结区域均受累，可伴脾受累(IIIS)"
+      },
+      {
+        "grade": "IV期",
+        "totalScore": "弥漫性结外受累",
+        "description": "一个或多个结外器官弥漫性受累（肝、骨髓、肺等），不论淋巴结是否受累"
+      }
     ],
-    "notes": "Lugano修订版对霍奇金淋巴瘤和非霍奇金淋巴瘤均适用；PET-CT已成为FDG亲和性淋巴瘤的标准分期工具"
+    "notes": "Lugano修订版对霍奇金淋巴瘤和非霍奇金淋巴瘤均适用；PET-CT已成为FDG亲和性淋巴瘤的标准分期工具",
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "Lugano 分类（2014，基于 Ann Arbor 分期的修订），适用于霍奇金淋巴瘤及非霍奇金淋巴瘤（原发结外胃肠道淋巴瘤另用 Paris 分期或 Lugano 胃肠道修订）",
+      "cnAlternative": {
+        "name": "CSCO《淋巴瘤诊疗指南》（2024）推荐分期方案",
+        "keyDifferences": "国内 CSCO 淋巴瘤指南与中华医学会血液学分会均直接采用 Lugano 2014 修订版 Ann Arbor 分期（Ⅰ–Ⅳ 期，结合 A/B 症状及 E 结外受累标记），未单独制定中国特色替代分期；仅在影像评估推荐上结合国情（PET-CT 优先用于 FDG 亲和性淋巴瘤，CT 用于非 FDG 亲和性），并对原发结外淋巴瘤（如鼻型 NK/T 细胞淋巴瘤）推荐在 Ann Arbor 基础上联合使用中国医学科学院肿瘤医院提出的 CA 分期或 Nomogram 风险分层（NK/T 细胞淋巴瘤），对晚期病变的治疗决策更具指导意义。",
+        "_low_confidence": true,
+        "_reason": "国内并无官方发布的独立替代分期；CA 分期由单中心提出，尚未获 CSCO 指南正式推荐为标准分期，需人工复核是否纳入。"
+      }
+    }
   },
   {
     "id": "cervix-cin",
     "nameZh": "宫颈上皮内瘤变(CIN)/鳞状上皮内病变(SIL)分级",
     "nameEn": "Cervical Intraepithelial Neoplasia (CIN) / SIL Grading",
-    "applicableTo": ["cin", "cervical-scc"],
+    "applicableTo": [
+      "cin",
+      "cervical-scc"
+    ],
     "description": "宫颈鳞状上皮癌前病变的分级系统，CIN三级分类与SIL二级分类并行使用。P16和Ki-67免疫组化有助于分级",
     "criteria": [
-      { "parameter": "异型细胞累及范围", "description": "不成熟/异型细胞自基底层向上累及上皮的比例" },
-      { "parameter": "核异型性", "description": "核增大、深染、核分裂象" },
-      { "parameter": "成熟分化", "description": "上层细胞是否保留正常成熟分化" },
-      { "parameter": "P16免疫组化", "description": "弥漫强阳性（block positive）支持高级别病变诊断" }
+      {
+        "parameter": "异型细胞累及范围",
+        "description": "不成熟/异型细胞自基底层向上累及上皮的比例"
+      },
+      {
+        "parameter": "核异型性",
+        "description": "核增大、深染、核分裂象"
+      },
+      {
+        "parameter": "成熟分化",
+        "description": "上层细胞是否保留正常成熟分化"
+      },
+      {
+        "parameter": "P16免疫组化",
+        "description": "弥漫强阳性（block positive）支持高级别病变诊断"
+      }
     ],
     "grades": [
-      { "grade": "CIN1 / LSIL（低级别鳞状上皮内病变）", "totalScore": "异型累及下1/3", "description": "轻度不典型增生，异型细胞局限于上皮下1/3，大部分可自行消退，P16多为阴性或灶性阳性" },
-      { "grade": "CIN2", "totalScore": "异型累及下2/3", "description": "中度不典型增生，异型细胞累及上皮下2/3。P16弥漫阳性者归入HSIL，阴性者可归入LSIL" },
-      { "grade": "CIN3 / HSIL（高级别鳞状上皮内病变）", "totalScore": "异型累及全层", "description": "重度不典型增生/原位癌，异型细胞累及上皮全层或接近全层，P16弥漫强阳性，需积极治疗" }
+      {
+        "grade": "CIN1 / LSIL（低级别鳞状上皮内病变）",
+        "totalScore": "异型累及下1/3",
+        "description": "轻度不典型增生，异型细胞局限于上皮下1/3，大部分可自行消退，P16多为阴性或灶性阳性"
+      },
+      {
+        "grade": "CIN2",
+        "totalScore": "异型累及下2/3",
+        "description": "中度不典型增生，异型细胞累及上皮下2/3。P16弥漫阳性者归入HSIL，阴性者可归入LSIL"
+      },
+      {
+        "grade": "CIN3 / HSIL（高级别鳞状上皮内病变）",
+        "totalScore": "异型累及全层",
+        "description": "重度不典型增生/原位癌，异型细胞累及上皮全层或接近全层，P16弥漫强阳性，需积极治疗"
+      }
     ],
-    "notes": "WHO第5版推荐使用LSIL/HSIL二级分类系统；CIN2为灰区，建议结合P16辅助判断归入LSIL或HSIL"
+    "notes": "WHO第5版推荐使用LSIL/HSIL二级分类系统；CIN2为灰区，建议结合P16辅助判断归入LSIL或HSIL",
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "不适用 AJCC/UICC TNM 分期（CIN/SIL 属于宫颈癌前病变的组织病理学分级，非恶性肿瘤分期范畴）。分级参照 WHO《女性生殖器官肿瘤分类》第 5 版（2020）推荐的 LAST（Lower Anogenital Squamous Terminology）双层系统：低级别鳞状上皮内病变（LSIL，对应 CIN 1）与高级别鳞状上皮内病变（HSIL，对应 CIN 2/3）；细胞学报告使用 Bethesda 系统（TBS 2014）。",
+      "cnAlternative": {
+        "name": "国内《子宫颈癌及癌前病变规范化诊疗指南》（中国优生科学协会阴道镜和宫颈病理学分会 CSCCP）及《中国子宫颈癌筛查指南（一）》（中华医学会妇科肿瘤学分会，2023）",
+        "keyDifferences": "国内实践同样采用 LAST 双层 SIL 命名（LSIL / HSIL），但在病理报告中通常保留括号内 CIN 分级以兼顾临床沟通（如 HSIL(CIN2) 与 HSIL(CIN3) 分别标注，因两者处理策略不同：CIN2 年轻、有生育要求者可观察，CIN3 原则上需治疗）。强调 p16 免疫组化在 CIN2 分流中的强制性（p16 弥漫块状阳性判为 HSIL，阴性判为 LSIL），并将 HPV 分型检测（尤其 HPV16/18）纳入分级判读与随访决策；TBS 细胞学报告使用中文规范化术语 ASC-US/ASC-H/LSIL/HSIL/AGC。",
+        "_low_confidence": true,
+        "_reason": "国内关于宫颈鳞状上皮内病变的专家共识/指南版本与发布机构较多（CSCCP、中华医学会妇科肿瘤学分会、中国抗癌协会妇瘤专委会等），具体最新版本年份与条目编号存在不确定性，建议人工核对最新版《子宫颈癌筛查与早诊早治指南》与 CSCCP 共识的发布年份。"
+      }
+    }
   },
   {
     "id": "melanoma-breslow-clark",
     "nameZh": "黑色素瘤Breslow厚度与Clark水平",
     "nameEn": "Breslow Thickness and Clark Level for Melanoma",
-    "applicableTo": ["melanoma", "invasive-melanoma", "melanoma-in-situ"],
+    "applicableTo": [
+      "melanoma",
+      "invasive-melanoma",
+      "melanoma-in-situ"
+    ],
     "description": "皮肤黑色素瘤最重要的预后指标。Breslow厚度是AJCC第8版T分期的主要依据，Clark水平已不再作为独立分期标准但仍有参考价值",
     "criteria": [
-      { "parameter": "Breslow厚度", "description": "从颗粒层顶部（或溃疡基底）到肿瘤最深处的垂直距离，以mm为单位" },
-      { "parameter": "溃疡", "description": "有无表面溃疡形成，是独立预后因素" },
-      { "parameter": "核分裂率", "description": "每mm²核分裂象数目" },
-      { "parameter": "Clark水平", "description": "肿瘤浸润的解剖层次" }
+      {
+        "parameter": "Breslow厚度",
+        "description": "从颗粒层顶部（或溃疡基底）到肿瘤最深处的垂直距离，以mm为单位"
+      },
+      {
+        "parameter": "溃疡",
+        "description": "有无表面溃疡形成，是独立预后因素"
+      },
+      {
+        "parameter": "核分裂率",
+        "description": "每mm²核分裂象数目"
+      },
+      {
+        "parameter": "Clark水平",
+        "description": "肿瘤浸润的解剖层次"
+      }
     ],
     "grades": [
-      { "grade": "T1: ≤1.0mm", "totalScore": "T1a: <0.8mm无溃疡; T1b: <0.8mm有溃疡或0.8-1.0mm", "description": "薄黑色素瘤，预后好，10年生存率>95%（T1a）" },
-      { "grade": "T2: >1.0-2.0mm", "totalScore": "T2a: 无溃疡; T2b: 有溃疡", "description": "中等厚度，需考虑前哨淋巴结活检" },
-      { "grade": "T3: >2.0-4.0mm", "totalScore": "T3a: 无溃疡; T3b: 有溃疡", "description": "较厚黑色素瘤，建议前哨淋巴结活检" },
-      { "grade": "T4: >4.0mm", "totalScore": "T4a: 无溃疡; T4b: 有溃疡", "description": "厚黑色素瘤，预后差，10年生存率约50%（T4a）" }
+      {
+        "grade": "T1: ≤1.0mm",
+        "totalScore": "T1a: <0.8mm无溃疡; T1b: <0.8mm有溃疡或0.8-1.0mm",
+        "description": "薄黑色素瘤，预后好，10年生存率>95%（T1a）"
+      },
+      {
+        "grade": "T2: >1.0-2.0mm",
+        "totalScore": "T2a: 无溃疡; T2b: 有溃疡",
+        "description": "中等厚度，需考虑前哨淋巴结活检"
+      },
+      {
+        "grade": "T3: >2.0-4.0mm",
+        "totalScore": "T3a: 无溃疡; T3b: 有溃疡",
+        "description": "较厚黑色素瘤，建议前哨淋巴结活检"
+      },
+      {
+        "grade": "T4: >4.0mm",
+        "totalScore": "T4a: 无溃疡; T4b: 有溃疡",
+        "description": "厚黑色素瘤，预后差，10年生存率约50%（T4a）"
+      }
     ],
     "clarkLevels": [
-      { "level": "I", "description": "局限于表皮内（原位黑色素瘤）" },
-      { "level": "II", "description": "浸润真皮乳头层" },
-      { "level": "III", "description": "填充真皮乳头层" },
-      { "level": "IV", "description": "浸润真皮网状层" },
-      { "level": "V", "description": "浸润皮下脂肪" }
-    ]
+      {
+        "level": "I",
+        "description": "局限于表皮内（原位黑色素瘤）"
+      },
+      {
+        "level": "II",
+        "description": "浸润真皮乳头层"
+      },
+      {
+        "level": "III",
+        "description": "填充真皮乳头层"
+      },
+      {
+        "level": "IV",
+        "description": "浸润真皮网状层"
+      },
+      {
+        "level": "V",
+        "description": "浸润皮下脂肪"
+      }
+    ],
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "AJCC 8th Edition（2017 年发布，2018 年 1 月起生效）皮肤黑色素瘤分期。Breslow 厚度（pT 分期核心参数，以 0.8mm、1.0mm、2.0mm、4.0mm 为分界）与溃疡状态共同决定 T 分期；Clark 水平自 AJCC 7th 起已不再作为 T1 亚分期的独立依据（仅在 Breslow 厚度无法测量时参考）。",
+      "cnAlternative": {
+        "name": "CSCO 黑色素瘤诊疗指南（2023 版）中国黑色素瘤分期",
+        "keyDifferences": "CSCO 指南在采纳 AJCC 8th TNM 分期框架基础上，结合中国黑色素瘤以肢端型（约 50%）和黏膜型（约 20%-30%）为主的流行病学特征，强调：①肢端型与黏膜型黑色素瘤在 Breslow 厚度相同情况下预后较皮肤型更差，建议分层评估；②黏膜黑色素瘤（鼻腔/口腔/消化道/泌尿生殖道）单独采用 AJCC 专门分期方案（如头颈黏膜黑色素瘤最低起始为 T3），不沿用皮肤 Breslow/Clark 体系；③推荐常规检测 BRAF、C-KIT、NRAS 突变（C-KIT 在肢端/黏膜型中意义突出），将分子分型纳入治疗决策；④Clark 水平仅作为辅助参考，不再用于独立分期。",
+        "_low_confidence": true,
+        "_reason": "CSCO 黑色素瘤指南确实每年更新，但指南本身未提出一套脱离 AJCC 的独立'中国分期系统'，仅在诊疗推荐中结合中国亚型特征给出分层建议；此处描述为'国内特色补充'而非'替代分期'，属广义解读。"
+      }
+    }
   },
   {
     "id": "gastric-lauren",
     "nameZh": "胃癌Lauren分型",
     "nameEn": "Lauren Classification of Gastric Carcinoma",
-    "applicableTo": ["gastric-adenocarcinoma"],
+    "applicableTo": [
+      "gastric-adenocarcinoma"
+    ],
     "description": "胃腺癌经典的组织学分型系统，将胃癌分为肠型、弥漫型和混合型，与流行病学、分子特征和预后密切相关",
     "criteria": [
-      { "parameter": "腺管形成", "description": "肿瘤是否形成明确的腺管结构" },
-      { "parameter": "细胞黏附性", "description": "肿瘤细胞之间是否保持黏附" },
-      { "parameter": "生长方式", "description": "膨胀性生长还是弥漫浸润性生长" },
-      { "parameter": "间质反应", "description": "纤维化程度和炎症反应" }
+      {
+        "parameter": "腺管形成",
+        "description": "肿瘤是否形成明确的腺管结构"
+      },
+      {
+        "parameter": "细胞黏附性",
+        "description": "肿瘤细胞之间是否保持黏附"
+      },
+      {
+        "parameter": "生长方式",
+        "description": "膨胀性生长还是弥漫浸润性生长"
+      },
+      {
+        "parameter": "间质反应",
+        "description": "纤维化程度和炎症反应"
+      }
     ],
     "grades": [
-      { "grade": "肠型(Intestinal type)", "totalScore": "腺管形成为主", "description": "分化较好，形成腺管结构，膨胀性生长。多见于老年男性，与幽门螺杆菌感染/肠化生相关，好发于远端胃，预后相对较好" },
-      { "grade": "弥漫型(Diffuse type)", "totalScore": "弥漫浸润为主", "description": "分化差，细胞弥漫浸润，缺乏黏附性，常含印戒细胞。多见于年轻患者，与CDH1突变/E-cadherin丧失相关，好发于近端胃，预后较差" },
-      { "grade": "混合型(Mixed type)", "totalScore": "两种成分均有", "description": "同时含有肠型和弥漫型成分，两种成分均占一定比例，预后与弥漫型相近" },
-      { "grade": "不确定型(Indeterminate)", "totalScore": "无法归类", "description": "不符合上述任一类型的胃癌" }
+      {
+        "grade": "肠型(Intestinal type)",
+        "totalScore": "腺管形成为主",
+        "description": "分化较好，形成腺管结构，膨胀性生长。多见于老年男性，与幽门螺杆菌感染/肠化生相关，好发于远端胃，预后相对较好"
+      },
+      {
+        "grade": "弥漫型(Diffuse type)",
+        "totalScore": "弥漫浸润为主",
+        "description": "分化差，细胞弥漫浸润，缺乏黏附性，常含印戒细胞。多见于年轻患者，与CDH1突变/E-cadherin丧失相关，好发于近端胃，预后较差"
+      },
+      {
+        "grade": "混合型(Mixed type)",
+        "totalScore": "两种成分均有",
+        "description": "同时含有肠型和弥漫型成分，两种成分均占一定比例，预后与弥漫型相近"
+      },
+      {
+        "grade": "不确定型(Indeterminate)",
+        "totalScore": "无法归类",
+        "description": "不符合上述任一类型的胃癌"
+      }
     ],
-    "notes": "Lauren分型与WHO分型可互相对照：肠型大致对应管状/乳头状腺癌，弥漫型大致对应低黏附性癌（含印戒细胞癌）"
+    "notes": "Lauren分型与WHO分型可互相对照：肠型大致对应管状/乳头状腺癌，弥漫型大致对应低黏附性癌（含印戒细胞癌）",
+    "_enhance_staging_cn_version": {
+      "verifiedAgainst": "AJCC 8th（2017 起生效）/ UICC TNM 第 8 版——但需说明：Lauren 分型为组织学分型（肠型/弥漫型/混合型），并非 TNM 解剖学分期，不能直接与 AJCC/UICC 对标。临床实践中 Lauren 分型通常作为 TNM 分期的组织学补充信息一并报告。",
+      "cnAlternative": {
+        "name": "WHO 消化系统肿瘤分类第 5 版组织学分型 + CSCO《胃癌诊疗指南 2023》推荐的 Lauren 分型报告要求",
+        "keyDifferences": "WHO 5th 分类以管状腺癌、乳头状腺癌、低黏附性癌（含印戒细胞癌）、黏液腺癌、混合性腺癌等细分组织学类型为主，粒度较 Lauren（肠型/弥漫型/混合型）更细；CSCO《胃癌诊疗指南 2023》与国家卫健委《胃癌诊疗指南（2022 年版）》均要求病理报告同时注明 Lauren 分型，用于指导化疗方案选择（弥漫型对铂类/紫杉醇反应差异、腹膜转移风险评估）及预后判断，但 Lauren 分型本身不参与分期（stage grouping）。",
+        "_low_confidence": true,
+        "_reason": "Lauren 分型属组织学分型而非解剖学 TNM 分期，与本维度 staging_cn_version 的'核对 AJCC/UICC'目标存在类目错位；verifiedAgainst 字段按照可对标的维度填写，但严格来说 Lauren 不应纳入分期条目，建议人工复核该数据点是否应迁移至 histological_classification 维度。"
+      }
+    }
   }
 ]

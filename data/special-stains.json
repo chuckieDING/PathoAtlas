@@ -12,14 +12,50 @@
     "function": "过碘酸氧化糖分子产生醛基，Schiff试剂与醛基反应产生品红色",
     "interpretation": "品红色阳性提示糖原沉积（如糖尿病肾病）、真菌（PAS-D消化后真菌仍阳性）、淀粉样物质",
     "clinicalSignificance": "肾活检基底膜评估首选；真菌感染筛查；肝糖原贮积症诊断",
-    "positiveIn": ["肾小球基底膜增厚", "真菌（念珠菌、曲霉菌）", "Whipple病", "Ewing肉瘤（胞浆糖原）", "横纹肌肉瘤"],
-    "negativeIn": ["PAS-D消化后糖原消失（真菌不消失）"],
+    "positiveIn": [
+      "肾小球基底膜增厚",
+      "真菌（念珠菌、曲霉菌）",
+      "Whipple病",
+      "Ewing肉瘤（胞浆糖原）",
+      "横纹肌肉瘤"
+    ],
+    "negativeIn": [
+      "PAS-D消化后糖原消失（真菌不消失）"
+    ],
     "relatedDrugs": [],
     "pitfalls": "PAS-D消化对照必做以区分糖原与真菌；固定不良可致假阴性",
-    "references": ["Bancroft JD, Gamble M. Theory and Practice of Histological Techniques, 8th Ed."],
+    "references": [
+      "Bancroft JD, Gamble M. Theory and Practice of Histological Techniques, 8th Ed."
+    ],
     "positiveResult": "品红色",
     "negativeResult": "无染色",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/pas-pos.svg",
+          "caption": "PAS阳性：糖原、中性黏液、基底膜及真菌壁呈品红色（亮红至紫红）"
+        },
+        {
+          "stateId": "pos-diastase",
+          "url": "/stains/pas-d-pos.svg",
+          "caption": "PAS-D阳性：淀粉酶消化后仍保留阳性，提示中性黏液、基底膜或真菌（糖原被消化而阴性）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/pas-neg.svg",
+          "caption": "PAS阴性：背景组织无品红着色，细胞核经苏木素复染呈蓝色"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦",
+        "安必平"
+      ]
+    }
   },
   {
     "id": "prussian-blue",
@@ -34,14 +70,57 @@
     "function": "盐酸使铁离子游离，与亚铁氰化钾反应生成蓝色沉淀（普鲁士蓝）",
     "interpretation": "蓝色颗粒阳性见于出血后铁沉积、血色病、含铁血黄素沉着症、铁粒幼细胞贫血",
     "clinicalSignificance": "肝铁过载分级（0-4级）；骨髓铁储备评估；环形铁粒幼细胞计数",
-    "positiveIn": ["血色病肝组织", "慢性出血后铁沉积", "铁粒幼细胞贫血", "含铁血黄素肾病"],
-    "negativeIn": ["正常组织（少量脾铁除外）"],
+    "positiveIn": [
+      "血色病肝组织",
+      "慢性出血后铁沉积",
+      "铁粒幼细胞贫血",
+      "含铁血黄素肾病"
+    ],
+    "negativeIn": [
+      "正常组织（少量脾铁除外）"
+    ],
     "relatedDrugs": [],
     "pitfalls": "福尔马林固定中的铁污染可致假阳性；需核红或中性红复染",
     "references": [],
     "positiveResult": "蓝色颗粒",
     "negativeResult": "无蓝色颗粒",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/prussian-blue-pos.svg",
+          "caption": "普鲁士蓝阳性：含铁血黄素沉积呈蓝色颗粒（胞浆内）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/prussian-blue-neg.svg",
+          "caption": "普鲁士蓝阴性：组织内未见蓝色颗粒沉积，仅见核固红复染"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦"
+      ]
+    },
+    "_enhance_special_stain_new_entry": {
+      "id": "prussian-blue",
+      "nameZh": "普鲁士蓝染色",
+      "category": "金属离子/色素",
+      "interpretation": "三价铁（Fe³⁺）与亚铁氰化钾在酸性环境下反应生成不溶性亚铁氰化铁沉淀，呈蓝色颗粒状，主要定位于细胞内及细胞外；核红复染后细胞核呈红色，背景粉红。阳性提示组织中含铁血黄素沉积或外源性铁。",
+      "positiveIn": [
+        "含铁血黄素沉积症（遗传性/继发性血色病）",
+        "慢性肺淤血（心衰细胞，即含铁血黄素巨噬细胞）",
+        "陈旧性出血灶及血肿机化",
+        "骨髓铁染色评估储存铁（环形铸铁幼粒细胞的鉴定，如 MDS 伴环形铁粒幼细胞）",
+        "脾脏 Gamna-Gandy 小体",
+        "肝脏铁过载（遗传性血色病、输血性铁过载）",
+        "黑色素相关病变的鉴别（普鲁士蓝阴性）"
+      ],
+      "pitfalls": "只能检测三价铁（Fe³⁺），二价铁（Fe²⁺）不着色，需联合 Turnbull 蓝染色识别；福尔马林色素、黑色素、脂褐素均可呈棕黑色但普鲁士蓝阴性，需注意鉴别；试剂须新鲜配制，亚铁氰化钾遇光易分解导致假阴性；酸度不足或冲洗过度会使阳性颗粒脱失；切片过厚或脱蜡不彻底会造成背景蓝染假阳性；金属器械污染或载玻片残留铁可致人工假阳性，应使用塑料染色缸。"
+    }
   },
   {
     "id": "acid-fast",
@@ -56,14 +135,42 @@
     "function": "石炭酸复红热力渗透染入分枝菌酸层；酸性脱色液无法脱去已结合的染料",
     "interpretation": "红色杆菌为阳性。提示结核分枝杆菌、非结核分枝杆菌、麻风分枝杆菌等",
     "clinicalSignificance": "结核快速诊断（培养需数周）；肉芽肿性病变鉴别；AIDS患者机会感染筛查",
-    "positiveIn": ["结核", "非结核分枝杆菌病", "麻风", "诺卡菌（弱抗酸）"],
-    "negativeIn": ["非分枝杆菌感染的肉芽肿（结节病、真菌等）"],
+    "positiveIn": [
+      "结核",
+      "非结核分枝杆菌病",
+      "麻风",
+      "诺卡菌（弱抗酸）"
+    ],
+    "negativeIn": [
+      "非分枝杆菌感染的肉芽肿（结节病、真菌等）"
+    ],
     "relatedDrugs": [],
     "pitfalls": "菌量少时敏感度低（约60%），需多切片检查或改用荧光染色",
     "references": [],
     "positiveResult": "红色杆菌",
     "negativeResult": "无红色杆菌",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/acid-fast-pos.svg",
+          "caption": "抗酸染色阳性：分枝杆菌呈红色杆状（石炭酸品红着色），背景蓝色（亚甲蓝复染）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/acid-fast-neg.svg",
+          "caption": "抗酸染色阴性：视野内未见红色抗酸杆菌，仅见蓝色背景细胞及组织"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "安必平",
+        "莱邦"
+      ]
+    }
   },
   {
     "id": "giemsa",
@@ -78,14 +185,45 @@
     "function": "天青B-伊红Y混合染料差异染色：DNA→紫蓝，RNA→蓝，酸性颗粒→红",
     "interpretation": "血液/骨髓涂片细胞分型；幽门螺杆菌检测（弯曲杆菌蓝染）",
     "clinicalSignificance": "血液肿瘤形态学分型基础；胃活检Hp筛查（敏感度>90%）",
-    "positiveIn": ["幽门螺杆菌", "利什曼原虫", "弓形虫", "肥大细胞颗粒（异染性）"],
+    "positiveIn": [
+      "幽门螺杆菌",
+      "利什曼原虫",
+      "弓形虫",
+      "肥大细胞颗粒（异染性）"
+    ],
     "negativeIn": [],
     "relatedDrugs": [],
     "pitfalls": "固定液影响染色效果；pH需严格控制（6.8-7.2）",
     "references": [],
     "positiveResult": "核紫蓝色，细胞质蓝色",
     "negativeResult": "无特异染色",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/giemsa-pos.svg",
+          "caption": "姬姆萨染色阳性：红细胞呈淡红色，细胞核呈蓝紫色，嗜酸性颗粒呈橙红色，嗜碱性颗粒呈深蓝紫色（外周血涂片）"
+        },
+        {
+          "stateId": "pos",
+          "url": "/stains/giemsa-hpylori.svg",
+          "caption": "姬姆萨染色阳性：胃黏膜表面及腺腔内可见蓝紫色短杆状或弧形幽门螺杆菌（Hp）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/giemsa-neg.svg",
+          "caption": "姬姆萨染色阴性：胃黏膜表面及腺腔内未见蓝紫色细菌着色"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦",
+        "安必平"
+      ]
+    }
   },
   {
     "id": "masson-trichrome",
@@ -100,14 +238,40 @@
     "function": "三种染料竞争结合：小分子苯胺蓝渗入疏松胶原，大分子品红结合致密肌纤维",
     "interpretation": "胶原→蓝/绿，肌肉/红细胞→红，细胞核→黑。评估纤维化程度",
     "clinicalSignificance": "肝纤维化分期（Ishak/METAVIR）；心肌纤维化评估；肾间质纤维化定量",
-    "positiveIn": ["肝纤维化/肝硬化", "心肌纤维化", "肾间质纤维化", "瘢痕组织"],
+    "positiveIn": [
+      "肝纤维化/肝硬化",
+      "心肌纤维化",
+      "肾间质纤维化",
+      "瘢痕组织"
+    ],
     "negativeIn": [],
     "relatedDrugs": [],
     "pitfalls": "固定时间影响着色；需标准化以保证纤维化定量的可重复性",
     "references": [],
     "positiveResult": "胶原蓝/绿，肌肉红，核黑",
     "negativeResult": "无特异染色",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/masson-trichrome-pos.svg",
+          "caption": "Masson三色阳性：胶原纤维呈蓝色（苯胺蓝法）或绿色（亮绿法），肌纤维及胞浆呈红色，胞核呈蓝黑色"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/masson-trichrome-neg.svg",
+          "caption": "Masson三色阴性对照：无胶原纤维蓝染，背景以红色肌浆及黑色胞核为主"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦",
+        "安必平"
+      ]
+    }
   },
   {
     "id": "alcian-blue",
@@ -122,14 +286,47 @@
     "function": "阳离子染料在pH 2.5时与硫酸/羧酸基团结合；pH 1.0仅与强酸性硫酸基结合",
     "interpretation": "pH 2.5蓝色阳性提示酸性黏多糖（透明质酸、软骨素等）",
     "clinicalSignificance": "黏液性肿瘤鉴别（黏液腺癌、黏液瘤）；间皮瘤辅助诊断（透明质酸阳性）",
-    "positiveIn": ["黏液腺癌", "黏液瘤", "间皮瘤（透明质酸）", "软骨肿瘤"],
-    "negativeIn": ["透明质酸酶消化后阴性（区分透明质酸与硫酸化黏多糖）"],
+    "positiveIn": [
+      "黏液腺癌",
+      "黏液瘤",
+      "间皮瘤（透明质酸）",
+      "软骨肿瘤"
+    ],
+    "negativeIn": [
+      "透明质酸酶消化后阴性（区分透明质酸与硫酸化黏多糖）"
+    ],
     "relatedDrugs": [],
     "pitfalls": "pH控制至关重要：pH 2.5检测所有酸性黏多糖，pH 1.0仅检测硫酸化黏多糖",
     "references": [],
     "positiveResult": "蓝色",
     "negativeResult": "无蓝色",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/alcian-blue-ph25-pos.svg",
+          "caption": "阿利新蓝 pH 2.5 阳性：酸性黏液（涎黏蛋白、硫酸黏蛋白）呈蓝色"
+        },
+        {
+          "stateId": "pos",
+          "url": "/stains/alcian-blue-ph10-pos.svg",
+          "caption": "阿利新蓝 pH 1.0 阳性：仅硫酸化黏液呈蓝色（用于鉴别硫酸黏蛋白）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/alcian-blue-neg.svg",
+          "caption": "阴性：中性黏液及非黏液组织不着色，胞核核固红/明矾卡红复染呈红色"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦",
+        "安必平"
+      ]
+    }
   },
   {
     "id": "congo-red",
@@ -144,14 +341,65 @@
     "function": "刚果红分子嵌入淀粉样纤维的β-折叠结构，偏振光下产生特征性苹果绿双折光",
     "interpretation": "红色染色+偏振光苹果绿双折光为阳性。确诊淀粉样变性",
     "clinicalSignificance": "淀粉样变性确诊金标准；需结合质谱或免疫组化进行淀粉样蛋白分型",
-    "positiveIn": ["AL型淀粉样变", "AA型淀粉样变", "ATTR型淀粉样变", "Aβ（阿尔茨海默病）"],
-    "negativeIn": ["非淀粉样沉积物"],
+    "positiveIn": [
+      "AL型淀粉样变",
+      "AA型淀粉样变",
+      "ATTR型淀粉样变",
+      "Aβ（阿尔茨海默病）"
+    ],
+    "negativeIn": [
+      "非淀粉样沉积物"
+    ],
     "relatedDrugs": [],
     "pitfalls": "必须用偏振光确认苹果绿双折光，普通光下红色染色不足以确诊；高锰酸钾预处理可区分AA与AL",
     "references": [],
     "positiveResult": "红色，偏振光苹果绿双折光",
     "negativeResult": "无红色/无双折光",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/congo-red-pos.svg",
+          "caption": "刚果红阳性：普通光镜下淀粉样物质呈橘红色/砖红色均质沉积"
+        },
+        {
+          "stateId": "pos-polar",
+          "url": "/stains/congo-red-pos-polar.svg",
+          "caption": "偏振光下呈特征性苹果绿双折光（apple-green birefringence），为淀粉样变性确诊依据"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/congo-red-neg.svg",
+          "caption": "刚果红阴性：组织未见橘红色沉积，偏振光下无苹果绿双折光"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦",
+        "安必平"
+      ]
+    },
+    "_enhance_special_stain_new_entry": {
+      "id": "congo-red",
+      "nameZh": "刚果红染色",
+      "nameEn": "Congo Red",
+      "category": "纤维蛋白/淀粉样",
+      "cellularLocalization": "细胞外基质",
+      "interpretation": "明场下淀粉样物质呈橙红至砖红色；偏振光显微镜下呈现特征性苹果绿双折光（apple-green birefringence）为诊断淀粉样变的特异性指标。单纯红色着色不足以诊断，必须结合偏振光观察。",
+      "positiveIn": [
+        "AL 型淀粉样变（免疫球蛋白轻链）",
+        "AA 型淀粉样变（继发性/反应性）",
+        "ATTR 型淀粉样变（甲状腺素转运蛋白相关，含野生型与遗传型）",
+        "老年系统性淀粉样变",
+        "β2-微球蛋白相关淀粉样变（透析相关）",
+        "局限性淀粉样变（如甲状腺髓样癌间质、胰岛淀粉样变、皮肤苔藓样淀粉样变）",
+        "Aβ 型脑血管淀粉样变"
+      ],
+      "pitfalls": "切片厚度建议 8–10 μm，过薄（<5 μm）易漏诊苹果绿双折光；染色时间过长或分化不足会导致背景红染假阳性；偏振镜起偏器与检偏器需严格正交，角度偏差将显著影响判读；高锰酸钾预处理可区分 AA 型（敏感，阳性减弱或消失）与 AL 型（耐受）；冰冻切片或脱钙过度组织着色减弱；弹力纤维、胶原、嗜酸性透明小体可呈假阳性红染但无苹果绿双折光；最终分型需结合免疫组化（κ/λ、AA、TTR）或质谱分析。"
+    }
   },
   {
     "id": "reticulin",
@@ -166,14 +414,58 @@
     "function": "银离子还原沉积于网状纤维表面形成黑色银颗粒",
     "interpretation": "黑色纤维网架结构。评估纤维网架是否完整、增生或塌陷",
     "clinicalSignificance": "肝细胞癌vs肝腺瘤（HCC网架缺失）；骨髓纤维化分级（MF-0至MF-3）；淋巴结结构评估",
-    "positiveIn": ["正常肝窦网架", "骨髓纤维化", "淋巴结滤泡"],
-    "negativeIn": ["肝细胞癌（网架消失/缺损为特征）"],
+    "positiveIn": [
+      "正常肝窦网架",
+      "骨髓纤维化",
+      "淋巴结滤泡"
+    ],
+    "negativeIn": [
+      "肝细胞癌（网架消失/缺损为特征）"
+    ],
     "relatedDrugs": [],
     "pitfalls": "银染背景较深时需严格控制还原时间；肝穿刺标本需注意取向",
     "references": [],
     "positiveResult": "黑色纤维网",
     "negativeResult": "无黑色纤维",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/reticulin-pos.svg",
+          "caption": "网状纤维染色阳性：黑色网状纤维呈细密网格状围绕细胞巢或血管（Gomori/Gordon-Sweets 银染）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/reticulin-neg.svg",
+          "caption": "网状纤维染色阴性/减少：肝细胞癌中网状支架破坏或缺失，细胞梁增宽"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦"
+      ]
+    },
+    "_enhance_special_stain_new_entry": {
+      "id": "reticulin",
+      "nameZh": "Gomori 网织纤维染色",
+      "nameEn": "Gomori's Reticulin Stain",
+      "category": "结缔组织/网状纤维",
+      "interpretation": "网状纤维（Ⅲ型胶原）被银盐浸染后呈黑色细网状结构；胞核呈浅灰至淡黄色，胶原纤维呈棕黄色。判读要点：观察网状纤维的分布模式（围绕单个细胞、小梁状、巢状）及其完整性。",
+      "positiveIn": [
+        "肝硬化（评估肝小梁结构紊乱及假小叶形成）",
+        "肝细胞癌（小梁增宽、网状支架减少或消失，有助于与高分化 HCC 及肝细胞腺瘤鉴别）",
+        "骨髓纤维化（评估 MF 分级，0–3 级）",
+        "血管性肿瘤与血管肉瘤（勾勒血管腔结构）",
+        "肾上腺皮质肿瘤（网状纤维破坏提示皮质腺癌）",
+        "神经内分泌肿瘤（显示巢状/器官样结构）",
+        "软组织肿瘤（滑膜肉瘤、上皮样肉瘤等评估间质结构）",
+        "淋巴结结构评估（滤泡网架，霍奇金淋巴瘤与非霍奇金鉴别辅助）"
+      ],
+      "pitfalls": "银染对固定和 pH 极敏感，福尔马林固定过久或含钙组织易出现非特异性银颗粒沉积；切片过厚会使网状纤维重叠，难以判断小梁宽度；氧化时间不足导致着色浅，过度氧化则网状纤维断裂脱色；坏死区和出血区可出现假阳性黑染；骨髓纤维化分级需结合 MF 共识标准，单纯 Gomori 阳性不等于骨髓纤维化；高分化 HCC 与肝细胞腺瘤在网状支架减少上可重叠，需结合 GPC3、HSP70、GS 等联合判读。"
+    }
   },
   {
     "id": "verhoeff",
@@ -188,14 +480,39 @@
     "function": "铁-苏木精选择性结合弹力纤维；Van Gieson复染显示胶原（红）和肌肉（黄）",
     "interpretation": "黑色为弹力纤维。评估血管壁弹力层完整性和弹力纤维变性",
     "clinicalSignificance": "血管炎弹力层破坏评估；肺气肿弹力纤维断裂；皮肤弹力纤维变性",
-    "positiveIn": ["正常动脉弹力层", "弹力纤维瘤"],
-    "negativeIn": ["弹力纤维断裂/消失区域（血管炎、肺气肿）"],
+    "positiveIn": [
+      "正常动脉弹力层",
+      "弹力纤维瘤"
+    ],
+    "negativeIn": [
+      "弹力纤维断裂/消失区域（血管炎、肺气肿）"
+    ],
     "relatedDrugs": [],
     "pitfalls": "分化控制关键——过度分化会丢失细小弹力纤维",
     "references": [],
     "positiveResult": "黑色弹力纤维",
     "negativeResult": "无黑色纤维",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/verhoeff-pos.svg",
+          "caption": "Verhoeff弹力纤维染色阳性：弹力纤维呈蓝黑色至黑色，胶原纤维红色，细胞核灰黑色（范吉森复染）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/verhoeff-neg.svg",
+          "caption": "Verhoeff弹力纤维染色阴性：组织内未见蓝黑色弹力纤维结构，背景胶原呈红色"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦"
+      ]
+    }
   },
   {
     "id": "oil-red-o",
@@ -210,13 +527,40 @@
     "function": "油红O为脂溶性染料，溶入组织脂滴中呈红色。必须用冰冻切片（石蜡处理会溶解脂肪）",
     "interpretation": "红色脂滴为阳性。定量评估脂肪变性程度",
     "clinicalSignificance": "肝脂肪变性定量（需冰冻切片）；脂肪肉瘤鉴别诊断；肾小管脂质沉积",
-    "positiveIn": ["非酒精性脂肪肝", "脂肪肉瘤", "脂质贮积症", "肾小管脂肪变性"],
-    "negativeIn": ["石蜡切片（脂肪已被溶解）"],
+    "positiveIn": [
+      "非酒精性脂肪肝",
+      "脂肪肉瘤",
+      "脂质贮积症",
+      "肾小管脂肪变性"
+    ],
+    "negativeIn": [
+      "石蜡切片（脂肪已被溶解）"
+    ],
     "relatedDrugs": [],
     "pitfalls": "只能用冰冻切片，石蜡包埋处理会完全溶解脂肪导致假阴性",
     "references": [],
     "positiveResult": "红色脂滴",
     "negativeResult": "无红色脂滴",
-    "stainingImages": []
+    "stainingImages": [],
+    "_enhance_special_stain_images": {
+      "images": [
+        {
+          "stateId": "pos",
+          "url": "/stains/oil-red-o-pos.svg",
+          "caption": "油红O阳性：脂滴呈鲜红色（橘红色），细胞核苏木精复染呈蓝色（冰冻切片）"
+        },
+        {
+          "stateId": "neg",
+          "url": "/stains/oil-red-o-neg.svg",
+          "caption": "油红O阴性：组织内未见红色脂滴，仅见蓝色细胞核背景"
+        }
+      ],
+      "cnReagentVendors": [
+        "迈新",
+        "基因科技",
+        "中杉金桥",
+        "莱邦"
+      ]
+    }
   }
 ]

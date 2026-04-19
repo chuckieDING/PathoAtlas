@@ -22,7 +22,27 @@
       "冰冻切片阳性后不继续进行腋窝清扫: 虽然不是所有患者都需要，但应咨询外科医生。",
       "未采用标准的多焦点取样: 应该以一定的间隔进行多个切片，而不是仅取一个部位。"
     ],
-    "reportingTemplate": "前哨淋巴结(SLN)冰冻评估：\n- SLN数量及部位\n- 转移情况：(1)无转移 (2)微转移(0.2-2mm) (3)孤立肿瘤细胞(<0.2mm) (4)大转移(>2mm)\n- 建议：腋窝清扫或继续手术，根据转移情况和临床因素决定。"
+    "reportingTemplate": "前哨淋巴结(SLN)冰冻评估：\n- SLN数量及部位\n- 转移情况：(1)无转移 (2)微转移(0.2-2mm) (3)孤立肿瘤细胞(<0.2mm) (4)大转移(>2mm)\n- 建议：腋窝清扫或继续手术，根据转移情况和临床因素决定。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/breast-sln-isolated-tumor-cells.svg",
+          "caption": "冰冻切片中被膜下窦内孤立肿瘤细胞（ITC，<0.2mm），低倍镜下极易漏诊；建议加做细胞角蛋白（CK AE1/AE3）免疫组化于石蜡切片确认",
+          "trapType": "false-negative"
+        },
+        {
+          "url": "/frozen/breast-sln-sinus-histiocytosis.svg",
+          "caption": "窦组织细胞增生，胞浆丰富淡染、核圆形温和，易被误判为转移癌细胞；注意无异型性、无成团黏附生长，必要时借助 CK 与 CD68 鉴别",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/breast-sln-freezing-artifact.svg",
+          "caption": "冰冻过程产生的冰晶伪像及细胞核空泡化，可致淋巴细胞形态失真、生发中心结构模糊，切勿据此判读为淋巴瘤或转移",
+          "trapType": "artifact"
+        }
+      ],
+      "cnConsensusNote": "根据中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》及《乳腺癌前哨淋巴结活检临床实践指南》要点：①SLN 冰冻应按 2mm 间隔平行切开全部取材；②诊断分为宏转移（>2mm）、微转移（>0.2–2mm）、孤立肿瘤细胞（ITC，≤0.2mm）三类；③ITC 不改变 N 分期（pN0(i+)），但应在报告中描述；④冰冻漏诊率约 10–15%，需在石蜡切片及必要时 CK 免疫组化进一步确认；⑤新辅助治疗后 SLN 冰冻评估存在较高假阴性风险，建议谨慎开展并充分告知临床。"
+    }
   },
   {
     "id": "thyroid-follicular-lesion",
@@ -47,7 +67,32 @@
       "在冰冻中过度诊断: 滤泡癌在冰冻中很难确诊，应该谨慎。通常术后石蜡切片才能最终诊断。",
       "未进行充分的多焦点取样: 应该评估肿瘤的多个部位，特别是边缘区域。"
     ],
-    "reportingTemplate": "甲状腺滤泡性肿瘤冰冻评估：\n- 肿瘤大小及位置\n- 包膜侵犯：(1)无 (2)可疑 (3)明确(脉管侵犯)\n- 切缘评估：(1)清晰 (2)接近(<1mm) (3)有肿瘤细胞\n- 建议：全切甲状腺或继续右半叶切除，取决于侵犯性特征。"
+    "reportingTemplate": "甲状腺滤泡性肿瘤冰冻评估：\n- 肿瘤大小及位置\n- 包膜侵犯：(1)无 (2)可疑 (3)明确(脉管侵犯)\n- 切缘评估：(1)清晰 (2)接近(<1mm) (3)有肿瘤细胞\n- 建议：全切甲状腺或继续右半叶切除，取决于侵犯性特征。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/thyroid-follicular-capsule-artifact.svg",
+          "caption": "冰冻切片中包膜因冷冻挤压出现假性中断，易误判为包膜浸润（假阳性）",
+          "trapType": "artifact"
+        },
+        {
+          "url": "/frozen/thyroid-follicular-pseudoinvasion.svg",
+          "caption": "穿刺/FNA 后包膜内可见反应性纤维化与滤泡陷入，模拟真性包膜浸润",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/thyroid-follicular-nuclear-features.svg",
+          "caption": "冰冻造成核空泡及核沟假象，过诊为乳头状癌滤泡亚型；核特征评估应延至石蜡",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/thyroid-follicular-vascular-invasion-miss.svg",
+          "caption": "包膜外血管内瘤栓贴壁生长，冰冻取材不足易漏诊血管侵犯（假阴性）",
+          "trapType": "false-negative"
+        }
+      ],
+      "cnConsensusNote": "中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》及《甲状腺肿瘤组织学分类与病理诊断共识》建议：滤泡性肿瘤（FA/FT-UMP/FTC/NIFTP）的鉴别核心在于包膜及血管侵犯的全面评估，冰冻切片取材有限且存在冷冻伪像，原则上不作出 FA 与 FTC 的最终鉴别，亦不宜单凭冰冻核形态诊断 PTC 滤泡亚型；建议报告为'滤泡性病变/肿瘤，待石蜡及包膜全周取材后明确分类'，必要时延迟诊断。"
+    }
   },
   {
     "id": "breast-margin-assessment",
@@ -72,7 +117,27 @@
       "未评估所有关键切缘: 应该至少评估深部切缘(最重要)和其他方向。",
       "冷冻和永久切片结果不一致: 由于冷冻的局限性，永久切片可能与冷冻结果不同。应该告知外科医生可能的差异。"
     ],
-    "reportingTemplate": "乳腺肿瘤切缘冰冻评估：\n- 肿瘤类型及分级(IDC/ILC等，Grade)\n- 切缘评估(深部/侧/上/下)：\n  * 清晰(>1mm无肿瘤)\n  * 接近(<1mm无肿瘤)\n  * 阳性(有肿瘤细胞)\n- 建议：根据切缘结果，是否需要扩大切除。"
+    "reportingTemplate": "乳腺肿瘤切缘冰冻评估：\n- 肿瘤类型及分级(IDC/ILC等，Grade)\n- 切缘评估(深部/侧/上/下)：\n  * 清晰(>1mm无肿瘤)\n  * 接近(<1mm无肿瘤)\n  * 阳性(有肿瘤细胞)\n- 建议：根据切缘结果，是否需要扩大切除。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/breast-margin-dcis-missed.svg",
+          "caption": "冰冻切片中低级别导管原位癌（DCIS）紧邻切缘，冰冻下腺体结构模糊易与普通导管增生混淆而漏诊",
+          "trapType": "false-negative"
+        },
+        {
+          "url": "/frozen/breast-margin-sclerosing-adenosis.svg",
+          "caption": "硬化性腺病伴小管扭曲挤压，可模拟浸润性癌阳性切缘，需结合肌上皮层（冰冻下不易识别）谨慎判读",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/breast-margin-freezing-artifact.svg",
+          "caption": "脂肪组织丰富区域冰冻切片易出现空泡样冰晶伪像及组织碎裂，影响切缘距离测量的准确性",
+          "trapType": "artifact"
+        }
+      ],
+      "cnConsensusNote": "依据中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》及《乳腺癌保乳手术中国专家共识》：乳腺保乳切缘冰冻评估推荐对瘤床周围 6 点位（上、下、内、外、浅、深）分别取材；冰冻报告应明确切缘状态（阴性/阳性/可疑）并注明距离；低级别 DCIS、小叶原位癌（LCIS）及微浸润在冰冻下诊断困难，建议留待石蜡确认，必要时术中改行扩大切除而非冰冻勉强定性；脂肪过多、钙化、既往穿刺改变区域应谨慎出具冰冻诊断。"
+    }
   },
   {
     "id": "ovarian-borderline-tumor",
@@ -97,7 +162,27 @@
       "忽视核异型的程度: 核异型的程度是区分交界性肿瘤和浸润癌的关键。",
       "术后发现分期不足: 应该尽可能在术中获得分期信息(卵巢、腹膜、大网膜)。"
     ],
-    "reportingTemplate": "卵巢肿瘤冰冻评估：\n- 肿瘤类型(浆液性/粘液性/透明细胞/子宫内膜样等)\n- 分级：(1)良性 (2)交界性肿瘤 (3)低级别浸润癌 (4)高级别浸润癌\n- 脉管侵犯：有/无\n- 腹膜/转移情况\n- 建议：根据分级和分期，是否进行保留卵巢的手术或广泛分期。"
+    "reportingTemplate": "卵巢肿瘤冰冻评估：\n- 肿瘤类型(浆液性/粘液性/透明细胞/子宫内膜样等)\n- 分级：(1)良性 (2)交界性肿瘤 (3)低级别浸润癌 (4)高级别浸润癌\n- 脉管侵犯：有/无\n- 腹膜/转移情况\n- 建议：根据分级和分期，是否进行保留卵巢的手术或广泛分期。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/ovarian-borderline-microinvasion.svg",
+          "caption": "交界性浆液性肿瘤伴微浸润灶（<5mm），冰冻下易漏诊或过诊为低级别浆液性癌",
+          "trapType": "false-negative"
+        },
+        {
+          "url": "/frozen/ovarian-borderline-epithelial-tufting.svg",
+          "caption": "上皮复层和簇状出芽可误判为浸润性癌；冰冻切片缺乏间质反应评估，需谨慎",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/ovarian-borderline-freezing-artifact.svg",
+          "caption": "黏液性交界性肿瘤冰冻常见囊壁冰晶伪像及取材不足，难以排除浸润性成分",
+          "trapType": "artifact"
+        }
+      ],
+      "cnConsensusNote": "中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》强调：卵巢交界性肿瘤冰冻诊断应注意取材充分（建议每10cm取1–2块，黏液性肿瘤需加倍取材），冰冻报告宜采用'倾向交界性肿瘤，待石蜡及免疫组化进一步证实'的描述性诊断；微浸润、上皮内癌及浸润性种植的最终判定以石蜡切片为准，避免据冰冻结果行根治性手术。"
+    }
   },
   {
     "id": "brain-tissue-crush-preparation",
@@ -123,7 +208,27 @@
       "未进行免疫组化(冷冻或最终)评估: 某些脑肿瘤需要免疫组化(如GFAP、IDH1突变等)来最终诊断。",
       "术中诊断与术后病理差异: 冷冻诊断可能与术后石蜡诊断不同，应该记录并与外科医生沟通。"
     ],
-    "reportingTemplate": "脑组织冷冻评估：\n- 取样部位\n- 压片印象：(细胞学特征、细胞密度、核异型)\n- 冷冻切片：(组织学特征、坏死、脉管增生)\n- 初步诊断：(胶质母细胞瘤/低级别胶质瘤/其他/待进一步评估)\n- 建议：术中处理方案(继续切除/停止等)。"
+    "reportingTemplate": "脑组织冷冻评估：\n- 取样部位\n- 压片印象：(细胞学特征、细胞密度、核异型)\n- 冷冻切片：(组织学特征、坏死、脉管增生)\n- 初步诊断：(胶质母细胞瘤/低级别胶质瘤/其他/待进一步评估)\n- 建议：术中处理方案(继续切除/停止等)。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/brain-crush-reactive-astrocytes.svg",
+          "caption": "反应性星形胶质细胞增生（Gemistocytic astrocytes）胞体肥大、胞浆丰富嗜酸，压片下可模拟低级别胶质瘤肿瘤细胞",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/brain-crush-normal-neurons.svg",
+          "caption": "正常大脑皮层神经元压片中因挤压变形，核仁明显，易被误判为神经节细胞胶质瘤或肿瘤细胞",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/brain-crush-freezing-artifact.svg",
+          "caption": "冷冻伪像导致组织出现空泡状结构（Swiss-cheese appearance），可模拟少突胶质细胞瘤的核周空晕或微囊性变",
+          "trapType": "artifact"
+        }
+      ],
+      "cnConsensusNote": "参照中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》及神经病理学组建议：中枢神经系统病变术中优先采用压片（squash/smear）联合冰冻切片双重评估，压片可充分显示核特征（染色质、核仁、核异型），弥补冰冻伪像；诊断应限定于良/恶性判断、是否为胶质源性及大致级别方向，避免给出精确的分子分型；对于难以明确者应报告为\"倾向性诊断\"或\"待常规石蜡及分子检测进一步分型\"，不建议单凭冰冻决定扩大切除范围。"
+    }
   },
   {
     "id": "lymph-node-metastasis",
@@ -151,7 +256,27 @@
       "忽略微转移：<2mm的微小转移灶在冰冻切片中容易遗漏，应仔细检查被膜下窦区域。",
       "未评估淋巴结外软组织浸润：转移癌突破被膜侵犯周围脂肪组织是重要的预后因素，应在冰冻中一并评估。"
     ],
-    "reportingTemplate": "淋巴结冰冻评估（非前哨）：\n- 送检淋巴结数量及部位\n- 淋巴结大小\n- 转移情况：(1)未见转移 (2)微转移(<2mm) (3)宏转移(≥2mm)\n- 被膜外侵犯：有/无\n- 备注：如冰冻判断困难，建议术后石蜡切片及免疫组化进一步确认。"
+    "reportingTemplate": "淋巴结冰冻评估（非前哨）：\n- 送检淋巴结数量及部位\n- 淋巴结大小\n- 转移情况：(1)未见转移 (2)微转移(<2mm) (3)宏转移(≥2mm)\n- 被膜外侵犯：有/无\n- 备注：如冰冻判断困难，建议术后石蜡切片及免疫组化进一步确认。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/ln-sinus-histiocytosis.svg",
+          "caption": "窦组织细胞增生：窦内聚集的组织细胞胞浆丰富、核形温和，易误判为转移性低分化癌；必要时行 CK 免疫组化辅助（冰冻后续补做）",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/ln-micrometastasis-missed.svg",
+          "caption": "微转移（>0.2mm 且 ≤2mm）病灶位于被膜下窦，冰冻薄层取材不全易漏诊，建议每 2mm 间隔切开淋巴结长轴全部包埋",
+          "trapType": "false-negative"
+        },
+        {
+          "url": "/frozen/ln-freezing-artifact.svg",
+          "caption": "冰冻伪像：冰晶形成导致细胞核空泡化、胞浆撕裂，可使淋巴细胞形态似异型细胞，需与淋巴瘤累及或转移癌鉴别",
+          "trapType": "artifact"
+        }
+      ],
+      "cnConsensusNote": "参照中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》：非前哨淋巴结冰冻应沿长轴每 2mm 切开全部送检，报告宜采用阳性/阴性/待石蜡及免疫组化确认三类表述；对形态可疑但证据不足者应出具延迟诊断，不得勉强定性；冰冻伪像明显或组织量不足时应在报告中注明局限性。"
+    }
   },
   {
     "id": "parathyroid-confirmation",
@@ -178,7 +303,27 @@
       "组织过小冰冻质量差：甲状旁腺组织通常很小，制片时需注意避免过度切削导致组织耗尽。",
       "未能区分甲状旁腺和淋巴结：小淋巴结可能肉眼上类似甲状旁腺，冰冻中需注意淋巴滤泡和窦结构。"
     ],
-    "reportingTemplate": "术中组织确认冰冻评估：\n- 送检组织大小及外观描述\n- 组织学诊断：(1)甲状旁腺组织 (2)甲状腺组织 (3)淋巴结 (4)其他（注明）\n- 如为甲状旁腺：细胞类型（主细胞/嗜酸细胞）、脂肪含量、有无异常增生\n- 建议：如确认为甲状旁腺，建议自体移植。"
+    "reportingTemplate": "术中组织确认冰冻评估：\n- 送检组织大小及外观描述\n- 组织学诊断：(1)甲状旁腺组织 (2)甲状腺组织 (3)淋巴结 (4)其他（注明）\n- 如为甲状旁腺：细胞类型（主细胞/嗜酸细胞）、脂肪含量、有无异常增生\n- 建议：如确认为甲状旁腺，建议自体移植。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/parathyroid-thyroid-follicle.svg",
+          "caption": "小型甲状腺滤泡（腔内含胶质）易被误认为甲状旁腺组织，需注意胶质是否 PAS 阳性及细胞核特征",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/parathyroid-fat-infiltration.svg",
+          "caption": "甲状旁腺腺瘤中脂肪细胞减少、主细胞密集排列，冰冻下易误判为甲状腺实性病变或转移癌",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/parathyroid-crush-artifact.svg",
+          "caption": "挤压伪像致主细胞核拉长变形，难以与淋巴细胞或小细胞病变鉴别",
+          "trapType": "artifact"
+        }
+      ],
+      "cnConsensusNote": "参照中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》：甲状旁腺确认冰冻应报告\"送检组织为甲状旁腺/甲状腺/淋巴结/脂肪/纤维脂肪组织\"；无法明确时建议加做印片细胞学或待石蜡确诊，必要时结合术中 PTH 检测；不宜在冰冻阶段鉴别腺瘤与增生。"
+    }
   },
   {
     "id": "brain-tumor-intraop",
@@ -206,7 +351,27 @@
       "将淋巴瘤误诊为高级别胶质瘤：两者治疗策略完全不同（淋巴瘤以化疗为主，不宜广泛切除），术中鉴别至关重要。",
       "忽视临床和影像信息：术中诊断应紧密结合MRI特征和临床病史，单纯形态学判断易出错。"
     ],
-    "reportingTemplate": "脑肿瘤术中冰冻评估：\n- 取样部位及方式\n- 压片印象：细胞密度、核异型、核分裂象、特殊排列方式\n- 冰冻切片：组织结构、微血管增生、坏死模式\n- 初步诊断：(1)胶质瘤（低级别/高级别） (2)中枢神经系统淋巴瘤 (3)转移癌 (4)其他/待定\n- 备注：最终诊断需结合免疫组化（GFAP、IDH1、Ki-67、CD20等）及分子病理检测。"
+    "reportingTemplate": "脑肿瘤术中冰冻评估：\n- 取样部位及方式\n- 压片印象：细胞密度、核异型、核分裂象、特殊排列方式\n- 冰冻切片：组织结构、微血管增生、坏死模式\n- 初步诊断：(1)胶质瘤（低级别/高级别） (2)中枢神经系统淋巴瘤 (3)转移癌 (4)其他/待定\n- 备注：最终诊断需结合免疫组化（GFAP、IDH1、Ki-67、CD20等）及分子病理检测。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/brain-reactive-gliosis.svg",
+          "caption": "反应性胶质增生伴星形细胞异型性，核大深染易误判为低级别胶质瘤，需结合细胞密度与病理背景判读",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/brain-crush-artifact.svg",
+          "caption": "挤压伪像致细胞核拉长变形，可模拟小细胞恶性肿瘤或淋巴瘤，冰冻切片应辅以涂片/印片对照",
+          "trapType": "artifact"
+        },
+        {
+          "url": "/frozen/brain-infiltrating-glioma-edge.svg",
+          "caption": "弥漫浸润性胶质瘤周边区瘤细胞稀疏，散在分布于相对正常脑组织中，易漏诊为阴性或仅报胶质增生",
+          "trapType": "false-negative"
+        }
+      ],
+      "cnConsensusNote": "中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》建议：中枢神经系统肿瘤术中诊断应联合冰冻切片与细胞涂片/印片，重点判断肿瘤性质（胶质瘤/转移癌/淋巴瘤）及大致级别，分子分型（IDH、1p/19q、H3 K27M 等）依赖石蜡与分子检测，不在冰冻环节定论；对浸润边界、反应性胶质增生与低级别胶质瘤鉴别困难者应明确说明，并建议等待石蜡及免疫组化/分子结果。"
+    }
   },
   {
     "id": "lung-wedge-margin",
@@ -233,7 +398,27 @@
       "忽略磨玻璃成分的切缘评估：纯磨玻璃结节（GGN）的边界在冰冻中更难确定，需结合CT影像和大体所见。",
       "过度诊断原位腺癌/微浸润腺癌的浸润成分：AIS和MIA的诊断需在完整切除标本上全面评估，冰冻中不宜做最终的亚型分类。"
     ],
-    "reportingTemplate": "肺楔形切除冰冻评估：\n- 结节大小、位置及大体特征（实性/磨玻璃/混合）\n- 肿瘤性质初步判断：(1)浸润性腺癌 (2)原位腺癌/微浸润腺癌 (3)鳞状细胞癌 (4)良性病变 (5)待定\n- 切缘状态：(1)阴性（距离__mm） (2)接近（<1cm） (3)阳性\n- 建议：如切缘不足，建议扩大切除或行肺段/肺叶切除术。"
+    "reportingTemplate": "肺楔形切除冰冻评估：\n- 结节大小、位置及大体特征（实性/磨玻璃/混合）\n- 肿瘤性质初步判断：(1)浸润性腺癌 (2)原位腺癌/微浸润腺癌 (3)鳞状细胞癌 (4)良性病变 (5)待定\n- 切缘状态：(1)阴性（距离__mm） (2)接近（<1cm） (3)阳性\n- 建议：如切缘不足，建议扩大切除或行肺段/肺叶切除术。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/lung-wedge-margin-cautery-artifact.svg",
+          "caption": "电刀烧灼伪像致切缘细胞核拉长深染，易误判为残留肿瘤（假阳性）",
+          "trapType": "artifact"
+        },
+        {
+          "url": "/frozen/lung-wedge-margin-reactive-pneumocytes.svg",
+          "caption": "切缘邻近反应性肺泡上皮增生，核增大、核仁明显，易误诊为腺癌累及切缘",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/lung-wedge-margin-lepidic-spread.svg",
+          "caption": "贴壁生长（lepidic）方式的腺癌沿肺泡壁蔓延，冰冻下细胞异型性轻微，易漏诊致切缘假阴性",
+          "trapType": "false-negative"
+        }
+      ],
+      "cnConsensusNote": "参照《术中快速冰冻病理会诊规范专家共识》及 CSCO 非小细胞肺癌诊疗指南（2024）：肺楔形切除切缘冰冻应报告切缘距离（mm）、切缘有无肿瘤累及及气腔播散（STAS）情况；电刀/挤压伪像区域应在报告中注明并建议石蜡复核；贴壁生长为主的腺癌切缘需谨慎评估，必要时加做切缘追加切片。"
+    }
   },
   {
     "id": "soft-tissue-margin",
@@ -260,6 +445,26 @@
       "未考虑肿瘤亚型对切缘的影响：不同亚型的肉瘤对切缘的要求不同，如皮肤隆突性纤维肉瘤(DFSP)需要更宽的切缘。",
       "反应区被误认为安全切缘：肿瘤周围的反应区虽无明确肿瘤细胞，但含有可能的微观浸润，不应视为充分的安全切缘。"
     ],
-    "reportingTemplate": "软组织肿瘤切缘冰冻评估：\n- 送检切缘方向及数量\n- 各切缘状态：(1)阴性（距离__mm） (2)接近（<1cm） (3)阳性\n- 肿瘤生长方式：推挤性/浸润性\n- 反应区评估：有/无\n- 建议：如切缘阳性或不足，建议定向扩大切除，注明具体方向。"
+    "reportingTemplate": "软组织肿瘤切缘冰冻评估：\n- 送检切缘方向及数量\n- 各切缘状态：(1)阴性（距离__mm） (2)接近（<1cm） (3)阳性\n- 肿瘤生长方式：推挤性/浸润性\n- 反应区评估：有/无\n- 建议：如切缘阳性或不足，建议定向扩大切除，注明具体方向。",
+    "_enhance_frozen_pitfall_image": {
+      "pitfallImages": [
+        {
+          "url": "/frozen/soft-tissue-margin-reactive-fibrosis.svg",
+          "caption": "切缘处反应性纤维母细胞增生及肉芽组织，核大深染易误判为残留肉瘤细胞",
+          "trapType": "false-positive"
+        },
+        {
+          "url": "/frozen/soft-tissue-margin-infiltrative-edge.svg",
+          "caption": "黏液样/高分化脂肪肉瘤沿脂肪间隔浸润性生长，冰冻下瘤细胞稀疏易漏诊为阴性切缘",
+          "trapType": "false-negative"
+        },
+        {
+          "url": "/frozen/soft-tissue-margin-freezing-artifact.svg",
+          "caption": "脂肪组织冰冻结晶伪像及挤压变形，核形扭曲可模拟非典型脂肪细胞",
+          "trapType": "artifact"
+        }
+      ],
+      "cnConsensusNote": "中华医学会病理学分会《术中快速冰冻病理会诊规范专家共识》指出：软组织肉瘤切缘评估应结合术前影像与大体定位，建议对可疑切缘多点取材；对黏液样脂肪肉瘤、高分化脂肪肉瘤等形态温和的肿瘤，冰冻诊断应谨慎，必要时报告'待石蜡及免疫组化进一步确认'，避免过度扩切或漏切。"
+    }
   }
 ]
