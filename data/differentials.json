@@ -379,52 +379,6 @@
           }
         ]
       }
-    },
-    "_enhance_diff_new_entry": {
-      "id": "clear-cell-tumors",
-      "titleZh": "透明细胞肿瘤鉴别",
-      "titleEn": "Clear Cell Tumor Differentials",
-      "description": "由胞浆透亮或空泡状（富含糖原、脂质或黏液）的肿瘤细胞构成的一组异质性肿瘤，累及肾、女性生殖道、软组织、皮肤附属器及涎腺等多个部位，形态学上高度相似，需结合免疫组化与分子检测鉴别",
-      "diseases": [
-        "clear-cell-renal-cell-carcinoma",
-        "chromophobe-renal-cell-carcinoma",
-        "clear-cell-ovarian-carcinoma",
-        "clear-cell-endometrial-carcinoma",
-        "clear-cell-sarcoma-soft-tissue",
-        "pecoma",
-        "adrenocortical-carcinoma",
-        "metastatic-clear-cell-rcc",
-        "hepatocellular-carcinoma-clear-cell-variant",
-        "seminoma",
-        "balloon-cell-melanoma",
-        "xanthoma"
-      ],
-      "keyMarkers": [
-        "PAX8",
-        "CAIX",
-        "CD10",
-        "RCC",
-        "Vimentin",
-        "CK7",
-        "CD117",
-        "Napsin-A",
-        "HNF1β",
-        "ER",
-        "PR",
-        "HMB45",
-        "Melan-A",
-        "SOX10",
-        "S-100",
-        "SMA",
-        "Inhibin",
-        "SF-1",
-        "Hepatocyte",
-        "Arginase-1",
-        "CD68",
-        "PLAP",
-        "EMA"
-      ],
-      "algorithm": "第一步按部位定位：肾占位 → PAX8+/CAIX+/CD10+/RCC+ → ccRCC；CK7 弥漫+/CD117+/CAIX- → 嫌色细胞癌；第二步女性盆腔肿瘤 → PAX8+/Napsin-A+/HNF1β+/ER-/PR- → 卵巢或子宫内膜透明细胞癌（结合部位）；第三步软组织/皮下 → HMB45+/Melan-A+/SOX10+/S-100+ + EWSR1::ATF1 融合 → 软组织透明细胞肉瘤；HMB45+/SMA+/Melan-A+ + TFE3 重排 → PEComa；第四步腹膜后/肾上腺区 → Inhibin+/SF-1+/Melan-A+/PAX8- → 肾上腺皮质癌；第五步肝占位 → Hepatocyte+/Arginase-1+/GPC3+ → HCC 透明细胞亚型；第六步睾丸/纵隔 → PLAP+/OCT3/4+/CD117+ → 精原细胞瘤；第七步皮肤/巨噬细胞源 → S-100+/HMB45+ → 气球样细胞黑色素瘤；CD68+/其他阴 → 黄色瘤（非肿瘤性）；关键陷阱：ccRCC 转移至任何部位形态学与原发鉴别困难，PAX8+/CAIX+/Vimentin+ 组合高度提示肾来源"
     }
   },
   {
@@ -1439,5 +1393,170 @@
         ]
       }
     }
+  },
+  {
+    "id": "small-round-blue-cell",
+    "titleZh": "小圆蓝细胞肿瘤鉴别",
+    "titleEn": "Small Round Blue Cell Tumor Differentials",
+    "description": "小圆蓝细胞肿瘤（SRBCT）是一组由小至中等大小、圆形、胞浆稀少、核深染（HE 切片呈蓝染）的原始或低分化肿瘤细胞构成的异质性肿瘤，多见于儿童及青少年，形态学重叠显著，鉴别高度依赖免疫组化及分子检测（融合基因/易位）。常见成员包括尤文肉瘤/原始神经外胚层肿瘤、神经母细胞瘤、横纹肌肉瘤（尤其腺泡型）、促结缔组织增生性小圆细胞肿瘤（DSRCT）、淋巴母细胞淋巴瘤/白血病、伯基特淋巴瘤、视网膜母细胞瘤、Wilms 瘤（母细胞为主型）、髓母细胞瘤、小细胞骨肉瘤、间叶性软骨肉瘤、NUT 癌及 CIC/BCOR 重排未分化圆细胞肉瘤等。",
+    "diseases": [
+      "ewing-sarcoma",
+      "neuroblastoma",
+      "rhabdomyosarcoma",
+      "desmoplastic-small-round-cell-tumor",
+      "burkitt-lymphoma",
+      "wilms-tumor",
+      "medulloblastoma"
+    ],
+    "keyMarkers": [
+      "CD99",
+      "NKX2.2",
+      "FLI1",
+      "Synaptophysin",
+      "Chromogranin A",
+      "INSM1",
+      "PHOX2B",
+      "Desmin",
+      "Myogenin",
+      "MyoD1",
+      "WT1",
+      "CD45",
+      "TdT",
+      "CD20",
+      "CD3",
+      "c-MYC",
+      "NUT (NUTM1)",
+      "SOX10",
+      "SALL4",
+      "BCOR",
+      "DUX4",
+      "S-100",
+      "INI1 (SMARCB1)",
+      "Ki-67"
+    ],
+    "algorithm": "第一步：CD45(LCA) 区分造血与非造血来源——CD45+ 进入淋巴造血分支（TdT+ → 淋巴母细胞性；CD20+CD10+BCL6+c-MYC+、Ki-67≈100% → 伯基特；CD3+ → T 淋巴母细胞）。第二步：CD45- 时依据神经内分泌/神经标记——Syn/CgA/INSM1+ 且 PHOX2B+ → 神经母细胞瘤；Syn+CK+（膜点状）+WT1(C端)+ 伴 EWSR1-WT1 融合 → DSRCT；Syn+NUT- 单一神经内分泌 → 其他神经内分泌小细胞癌。第三步：肌源性标记——Desmin+Myogenin/MyoD1+ → 横纹肌肉瘤（腺泡型核强弥漫 Myogenin、PAX3/7-FOXO1 融合；胚胎型斑驳表达）。第四步：CD99 膜强阳性 + NKX2.2+ + FLI1+ → 尤文肉瘤（EWSR1-FLI1/ERG 融合）；CD99 弥漫但 NKX2.2-、WT1+/ETV4+ → CIC 重排肉瘤（CIC-DUX4）；CD99±、BCOR+CCNB3+（男童骨） → BCOR 重排肉瘤。第五步：特殊定位线索——鼻窦/中线 + NUT(NUTM1) 核点状+ → NUT 癌；眼内儿童 + CRX/Otx2+ → 视网膜母细胞瘤；小脑 + Syn+ → 髓母细胞瘤；肾 + WT1+CK+vimentin+ → Wilms 瘤母细胞型；骨内 CD99+ 但伴软骨岛 + SOX9+ → 间叶性软骨肉瘤；骨内 CD99+ 形态似尤文但骨样基质 → 小细胞骨肉瘤。第六步：疑难病例务必行分子检测（FISH 或 RNA 测序）确认 EWSR1、FUS、CIC、BCOR、PAX3/7-FOXO1、EWSR1-WT1、NUTM1 等融合以最终定性。"
+  },
+  {
+    "id": "epithelioid-tumors",
+    "titleZh": "上皮样肿瘤鉴别",
+    "titleEn": "Epithelioid Tumor Differentials",
+    "description": "由多边形、胞浆丰富嗜酸性或透明、核圆形居中的上皮样细胞构成的一组肿瘤，形态学常与癌相似，需结合免疫组化与分子检测与真性癌、黑色素瘤及多种上皮样软组织肿瘤鉴别",
+    "diseases": [
+      "melanoma"
+    ],
+    "keyMarkers": [
+      "AE1/AE3",
+      "EMA",
+      "INI1/SMARCB1",
+      "CD34",
+      "ERG",
+      "CD31",
+      "CAMTA1",
+      "TFE3",
+      "HMB45",
+      "Melan-A",
+      "S-100",
+      "SOX10",
+      "CD117",
+      "DOG1",
+      "Desmin",
+      "Calretinin",
+      "WT1"
+    ],
+    "algorithm": "CK+/EMA+ 且 INI1 丢失 → 上皮样肉瘤；CK±、ERG+/CD31+/CD34+ 血管标记阳性 → 上皮样血管内皮瘤（CAMTA1 或 TFE3+）/ 上皮样血管肉瘤；CK-、HMB45+/Melan-A+/SOX10+ → 黑色素瘤；HMB45+/Melan-A+ 伴 SMA+ → PEComa；CD117+/DOG1+ → 上皮样 GIST；S-100+/SOX10+ 伴 H3K27me3 丢失 → 上皮样 MPNST；CK+/Calretinin+/WT1+ 且累及浆膜 → 上皮样间皮瘤；均阴性且广谱 CK 弥漫+ → 回到癌（NOS）并追查原发"
+  },
+  {
+    "id": "papillary-thyroid-mimics",
+    "titleZh": "甲状腺乳头状癌形态拟态鉴别",
+    "titleEn": "Papillary Thyroid Carcinoma Mimics Differentials",
+    "description": "一组在组织学上可出现乳头状结构、核透明、核沟或核内假包涵体等类似甲状腺乳头状癌（PTC）形态特征的甲状腺病变。需结合核特征完整性、包膜/侵袭情况及分子改变进行鉴别，避免过诊断。",
+    "diseases": [
+      "papillary-thyroid-carcinoma",
+      "niftp",
+      "follicular-adenoma",
+      "follicular-thyroid-carcinoma",
+      "hashimoto-thyroiditis",
+      "graves-disease",
+      "hyalinizing-trabecular-tumor"
+    ],
+    "keyMarkers": [
+      "BRAF V600E",
+      "HBME-1",
+      "Galectin-3",
+      "CK19",
+      "CD56",
+      "TTF-1",
+      "Thyroglobulin",
+      "Ki-67",
+      "RET/PTC",
+      "RAS"
+    ],
+    "algorithm": "第一步评估核特征：若具备完整 PTC 核特征（核增大、拥挤重叠、透明、核沟、核内假包涵体）→ 考虑 PTC 或其拟态病变。第二步评估生长方式与包膜：有完整包膜、仅滤泡状生长、无包膜/血管侵犯且核特征达标 → NIFTP；包膜完整且核特征不足 → 滤泡性腺瘤；有包膜或血管侵犯而核特征不足 → 滤泡癌。第三步评估背景：淋巴细胞浸润伴嗜酸性变、局灶核透明 → 桥本甲状腺炎（核沟/透明为反应性，BRAF 阴性）；弥漫增生伴乳头样皱褶、扇贝样胶质 → Graves 病。第四步辅助标志：HBME-1+/Galectin-3+/CK19 弥漫强+/BRAF V600E+ 支持 PTC；透明小梁状肿瘤 MIB-1（Ki-67）呈特征性膜染色、PAX8-PPARG 阴性、GLIS 重排可鉴别。第五步分子检测：BRAF V600E、RET/PTC 融合支持 PTC；RAS 突变多见于滤泡型病变/NIFTP；均阴性且形态不足需保守诊断为 WDT-UMP/FT-UMP。"
+  },
+  {
+    "id": "signet-ring-cell",
+    "titleZh": "印戒细胞癌来源鉴别",
+    "titleEn": "Signet Ring Cell Carcinoma Origin Differentials",
+    "description": "以胞浆内黏液聚集将细胞核挤压至一侧形成印戒样形态的腺癌，可起源于胃、结直肠、乳腺、肺等多个部位，需结合免疫组化判断原发灶",
+    "diseases": [
+      "invasive-lobular-carcinoma",
+      "lung-adenocarcinoma",
+      "appendiceal-mucinous-neoplasm"
+    ],
+    "keyMarkers": [
+      "CK7",
+      "CK20",
+      "CDX2",
+      "GATA3",
+      "E-cadherin",
+      "TTF-1",
+      "SATB2",
+      "ER",
+      "GCDFP-15",
+      "Mammaglobin",
+      "MUC1",
+      "MUC2",
+      "MUC5AC",
+      "MUC6"
+    ],
+    "algorithm": "CK7-/CK20+/CDX2+/SATB2+ → 结直肠来源；CK7+/CK20±/CDX2± /MUC5AC+/MUC6+ → 胃来源；CK7+/CK20-/GATA3+/ER+/E-cadherin 缺失 → 乳腺浸润性小叶癌（印戒样变异）；CK7+/TTF-1+/Napsin A+ → 肺腺癌印戒细胞变异；CK20+/CDX2+/MUC2+ 伴阑尾病变 → 阑尾黏液性肿瘤；必要时加做 PAX8（除外 Müllerian/肾）及 SOX10/Melan-A（除外转移性黑色素瘤）"
+  },
+  {
+    "id": "metastasis-unknown-primary",
+    "titleZh": "转移癌未知原发鉴别",
+    "titleEn": "Carcinoma of Unknown Primary Differentials",
+    "description": "以转移灶为首发表现、经规范检查仍未能明确原发部位的恶性肿瘤，需通过形态学结合免疫组化逐步推断可能起源，指导治疗决策",
+    "diseases": [
+      "lung-adenocarcinoma",
+      "colorectal-adenocarcinoma",
+      "gastric-adenocarcinoma",
+      "hepatocellular-carcinoma",
+      "prostate-adenocarcinoma",
+      "urothelial-carcinoma",
+      "melanoma"
+    ],
+    "keyMarkers": [
+      "CK7",
+      "CK20",
+      "TTF-1",
+      "Napsin A",
+      "GATA3",
+      "CDX2",
+      "PAX8",
+      "GCDFP-15",
+      "Mammaglobin",
+      "HepPar-1",
+      "Arginase-1",
+      "Thyroglobulin",
+      "NKX3.1",
+      "PSA",
+      "WT1",
+      "PAX2",
+      "p40",
+      "S-100",
+      "SOX10",
+      "HMB45"
+    ],
+    "algorithm": "第一步按广谱 CK / Vim / LCA / S-100 区分癌 / 肉瘤 / 淋巴造血 / 黑色素瘤；第二步癌类按 CK7/CK20 分四象限：CK7+/CK20- → 肺（TTF-1/Napsin A+）、乳腺（GATA3/GCDFP-15/Mammaglobin+）、甲状腺（TTF-1/Tg+）、卵巢/子宫内膜（PAX8/WT1+）、胆胰（CK19+，无特异）；CK7+/CK20+ → 胰胆、尿路（GATA3+/p40+）、部分胃；CK7-/CK20+ → 结直肠（CDX2/SATB2+）、Merkel（CK20 核旁点状+）；CK7-/CK20- → 肝（HepPar-1/Arg-1/Gly3+）、肾（PAX8/PAX2+CD10+）、前列腺（NKX3.1/PSA+）、鳞癌（p40/p63+）；第三步结合性别特异及分子检测（如 CUP 基因表达谱、NGS 融合/驱动基因）进一步定位"
   }
 ]

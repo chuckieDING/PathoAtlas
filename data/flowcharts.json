@@ -21,7 +21,7 @@
       {
         "id": "gist",
         "type": "result",
-        "label": "GIST\n(胃肠道间质瘤)",
+        "label": "胃肠道间质瘤（CD117/DOG1阳性；KIT/PDGFRA/SDH分型）",
         "color": "#ef4444",
         "x": 150,
         "y": 250
@@ -66,7 +66,7 @@
       {
         "id": "sft",
         "type": "result",
-        "label": "孤立性纤维性肿瘤\n(SFT, STAT6核+)",
+        "label": "孤立性纤维性肿瘤（STAT6核阳性，NAB2-STAT6融合）",
         "color": "#3b82f6",
         "x": 150,
         "y": 610
@@ -93,6 +93,27 @@
         "color": "#6b7280",
         "x": 400,
         "y": 720
+      },
+      {
+        "id": "smarca4-deficient",
+        "type": "result",
+        "label": "SMARCA4缺陷型未分化肿瘤（BRG1缺失）",
+        "x": 60,
+        "y": 810
+      },
+      {
+        "id": "ncoa2-rearranged",
+        "type": "result",
+        "label": "NCOA2重排梭形细胞肿瘤",
+        "x": 260,
+        "y": 810
+      },
+      {
+        "id": "ntrk-rearranged",
+        "type": "result",
+        "label": "NTRK重排梭形细胞肿瘤（pan-TRK阳性）",
+        "x": 460,
+        "y": 810
       }
     ],
     "edges": [
@@ -150,74 +171,7 @@
         "to": "other",
         "label": "−"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "smarca4-deficient",
-            "type": "leaf",
-            "label": "SMARCA4缺陷型未分化肿瘤（BRG1缺失）"
-          },
-          {
-            "id": "ncoa2-rearranged",
-            "type": "leaf",
-            "label": "NCOA2重排梭形细胞肿瘤"
-          },
-          {
-            "id": "ntrk-rearranged",
-            "type": "leaf",
-            "label": "NTRK重排梭形细胞肿瘤（pan-TRK阳性）"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "undiff-spindle",
-            "to": "smarca4-deficient",
-            "label": "BRG1(SMARCA4)缺失 + SOX2阳性"
-          },
-          {
-            "from": "s100-positive",
-            "to": "ntrk-rearranged",
-            "label": "pan-TRK阳性 + CD34阳性"
-          },
-          {
-            "from": "emsa-myogenic",
-            "to": "ncoa2-rearranged",
-            "label": "儿童/婴幼儿，NCOA2融合"
-          }
-        ],
-        "updateNodes": [
-          {
-            "id": "sft",
-            "label": "孤立性纤维性肿瘤（STAT6核阳性，NAB2-STAT6融合）",
-            "reason": "WHO 5th 软组织分类强调STAT6核免疫组化作为NAB2-STAT6融合的替代标记"
-          },
-          {
-            "id": "dfsp",
-            "label": "隆突性皮肤纤维肉瘤（CD34阳性，COL1A1-PDGFB融合）",
-            "reason": "补充分子改变以符合WHO 5th诊断标准"
-          },
-          {
-            "id": "synovial-sarcoma",
-            "label": "滑膜肉瘤（TLE1阳性，SS18-SSX融合；SS18-SSX特异性抗体阳性）",
-            "reason": "WHO 5th推荐SS18-SSX融合特异性抗体替代FISH作为一线诊断"
-          },
-          {
-            "id": "gist",
-            "label": "胃肠道间质瘤（CD117/DOG1阳性；KIT/PDGFRA/SDH分型）",
-            "reason": "补充SDH缺陷型GIST分型，符合WHO 5th消化系统肿瘤分类"
-          },
-          {
-            "id": "leiomyosarcoma",
-            "label": "平滑肌肉瘤（SMA/Desmin/h-Caldesmon阳性）",
-            "reason": "增加h-Caldesmon提高平滑肌分化特异性"
-          }
-        ]
-      },
-      "_low_confidence": true,
-      "_reason": "未获取到现有flowchart的实际节点ID列表，patch中引用的节点ID（如undiff-spindle、s100-positive、emsa-myogenic、sft、dfsp等）系基于常见梭形细胞鉴别流程的推断命名，实际应用前需与data/flowcharts.json中spindle-cell-ihc的真实节点ID核对匹配"
-    }
+    ]
   },
   {
     "id": "lymphoma-subtyping",
@@ -382,16 +336,7 @@
         "to": "nktcl",
         "label": "−"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [],
-        "addEdges": [],
-        "updateNodes": []
-      },
-      "_reason": "already up to date",
-      "_low_confidence": true
-    }
+    ]
   },
   {
     "id": "soft-tissue-sarcoma",
@@ -480,6 +425,34 @@
         "color": "#ec4899",
         "x": 900,
         "y": 400
+      },
+      {
+        "id": "smarca4-deficient",
+        "type": "result",
+        "label": "SMARCA4缺陷未分化肿瘤 (BRG1/SMARCA4丢失)",
+        "x": 60,
+        "y": 490
+      },
+      {
+        "id": "bcor-sarcoma",
+        "type": "result",
+        "label": "BCOR重排肉瘤 (BCOR+/CCNB3+)",
+        "x": 260,
+        "y": 490
+      },
+      {
+        "id": "cic-dux4",
+        "type": "result",
+        "label": "CIC::DUX4重排肉瘤 (WT1+/ETV4+)",
+        "x": 460,
+        "y": 490
+      },
+      {
+        "id": "round-cell-undiff",
+        "type": "decision",
+        "label": "未分化小圆细胞肉瘤 (CD99+/desmin-/myogenin-)",
+        "x": 660,
+        "y": 490
       }
     ],
     "edges": [
@@ -531,65 +504,18 @@
         "from": "pleo",
         "to": "ddlps",
         "label": "MDM2+"
+      },
+      {
+        "from": "round-cell-undiff",
+        "to": "bcor-sarcoma",
+        "label": "BCOR+ / CCNB3+"
+      },
+      {
+        "from": "round-cell-undiff",
+        "to": "cic-dux4",
+        "label": "WT1(C端)+ / ETV4+"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "smarca4-deficient",
-            "type": "leaf",
-            "label": "SMARCA4缺陷未分化肿瘤 (BRG1/SMARCA4丢失)"
-          },
-          {
-            "id": "bcor-sarcoma",
-            "type": "leaf",
-            "label": "BCOR重排肉瘤 (BCOR+/CCNB3+)"
-          },
-          {
-            "id": "cic-dux4",
-            "type": "leaf",
-            "label": "CIC::DUX4重排肉瘤 (WT1+/ETV4+)"
-          },
-          {
-            "id": "round-cell-undiff",
-            "type": "decision",
-            "label": "未分化小圆细胞肉瘤 (CD99+/desmin-/myogenin-)"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "round-cell-undiff",
-            "to": "bcor-sarcoma",
-            "label": "BCOR+ / CCNB3+"
-          },
-          {
-            "from": "round-cell-undiff",
-            "to": "cic-dux4",
-            "label": "WT1(C端)+ / ETV4+"
-          },
-          {
-            "from": "undifferentiated",
-            "to": "smarca4-deficient",
-            "label": "SMARCA4/BRG1核表达缺失"
-          }
-        ],
-        "updateNodes": [
-          {
-            "id": "ewing-like",
-            "label": "Ewing样小圆细胞肉瘤 (需分子进一步分型)",
-            "reason": "WHO 5th (2020软组织卷)将原'Ewing样肉瘤'拆分为CIC重排、BCOR重排及未分类小圆细胞肉瘤，原节点需更新标签并下接分子分型"
-          },
-          {
-            "id": "ssrcs",
-            "label": "未分化小圆细胞肉瘤 (WHO 5th类别)",
-            "reason": "按WHO 5th术语统一，使用'未分化小圆细胞肉瘤'替代旧称'小圆细胞未分化肉瘤'"
-          }
-        ],
-        "_low_confidence": true,
-        "_reason": "未能确认flowcharts.json中soft-tissue-sarcoma流程图的原始节点ID（如undifferentiated/ewing-like/ssrcs），以上patch基于WHO 5th软组织肿瘤分类(2020)及CSCO软组织肉瘤诊疗指南2023的标准更新方向，具体节点ID需与源文件核对后再合并"
-      }
-    }
+    ]
   },
   {
     "id": "thyroid-follicular-lesion",
@@ -670,6 +596,20 @@
         "color": "#22c55e",
         "x": 780,
         "y": 550
+      },
+      {
+        "id": "nifpt",
+        "type": "result",
+        "label": "具有乳头样核特征的非浸润性滤泡性甲状腺肿瘤（NIFTP）",
+        "x": 60,
+        "y": 640
+      },
+      {
+        "id": "dhgtc",
+        "type": "result",
+        "label": "高级别分化型甲状腺癌（DHGTC）",
+        "x": 260,
+        "y": 640
       }
     ],
     "edges": [
@@ -717,44 +657,7 @@
         "to": "fa",
         "label": "无浸润"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "nifpt",
-            "type": "leaf",
-            "label": "具有乳头样核特征的非浸润性滤泡性甲状腺肿瘤（NIFTP）"
-          },
-          {
-            "id": "dhgtc",
-            "type": "leaf",
-            "label": "高级别分化型甲状腺癌（DHGTC）"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "encapsulated-follicular-pattern",
-            "to": "nifpt",
-            "label": "包膜完整、无浸润、具乳头样核特征"
-          },
-          {
-            "from": "follicular-carcinoma",
-            "to": "dhgtc",
-            "label": "核分裂≥5/2mm² 或肿瘤性坏死，无间变特征"
-          }
-        ],
-        "updateNodes": [
-          {
-            "id": "follicular-carcinoma-ht",
-            "label": "透明细胞型滤泡性甲状腺癌（WHO 5th 归入嗜酸细胞腺癌独立实体）",
-            "reason": "WHO 5th 将 Hürthle 细胞肿瘤独立为嗜酸细胞腺瘤/癌（Oncocytic carcinoma），不再作为滤泡癌亚型"
-          }
-        ]
-      },
-      "_low_confidence": true,
-      "_reason": "未获取到 data/flowcharts.json 中 thyroid-follicular-lesion 的实际节点 ID，建议所列 patch 与现有节点 ID 对齐后再合并；若流程图已包含 NIFTP / 嗜酸细胞癌独立节点及 DHGTC 分支，则无需修改"
-    }
+    ]
   },
   {
     "id": "prostate-adenocarcinoma-vs-benign",
@@ -870,16 +773,7 @@
         "to": "asap",
         "label": "阴性/弱"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [],
-        "addEdges": [],
-        "updateNodes": []
-      },
-      "_reason": "already up to date",
-      "_low_confidence": true
-    }
+    ]
   },
   {
     "id": "small-round-blue-cell",
@@ -963,7 +857,7 @@
       {
         "id": "neuroblastoma",
         "type": "result",
-        "label": "神经母细胞瘤",
+        "label": "神经母细胞瘤：PHOX2B+，Syn+，CgA+，INSM1+，CD56+；CK-，Desmin-",
         "color": "#ec4899",
         "x": 150,
         "y": 730
@@ -982,6 +876,41 @@
         "color": "#22c55e",
         "x": 150,
         "y": 850
+      },
+      {
+        "id": "cic-sarcoma",
+        "type": "result",
+        "label": "CIC重排肉瘤（CIC-rearranged sarcoma）：CD99弱/斑驳+，WT1(C端)+，ETV4+，DUX4+；FISH/NGS示CIC-DUX4等融合",
+        "x": 60,
+        "y": 940
+      },
+      {
+        "id": "bcor-sarcoma",
+        "type": "result",
+        "label": "BCOR重排肉瘤（BCOR-rearranged sarcoma）：BCOR+，CCNB3+（BCOR-CCNB3型），SATB2+，CD99可+；NGS确认BCOR融合/ITD",
+        "x": 260,
+        "y": 940
+      },
+      {
+        "id": "ewsr1-non-ets",
+        "type": "result",
+        "label": "伴EWSR1-非ETS融合的圆细胞肉瘤（如EWSR1-NFATC2、FUS-NFATC2）：形态类尤文，需NGS鉴别",
+        "x": 460,
+        "y": 940
+      },
+      {
+        "id": "smarca4-ut",
+        "type": "result",
+        "label": "SMARCA4缺陷未分化肿瘤：BRG1/SMARCA4核表达缺失，CK点灶+，SALL4+/-，Syn可+",
+        "x": 660,
+        "y": 940
+      },
+      {
+        "id": "nut-carcinoma",
+        "type": "result",
+        "label": "NUT癌：NUT(C52)核斑点状强+，p63/p40+，CK+；NUTM1融合",
+        "x": 860,
+        "y": 940
       }
     ],
     "edges": [
@@ -1044,89 +973,7 @@
         "to": "merkel",
         "label": "+"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "cic-sarcoma",
-            "type": "leaf",
-            "label": "CIC重排肉瘤（CIC-rearranged sarcoma）：CD99弱/斑驳+，WT1(C端)+，ETV4+，DUX4+；FISH/NGS示CIC-DUX4等融合"
-          },
-          {
-            "id": "bcor-sarcoma",
-            "type": "leaf",
-            "label": "BCOR重排肉瘤（BCOR-rearranged sarcoma）：BCOR+，CCNB3+（BCOR-CCNB3型），SATB2+，CD99可+；NGS确认BCOR融合/ITD"
-          },
-          {
-            "id": "ewsr1-non-ets",
-            "type": "leaf",
-            "label": "伴EWSR1-非ETS融合的圆细胞肉瘤（如EWSR1-NFATC2、FUS-NFATC2）：形态类尤文，需NGS鉴别"
-          },
-          {
-            "id": "smarca4-ut",
-            "type": "leaf",
-            "label": "SMARCA4缺陷未分化肿瘤：BRG1/SMARCA4核表达缺失，CK点灶+，SALL4+/-，Syn可+"
-          },
-          {
-            "id": "nut-carcinoma",
-            "type": "leaf",
-            "label": "NUT癌：NUT(C52)核斑点状强+，p63/p40+，CK+；NUTM1融合"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "cd99-positive",
-            "to": "cic-sarcoma",
-            "label": "CD99弱/斑驳+ 且 WT1(C端)+/ETV4+"
-          },
-          {
-            "from": "cd99-positive",
-            "to": "bcor-sarcoma",
-            "label": "BCOR+ / CCNB3+"
-          },
-          {
-            "from": "cd99-positive",
-            "to": "ewsr1-non-ets",
-            "label": "形态类尤文但FLI1/ERG-，NGS非EWSR1-ETS融合"
-          },
-          {
-            "from": "ck-positive",
-            "to": "smarca4-ut",
-            "label": "BRG1/SMARCA4核表达缺失"
-          },
-          {
-            "from": "ck-positive",
-            "to": "nut-carcinoma",
-            "label": "NUT核斑点状+"
-          }
-        ],
-        "updateNodes": [
-          {
-            "id": "ewing-sarcoma",
-            "label": "尤文肉瘤（Ewing sarcoma）：CD99膜强+，NKX2.2+，FLI1/ERG+；EWSR1/FUS-ETS家族融合（FISH/NGS确认）",
-            "reason": "依据WHO 5th（软组织与骨肿瘤，2020）将Ewing样肉瘤拆分为独立实体，经典尤文肉瘤定义限定于EWSR1/FUS-ETS融合；需加NKX2.2以提升鉴别力"
-          },
-          {
-            "id": "dsrct",
-            "label": "促结缔组织增生性小圆细胞肿瘤（DSRCT）：Desmin点状核旁+，WT1(C端)+，CK+，NSE+；EWSR1-WT1融合",
-            "reason": "强调WT1需使用C端抗体（N端在CIC肉瘤亦可+），避免与CIC-DUX4肉瘤混淆"
-          },
-          {
-            "id": "rhabdomyosarcoma",
-            "label": "横纹肌肉瘤：Desmin+，Myogenin+，MyoD1+；腺泡型PAX3/7-FOXO1融合，胚胎型常无特异融合",
-            "reason": "WHO 5th新增梭形/硬化型RMS（MYOD1突变）及VGLL2/NCOA2融合性婴幼儿RMS，建议标签补充分子亚型提示"
-          },
-          {
-            "id": "neuroblastoma",
-            "label": "神经母细胞瘤：PHOX2B+，Syn+，CgA+，INSM1+，CD56+；CK-，Desmin-",
-            "reason": "补充INSM1作为神经内分泌高敏感标记，符合2023版神经母细胞瘤病理诊断共识"
-          }
-        ]
-      },
-      "_reason": "依据WHO 5th（骨与软组织肿瘤2020、胸部肿瘤2021、CNS 2021）更新：CIC重排肉瘤与BCOR重排肉瘤已独立于Ewing样肉瘤；SMARCA4缺陷未分化肿瘤、NUT癌为需加入小圆蓝细胞鉴别树的关键实体；经典尤文肉瘤定义收紧至EWSR1/FUS-ETS融合。国内CSCO《软组织肉瘤诊疗指南（2023）》与《恶性骨肿瘤诊疗指南（2023）》亦采纳上述分类。",
-      "_low_confidence": true
-    }
+    ]
   },
   {
     "id": "clear-cell-tumors",
@@ -1253,16 +1100,7 @@
         "to": "melanoma",
         "label": "+"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [],
-        "addEdges": [],
-        "updateNodes": []
-      },
-      "_reason": "already up to date",
-      "_low_confidence": true
-    }
+    ]
   },
   {
     "id": "ck7-ck20-algorithm",
@@ -1350,6 +1188,132 @@
         "color": "#8b5cf6",
         "x": 150,
         "y": 730
+      },
+      {
+        "id": "pax8-positive",
+        "type": "decision",
+        "label": "PAX8阳性？",
+        "x": 60,
+        "y": 820
+      },
+      {
+        "id": "gata3-positive",
+        "type": "decision",
+        "label": "GATA3阳性？",
+        "x": 260,
+        "y": 820
+      },
+      {
+        "id": "ttf1-napsinA",
+        "type": "decision",
+        "label": "TTF-1/Napsin A阳性？",
+        "x": 460,
+        "y": 820
+      },
+      {
+        "id": "ck5-6-p40",
+        "type": "decision",
+        "label": "CK5/6或p40阳性？",
+        "x": 660,
+        "y": 820
+      },
+      {
+        "id": "er-positive",
+        "type": "decision",
+        "label": "ER阳性？",
+        "x": 860,
+        "y": 820
+      },
+      {
+        "id": "mammaglobin-gcdfp15",
+        "type": "decision",
+        "label": "Mammaglobin/GCDFP-15阳性？",
+        "x": 1060,
+        "y": 820
+      },
+      {
+        "id": "lung-adenocarcinoma",
+        "type": "result",
+        "label": "肺腺癌",
+        "x": 1260,
+        "y": 820
+      },
+      {
+        "id": "lung-squamous",
+        "type": "result",
+        "label": "肺鳞状细胞癌",
+        "x": 1460,
+        "y": 820
+      },
+      {
+        "id": "breast-carcinoma",
+        "type": "result",
+        "label": "乳腺癌（考虑Luminal型）",
+        "x": 1660,
+        "y": 820
+      },
+      {
+        "id": "breast-tnbc",
+        "type": "result",
+        "label": "乳腺癌（三阴性/基底样亚型）",
+        "x": 1860,
+        "y": 820
+      },
+      {
+        "id": "urothelial-carcinoma",
+        "type": "result",
+        "label": "尿路上皮癌",
+        "x": 2060,
+        "y": 820
+      },
+      {
+        "id": "thyroid-carcinoma",
+        "type": "result",
+        "label": "甲状腺癌（考虑PAX8+/TTF-1+）",
+        "x": 2260,
+        "y": 820
+      },
+      {
+        "id": "renal-cell-carcinoma",
+        "type": "result",
+        "label": "肾细胞癌（PAX8+/CK7可±）",
+        "x": 2460,
+        "y": 820
+      },
+      {
+        "id": "mullerian-origin",
+        "type": "decision",
+        "label": "WT1/ER/PAX8组合提示Müllerian来源？",
+        "x": 2660,
+        "y": 820
+      },
+      {
+        "id": "ovarian-endometrial",
+        "type": "result",
+        "label": "卵巢/子宫内膜来源腺癌",
+        "x": 2860,
+        "y": 820
+      },
+      {
+        "id": "pancreatobiliary",
+        "type": "decision",
+        "label": "SMAD4缺失/CA19-9表型？",
+        "x": 3060,
+        "y": 820
+      },
+      {
+        "id": "pancreatobiliary-carcinoma",
+        "type": "result",
+        "label": "胰胆管来源腺癌",
+        "x": 3260,
+        "y": 820
+      },
+      {
+        "id": "mesothelioma-check",
+        "type": "decision",
+        "label": "Calretinin/WT1/D2-40阳性？",
+        "x": 3460,
+        "y": 820
       }
     ],
     "edges": [
@@ -1401,214 +1365,103 @@
         "from": "calretinin",
         "to": "mesothelioma",
         "label": "+"
-      }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "pax8-positive",
-            "type": "decision",
-            "label": "PAX8阳性？"
-          },
-          {
-            "id": "gata3-positive",
-            "type": "decision",
-            "label": "GATA3阳性？"
-          },
-          {
-            "id": "ttf1-napsinA",
-            "type": "decision",
-            "label": "TTF-1/Napsin A阳性？"
-          },
-          {
-            "id": "ck5-6-p40",
-            "type": "decision",
-            "label": "CK5/6或p40阳性？"
-          },
-          {
-            "id": "er-positive",
-            "type": "decision",
-            "label": "ER阳性？"
-          },
-          {
-            "id": "mammaglobin-gcdfp15",
-            "type": "decision",
-            "label": "Mammaglobin/GCDFP-15阳性？"
-          },
-          {
-            "id": "lung-adenocarcinoma",
-            "type": "leaf",
-            "label": "肺腺癌"
-          },
-          {
-            "id": "lung-squamous",
-            "type": "leaf",
-            "label": "肺鳞状细胞癌"
-          },
-          {
-            "id": "breast-carcinoma",
-            "type": "leaf",
-            "label": "乳腺癌（考虑Luminal型）"
-          },
-          {
-            "id": "breast-tnbc",
-            "type": "leaf",
-            "label": "乳腺癌（三阴性/基底样亚型）"
-          },
-          {
-            "id": "urothelial-carcinoma",
-            "type": "leaf",
-            "label": "尿路上皮癌"
-          },
-          {
-            "id": "thyroid-carcinoma",
-            "type": "leaf",
-            "label": "甲状腺癌（考虑PAX8+/TTF-1+）"
-          },
-          {
-            "id": "renal-cell-carcinoma",
-            "type": "leaf",
-            "label": "肾细胞癌（PAX8+/CK7可±）"
-          },
-          {
-            "id": "mullerian-origin",
-            "type": "decision",
-            "label": "WT1/ER/PAX8组合提示Müllerian来源？"
-          },
-          {
-            "id": "ovarian-endometrial",
-            "type": "leaf",
-            "label": "卵巢/子宫内膜来源腺癌"
-          },
-          {
-            "id": "pancreatobiliary",
-            "type": "decision",
-            "label": "SMAD4缺失/CA19-9表型？"
-          },
-          {
-            "id": "pancreatobiliary-carcinoma",
-            "type": "leaf",
-            "label": "胰胆管来源腺癌"
-          },
-          {
-            "id": "mesothelioma-check",
-            "type": "decision",
-            "label": "Calretinin/WT1/D2-40阳性？"
-          },
-          {
-            "id": "mesothelioma",
-            "type": "leaf",
-            "label": "上皮样间皮瘤"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "root",
-            "to": "pax8-positive",
-            "label": "起始"
-          },
-          {
-            "from": "pax8-positive",
-            "to": "mullerian-origin",
-            "label": "阳性"
-          },
-          {
-            "from": "mullerian-origin",
-            "to": "ovarian-endometrial",
-            "label": "是"
-          },
-          {
-            "from": "mullerian-origin",
-            "to": "thyroid-carcinoma",
-            "label": "否（TTF-1+/Thyroglobulin+）"
-          },
-          {
-            "from": "mullerian-origin",
-            "to": "renal-cell-carcinoma",
-            "label": "否（CD10+/RCC+/CAIX+）"
-          },
-          {
-            "from": "pax8-positive",
-            "to": "ttf1-napsinA",
-            "label": "阴性"
-          },
-          {
-            "from": "ttf1-napsinA",
-            "to": "lung-adenocarcinoma",
-            "label": "阳性"
-          },
-          {
-            "from": "ttf1-napsinA",
-            "to": "ck5-6-p40",
-            "label": "阴性"
-          },
-          {
-            "from": "ck5-6-p40",
-            "to": "lung-squamous",
-            "label": "阳性且形态符合"
-          },
-          {
-            "from": "ck5-6-p40",
-            "to": "gata3-positive",
-            "label": "阴性"
-          },
-          {
-            "from": "gata3-positive",
-            "to": "er-positive",
-            "label": "阳性"
-          },
-          {
-            "from": "er-positive",
-            "to": "mammaglobin-gcdfp15",
-            "label": "阳性"
-          },
-          {
-            "from": "mammaglobin-gcdfp15",
-            "to": "breast-carcinoma",
-            "label": "阳性"
-          },
-          {
-            "from": "mammaglobin-gcdfp15",
-            "to": "urothelial-carcinoma",
-            "label": "阴性且GATA3强阳"
-          },
-          {
-            "from": "er-positive",
-            "to": "urothelial-carcinoma",
-            "label": "阴性"
-          },
-          {
-            "from": "gata3-positive",
-            "to": "breast-tnbc",
-            "label": "阴性（需结合SOX10/AR）"
-          },
-          {
-            "from": "gata3-positive",
-            "to": "pancreatobiliary",
-            "label": "阴性且消化道表型"
-          },
-          {
-            "from": "pancreatobiliary",
-            "to": "pancreatobiliary-carcinoma",
-            "label": "是"
-          },
-          {
-            "from": "pancreatobiliary",
-            "to": "mesothelioma-check",
-            "label": "否且浆膜受累"
-          },
-          {
-            "from": "mesothelioma-check",
-            "to": "mesothelioma",
-            "label": "阳性"
-          }
-        ],
-        "updateNodes": []
       },
-      "_low_confidence": true,
-      "_reason": "未获取现有流程图nodes/edges原始结构，以上patch基于CK7+/CK20-常见鉴别诊断逻辑（参照WHO 5th及CSCO 2024相关瘤种指南）提出补充建议；具体id是否与现有节点冲突需人工比对后再合并。若现图已包含对应节点，请据实改为updateNodes。"
-    }
+      {
+        "from": "pax8-positive",
+        "to": "mullerian-origin",
+        "label": "阳性"
+      },
+      {
+        "from": "mullerian-origin",
+        "to": "ovarian-endometrial",
+        "label": "是"
+      },
+      {
+        "from": "mullerian-origin",
+        "to": "thyroid-carcinoma",
+        "label": "否（TTF-1+/Thyroglobulin+）"
+      },
+      {
+        "from": "mullerian-origin",
+        "to": "renal-cell-carcinoma",
+        "label": "否（CD10+/RCC+/CAIX+）"
+      },
+      {
+        "from": "pax8-positive",
+        "to": "ttf1-napsinA",
+        "label": "阴性"
+      },
+      {
+        "from": "ttf1-napsinA",
+        "to": "lung-adenocarcinoma",
+        "label": "阳性"
+      },
+      {
+        "from": "ttf1-napsinA",
+        "to": "ck5-6-p40",
+        "label": "阴性"
+      },
+      {
+        "from": "ck5-6-p40",
+        "to": "lung-squamous",
+        "label": "阳性且形态符合"
+      },
+      {
+        "from": "ck5-6-p40",
+        "to": "gata3-positive",
+        "label": "阴性"
+      },
+      {
+        "from": "gata3-positive",
+        "to": "er-positive",
+        "label": "阳性"
+      },
+      {
+        "from": "er-positive",
+        "to": "mammaglobin-gcdfp15",
+        "label": "阳性"
+      },
+      {
+        "from": "mammaglobin-gcdfp15",
+        "to": "breast-carcinoma",
+        "label": "阳性"
+      },
+      {
+        "from": "mammaglobin-gcdfp15",
+        "to": "urothelial-carcinoma",
+        "label": "阴性且GATA3强阳"
+      },
+      {
+        "from": "er-positive",
+        "to": "urothelial-carcinoma",
+        "label": "阴性"
+      },
+      {
+        "from": "gata3-positive",
+        "to": "breast-tnbc",
+        "label": "阴性（需结合SOX10/AR）"
+      },
+      {
+        "from": "gata3-positive",
+        "to": "pancreatobiliary",
+        "label": "阴性且消化道表型"
+      },
+      {
+        "from": "pancreatobiliary",
+        "to": "pancreatobiliary-carcinoma",
+        "label": "是"
+      },
+      {
+        "from": "pancreatobiliary",
+        "to": "mesothelioma-check",
+        "label": "否且浆膜受累"
+      },
+      {
+        "from": "mesothelioma-check",
+        "to": "mesothelioma",
+        "label": "阳性"
+      }
+    ]
   },
   {
     "id": "ck20-pos-algorithm",
@@ -1659,6 +1512,41 @@
         "color": "#f59e0b",
         "x": 400,
         "y": 370
+      },
+      {
+        "id": "satb2-check",
+        "type": "decision",
+        "label": "SATB2 检测",
+        "x": 60,
+        "y": 460
+      },
+      {
+        "id": "cdx2-check",
+        "type": "decision",
+        "label": "CDX2 检测",
+        "x": 260,
+        "y": 460
+      },
+      {
+        "id": "merkel-leaf",
+        "type": "result",
+        "label": "Merkel 细胞癌（CK20 核旁点状 + INSM1/Syn/CgA 阳性）",
+        "x": 460,
+        "y": 460
+      },
+      {
+        "id": "colorectal-leaf",
+        "type": "result",
+        "label": "结直肠腺癌（CDX2+/SATB2+/CK20+/CK7-）",
+        "x": 660,
+        "y": 460
+      },
+      {
+        "id": "appendiceal-leaf",
+        "type": "result",
+        "label": "阑尾/下消化道来源（SATB2+ 提示）",
+        "x": 860,
+        "y": 460
       }
     ],
     "edges": [
@@ -1685,75 +1573,23 @@
         "from": "ck20-dot",
         "to": "appendiceal",
         "label": "−"
+      },
+      {
+        "from": "cdx2-check",
+        "to": "satb2-check",
+        "label": "CDX2+"
+      },
+      {
+        "from": "satb2-check",
+        "to": "colorectal-leaf",
+        "label": "SATB2+ 强弥漫"
+      },
+      {
+        "from": "satb2-check",
+        "to": "appendiceal-leaf",
+        "label": "SATB2+ 局灶"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "satb2-check",
-            "type": "decision",
-            "label": "SATB2 检测"
-          },
-          {
-            "id": "cdx2-check",
-            "type": "decision",
-            "label": "CDX2 检测"
-          },
-          {
-            "id": "merkel-leaf",
-            "type": "leaf",
-            "label": "Merkel 细胞癌（CK20 核旁点状 + INSM1/Syn/CgA 阳性）"
-          },
-          {
-            "id": "colorectal-leaf",
-            "type": "leaf",
-            "label": "结直肠腺癌（CDX2+/SATB2+/CK20+/CK7-）"
-          },
-          {
-            "id": "appendiceal-leaf",
-            "type": "leaf",
-            "label": "阑尾/下消化道来源（SATB2+ 提示）"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "ck20-pos-root",
-            "to": "cdx2-check",
-            "label": "上皮性形态"
-          },
-          {
-            "from": "cdx2-check",
-            "to": "satb2-check",
-            "label": "CDX2+"
-          },
-          {
-            "from": "satb2-check",
-            "to": "colorectal-leaf",
-            "label": "SATB2+ 强弥漫"
-          },
-          {
-            "from": "satb2-check",
-            "to": "appendiceal-leaf",
-            "label": "SATB2+ 局灶"
-          },
-          {
-            "from": "ck20-pos-root",
-            "to": "merkel-leaf",
-            "label": "小圆蓝细胞形态 + 神经内分泌标记阳性"
-          }
-        ],
-        "updateNodes": [
-          {
-            "id": "ck20-pos-root",
-            "label": "CK7-/CK20+ 肿瘤 IHC 鉴别起点（参考 WHO 5th 消化系统肿瘤分类）",
-            "reason": "补充 WHO 5th 版参考，明确 CK7-/CK20+ 免疫表型适用范围"
-          }
-        ],
-        "_low_confidence": true,
-        "_reason": "未获取到原流程图 nodes/edges 原始结构，基于 CK7-/CK20+ 经典鉴别路径（结直肠腺癌、Merkel 细胞癌）补充 SATB2/CDX2 决策节点与 INSM1 神经内分泌标记，具体节点 id 需与 data/flowcharts.json 实际字段对齐后人工复核"
-      }
-    }
+    ]
   },
   {
     "id": "melanocytic-lesion",
@@ -1804,6 +1640,41 @@
         "color": "#f59e0b",
         "x": 500,
         "y": 400
+      },
+      {
+        "id": "prame-check",
+        "type": "decision",
+        "label": "PRAME 弥漫强阳性？",
+        "x": 60,
+        "y": 490
+      },
+      {
+        "id": "prame-positive",
+        "type": "result",
+        "label": "支持黑色素瘤（恶性）",
+        "x": 260,
+        "y": 490
+      },
+      {
+        "id": "prame-negative",
+        "type": "result",
+        "label": "倾向良性痣/不典型增生，结合形态",
+        "x": 460,
+        "y": 490
+      },
+      {
+        "id": "ck-check",
+        "type": "decision",
+        "label": "CK（AE1/AE3）阳性？",
+        "x": 660,
+        "y": 490
+      },
+      {
+        "id": "ck-positive-leaf",
+        "type": "result",
+        "label": "排除低分化癌（如转移性癌、肉瘤样癌）",
+        "x": 860,
+        "y": 490
       }
     ],
     "edges": [
@@ -1830,80 +1701,23 @@
         "from": "ki67",
         "to": "spitz",
         "label": "低"
+      },
+      {
+        "from": "prame-check",
+        "to": "prame-positive",
+        "label": "是"
+      },
+      {
+        "from": "prame-check",
+        "to": "prame-negative",
+        "label": "否"
+      },
+      {
+        "from": "ck-check",
+        "to": "ck-positive-leaf",
+        "label": "是"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "prame-check",
-            "type": "decision",
-            "label": "PRAME 弥漫强阳性？"
-          },
-          {
-            "id": "prame-positive",
-            "type": "leaf",
-            "label": "支持黑色素瘤（恶性）"
-          },
-          {
-            "id": "prame-negative",
-            "type": "leaf",
-            "label": "倾向良性痣/不典型增生，结合形态"
-          },
-          {
-            "id": "ck-check",
-            "type": "decision",
-            "label": "CK（AE1/AE3）阳性？"
-          },
-          {
-            "id": "ck-positive-leaf",
-            "type": "leaf",
-            "label": "排除低分化癌（如转移性癌、肉瘤样癌）"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "sox10-positive",
-            "to": "prame-check",
-            "label": "进一步良恶性鉴别"
-          },
-          {
-            "from": "prame-check",
-            "to": "prame-positive",
-            "label": "是"
-          },
-          {
-            "from": "prame-check",
-            "to": "prame-negative",
-            "label": "否"
-          },
-          {
-            "from": "sox10-negative",
-            "to": "ck-check",
-            "label": "需排除上皮来源"
-          },
-          {
-            "from": "ck-check",
-            "to": "ck-positive-leaf",
-            "label": "是"
-          }
-        ],
-        "updateNodes": [
-          {
-            "id": "s100-check",
-            "label": "S-100 / SOX10 阳性？",
-            "reason": "SOX10 特异性优于 S-100，WHO 5th 皮肤肿瘤分类推荐联合使用，SOX10 对去分化黑色素瘤更敏感"
-          },
-          {
-            "id": "hmb45-check",
-            "label": "HMB45 / Melan-A / MITF 分化标记阳性？",
-            "reason": "WHO 5th 推荐联合使用多种黑色素细胞分化标记以提高敏感性，尤其在结缔组织增生性黑色素瘤中"
-          }
-        ],
-        "_low_confidence": true,
-        "_reason": "未获取现有 flowchart 节点实际 ID 与结构，补丁基于黑色素细胞病变 IHC 鉴别流程的典型节点命名推测；建议对照 data/flowcharts.json 中实际节点 ID 再行合并。核心更新点依据 WHO Skin Tumours 5th (2023) 及《中国黑色素瘤诊疗指南 2023》：(1) 新增 PRAME 作为良恶性鉴别关键节点；(2) SOX10 与 S-100 并列推荐；(3) 明确 CK 作为排除上皮来源的分支"
-      }
-    }
+    ]
   },
   {
     "id": "neuroendocrine-grading",
@@ -2019,17 +1833,7 @@
         "to": "lcnec",
         "label": "大细胞"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [],
-        "addEdges": [],
-        "updateNodes": []
-      },
-      "_reason": "already up to date",
-      "_low_confidence": true,
-      "_note": "未提供当前流程图 nodes/edges 具体内容，无法逐节点核对；基于 WHO 5th (2022 消化系统/2022 内分泌与神经内分泌) + CSCO 胃肠胰神经内分泌肿瘤诊疗指南 2022 版，核心分级阈值（NET G1: Ki-67<3% 且核分裂<2/2mm²；NET G2: Ki-67 3–20% 或核分裂 2–20/2mm²；NET G3: Ki-67>20% 且分化良好；NEC: 分化差，小细胞型/大细胞型；MiNEN: 神经内分泌成分≥30%）未发生变化，如现有流程图节点已包含 NET G1/G2/G3、NEC(小细胞/大细胞)、MiNEN 分支即视为与最新指南一致"
-    }
+    ]
   },
   {
     "id": "glandular-vs-squamous",
@@ -2132,16 +1936,7 @@
         "to": "adenosquamous",
         "label": "两者均+"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [],
-        "addEdges": [],
-        "updateNodes": []
-      },
-      "_reason": "already up to date",
-      "_low_confidence": true
-    }
+    ]
   },
   {
     "id": "rcc-subtypes",
@@ -2222,6 +2017,62 @@
         "color": "#8b5cf6",
         "x": 600,
         "y": 610
+      },
+      {
+        "id": "esc-rcc",
+        "type": "result",
+        "label": "嗜酸性实性囊性肾细胞癌 (ESC RCC)：CK20+、CK7-、CD117-/弱、TSC1/TSC2 突变",
+        "x": 60,
+        "y": 700
+      },
+      {
+        "id": "fh-deficient-rcc",
+        "type": "result",
+        "label": "FH 缺陷型肾细胞癌：FH 表达缺失、2SC 弥漫阳性、CK7-、AMACR+",
+        "x": 260,
+        "y": 700
+      },
+      {
+        "id": "sdh-deficient-rcc",
+        "type": "result",
+        "label": "SDH 缺陷型肾细胞癌：SDHB 表达缺失、CK 常阴性、PAX8+",
+        "x": 460,
+        "y": 700
+      },
+      {
+        "id": "mit-family-rcc",
+        "type": "result",
+        "label": "MiT 家族易位型肾细胞癌：TFE3 或 TFEB 核阳性、Cathepsin K+、Melan-A/HMB45 可阳性、CK 常弱阳",
+        "x": 660,
+        "y": 700
+      },
+      {
+        "id": "eloc-mutated-rcc",
+        "type": "result",
+        "label": "ELOC (TCEB1) 突变型肾细胞癌：CK7+、CA9+（杯状/斑块状）、17 号染色体单体",
+        "x": 860,
+        "y": 700
+      },
+      {
+        "id": "alk-rearranged-rcc",
+        "type": "result",
+        "label": "ALK 重排肾细胞癌：ALK 阳性、PAX8+、CK 阳性、VCL-ALK 融合",
+        "x": 1060,
+        "y": 700
+      },
+      {
+        "id": "decision-fh-sdh",
+        "type": "decision",
+        "label": "FH / SDHB 免疫组化是否表达缺失？",
+        "x": 1260,
+        "y": 700
+      },
+      {
+        "id": "decision-tfe-cathk",
+        "type": "decision",
+        "label": "TFE3 / TFEB 是否核阳性伴 Cathepsin K 阳性？",
+        "x": 1460,
+        "y": 700
       }
     ],
     "edges": [
@@ -2268,104 +2119,32 @@
         "from": "tfe3",
         "to": "translocation",
         "label": "+"
+      },
+      {
+        "from": "decision-fh-sdh",
+        "to": "fh-deficient-rcc",
+        "label": "FH 缺失 + 2SC+"
+      },
+      {
+        "from": "decision-fh-sdh",
+        "to": "sdh-deficient-rcc",
+        "label": "SDHB 缺失"
+      },
+      {
+        "from": "decision-tfe-cathk",
+        "to": "mit-family-rcc",
+        "label": "阳性"
+      },
+      {
+        "from": "decision-tfe-cathk",
+        "to": "esc-rcc",
+        "label": "阴性且 CK20+/CK7-"
+      },
+      {
+        "from": "decision-tfe-cathk",
+        "to": "alk-rearranged-rcc",
+        "label": "ALK 阳性分支"
       }
-    ],
-    "_enhance_flowchart_validate": {
-      "patch": {
-        "addNodes": [
-          {
-            "id": "esc-rcc",
-            "type": "leaf",
-            "label": "嗜酸性实性囊性肾细胞癌 (ESC RCC)：CK20+、CK7-、CD117-/弱、TSC1/TSC2 突变"
-          },
-          {
-            "id": "fh-deficient-rcc",
-            "type": "leaf",
-            "label": "FH 缺陷型肾细胞癌：FH 表达缺失、2SC 弥漫阳性、CK7-、AMACR+"
-          },
-          {
-            "id": "sdh-deficient-rcc",
-            "type": "leaf",
-            "label": "SDH 缺陷型肾细胞癌：SDHB 表达缺失、CK 常阴性、PAX8+"
-          },
-          {
-            "id": "mit-family-rcc",
-            "type": "leaf",
-            "label": "MiT 家族易位型肾细胞癌：TFE3 或 TFEB 核阳性、Cathepsin K+、Melan-A/HMB45 可阳性、CK 常弱阳"
-          },
-          {
-            "id": "eloc-mutated-rcc",
-            "type": "leaf",
-            "label": "ELOC (TCEB1) 突变型肾细胞癌：CK7+、CA9+（杯状/斑块状）、17 号染色体单体"
-          },
-          {
-            "id": "alk-rearranged-rcc",
-            "type": "leaf",
-            "label": "ALK 重排肾细胞癌：ALK 阳性、PAX8+、CK 阳性、VCL-ALK 融合"
-          },
-          {
-            "id": "decision-fh-sdh",
-            "type": "decision",
-            "label": "FH / SDHB 免疫组化是否表达缺失？"
-          },
-          {
-            "id": "decision-tfe-cathk",
-            "type": "decision",
-            "label": "TFE3 / TFEB 是否核阳性伴 Cathepsin K 阳性？"
-          }
-        ],
-        "addEdges": [
-          {
-            "from": "decision-fh-sdh",
-            "to": "fh-deficient-rcc",
-            "label": "FH 缺失 + 2SC+"
-          },
-          {
-            "from": "decision-fh-sdh",
-            "to": "sdh-deficient-rcc",
-            "label": "SDHB 缺失"
-          },
-          {
-            "from": "decision-tfe-cathk",
-            "to": "mit-family-rcc",
-            "label": "阳性"
-          },
-          {
-            "from": "decision-tfe-cathk",
-            "to": "esc-rcc",
-            "label": "阴性且 CK20+/CK7-"
-          },
-          {
-            "from": "decision-tfe-cathk",
-            "to": "alk-rearranged-rcc",
-            "label": "ALK 阳性分支"
-          }
-        ],
-        "updateNodes": [
-          {
-            "id": "xp11-rcc",
-            "label": "MiT 家族易位型肾细胞癌（整合原 Xp11 易位 RCC 与 t(6;11) RCC）",
-            "reason": "WHO 5th (2022) 将 Xp11 易位 RCC 与 t(6;11) RCC 合并为 MiT 家族易位型 RCC"
-          },
-          {
-            "id": "chromophobe-rcc",
-            "label": "嫌色细胞性肾细胞癌：CK7 弥漫+、CD117+、E-cadherin+、Vim-",
-            "reason": "补充 CD117 与 E-cadherin 以便与嗜酸细胞腺瘤鉴别，符合 WHO 5th 与 CSCO 2023 肾癌指南"
-          },
-          {
-            "id": "clear-cell-rcc",
-            "label": "透明细胞肾细胞癌：CA9 膜弥漫+、CD10+、PAX8+、Vim+、CK7 多为阴性",
-            "reason": "CSCO 2023 肾癌指南推荐 CA9 膜型表达为关键鉴别标记"
-          },
-          {
-            "id": "papillary-rcc",
-            "label": "乳头状肾细胞癌（WHO 5th 不再强制 1/2 型亚分）：AMACR+、CK7+（经典型）、Vim+、CD10+",
-            "reason": "WHO 5th (2022) 取消乳头状 RCC 1 型/2 型的形态学强制分型"
-          }
-        ],
-        "_low_confidence": true,
-        "_reason": "未获取到 rcc-subtypes 流程图的现有 nodes/edges 列表，上述 patch 基于 WHO 5th (2022) 泌尿系统肿瘤分类与 CSCO 2023 肾癌诊疗指南对常规 RCC 亚型 IHC 鉴别流程的标准要素给出建议，请人工与当前流程图比对后再合并"
-      }
-    }
+    ]
   }
 ]

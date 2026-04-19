@@ -228,80 +228,6 @@
           "summary": "更新宫颈癌筛查策略，明确细胞学报告沿用 2014 版 TBS 系统，规范 ASC-US、ASC-H、LSIL、HSIL、AGC 等各类诊断的后续管理路径，并提出基于 HPV 初筛+细胞学分流的中国本土化方案。"
         }
       ]
-    },
-    "_enhance_cytology_new_entry": {
-      "id": "tbs-cervical",
-      "nameZh": "子宫颈细胞学 Bethesda 报告系统（TBS 2014/2023 版）",
-      "nameEn": "The Bethesda System for Reporting Cervical Cytology (2014/2023)",
-      "description": "TBS 是国际通用的子宫颈细胞学（液基与常规涂片）标准化报告系统，由美国国立癌症研究所（NCI）于 1988 年首次提出，历经 1991、2001、2014 版更新，2023 年发布第 3 版。报告包含标本满意度评估、总体分类以及解释性结果（鳞状上皮异常与腺上皮异常两大类），并可附辅助检查（HPV 检测）结果。2023 版在 2014 版基础上进一步强化了风险分层理念、补充了对 LAST 术语（LSIL/HSIL）的沿用、完善了 AGC 腺上皮病变与 HPV 共检结果的整合报告。",
-      "categories": [
-        {
-          "id": "nilm",
-          "nameZh": "未见上皮内病变或恶性细胞（NILM）",
-          "riskOfMalignancy": "<1%（CIN2+ 风险约 0.3-0.7%）",
-          "management": "按年龄与 HPV 状态常规筛查随访（3-5 年）"
-        },
-        {
-          "id": "ascus",
-          "nameZh": "非典型鳞状细胞 意义不明确（ASC-US）",
-          "riskOfMalignancy": "CIN2+ 约 6-12%",
-          "management": "HPV 分流：阳性转阴道镜，阴性 1-3 年复查；或 6-12 月细胞学复查"
-        },
-        {
-          "id": "asc-h",
-          "nameZh": "非典型鳞状细胞 不除外高级别病变（ASC-H）",
-          "riskOfMalignancy": "CIN2+ 约 26-68%",
-          "management": "直接阴道镜检查 + 活检"
-        },
-        {
-          "id": "lsil",
-          "nameZh": "低级别鳞状上皮内病变（LSIL）",
-          "riskOfMalignancy": "CIN2+ 约 15-30%",
-          "management": "阴道镜检查；25 岁以下可 1 年复查"
-        },
-        {
-          "id": "hsil",
-          "nameZh": "高级别鳞状上皮内病变（HSIL）",
-          "riskOfMalignancy": "CIN2+ >70%，浸润癌约 2%",
-          "management": "阴道镜 + 活检，必要时直接 LEEP/宫颈锥切（see-and-treat）"
-        },
-        {
-          "id": "scc",
-          "nameZh": "鳞状细胞癌（SCC）",
-          "riskOfMalignancy": ">90%",
-          "management": "阴道镜 + 活检确诊后按 FIGO 分期规范化治疗"
-        },
-        {
-          "id": "agc",
-          "nameZh": "非典型腺细胞（AGC，注明来源：宫颈管/子宫内膜/未指明）",
-          "riskOfMalignancy": "CIN2+ 或腺癌约 9-38%",
-          "management": "阴道镜 + 宫颈管搔刮（ECC）；≥35 岁或异常出血加做子宫内膜活检"
-        },
-        {
-          "id": "agc-fn",
-          "nameZh": "非典型腺细胞 倾向肿瘤（AGC-favor neoplastic）",
-          "riskOfMalignancy": "CIN2+/AIS/腺癌约 27-96%",
-          "management": "阴道镜 + ECC + 子宫内膜活检；阴性者行诊断性锥切"
-        },
-        {
-          "id": "ais",
-          "nameZh": "宫颈管原位腺癌（AIS）",
-          "riskOfMalignancy": "浸润性腺癌约 48-69%",
-          "management": "诊断性宫颈锥切（冷刀锥切优先），完成生育后行全子宫切除"
-        },
-        {
-          "id": "adenocarcinoma",
-          "nameZh": "腺癌（宫颈管、子宫内膜、子宫外或未指明来源）",
-          "riskOfMalignancy": ">90%",
-          "management": "组织学确诊及来源定位后按相应指南规范化治疗"
-        },
-        {
-          "id": "other-malignant",
-          "nameZh": "其他恶性肿瘤（如小细胞癌、淋巴瘤、转移性肿瘤等）",
-          "riskOfMalignancy": ">95%",
-          "management": "多学科会诊，组织学及免疫组化进一步分型后治疗"
-        }
-      ]
     }
   },
   {
@@ -405,56 +331,6 @@
           "_low_confidence": true
         }
       ]
-    },
-    "_enhance_cytology_new_entry": {
-      "id": "paris-urine",
-      "nameZh": "尿液细胞学 Paris 报告系统（第二版）",
-      "nameEn": "The Paris System for Reporting Urinary Cytology, 2nd Edition",
-      "description": "由国际细胞学会及美国细胞病理学会推动建立的尿液细胞学标准化报告系统，重点针对高级别尿路上皮癌（HGUC）的检出，采用核质比（N/C）、核深染、染色质粗糙、核膜不规则等量化指标进行分级。第二版（2022）在第一版（2016）基础上细化了诊断阈值、HGUC 量化标准（≥1 个细胞且 N/C ≥0.7 + 至少 2 项核异型），并明确低级别尿路上皮肿瘤（LGUN）的处理策略。",
-      "categories": [
-        {
-          "id": "nondiagnostic",
-          "nameZh": "标本无法诊断/不满意",
-          "riskOfMalignancy": "5-10%",
-          "management": "重新留取标本（建议自然排尿 ≥30 mL，必要时膀胱冲洗）"
-        },
-        {
-          "id": "negative",
-          "nameZh": "阴性，未见高级别尿路上皮癌（NHGUC）",
-          "riskOfMalignancy": "0-10%",
-          "management": "按临床风险常规随访"
-        },
-        {
-          "id": "auc",
-          "nameZh": "非典型尿路上皮细胞（AUC）",
-          "riskOfMalignancy": "8-35%",
-          "management": "3-6 个月复查尿细胞学，结合膀胱镜及影像学评估"
-        },
-        {
-          "id": "shguc",
-          "nameZh": "可疑高级别尿路上皮癌（SHGUC）",
-          "riskOfMalignancy": "50-90%",
-          "management": "膀胱镜检查 + 活检，必要时上尿路评估"
-        },
-        {
-          "id": "hguc",
-          "nameZh": "高级别尿路上皮癌（HGUC）",
-          "riskOfMalignancy": ">90%",
-          "management": "膀胱镜 + 活检确诊，依临床分期行 TURBT 或根治性手术"
-        },
-        {
-          "id": "lgun",
-          "nameZh": "低级别尿路上皮肿瘤（LGUN）",
-          "riskOfMalignancy": "约 10%（低级别肿瘤）",
-          "management": "膀胱镜检查；多需结合组织学诊断"
-        },
-        {
-          "id": "other",
-          "nameZh": "其他恶性肿瘤（原发或转移）",
-          "riskOfMalignancy": ">90%",
-          "management": "按相应肿瘤类型进一步检查及多学科诊治"
-        }
-      ]
     }
   },
   {
@@ -551,56 +427,6 @@
     "_enhance_cytology_cn_consensus": {
       "cnConsensus": [],
       "_low_confidence": true
-    },
-    "_enhance_cytology_new_entry": {
-      "id": "milan-salivary",
-      "nameZh": "唾液腺细针穿刺细胞学 Milan 报告系统",
-      "nameEn": "The Milan System for Reporting Salivary Gland Cytopathology (MSRSGC)",
-      "description": "用于唾液腺细针穿刺（FNA）细胞学的国际统一报告分类系统，由国际细胞学会（IAC）与美国细胞病理学会（ASC）联合制定，2018 年首版发布，共分为六大类别，每类均对应相应的恶性风险（ROM）及临床处理建议。",
-      "categories": [
-        {
-          "id": "non-diagnostic",
-          "nameZh": "Ⅰ 无法诊断（标本不满意）",
-          "riskOfMalignancy": "25%",
-          "management": "影像学相关分析，必要时重复 FNA 或行粗针穿刺"
-        },
-        {
-          "id": "non-neoplastic",
-          "nameZh": "Ⅱ 非肿瘤性",
-          "riskOfMalignancy": "10%",
-          "management": "临床随访及影像学检查"
-        },
-        {
-          "id": "aus",
-          "nameZh": "Ⅲ 意义不明的非典型性（AUS）",
-          "riskOfMalignancy": "20%",
-          "management": "重复 FNA 或手术切除"
-        },
-        {
-          "id": "benign-neoplasm",
-          "nameZh": "Ⅳa 良性肿瘤",
-          "riskOfMalignancy": "<5%",
-          "management": "手术切除或临床观察"
-        },
-        {
-          "id": "sump",
-          "nameZh": "Ⅳb 恶性潜能未定的唾液腺肿瘤（SUMP）",
-          "riskOfMalignancy": "35%",
-          "management": "手术切除（通常为腺叶切除）"
-        },
-        {
-          "id": "suspicious-malignancy",
-          "nameZh": "Ⅴ 可疑恶性",
-          "riskOfMalignancy": "60%",
-          "management": "手术切除，根据术中冰冻决定范围"
-        },
-        {
-          "id": "malignant",
-          "nameZh": "Ⅵ 恶性",
-          "riskOfMalignancy": "90%",
-          "management": "手术切除 ± 颈淋巴结清扫 ± 术后放化疗"
-        }
-      ]
     }
   },
   {
@@ -856,44 +682,88 @@
     "_enhance_cytology_cn_consensus": {
       "cnConsensus": [],
       "_low_confidence": true
-    },
-    "_enhance_cytology_new_entry": {
-      "id": "yokohama-breast",
-      "nameZh": "乳腺细针穿刺细胞学 Yokohama 报告系统",
-      "nameEn": "The International Academy of Cytology Yokohama System for Reporting Breast Fine Needle Aspiration Biopsy Cytopathology",
-      "description": "由国际细胞学会（IAC）于 2016 年横滨会议提出、2017 年正式发布的乳腺细针穿刺（FNA）细胞学五级报告系统，为每一类别明确对应的恶性风险（ROM）与临床处理建议，旨在规范乳腺 FNA 细胞学诊断与多学科沟通。",
-      "categories": [
-        {
-          "id": "insufficient",
-          "nameZh": "标本无法诊断/不满意（C1）",
-          "riskOfMalignancy": "2.6-4.8%",
-          "management": "结合临床与影像评估，必要时重复 FNA 或改行空芯针穿刺活检"
-        },
-        {
-          "id": "benign",
-          "nameZh": "良性（C2）",
-          "riskOfMalignancy": "1.4-2.3%",
-          "management": "结合三联评估随访；影像或临床不符时行空芯针活检"
-        },
-        {
-          "id": "atypical",
-          "nameZh": "非典型，可能良性（C3）",
-          "riskOfMalignancy": "13-15.7%",
-          "management": "建议空芯针活检进一步明确诊断"
-        },
-        {
-          "id": "suspicious",
-          "nameZh": "可疑恶性（C4）",
-          "riskOfMalignancy": "84.6-97.1%",
-          "management": "空芯针活检或手术活检确诊后再行根治性处理"
-        },
-        {
-          "id": "malignant",
-          "nameZh": "恶性（C5）",
-          "riskOfMalignancy": "99-100%",
-          "management": "结合影像及空芯针活检进行分子分型后规范治疗"
-        }
-      ]
     }
+  },
+  {
+    "id": "ios-serous",
+    "nameZh": "浆膜腔积液细胞病理学国际报告系统",
+    "nameEn": "The International System for Reporting Serous Fluid Cytopathology",
+    "description": "由国际细胞学会（IAC）与美国细胞病理学会（ASC）联合发布（2020 年），用于胸腔、腹腔及心包腔积液细胞学的标准化报告。共分 5 个诊断类别，每一类别提供恶性风险（ROM）估计与处理建议，旨在统一术语并指导后续临床决策。",
+    "categories": [
+      {
+        "id": "nd",
+        "nameZh": "标本无法诊断（ND）",
+        "riskOfMalignancy": "17-26%",
+        "management": "结合临床重新送检或行进一步影像学/活检评估"
+      },
+      {
+        "id": "nfm",
+        "nameZh": "未见恶性细胞（NFM）",
+        "riskOfMalignancy": "21%",
+        "management": "结合临床随访；高度怀疑恶性时建议重复穿刺或影像学复查"
+      },
+      {
+        "id": "aus",
+        "nameZh": "非典型细胞（AUS）",
+        "riskOfMalignancy": "66%",
+        "management": "建议重复穿刺、辅助免疫组化/分子检测或多学科评估"
+      },
+      {
+        "id": "sfm",
+        "nameZh": "可疑恶性（SFM）",
+        "riskOfMalignancy": "82%",
+        "management": "结合临床与影像，必要时行组织活检确诊后按恶性处理"
+      },
+      {
+        "id": "mal",
+        "nameZh": "恶性（MAL）",
+        "riskOfMalignancy": "99%",
+        "management": "按相应原发肿瘤分期与治疗方案处理；建议行免疫组化/分子检测明确来源与治疗靶点"
+      }
+    ]
+  },
+  {
+    "id": "papsociety-resp",
+    "nameZh": "呼吸道细胞学 PSC 报告系统",
+    "nameEn": "The Papanicolaou Society of Cytopathology System for Reporting Respiratory Cytology",
+    "description": "由国际细胞学会 Papanicolaou Society of Cytopathology（PSC）发布的呼吸道（痰液、支气管刷检/灌洗、经支气管针吸 TBNA 及 EBUS-TBNA）细胞学标准化报告系统，将呼吸道细胞学结果分为 6 个类别，明确各类别的恶性风险（ROM）及对应的临床处理建议。",
+    "categories": [
+      {
+        "id": "nondiagnostic",
+        "nameZh": "无法诊断",
+        "riskOfMalignancy": "43-53%",
+        "management": "结合临床与影像重新取材（重复支气管镜/EBUS-TBNA 或其他活检方式）"
+      },
+      {
+        "id": "negative",
+        "nameZh": "阴性（良性）",
+        "riskOfMalignancy": "19-29%",
+        "management": "结合影像学临床随访；高危病灶者建议再次取材或活检"
+      },
+      {
+        "id": "atypical",
+        "nameZh": "非典型",
+        "riskOfMalignancy": "46-55%",
+        "management": "结合临床影像综合评估，多数建议重复取样或进一步活检"
+      },
+      {
+        "id": "neoplastic",
+        "nameZh": "肿瘤性：良性或低度恶性潜能",
+        "riskOfMalignancy": "25-65%",
+        "management": "依据具体病变（如类癌、低级别涎腺型肿瘤）选择手术切除或随访"
+      },
+      {
+        "id": "suspicious",
+        "nameZh": "可疑恶性",
+        "riskOfMalignancy": "75-88%",
+        "management": "多学科讨论，一般按恶性处理或组织学确诊后治疗"
+      },
+      {
+        "id": "malignant",
+        "nameZh": "恶性",
+        "riskOfMalignancy": "87-100%",
+        "management": "按肿瘤类型（NSCLC/SCLC/转移癌等）分型分期并启动规范化治疗"
+      }
+    ]
   }
 ]

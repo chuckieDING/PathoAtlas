@@ -564,5 +564,1378 @@
         "_reason": "Lauren 分型属组织学分型而非解剖学 TNM 分期，与本维度 staging_cn_version 的'核对 AJCC/UICC'目标存在类目错位；verifiedAgainst 字段按照可对标的维度填写，但严格来说 Lauren 不应纳入分期条目，建议人工复核该数据点是否应迁移至 histological_classification 维度。"
       }
     }
+  },
+  {
+    "id": "liver-cnlc",
+    "nameZh": "肝癌 CNLC 分期",
+    "nameEn": "China Liver Cancer Staging (CNLC)",
+    "applicableTo": [
+      "hepatocellular-carcinoma"
+    ],
+    "description": "由国家卫生健康委员会《原发性肝癌诊疗指南》（2019 版首次提出，2022 版沿用）发布的中国肝癌分期方案。综合评估肝功能（Child-Pugh）、体力活动状态（PS 评分）、肿瘤数目与大小、血管侵犯以及肝外转移情况，用于指导治疗策略选择与预后判断，是我国原发性肝癌临床诊疗实践中的核心分期系统。",
+    "criteria": [
+      {
+        "parameter": "体力活动状态 (PS 评分)",
+        "options": [
+          "0-2 分",
+          "3-4 分"
+        ]
+      },
+      {
+        "parameter": "肝功能 Child-Pugh 分级",
+        "options": [
+          "A 级",
+          "B 级",
+          "C 级"
+        ]
+      },
+      {
+        "parameter": "肿瘤数目",
+        "options": [
+          "单发",
+          "2-3 个",
+          "≥4 个"
+        ]
+      },
+      {
+        "parameter": "肿瘤最大径",
+        "options": [
+          "≤3 cm",
+          "3-5 cm",
+          ">5 cm"
+        ]
+      },
+      {
+        "parameter": "血管侵犯",
+        "options": [
+          "无",
+          "门静脉/肝静脉分支",
+          "门静脉主干/下腔静脉"
+        ]
+      },
+      {
+        "parameter": "肝外转移",
+        "options": [
+          "无",
+          "有"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "Ia",
+        "label": "CNLC Ⅰa 期",
+        "definition": "PS 0-2 分，Child-Pugh A/B 级；单个肿瘤，最大径 ≤5 cm；无血管侵犯及肝外转移。"
+      },
+      {
+        "id": "Ib",
+        "label": "CNLC Ⅰb 期",
+        "definition": "PS 0-2 分，Child-Pugh A/B 级；单个肿瘤，最大径 >5 cm；或 2-3 个肿瘤，最大径均 ≤3 cm；无血管侵犯及肝外转移。"
+      },
+      {
+        "id": "IIa",
+        "label": "CNLC Ⅱa 期",
+        "definition": "PS 0-2 分，Child-Pugh A/B 级；2-3 个肿瘤，最大径 >3 cm；无血管侵犯及肝外转移。"
+      },
+      {
+        "id": "IIb",
+        "label": "CNLC Ⅱb 期",
+        "definition": "PS 0-2 分，Child-Pugh A/B 级；肿瘤数目 ≥4 个，不论肿瘤大小；无血管侵犯及肝外转移。"
+      },
+      {
+        "id": "IIIa",
+        "label": "CNLC Ⅲa 期",
+        "definition": "PS 0-2 分，Child-Pugh A/B 级；不论肿瘤情况，伴有门静脉或肝静脉等血管侵犯；无肝外转移。"
+      },
+      {
+        "id": "IIIb",
+        "label": "CNLC Ⅲb 期",
+        "definition": "PS 0-2 分，Child-Pugh A/B 级；不论肿瘤情况及血管侵犯与否，伴有肝外转移（淋巴结转移或远处转移）。"
+      },
+      {
+        "id": "IV",
+        "label": "CNLC Ⅳ 期",
+        "definition": "PS 3-4 分，或 Child-Pugh C 级；不论肿瘤情况、血管侵犯及肝外转移状态。"
+      }
+    ]
+  },
+  {
+    "id": "gastric-cgca",
+    "nameZh": "胃癌中国分期",
+    "nameEn": "Gastric Cancer Staging (China, adopting AJCC/UICC 8th TNM)",
+    "applicableTo": [
+      "gastric-adenocarcinoma"
+    ],
+    "description": "中国 CSCO《胃癌诊疗指南（2023）》与国家卫健委《胃癌诊疗规范（2022 版）》推荐采用 AJCC/UICC 第 8 版 TNM 分期系统，分别设置临床分期（cTNM）、病理分期（pTNM）与新辅助治疗后分期（ypTNM）。食管胃结合部腺癌 Siewert I/II 型肿瘤中心位于 EGJ 远端 2cm 以内者按食管癌分期，其余按胃癌分期。",
+    "criteria": [
+      {
+        "parameter": "T（原发肿瘤浸润深度）",
+        "options": [
+          "Tis：重度异型增生/原位癌，未侵及固有层",
+          "T1a：侵犯固有层或黏膜肌层",
+          "T1b：侵犯黏膜下层",
+          "T2：侵犯固有肌层",
+          "T3：穿透固有肌层至浆膜下结缔组织，未侵透脏层腹膜或邻近结构",
+          "T4a：侵犯浆膜（脏层腹膜）",
+          "T4b：侵犯邻近结构/脏器"
+        ]
+      },
+      {
+        "parameter": "N（区域淋巴结转移）",
+        "options": [
+          "N0：无区域淋巴结转移（需检出≥16 枚）",
+          "N1：1–2 枚",
+          "N2：3–6 枚",
+          "N3a：7–15 枚",
+          "N3b：≥16 枚"
+        ]
+      },
+      {
+        "parameter": "M（远处转移）",
+        "options": [
+          "M0：无远处转移",
+          "M1：有远处转移（含腹膜转移、非区域淋巴结及第 16 组淋巴结转移）"
+        ]
+      },
+      {
+        "parameter": "分期类型",
+        "options": [
+          "cTNM（临床分期）",
+          "pTNM（病理分期）",
+          "ypTNM（新辅助治疗后病理分期）"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "0",
+        "label": "0 期",
+        "definition": "TisN0M0"
+      },
+      {
+        "id": "IA",
+        "label": "IA 期",
+        "definition": "T1N0M0"
+      },
+      {
+        "id": "IB",
+        "label": "IB 期",
+        "definition": "T1N1M0 或 T2N0M0"
+      },
+      {
+        "id": "IIA",
+        "label": "IIA 期",
+        "definition": "T1N2M0、T2N1M0 或 T3N0M0"
+      },
+      {
+        "id": "IIB",
+        "label": "IIB 期",
+        "definition": "T1N3aM0、T2N2M0、T3N1M0 或 T4aN0M0"
+      },
+      {
+        "id": "IIIA",
+        "label": "IIIA 期",
+        "definition": "T2N3aM0、T3N2M0、T4aN1M0、T4aN2M0 或 T4bN0M0"
+      },
+      {
+        "id": "IIIB",
+        "label": "IIIB 期",
+        "definition": "T1N3bM0、T2N3bM0、T3N3aM0、T4aN3aM0、T4bN1M0 或 T4bN2M0"
+      },
+      {
+        "id": "IIIC",
+        "label": "IIIC 期",
+        "definition": "T3N3bM0、T4aN3bM0、T4bN3aM0 或 T4bN3bM0"
+      },
+      {
+        "id": "IV",
+        "label": "IV 期",
+        "definition": "任何 T 任何 N M1"
+      }
+    ],
+    "_low_confidence": true
+  },
+  {
+    "id": "nasopharynx-cn-2017",
+    "nameZh": "鼻咽癌 2017 中国分期",
+    "nameEn": "2017 China Nasopharyngeal Carcinoma Staging (2008 China Staging Revision)",
+    "applicableTo": [],
+    "description": "由中国鼻咽癌分期工作委员会于 2017 年发布，在 2008 年中国鼻咽癌分期基础上修订，参考 UICC/AJCC 第 8 版并结合国内大样本 IMRT 时代预后数据，重点细化咽旁间隙、椎前肌、颅底侵犯及咽后淋巴结的界定，强调 MRI 作为分期基础影像手段。发布于《中华放射肿瘤学杂志》2017, 26(10): 1119-1125。",
+    "criteria": [
+      {
+        "parameter": "原发肿瘤范围 (T)",
+        "options": [
+          "局限于鼻咽",
+          "侵犯口咽/鼻腔",
+          "咽旁间隙受累",
+          "椎前肌受累",
+          "颅底/颈椎/翼状结构/鼻旁窦受累",
+          "颅内/脑神经/眼眶/下咽/腮腺/翼外肌外侧软组织受累"
+        ]
+      },
+      {
+        "parameter": "区域淋巴结 (N)",
+        "options": [
+          "无淋巴结转移",
+          "单侧咽后淋巴结转移",
+          "单侧颈部淋巴结 ≤6cm 且位于环状软骨下缘以上",
+          "双侧颈部淋巴结 ≤6cm 且位于环状软骨下缘以上",
+          "淋巴结 >6cm 或超出环状软骨下缘"
+        ]
+      },
+      {
+        "parameter": "远处转移 (M)",
+        "options": [
+          "无远处转移 (M0)",
+          "有远处转移 (M1)"
+        ]
+      },
+      {
+        "parameter": "分期影像依据",
+        "options": [
+          "鼻咽及颈部增强 MRI",
+          "胸部 CT",
+          "腹部超声/CT",
+          "全身骨扫描或 PET/CT"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "T1",
+        "label": "T1",
+        "definition": "肿瘤局限于鼻咽，或侵犯口咽和/或鼻腔，不伴咽旁间隙侵犯"
+      },
+      {
+        "id": "T2",
+        "label": "T2",
+        "definition": "肿瘤侵犯咽旁间隙，和/或邻近软组织受累（翼内肌、翼外肌、椎前肌）"
+      },
+      {
+        "id": "T3",
+        "label": "T3",
+        "definition": "肿瘤侵犯颅底骨质、颈椎、翼状结构和/或鼻旁窦"
+      },
+      {
+        "id": "T4",
+        "label": "T4",
+        "definition": "肿瘤侵犯颅内、脑神经、下咽、眼眶、腮腺，和/或超出翼外肌外侧缘的广泛软组织受累"
+      },
+      {
+        "id": "N0",
+        "label": "N0",
+        "definition": "无区域淋巴结转移"
+      },
+      {
+        "id": "N1",
+        "label": "N1",
+        "definition": "单侧咽后淋巴结转移（无论大小）；和/或单侧颈部淋巴结转移，最大直径 ≤6cm，且位于环状软骨下缘以上"
+      },
+      {
+        "id": "N2",
+        "label": "N2",
+        "definition": "双侧颈部淋巴结转移，最大直径 ≤6cm，且位于环状软骨下缘以上"
+      },
+      {
+        "id": "N3",
+        "label": "N3",
+        "definition": "颈部淋巴结转移，最大直径 >6cm，和/或超出环状软骨下缘"
+      },
+      {
+        "id": "M0",
+        "label": "M0",
+        "definition": "无远处转移"
+      },
+      {
+        "id": "M1",
+        "label": "M1",
+        "definition": "有远处转移（包括非区域淋巴结转移）"
+      },
+      {
+        "id": "I",
+        "label": "I 期",
+        "definition": "T1N0M0"
+      },
+      {
+        "id": "II",
+        "label": "II 期",
+        "definition": "T1N1M0；T2N0-1M0"
+      },
+      {
+        "id": "III",
+        "label": "III 期",
+        "definition": "T1-2N2M0；T3N0-2M0"
+      },
+      {
+        "id": "IVA",
+        "label": "IVA 期",
+        "definition": "T4 任何 N M0；任何 T N3 M0"
+      },
+      {
+        "id": "IVB",
+        "label": "IVB 期",
+        "definition": "任何 T 任何 N M1"
+      }
+    ]
+  },
+  {
+    "id": "lung-iaslc-9",
+    "nameZh": "肺癌 IASLC 第 9 版 TNM 分期",
+    "nameEn": "IASLC 9th Edition Lung Cancer TNM Staging",
+    "applicableTo": [
+      "lung-adenocarcinoma",
+      "lung-squamous-cell-carcinoma",
+      "small-cell-lung-carcinoma"
+    ],
+    "description": "国际肺癌研究协会（IASLC）基于全球多中心前瞻性数据库（涵盖 2011—2019 年诊断的逾 12 万例病例）制定的肺癌 TNM 分期系统第 9 版，于 2024 年发布，并被 UICC/AJCC 第 9 版采纳，2024 年起逐步应用。相较第 8 版，第 9 版主要变更为：N2 按受累站数细分为 N2a（单站）与 N2b（多站）；M1c 按脏器数细分为 M1c1（单器官多发）与 M1c2（多器官）；T 分类维持第 8 版框架（T1a ≤1 cm、T1b >1–2 cm、T1c >2–3 cm、T2a >3–4 cm、T2b >4–5 cm、T3 >5–7 cm、T4 >7 cm 或侵犯特定结构）。分期组合相应调整，以更精准反映预后分层。",
+    "criteria": [
+      {
+        "parameter": "T（原发肿瘤）",
+        "options": [
+          "Tis：原位癌（AIS / 鳞状原位癌）",
+          "T1mi：微浸润腺癌",
+          "T1a：≤1 cm",
+          "T1b：>1–2 cm",
+          "T1c：>2–3 cm",
+          "T2a：>3–4 cm 或累及主支气管、脏层胸膜、部分肺不张",
+          "T2b：>4–5 cm",
+          "T3：>5–7 cm 或同叶卫星结节、侵犯胸壁/膈神经/心包",
+          "T4：>7 cm 或侵犯纵隔/心脏/大血管/气管/喉返神经/食管/椎体/隆突或同侧不同叶结节"
+        ]
+      },
+      {
+        "parameter": "N（区域淋巴结）",
+        "options": [
+          "N0：无区域淋巴结转移",
+          "N1：同侧支气管旁及/或同侧肺门、肺内淋巴结转移",
+          "N2a：同侧纵隔和/或隆突下单站淋巴结转移（第 9 版新增）",
+          "N2b：同侧纵隔和/或隆突下多站淋巴结转移（第 9 版新增）",
+          "N3：对侧纵隔、对侧肺门、同侧或对侧斜角肌或锁骨上淋巴结转移"
+        ]
+      },
+      {
+        "parameter": "M（远处转移）",
+        "options": [
+          "M0：无远处转移",
+          "M1a：对侧肺结节、胸膜或心包结节、恶性胸腔/心包积液",
+          "M1b：胸外单器官单个转移灶",
+          "M1c1：胸外单器官多个转移灶（第 9 版新增）",
+          "M1c2：胸外多器官转移（第 9 版新增）"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "0",
+        "label": "0 期",
+        "definition": "Tis N0 M0"
+      },
+      {
+        "id": "IA1",
+        "label": "IA1 期",
+        "definition": "T1mi/T1a N0 M0"
+      },
+      {
+        "id": "IA2",
+        "label": "IA2 期",
+        "definition": "T1b N0 M0"
+      },
+      {
+        "id": "IA3",
+        "label": "IA3 期",
+        "definition": "T1c N0 M0"
+      },
+      {
+        "id": "IB",
+        "label": "IB 期",
+        "definition": "T2a N0 M0"
+      },
+      {
+        "id": "IIA",
+        "label": "IIA 期",
+        "definition": "T2b N0 M0"
+      },
+      {
+        "id": "IIB",
+        "label": "IIB 期",
+        "definition": "T1a–T2b N1 M0 或 T3 N0 M0"
+      },
+      {
+        "id": "IIIA",
+        "label": "IIIA 期",
+        "definition": "T1a–T2b N2a M0；T3 N1 M0；T4 N0–N1 M0"
+      },
+      {
+        "id": "IIIB",
+        "label": "IIIB 期",
+        "definition": "T1a–T2b N2b M0；T3–T4 N2a M0（第 9 版将部分原 IIIA 上调为 IIIB）"
+      },
+      {
+        "id": "IIIC",
+        "label": "IIIC 期",
+        "definition": "T3–T4 N2b M0；任何 T N3 M0"
+      },
+      {
+        "id": "IVA",
+        "label": "IVA 期",
+        "definition": "任何 T 任何 N M1a/M1b/M1c1"
+      },
+      {
+        "id": "IVB",
+        "label": "IVB 期",
+        "definition": "任何 T 任何 N M1c2"
+      }
+    ]
+  },
+  {
+    "id": "colorectal-ajcc8",
+    "nameZh": "结直肠癌 AJCC 第 8 版 TNM 分期",
+    "nameEn": "Colorectal Cancer AJCC 8th Edition TNM Staging",
+    "applicableTo": [
+      "colorectal-adenocarcinoma"
+    ],
+    "description": "由美国癌症联合委员会（AJCC）第 8 版发布（2017 年 1 月 1 日起实施），适用于结肠及直肠癌。基于原发肿瘤浸润深度（T）、区域淋巴结转移（N）与远处转移（M）进行解剖学分期，对 M1 进行细化（M1a 单器官、M1b 多器官、M1c 腹膜转移），并纳入肿瘤沉积（TD）、MSI/MMR、KRAS/NRAS/BRAF 等预后因素。国内《CSCO 结直肠癌诊疗指南》及国家卫健委《结直肠癌诊疗规范（2020 版）》均采纳该分期。",
+    "criteria": [
+      {
+        "parameter": "原发肿瘤 T",
+        "options": [
+          "Tis：原位癌/上皮内癌/黏膜内癌（侵及固有层但未穿透黏膜肌层）",
+          "T1：侵及黏膜下层",
+          "T2：侵及固有肌层",
+          "T3：穿透固有肌层至浆膜下层或无腹膜覆盖的结直肠周围组织",
+          "T4a：穿透脏层腹膜",
+          "T4b：直接侵犯或粘连于邻近器官或结构"
+        ]
+      },
+      {
+        "parameter": "区域淋巴结 N",
+        "options": [
+          "N0：无区域淋巴结转移",
+          "N1a：1 枚区域淋巴结转移",
+          "N1b：2-3 枚区域淋巴结转移",
+          "N1c：无区域淋巴结转移，但在浆膜下、肠系膜或无腹膜覆盖的结肠/直肠周围组织内有肿瘤沉积（TD）",
+          "N2a：4-6 枚区域淋巴结转移",
+          "N2b：≥7 枚区域淋巴结转移"
+        ]
+      },
+      {
+        "parameter": "远处转移 M",
+        "options": [
+          "M0：无远处转移",
+          "M1a：转移局限于单个器官（肝、肺、卵巢、非区域淋巴结等），无腹膜转移",
+          "M1b：转移至两个或更多器官，无腹膜转移",
+          "M1c：腹膜转移，伴或不伴其他器官转移"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "0",
+        "label": "0 期",
+        "definition": "Tis N0 M0"
+      },
+      {
+        "id": "I",
+        "label": "I 期",
+        "definition": "T1-T2 N0 M0"
+      },
+      {
+        "id": "IIA",
+        "label": "IIA 期",
+        "definition": "T3 N0 M0"
+      },
+      {
+        "id": "IIB",
+        "label": "IIB 期",
+        "definition": "T4a N0 M0"
+      },
+      {
+        "id": "IIC",
+        "label": "IIC 期",
+        "definition": "T4b N0 M0"
+      },
+      {
+        "id": "IIIA",
+        "label": "IIIA 期",
+        "definition": "T1-T2 N1/N1c M0 或 T1 N2a M0"
+      },
+      {
+        "id": "IIIB",
+        "label": "IIIB 期",
+        "definition": "T3-T4a N1/N1c M0 或 T2-T3 N2a M0 或 T1-T2 N2b M0"
+      },
+      {
+        "id": "IIIC",
+        "label": "IIIC 期",
+        "definition": "T4a N2a M0 或 T3-T4a N2b M0 或 T4b N1-N2 M0"
+      },
+      {
+        "id": "IVA",
+        "label": "IVA 期",
+        "definition": "任何 T 任何 N M1a"
+      },
+      {
+        "id": "IVB",
+        "label": "IVB 期",
+        "definition": "任何 T 任何 N M1b"
+      },
+      {
+        "id": "IVC",
+        "label": "IVC 期",
+        "definition": "任何 T 任何 N M1c"
+      }
+    ]
+  },
+  {
+    "id": "breast-ajcc8",
+    "nameZh": "乳腺癌 AJCC 第 8 版预后分期",
+    "nameEn": "Breast Cancer AJCC 8th Edition Prognostic Stage",
+    "applicableTo": [
+      "invasive-lobular-carcinoma"
+    ],
+    "description": "美国癌症联合委员会（AJCC）第 8 版（2018 年起执行）乳腺癌分期系统首次将解剖学 TNM 与生物学因素（组织学分级 G、ER、PR、HER2 状态及多基因检测结果）整合，形成临床预后分期组（Clinical Prognostic Stage）和病理预后分期组（Pathological Prognostic Stage）。该系统强调生物学行为对预后的影响，使分期更贴近现代精准治疗决策。中华医学会病理学分会与 CSCO 乳腺癌诊疗指南均推荐采用此版本。",
+    "criteria": [
+      {
+        "parameter": "原发肿瘤 (T)",
+        "options": [
+          "Tis（DCIS / Paget）",
+          "T1mi（≤1mm）",
+          "T1a（>1–5mm）",
+          "T1b（>5–10mm）",
+          "T1c（>10–20mm）",
+          "T2（>20–50mm）",
+          "T3（>50mm）",
+          "T4a（侵犯胸壁）",
+          "T4b（侵犯皮肤，含卫星结节/溃疡/水肿）",
+          "T4c（T4a+T4b）",
+          "T4d（炎性乳腺癌）"
+        ]
+      },
+      {
+        "parameter": "区域淋巴结 (N)",
+        "options": [
+          "N0",
+          "N1mi（微转移 >0.2–2mm）",
+          "N1（1–3 个腋窝，或内乳前哨阳性）",
+          "N2（4–9 个腋窝，或临床内乳无腋窝）",
+          "N3（≥10 个腋窝/锁骨下/锁骨上，或腋窝+内乳）"
+        ]
+      },
+      {
+        "parameter": "远处转移 (M)",
+        "options": [
+          "M0",
+          "cM0(i+)（循环/骨髓微转移，无临床转移）",
+          "M1"
+        ]
+      },
+      {
+        "parameter": "组织学分级 (G)",
+        "options": [
+          "G1（低级别）",
+          "G2（中级别）",
+          "G3（高级别）"
+        ]
+      },
+      {
+        "parameter": "ER 状态",
+        "options": [
+          "阳性（≥1%）",
+          "阴性（<1%）"
+        ]
+      },
+      {
+        "parameter": "PR 状态",
+        "options": [
+          "阳性（≥1%）",
+          "阴性（<1%）"
+        ]
+      },
+      {
+        "parameter": "HER2 状态",
+        "options": [
+          "阳性（IHC 3+ 或 ISH 扩增）",
+          "阴性"
+        ]
+      },
+      {
+        "parameter": "多基因检测（Oncotype DX RS）",
+        "options": [
+          "RS <11（适用于 T1-2 N0 HR+/HER2- 降期至 IA）",
+          "RS ≥11",
+          "未检测"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "0",
+        "label": "0 期",
+        "definition": "Tis N0 M0（导管原位癌 / Paget 病不伴浸润）"
+      },
+      {
+        "id": "IA",
+        "label": "IA 期",
+        "definition": "T1 N0 M0；病理预后分期中需结合 G、HR、HER2，HR+/HER2+/G 任意 或 HR+/HER2-/低级别 多归此期"
+      },
+      {
+        "id": "IB",
+        "label": "IB 期",
+        "definition": "T0–T1 N1mi M0"
+      },
+      {
+        "id": "IIA",
+        "label": "IIA 期",
+        "definition": "T0–T1 N1 M0 或 T2 N0 M0"
+      },
+      {
+        "id": "IIB",
+        "label": "IIB 期",
+        "definition": "T2 N1 M0 或 T3 N0 M0"
+      },
+      {
+        "id": "IIIA",
+        "label": "IIIA 期",
+        "definition": "T0–T2 N2 M0 或 T3 N1–N2 M0"
+      },
+      {
+        "id": "IIIB",
+        "label": "IIIB 期",
+        "definition": "T4 N0–N2 M0（含炎性乳腺癌 T4d）"
+      },
+      {
+        "id": "IIIC",
+        "label": "IIIC 期",
+        "definition": "任何 T，N3 M0"
+      },
+      {
+        "id": "IV",
+        "label": "IV 期",
+        "definition": "任何 T 任何 N M1（远处转移）"
+      }
+    ]
+  },
+  {
+    "id": "prostate-grade-group",
+    "nameZh": "前列腺癌 Grade Group 分级",
+    "nameEn": "Prostate Cancer Grade Group (ISUP/WHO)",
+    "applicableTo": [
+      "prostate-adenocarcinoma"
+    ],
+    "description": "由国际泌尿病理学会（ISUP）2014 年共识会议提出、WHO 2016 年正式采纳的前列腺癌预后分组系统，基于 Gleason 评分（Gleason score）转换而来，旨在更直观地反映肿瘤生物学行为并改善医患沟通。WHO 2022（第 5 版泌尿生殖系统肿瘤分类）继续沿用。中国《前列腺癌诊疗指南（CSCO 2024）》与《前列腺穿刺活检病理诊断共识》推荐同时报告 Gleason 评分与 Grade Group。",
+    "criteria": [
+      {
+        "parameter": "主要 Gleason 分级（primary pattern）",
+        "options": [
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "parameter": "次要 Gleason 分级（secondary pattern）",
+        "options": [
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "parameter": "Gleason 总评分",
+        "options": [
+          "≤6",
+          "3+4=7",
+          "4+3=7",
+          "8",
+          "9-10"
+        ]
+      },
+      {
+        "parameter": "是否存在 Gleason 5 级成分（tertiary/minor pattern 5）",
+        "options": [
+          "无",
+          "有（需在报告中注明）"
+        ]
+      },
+      {
+        "parameter": "筛状结构 / 导管内癌（IDC-P）",
+        "options": [
+          "无",
+          "有（建议单独报告，可影响预后但不改变 Grade Group 判定）"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "GG1",
+        "label": "Grade Group 1",
+        "definition": "Gleason 评分 ≤6（3+3），仅由分化良好的独立腺体构成，无融合或筛状结构，预后最佳，符合极低危/低危范畴。"
+      },
+      {
+        "id": "GG2",
+        "label": "Grade Group 2",
+        "definition": "Gleason 评分 3+4=7，以分化良好的腺体为主，伴少量（<50%）低分化成分（融合腺体、筛状或分化差的腺体）。"
+      },
+      {
+        "id": "GG3",
+        "label": "Grade Group 3",
+        "definition": "Gleason 评分 4+3=7，以低分化成分（融合、筛状或分化差的腺体）为主（≥50%），伴少量分化良好腺体成分。"
+      },
+      {
+        "id": "GG4",
+        "label": "Grade Group 4",
+        "definition": "Gleason 评分 8，包括 4+4、3+5 及 5+3，肿瘤主要由低分化或高级别成分构成。"
+      },
+      {
+        "id": "GG5",
+        "label": "Grade Group 5",
+        "definition": "Gleason 评分 9-10（4+5、5+4、5+5），含大量 Gleason 5 级成分（实性片状、单个细胞、坏死伴粉刺样改变），预后最差。"
+      }
+    ]
+  },
+  {
+    "id": "kidney-isup",
+    "nameZh": "肾细胞癌 WHO/ISUP 核分级",
+    "nameEn": "WHO/ISUP Grading System for Renal Cell Carcinoma",
+    "applicableTo": [
+      "clear-cell-rcc",
+      "papillary-rcc"
+    ],
+    "description": "由 ISUP 于 2012 年温哥华共识会议提出，并被 WHO 2016 版及 WHO 2022 版（第5版）泌尿系统肿瘤分类正式采纳，取代既往的 Fuhrman 分级。主要基于核仁的显著程度（1–3 级）及是否存在明显的核多形性/瘤巨细胞/肉瘤样或横纹肌样分化（4 级）进行判读，适用于透明细胞肾细胞癌与乳头状肾细胞癌；不适用于嫌色细胞肾细胞癌及其他特殊类型 RCC。",
+    "criteria": [
+      {
+        "parameter": "核仁可见性（400× 高倍镜）",
+        "options": [
+          "不可见或不明显",
+          "400× 可见但不显著",
+          "400× 清晰可见/显著"
+        ]
+      },
+      {
+        "parameter": "核仁可见性（100× 低倍镜）",
+        "options": [
+          "不可见",
+          "可见且显著嗜酸性"
+        ]
+      },
+      {
+        "parameter": "核多形性/瘤巨细胞",
+        "options": [
+          "无",
+          "有明显核多形性或瘤巨细胞"
+        ]
+      },
+      {
+        "parameter": "肉瘤样或横纹肌样分化",
+        "options": [
+          "无",
+          "有（直接定为 4 级）"
+        ]
+      },
+      {
+        "parameter": "适用组织学类型",
+        "options": [
+          "透明细胞肾细胞癌",
+          "乳头状肾细胞癌"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "G1",
+        "label": "1 级",
+        "definition": "400× 高倍镜下核仁不可见或不明显，核圆形、染色质细腻。"
+      },
+      {
+        "id": "G2",
+        "label": "2 级",
+        "definition": "400× 高倍镜下可见核仁，但在 100× 低倍镜下不显著；核轻度不规则。"
+      },
+      {
+        "id": "G3",
+        "label": "3 级",
+        "definition": "100× 低倍镜下即可清晰辨认核仁，呈嗜酸性显著核仁；核明显不规则。"
+      },
+      {
+        "id": "G4",
+        "label": "4 级",
+        "definition": "出现明显核多形性、瘤巨细胞，和/或肉瘤样分化、横纹肌样分化，任一条件满足即定为 4 级。"
+      }
+    ]
+  },
+  {
+    "id": "cervical-figo-2018",
+    "nameZh": "宫颈癌 FIGO 2018 分期",
+    "nameEn": "FIGO 2018 Staging for Carcinoma of the Cervix Uteri",
+    "applicableTo": [],
+    "description": "国际妇产科联盟（FIGO）于 2018 年更新的宫颈癌分期系统，首次正式纳入影像学与病理学评估作为分期依据（此前为纯临床分期）。相较 2009 版，主要修订包括：IA 期取消水平浸润范围限定，仅保留间质浸润深度 ≤5mm；IB 期按肿瘤最大径细分为 IB1（≤2cm）、IB2（>2~4cm）、IB3（>4cm）；新增 IIIC 期，依据淋巴结转移状态划分为 IIIC1（盆腔淋巴结）与 IIIC2（腹主动脉旁淋巴结），并需标注评估方式（r 代表影像学，p 代表病理学）。该分期被 WHO 女性生殖系统肿瘤分类（5th, 2020）及中国 CSCO 宫颈癌诊疗指南采纳。",
+    "criteria": [
+      {
+        "parameter": "间质浸润深度",
+        "options": [
+          "≤3mm",
+          ">3~≤5mm",
+          ">5mm"
+        ]
+      },
+      {
+        "parameter": "肿瘤最大径",
+        "options": [
+          "≤2cm",
+          ">2~≤4cm",
+          ">4cm"
+        ]
+      },
+      {
+        "parameter": "宫颈外扩展",
+        "options": [
+          "局限于宫颈",
+          "累及阴道上 2/3",
+          "累及宫旁但未达盆壁",
+          "累及阴道下 1/3",
+          "累及盆壁或引起肾积水/无功能肾"
+        ]
+      },
+      {
+        "parameter": "淋巴结转移",
+        "options": [
+          "无",
+          "盆腔淋巴结转移（IIIC1）",
+          "腹主动脉旁淋巴结转移（IIIC2）"
+        ]
+      },
+      {
+        "parameter": "远处转移及邻近器官累及",
+        "options": [
+          "无",
+          "累及膀胱/直肠黏膜（IVA）",
+          "远处转移（IVB）"
+        ]
+      },
+      {
+        "parameter": "评估方式标注",
+        "options": [
+          "r（影像学）",
+          "p（病理学）"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "IA1",
+        "label": "IA1 期",
+        "definition": "镜下浸润癌，间质浸润深度 ≤3mm"
+      },
+      {
+        "id": "IA2",
+        "label": "IA2 期",
+        "definition": "镜下浸润癌，间质浸润深度 >3mm 且 ≤5mm"
+      },
+      {
+        "id": "IB1",
+        "label": "IB1 期",
+        "definition": "浸润深度 >5mm 且肿瘤最大径 ≤2cm，局限于宫颈"
+      },
+      {
+        "id": "IB2",
+        "label": "IB2 期",
+        "definition": "肿瘤最大径 >2cm 且 ≤4cm，局限于宫颈"
+      },
+      {
+        "id": "IB3",
+        "label": "IB3 期",
+        "definition": "肿瘤最大径 >4cm，局限于宫颈"
+      },
+      {
+        "id": "IIA1",
+        "label": "IIA1 期",
+        "definition": "累及阴道上 2/3 但无宫旁侵犯，肿瘤最大径 ≤4cm"
+      },
+      {
+        "id": "IIA2",
+        "label": "IIA2 期",
+        "definition": "累及阴道上 2/3 但无宫旁侵犯，肿瘤最大径 >4cm"
+      },
+      {
+        "id": "IIB",
+        "label": "IIB 期",
+        "definition": "有宫旁侵犯但未达盆壁"
+      },
+      {
+        "id": "IIIA",
+        "label": "IIIA 期",
+        "definition": "累及阴道下 1/3，未达盆壁"
+      },
+      {
+        "id": "IIIB",
+        "label": "IIIB 期",
+        "definition": "累及盆壁和/或引起肾积水或无功能肾（非其他原因所致）"
+      },
+      {
+        "id": "IIIC1",
+        "label": "IIIC1 期",
+        "definition": "盆腔淋巴结转移（不论肿瘤大小与范围），需标注 r 或 p"
+      },
+      {
+        "id": "IIIC2",
+        "label": "IIIC2 期",
+        "definition": "腹主动脉旁淋巴结转移（不论肿瘤大小与范围），需标注 r 或 p"
+      },
+      {
+        "id": "IVA",
+        "label": "IVA 期",
+        "definition": "累及膀胱或直肠黏膜（活检证实），或超出真骨盆"
+      },
+      {
+        "id": "IVB",
+        "label": "IVB 期",
+        "definition": "远处转移（包括腹股沟淋巴结、腹腔内病灶、肺、肝、骨等）"
+      }
+    ]
+  },
+  {
+    "id": "ovarian-figo-2014",
+    "nameZh": "卵巢癌 FIGO 2014 分期",
+    "nameEn": "Ovarian, Fallopian Tube and Peritoneal Cancer FIGO Staging (2014)",
+    "applicableTo": [],
+    "description": "由国际妇产科联盟（FIGO）2014 年修订发布，首次将卵巢癌、输卵管癌与原发性腹膜癌合并为统一分期系统。以手术-病理分期为基础，综合评估原发灶范围、腹腔播散、腹膜后淋巴结转移及远处转移情况；对 II、III、IV 期进行了显著修订，特别是将腹膜后淋巴结转移从 IIIC 期中独立为 IIIA1 期，并将胸腔积液细胞学阳性与肝/脾实质转移区分开。国内 CSCO《卵巢恶性肿瘤诊疗指南》及中华医学会妇科肿瘤学分会采用该分期。",
+    "criteria": [
+      {
+        "parameter": "原发肿瘤范围 (T)",
+        "options": [
+          "局限于卵巢/输卵管",
+          "盆腔内扩散或腹膜种植",
+          "盆腔外腹膜种植或腹膜后淋巴结转移",
+          "远处转移"
+        ]
+      },
+      {
+        "parameter": "包膜与表面受累",
+        "options": [
+          "包膜完整、表面无肿瘤",
+          "包膜破裂或表面肿瘤存在",
+          "腹水或腹腔冲洗液癌细胞阳性"
+        ]
+      },
+      {
+        "parameter": "腹膜种植大小",
+        "options": [
+          "仅镜下种植",
+          "最大径 ≤2cm",
+          "最大径 >2cm"
+        ]
+      },
+      {
+        "parameter": "腹膜后淋巴结 (N)",
+        "options": [
+          "无转移",
+          "转移灶 ≤10mm",
+          "转移灶 >10mm"
+        ]
+      },
+      {
+        "parameter": "远处转移 (M)",
+        "options": [
+          "无远处转移",
+          "胸腔积液细胞学阳性",
+          "肝/脾实质转移",
+          "腹腔外器官转移（含腹股沟淋巴结、肠壁/肠系膜全层）"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "IA",
+        "label": "IA 期",
+        "definition": "肿瘤局限于一侧卵巢（包膜完整）或一侧输卵管，卵巢/输卵管表面无肿瘤，腹水或腹腔冲洗液未找到癌细胞"
+      },
+      {
+        "id": "IB",
+        "label": "IB 期",
+        "definition": "肿瘤局限于双侧卵巢（包膜完整）或双侧输卵管，表面无肿瘤，腹水或腹腔冲洗液未找到癌细胞"
+      },
+      {
+        "id": "IC1",
+        "label": "IC1 期",
+        "definition": "肿瘤局限于单/双侧卵巢或输卵管，手术中肿瘤破裂"
+      },
+      {
+        "id": "IC2",
+        "label": "IC2 期",
+        "definition": "术前包膜已破裂或卵巢/输卵管表面有肿瘤"
+      },
+      {
+        "id": "IC3",
+        "label": "IC3 期",
+        "definition": "腹水或腹腔冲洗液中找到癌细胞"
+      },
+      {
+        "id": "IIA",
+        "label": "IIA 期",
+        "definition": "肿瘤蔓延或种植至子宫和/或输卵管和/或卵巢"
+      },
+      {
+        "id": "IIB",
+        "label": "IIB 期",
+        "definition": "肿瘤蔓延至其他盆腔内腹膜组织"
+      },
+      {
+        "id": "IIIA1",
+        "label": "IIIA1 期",
+        "definition": "仅有腹膜后淋巴结阳性（细胞学或组织学证实）；IIIA1(i)：转移灶最大径 ≤10mm；IIIA1(ii)：转移灶最大径 >10mm"
+      },
+      {
+        "id": "IIIA2",
+        "label": "IIIA2 期",
+        "definition": "显微镜下盆腔外（骨盆缘以上）腹膜受累，伴或不伴腹膜后淋巴结阳性"
+      },
+      {
+        "id": "IIIB",
+        "label": "IIIB 期",
+        "definition": "肉眼可见盆腔外腹膜转移，最大径 ≤2cm，伴或不伴腹膜后淋巴结阳性"
+      },
+      {
+        "id": "IIIC",
+        "label": "IIIC 期",
+        "definition": "肉眼可见盆腔外腹膜转移，最大径 >2cm，伴或不伴腹膜后淋巴结阳性（包括肿瘤蔓延至肝脾包膜但未累及实质）"
+      },
+      {
+        "id": "IVA",
+        "label": "IVA 期",
+        "definition": "胸腔积液细胞学阳性"
+      },
+      {
+        "id": "IVB",
+        "label": "IVB 期",
+        "definition": "肝和/或脾实质转移、腹腔外器官转移（包括腹股沟淋巴结及腹腔外淋巴结）、肠壁全层浸润"
+      }
+    ]
+  },
+  {
+    "id": "endometrial-figo-2023",
+    "nameZh": "子宫内膜癌 FIGO 2023 分期",
+    "nameEn": "FIGO 2023 Staging System for Endometrial Cancer",
+    "applicableTo": [],
+    "description": "由国际妇产科联盟（FIGO）妇科肿瘤委员会于 2023 年发布的子宫内膜癌分期系统，取代 FIGO 2009 版。新版首次将组织学类型、淋巴脉管间隙侵犯（LVSI）及分子分型（POLEmut、MMRd、p53abn、NSMP）整合入解剖学分期，强调非侵袭性组织学（低级别子宫内膜样癌）与侵袭性组织学（高级别子宫内膜样癌、浆液性癌、透明细胞癌、未分化/去分化癌、癌肉瘤、混合性癌、中肾样癌、胃肠型黏液性癌）的区分。分子分型结果可修正 I–II 期的分期（如 POLEmut 降期为 IAmPOLEmut，p53abn 伴肌层浸润升期为 IICmp53abn）。",
+    "criteria": [
+      {
+        "parameter": "肿瘤局限于子宫体",
+        "options": [
+          "是（I 期）",
+          "否"
+        ]
+      },
+      {
+        "parameter": "组织学类型",
+        "options": [
+          "非侵袭性（低级别子宫内膜样癌 G1/G2）",
+          "侵袭性（高级别子宫内膜样癌 G3、浆液性癌、透明细胞癌、未分化/去分化癌、癌肉瘤、混合性癌、中肾样癌、胃肠型黏液性癌）"
+        ]
+      },
+      {
+        "parameter": "肌层浸润深度",
+        "options": [
+          "无肌层浸润",
+          "＜1/2 肌层",
+          "≥1/2 肌层"
+        ]
+      },
+      {
+        "parameter": "淋巴脉管间隙侵犯 LVSI",
+        "options": [
+          "无或局灶",
+          "广泛（≥4 个血管）"
+        ]
+      },
+      {
+        "parameter": "宫颈间质侵犯",
+        "options": [
+          "无",
+          "有"
+        ]
+      },
+      {
+        "parameter": "附件/浆膜/阴道/宫旁侵犯",
+        "options": [
+          "无",
+          "有"
+        ]
+      },
+      {
+        "parameter": "淋巴结转移",
+        "options": [
+          "无",
+          "微转移/孤立肿瘤细胞",
+          "盆腔 LN 宏转移",
+          "腹主动脉旁 LN 转移"
+        ]
+      },
+      {
+        "parameter": "远处转移",
+        "options": [
+          "无",
+          "腹腔扩散/腹膜",
+          "肺/肝/骨/脑/远处 LN"
+        ]
+      },
+      {
+        "parameter": "分子分型",
+        "options": [
+          "POLEmut",
+          "MMRd",
+          "NSMP",
+          "p53abn"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "IA1",
+        "label": "IA1 期",
+        "definition": "非侵袭性组织学局限于子宫内膜息肉或子宫内膜，无或仅局灶 LVSI"
+      },
+      {
+        "id": "IA2",
+        "label": "IA2 期",
+        "definition": "非侵袭性组织学伴肌层浸润＜1/2，无或仅局灶 LVSI"
+      },
+      {
+        "id": "IA3",
+        "label": "IA3 期",
+        "definition": "低级别子宫内膜样癌同时累及卵巢或输卵管，符合双原发标准（肌层浸润＜1/2，无 LVSI，无其他转移）"
+      },
+      {
+        "id": "IB",
+        "label": "IB 期",
+        "definition": "非侵袭性组织学伴肌层浸润 ≥1/2，无或仅局灶 LVSI"
+      },
+      {
+        "id": "IC",
+        "label": "IC 期",
+        "definition": "侵袭性组织学局限于子宫内膜息肉或子宫内膜，无肌层浸润"
+      },
+      {
+        "id": "IIA",
+        "label": "IIA 期",
+        "definition": "非侵袭性组织学伴宫颈间质侵犯"
+      },
+      {
+        "id": "IIB",
+        "label": "IIB 期",
+        "definition": "非侵袭性组织学伴广泛 LVSI（≥4 个血管）"
+      },
+      {
+        "id": "IIC",
+        "label": "IIC 期",
+        "definition": "侵袭性组织学伴任何程度肌层浸润"
+      },
+      {
+        "id": "IIIA1",
+        "label": "IIIA1 期",
+        "definition": "卵巢或输卵管扩散（不符合 IA3 双原发标准）"
+      },
+      {
+        "id": "IIIA2",
+        "label": "IIIA2 期",
+        "definition": "子宫浆膜下或穿透浆膜受累"
+      },
+      {
+        "id": "IIIB1",
+        "label": "IIIB1 期",
+        "definition": "阴道和/或宫旁受累"
+      },
+      {
+        "id": "IIIB2",
+        "label": "IIIB2 期",
+        "definition": "盆腔腹膜转移"
+      },
+      {
+        "id": "IIIC1i",
+        "label": "IIIC1i 期",
+        "definition": "盆腔淋巴结微转移"
+      },
+      {
+        "id": "IIIC1ii",
+        "label": "IIIC1ii 期",
+        "definition": "盆腔淋巴结宏转移"
+      },
+      {
+        "id": "IIIC2i",
+        "label": "IIIC2i 期",
+        "definition": "腹主动脉旁淋巴结（至肾血管水平或以上）微转移，伴或不伴盆腔 LN 转移"
+      },
+      {
+        "id": "IIIC2ii",
+        "label": "IIIC2ii 期",
+        "definition": "腹主动脉旁淋巴结宏转移，伴或不伴盆腔 LN 转移"
+      },
+      {
+        "id": "IVA",
+        "label": "IVA 期",
+        "definition": "肿瘤侵犯膀胱和/或肠道黏膜"
+      },
+      {
+        "id": "IVB",
+        "label": "IVB 期",
+        "definition": "腹腔转移（超出盆腔）"
+      },
+      {
+        "id": "IVC",
+        "label": "IVC 期",
+        "definition": "远处转移，包括肺、肝、骨、脑以及腹腔外淋巴结"
+      },
+      {
+        "id": "IAmPOLEmut",
+        "label": "IAmPOLEmut 期",
+        "definition": "分子分型修正：原 I–II 期病变若为 POLE 超突变型（POLEmut），无论肌层浸润或宫颈受累，降期为 IAmPOLEmut"
+      },
+      {
+        "id": "IICmp53abn",
+        "label": "IICmp53abn 期",
+        "definition": "分子分型修正：原 I–II 期病变若为 p53 异常型（p53abn）且伴任何肌层浸润，升期为 IICmp53abn"
+      }
+    ]
+  },
+  {
+    "id": "thyroid-ajcc8",
+    "nameZh": "甲状腺癌 AJCC 分期（第 8 版）",
+    "nameEn": "Thyroid Cancer AJCC Staging, 8th Edition",
+    "applicableTo": [
+      "papillary-thyroid-carcinoma",
+      "follicular-thyroid-carcinoma",
+      "medullary-thyroid-carcinoma",
+      "anaplastic-thyroid-carcinoma"
+    ],
+    "description": "AJCC 第 8 版甲状腺癌 TNM 分期系统（2018 年起正式实施）。与第 7 版相比重大变化：①分化型甲状腺癌（DTC）将年龄分界由 45 岁上调至 55 岁；②T3 细分为 T3a（>4cm 局限于甲状腺内）和 T3b（任意大小伴仅带状肌侵犯）；③将仅累及带状肌的微小腺外侵犯从 T4a 降为 T3b；④取消单纯镜下腺外侵犯对 T 分期的影响；⑤Ⅶ 区淋巴结由 N1b 改为 N1a；⑥髓样癌（MTC）及未分化癌（ATC）的分期单独列出，ATC 全部纳入 Ⅳ 期。",
+    "criteria": [
+      {
+        "parameter": "T - 原发肿瘤",
+        "options": [
+          "TX：原发肿瘤无法评估",
+          "T0：无原发肿瘤证据",
+          "T1a：肿瘤最大径 ≤1cm，局限于甲状腺",
+          "T1b：肿瘤最大径 >1cm 且 ≤2cm，局限于甲状腺",
+          "T2：肿瘤最大径 >2cm 且 ≤4cm，局限于甲状腺",
+          "T3a：肿瘤最大径 >4cm，局限于甲状腺",
+          "T3b：任意大小肿瘤伴大体腺外侵犯，仅累及带状肌（胸骨甲状肌、胸骨舌骨肌、甲状舌骨肌、肩胛舌骨肌）",
+          "T4a：任意大小肿瘤伴大体腺外侵犯，累及皮下软组织、喉、气管、食管或喉返神经",
+          "T4b：任意大小肿瘤伴大体腺外侵犯，侵犯椎前筋膜，或包绕颈动脉/纵隔血管"
+        ]
+      },
+      {
+        "parameter": "N - 区域淋巴结",
+        "options": [
+          "NX：区域淋巴结无法评估",
+          "N0a：一个或多个经细胞学或组织学证实的良性淋巴结",
+          "N0b：无影像学或临床区域淋巴结转移证据",
+          "N1a：转移至 Ⅵ 区或 Ⅶ 区（气管前、气管旁、喉前/Delphian 或上纵隔）淋巴结，单侧或双侧",
+          "N1b：转移至单侧、双侧或对侧颈侧区（Ⅰ、Ⅱ、Ⅲ、Ⅳ 或 Ⅴ 区）或咽后淋巴结"
+        ]
+      },
+      {
+        "parameter": "M - 远处转移",
+        "options": [
+          "M0：无远处转移",
+          "M1：有远处转移"
+        ]
+      },
+      {
+        "parameter": "诊断时年龄（仅适用于 DTC）",
+        "options": [
+          "<55 岁",
+          "≥55 岁"
+        ]
+      },
+      {
+        "parameter": "组织学类型",
+        "options": [
+          "分化型（乳头状/滤泡状/Hürthle 细胞癌）",
+          "髓样癌",
+          "未分化（间变性）癌"
+        ]
+      }
+    ],
+    "grades": [
+      {
+        "id": "DTC-<55-I",
+        "label": "分化型 <55 岁 Ⅰ 期",
+        "definition": "任何 T，任何 N，M0"
+      },
+      {
+        "id": "DTC-<55-II",
+        "label": "分化型 <55 岁 Ⅱ 期",
+        "definition": "任何 T，任何 N，M1"
+      },
+      {
+        "id": "DTC-≥55-I",
+        "label": "分化型 ≥55 岁 Ⅰ 期",
+        "definition": "T1a/T1b/T2，N0/NX，M0"
+      },
+      {
+        "id": "DTC-≥55-II",
+        "label": "分化型 ≥55 岁 Ⅱ 期",
+        "definition": "T1-T2，N1，M0；或 T3a/T3b，任何 N，M0"
+      },
+      {
+        "id": "DTC-≥55-III",
+        "label": "分化型 ≥55 岁 Ⅲ 期",
+        "definition": "T4a，任何 N，M0"
+      },
+      {
+        "id": "DTC-≥55-IVA",
+        "label": "分化型 ≥55 岁 ⅣA 期",
+        "definition": "T4b，任何 N，M0"
+      },
+      {
+        "id": "DTC-≥55-IVB",
+        "label": "分化型 ≥55 岁 ⅣB 期",
+        "definition": "任何 T，任何 N，M1"
+      },
+      {
+        "id": "MTC-I",
+        "label": "髓样癌 Ⅰ 期",
+        "definition": "T1，N0，M0"
+      },
+      {
+        "id": "MTC-II",
+        "label": "髓样癌 Ⅱ 期",
+        "definition": "T2-T3，N0，M0"
+      },
+      {
+        "id": "MTC-III",
+        "label": "髓样癌 Ⅲ 期",
+        "definition": "T1-T3，N1a，M0"
+      },
+      {
+        "id": "MTC-IVA",
+        "label": "髓样癌 ⅣA 期",
+        "definition": "T4a，任何 N，M0；或 T1-T3，N1b，M0"
+      },
+      {
+        "id": "MTC-IVB",
+        "label": "髓样癌 ⅣB 期",
+        "definition": "T4b，任何 N，M0"
+      },
+      {
+        "id": "MTC-IVC",
+        "label": "髓样癌 ⅣC 期",
+        "definition": "任何 T，任何 N，M1"
+      },
+      {
+        "id": "ATC-IVA",
+        "label": "未分化癌 ⅣA 期",
+        "definition": "T1-T3a，N0/NX，M0"
+      },
+      {
+        "id": "ATC-IVB",
+        "label": "未分化癌 ⅣB 期",
+        "definition": "T1-T3a，N1，M0；或 T3b/T4，任何 N，M0"
+      },
+      {
+        "id": "ATC-IVC",
+        "label": "未分化癌 ⅣC 期",
+        "definition": "任何 T，任何 N，M1"
+      }
+    ]
   }
 ]
